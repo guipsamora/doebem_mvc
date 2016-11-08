@@ -1,0 +1,52 @@
+$icon-font-path: '/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import '~bootstrap-social/bootstrap-social.scss';
+$fa-font-path: '/assets/fonts/font-awesome/';
+@import '~font-awesome/scss/font-awesome';
+@import '~angular-material/angular-material.scss';
+@import '~angular-material/layouts/angular-material.layouts.scss';
+@import '~angular-material/layouts/angular-material.layout-attributes.scss';
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script' );
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' );
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700');
+
+// @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,900|Roboto:300,500,700,900);
+
+/**
+ * App-wide Styles
+ */
+
+@mixin heading-font {
+  
+}
+
+@mixin serif-font {
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@mixin script-font {
+  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+}
+
+@mixin body-font {
+  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+// Component styles are injected through gulp
+/* inject:scss */
+@import 'admin/admin';
+@import 'main/main';
+@import '../components/footer/footer';
+@import '../components/modal/modal';
+@import '../components/navbar/navbar';
+@import '../components/oauth-buttons/oauth-buttons';
+/* endinject */

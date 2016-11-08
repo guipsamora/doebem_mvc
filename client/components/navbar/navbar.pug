@@ -1,0 +1,37 @@
+div#menu.navbar.navbar-default.navbar-static-top(ng-class="{mainPageMenu: $ctrl.$location.path()==='/'}")
+  div.container
+    div.navbar-header
+      button.navbar-toggle(type='button', ng-click='$ctrl.isCollapsed = !$ctrl.isCollapsed')
+        div(layout="row")
+          span(style="padding-right:5px;") MENU
+          div(layout="column" layout-align="center center")
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+      img.navbar-brand(ng-src="/assets/images/logos/logo_menor_6_transparente.png" )
+
+    div#navbar-main.navbar-collapse.collapse(uib-collapse='$ctrl.isCollapsed')
+      ul.nav.navbar-nav.navbar-right
+        li(ng-repeat='item in $ctrl.menu', ng-class='{active: $ctrl.isActive(item.link)}')
+          a(ng-href='{{item.link}}') {{item.title}}
+
+        li(ng-show='$ctrl.isAdmin()', ng-class='{active: $ctrl.isActive("/admin")}')
+          a(href='/admin') Admin
+
+      ul.nav.navbar-nav.navbar-right
+        //li(ng-hide='$ctrl.isLoggedIn()', ng-class='{active: $ctrl.isActive("/signup")}')
+          a(href='/signup') Sign up
+
+        //li(ng-hide='$ctrl.isLoggedIn()', ng-class='{active: $ctrl.isActive("/login")}')
+          a(href='/login') Login
+
+        li(ng-show='$ctrl.isLoggedIn()')
+          p.navbar-text Hello {{ $ctrl.getCurrentUser().name }}
+
+        li(ng-show='$ctrl.isLoggedIn()', ng-class='{active: $ctrl.isActive("/settings")}')
+          a(href='/settings')
+            span.glyphicon.glyphicon-cog
+
+        li(ng-show='$ctrl.isLoggedIn()')
+          a(href='/logout') Logout

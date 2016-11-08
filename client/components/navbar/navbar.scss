@@ -1,0 +1,24 @@
+div#menu {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+    border: 0px;
+  background-color: black;
+  div.container div#navbar-main {
+      background-color: transparent;
+      ul li a {
+          background-color: transparent;
+
+      }
+  }
+  
+}
+
+div#menu.mainPageMenu {
+    background-color: transparent;
+     div.container div#navbar-main {
+          ul li a {
+              color: white;
+          }
+     }
+
+  }
