@@ -8,8 +8,6 @@ div#carousel(flex="100")
         max-height="1300"
         auto-slide="true"
         auto-slide-time="3000")
-   
-
 div(layout="column" flex="100")
   div#comoFunciona(flex = "100" layout="column" layout-align="center center")
     h1(flex = "100") Como Funciona
@@ -54,9 +52,17 @@ div(layout="column" flex="100")
           
 
   div#metodologia(flex = "100" layout="column" layout-align="center center") 
-  div#sobre(flex = "100" layout="column" layout-align="center center") 
-  div#blog(flex = "100" layout="column" layout-align="center center") 
+    h1 Metodologia
+    p Baseamos nossa metodologia de análise no movimento Effective Altruism.
+    p Clique aqui para conhecer mais sobre nossos critérios e processo de análise.
+  div(flex layout="row")   
+    div#sobre(flex = "50" layout="column" layout-align="center center") 
+      h1 Sobre
+      p Conheça quem somos e o que nos motiva.
+    div#blog(flex = "50" layout="column" layout-align="center center") 
+      h1 Blog
   div#contatos(flex = "100" layout="column" layout-align="center center") 
+    h1 Contato
 
 script(type="text/ng-template" id="img.tmpl.pug")
   div
