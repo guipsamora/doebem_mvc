@@ -1,13 +1,42 @@
-
 @import '../../../node_modules/angular-jk-carousel/src/assets/styles/jk-carousel.scss';
-
-
-
-.navbar-text {
-  margin-left: 15px;
+div#main {
+  div#carousel {
+    margin-top: -100px
+  }
+  md-content#mainPage {
+    md-content#comoFunciona {
+      md-list#actions {
+        md-list-item {
+          div#escolha {
+            span {
+              i#icon {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+    md-content#metodologia {
+      padding: 90px;
+      min-height: 300px;
+    }
+    md-content#subPage {
+      min-height: 250px;
+      md-content#sobre {
+        color: white;
+        background-image: url("/assets/images/sobre/sobre.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+      }
+    }
+    md-content#contato {
+      color: white;
+      background-image: url("/assets/images/header-bg.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top center;
+    }
+  }
 }
-
-div#carousel{
-  margin-top: -100px
-}
-
