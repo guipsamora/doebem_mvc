@@ -14,31 +14,14 @@ div(layout="column" flex="100")
     p A DoeBem surgiu com o objetivo de tornar o processo de doações financeiras mais simples, seguro e efetivo.
     p Como encontrar uma organização para doar? Como garantir que seu dinheiro será usado da melhor forma possível?
     p A DoeBem foi fundada para responder essas perguntas e ajudar você a doar melhor.
-    div#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
-      div#escolha(flex layout = "column" layout-align="center center")
-        span.fa-stack.fa-5x
-          i.fa.fa-circle.fa-stack-2x.text-primary
-          i.fa.fa-heart-o.fa-stack-1x
-        h3 Escolha
-        p A causa mais importante e você
-      div#seleciona(flex layout = "column" layout-align="center center")
-        span.fa-stack.fa-5x
-          i.fa.fa-circle.fa-stack-2x.text-primary
-          i.fa.fa-hand-pointer-o.fa-stack-1x
-        h3 Selecione
-        p Uma ONG efetiva, avaliada por nós.
-      div#doe(flex layout = "column" layout-align="center center") 
-        span.fa-stack.fa-5x
-          i.fa.fa-circle.fa-stack-2x.text-primary
-          i.fa.fa-money.fa-stack-1x
-        h3 Doe
-        p  quantia e pelo período que desejar.
-      div#acompanhe(flex layout = "column" layout-align="center center")
-        span.fa-stack.fa-5x
-          i.fa.fa-circle.fa-stack-2x.text-primary
-          i.fa.fa-envelope-o.fa-stack-1x
-        h3 Acompanhe
-        p As notícias sobre o impacto da sua doação.
+    md-list#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
+      md-list-item(ng-repeat="step in $ctrl.stepOptions") 
+          div#escolha(flex layout = "column" layout-align="center center")
+            span.fa-stack.fa-5x
+              i.fa.fa-circle.fa-stack-2x.text-primary
+              i.fa.fa-stack-1x(ng-class="step.icon")
+            h3 {{step.title}}
+            p {{step.desc}}
   div#causas(flex = "100" layout="column" layout-align="center center")
     H1 Causas
     p Selecione uma causa abaixo para conhecer as ONGs recomendadas.
