@@ -16,7 +16,7 @@ div(layout="column" flex="100")
     p A DoeBem surgiu com o objetivo de tornar o processo de doações financeiras mais simples, seguro e efetivo.
     p Como encontrar uma organização para doar? Como garantir que seu dinheiro será usado da melhor forma possível?
     p A DoeBem foi fundada para responder essas perguntas e ajudar você a doar melhor.
-    div#actions(layout-gt-sm ="row" layout="column" layout-align="center center")
+    div#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
       div#escolha(flex layout = "column" layout-align="center center")
         span.fa-stack.fa-5x
           i.fa.fa-circle.fa-stack-2x.text-primary
@@ -41,7 +41,18 @@ div(layout="column" flex="100")
           i.fa.fa-envelope-o.fa-stack-1x
         h3 Acompanhe
         p As notícias sobre o impacto da sua doação.
-  div#causas(flex = "100" layout="column" layout-align="center center")  
+  div#causas(flex = "100" layout="column" layout-align="center center")
+    H1 Causas
+    p Selecione uma causa abaixo para conhecer as ONGs recomendadas.
+    md-list#causaActions(flex="100" layout-gt-sm="row" layput="column")
+      md-list-item(ng-repeat="causa in $ctrl.causas" layout="column"  layout-align="center center")
+        md-card.md-padding
+          img.md-card-image(ng-src="{{causa.image}}" )
+          md-card-title
+            md-card-title-text(layout-align="center center")
+              h1 {{causa.title}}
+          
+
   div#metodologia(flex = "100" layout="column" layout-align="center center") 
   div#sobre(flex = "100" layout="column" layout-align="center center") 
   div#blog(flex = "100" layout="column" layout-align="center center") 

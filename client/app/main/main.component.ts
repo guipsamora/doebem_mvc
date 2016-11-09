@@ -8,6 +8,7 @@ export class MainController {
   $http;
   $scope;
   carouselImages= [];
+  causas = [];
 
   /*@ngInject*/
   constructor($http, $scope, socket) {
@@ -17,8 +18,14 @@ export class MainController {
       { src: "../../assets/images/carousel/img_1.jpg"},
       { src: '../../assets/images/carousel/img_2.jpg' },
       { src: '../../assets/images/carousel/img_3.jpg' }
-    ]
-  
+    ];
+
+    this.causas = [
+      {title: 'Educação', image:'../../assets/images/portfolio/education.jpg' },
+      {title: 'Saúde', image:'../../assets/images/portfolio/healthcare.png' },
+      {title: 'Combate á Pobreza', image:'../../assets/images/portfolio/poverty.png' }
+    ];    
+    
   }
 
   $onInit() {
