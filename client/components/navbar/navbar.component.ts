@@ -4,31 +4,27 @@ const angular = require('angular');
 const ngMaterial = require('angular-material');
 
 export class NavbarComponent {
+
   menu = [{
     'title': 'COMO FUNCIONA ',
     'link': '/'
-  },
-  {
+  }, {
     'title': 'CAUSAS ',
     'link': '/'
-  },
-  {
+  }, {
     'title': 'METODOLOGIA ',
     'link': '/'
-  },
-  {
+  }, {
     'title': 'SOBRE ',
     'link': '/'
-  },
-  {
+  }, {
     'title': 'BLOG ',
     'link': '/'
-  },
-  {
+  }, {
     'title': 'CONTATO ',
     'link': '/'
-  }
-  ];
+  }];
+
   $location;
   isLoggedIn: Function;
   isAdmin: Function;
@@ -54,3 +50,4 @@ export default angular.module('directives.navbar', [ngMaterial])
     controller: NavbarComponent
   })
   .name;
+
