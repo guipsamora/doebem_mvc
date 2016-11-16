@@ -1,4 +1,4 @@
-div#menu.navbar.navbar-default.navbar-static-top(ng-class="{mainPageMenu: $ctrl.$location.path()==='/'}")
+div#menu.navbar.navbar-default.navbar-fixed-top(ng-class="{mainPageMenu: $ctrl.$location.path()==='/'}")
   div.container
     div.navbar-header
       button.navbar-toggle(type='button', ng-click='$ctrl.isCollapsed = !$ctrl.isCollapsed')
@@ -14,7 +14,7 @@ div#menu.navbar.navbar-default.navbar-static-top(ng-class="{mainPageMenu: $ctrl.
     div#navbar-main.navbar-collapse.collapse(uib-collapse='$ctrl.isCollapsed')
       ul.nav.navbar-nav.navbar-right
         li(ng-repeat='item in $ctrl.menu', ng-class='{active: $ctrl.isActive(item.link)}')
-          a(ng-href='{{item.link}}') {{item.title}}
+          a(ng-href='#' ng-click='$ctrl.goToElement(item.link)') {{item.title}}
 
         li(ng-show='$ctrl.isAdmin()', ng-class='{active: $ctrl.isActive("/admin")}')
           a(href='/admin') Admin
