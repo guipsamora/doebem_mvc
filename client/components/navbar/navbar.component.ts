@@ -7,7 +7,7 @@ export class NavbarComponent {
 
   menu = [{
     'title': 'COMO FUNCIONA ',
-    'link': '/'
+    'link': ''
   }, {
     'title': 'CAUSAS ',
     'link': 'causas'
@@ -46,7 +46,7 @@ export class NavbarComponent {
   }
 
   goToElement(eID) {
-    console.log(eID);
+    console.log(this.$location.url());
     this.$location.hash(eID);
     this.anchorSmoothScroll.scrollTo(eID)
   }
@@ -98,10 +98,13 @@ export default angular.module('directives.navbar', [ngMaterial])
             if (document.body.scrollTop) return document.body.scrollTop;
             return 0;
         }
-        
+        //pega a posicao vertical do elemento
         function elmYPosition(eID) {
+          //dfine o elemento
             var elm = document.getElementById(eID);
+            //pega a posiçao em relacao ao topo
             var y = elm.offsetTop;
+            //passa o elemento
             var node = elm;
             while (node.offsetParent && node.offsetParent != document.body) {
                 node = node.offsetParent;
