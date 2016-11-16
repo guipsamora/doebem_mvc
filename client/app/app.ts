@@ -39,7 +39,8 @@ angular.module('doebemOrgApp', [
 
   _Auth,
   account,
-  admin,  navbar,
+  admin,  
+  navbar,
   footer,
   main,
   constants,

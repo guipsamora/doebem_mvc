@@ -32,10 +32,11 @@ div#main {
       }
     }
     md-content#contato {
-      color: white;
-      background-image: url("/assets/images/header-bg.jpg");
+      color: black;
+      background-image: url("/assets/images/map-image.png");
       background-repeat: no-repeat;
       background-size: cover;
+      background-color: black;
       background-position: top center;
     }
   }
