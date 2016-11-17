@@ -1,10 +1,17 @@
 @import '../../../node_modules/angular-jk-carousel/src/assets/styles/jk-carousel.scss';
 div#main {
   div#carousel {
-    margin-top: -100px
-  }
+    margin-top: -100px;
+    .md-on{
+        border-color: white;
+      }
+    } 
   md-content#mainPage {
+    .sectionHeading{
+      font-size:60px;
+    }
     md-content#comoFunciona {
+      text-align: center;
       md-list#actions {
         md-list-item {
           div#escolha {
@@ -17,9 +24,17 @@ div#main {
         }
       }
     }
+    md-content#causas{
+      text-align: center;
+    }
     md-content#metodologia {
-      padding: 90px;
+      
+      padding: 40px;
       min-height: 300px;
+      @include respond-to(screen-sm) {
+       padding: 40px;
+       text-align: center;
+      }
     }
     md-content#subPage {
       min-height: 250px;
@@ -32,11 +47,11 @@ div#main {
       }
     }
     md-content#contato {
-      color: black;
+      color: white;
       background-image: url("/assets/images/map-image.png");
       background-repeat: no-repeat;
       background-size: cover;
-      background-color: black;
+      background-color: #7e7e7e;
       background-position: top center;
     }
   }
