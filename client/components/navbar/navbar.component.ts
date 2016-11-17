@@ -70,10 +70,11 @@ export default angular.module('directives.navbar', [ngMaterial])
         var stopY = elmYPosition(eID);
         var distance = stopY > startY ? stopY - startY : startY - stopY;
         if (distance < 100) {
-            scrollTo(0, stopY); return;
+            scrollTo(0, stopY);
+            return;
         }
         var speed = Math.round(distance / 100);
-        if (speed >= 20) speed = 10;
+        if (speed >= 20) speed = 20;
         var step = Math.round(distance / 25);
         var leapY = stopY > startY ? startY + step : startY - step;
         var timer = 0;
