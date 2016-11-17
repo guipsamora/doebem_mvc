@@ -1,14 +1,30 @@
 @import '../../../node_modules/angular-jk-carousel/src/assets/styles/jk-carousel.scss';
 div#main {
   div#carousel {
-    margin-top: -100px;
-    .md-on{
-        border-color: white;
+     margin-top: -100px;
+    .radio-buttons-container {
+      position: absolute;
+      bottom: 0;
+      margin-bottom: 20px;
+      width: 100%;
+      md-radio-button {
+        margin: 0px 0px;;
+        outline: none;
+        .md-on {
+          background-color: white;
+        }
+        .md-off {
+          border-color: #ffffff;
+          width: 15px;
+          height: 15px;
+          border-size: 1px;
+        }
       }
-    } 
+    }
+  }
   md-content#mainPage {
-    .sectionHeading{
-      font-size:60px;
+    .sectionHeading {
+      font-size: 60px;
     }
     md-content#comoFunciona {
       text-align: center;
@@ -26,19 +42,18 @@ div#main {
         }
       }
     }
-    md-content#causas{
+    md-content#causas {
       text-align: center;
       height: 100%;
       width: 100%;
 
     }
     md-content#metodologia {
-      
       padding: 40px;
       min-height: 300px;
       @include respond-to(screen-sm) {
-       padding: 40px;
-       text-align: center;
+        padding: 40px;
+        text-align: center;
       }
     }
     md-content#subPage {
@@ -51,7 +66,9 @@ div#main {
         background-position: top center;
       }
     }
-    md-content#contato {
+    
+  }
+  md-content#contato {
       color: white;
       background-image: url("/assets/images/map-image.png");
       background-repeat: no-repeat;
@@ -59,5 +76,5 @@ div#main {
       background-color: #7e7e7e;
       background-position: top center;
     }
-  }
+
 }
