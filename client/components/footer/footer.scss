@@ -2,5 +2,30 @@ footer.footer {
   text-align: center;
   padding: 30px 0;
   margin-top: 70px;
-  border-top: 1px solid #E5E5E5;
+
 }
+
+div#footer {
+  p{
+    font-size: 14px;
+  }
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 0px;
+  div#center {
+    button {
+      text-align: center;
+      font-size: 22px;
+      background-color: black;
+      i {
+        color: white;
+      }
+    }
+  }
+  div#Right {
+    a:hover {
+      cursor: pointer;
+    }
+  }
+}
+
