@@ -8,10 +8,17 @@ div#main {
       margin-bottom: 20px;
       width: 100%;
       md-radio-button {
-        margin: 0px 0px;;
+        margin: 0px 0px 0px;
         outline: none;
         .md-on {
           background-color: white;
+          width: 19px;
+          height: 19px;
+          top: -2px;
+          left: -2px;
+          right: 2.55px;
+          position: absolute;
+
         }
         .md-off {
           border-color: #ffffff;
@@ -28,6 +35,9 @@ div#main {
     }
     md-content#comoFunciona {
       text-align: center;
+      height: 100%;
+      width: 100%;
+      background-color: white;
       md-list#actions {
         md-list-item {
           div#escolha {
@@ -42,6 +52,9 @@ div#main {
     }
     md-content#causas {
       text-align: center;
+      height: 100%;
+      width: 100%;
+
     }
     md-content#metodologia {
       padding: 40px;
