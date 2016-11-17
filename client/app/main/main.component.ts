@@ -30,7 +30,7 @@ export class MainController {
 
     this.stepOptions = [{
       title: 'Escolha',
-      desc: 'A causa mais importante e você',
+      desc: 'A causa mais importante para você',
       icon: 'fa-heart-o'
       },
       {

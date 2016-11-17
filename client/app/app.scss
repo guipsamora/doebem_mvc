@@ -12,8 +12,6 @@ $fa-font-path: '/assets/fonts/font-awesome/';
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' );
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700');
 
-// @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,900|Roboto:300,500,700,900);
-
 /**
  * App-wide Styles
  */
@@ -78,6 +76,11 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   font-size: 22px; 
+  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
+}
+
+span {
+  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
 }
 
 @mixin heading-font {
@@ -85,15 +88,15 @@ p {
 }
 
 @mixin serif-font {
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
 }
 
 @mixin script-font {
-  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
 }
 
 @mixin body-font {
-  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
 }
 
 .browserupgrade {

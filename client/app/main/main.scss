@@ -8,10 +8,17 @@ div#main {
       margin-bottom: 20px;
       width: 100%;
       md-radio-button {
-        margin: 0px 0px;;
+        margin: 0px 0px 0px;
         outline: none;
         .md-on {
           background-color: white;
+          width: 19px;
+          height: 19px;
+          top: -2px;
+          left: -2px;
+          right: 2.55px;
+          position: absolute;
+
         }
         .md-off {
           border-color: #ffffff;
