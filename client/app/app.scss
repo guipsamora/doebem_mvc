@@ -69,14 +69,16 @@ $fa-font-path: '/assets/fonts/font-awesome/';
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+body {
   font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
 p {
-  font-size: 22px; 
-  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
+  font-size: 22px;
 }
 
 span {
