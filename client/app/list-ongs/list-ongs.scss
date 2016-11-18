@@ -1,10 +1,14 @@
 
 
   div#pageHeader {
+    h2{
+      //padding-top: 25vh;
+      color: white;
+    }
     background-image: url('/assets/images/educacao/lousa_edu3.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 70vh;
+    min-height: 80vh;
     background-position: top center;
   }
 

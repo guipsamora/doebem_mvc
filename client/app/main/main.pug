@@ -27,12 +27,13 @@ div#main
         H2.sectionHeading Causas
         h3 Selecione uma causa abaixo para conhecer as ONGs recomendadas.
         md-list#causaActions(flex="100" layout-gt-sm="row" layput="column")
-          md-list-item(ng-repeat="causa in $ctrl.causas" layout="column"  layout-align="center center")
-            md-card
-              img.md-card-image(ng-src="{{causa.image}}" )
-              md-card-title
-                md-card-title-text(layout-align="center center")
-                  h1 {{causa.title}}
+          md-list-item(ng-repeat="causa in $ctrl.causas" layout="column" layout-align="center center")
+            a(ng-href="{{$location.absUrl() + causa.link}}")
+              md-card
+                img.md-card-image(ng-src="{{causa.image}}" )
+                md-card-title
+                  md-card-title-text(layout-align="center center")
+                    h1 {{causa.title}}
       md-content#metodologia(flex="100" layout="column" layout-align="center start") 
         h2.sectionHeading Metodologia
         h3 Baseamos nossa metodologia de análise no movimento Effective Altruism.

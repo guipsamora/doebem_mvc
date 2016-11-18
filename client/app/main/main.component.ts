@@ -7,14 +7,16 @@ import routing from './main.routes';
 export class MainController {
   $http;
   $scope;
+  $location;
   carouselImages= [];
   causas = [];
   stepOptions = [];
 
   /*@ngInject*/
-  constructor($http, $scope, socket) {
+  constructor($http, $scope, socket, $location) {
     this.$http = $http;
     this.$scope = $scope;
+    this.$location = $location;;
 
     this.carouselImages = [
       { src: "../../assets/images/carousel/img_1.jpg"},
@@ -23,9 +25,9 @@ export class MainController {
     ];
 
     this.causas = [
-      {title: 'Educação', image:'../../assets/images/portfolio/education.jpg' },
-      {title: 'Saúde', image:'../../assets/images/portfolio/healthcare.png' },
-      {title: 'Combate à Pobreza', image:'../../assets/images/portfolio/poverty.png' }
+      {title: 'Educação', image:'../../assets/images/portfolio/education.jpg', link: '/listOngs/Educação' },
+      {title: 'Saúde', image:'../../assets/images/portfolio/healthcare.png', link: '/listOngs/Saude' },
+      {title: 'Combate à Pobreza', image:'../../assets/images/portfolio/poverty.png', link: '/listOngs/CombateAPobreza' }
     ];    
 
     this.stepOptions = [{

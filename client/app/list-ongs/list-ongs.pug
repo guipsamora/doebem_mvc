@@ -1,11 +1,12 @@
 div#ListOngs
-  div#pageHeader
+  div#pageHeader(flex="100"  layout="column" layout-align="center center")
+    h2 BLA
   .container        
     md-content#mainListOngs(layout="column" flex="100")
       md-content#causas(flex = "100" layout="column" layout-align="center center")
         H2.sectionHeading Bla
         h3 Abaixo estão as ONGs que mais se destacaram em nossos critérios de avaliação.
-        md-list#causaActions(flex="100" layout-gt-sm="row" layput="column")
+        md-list#listOngs(flex="100" layout-gt-sm="row" layput="column")
           md-list-item(ng-repeat="ong in $ctrl.listOng" layout="column"  layout-align="center center")
             md-card
               img.md-card-image(ng-src="{{ong.logo}}" )
