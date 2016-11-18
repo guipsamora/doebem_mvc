@@ -28,17 +28,20 @@ export class ListOngsController {
     ]
 
 
-    this.listOngFilters = [{
-      title: 'Educação',
-      image: './assets/images/educacao/lousa_edu3.jpg'
+    this.listOngFilters = [
+      {
+        title: 'Educação',
+        image: './assets/images/educacao/lousa_edu3.jpg'
       },
-      {title: 'CombateAPobreza',
-      image: './assets/images/combate_pobreza/1.png'
+      {
+        title: 'CombateAPobreza',
+        image: './assets/images/combate_pobreza/1.png'
       },
-       {title: 'Saude',
-      image: './assets/images/saude/2.png'
+      {
+        title: 'Saude',
+        image: './assets/images/saude/2.png'
       }
-      ]   
+    ]
   }
 
   $onInit() {
@@ -48,15 +51,15 @@ export class ListOngsController {
 
   setPageFilter() {
     switch(this.$routeParams.filterCausa) {
-      case 'Saude':
+      case 'saude':
         this.pageTitle = 'Saúde';
         this.pageImage = './assets/images/saude/2.png';
         break;
-      case 'CombateAProbreza':
-        this.pageTitle = 'Combate a Pobreza';
+      case 'combate_a_probreza':
+        this.pageTitle = 'Combate à Pobreza';
         this.pageImage = './assets/images/combate_pobreza/1.png';
         break;
-      case 'Educação':
+      case 'educacao':
         this.pageTitle = 'Educação';
         this.pageImage = './assets/images/educacao/lousa_edu3.jpg';
         break;
