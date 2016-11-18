@@ -1,11 +1,10 @@
 
+div#listOngs {
 div#pageHeader {
     h2{
-      //padding-top: 25vh;
       color: white;
-      /*font-size: 75px;*/
+      font-size: 70px;
     }
-    //background-image: url('/assets/images/educacao/lousa_edu3.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     width:100%;
@@ -13,7 +12,15 @@ div#pageHeader {
     min-height: 80vh;
     background-position: top center;
   }
+.container {
 
-md-card > md-card-title {
-  padding-top: 0px;
+   md-content#mainListOngs {
+      md-content#lista{
+        h2 {
+          font-size: 70px;
+        }
+      }
+   }
+}
+
 }
