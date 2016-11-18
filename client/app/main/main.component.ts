@@ -25,7 +25,7 @@ export class MainController {
     this.causas = [
       {title: 'Educação', image:'../../assets/images/portfolio/education.jpg' },
       {title: 'Saúde', image:'../../assets/images/portfolio/healthcare.png' },
-      {title: 'Combate á Pobreza', image:'../../assets/images/portfolio/poverty.png' }
+      {title: 'Combate à Pobreza', image:'../../assets/images/portfolio/poverty.png' }
     ];    
 
     this.stepOptions = [{
