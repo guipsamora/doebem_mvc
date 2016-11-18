@@ -20,6 +20,7 @@ import admin from './admin';
 import navbar from '../components/navbar/navbar.component';
 import footer from '../components/footer/footer.component';
 import main from './main/main.component';
+import listOngs from './list-ongs/list-ongs.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
@@ -43,6 +44,7 @@ angular.module('doebemOrgApp', [
   navbar,
   footer,
   main,
+  listOngs,
   constants,
   socket,
   util

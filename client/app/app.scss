@@ -109,6 +109,7 @@ span {
 // Component styles are injected through gulp
 /* inject:scss */
 @import 'admin/admin';
+@import 'list-ongs/list-ongs';
 @import 'main/main';
 @import '../components/footer/footer';
 @import '../components/modal/modal';
