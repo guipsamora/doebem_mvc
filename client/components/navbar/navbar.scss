@@ -4,7 +4,7 @@ div#menu {
     border: 0px;
   background-color: black;
   height: 70px;
-  font-size:20px;
+  font-size:18px;
   font-weight: 600;
   padding: 10px 0px 10px 0px;
   color: white;
@@ -17,7 +17,7 @@ div#menu {
 }
 
 div#menu.mainPageMenu {
-    background-color: transparent;
+    background-color: black;
      div.container div#navbar-main {
           ul li a {
               color: white;
@@ -35,7 +35,10 @@ div#navbar-main.navbar-collapse.collapse {
     height: 70px;
 }
 
+.navbar-default .navbar-nav>li>a {
+    color:white;
+}
 
-  .menuAnchor:hover {
+.menuAnchor:hover {
       cursor:pointer;
-  }
+}
