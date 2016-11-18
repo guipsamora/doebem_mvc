@@ -1,8 +1,32 @@
  md-content#contactForm {
-      color: white;
-      background-image: url("/assets/images/map-image.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-color: #7e7e7e;
-      background-position: top center;
-    }
+   color: white;
+   background-image: url("/assets/images/map-image.png");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-color: #7e7e7e;
+   background-position: top center;
+   .container {
+     h2 {
+       font-size: 50px;
+       padding-top: 3%;
+       padding-bottom: 3%;
+       text-align: center;
+     }
+     form div {
+       md-content {
+         padding-right: 2%;
+         background-color: transparent;
+         md-input-container {
+           background-color: white;
+           input{
+             color: black;
+           }
+         }
+       }
+      button{
+        font-size: 30px;
+      
+      } 
+     }
+   }
+ }
