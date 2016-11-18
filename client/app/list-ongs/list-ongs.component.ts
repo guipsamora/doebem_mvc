@@ -1,6 +1,8 @@
 const angular=require('angular');
 const ngRoute=require('angular-route');
 import routing from './list-ongs.routes';
+import contactForm from '../../components/contact-form/contact-form.component';
+
 export class ListOngsController {
   $http;
   $scope;
@@ -21,15 +23,15 @@ export class ListOngsController {
     this.listOngToDisplay;
 
     this.listOng=[ {
-      nome: 'Exemplo 1', areaDeAtuacao: 'Educacao', desc: 'Bla Bla Bla Bla Bla Bla', logo: '../../assets/images/educacao/gauss/logo-gauss.png', localidades: 'Rio de Janeiro'
+      nome: 'Exemplo 1', areaDeAtuacao: 'educacao', desc: 'Bla Bla Bla Bla Bla Bla', logo: '../../assets/images/educacao/gauss/logo-gauss.png', localidades: 'Rio de Janeiro'
     }
     ,
     {
-      nome: 'Exemplo 2', areaDeAtuacao: 'Saude', desc: 'Bla Bla Bla Bla Bla Bla', logo: '../../assets/images/educacao/gauss/logo-gauss.png', localidades: 'São Paulo'
+      nome: 'Exemplo 2', areaDeAtuacao: 'saude', desc: 'Bla Bla Bla Bla Bla Bla', logo: '../../assets/images/educacao/gauss/logo-gauss.png', localidades: 'São Paulo'
     }
     ,
     {
-      nome: 'Exemplo 3', areaDeAtuacao: 'CombateAPobreza', desc: 'Bla Bla Bla Bla Bla Bla', logo: '../../assets/images/educacao/gauss/logo-gauss.png', localidades: 'Rio de Janeiro - São Paulo'
+      nome: 'Exemplo 3', areaDeAtuacao: 'combateAPobreza', desc: 'Bla Bla Bla Bla Bla Bla', logo: '../../assets/images/educacao/gauss/logo-gauss.png', localidades: 'Rio de Janeiro - São Paulo'
     }
     ]; 
 
@@ -57,17 +59,17 @@ export class ListOngsController {
   setPageFilter() {
     switch(this.$routeParams.filterCausa) {
 
-      case 'Saude':
+      case 'saude':
         this.pageTitle='Saúde';
         this.pageImage='./assets/images/saude/2.png';
          this.listOngFilterToDisplay()
         break;
-      case 'CombateAProbreza': 
+      case 'combateAProbreza': 
         this.pageTitle='Combate a Pobreza';
         this.pageImage='./assets/images/combate_pobreza/1.png';
         this.listOngFilterToDisplay()
         break;
-      case 'Educacao': 
+      case 'educacao': 
         this.pageTitle='Educação';
         this.pageImage='./assets/images/educacao/lousa_edu3.jpg';
         this.listOngFilterToDisplay()
@@ -89,7 +91,7 @@ export class ListOngsController {
 
 }
 
-export default angular.module('doebemOrgApp.listOngs', [ ngRoute]) .config(routing) .component('listOngs', {
+export default angular.module('doebemOrgApp.listOngs', [ ngRoute, contactForm]) .config(routing) .component('listOngs', {
   template: require('./list-ongs.pug'), controller: ListOngsController
 }) 
 .name;
