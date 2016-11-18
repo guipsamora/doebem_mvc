@@ -57,17 +57,17 @@ export class ListOngsController {
   setPageFilter() {
     switch(this.$routeParams.filterCausa) {
 
-      case 'Saude':
+      case 'saude':
         this.pageTitle='Saúde';
         this.pageImage='./assets/images/saude/2.png';
          this.listOngFilterToDisplay()
         break;
-      case 'CombateAProbreza': 
+      case 'combateAPobreza': 
         this.pageTitle='Combate a Pobreza';
         this.pageImage='./assets/images/combate_pobreza/1.png';
         this.listOngFilterToDisplay()
         break;
-      case 'Educacao': 
+      case 'educacao': 
         this.pageTitle='Educação';
         this.pageImage='./assets/images/educacao/lousa_edu3.jpg';
         this.listOngFilterToDisplay()
