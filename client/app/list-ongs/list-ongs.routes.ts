@@ -11,7 +11,6 @@ export default function routes($routeProvider) {
     })
     .otherwise({
           redirectTo: '/listOngs'
-        });;
-
+    });
 };
 

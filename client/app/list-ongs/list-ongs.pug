@@ -9,11 +9,15 @@ div#ListOngs
         md-list#listOngs(flex="100" layout-gt-sm="row" layput="column")
           md-list-item(ng-repeat="ong in $ctrl.listOngToDisplay " layout="column"  layout-align="center center")
             md-card
-              img.md-card-image(ng-src="{{ong.logo}}" )
               md-card-title
                 md-card-title-text(layout-align="center center")
                   h1 {{ong.nome}} 
+<<<<<<< HEAD
                   p Atuando em: {{ong.localidades}}
+=======
+              img.md-card-image(ng-src="{{ong.logo}}" )
+              md-card-content
+>>>>>>> 241a5f7795d2082a40799bf2467201ec014e8a56
                   p {{ong.desc}}
-              md-action(layout = "row" layout-align="center center")
-                md-button.md-raised.md-primary Apoiar
+            md-action(layout = "row" layout-align="center center")
+              md-button.md-raised.md-primary Apoiar

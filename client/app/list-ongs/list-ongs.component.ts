@@ -46,6 +46,23 @@ export class ListOngsController {
     }
     ];
 
+<<<<<<< HEAD
+=======
+    this.listOngFilters = [
+      {
+        title: 'Educação',
+        image: './assets/images/educacao/lousa_edu3.jpg'
+      },
+      {
+        title: 'CombateAPobreza',
+        image: './assets/images/combate_pobreza/1.png'
+      },
+      {
+        title: 'Saude',
+        image: './assets/images/saude/2.png'
+      }
+    ]
+>>>>>>> 241a5f7795d2082a40799bf2467201ec014e8a56
   }
 
   $onInit() {
@@ -54,6 +71,7 @@ export class ListOngsController {
 
   setPageFilter() {
     switch(this.$routeParams.filterCausa) {
+<<<<<<< HEAD
       case 'Saude':
         this.pageTitle='Saúde';
         this.pageImage='./assets/images/saude/2.png';
@@ -68,6 +86,19 @@ export class ListOngsController {
         this.pageTitle='Educação';
         this.pageImage='./assets/images/educacao/lousa_edu3.jpg';
         this.listOngFilterToDisplay()
+=======
+      case 'saude':
+        this.pageTitle = 'Saúde';
+        this.pageImage = './assets/images/saude/2.png';
+        break;
+      case 'combate_a_probreza':
+        this.pageTitle = 'Combate à Pobreza';
+        this.pageImage = './assets/images/combate_pobreza/1.png';
+        break;
+      case 'educacao':
+        this.pageTitle = 'Educação';
+        this.pageImage = './assets/images/educacao/lousa_edu3.jpg';
+>>>>>>> 241a5f7795d2082a40799bf2467201ec014e8a56
         break;
       default: 
         this.pageTitle='Ongs que apoiamos';
