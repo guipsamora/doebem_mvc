@@ -1,16 +1,19 @@
 div#menu {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Condensed", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
     border: 0px;
   background-color: black;
+  height: 70px;
+  font-size:20px;
+  font-weight: 600;
+  padding: 10px 0px 10px 0px;
+  color: white;
   div.container div#navbar-main {
       background-color: transparent;
       ul li a {
           background-color: transparent;
-
       }
-  }
-  
+  } 
 }
 
 div#menu.mainPageMenu {
@@ -20,8 +23,17 @@ div#menu.mainPageMenu {
               color: white;
           }
      }
+}
 
-  }
+img.navbar-brand {
+    padding: 0 0 0 0;
+    width: 145px;
+    height: 35px;
+}
+
+div#navbar-main.navbar-collapse.collapse {
+    height: 70px;
+}
 
 
   .menuAnchor:hover {
