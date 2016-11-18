@@ -18,7 +18,9 @@
          background-color: transparent;
          md-input-container {
            background-color: white;
+           opacity: 0.9;
            input{
+              opacity: 1;
              color: black;
            }
          }

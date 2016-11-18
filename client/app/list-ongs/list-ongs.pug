@@ -4,7 +4,6 @@ div#listOngs
   .container        
     md-content#mainListOngs(layout="column" flex="100")
       md-content#lista(flex = "100" layout="column" layout-align="center center")
-        H2.sectionHeading {{$ctrl.pageTitle}}
         h3 Abaixo estão as ONGs que mais se destacaram em nossos critérios de avaliação.
         md-list#listOngs(flex="100" layout-gt-sm="row" layput="column")
           md-list-item(ng-repeat="ong in $ctrl.listOngToDisplay " layout="column"  layout-align="center center")
