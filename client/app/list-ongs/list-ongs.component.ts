@@ -64,7 +64,7 @@ export class ListOngsController {
         this.pageImage='./assets/images/saude/2.png';
          this.listOngFilterToDisplay()
         break;
-      case 'combateAProbreza': 
+      case 'combateAPobreza': 
         this.pageTitle='Combate a Pobreza';
         this.pageImage='./assets/images/combate_pobreza/1.png';
         this.listOngFilterToDisplay()

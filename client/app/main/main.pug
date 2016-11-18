@@ -64,7 +64,7 @@ div#main
             md-input-container.md-block(flex-gt-sm)
               label Mensagem
               textarea(ng-model="user.Mensagem" columns="1")   
-        md-button(type="submit") Enviar 
+        md-button#envioForm(type="submit" layout-align="center") Enviar 
   script(type="text/ng-template" id="img.tmpl.pug")
     div
-      img( ng-src="{{slideItem.src}}")
+      img(ng-src="{{slideItem.src}}")
