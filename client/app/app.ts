@@ -22,6 +22,7 @@ import footer from '../components/footer/footer.component';
 import contactForm from '../components/contact-form/contact-form.component';
 import main from './main/main.component';
 import listOngs from './list-ongs/list-ongs.component';
+import sobre from './sobre/sobre.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
@@ -47,6 +48,7 @@ angular.module('doebemOrgApp', [
   main,
   listOngs,
   contactForm,
+  sobre,
   constants,
   socket,
   util

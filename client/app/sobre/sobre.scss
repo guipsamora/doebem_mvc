@@ -1,0 +1,48 @@
+div#sobre {
+  div#pageHeader {
+    background-image: url('/assets/images/sobre/sobre.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    min-height: 80vh;
+    background-position: top center;
+    h2 {
+      color: white;
+      font-size: 70px;
+    }
+  }
+
+  md-content#mainSobre{
+    padding-top: 5%;
+  }
+
+  md-content#Time {
+    padding-top: 5%;
+    padding-bottom: 7%;
+    h1 {
+      font-size: 70px;
+      padding-bottom: 5%;
+    }
+    md-card {
+      padding-left:  10%;
+      padding-right:  10%;
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
+      border-style: none;
+      img {
+        border-radius: 50% 50%;
+        width: 250px;
+        padding: 10px;
+      }
+      md-card-actions {
+        a button {
+          font-size: 20px;
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+  }
+}

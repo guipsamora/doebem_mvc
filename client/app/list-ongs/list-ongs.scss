@@ -12,15 +12,16 @@ div#pageHeader {
     min-height: 80vh;
     background-position: top center;
   }
-.container {
-  padding-top: 2%;
+
+ 
    md-content#mainListOngs {
+      padding-top: 2%;
       md-content#lista{
         h3 {
+          text-align: center;
           font-size: 30px;
         }
       }
    }
 }
 
-}

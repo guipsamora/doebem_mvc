@@ -1,11 +1,11 @@
 div#listOngs
   div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url({{$ctrl.pageImage}})'}")
     h2 {{$ctrl.pageTitle}}
-  .container        
-    md-content#mainListOngs(layout="column" flex="100")
-      md-content#lista(flex = "100" layout="column" layout-align="center center")
-        h3 Abaixo estão as ONGs que mais se destacaram em nossos critérios de avaliação.
-        md-list#listOngs(flex="100" layout-gt-sm="row" layput="column")
+  md-content#mainListOngs(layout="column" flex="100")
+    md-content#lista(flex = "100" layout="column" layout-align="center center")
+      h3 Abaixo estão as ONGs que mais se destacaram em nossos critérios de avaliação.
+      .container
+        md-list#listOngs(flex="100" layout-gt-sm="row" layout="column")
           md-list-item(ng-repeat="ong in $ctrl.listOngToDisplay " layout="column"  layout-align="center center")
             md-card
               md-card-title
