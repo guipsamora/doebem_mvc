@@ -26,9 +26,9 @@ export class MainController {
     ];
 
     this.causas = [
-      {title: 'Educação', image:'../../assets/images/portfolio/education.jpg', link: '/listOngs/Educação' },
-      {title: 'Saúde', image:'../../assets/images/portfolio/healthcare.png', link: '/listOngs/Saude' },
-      {title: 'Combate à Pobreza', image:'../../assets/images/portfolio/poverty.png', link: '/listOngs/CombateAPobreza' }
+      {title: 'Educação', image:'../../assets/images/portfolio/education.jpg', link: '/listOngs/educacao' },
+      {title: 'Saúde', image:'../../assets/images/portfolio/healthcare.png', link: '/listOngs/saude' },
+      {title: 'Combate à Pobreza', image:'../../assets/images/portfolio/poverty.png', link: '/listOngs/combateAPobreza' }
     ];    
 
     this.stepOptions = [{
