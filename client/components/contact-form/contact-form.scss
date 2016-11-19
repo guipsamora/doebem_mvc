@@ -17,14 +17,16 @@
          padding-right: 2%;
          background-color: transparent;
          md-input-container {
+           border-radius: 5px;
            background-color: white;
            opacity: 0.9;
            input{
               opacity: 1;
-             color: black;
+              color: black;
            }
          }
        }
+
       button{
         font-size: 30px;
       
