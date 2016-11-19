@@ -65,36 +65,7 @@ export default angular.module('directives.navbar', [ngMaterial])
 
         // This scrolling function 
         // is from http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
-        
-        var startY = currentYPosition();
-        var stopY = elmYPosition(eID);
-        var distance = stopY > startY ? stopY - startY : startY - stopY;
 
-        console.log("eID is:" + eID);
-        console.log("Speed is:" + speed);
-        console.log("Speed is:" + speed);
-        console.log("Speed is:" + speed);
-        if (distance < 100) {
-            scrollTo(0, stopY);
-            return;
-        }
-        var speed = Math.round(distance / 100);
-        if (speed >= 20) speed = 20;
-        var step = Math.round(distance / 25);
-        var leapY = stopY > startY ? startY + step : startY - step;
-        var timer = 0;
-        console.log("Speed is:" + speed);
-        if (stopY > startY) {
-            for ( var i=startY; i<stopY; i+=step ) {
-                setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-                leapY += step; if (leapY > stopY) leapY = stopY; timer++;
-            } return;
-        }
-        for ( var i=startY; i>stopY; i-=step ) {
-            setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-            leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
-        }
-        
         function currentYPosition() {
             // Firefox, Chrome, Opera, Safari
             if (self.pageYOffset) return self.pageYOffset;
@@ -105,9 +76,10 @@ export default angular.module('directives.navbar', [ngMaterial])
             if (document.body.scrollTop) return document.body.scrollTop;
             return 0;
         }
+
         //pega a posicao vertical do elemento
         function elmYPosition(eID) {
-          //dfine o elemento
+          //define o elemento
             var elm = document.getElementById(eID);
             //pega a posiçao em relacao ao topo
             var y = elm.offsetTop;
@@ -116,8 +88,47 @@ export default angular.module('directives.navbar', [ngMaterial])
             while (node.offsetParent && node.offsetParent != document.body) {
                 node = node.offsetParent;
                 y += node.offsetTop;
-            } return y;
+            } 
+            return y;
         }
+
+        var startY = currentYPosition();
+        var stopY = elmYPosition(eID);
+        var distance = stopY > startY ? stopY - startY : startY - stopY;
+
+        console.log("eID is: " + eID);
+        console.log("startY is: " + startY);
+        console.log("stopY is: " + stopY);
+        console.log("distance is: " + distance);
+        
+        if (distance < 100) {
+            scrollTo(0, stopY);
+            return;
+        }
+        // var speed = Math.round(distance / 100);
+        // if (speed >= 20) speed = 20;
+        // speed = 1;
+        var step = Math.round(distance / 25);
+        var leapY = stopY > startY ? startY + step : startY - step;
+        var timer = 800;
+        // console.log("Speed is:" + speed);
+        if (stopY > startY) {
+            for (var i = startY; i < stopY; i += step ) {
+                setTimeout("window.scrollTo(0, "+leapY+")", timer);
+                leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+            } 
+            return;
+        }
+
+        for ( var i = startY; i > stopY; i -= step ) {
+            setTimeout("window.scrollTo(0, "+leapY+")", timer);
+            leapY -= step; 
+            if (leapY < stopY) leapY = stopY; 
+            timer++;
+        }
+        
+
+
 
     };
     
