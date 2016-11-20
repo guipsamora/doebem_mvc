@@ -1,6 +1,6 @@
 'use strict';
 const angular = require('angular');
-const ngRoute = require('angular-route'); 
+const ngRoute = require('angular-route');
 
 
 import routing from './account.routes';

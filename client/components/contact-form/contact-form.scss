@@ -1,4 +1,4 @@
- md-content#contactForm {
+  div#contactForm {
    color: white;
    background-image: url("/assets/images/map-image.png");
    background-repeat: no-repeat;
@@ -12,8 +12,8 @@
        padding-bottom: 3%;
        text-align: center;
      }
-     form div {
-       md-content {
+     md-form div {
+       div {
          padding-right: 2%;
          background-color: transparent;
          md-input-container {

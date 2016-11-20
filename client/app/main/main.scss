@@ -23,25 +23,24 @@ div#main {
           border-color: #ffffff;
           width: 15px;
           height: 15px;
-          border-size: 1px;
+          border-width: 1px;
         }
       }
     }
   }
-  md-content#mainPage {
+  div#mainPage {
     .sectionHeading {
       font-size: 60px;
       margin-bottom: 15px;
     }
-    md-content#comoFunciona {
+    div#comoFunciona {
       text-align: center;
       height: 100%;
       width: 100%;
       display: block;
-      padding-top: 70px;
       padding-bottom: 70px;
       background-color: white;
-      md-list#actions {
+      md-list {
         md-list-item {
           div#escolha {
             span {
@@ -53,16 +52,14 @@ div#main {
         }
       }
     }
-    md-content#causas {
+    div#causas {
       text-align: center;
       height: 100%;
       width: 100%;
-      padding-top: 70px;
       padding-bottom: 70px;
 
     }
-    md-content#metodologia {
-      padding-top: 70px;
+    div#metodologia {
       padding-bottom: 70px;
       min-height: 300px;
       @include respond-to(screen-sm) {
@@ -70,40 +67,19 @@ div#main {
         text-align: center;
       }
     }
-    md-content#subPage {
-      padding-top: 70px;
+    div#subPage {
       padding-bottom: 70px;
       min-height: 250px;
-      md-content#sobre {
+      div#sobre {
         color: white;
         background-image: url("/assets/images/sobre/sobre.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: top center;
+        a {
+           color: white;
+        }
       }
-    }
-    
+    }  
   }
-  md-content#contato {
-      padding-top: 70px;
-      padding-bottom: 70px;
-      color: white;
-      background-image: url("/assets/images/map-image.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-color: #7e7e7e;
-      background-position: top center;
-    }
-  
-  button#envioForm {
-      font-size: 20px;
-      color: #7e7e7e;
-      background-color: white;
-      width: 50px;
-      position: relative;
-
-      text-align: center;
-
-  }
-
 }
