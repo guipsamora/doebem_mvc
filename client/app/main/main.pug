@@ -37,14 +37,14 @@ div#main
       md-content#metodologia(flex="100" layout="column" layout-align="center start") 
         h2.sectionHeading Metodologia
         h3 Baseamos nossa metodologia de análise no movimento Effective Altruism.
-        h3 Clique aqui para conhecer mais sobre nossos critérios e processo de análise.
-      md-content#subPage(layout-gt-sm ="row" layout="column" )   
-        md-content#sobre(flex="50" layout="column" layout-align="top start") 
-          h2.sectionHeading Sobre
-          h4 Conheça quem somos e o que nos motiva.
-        md-content#blog(flex="50" layout="column" layout-align="top start") 
-          h2.sectionHeading Blog
-          h4 Aqui compartilhamos análises, estudos dessa jornada.
+        h3#metodologia Clique aqui para conhecer mais sobre nossos critérios e processo de análise.
+        md-content#subPage(layout-gt-sm ="row" layout="column" )   
+          md-content#sobre(flex="50") 
+            h2.sectionHeading Sobre
+            h4 Conheça quem somos e o que nos motiva.
+          md-content#blog(flex="50") 
+            h2.sectionHeading Blog
+            h4 Aqui compartilhamos análises, estudos dessa jornada.
   contact-form
   script(type="text/ng-template" id="img.tmpl.pug")
     div

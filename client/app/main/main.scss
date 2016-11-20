@@ -29,10 +29,13 @@ div#main {
     }
   }
   md-content#mainPage {
+    background-color: #eeeeee;
+    
     .sectionHeading {
       font-size: 60px;
       margin-bottom: 15px;
     }
+
     md-content#comoFunciona {
       text-align: center;
       height: 100%;
@@ -41,6 +44,7 @@ div#main {
       padding-top: 70px;
       padding-bottom: 70px;
       background-color: white;
+    
       md-list#actions {
         md-list-item {
           div#escolha {
@@ -53,6 +57,7 @@ div#main {
         }
       }
     }
+
     md-content#causas {
       text-align: center;
       height: 100%;
@@ -63,17 +68,18 @@ div#main {
     }
     md-content#metodologia {
       padding-top: 70px;
-      padding-bottom: 70px;
+      /*padding-bottom: 70px;*/
       min-height: 300px;
+      height: 587px;
+      background-color: white;
       @include respond-to(screen-sm) {
         padding: 40px;
         text-align: center;
       }
     }
-    md-content#subPage {
-      padding-top: 70px;
-      padding-bottom: 70px;
-      min-height: 250px;
+    md-content#subPage {      
+      min-height: 225px;
+      width: 100%;
       md-content#sobre {
         color: white;
         background-image: url("/assets/images/sobre/sobre.png");
@@ -84,6 +90,12 @@ div#main {
     }
     
   }
+
+  h3#metodologia{
+      padding-bottom: 85px;
+
+  }
+
   md-content#contato {
       padding-top: 70px;
       padding-bottom: 70px;
@@ -93,7 +105,7 @@ div#main {
       background-size: cover;
       background-color: #7e7e7e;
       background-position: top center;
-    }
+  }
   
   button#envioForm {
       font-size: 20px;
@@ -101,7 +113,6 @@ div#main {
       background-color: white;
       width: 50px;
       position: relative;
-
       text-align: center;
 
   }
