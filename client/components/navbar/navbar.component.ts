@@ -80,21 +80,19 @@ export default angular.module('directives.navbar', [ngMaterial])
             return 0;
         }
 
-        //pega a posicao vertical do elemento
-        function elmYPosition(eID) {
-          //define o elemento
-            var node: HTMLElement;
-            var elm: HTMLElement;
-
-            elm = document.getElementById(eID);
+        //pega a posicao vertical do elemento em relação ao documento body
+        function elmYPosition(eID) {  
+            var elm = document.getElementById(eID);
             //pega a posiçao em relacao ao topo
             var y = elm.offsetTop;
             //passa o elemento
-            node = elm;
+            var node = elm;
             while (node.offsetParent && node.offsetParent !== document.body) {
                 //aqui que esta a burrada////
-
-                node = node.offsetParent;
+                //resolvi passando o Id para string e depois buscando o elemento novamente 
+                //node = node.offsetParent;
+                var id = node.offsetParent.id;
+                node =  document.getElementById(id)
                 y += node.offsetTop;
             }
             return y;
