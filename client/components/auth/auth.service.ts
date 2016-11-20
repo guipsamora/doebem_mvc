@@ -1,5 +1,7 @@
 'use strict';
 // @flow
+var _ = require('lodash');
+
 class _User {
   _id: string = '';
   name: string = '';

@@ -7,45 +7,45 @@ div#main
           max-width="2000" 
           max-height="1300"
           auto-slide="true"
-          auto-slide-time="3000")
-                 
-    md-content#mainPage(layout="column" flex="100")
-      md-content#comoFunciona(flex = "100" layout="column" layout-align="center center")
-        h2.sectionHeading(flex = "100") Como Funciona
-        p A DoeBem surgiu com o objetivo de tornar o processo de doações financeiras mais simples, seguro e efetivo.
-        p Como encontrar uma organização para doar? Como garantir que seu dinheiro será usado da melhor forma possível?
-        p A DoeBem foi fundada para responder essas perguntas e ajudar você a doar melhor.
-        md-list#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
-          md-list-item(ng-repeat="step in $ctrl.stepOptions") 
-              div#escolha(flex layout = "column" layout-align="center center")
-                span.fa-stack.fa-5x
-                  i.fa.fa-circle.fa-stack-2x.text-primary
-                  i#icon.fa.fa-stack-1x(ng-class="step.icon")
-                h2 {{step.title}}
-                p {{step.desc}}
-      md-content#causas(flex = "100" layout="column" layout-align="center center")
-        H2.sectionHeading Causas
-        h3 Selecione uma causa abaixo para conhecer as ONGs recomendadas.
-        md-list#causaActions(flex="100" layout-gt-sm="row" layput="column")
-          md-list-item(ng-repeat="causa in $ctrl.causas" layout="column" layout-align="center center")
-            a(ng-href="{{$location.absUrl() + causa.link}}")
-              md-card
-                img.md-card-image(ng-src="{{causa.image}}" )
-                md-card-title
-                  md-card-title-text(layout-align="center center")
-                    h1 {{causa.title}}
-      md-content#metodologia(flex="100" layout="column" layout-align="center start") 
-        h2.sectionHeading Metodologia
-        h3 Baseamos nossa metodologia de análise no movimento Effective Altruism.
-        h3#metodologia Clique aqui para conhecer mais sobre nossos critérios e processo de análise.
-        md-content#subPage(layout-gt-sm ="row" layout="column" )   
-          md-content#sobre(flex="50") 
-            h2.sectionHeading Sobre
-            h4 Conheça quem somos e o que nos motiva.
-          md-content#blog(flex="50") 
-            h2.sectionHeading Blog
-            h4 Aqui compartilhamos análises, estudos dessa jornada.
-  contact-form
-  script(type="text/ng-template" id="img.tmpl.pug")
+          auto-slide-time="3000")             
+  div#mainPage(layout="column" flex="100")
+    div#comoFunciona(flex = "100" layout="column" layout-align="center center")
+      h2.sectionHeading Como Funciona
+      p A DoeBem surgiu com o objetivo de tornar o processo de doações financeiras mais simples, seguro e efetivo.
+      p Como encontrar uma organização para doar? Como garantir que seu dinheiro será usado da melhor forma possível?
+      p A DoeBem foi fundada para responder essas perguntas e ajudar você a doar melhor.
+      md-list#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
+        md-list-item(ng-repeat="step in $ctrl.stepOptions") 
+            div#escolha(flex layout = "column" layout-align="center center")
+              span.fa-stack.fa-5x
+                i.fa.fa-circle.fa-stack-2x.text-primary
+                i#icon.fa.fa-stack-1x(ng-class="step.icon")
+              h2 {{step.title}}
+              p {{step.desc}}
+    div#causas(flex = "100" layout="column" layout-align="center center")
+      H2.sectionHeading Causas
+      h3 Selecione uma causa abaixo para conhecer as ONGs recomendadas.
+      md-list( layout-gt-sm="row" layput="column")
+        md-list-item(ng-repeat="causa in $ctrl.causas" layout="column" layout-align="center center")
+          a(ng-href="{{$location.absUrl() + causa.link}}")
+            md-card
+              img.md-card-image(ng-src="{{causa.image}}" )
+              md-card-title
+                md-card-title-text(layout-align="center center")
+                  h1 {{causa.title}}
+    div#metodologia(flex="100" layout="column" layout-align="center start") 
+      h2.sectionHeading Metodologia
+      h3 Baseamos nossa metodologia de análise no movimento Effective Altruism.
+      h3 Clique aqui para conhecer mais sobre nossos critérios e processo de análise.
+    div#subPage(layout-gt-sm ="row" layout="column" )   
+      div#sobre(flex="50" layout="column" layout-align="top start")
+        a(href="/sobre") 
+          h2.sectionHeading Sobre
+          h4 Conheça quem somos e o que nos motiva.
+      div#blog(flex="50" layout="column" layout-align="top start") 
+        h2.sectionHeading Blog
+        h4 Aqui compartilhamos análises, estudos dessa jornada.
+contact-form
+script(type="text/ng-template" id="img.tmpl.pug")
     div
       img(ng-src="{{slideItem.src}}")
