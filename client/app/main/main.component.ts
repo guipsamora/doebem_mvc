@@ -17,19 +17,19 @@ export class MainController {
   constructor($http, $scope, socket, $location) {
     this.$http = $http;
     this.$scope = $scope;
-    this.$location = $location;;
+    this.$location = $location;
 
     this.carouselImages = [
-      { src: "../../assets/images/carousel/img_1.jpg"},
-      { src: '../../assets/images/carousel/img_2.jpg' },
-      { src: '../../assets/images/carousel/img_3.jpg' }
+      {src: '../../assets/images/carousel/img_1.jpg'},
+      {src: '../../assets/images/carousel/img_2.jpg'},
+      {src: '../../assets/images/carousel/img_3.jpg'}
     ];
 
     this.causas = [
-      {title: 'Educação', image:'../../assets/images/portfolio/education.jpg', link: '/listOngs/educacao' },
-      {title: 'Saúde', image:'../../assets/images/portfolio/healthcare.png', link: '/listOngs/saude' },
-      {title: 'Combate à Pobreza', image:'../../assets/images/portfolio/poverty.png', link: '/listOngs/combateAPobreza' }
-    ];    
+      {title: 'Educação', image: '../../assets/images/portfolio/education.jpg', link: '/listOngs/educacao' },
+      {title: 'Saúde', image: '../../assets/images/portfolio/healthcare.png', link: '/listOngs/saude' },
+      {title: 'Combate à Pobreza', image: '../../assets/images/portfolio/poverty.png', link: '/listOngs/combateAPobreza' }
+    ];
 
     this.stepOptions = [{
       title: 'Escolha',
@@ -51,11 +51,11 @@ export class MainController {
       desc: 'As notícias sobre o impacto da sua doação.',
       icon: 'fa-envelope-o'
       }
-      ]   
+      ];
   }
 
   $onInit() {
-    
+
   }
 
 }

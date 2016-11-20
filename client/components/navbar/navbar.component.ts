@@ -48,10 +48,8 @@ export class NavbarComponent {
   goToElement(eID) {
     console.log(this.$location.url());
     this.$location.hash(eID);
-    this.anchorSmoothScroll.scrollTo(eID)
+    this.anchorSmoothScroll.scrollTo(eID);
   }
-
-   
 }
 
 export default angular.module('directives.navbar', [ngMaterial])
@@ -60,7 +58,7 @@ export default angular.module('directives.navbar', [ngMaterial])
     controller: NavbarComponent
   })
   .service('anchorSmoothScroll', function(){
-    
+
     this.scrollTo = function(eID) {
 
         // This scrolling function 
@@ -68,27 +66,37 @@ export default angular.module('directives.navbar', [ngMaterial])
 
         function currentYPosition() {
             // Firefox, Chrome, Opera, Safari
-            if (self.pageYOffset) return self.pageYOffset;
+            if (self.pageYOffset) {
+              return self.pageYOffset;
+            }
             // Internet Explorer 6 - standards mode
-            if (document.documentElement && document.documentElement.scrollTop)
+            if (document.documentElement && document.documentElement.scrollTop) {
                 return document.documentElement.scrollTop;
+              }
             // Internet Explorer 6, 7 and 8
-            if (document.body.scrollTop) return document.body.scrollTop;
+            if (document.body.scrollTop) {
+              return document.body.scrollTop;
+            }
             return 0;
         }
 
         //pega a posicao vertical do elemento
         function elmYPosition(eID) {
           //define o elemento
-            var elm = document.getElementById(eID);
+            var node: HTMLElement;
+            var elm: HTMLElement;
+
+            elm = document.getElementById(eID);
             //pega a posiçao em relacao ao topo
             var y = elm.offsetTop;
             //passa o elemento
-            var node = elm;
-            while (node.offsetParent && node.offsetParent != document.body) {
+            node = elm;
+            while (node.offsetParent && node.offsetParent !== document.body) {
+                //aqui que esta a burrada////
+
                 node = node.offsetParent;
                 y += node.offsetTop;
-            } 
+            }
             return y;
         }
 
@@ -96,11 +104,11 @@ export default angular.module('directives.navbar', [ngMaterial])
         var stopY = elmYPosition(eID);
         var distance = stopY > startY ? stopY - startY : startY - stopY;
 
-        console.log("eID is: " + eID);
-        console.log("startY is: " + startY);
-        console.log("stopY is: " + stopY);
-        console.log("distance is: " + distance);
-        
+        console.log('eID is: ' + eID);
+        console.log('startY is: ' + startY);
+        console.log('stopY is: ' + stopY);
+        console.log('distance is: ' + distance);
+
         if (distance < 100) {
             scrollTo(0, stopY);
             return;
@@ -114,24 +122,24 @@ export default angular.module('directives.navbar', [ngMaterial])
         // console.log("Speed is:" + speed);
         if (stopY > startY) {
             for (var i = startY; i < stopY; i += step ) {
-                setTimeout("window.scrollTo(0, "+leapY+")", timer);
-                leapY += step; if (leapY > stopY) leapY = stopY; timer++;
-            } 
+                setTimeout('window.scrollTo(0, ' + leapY + ')', timer);
+                leapY += step;
+                if (leapY > stopY) {
+                  leapY = stopY; timer++;
+                }
+            }
             return;
         }
 
         for ( var i = startY; i > stopY; i -= step ) {
-            setTimeout("window.scrollTo(0, "+leapY+")", timer);
-            leapY -= step; 
-            if (leapY < stopY) leapY = stopY; 
+            setTimeout('window.scrollTo(0, ' + leapY + ')', timer);
+            leapY -= step;
+            if (leapY < stopY) {
+              leapY = stopY;
+            }
             timer++;
         }
-        
-
-
-
     };
-    
-})
+  })
   .name;
 

@@ -2,11 +2,10 @@ const angular = require('angular');
 
 export class ContactFormComponent {
   $mdDialog;
-  dialog;
+  dialog: Function;
   $http;
   $scope;
-  user;
-  
+  user: Object;
 
   constructor($http, $scope, $animate, $mdDialog ) {
     this.$http = $http;
@@ -14,7 +13,7 @@ export class ContactFormComponent {
     this.$mdDialog = $mdDialog;
   }
  
-   sendEmail() {
+  sendEmail() {
     this.$http.post('/api/contactForm', this.user)
       .then(res => {
         this.showDialog();
