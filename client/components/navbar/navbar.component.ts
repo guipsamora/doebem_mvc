@@ -2,12 +2,13 @@
 /* eslint no-sync: 0 */
 const angular = require('angular');
 const ngMaterial = require('angular-material');
+const duScroll = require('angular-scroll')
 
 export class NavbarComponent {
 
   menu = [{
     'title': 'COMO FUNCIONA ',
-    'link': ''
+    'link': 'comoFunciona'
   }, {
     'title': 'CAUSAS ',
     'link': 'causas'
@@ -25,119 +26,50 @@ export class NavbarComponent {
     'link': 'contato'
   }];
 
+  $document;
   $location;
+  duration: number;
+  top: number;
   anchorSmoothScroll;
   isLoggedIn: Function;
   isAdmin: Function;
   getCurrentUser: Function;
   isCollapsed = true;
 
-  constructor($location, Auth,  anchorSmoothScroll) {
+  constructor($location, Auth, $document) {
     'ngInject';
     this.$location = $location;
     this.isLoggedIn = Auth.isLoggedInSync;
     this.isAdmin = Auth.isAdminSync;
     this.getCurrentUser = Auth.getCurrentUserSync;
-    this.anchorSmoothScroll = anchorSmoothScroll;
+    this.top = 400;
+    this.duration = 2000; //milliseconds
+    this.$document = $document;
   }
 
   isActive(route) {
     return route === this.$location.path();
   }
 
-  goToElement(eID) {
-    console.log(this.$location.url());
-    this.$location.hash(eID);
-    this.anchorSmoothScroll.scrollTo(eID);
+   invertedEasingFunction(x) {
+     return 1-x;
   }
+
+  scrollTop() {
+     this.$document.scrollTop(this.top, this.duration)
+  }
+
+scrollToSection(eID) {
+  var section = angular.element(document.getElementById(eID));
+  console.log(section);
+      this.$document.scrollToElementAnimated(section, 70, this.duration)
+    }
 }
 
-export default angular.module('directives.navbar', [ngMaterial])
+export default angular.module('directives.navbar', [ngMaterial, duScroll])
   .component('navbar', {
     template: require('./navbar.pug'),
     controller: NavbarComponent
-  })
-  .service('anchorSmoothScroll', function(){
-
-    this.scrollTo = function(eID) {
-
-        // This scrolling function 
-        // is from http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
-
-        function currentYPosition() {
-            // Firefox, Chrome, Opera, Safari
-            if (self.pageYOffset) {
-              return self.pageYOffset;
-            }
-            // Internet Explorer 6 - standards mode
-            if (document.documentElement && document.documentElement.scrollTop) {
-                return document.documentElement.scrollTop;
-              }
-            // Internet Explorer 6, 7 and 8
-            if (document.body.scrollTop) {
-              return document.body.scrollTop;
-            }
-            return 0;
-        }
-
-        //pega a posicao vertical do elemento em relação ao documento body
-        function elmYPosition(eID) {  
-            var elm = document.getElementById(eID);
-            //pega a posiçao em relacao ao topo
-            var y = elm.offsetTop;
-            //passa o elemento
-            var node = elm;
-            while (node.offsetParent && node.offsetParent !== document.body) {
-                //aqui que esta a burrada////
-                //resolvi passando o Id para string e depois buscando o elemento novamente 
-                //node = node.offsetParent;
-                var id = node.offsetParent.id;
-                node =  document.getElementById(id)
-                y += node.offsetTop;
-            }
-            return y;
-        }
-
-        var startY = currentYPosition();
-        var stopY = elmYPosition(eID);
-        var distance = stopY > startY ? stopY - startY : startY - stopY;
-
-        console.log('eID is: ' + eID);
-        console.log('startY is: ' + startY);
-        console.log('stopY is: ' + stopY);
-        console.log('distance is: ' + distance);
-
-        if (distance < 100) {
-            scrollTo(0, stopY);
-            return;
-        }
-        // var speed = Math.round(distance / 100);
-        // if (speed >= 20) speed = 20;
-        // speed = 1;
-        var step = Math.round(distance / 25);
-        var leapY = stopY > startY ? startY + step : startY - step;
-        var timer = 800;
-        // console.log("Speed is:" + speed);
-        if (stopY > startY) {
-            for (var i = startY; i < stopY; i += step ) {
-                setTimeout('window.scrollTo(0, ' + leapY + ')', timer);
-                leapY += step;
-                if (leapY > stopY) {
-                  leapY = stopY; timer++;
-                }
-            }
-            return;
-        }
-
-        for ( var i = startY; i > stopY; i -= step ) {
-            setTimeout('window.scrollTo(0, ' + leapY + ')', timer);
-            leapY -= step;
-            if (leapY < stopY) {
-              leapY = stopY;
-            }
-            timer++;
-        }
-    };
   })
   .name;
 
