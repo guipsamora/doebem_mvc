@@ -8,6 +8,7 @@ export class SobreController {
   $scope;
   $routeParams;
   listaPessoas = [ ];
+  listaConselheiros = [ ];
 
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams) {
@@ -24,12 +25,14 @@ export class SobreController {
        img: './assets/images/team/2.jpg',
        twitter: '',
        linkedin: ''
-      },
-        {nome: 'Jean P de Rogatis',
-        img: './assets/images/team/2.jpg',
-       twitter: '',
-       linkedin: ''
       }
+    ];
+    this.listaConselheiros = [
+        {nome: 'Jean P de Rogatis',
+         img: './assets/images/team/2.jpg',
+         twitter: '',
+         linkedin: ''
+        }
     ];
   }
 
