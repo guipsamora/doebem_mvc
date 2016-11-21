@@ -34,5 +34,21 @@ div#sobre
                 i.fa.fa-twitter
             a(target='_blank' href='pessoa.linkedin')
               md-button.md-icon-button
-                i.fa.fa-linkedin                                     
+                i.fa.fa-linkedin
+  md-content#Time(layout="column"  flex="100" layout-align="center center")
+    h1 Conselho
+    md-list(flex layout-gt-sm="row" layout="column")
+      md-list-item(ng-repeat="conselheiro in $ctrl.listaConselheiros")
+        md-card(layout="column")
+          img(ng-src="{{conselheiro.img}}")
+          md-card-title(layout="column")
+            md-card-title-text(layout = "column" layout-align="center center")
+              h3 {{conselheiro.nome}}
+          md-card-actions(layout = "row" layout-align="center center")
+            a(target='_blank' href='conselheiro.twitter')
+              md-button.md-icon-button
+                i.fa.fa-twitter
+            a(target='_blank' href='conselheiro.linkedin')
+              md-button.md-icon-button
+                i.fa.fa-linkedin                                   
 contact-form

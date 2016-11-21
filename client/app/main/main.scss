@@ -62,11 +62,14 @@ div#main {
     div#metodologia {
       padding-bottom: 70px;
       min-height: 300px;
+      height: 587px;
+      background-color: white;
       @include respond-to(screen-sm) {
         padding: 40px;
         text-align: center;
       }
     }
+
     div#subPage {
       padding-bottom: 70px;
       min-height: 250px;
