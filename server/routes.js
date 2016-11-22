@@ -12,6 +12,9 @@ export default function(app) {
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
   app.use('/api/contactForm', require('./api/contactForm'));
+  app.use('/api/ong', require('./api/ong'));
+  app.use('/api/busca-cep', require('./api/busca-cep'));
+  
 
   app.use('/auth', require('./auth').default);
 

@@ -61,8 +61,7 @@ export class NavbarComponent {
 
 scrollToSection(eID) {
   var section = angular.element(document.getElementById(eID));
-  console.log(section);
-      this.$document.scrollToElementAnimated(section, 70, this.duration)
+  this.$document.scrollToElementAnimated(section, 70, this.duration)
     }
 }
 

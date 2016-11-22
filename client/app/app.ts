@@ -23,6 +23,7 @@ import contactForm from '../components/contact-form/contact-form.component';
 import main from './main/main.component';
 import listOngs from './list-ongs/list-ongs.component';
 import sobre from './sobre/sobre.component';
+import cadOng from './cad-ong/cad-ong.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
@@ -34,12 +35,9 @@ angular.module('doebemOrgApp', [
   ngCookies,
   ngResource,
   ngSanitize,
-
   'btford.socket-io',
-
   ngRoute,
   uiBootstrap,
-
   _Auth,
   account,
   admin,
@@ -49,6 +47,7 @@ angular.module('doebemOrgApp', [
   listOngs,
   contactForm,
   sobre,
+  cadOng,
   constants,
   socket,
   util

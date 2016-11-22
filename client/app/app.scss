@@ -115,6 +115,8 @@ md-content{
 // Component styles are injected through gulp
 /* inject:scss */
 @import 'admin/admin';
+@import 'cad-ong/cad-ong';
+@import 'cadastro-ong/cad-ong';
 @import 'list-ongs/list-ongs';
 @import 'main/main';
 @import 'sobre/sobre';
