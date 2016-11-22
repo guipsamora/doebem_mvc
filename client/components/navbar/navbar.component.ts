@@ -43,7 +43,7 @@ export class NavbarComponent {
     this.isAdmin = Auth.isAdminSync;
     this.getCurrentUser = Auth.getCurrentUserSync;
     this.top = 400;
-    this.duration = 2000; //milliseconds
+    this.duration = 1500; //milliseconds
     this.$document = $document;
   }
 

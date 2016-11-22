@@ -1,0 +1,38 @@
+div#metodologia {
+  div#pageHeader {
+    background-image: url('/assets/images/metodologia/metodologia.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    min-height: 80vh;
+    background-position: top center;
+    h2 {
+      color: white;
+      font-size: 70px;
+    }
+  }
+
+  div#comoFunciona {
+      text-align: center;
+      padding-right:5%;
+      padding-left: 5%;
+      padding-top: 5%;
+      height: 100%;
+      width: 100%;
+      display: block;
+      padding-bottom: 70px;
+      background-color: white;
+      md-list {
+        md-list-item {
+          div#escolha {
+            span {
+              i#icon {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+  }
+}
