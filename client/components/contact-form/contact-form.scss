@@ -1,17 +1,21 @@
-  div#contactForm {
+div#contactForm {
    color: white;
    background-image: url("/assets/images/map-image.png");
    background-repeat: no-repeat;
    background-size: cover;
    background-color: #7e7e7e;
    background-position: top center;
+   
    .container {
+     padding-bottom: 20px;
+
      h2 {
        font-size: 50px;
        padding-top: 3%;
        padding-bottom: 3%;
        text-align: center;
      }
+     
      md-form div {
        div {
          padding-right: 2%;
@@ -26,13 +30,15 @@
            }
          }
        }
-
-      md-button{
-        font-size: 50px;
-        
-        background-color: #7e7e7e;
-      
-      } 
      }
-   }
- }
+
+     .md-button{
+        font-size: 25px;
+        background-color: white;
+        font-weight: 500;
+        :hover {          
+        }
+      }
+      
+    }
+}
