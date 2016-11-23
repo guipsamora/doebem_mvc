@@ -4,22 +4,30 @@
  */
 'use strict';
 import jsonpatch from 'fast-json-patch';
-import http from 'http';
-var express = require('express');
-var app = express();
+import requestify from 'requestify';
+
+function respondWithResult(res, statusCode) {
+  statusCode = statusCode || 200;
+  return function(entity) {
+    if(entity) {
+      return res.status(statusCode).json(entity);
+    }
+    return null;
+  };
+}
 
 
-// Gets a add frm a cep
+// Gets a cep
 export function show(req, res) {
   var options = {
     host: 'apps.widenet.com.br',
     port: 80,
     path: `/busca-cep/api/cep/${req.params.id}.json`
   }
-  console.log(options);
-  app.get(options, (req, res) => {
-      console.log(res)
-  }
+  
+  requestify.get(`http://apps.widenet.com.br/busca-cep/api/cep/${req.params.id}.json`)
+    //.then(res => response.getBody)
+    .then(respondWithResult(res, res.code))
    
-  )}
+}
 
