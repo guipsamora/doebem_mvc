@@ -32,15 +32,23 @@ div#main {
     .sectionHeading {
       font-size: 60px;
       margin-bottom: 15px;
+      padding-top: 20px;
     }
     div#comoFunciona {
       text-align: center;
       height: 100%;
       width: 100%;
       display: block;
-      padding-bottom: 70px;
+      padding-bottom: 30px;
       background-color: white;
+
+      p#comoFunciona {
+        padding-top: 15px;
+      }
+
+
       md-list {
+        padding-top: 60px;
         md-list-item {
           div#escolha {
             span {
@@ -56,12 +64,12 @@ div#main {
       text-align: center;
       height: 100%;
       width: 100%;
-      padding-bottom: 70px;
+      padding-bottom: 30px;
 
     }
     
     div#metodologia {
-      padding-bottom: 70px;
+      padding-bottom: 30px;
       min-height: 300px;
       height: 587px;
       background-color: white;
@@ -72,7 +80,7 @@ div#main {
     }
 
     div#subPage {
-      padding-bottom: 70px;
+      padding-bottom: 30px;
       min-height: 250px;
       div#sobre {
         color: white;
