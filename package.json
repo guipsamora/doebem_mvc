@@ -7,6 +7,7 @@
     "angular-animate": "~1.5.5",
     "angular-aria": "~1.5.5",
     "angular-cookies": "~1.5.5",
+    "angular-input-masks": "^2.5.0",
     "angular-jk-carousel": "^0.1.6",
     "angular-material": "^1.1.1",
     "angular-resource": "~1.5.5",

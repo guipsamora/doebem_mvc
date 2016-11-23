@@ -1,48 +1,65 @@
-div#cadOng(layout="column" layout-align="center center")
+div.layout-padding#cadOng(layout="column" layout-align="center center")
   h1 Cadastre aqui sua ONG
   .container(layout = "row" )
-    div#list(flex="25")
-      md-list
-        md-list-item(ng-repeat="ong in $ctrl.listOng")
-          h3 {{ong.nome}}
-    div#form(flex="75")
-      h2.sectionHeading Cadastro
+    div#form(flex="100")
       div(layout="column" flex="100")
         form(name="ongForm" layout="column" ng-submit="$ctrl.addOng($ctrl.ongForm)")
-          div(layout="column" layout-gt-sm="row" flex="100" )
-            div#info(layout="column" flex="100")
-              md-input-container.md-block(flex-gt-sm)
+          div(layout="row" layout-gt-sm="column" flex="100" )
+            div#info(layout="row" flex="100")
+              md-input-container.md-block.md-icon-float(flex-gt-sm)
+                md-icon
+                  i.fa.fa-user  
                 label Nome Fantasia
-                input(ng-model="$ctrl.ongForm.nomeFantasia" required)
+                input(ng-model="$ctrl.ongForm.nomeFantasia" required)         
               md-input-container.md-block(flex-gt-sm)
                 label Razão Social
                 input(ng-model="$ctrl.ongForm.razaoSocial" required)
-              md-input-container.md-block(flex-gt-sm)
+              md-input-container.md-block(flex-gt-sm flex="20")
                 label CNPJ
-                input(ng-model="$ctrl.ongForm.cnpj" required)  
+                input(ng-model="$ctrl.ongForm.cnpj" ui-br-cnpj-mask required)  
+            div#info(layout="row" flex="100")    
               md-input-container.md-block(flex-gt-sm)
-                label End
-                input(ng-model="$ctrl.ongForm.end" required) 
-              md-input-container.md-block(flex-gt-sm)
+                md-icon
+                  i.fa.fa-phone   
+                input(type="text" ng-model="$ctrl.ongForm.telefone"  placeholder="Telefone" ui-br-phone-number ng-required="true")  
+              md-input-container.md-block(md-no-float flex-gt-sm)
+                md-icon
+                  i.fa.fa-envelope   
+                input(type="email" ng-model="$ctrl.ongForm.email" placeholder="Email" required)                              
+            div#End(layout="row" flex="100")   
+              md-input-container.md-block.md-icon-float(flex-gt-sm flex="15")
+                md-icon
+                  i.fa.fa-search  
+                label Cep
+                input(ng-model="$ctrl.ongForm.cep" ui-br-cep-mask  required)          
+              md-input-container.md-block(flex-gt-sm flex="35")
+                label Logradouro
+                input(ng-model="$ctrl.ongForm.logradouro" required) 
+                md-icon
+                  i.fa.fa-map-marker  
+              md-input-container.md-block(flex-gt-sm flex="10")
+                label num
+                input(ng-model="$ctrl.ongForm.num" required) 
+                md-icon
+                  i.fa.fa-map-marker        
+              md-input-container.md-block(flex-gt-sm flex="20")
                 label Cidade 
                 input(ng-model="$ctrl.ongForm.cidade" required)   
-              md-input-container.md-block(flex-gt-sm)
+              md-input-container.md-block(flex-gt-sm flex="10")
                 label Estado
                 md-select(ng-model="$ctrl.ongForm.uf" )  
                   md-option(ng-repeat="state in $ctrl.states" value="{{state.Sigla}}")
-                   span {{state.Nome}}
+                  span {{state.Nome}}
+            div.md-padding#info(layout="row" flex="100")          
               md-input-container.md-block(flex-gt-sm)
-                label Cep
-                input(ng-model="$ctrl.ongForm.cep" required)     
-              md-input-container.md-block
                 label Area de Atuação
                 md-select(ng-model="$ctrl.ongForm.areaDeAtuacao" )  
                   md-option(ng-repeat="area in $ctrl.listAreasDeAtuacao" value="{{area.abbrev}}")
-                   span {{area.desc}}
-              md-input-container.md-block
+                  span {{area.desc}}
+              md-input-container.md-block(flex-gt-sm)
                 label Logo
                 input(ng-model="$ctrl.ongForm.logo" required)      
-            div#desc(layout="$ctrl.column" flex="100")
+            div.padding#desc(layout="$ctrl.column" flex="100")
               md-input-container.md-block(flex-gt-sm)
                 label Desc
                 textarea(ng-model="$ctrl.ongForm.desc" columns="1")
