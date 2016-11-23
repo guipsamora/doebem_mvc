@@ -2,6 +2,7 @@ const angular = require('angular');
 const ngRoute = require('angular-route');
 import routing from './cad-ong.routes';
 
+
 export class CadOngController {
   $http;
   $scope;
@@ -41,7 +42,10 @@ export class CadOngController {
   }
 }
 
-export default angular.module('doebemOrgApp.cadOng', [ ngRoute]) .config(routing) .component('cadOng', {
-  template: require('./cad-ong.pug'), controller: CadOngController
-})
-.name;
+export default angular.module('doebemOrgApp.cadOng', [ngRoute, require('angular-input-masks')])
+  .config(routing)
+  .component('cadOng',
+  {template: require('./cad-ong.pug'), controller: CadOngController
+  })
+  .name;
+

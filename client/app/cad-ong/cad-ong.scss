@@ -1,0 +1,32 @@
+div#cadOng {
+  background-color: lightslategray;
+  background-image: url('/assets/images/map-image.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  div#form {
+    background-color: white;
+    color: white;
+    div form div div
+     md-input-container {
+      border-radius: 2%;
+      margin-bottom: -10px;
+      background-color: white;
+      color: black;
+      //font-size: 20px;
+      label {
+        color: black;
+      }
+      md-icon  {
+        font-size: 20px;
+        i.fa.fa-phone {
+          color: blue;
+        }
+
+          i.fa.fa-search  {
+          color: red;
+        }
+
+      }
+    }
+  }
+}
