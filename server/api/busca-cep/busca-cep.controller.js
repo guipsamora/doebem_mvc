@@ -24,7 +24,8 @@ export function show(req, res) {
     port: 80,
     path: `/busca-cep/api/cep/${req.params.id}.json`
   }
-  
+  console.log(req.params.id);
+
   requestify.get(`http://apps.widenet.com.br/busca-cep/api/cep/${req.params.id}.json`)
     //.then(res => response.getBody)
     .then(respondWithResult(res, res.code))

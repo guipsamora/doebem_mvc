@@ -31,10 +31,10 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
                 md-icon
                   i.fa.fa-search  
                 label Cep
-                input(ng-model="$ctrl.ongForm.cep" ui-br-cep-mask  required)          
+                input(ng-model="$ctrl.ongForm.cep" ui-br-cep-mask ng-blur="$ctrl.buscaEnd($ctrl.ongForm.cep)" required)          
               md-input-container.md-block(flex-gt-sm flex="35")
                 label Logradouro
-                input(ng-model="$ctrl.ongForm.logradouro" required) 
+                input(type = "text" ng-model="$ctrl.ongForm.logradouro" required blocked) 
                 md-icon
                   i.fa.fa-map-marker  
               md-input-container.md-block(flex-gt-sm flex="10")
@@ -65,20 +65,4 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
                 textarea(ng-model="$ctrl.ongForm.desc" columns="1")
           div(flex="10")         
             md-button.md-raized.md-primary(type="submit") Cadastrar 
-
-script(type="text/ng-template" id="dialogEmailSend.tmpl.pug")
-  md-dialog(aria-label="emailSend")
-    form(ng-cloak)
-      md-toolbar
-        div.md-toolbar-tools
-          h2 Email Enviado!
-          span(flex)
-          md-button.md-icon-button(aria-label="md-button ok", ng-click="cancel()")
-            md-icon
-              ng-md-icon.name(icon="close" style="fill: white")
-      md-dialog-content
-        div.md-dialog-content
-          h2 Obrigado pela sua mensagem! {{$ctrl.user.fistName}}
-      md-dialog-actions(layout="row")
-        span(flex)
-         md-button(ng-click="cancel()") Ok         
+  
