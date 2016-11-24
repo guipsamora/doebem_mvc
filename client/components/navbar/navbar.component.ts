@@ -51,7 +51,7 @@ export class NavbarComponent {
     return route === this.$location.path();
   }
 
-   invertedEasingFunction(x) {
+  invertedEasingFunction(x){
      return 1-x;
   }
 
@@ -71,4 +71,3 @@ export default angular.module('directives.navbar', [ngMaterial, duScroll])
     controller: NavbarComponent
   })
   .name;
-
