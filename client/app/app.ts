@@ -4,16 +4,13 @@ const angular = require('angular');
 const ngCookies = require('angular-cookies');
 const ngResource = require('angular-resource');
 const ngSanitize = require('angular-sanitize');
-import 'angular-socket-io';
 const ngRoute = require('angular-route');
-
 const uiBootstrap = require('angular-ui-bootstrap');
+
 // const ngMessages = require('angular-messages');
 // import ngValidationMatch from 'angular-validation-match';
 
-
 import {routeConfig} from './app.config';
-
 import _Auth from '../components/auth/auth.module';
 import account from './account';
 import admin from './admin';
@@ -29,7 +26,7 @@ import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
 
-
+import 'angular-socket-io';
 import './app.scss';
 
 angular.module('doebemOrgApp', [
@@ -65,6 +62,8 @@ angular.module('doebemOrgApp', [
         }
       });
     });
+    $rootScope.$on("$routeChangeSuccess", function(){
+     window.scrollTo(0,0);})
   });
 
 angular

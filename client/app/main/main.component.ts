@@ -55,7 +55,6 @@ export class MainController {
   }
 
   $onInit() {
-
   }
 
 }
