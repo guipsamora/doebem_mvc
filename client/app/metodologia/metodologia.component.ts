@@ -37,7 +37,7 @@ export class MetodologiaController {
   }
 }
 
-export default angular.module('doebemOrgApp.metodologia', [ ngRoute, contactForm]) 
+export default angular.module('doebemOrgApp.metodologia', [ngRoute, contactForm])
   .config(routing).component('metodologia', {template: require('./metodologia.pug'),
   controller: MetodologiaController
 })
