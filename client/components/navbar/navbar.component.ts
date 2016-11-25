@@ -51,7 +51,7 @@ export class NavbarComponent {
     return route === this.$location.path();
   }
 
-  invertedEasingFunction(x){
+  invertedEasingFunction(x) {
      return 1 - x;
   }
 

@@ -59,7 +59,7 @@ export class MainController {
 
 }
 
-export default angular.module('doebemOrgApp.main', 
+export default angular.module('doebemOrgApp.main',
  [ngRoute, jkAngularCarousel, contactForm])
     .config(routing)
     .component('main', {

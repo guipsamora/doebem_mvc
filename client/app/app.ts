@@ -64,7 +64,8 @@ angular.module('doebemOrgApp', [
     });
     // Scroll to the top of page, when you click in a link and change the page
     $rootScope.$on( '$routeChangeSuccess', function(){
-     window.scrollTo(0,0);});
+     window.scrollTo(0, 0);
+    });
   });
 
 angular
