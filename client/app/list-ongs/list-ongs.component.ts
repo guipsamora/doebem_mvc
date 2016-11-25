@@ -13,6 +13,7 @@ export class ListOngsController {
   pageTitle;
   pageImage;
   listOngToDisplay = [];
+  
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams) {
     this.$http = $http;

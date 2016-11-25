@@ -5,7 +5,5 @@ export default function routes($routeProvider) {
   $routeProvider
     .when('/sobre', {
       template: '<sobre></sobre>'
-    })
-    
+    });
 };
-

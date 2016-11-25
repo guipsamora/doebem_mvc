@@ -41,7 +41,7 @@ export class SobreController {
 }
 
 export default angular.module('doebemOrgApp.sobre', [ ngRoute, contactForm]) .config(routing) .component('sobre', {
-  template: require('./sobre.pug'), 
+  template: require('./sobre.pug'),
   controller: SobreController
 })
 .name;

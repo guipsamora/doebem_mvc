@@ -59,8 +59,8 @@ export class MainController {
 
 }
 
-export default angular.module('doebemOrgApp.main', [
-  ngRoute, 'jkAngularCarousel', contactForm])
+export default angular.module('doebemOrgApp.main', 
+ [ngRoute, jkAngularCarousel, contactForm])
     .config(routing)
     .component('main', {
       template: require('./main.pug'),
