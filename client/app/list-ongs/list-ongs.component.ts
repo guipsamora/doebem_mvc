@@ -55,11 +55,11 @@ export class ListOngsController {
     },
     {
       title: 'CombateAPobreza',
-      image: './assets/images/combate_pobreza/1.png'
+      image: './assets/images/combate_pobreza/1.jpg'
     },
     {
       title: 'Saude',
-      image: './assets/images/saude/2.png'
+      image: './assets/images/saude/2.jpg'
     }
     ];
   }
@@ -73,12 +73,12 @@ export class ListOngsController {
 
       case 'saude':
         this.pageTitle = 'Saúde';
-        this.pageImage = './assets/images/saude/2.png';
+        this.pageImage = './assets/images/saude/2.jpg';
          this.listOngFilterToDisplay();
         break;
       case 'combateAPobreza':
         this.pageTitle = 'Combate a Pobreza';
-        this.pageImage = './assets/images/combate_pobreza/1.png';
+        this.pageImage = './assets/images/combate_pobreza/1.jpg';
         this.listOngFilterToDisplay();
         break;
       case 'educacao':
