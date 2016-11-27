@@ -37,16 +37,22 @@ div#main
       a(href="/metodologia")
         h2.sectionHeading Metodologia
         h3 Baseamos nossa metodologia de análise no movimento Altruísmo Eficaz.
-        h3 Clique aqui para conhecer mais sobre nossos critérios e processo de análise.
+        h3#metodologia Clique aqui para conhecer mais sobre nossos critérios e processo de análise.
       div#subPage(layout-gt-sm ="row" layout="column")   
-        a(href="/sobre")
-          div#sobre(flex="50" layout="column" layout-align="top start")
-              h2.sectionHeading Sobre
-              h4 Conheça quem somos e o que nos motiva.
-        a(href="/")
-          div#blog(flex="50" layout="column" layout-align="top start") 
+        a(href="/sobre" flex="50")
+          div#sobre( layout="column" layout-align="top start")
+            h2.sectionHeading Sobre
+            h4 Conheça quem somos e o que nos motiva.
+            h4
+            h4
+            h4
+        a(href="/" flex="50")
+          div#blog( layout="column" layout-align="top start") 
             h2.sectionHeading Blog
             h4 Aqui compartilhamos análises, estudos dessa jornada.
+            h4
+            h4
+            h4
 contact-form#contato
 script(type="text/ng-template" id="img.tmpl.pug")
     div
