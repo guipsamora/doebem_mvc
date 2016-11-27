@@ -23,29 +23,70 @@ export class ListOngsController {
     this.pageImage;
     this.listOngToDisplay;
 
-    this.listOng = [ {
+    this.listOng = [ 
+    {
       nome: 'Exemplo 1',
       areaDeAtuacao: 'educacao',
       desc: 'Bla Bla Bla Bla Bla Bla',
       logo: '../../assets/images/educacao/gauss/logo-gauss.png',
       localidades: 'Rio de Janeiro'
-    }
-    ,
+    },
+    {
+      nome: 'Exemplo 2',
+      areaDeAtuacao: 'educacao',
+      desc: 'Bla Bla Bla Bla Bla Bla',
+      logo: '../../assets/images/educacao/gauss/logo-gauss.png',
+      localidades: 'Rio de Janeiro'
+    },
+    {
+      nome: 'Exemplo 3',
+      areaDeAtuacao: 'educacao',
+      desc: 'Bla Bla Bla Bla Bla Bla',
+      logo: '../../assets/images/educacao/gauss/logo-gauss.png',
+      localidades: 'Rio de Janeiro'
+    },    
+    {
+      nome: 'Exemplo 1',
+      areaDeAtuacao: 'saude',
+      desc: 'Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ',
+      logo: '../../assets/images/educacao/gauss/logo-gauss.png',
+      localidades: 'São Paulo'
+    },
     {
       nome: 'Exemplo 2',
       areaDeAtuacao: 'saude',
-      desc: 'Bla Bla Bla Bla Bla Bla',
+      desc: 'Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ',
       logo: '../../assets/images/educacao/gauss/logo-gauss.png',
       localidades: 'São Paulo'
-    }
-    ,
+    },
+    {
+      nome: 'Exemplo 3',
+      areaDeAtuacao: 'saude',
+      desc: 'Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ',
+      logo: '../../assets/images/educacao/gauss/logo-gauss.png',
+      localidades: 'São Paulo'
+    },
+    {
+      nome: 'Exemplo 1',
+      areaDeAtuacao: 'combateAPobreza',
+      desc: 'Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla',
+      logo: '../../assets/images/educacao/gauss/logo-gauss.png',
+      localidades: 'Rio de Janeiro - São Paulo'
+    },
+    {
+      nome: 'Exemplo 2',
+      areaDeAtuacao: 'combateAPobreza',
+      desc: 'Bla Bla Bla Bla Bla Bla',
+      logo: '../../assets/images/educacao/gauss/logo-gauss.png',
+      localidades: 'Rio de Janeiro - São Paulo'
+    },
     {
       nome: 'Exemplo 3',
       areaDeAtuacao: 'combateAPobreza',
       desc: 'Bla Bla Bla Bla Bla Bla',
       logo: '../../assets/images/educacao/gauss/logo-gauss.png',
       localidades: 'Rio de Janeiro - São Paulo'
-    }
+    }        
     ];
 
     this.listOngFilters = [
@@ -74,7 +115,7 @@ export class ListOngsController {
       case 'saude':
         this.pageTitle = 'Saúde';
         this.pageImage = './assets/images/saude/2.jpg';
-         this.listOngFilterToDisplay();
+        this.listOngFilterToDisplay();
         break;
       case 'combateAPobreza':
         this.pageTitle = 'Combate a Pobreza';
@@ -102,7 +143,7 @@ export class ListOngsController {
   }
 }
 
-export default angular.module('doebemOrgApp.listOngs', [ ngRoute, contactForm]) .config(routing) .component('listOngs', {
-  template: require('./list-ongs.pug'), controller: ListOngsController
-})
-.name;
+export default angular.module('doebemOrgApp.listOngs', [ngRoute, contactForm]) 
+  .config(routing) 
+  .component('listOngs', {template: require('./list-ongs.pug'), controller: ListOngsController})
+  .name;
