@@ -1,6 +1,7 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
-import routing from './list-ongs.routes';
+const jkAngularCarousel = require('../../../node_modules/angular-jk-carousel/dist/jk-carousel.js');
+import routing from './pag-ongs.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
 
 export class ListOngsController {
@@ -26,7 +27,6 @@ export class ListOngsController {
     this.listOng = [ 
       {
         nome: 'Exemplo 1',
-        link: 'exemplo_1',
         areaDeAtuacao: 'educacao',
         desc: 'Bla Bla Bla Bla Bla Bla',
         logo: '../../assets/images/educacao/gauss/logo-gauss.png',
@@ -34,7 +34,6 @@ export class ListOngsController {
       },
       {
         nome: 'Exemplo 2',
-        link: 'exemplo_2',
         areaDeAtuacao: 'educacao',
         desc: 'Bla Bla Bla Bla Bla Bla',
         logo: '../../assets/images/educacao/gauss/logo-gauss.png',
@@ -42,7 +41,6 @@ export class ListOngsController {
       },
       {
         nome: 'Exemplo 3',
-        link: 'exemplo_3',
         areaDeAtuacao: 'educacao',
         desc: 'Bla Bla Bla Bla Bla Bla',
         logo: '../../assets/images/educacao/gauss/logo-gauss.png',
@@ -50,7 +48,6 @@ export class ListOngsController {
       },    
       {
         nome: 'Exemplo 1',
-        link: 'exemplo_1',
         areaDeAtuacao: 'saude',
         desc: 'Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ',
         logo: '../../assets/images/educacao/gauss/logo-gauss.png',
@@ -58,7 +55,6 @@ export class ListOngsController {
       },
       {
         nome: 'Exemplo 2',
-        link: 'exemplo_2',
         areaDeAtuacao: 'saude',
         desc: 'Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ',
         logo: '../../assets/images/educacao/gauss/logo-gauss.png',
@@ -66,7 +62,6 @@ export class ListOngsController {
       },
       {
         nome: 'Exemplo 3',
-        link: 'exemplo_3',
         areaDeAtuacao: 'saude',
         desc: 'Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ',
         logo: '../../assets/images/educacao/gauss/logo-gauss.png',
@@ -74,7 +69,6 @@ export class ListOngsController {
       },
       {
         nome: 'Exemplo 1',
-        link: 'exemplo_1',
         areaDeAtuacao: 'combateAPobreza',
         desc: 'Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla',
         logo: '../../assets/images/educacao/gauss/logo-gauss.png',
@@ -82,7 +76,6 @@ export class ListOngsController {
       },
       {
         nome: 'Exemplo 2',
-        link: 'exemplo_2',
         areaDeAtuacao: 'combateAPobreza',
         desc: 'Bla Bla Bla Bla Bla Bla',
         logo: '../../assets/images/educacao/gauss/logo-gauss.png',
@@ -90,12 +83,11 @@ export class ListOngsController {
       },
       {
         nome: 'Exemplo 3',
-        link: 'exemplo_3',
         areaDeAtuacao: 'combateAPobreza',
         desc: 'Bla Bla Bla Bla Bla Bla',
         logo: '../../assets/images/educacao/gauss/logo-gauss.png',
         localidades: 'Rio de Janeiro - São Paulo'
-      }        
+      }       
     ];
 
     this.listOngFilters = [
@@ -152,7 +144,7 @@ export class ListOngsController {
   }
 }
 
-export default angular.module('doebemOrgApp.listOngs', [ngRoute, contactForm]) 
+export default angular.module('doebemOrgApp.pagOngs', [ngRoute, 'jkAngularCarousel', contactForm]) 
   .config(routing) 
-  .component('listOngs', {template: require('./list-ongs.pug'), controller: ListOngsController})
+  .component('pagOngs', {template: require('./pag-ongs.pug'), controller: ListOngsController})
   .name;

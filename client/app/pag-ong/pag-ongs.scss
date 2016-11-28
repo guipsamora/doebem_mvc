@@ -1,0 +1,30 @@
+div#listOngs {
+    div#pageHeader {
+        h2 {
+          color: white;
+          font-size: 70px;
+        }
+        background-repeat: no-repeat;
+        background-size: cover;
+        width:100%;
+        height: 100%;
+        min-height: 80vh;
+        background-position: top center;
+    }
+
+    md-content#mainListOngs {
+      padding-top: 2%;
+      md-content#lista{
+        h3 {
+          text-align: center;
+          font-size: 30px;
+        }
+      }
+    }
+
+    .container .md-button {
+      font-size: 22px;
+      font-weight: 550;
+    }
+}
+
