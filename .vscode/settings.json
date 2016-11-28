@@ -2,5 +2,6 @@
     "typescript.check.workspaceVersion": false,
      "editor.fontSize": 14,
      "editor.tabSize": 2,
-      "editor.wrappingColumn": 300
-}
+      "editor.wrappingColumn": 300,
+      "eslint.enable": true
+    }

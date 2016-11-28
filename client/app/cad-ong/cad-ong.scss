@@ -5,7 +5,7 @@ div#cadOng {
   background-repeat: no-repeat;
   div#form {
     background-color: white;
-    color: white;
+    //color: white;
     div form div div
      md-input-container {
       border-radius: 2%;
@@ -14,6 +14,9 @@ div#cadOng {
       color: black;
       //font-size: 20px;
       label {
+        color: black;
+      }
+      md-select md-content md-option{
         color: black;
       }
       md-icon  {
