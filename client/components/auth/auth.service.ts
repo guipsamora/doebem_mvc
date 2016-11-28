@@ -24,7 +24,7 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
     return userRoles.indexOf(userRole) >= userRoles.indexOf(role);
   };
 
-  if($cookies.get('token') && $location.path() !== '/logout') {
+  if ($cookies.get('token') && $location.path() !== '/logout') {
     currentUser = User.get();
   }
 

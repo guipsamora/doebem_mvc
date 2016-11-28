@@ -3,11 +3,11 @@
 import mongoose from 'mongoose';
 
 var OngSchema = new mongoose.Schema({
-     nomeFantasia: String,
-     razaoSocial: String,
-     end: String,
-     cidade: String,
-     estado: String,
+      nomeFantasia: String,
+      razaoSocial: String,
+      end: String,
+      cidade: String,
+      estado: String,
       areaDeAtuacao: String,
       desc: String,
       logo: String,

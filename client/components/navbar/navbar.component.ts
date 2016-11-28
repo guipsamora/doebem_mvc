@@ -2,7 +2,7 @@
 /* eslint no-sync: 0 */
 const angular = require('angular');
 const ngMaterial = require('angular-material');
-const duScroll = require('angular-scroll')
+const duScroll = require('angular-scroll');
 
 export class NavbarComponent {
 
@@ -51,18 +51,18 @@ export class NavbarComponent {
     return route === this.$location.path();
   }
 
-   invertedEasingFunction(x) {
-     return 1-x;
+  invertedEasingFunction(x) {
+     return 1 - x;
   }
 
   scrollTop() {
-     this.$document.scrollTop(this.top, this.duration)
+     this.$document.scrollTop(this.top, this.duration);
   }
 
-scrollToSection(eID) {
-  var section = angular.element(document.getElementById(eID));
-  this.$document.scrollToElementAnimated(section, 70, this.duration)
-    }
+  scrollToSection(eID) {
+    var section = angular.element(document.getElementById(eID));
+    this.$document.scrollToElementAnimated(section, 70, this.duration);
+  }
 }
 
 export default angular.module('directives.navbar', [ngMaterial, duScroll])
@@ -71,4 +71,3 @@ export default angular.module('directives.navbar', [ngMaterial, duScroll])
     controller: NavbarComponent
   })
   .name;
-

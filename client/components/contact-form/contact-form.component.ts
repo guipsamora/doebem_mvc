@@ -7,12 +7,12 @@ export class ContactFormComponent {
   $scope;
   user: Object;
 
-  constructor($http, $scope, $animate, $mdDialog ) {
+  constructor($http, $scope, $animate, $mdDialog) {
     this.$http = $http;
     this.$scope = $scope;
     this.$mdDialog = $mdDialog;
   }
- 
+
   sendEmail() {
     this.$http.post('/api/contactForm', this.user)
       .then(res => {
