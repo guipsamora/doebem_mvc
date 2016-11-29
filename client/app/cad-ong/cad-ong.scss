@@ -16,9 +16,8 @@ div#cadOng {
       label {
         color: black;
       }
-      md-select md-content md-option{
-        color: black;
-      }
+     
+      
       md-icon  {
         font-size: 20px;
         i.fa.fa-phone {
@@ -40,3 +39,7 @@ div#cadOng {
     }
   }
 }
+
+ md-select-menu md-option{
+        color: black;
+      }
