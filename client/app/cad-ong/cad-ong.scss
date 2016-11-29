@@ -5,7 +5,7 @@ div#cadOng {
   background-repeat: no-repeat;
   div#form {
     background-color: white;
-    color: white;
+    //color: white;
     div form div div
      md-input-container {
       border-radius: 2%;
@@ -16,6 +16,8 @@ div#cadOng {
       label {
         color: black;
       }
+     
+      
       md-icon  {
         font-size: 20px;
         i.fa.fa-phone {
@@ -37,3 +39,7 @@ div#cadOng {
     }
   }
 }
+
+ md-select-menu md-option{
+        color: black;
+      }
