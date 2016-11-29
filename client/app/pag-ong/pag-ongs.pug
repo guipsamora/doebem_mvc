@@ -1,4 +1,13 @@
 div#listOngs
+  div#carousel(flex="100")
+  jk-carousel(
+        flex="100"
+        data="$ctrl.carouselImages"
+        item-template-url="'img.tmpl.pug'"
+        max-width="2000" 
+        max-height="1300"
+        auto-slide="true"
+        auto-slide-time="3000")   
   div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url({{$ctrl.pageImage}})'}")
     h2 {{$ctrl.pageTitle}}
   md-content#mainListOngs(layout="column" flex="100")
@@ -16,6 +25,5 @@ div#listOngs
               md-card-content
                   p {{ong.desc}}
               md-action(layout="row" layout-align="center center")
-            a(ng-href="{{ong.link}}")
-              md-button.md-raised.md-primary Apoiar
+            md-button.md-raised.md-primary Apoiar
 contact-form
