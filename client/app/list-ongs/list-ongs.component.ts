@@ -23,7 +23,7 @@ export class ListOngsController {
     this.pageImage;
     this.listOngToDisplay;
 
-    this.listOng = [ 
+    this.listOng = [
       {
         nome: 'Exemplo 1',
         link: 'exemplo_1',
@@ -47,7 +47,7 @@ export class ListOngsController {
         desc: 'Bla Bla Bla Bla Bla Bla',
         logo: '../../assets/images/educacao/gauss/logo-gauss.png',
         localidades: 'Rio de Janeiro'
-      },    
+      },
       {
         nome: 'Exemplo 1',
         link: 'exemplo_1',
@@ -95,7 +95,7 @@ export class ListOngsController {
         desc: 'Bla Bla Bla Bla Bla Bla',
         logo: '../../assets/images/educacao/gauss/logo-gauss.png',
         localidades: 'Rio de Janeiro - São Paulo'
-      }        
+      }
     ];
 
     this.listOngFilters = [
@@ -152,7 +152,7 @@ export class ListOngsController {
   }
 }
 
-export default angular.module('doebemOrgApp.listOngs', [ngRoute, contactForm]) 
-  .config(routing) 
+export default angular.module('doebemOrgApp.listOngs', [ngRoute, contactForm])
+  .config(routing)
   .component('listOngs', {template: require('./list-ongs.pug'), controller: ListOngsController})
   .name;

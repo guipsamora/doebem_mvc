@@ -47,8 +47,9 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
                 input(ng-model="$ctrl.ongForm.cidade" required)   
               md-input-container.md-block(flex-gt-sm flex="10")
                 label Estado
-                md-select(ng-model="$ctrl.ongForm.uf" )  
-                  md-option#EstadoOpt(ng-repeat="state in $ctrl.states" ng-value="{{state.Sigla}}") {{state.Nome}}
+                //- md-select(ng-model="$ctrl.ongForm.uf" )  
+                  //- md-option#EstadoOpt(ng-repeat="state in $ctrl.states" ng-value="{{state.Sigla}}") {{state.Nome}}
+                input(ng-model="$ctrl.ongForm.state" ng-value="{{state.Sigla}}") {{state.Nome}}
             div.md-padding#info(layout="row" flex="100")          
               md-input-container.md-block(flex-gt-sm  flex="20")
                 label Area de Atuação
