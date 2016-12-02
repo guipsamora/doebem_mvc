@@ -12,14 +12,17 @@ div#pagOng {
         background-position: top center;
     }
 
+    div#infos {
+      height: 300px;
+    }
+
     .container {
       padding-right: 10px;
       padding-left: 10px;
     }
     
     div#smallInfo {
-      vertical-align: right;
-
+      width: 250px;
       img {
         width: 100px;
         height: 100px;

@@ -2,25 +2,25 @@ div#pagOng
   div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url({{$ctrl.pageImage}})'}")
     h2 {{ong.nome}}
   .container
-    div(layout="column" flex="100")
-      div#carousel
+    div#infos(layout="row" flex="100")
+      div#carousel(flex="80" layout-align="left")
         jk-carousel(
-              flex="80"
+              flex="100"
               data="$ctrl.carouselImages"
               item-template-url="'img.tmpl.pug'"
-              max-width="100"
-              max-height="100"
+              max-width="300"
+              max-height="300"
               auto-slide="true"
               auto-slide-time="3000")
-      div#smallInfo
+      div#smallInfo(flex layout-align="center center")
         img(ng-src="{{ong.logo}}")
         h4 Causa: {{ong.areaDeAtuacao}}
         h4 Ano de fundação: {{ong.fundacao}}
         h4 Atua em: {{ong.localidades}}
     md-content(layout="column" flex="100")
-      md-content#lista(flex = "100" layout="column" layout-align="left ")
+      md-content#lista(flex = "100" layout="column" layout-align="left")
         h2 Sobre
-        p {{ong.sobre}}
+        p {{ong.desc}}
         h2 Resumo - Análise Doebem
         h3 Gestão
         p {{ong.gestao}}

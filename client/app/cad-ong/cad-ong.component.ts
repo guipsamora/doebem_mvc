@@ -193,8 +193,5 @@ export class CadOngController {
 
 export default angular.module('doebemOrgApp.cadOng', [ngRoute, require('angular-input-masks')])
   .config(routing)
-  .component('cadOng',
-  {template: require('./cad-ong.pug'), controller: CadOngController
-  })
+  .component('cadOng',{template: require('./cad-ong.pug'), controller: CadOngController})
   .name;
-
