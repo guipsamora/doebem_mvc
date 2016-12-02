@@ -5,5 +5,5 @@ export default function routes($routeProvider) {
   $routeProvider
     .when('/cadOng', {
       template: '<cad-ong></cad-ong>'
-    })
+    });
 };
