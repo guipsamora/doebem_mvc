@@ -178,18 +178,6 @@ export class CadOngController {
        console.log(res.data.body);
        this.ongForm.logradouro = end.address.split('-')[0];
        this.ongForm.cidade = end.city;
-
-      //  while (this.states){
-      //    if (this.states.Sigla == end.state){
-      //      this.ongForm.uf = this.states.Nome;
-      //    }
-      //    return;
-      //  }
-      //  for(var i = 0, i < this.states.length, )
-      console.log(this.states.length)
-        // if 
-      //  this.ongForm.uf = end.state;
-
      })
      .catch(err => console.log(err));
   }

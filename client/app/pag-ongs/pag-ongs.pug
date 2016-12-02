@@ -1,30 +1,32 @@
-div#listOngs  
+div#pagOng
   div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url({{$ctrl.pageImage}})'}")
     h2 {{ong.nome}}
-  div#carousel(flex="50")
-  jk-carousel(
-        flex="100"
-        data="$ctrl.carouselImages"
-        item-template-url="'img.tmpl.pug'"
-        max-width="600" 
-        max-height="400"
-        auto-slide="true"
-        auto-slide-time="3000")  
-  div#smallInfo(flex="50")
-    img(ng-src="{{ong.logo}}")
-    h3 Causa: {{ong.areaDeAtuacao}}
-    h3 Ano de fundação: {{ong.fundacao}}
-    h3 Atua em: {{ong.localidades}}
-  md-content(layout="column" flex="100")
-    md-content#lista(flex = "100" layout="column" layout-align="center center")
-      h3 Sobre
-      p {{ong.sobre}}
-      h2 Resumo - Análise Doebem
-      h3 Gestão
-      p {{ong.gestao}}
-      h3 Transparência
-      p {{ong.gestao}}        
-      h3 Impacto
-      p {{ong.gestao}}
-      a(href="") Confira aqui o arquivo com nossa análise completa.
+  .container
+    div(layout="column" flex="100")
+      div#carousel
+        jk-carousel(
+              flex="80"
+              data="$ctrl.carouselImages"
+              item-template-url="'img.tmpl.pug'"
+              max-width="100"
+              max-height="100"
+              auto-slide="true"
+              auto-slide-time="3000")
+      div#smallInfo
+        img(ng-src="{{ong.logo}}")
+        h4 Causa: {{ong.areaDeAtuacao}}
+        h4 Ano de fundação: {{ong.fundacao}}
+        h4 Atua em: {{ong.localidades}}
+    md-content(layout="column" flex="100")
+      md-content#lista(flex = "100" layout="column" layout-align="left ")
+        h2 Sobre
+        p {{ong.sobre}}
+        h2 Resumo - Análise Doebem
+        h3 Gestão
+        p {{ong.gestao}}
+        h3 Transparência
+        p {{ong.transparencia}}
+        h3 Impacto
+        p {{ong.impacto}}
+        a(href="") Confira aqui o arquivo com nossa análise completa.
 contact-form
