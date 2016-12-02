@@ -11,7 +11,7 @@ export class PagOngs {
   stepOptions = [];
   pageTitle;
   pageImage;
-  infoOng
+  infoOng;
 
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams) {
@@ -20,7 +20,7 @@ export class PagOngs {
     this.$routeParams = $routeParams;
     this.pageTitle;
     this.pageImage;
-    this.infoOng
+    this.infoOng;
 
 
 
@@ -29,9 +29,9 @@ export class PagOngs {
 
   carregaLista() {
     this.$http.get('api/ong')
-        .then(res => {
+      .then(res => {
           this.infoOng = res.data;
-        });
+      });
   }
 
   $onInit() {
