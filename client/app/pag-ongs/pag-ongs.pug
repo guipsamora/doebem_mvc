@@ -1,0 +1,30 @@
+div#listOngs  
+  div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url({{$ctrl.pageImage}})'}")
+    h2 {{ong.nome}}
+  div#carousel(flex="50")
+  jk-carousel(
+        flex="100"
+        data="$ctrl.carouselImages"
+        item-template-url="'img.tmpl.pug'"
+        max-width="600" 
+        max-height="400"
+        auto-slide="true"
+        auto-slide-time="3000")  
+  div#smallInfo(flex="50")
+    img(ng-src="{{ong.logo}}")
+    h3 Causa: {{ong.areaDeAtuacao}}
+    h3 Ano de fundação: {{ong.fundacao}}
+    h3 Atua em: {{ong.localidades}}
+  md-content(layout="column" flex="100")
+    md-content#lista(flex = "100" layout="column" layout-align="center center")
+      h3 Sobre
+      p {{ong.sobre}}
+      h2 Resumo - Análise Doebem
+      h3 Gestão
+      p {{ong.gestao}}
+      h3 Transparência
+      p {{ong.gestao}}        
+      h3 Impacto
+      p {{ong.gestao}}
+      a(href="") Confira aqui o arquivo com nossa análise completa.
+contact-form

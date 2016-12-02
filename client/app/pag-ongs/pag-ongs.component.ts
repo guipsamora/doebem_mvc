@@ -4,7 +4,7 @@ const jkAngularCarousel = require('../../../node_modules/angular-jk-carousel/dis
 import routing from './pag-ongs.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
 
-export class ListOngsController {
+export class ListOngs {
   $http;
   $scope;
   $routeParams;
@@ -23,6 +23,8 @@ export class ListOngsController {
     this.pageTitle;
     this.pageImage;
     this.listOngToDisplay;
+
+    console.log("I was loaded.")
 
     this.listOng = [ 
       {
@@ -146,5 +148,5 @@ export class ListOngsController {
 
 export default angular.module('doebemOrgApp.pagOngs', [ngRoute, 'jkAngularCarousel', contactForm]) 
   .config(routing) 
-  .component('pagOngs', {template: require('./pag-ongs.pug'), controller: ListOngsController})
+  .component('pagOngs', {template: require('./pag-ongs.pug'), controller: ListOngs})
   .name;
