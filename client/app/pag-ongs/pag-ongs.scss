@@ -1,4 +1,4 @@
-div#listOngs {
+div#pagOng {
     div#pageHeader {
         h2 {
           color: white;
@@ -12,19 +12,35 @@ div#listOngs {
         background-position: top center;
     }
 
+    div#infos {
+      height: 300px;
+    }
+
+    .container {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+    
+    div#smallInfo {
+      width: 250px;
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
     md-content#mainListOngs {
       padding-top: 2%;
+
       md-content#lista{
+        text-align: left;
+      
         h3 {
-          text-align: center;
+          text-align: left;
           font-size: 30px;
         }
       }
     }
 
-    .container .md-button {
-      font-size: 22px;
-      font-weight: 550;
-    }
 }
 

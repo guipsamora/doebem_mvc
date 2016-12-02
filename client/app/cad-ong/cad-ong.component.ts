@@ -13,6 +13,7 @@ export class CadOngController {
   listAreasDeAtuacao = [];
   ongForm;
   ong = {};
+
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams) {
     this.$http = $http;
@@ -177,8 +178,6 @@ export class CadOngController {
        console.log(res.data.body);
        this.ongForm.logradouro = end.address.split('-')[0];
        this.ongForm.cidade = end.city;
-       this.ongForm.uf = end.state;
-
      })
      .catch(err => console.log(err));
   }
@@ -194,8 +193,5 @@ export class CadOngController {
 
 export default angular.module('doebemOrgApp.cadOng', [ngRoute, require('angular-input-masks')])
   .config(routing)
-  .component('cadOng',
-  {template: require('./cad-ong.pug'), controller: CadOngController
-  })
+  .component('cadOng',{template: require('./cad-ong.pug'), controller: CadOngController})
   .name;
-
