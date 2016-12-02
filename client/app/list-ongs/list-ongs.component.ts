@@ -23,6 +23,8 @@ export class ListOngsController {
     this.pageImage;
     this.listOngToDisplay;
 
+    console.log(this.$http)
+  
     this.listOng = [
       {
         nome: 'Exemplo 1',

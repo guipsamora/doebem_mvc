@@ -24,11 +24,11 @@ export class PagOngs {
 
 
 
-
+    
 }
 
   carregaLista() {
-    this.$http.get('api/ong')
+    this.$http.get('api/ong/:id')
       .then(res => {
           this.infoOng = res.data;
       });
