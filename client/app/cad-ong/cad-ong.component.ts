@@ -179,6 +179,7 @@ export class CadOngController {
        console.log(res.data.body);
        this.ongForm.logradouro = end.address.split('-')[0];
        this.ongForm.cidade = end.city;
+       this.ongForm.estado = end.state;
      })
      .catch(err => console.log(err));
   }
@@ -188,7 +189,8 @@ export class CadOngController {
   }
 
   addOng(ongForm) {
-    this.$http.post('api/ong', ongForm);
+    this.$http.post('api/ong', ongForm)
+      .then(res => { console.log(res) });
   }
 }
 
