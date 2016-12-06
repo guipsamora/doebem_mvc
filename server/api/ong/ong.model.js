@@ -6,6 +6,7 @@ var OngSchema = new mongoose.Schema({
   nomeFantasia: String,
   razaoSocial: String,
   cnpj: String,
+  anoFundacao: String,
   telefone: String,
   email: String,
   urlSite: String,
@@ -23,7 +24,6 @@ var OngSchema = new mongoose.Schema({
   imagens: [{
     imagem: String
   }],
-  anoFundacao: String,
   analiseGestao: String,
   analiseTransparencia: String,
   analiseImpacto: String,
