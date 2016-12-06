@@ -22,8 +22,6 @@ export class ListOngsController {
     this.pageTitle;
     this.pageImage;
     this.listOngToDisplay;
-
-    console.log(this.$http)
   
     this.listOng = [
       {

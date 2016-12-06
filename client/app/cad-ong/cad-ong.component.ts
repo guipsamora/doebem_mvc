@@ -1,8 +1,8 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
-import routing from './cad-ong.routes';
-import slugifier from 'wb-angular-slugify';
+const slugifier = require('wb-angular-slugify');
 
+import routing from './cad-ong.routes';
 
 export class CadOngController {
   $http;

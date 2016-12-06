@@ -7,6 +7,7 @@ const ngSanitize = require('angular-sanitize');
 const ngRoute = require('angular-route');
 const uiBootstrap = require('angular-ui-bootstrap');
 
+
 // const ngMessages = require('angular-messages');
 // import ngValidationMatch from 'angular-validation-match';
 
@@ -26,6 +27,7 @@ import metodologia from './metodologia/metodologia.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
+import slugifier from  './cad-ong/cad-ong.component';
 
 import 'angular-socket-io';
 import './app.scss';
@@ -49,6 +51,7 @@ angular.module('doebemOrgApp', [
   cadOng,
   pagOngs,
   metodologia,
+  slugifier,
   constants,
   socket,
   util
