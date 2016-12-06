@@ -25,7 +25,9 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
               md-input-container.md-block(md-no-float flex-gt-sm)
                 md-icon
                   i.fa.fa-envelope   
-                input(type="email" ng-model="$ctrl.ongForm.email" placeholder="Email" required) 
+                input(type="email" ng-model="$ctrl.ongForm.email" placeholder="Email" required)
+              md-input-container.md-block(md-no-float flex-gt-sm)                  
+                input( ng-model="$ctrl.ongForm.site" placeholder="Site" required)                 
             div#End(layout="row" flex="100")   
               md-input-container.md-block.md-icon-float(flex-gt-sm flex="15")
                 md-icon
@@ -79,7 +81,10 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
                 textarea(ng-model="$ctrl.ongForm.analiseTransparencia" columns="1")    
               md-input-container.md-block(flex-gt-sm)
                 label Impacto
-                textarea(ng-model="$ctrl.ongForm.analiseImpacto" columns="1")                 
+                textarea(ng-model="$ctrl.ongForm.analiseImpacto" columns="1")
+              md-input-container.md-block(flex-gt-sm)
+                label PDF
+                textarea(ng-model="$ctrl.ongForm.linkPdf" columns="1")                                 
           div(flex="10")         
             md-button.md-raized.md-primary(type="submit") Cadastrar 
   
