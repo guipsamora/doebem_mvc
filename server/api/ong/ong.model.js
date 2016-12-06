@@ -1,7 +1,7 @@
 'use strict';
 
 import mongoose from 'mongoose';
-//saudeCrianca
+
 const OngSchema = new mongoose.Schema({
 	nomeFantasia: {
 		type: 'String',
@@ -19,15 +19,14 @@ const OngSchema = new mongoose.Schema({
   cidade: { type: 'String', required: true },
   estado: { type: 'String', required: true },
   cep: { type: 'String', required: true },
-  /*causa: { type: 'String', required: true },
-  desc: { type: 'String', required: true },
   logo: { type: 'String', required: true },
-  
-  localidadesDeAtuacao: [{localidade: { type: 'String', required: true }}],
   backgroundImage: { type: 'String', required: true },
   imagens: [{
     imagem: { type: 'String', required: true }
   }],
+  causa: { type: 'String', required: true },
+  sobre: { type: 'String', required: true },
+  /*localidadesDeAtuacao: [{localidade: { type: 'String', required: true }}],
   analiseGestao: { type: 'String', required: true },
   analiseTransparencia: { type: 'String', required: true },
   analiseImpacto: { type: 'String', required: true },

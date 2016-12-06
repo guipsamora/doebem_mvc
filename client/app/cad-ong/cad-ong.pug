@@ -1,5 +1,5 @@
 div.layout-padding#cadOng(layout="column" layout-align="center center")
-  h1 Cadastre aqui sua ONG
+  h1 Cadastro ONGs
   .container(layout = "row" )
     div#form(flex="100")
       div(layout="column" flex="100")
@@ -11,13 +11,13 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
                   i.fa.fa-user  
                 label Nome Fantasia
                 input(ng-model="$ctrl.ongForm.nomeFantasia" required)         
-              md-input-container.md-block(flex-gt-sm="30" flex="100")
+              md-input-container.md-block(flex)
                 label Razão Social
                 input(ng-model="$ctrl.ongForm.razaoSocial" required)
               md-input-container.md-block(flex-gt-sm="15" flex="100")
                 label CNPJ
                 input(ng-model="$ctrl.ongForm.cnpj" ui-br-cnpj-mask required)
-              md-input-container.md-block(flex-gt-sm="15" flex="100")
+              md-input-container.md-block(flex-gt-sm="10" flex="100")
                 label Ano Fundação
                 input(ng-model="$ctrl.ongForm.anoFundacao" required ng-pattern="/^[0-9]{4}$/" md-maxlength="4")          
             div#CadContatos(layout="column" layout-gt-sm="row"  flex="100")    
@@ -34,7 +34,7 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
               md-input-container.md-block(flex-gt-sm="25" flex="100")
                 label Slug 
                 input(ng-model="$ctrl.ongForm.slug" required)                         
-            div#End(layout="column" layout-gt-sm="row"  flex="100")   
+            div#Endereco(layout="column" layout-gt-sm="row"  flex="100")   
               md-input-container.md-block.md-icon-float(flex-gt-sm="10" flex="100")
                 md-icon
                   i.fa.fa-search  
@@ -63,13 +63,21 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
               md-input-container.md-block(flex-gt-sm="20" flex="100")
                 label Imagem de Fundo
                 input(ng-model="$ctrl.ongForm.backgroundImage" required)                                 
+              md-input-container.md-block(flex-gt-sm )
+                  label Imagens da ONG
+                  input(ng-model="$ctrl.ongForm.imagens.imagem" required)
+            div#Infos(layout="column" layout-gt-sm="row"  flex="100")
+              md-input-container.md-block(flex-gt-sm="20"  flex="100")
+                label Causa
+                md-select(ng-model="$ctrl.ongForm.causa" )  
+                  md-option(ng-repeat="area in $ctrl.listAreasDeAtuacao" value="{{area.abbrev}}") {{area.desc}}
+              md-input-container.md-block(flex-gt-sm="80" flex="100")
+                label Sobre a ONG
+                textarea(ng-model="$ctrl.ongForm.sobre")                                
           div(flex="10")         
             md-button.md-raized.md-primary(type="submit") Cadastrar
           
-              //div
-                md-input-container.md-block(flex-gt-sm )
-                    label Imagens
-                    input(ng-model="$ctrl.ongForm.iamgens.imagem" required)     
+              //div    
                 div.md-padding#info(layout="row" flex="100")          
                   md-input-container.md-block(flex-gt-sm  flex="20")
                     label Causa
@@ -78,7 +86,7 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
                   
                 div.padding#desc(layout="column" flex="100")
                   md-input-container.md-block(flex-gt-sm)
-                    label Desc
+                    label Descrição
                     textarea(ng-model="$ctrl.ongForm.desc" columns="1")
                 div.padding#Analises(layout="column" flex="100")
                   md-input-container.md-block(flex-gt-sm)
