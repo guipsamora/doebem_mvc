@@ -25,12 +25,12 @@ const OngSchema = new mongoose.Schema({
     imagem: { type: 'String', required: true }
   }],
   causa: { type: 'String', required: true },
+  localidadesDeAtuacao: [{localidade: { type: 'String', required: true }}],
   sobre: { type: 'String', required: true },
-  /*localidadesDeAtuacao: [{localidade: { type: 'String', required: true }}],
   analiseGestao: { type: 'String', required: true },
   analiseTransparencia: { type: 'String', required: true },
   analiseImpacto: { type: 'String', required: true },
-  linkPdf: { type: 'String', required: true }*/
+  linkPdf: { type: 'String', required: true }
 });
 
 export default mongoose.model('ong', OngSchema);

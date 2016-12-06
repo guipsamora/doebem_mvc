@@ -71,33 +71,25 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
                 label Causa
                 md-select(ng-model="$ctrl.ongForm.causa" )  
                   md-option(ng-repeat="area in $ctrl.listAreasDeAtuacao" value="{{area.abbrev}}") {{area.desc}}
-              md-input-container.md-block(flex-gt-sm="80" flex="100")
-                label Sobre a ONG
-                textarea(ng-model="$ctrl.ongForm.sobre")                                
+              md-input-container.md-block(flex)
+                  label Locais de Atuação
+                  input(ng-model="$ctrl.ongForm.localidadesDeAtuacao.localidade" required)              
+            div#Analises(layout="column" flex="100")
+                md-input-container.md-block(flex-gt-sm)
+                  label Sobre a ONG
+                  textarea(ng-model="$ctrl.ongForm.sobre" columns="1")
+                md-input-container.md-block(flex-gt-sm)
+                  label Gestão
+                  textarea(ng-model="$ctrl.ongForm.analiseGestao" columns="1")
+                md-input-container.md-block(flex-gt-sm)
+                  label Transparencia
+                  textarea(ng-model="$ctrl.ongForm.analiseTransparencia" columns="1")    
+                md-input-container.md-block(flex-gt-sm)
+                  label Impacto
+                  textarea(ng-model="$ctrl.ongForm.analiseImpacto" columns="1")
+                md-input-container.md-block(flex-gt-sm)
+                  label PDF
+                  textarea(ng-model="$ctrl.ongForm.linkPdf" columns="1")
           div(flex="10")         
             md-button.md-raized.md-primary(type="submit") Cadastrar
-          
-              //div    
-                div.md-padding#info(layout="row" flex="100")          
-                  md-input-container.md-block(flex-gt-sm  flex="20")
-                    label Causa
-                    md-select(ng-model="$ctrl.ongForm.causa" )  
-                      md-option(ng-repeat="area in $ctrl.listAreasDeAtuacao" value="{{area.abbrev}}") {{area.desc}}
-                  
-                div.padding#desc(layout="column" flex="100")
-                  md-input-container.md-block(flex-gt-sm)
-                    label Descrição
-                    textarea(ng-model="$ctrl.ongForm.desc" columns="1")
-                div.padding#Analises(layout="column" flex="100")
-                  md-input-container.md-block(flex-gt-sm)
-                    label Gestão
-                    textarea(ng-model="$ctrl.ongForm.analiseGestao" columns="1")
-                  md-input-container.md-block(flex-gt-sm)
-                    label Transparencia
-                    textarea(ng-model="$ctrl.ongForm.analiseTransparencia" columns="1")    
-                  md-input-container.md-block(flex-gt-sm)
-                    label Impacto
-                    textarea(ng-model="$ctrl.ongForm.analiseImpacto" columns="1")
-                  md-input-container.md-block(flex-gt-sm)
-                    label PDF
-                    textarea(ng-model="$ctrl.ongForm.linkPdf" columns="1")                 
+              
