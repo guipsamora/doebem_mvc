@@ -40,7 +40,6 @@ export class CadOngController {
    this.$http.get(`/api/BuscaCep/${cep}`)
      .then(res => {
        const end = JSON.parse(res.data.body);
-       console.log(res.data.body);
        this.ongForm.logradouro = end.address.split('-')[0];
        this.ongForm.cidade = end.city;
        this.ongForm.estado = end.state;

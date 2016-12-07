@@ -3,15 +3,7 @@ div#pagOng
     h2 {{ongForm.nomeFantasia}}
   .container
     div#infos(layout="row" flex="100")
-      div#carousel(flex="80" layout-align="left")
-        jk-carousel(
-              flex="100"
-              data="$ctrl.carouselImages"
-              item-template-url="'img.tmpl.pug'"
-              max-width="300"
-              max-height="300"
-              auto-slide="true"
-              auto-slide-time="3000")
+
       div#smallInfo(flex layout-align="center center")
         img(ng-src="{{ongForm.logo}}")
         h4 Causa: {{ongForm.causa}}
@@ -30,3 +22,14 @@ div#pagOng
         p {{ongForm.analiseImpacto}}
         a(href="") Confira aqui o arquivo com nossa análise completa.
 contact-form
+
+      //- div#carousel(flex="80" layout-align="left")
+      //-   jk-carousel(
+      //-         flex="100"
+      //-         data="$ctrl.carouselImages"
+      //-         item-template-url="'img.tmpl.pug'"
+      //-         max-width="300"
+      //-         max-height="300"
+      //-         auto-slide="true"
+      //-         auto-slide-time="3000")
+      //- div#smallInfo(flex layout-align="center center")
