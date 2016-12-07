@@ -1,6 +1,6 @@
 div#pagOng
-  div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url({{$ctrl.pageImage}})'}")
-    h2 {{ong.nome}}
+  div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url({{$ongForm.backgroundImage}})'}")
+    h2 {{ongForm.nomeFantasia}}
   .container
     div#infos(layout="row" flex="100")
       div#carousel(flex="80" layout-align="left")
@@ -13,20 +13,20 @@ div#pagOng
               auto-slide="true"
               auto-slide-time="3000")
       div#smallInfo(flex layout-align="center center")
-        img(ng-src="{{ong.logo}}")
-        h4 Causa: {{ong.areaDeAtuacao}}
-        h4 Ano de fundação: {{ong.fundacao}}
-        h4 Atua em: {{ong.localidades}}
+        img(ng-src="{{ongForm.logo}}")
+        h4 Causa: {{ongForm.causa}}
+        h4 Ano de fundação: {{ongForm.anoFundacao}}
+        h4 Atua em: {{ongForm.localidadesDeAtuacao}}
     md-content(layout="column" flex="100")
       md-content#lista(flex = "100" layout="column" layout-align="left")
         h2 Sobre
-        p {{ong.desc}}
+        p {{ongForm.sobre}}
         h2 Resumo - Análise Doebem
         h3 Gestão
-        p {{ong.gestao}}
+        p {{ongForm.analiseGestao}}
         h3 Transparência
-        p {{ong.transparencia}}
+        p {{ongForm.analiseTransparencia}}
         h3 Impacto
-        p {{ong.impacto}}
+        p {{ongForm.analiseImpacto}}
         a(href="") Confira aqui o arquivo com nossa análise completa.
 contact-form
