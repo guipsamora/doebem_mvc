@@ -13,7 +13,6 @@ export class PagOngs {
   pageTitle;
   pageImage;
   infoOng;
-  slug;
 
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams) {
@@ -23,39 +22,19 @@ export class PagOngs {
     this.pageTitle;
     this.pageImage;
     this.infoOng;
-    this.slug;
 
-
-
-    
 }
 
  carregaLista() {
-   var slug = this.$routeParams.slug;
-   console.log(slug);
-  //  this.$http.get('api/ong')
-  //     .then(res => {
-
-  //       this.$scope = res.data.findOne({'slug' : ''});
-
-  //     });
-
-    this.$http.get('api/ong', function(req, res, next){
-       res.findOne({'author' : slug} , function (err, doc){
-        if (err) return next(err);
-        if (!doc) return next(new Error('cant find'));
-        console.log(doc);
-        this.$scope = res.json(doc);
-       });
-
-    })
-    
+   this.$http.get(`api/ong/${ this.$routeParams.id}`)
+      .then(res => {
+        this.infoOng = res.data;
+        console.log(this.infoOng);
+      });
   }
 
-  $onInit(){
+  $onInit() {
      this.carregaLista();
-     console.log(this.$routeParams);
-     console.log(this.$scope);
   }
 
 }
