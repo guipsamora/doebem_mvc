@@ -1,12 +1,12 @@
 div#pagOng
-  div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url({{$ongForm.backgroundImage}})'}")
-    h2 {{ongForm.nomeFantasia}}
+  div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url({{$ctrl.infoOng.backgroundImage}})'}")
+    h2 {{$ctrl.infoOng.nomeFantasia}}
   .container
     div#infos(layout="row" flex="100")
 
       div#smallInfo(flex layout-align="center center")
         img(ng-src="{{ongForm.logo}}")
-        h4 Causa: {{ongForm.causa}}
+        h4 Causa: {{$ctrl.infoOng.causa}}
         h4 Ano de fundação: {{ongForm.anoFundacao}}
         h4 Atua em: {{ongForm.localidadesDeAtuacao}}
     md-content(layout="column" flex="100")
