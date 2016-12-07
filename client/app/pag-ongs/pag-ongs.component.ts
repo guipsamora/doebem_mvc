@@ -26,7 +26,7 @@ export class PagOngs {
 }
 
  carregaLista() {
-   this.$http.get(`api/ong/${ this.$routeParams.id}`)
+   this.$http.get(`api/ong/${this.$routeParams.id}`)
       .then(res => {
         this.infoOng = res.data;
         console.log(this.infoOng);

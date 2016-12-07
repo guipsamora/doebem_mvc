@@ -1,26 +1,27 @@
 div#pagOng
-  div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url({{$ctrl.infoOng.backgroundImage}})'}")
+  div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url(' + $ctrl.infoOng.backgroundImage + ')'}")
     h2 {{$ctrl.infoOng.nomeFantasia}}
   .container
     div#infos(layout="row" flex="100")
-
       div#smallInfo(flex layout-align="center center")
-        img(ng-src="{{ongForm.logo}}")
+        img(ng-src="{{$ctrl.infoOng.logo}}")
         h4 Causa: {{$ctrl.infoOng.causa}}
-        h4 Ano de fundação: {{ongForm.anoFundacao}}
-        h4 Atua em: {{ongForm.localidadesDeAtuacao}}
+        h4 Ano de fundação: {{$ctrl.infoOng.anoFundacao}}
+        h4 Atua em: {{$ctrl.infoOng.localidadesDeAtuacao[0].localidade}}
+        md.button Doe
     md-content(layout="column" flex="100")
       md-content#lista(flex = "100" layout="column" layout-align="left")
         h2 Sobre
-        p {{ongForm.sobre}}
+        p {{$ctrl.infoOng.sobre}}
         h2 Resumo - Análise Doebem
         h3 Gestão
-        p {{ongForm.analiseGestao}}
+        p {{$ctrl.infoOng.analiseGestao}}
         h3 Transparência
-        p {{ongForm.analiseTransparencia}}
+        p {{$ctrl.infoOng.analiseTransparencia}}
         h3 Impacto
-        p {{ongForm.analiseImpacto}}
-        a(href="") Confira aqui o arquivo com nossa análise completa.
+        p {{$ctrl.infoOng.analiseImpacto}}
+        a(ng-href="{{$ctrl.infoOng.linkPdf}}" target="_blank") 
+         p Confira aqui o arquivo com nossa análise completa.
 contact-form
 
       //- div#carousel(flex="80" layout-align="left")
