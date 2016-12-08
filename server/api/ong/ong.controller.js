@@ -70,12 +70,18 @@ export function index(req, res) {
     .catch(handleError(res));
 }
 
-// Gets a single Ong from the DB
+
+// Gets a single Omg from the DB from id or from slug...
 export function show(req, res) {
   return Ong.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
-    .catch(handleError(res));
+    .catch(err => {
+      Ong.findOne({slug: req.params.id}).exec()
+      .then(handleEntityNotFound(res))
+      .then(respondWithResult(res))
+      .catch(handleError(res));
+    });
 }
 
 // Creates a new Ong in the DB
