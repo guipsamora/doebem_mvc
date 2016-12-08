@@ -71,10 +71,17 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
                 label Causa
                 md-select(ng-model="$ctrl.ongForm.causa" )  
                   md-option(ng-repeat="area in $ctrl.listAreasDeAtuacao" value="{{area.abbrev}}") {{area.desc}}
+              md-input-container.md-block(flex-gt-sm="20"  flex="100")
+                label Causa - FrontEnd
+                md-select(ng-model="$ctrl.ongForm.causaFrontEnd" )  
+                  md-option(ng-repeat="area in $ctrl.listAreasDeAtuacao" value="{{area.desc}}") {{area.desc}}                  
               md-input-container.md-block(flex)
                   label Locais de Atuação
                   input(ng-model="$ctrl.ongForm.localidadesDeAtuacao.localidade" required)              
             div#Analises(layout="column" flex="100")
+                md-input-container.md-block(flex-gt-sm)
+                  label Pequena Descrição 
+                  textarea(ng-model="$ctrl.ongForm.desc" columns="1" md-maxlength="140")            
                 md-input-container.md-block(flex-gt-sm)
                   label Sobre a ONG
                   textarea(ng-model="$ctrl.ongForm.sobre" columns="1")

@@ -73,12 +73,20 @@ const OngSchema = new mongoose.Schema({
     type: 'String',
     required: true
   },
+  causaFrontEnd: {
+    type: 'String',
+    required: true
+  },
   localidadesDeAtuacao: [{
     localidade: {
       type: 'String',
       required: true
     }
   }],
+  desc: {
+    type: 'String',
+    required: true
+  },
   sobre: {
     type: 'String',
     required: true
