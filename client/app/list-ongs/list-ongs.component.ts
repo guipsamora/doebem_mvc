@@ -22,81 +22,7 @@ export class ListOngsController {
     this.pageTitle;
     this.pageImage;
     this.listOngToDisplay;
-  
-    this.listOng = [
-      {
-        nome: 'Exemplo 1',
-        link: 'exemplo_1',
-        areaDeAtuacao: 'educacao',
-        desc: 'Bla Bla Bla Bla Bla Bla',
-        logo: '../../assets/images/educacao/gauss/logo-gauss.png',
-        localidades: 'Rio de Janeiro'
-      },
-      {
-        nome: 'Exemplo 2',
-        link: 'exemplo_2',
-        areaDeAtuacao: 'educacao',
-        desc: 'Bla Bla Bla Bla Bla Bla',
-        logo: '../../assets/images/educacao/gauss/logo-gauss.png',
-        localidades: 'Rio de Janeiro'
-      },
-      {
-        nome: 'Exemplo 3',
-        link: 'exemplo_3',
-        areaDeAtuacao: 'educacao',
-        desc: 'Bla Bla Bla Bla Bla Bla',
-        logo: '../../assets/images/educacao/gauss/logo-gauss.png',
-        localidades: 'Rio de Janeiro'
-      },
-      {
-        nome: 'Exemplo 1',
-        link: 'exemplo_1',
-        areaDeAtuacao: 'saude',
-        desc: 'Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ',
-        logo: '../../assets/images/educacao/gauss/logo-gauss.png',
-        localidades: 'São Paulo'
-      },
-      {
-        nome: 'Exemplo 2',
-        link: 'exemplo_2',
-        areaDeAtuacao: 'saude',
-        desc: 'Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ',
-        logo: '../../assets/images/educacao/gauss/logo-gauss.png',
-        localidades: 'São Paulo'
-      },
-      {
-        nome: 'Exemplo 3',
-        link: 'exemplo_3',
-        areaDeAtuacao: 'saude',
-        desc: 'Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla ',
-        logo: '../../assets/images/educacao/gauss/logo-gauss.png',
-        localidades: 'São Paulo'
-      },
-      {
-        nome: 'Exemplo 1',
-        link: 'exemplo_1',
-        areaDeAtuacao: 'combateAPobreza',
-        desc: 'Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla',
-        logo: '../../assets/images/educacao/gauss/logo-gauss.png',
-        localidades: 'Rio de Janeiro - São Paulo'
-      },
-      {
-        nome: 'Exemplo 2',
-        link: 'exemplo_2',
-        areaDeAtuacao: 'combateAPobreza',
-        desc: 'Bla Bla Bla Bla Bla Bla',
-        logo: '../../assets/images/educacao/gauss/logo-gauss.png',
-        localidades: 'Rio de Janeiro - São Paulo'
-      },
-      {
-        nome: 'Exemplo 3',
-        link: 'exemplo_3',
-        areaDeAtuacao: 'combateAPobreza',
-        desc: 'Bla Bla Bla Bla Bla Bla',
-        logo: '../../assets/images/educacao/gauss/logo-gauss.png',
-        localidades: 'Rio de Janeiro - São Paulo'
-      }
-    ];
+    this.listOng;
 
     this.listOngFilters = [
       {
@@ -112,10 +38,20 @@ export class ListOngsController {
         image: './assets/images/saude/2.jpg'
       }
     ];
+
   }
+
+   carregaLista() {
+    this.$http.get(`api/ong/`)
+        .then(res => {
+          this.listOng = res.data;
+          this.listOngFilterToDisplay();
+        });
+   }
 
   $onInit() {
      this.setPageFilter();
+     this.carregaLista();
   }
 
   setPageFilter() {
@@ -124,17 +60,14 @@ export class ListOngsController {
       case 'saude':
         this.pageTitle = 'Saúde';
         this.pageImage = './assets/images/saude/2.jpg';
-        this.listOngFilterToDisplay();
         break;
       case 'combateAPobreza':
         this.pageTitle = 'Combate a Pobreza';
         this.pageImage = './assets/images/combate_pobreza/1.jpg';
-        this.listOngFilterToDisplay();
         break;
       case 'educacao':
         this.pageTitle = 'Educação';
         this.pageImage = './assets/images/educacao/lousa_edu3.jpg';
-        this.listOngFilterToDisplay();
         break;
       default:
         this.pageTitle = 'Ongs que apoiamos';
@@ -145,7 +78,7 @@ export class ListOngsController {
 
   listOngFilterToDisplay() {
     this.listOng.map(ong => {
-      if (ong.areaDeAtuacao === this.$routeParams.filterCausa) {
+      if (ong.causa === this.$routeParams.filterCausa) {
           this.listOngToDisplay.push(ong);
       }
     });

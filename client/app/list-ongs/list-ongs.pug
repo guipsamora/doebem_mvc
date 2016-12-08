@@ -5,17 +5,17 @@ div#listOngs
     md-content#lista(flex = "100" layout="column" layout-align="center center")
       h3 Abaixo estão as ONGs que mais se destacaram em nossos critérios de avaliação.
       .container
-        md-list#listOngs(layout-gt-sm="row" layout="column" layout-wrap layout-align="center center")
+        md-grid#listOngs(layout-gt-sm="row" layout="column" layout-wrap layout-align="center center")
           md-list-item(ng-repeat="ong in $ctrl.listOngToDisplay " layout="column"  layout-align="center center")
             md-card(style="width: 300px")
               md-card-title
                 md-card-title-text(layout-align="center center")
-                  h1 {{ong.nome}} 
+                  h1 {{ong.nomeFantasia}} 
                   img.md-card-image(ng-src="{{ong.logo}}" )
-                  h4 Atua em: {{ong.localidades}}
+                  h4 Atua em: {{ong.localidadesDeAtuacao}}
               md-card-content
-                  p {{ong.desc}}
+                  p {{ong.sobre}}
               md-action(layout="row" layout-align="center center")
-            a(ng-href="{{ong.link}}")
+            a(ng-href="pagOngs/{{ong.slug}}")
               md-button.md-raised.md-primary Apoiar
 contact-form

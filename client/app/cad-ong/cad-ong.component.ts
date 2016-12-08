@@ -22,9 +22,9 @@ export class CadOngController {
     this.$routeParams = $routeParams;
 
     this.listAreasDeAtuacao = [
-      { abbrev: 'Educação', desc: 'Educação' },
-      { abbrev: 'Saúde', desc: 'Saúde' },
-      { abbrev: 'Combate à Probreza', desc: 'Combate à Probreza' }
+      { abbrev: 'educacao', desc: 'Educação' },
+      { abbrev: 'saude', desc: 'Saúde' },
+      { abbrev: 'combateAPobreza', desc: 'Combate à Probreza' }
     ];
   }
 
