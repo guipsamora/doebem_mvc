@@ -1,6 +1,5 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
-// const jkAngularCarousel = require('../../../node_modules/angular-jk-carousel/dist/jk-carousel.js');
 import routing from './pag-ongs.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
 
@@ -43,5 +42,3 @@ export default angular.module('doebemOrgApp.pagOngs', [ngRoute, contactForm])
   .config(routing) 
   .component('pagOngs', {template: require('./pag-ongs.pug'), controller: PagOngs})
   .name;
-
-// 'jkAngularCarousel'

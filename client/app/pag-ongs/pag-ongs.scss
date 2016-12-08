@@ -13,10 +13,16 @@ div#pagOng {
     }
 
     div#infos {
-      height: 300px;
+
+       div img#princ{
+          width: 600px;
+          height: 400px;
+       }
     }
 
     .container {
+      padding-top: 20px;
+      padding-bottom: 20px;
       padding-right: 10px;
       padding-left: 10px;
     }
