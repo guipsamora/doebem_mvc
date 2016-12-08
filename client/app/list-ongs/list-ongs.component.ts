@@ -46,6 +46,9 @@ export class ListOngsController {
         .then(res => {
           this.listOng = res.data;
           this.listOngFilterToDisplay();
+          if(this.listOngToDisplay.length == 0){
+            this.listOngToDisplay = this.listOng;
+          }
         });
    }
 
@@ -72,7 +75,6 @@ export class ListOngsController {
       default:
         this.pageTitle = 'Ongs que apoiamos';
         this.pageImage = './assets/images/educacao/lousa_edu3.jpg';
-        this.listOngToDisplay = this.listOng;
     }
   }
 
