@@ -38,7 +38,7 @@ export class PagOngs {
 
 }
 
-export default angular.module('doebemOrgApp.pagOngs', [ngRoute, contactForm]) 
-  .config(routing) 
+export default angular.module('doebemOrgApp.pagOngs', [ngRoute, contactForm])
+  .config(routing)
   .component('pagOngs', {template: require('./pag-ongs.pug'), controller: PagOngs})
   .name;

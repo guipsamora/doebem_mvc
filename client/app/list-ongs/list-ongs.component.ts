@@ -46,7 +46,7 @@ export class ListOngsController {
         .then(res => {
           this.listOng = res.data;
           this.listOngFilterToDisplay();
-          if(this.listOngToDisplay.length == 0){
+          if (this.listOngToDisplay.length === 0) {
             this.listOngToDisplay = this.listOng;
           }
         });

@@ -1,7 +1,5 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
-const slugifier = require('wb-angular-slugify');
-
 import routing from './cad-ong.routes';
 
 export class CadOngController {
@@ -53,11 +51,11 @@ export class CadOngController {
 
   addOng(ongForm) {
     this.$http.post('api/ong', ongForm)
-      .then(res => { console.log(res) });
+      .then(res => { console.log(res)});
   }
 }
 
-export default angular.module('doebemOrgApp.cadOng', [ngRoute, require('angular-input-masks'), 'slugifier'])
+export default angular.module('doebemOrgApp.cadOng', [ngRoute, require('angular-input-masks')])
   .config(routing)
   .component('cadOng',{template: require('./cad-ong.pug'), controller: CadOngController})
   .name;
