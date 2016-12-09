@@ -51,11 +51,12 @@ export class CadOngController {
 
   addOng(ongForm) {
     this.$http.post('api/ong', ongForm)
-      .then(res => { console.log(res)});
+      .then(res => {console.log(res);}
+    );
   }
 }
 
 export default angular.module('doebemOrgApp.cadOng', [ngRoute, require('angular-input-masks')])
   .config(routing)
-  .component('cadOng',{template: require('./cad-ong.pug'), controller: CadOngController})
+  .component('cadOng', {template: require('./cad-ong.pug'), controller: CadOngController})
   .name;
