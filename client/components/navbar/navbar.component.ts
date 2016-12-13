@@ -23,7 +23,7 @@ export class NavbarComponent {
     'link': '/'
   }, {
     'title': 'CONTATO ',
-    'link': 'contato'
+    'link': '/contato'
   }];
 
   $document;

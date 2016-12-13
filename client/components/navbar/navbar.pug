@@ -1,21 +1,21 @@
-div#menu.navbar.navbar-default.navbar-fixed-top(ng-class="{mainPageMenu: $ctrl.$location.url()==='/'}")
+div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()==='/'}")
   div.container
     div.navbar-header
-      button.navbar-toggle(type='button', ng-click='$ctrl.isCollapsed = !$ctrl.isCollapsed')
-        div(layout="row")
-          span(style="padding-right:5px;") MENU
-          div(layout="column" layout-align="center center")
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-    a(ng-href='/')
-      img.navbar-brand(ng-src="/assets/images/logos/logo_menor_6_transparente.png" )
-
-    div#navbar-main.navbar-collapse.collapse(uib-collapse='$ctrl.isCollapsed')
-      ul.nav.navbar-nav.navbar-right
-        li.menuAnchor(ng-repeat='item in $ctrl.menu', ng-class='{active: $ctrl.isActive(item.link)}')
-          a(ng-href='' ng-click='$ctrl.scrollToSection(item.link)') {{item.title}}
+      a(ng-href='/')
+        img.navbar-brand(ng-src="/assets/images/logos/logo_menor_6_transparente.png")
+  div.container
+    button.navbar-toggle(type='button', ng-click='$ctrl.isCollapsed = !$ctrl.isCollapsed')
+      div(layout="row")
+        span(style="padding-right:5px;") MENU
+        div(layout="column" layout-align="center center")
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar    
+    div.navbar-collapse.collapse(uib-collapse='$ctrl.isCollapsed' layout-align="center center")
+      ul.nav.navbar-nav.navbar-center
+        li.menuAnchor(ng-repeat='item in $ctrl.menu')
+          a(ng-href='{{item.link}}') {{item.title}}
 
         li(ng-show='$ctrl.isAdmin()', ng-class='{active: $ctrl.isActive("/admin")}')
           a(href='/admin') Admin

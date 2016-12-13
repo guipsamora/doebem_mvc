@@ -23,7 +23,14 @@ div#contactForm {
          md-input-container {
            border-radius: 5px;
            background-color: white;
-           opacity: 0.9;
+           color: black;
+
+           label { 
+              opacity: 1;
+              color: black;
+              font-size: 16px;           
+           }
+
            input{
               opacity: 1;
               color: black;
