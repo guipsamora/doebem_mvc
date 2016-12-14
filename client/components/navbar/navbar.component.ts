@@ -7,24 +7,25 @@ const duScroll = require('angular-scroll');
 export class NavbarComponent {
 
   menu = [{
-    'title': 'COMO FUNCIONA ',
-    'link': 'comoFunciona'
+    'title': '',
+    'link': ''
   }, {
-    'title': 'CAUSAS ',
-    'link': 'causas'
+    'title': '',
+    'link': ''
   }, {
-    'title': 'METODOLOGIA ',
+    'title': 'METODOLOGIA',
     'link': 'metodologia'
   }, {
-    'title': 'SOBRE ',
+    'title': 'TRANSPARÊNCIA',
+    'link': 'transparencia'
+  }, {
+    'title': 'SOBRE',
     'link': 'sobre'
   }, {
-    'title': 'BLOG ',
-    'link': '/'
-  }, {
-    'title': 'CONTATO ',
-    'link': '/contato'
-  }];
+    'title': 'BLOG',
+    'link': 'blog'
+  }
+  ];
 
   $document;
   $location;

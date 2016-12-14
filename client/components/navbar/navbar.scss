@@ -43,13 +43,13 @@ div#navbar-main.navbar-collapse.collapse {
     height: 70px;
 }
 
-.navbar .navbar-collapse {
-  text-align: center;
+.navbar .navbar-nav {
   display: inline-block;
+  float: none;
+  vertical-align: top;
 }
 
-.navbar .navbar-nav {
-  vertical-align: top;
+.navbar .navbar-collapse {
   text-align: center;
 }
 
@@ -58,5 +58,5 @@ div#navbar-main.navbar-collapse.collapse {
 }
 
 .menuAnchor:hover {
-      cursor:pointer;
+    cursor:pointer;
 }

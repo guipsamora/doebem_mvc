@@ -24,7 +24,7 @@ div#main
               p {{step.desc}}
     div#causas(flex = "100" layout="column" layout-align="center center")
       H2.sectionHeading Causas
-      h3 Selecione uma causa abaixo para conhecer as ONGs recomendadas.
+      h3 Selecione uma causa abaixo para conhecer as organizações recomendadas.
       md-list( layout-gt-sm="row" layput="column")
         md-list-item(ng-repeat="causa in $ctrl.causas" layout="column" layout-align="center center")
           a(ng-href="{{$location.absUrl() + causa.link}}")
