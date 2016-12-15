@@ -14,6 +14,7 @@ export default function(app) {
   app.use('/api/contactForm', require('./api/contactForm'));
   app.use('/api/ong', require('./api/ong'));
   app.use('/api/buscaCep', require('./api/busca-cep'));
+  app.use('/api/imageGallery', require('./api/imageGallery'));
 
   app.use('/auth', require('./auth').default);
 

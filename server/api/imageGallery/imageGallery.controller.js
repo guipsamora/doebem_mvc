@@ -20,7 +20,7 @@ var s3 = new AWS.S3();
 var params = {
   Bucket: 'doebem'
 };
-var s3Url = 'https://s3.amazonaws.com/doebem';
+var s3Url = 'https://s3-sa-east-1.amazonaws.com/doebem';
 
 exports.signing = function(req, res) {
   var request = req.body;

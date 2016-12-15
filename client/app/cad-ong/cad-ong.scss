@@ -17,21 +17,9 @@ div#cadOng {
         color: black;
       }
      
-      
       md-icon  {
         font-size: 20px;
-        i.fa.fa-phone {
-          color: blue;
-        }
-
-          i.fa.fa-search  {
-          color: blue;
-        }
-
-         i.fa.fa-envelope  {
-          color: blue;
-        }
-         i.fa.fa-user  {
+        i.fa {
           color: blue;
         }
 
@@ -39,7 +27,12 @@ div#cadOng {
     }
   }
 }
-
  md-select-menu md-option{
         color: black;
       }
+  div#imageForm {
+        div#drop {
+          background-color: lightgray;
+          min-height: 70px;
+        }
+      }      

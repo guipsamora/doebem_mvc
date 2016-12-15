@@ -109,4 +109,37 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
                   textarea(ng-model="$ctrl.ongForm.linkPdf" columns="1")
           div(flex="10")         
             md-button.md-raized.md-primary(type="submit") Cadastrar
-              
+
+script(type="text/ng-template" id="selectImage.tmpl.pug")
+  md-dialog(aria-label="Search Images")
+    form(ng-cloak)
+      md-toolbar
+        div.md-toolbar-tools
+          h2 Load a new one image
+          span(flex)
+          md-button.md-icon-button(ng-click="cancel()") x
+      md-dialog-content
+        md-content
+          div#uploadImage(flex="100", layout="column")
+          h1 New Image ?
+          div#imageForm(flex layout="column")
+            md-input-container(flex = "40").md-padding
+              label Title
+              input(ng-model="$ctrl.image.title")
+            div#drop(flex="20" layout="row").md-padding
+              div.drop-box(ngf-drop="$ctrl.onFileSelect($file)" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-pattern="'image/*,application/pdf'" ngf-resize="{ratio: '1.91:1', width: 1203, height: 630}")
+                span Drop Images or PDFs files here
+              div( ngf-no-file-drop) File Drag/Drop is not supported for this browser
+          div(flex)
+            md-progress-linear(ng-show="$ctrl.determinateValue" md-mode="determinate" ng-value="$ctrl.determinateValue")
+
+        md-content#ListContent
+          md-list#dialogImagesList(flex)
+            md-list-item.md-2-line(ng-animate='animate' ng-repeat='image in $ctrl.listImages', layout="row", ng-click="answer($index)")
+              img(ng-src='https://s3-sa-east-1.amazonaws.com/doebem/{{image}}' style="max-width:100px;")
+              div.md-list-item-text(layout="column" alig)
+                h3 {{image}}
+              md-divider.md-inset(ng-if="!$last")
+      md-dialog-actions(layout="row")
+        span(flex)
+        md-button(ng-click="cancel()") Cancel
