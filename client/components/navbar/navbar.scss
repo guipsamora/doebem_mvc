@@ -3,11 +3,11 @@ div#menu {
   text-transform: uppercase;
     border: 0px;
   background-color: black;
-  height: 70px;
+  height: 100px;
   font-size:18px;
   font-weight: 600;
-  padding: 10px 0px 10px 0px;
   color: white;
+  margin-bottom: 0px;
   div.container div#navbar-main {
       background-color: transparent;
       ul li a {
@@ -25,14 +25,32 @@ div#menu.mainPageMenu {
      }
 }
 
+.navbar-header {
+    float: left;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+}
+
 img.navbar-brand {
     padding: 0 0 0 0;
     width: 145px;
     height: 35px;
+    float: none;
 }
 
 div#navbar-main.navbar-collapse.collapse {
     height: 70px;
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -40,5 +58,5 @@ div#navbar-main.navbar-collapse.collapse {
 }
 
 .menuAnchor:hover {
-      cursor:pointer;
+    cursor:pointer;
 }

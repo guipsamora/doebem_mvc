@@ -73,7 +73,7 @@ export class ListOngsController {
         this.pageImage = './assets/images/educacao/lousa_edu3.jpg';
         break;
       default:
-        this.pageTitle = 'Ongs que apoiamos';
+        this.pageTitle = 'ONGs recomendadas';
         this.pageImage = './assets/images/educacao/lousa_edu3.jpg';
     }
   }
