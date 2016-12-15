@@ -6,13 +6,8 @@ const duScroll = require('angular-scroll');
 
 export class NavbarComponent {
 
-  menu = [{
-    'title': '',
-    'link': ''
-  }, {
-    'title': '',
-    'link': ''
-  }, {
+  menu = [
+  {
     'title': 'METODOLOGIA',
     'link': 'metodologia'
   }, {
@@ -21,6 +16,9 @@ export class NavbarComponent {
   }, {
     'title': 'SOBRE',
     'link': 'sobre'
+  }, {
+    'title': 'DUVIDAS',
+    'link': 'duvidas'
   }, {
     'title': 'BLOG',
     'link': 'blog'

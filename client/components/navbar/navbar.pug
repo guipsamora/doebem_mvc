@@ -5,7 +5,7 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
         img.navbar-brand(ng-src="/assets/images/logos/logo_menor_6_transparente.png")
   div.container
     button.navbar-toggle(type='button', ng-click='$ctrl.isCollapsed = !$ctrl.isCollapsed' layout-align="center center")
-      div(layout="row")
+      div(layout="column")
         span(style="padding-right:5px;") MENU
         div(layout="column" layout-align="center center")
           span.sr-only Toggle navigation
