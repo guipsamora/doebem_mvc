@@ -6,18 +6,21 @@ export class CadOngController {
   $http;
   $scope;
   $routeParams;
+  $mdDialog;
   states =  [];
   listOng = [];
   listAreas = [];
   listAreasDeAtuacao = [];
   ongForm;
   ong = {};
+  dialog;
 
   /*@ngInject*/
-  constructor($http, $scope, socket, $routeParams) {
+  constructor($http, $scope, socket, $routeParams, $mdDialog) {
     this.$http = $http;
     this.$scope = $scope;
     this.$routeParams = $routeParams;
+    this.$mdDialog = $mdDialog;
 
     this.listAreasDeAtuacao = [
       { abbrev: 'educacao', desc: 'Educação' },
@@ -26,14 +29,32 @@ export class CadOngController {
     ];
   }
 
- carregaLista() {
+  carregaLista() {
    this.$http.get('api/ong')
       .then(res => {
         this.listOng = res.data;
       });
   }
 
- buscaEnd(cep) {
+  handleUploadImage(caller, ev) {
+    this.dialog = this.$mdDialog.show({
+        scope: this.$scope,
+        preserveScope: true,
+        controller: DialogImagesController,
+        templateUrl: 'selectImage.tmpl.pug',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose: false,
+        fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
+    })
+    .then(answer => {
+        if (caller = 'logo') {
+          //this.ongForm.logo = `https://s3.amazonaws.com/rogatis/${this.imagesList[answer]}`;
+        }
+    });
+  }
+
+  buscaEnd(cep) {
 
    this.$http.get(`/api/BuscaCep/${cep}`)
      .then(res => {
@@ -45,6 +66,7 @@ export class CadOngController {
      .catch(err => console.log(err));
   }
 
+
   $onInit() {
     this.carregaLista();
   }
@@ -55,6 +77,21 @@ export class CadOngController {
     );
   }
 }
+
+DialogImagesController.$inject = ['$scope', '$mdDialog'];
+
+function DialogImagesController($scope, $mdDialog) {
+  $scope.hide = function() {
+    $mdDialog.hide();
+  };
+  $scope.cancel = function() {
+    $mdDialog.cancel();
+  };
+  $scope.answer = function(answer) {
+    $mdDialog.hide(answer);
+  };
+}
+
 
 export default angular.module('doebemOrgApp.cadOng', [ngRoute, require('angular-input-masks')])
   .config(routing)

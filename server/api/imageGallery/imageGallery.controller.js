@@ -72,36 +72,7 @@ exports.signing = function(req, res) {
   res.jsonp(credentials);
 };
 
-/*function respondWithResult(res, statusCode) {
-  statusCode = statusCode || 200;
-  return function(entity) {
-    if (entity) {
-      return res.status(statusCode).json(entity);
-    }
-    return null;
-  };
-}*/
 
-/*function removeEntity(res) {
-  return function(entity) {
-    if(entity) {
-      return entity.remove()
-        .then(() => {
-          res.status(204).end();
-        });
-    }
-  };
-}*/
-
-/*function handleEntityNotFound(res) {
-  return function(entity) {
-    if(!entity) {
-      res.status(404).end();
-      return null;
-    }
-    return entity;
-  };
-}*/
 
 function handleError(res, statusCode) {
   statusCode = statusCode || 500;
