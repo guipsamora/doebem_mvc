@@ -26,7 +26,6 @@ export class CadOngController {
     this.$routeParams = $routeParams;
     this.$mdDialog = $mdDialog;
     this.Upload = Upload;
-    //this.s3Url = 'https://s3-sa-east-1.amazonaws.com/doebem';
     this.listAreasDeAtuacao = [
       { abbrev: 'educacao', desc: 'Educação' },
       { abbrev: 'saude', desc: 'Saúde' },
@@ -103,8 +102,8 @@ export class CadOngController {
     .then(answer => {
         if (caller === 'logo') {
           this.ongForm.logo = `${this.s3Url}/${this.listImages[answer]}`;
-        } else if(caller === 'backgroundImage') {
-          this.ongForm.backgroundImage = `${this.s3Url}/${this.listImages[answer]}`;
+        } else if (caller === 'backgroundImage') {
+           this.ongForm.backgroundImage = `${this.s3Url}/${this.listImages[answer]}`;
         } else if(caller === 'imagens') {
           this.ongForm.imagens.push({imagem:`${this.s3Url}/${this.listImages[answer]}`});
         }
@@ -112,12 +111,13 @@ export class CadOngController {
   }
 
   buscaEnd(cep) {
+   console.log(cep)
    this.$http.get(`/api/BuscaCep/${cep}`)
      .then(res => {
        const end = JSON.parse(res.data.body);
-       this.ongForm.logradouro = end.address.split('-')[0];
-       this.ongForm.cidade = end.city;
-       this.ongForm.estado = end.state;
+        this.ongForm.logradouro = end.address.split('-')[0];
+        this.ongForm.cidade = end.city;
+        this.ongForm.estado = end.state;
      })
      .catch(err => console.log(err));
   }
@@ -128,10 +128,26 @@ export class CadOngController {
     this.loadImages();
   }
 
-  addOng(ongForm) {
-    this.$http.post('api/ong', ongForm)
-      .then(res => {console.log(res);}
-    );
+  addOng(form, ev) {
+    this.$http.post('api/ong', form)
+      .then(res => {
+        this.dialog = this.$mdDialog.show({
+        scope: this.$scope,
+        preserveScope: true,
+        controller: DialogImagesController,
+        templateUrl: 'save.tmpl.pug',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose: false,
+        fullscreen: this.customFullscreen // Only for -xs, -sm breakpoints.
+      })
+      .then( () => {
+        this.ongForm = null;
+        this.$scope.ongForm.$setPristine();
+        this.$scope.ongForm.$setUntouched();
+      })
+    })
+    .catch(err => console.log(err));
   }
 }
 

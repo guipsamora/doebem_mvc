@@ -88,7 +88,10 @@ export function show(req, res) {
 export function create(req, res) {
   return Ong.create(req.body)
     .then(respondWithResult(res, 201))
-    .catch(handleError(res));
+    .catch(error => {
+      console.log('create na API da ong', error);
+      return handleError(res);
+    });
 }
 
 // Upserts the given Thing in the DB at the specified ID
