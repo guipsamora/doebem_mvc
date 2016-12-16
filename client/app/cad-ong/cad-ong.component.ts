@@ -12,7 +12,7 @@ export class CadOngController {
   listOng:  Object[];
   listAreas = [];
   listAreasDeAtuacao: Object[];
-  ongForm;
+  ongForm = { logo:  null as string , imagens: [] };
   ong = {};
   dialog;
   determinateValue;
@@ -102,8 +102,11 @@ export class CadOngController {
     })
     .then(answer => {
         if (caller === 'logo') {
-          console.log(answer, `${this.s3Url}/${this.listImages[answer]}`);
-        this.ongForm.logo = `${this.s3Url}/${this.listImages[answer]}`;
+          this.ongForm.logo = `${this.s3Url}/${this.listImages[answer]}`;
+        } else if(caller === 'backgroundImage') {
+          this.ongForm.backgroundImage = `${this.s3Url}/${this.listImages[answer]}`;
+        } else if(caller === 'imagens') {
+          this.ongForm.imagens.push({imagem:`${this.s3Url}/${this.listImages[answer]}`});
         }
     });
   }
@@ -132,20 +135,13 @@ export class CadOngController {
   }
 }
 
-DialogImagesController.$inject = ['$scope', '$mdDialog'];
-
-function DialogImagesController($scope, $mdDialog) {
-  $scope.hide = function() {
-    $mdDialog.hide();
-  };
-  $scope.cancel = function() {
-    $mdDialog.cancel();
-  };
-  $scope.answer = function(answer) {
-    $mdDialog.hide(answer);
-  };
+const DialogImagesController = ($scope, $mdDialog) => {
+  $scope.hide = () => $mdDialog.hide();
+  $scope.cancel = () => $mdDialog.cancel();
+  $scope.answer = (answer) => $mdDialog.hide(answer);
 }
 
+DialogImagesController.$inject = ['$scope', '$mdDialog'];
 
 export default angular.module('doebemOrgApp.cadOng', [ngRoute, ngFileUpload, require('angular-input-masks')])
   .config(routing)

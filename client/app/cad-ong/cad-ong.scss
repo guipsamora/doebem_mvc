@@ -4,6 +4,10 @@ div#cadOng {
   background-size: cover;
   background-repeat: no-repeat;
   div#form {
+    img.FormImage {
+      max-width: 50px;
+      max-height: 50px;
+    }
     background-color: white;
     //color: white;
     div form div div

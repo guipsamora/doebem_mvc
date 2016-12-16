@@ -66,14 +66,26 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
                   label Logo
                   input(ng-model="$ctrl.ongForm.logo" required)
                 md-button.md-icon-button(ng-click="$ctrl.handleUploadImage('logo', $event)" aria-label="carrega imagem")
+                  md-icon
+                    i.fa.fa-cloud-upload 
+                img.FormImage(ng-show="$ctrl.ongForm.logo" ng-src="{{$ctrl.ongForm.logo}}")
+              div(flex-gt-sm="30" flex="100" layout="row" layout-align="center center")        
+                md-input-container.md-block(flex)
+                  label Imagem de Fundo
+                  input(ng-model="$ctrl.ongForm.backgroundImage" required)
+                md-button.md-icon-button(ng-click="$ctrl.handleUploadImage('backgroundImage', $event)" aria-label="carrega imagem")
                     md-icon
                       i.fa.fa-cloud-upload 
-              md-input-container.md-block(flex-gt-sm="30" flex="100")
-                label Imagem de Fundo
-                input(ng-model="$ctrl.ongForm.backgroundImage" required)                                 
-              md-input-container.md-block(flex-gt-sm="30" flex="100")
-                  label Imagens da ONG
-                  input(ng-model="$ctrl.ongForm.imagens.imagem" required)
+                img.FormImage(ng-show="$ctrl.ongForm.backgroundImage" ng-src="{{$ctrl.ongForm.backgroundImage}}") 
+              div(flex-gt-sm="30" flex="100" layout="row" layout-align="center center")                                   
+                label Imagens da ONG
+                md-list
+                  md-list-item.md-1-line(ng-repeat="image in $ctrl.ongForm.imagens")
+                    input(ng-model="image.imagem" required disabled)
+                    img.FormImage(ng-show="image.imagem" ng-src="{{image.imagem}}")  
+              md-button.md-icon-button(ng-click="$ctrl.handleUploadImage('imagens', $event)" aria-label="carrega imagem")
+                md-icon
+                  i.fa.fa-plus      
             h2 Infos      
             div#Infos(layout="column" layout-gt-sm="row"  flex="100")
               md-input-container.md-block(flex-gt-sm="20"  flex="100")
@@ -132,7 +144,6 @@ script(type="text/ng-template" id="selectImage.tmpl.pug")
               div( ngf-no-file-drop) File Drag/Drop is not supported for this browser
           div(flex)
             md-progress-linear(ng-show="$ctrl.determinateValue" md-mode="determinate" ng-value="$ctrl.determinateValue")
-
         md-content#ListContent
           md-list#dialogImagesList(flex)
             md-list-item.md-2-line(ng-animate='animate' ng-repeat='image in $ctrl.listImages', layout="row", ng-click="answer($index)")
