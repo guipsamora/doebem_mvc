@@ -35,7 +35,7 @@ exports.signing = function(req, res) {
   var s3Policy = {
     expiration: expiration,
     conditions: [{
-      bucket: 'doebem,'
+      bucket: 'doebem'
     },
       ['starts-with', '$key', path],
       {
@@ -108,7 +108,7 @@ export function show(req, res) {
 // Deletes a image from the s3
 export function destroy(req, res) {
   let paramsToDelete = {
-    Bucket: 'rogatis',
+    Bucket: 'doebem',
     Key: req.params.id
   };
   s3.deleteObject(paramsToDelete).promise()

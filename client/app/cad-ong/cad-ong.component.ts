@@ -9,16 +9,16 @@ export class CadOngController {
   $routeParams;
   $mdDialog;
   states =  [];
-  listOng = [];
+  listOng:  Object[];
   listAreas = [];
-  listAreasDeAtuacao = [];
+  listAreasDeAtuacao: Object[];
   ongForm;
   ong = {};
   dialog;
   determinateValue;
-  listImages;
+  listImages: Object[];
   Upload;
-
+  s3Url: String = 'https://s3-sa-east-1.amazonaws.com/doebem';
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams, $mdDialog, Upload) {
     this.$http = $http;
@@ -26,7 +26,7 @@ export class CadOngController {
     this.$routeParams = $routeParams;
     this.$mdDialog = $mdDialog;
     this.Upload = Upload;
-
+    //this.s3Url = 'https://s3-sa-east-1.amazonaws.com/doebem';
     this.listAreasDeAtuacao = [
       { abbrev: 'educacao', desc: 'Educação' },
       { abbrev: 'saude', desc: 'Saúde' },
@@ -48,7 +48,7 @@ export class CadOngController {
       });
   }
 
-    onFileSelect(files) {
+  onFileSelect(files) {
     var filename = files.name;
     var type = files.type;
     var query = {
@@ -57,6 +57,7 @@ export class CadOngController {
     };
     this.$http.post('api/imageGallery/signing', query)
       .success(result => {
+        console.log(result, 'aprovou')
         this.Upload.upload({
           url: result.url, //s3Url
           transformRequest: (data, headersGetter) => {
@@ -78,7 +79,7 @@ export class CadOngController {
           //this.angularGridInstance.gallery.refresh();
         })
         .error(err => {
-          console.log('erroooo', err);
+          console.log('erro no cliente do s3', err);
         });
       })
       .error((data, status) => {
@@ -100,14 +101,14 @@ export class CadOngController {
         fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
     })
     .then(answer => {
-        if (caller = 'logo') {
-          //this.ongForm.logo = `https://s3.amazonaws.com/rogatis/${this.imagesList[answer]}`;
+        if (caller === 'logo') {
+          console.log(answer, `${this.s3Url}/${this.listImages[answer]}`);
+        this.ongForm.logo = `${this.s3Url}/${this.listImages[answer]}`;
         }
     });
   }
 
   buscaEnd(cep) {
-
    this.$http.get(`/api/BuscaCep/${cep}`)
      .then(res => {
        const end = JSON.parse(res.data.body);

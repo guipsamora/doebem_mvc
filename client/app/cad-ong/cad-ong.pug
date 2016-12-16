@@ -65,7 +65,7 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
                 md-input-container.md-block(flex)
                   label Logo
                   input(ng-model="$ctrl.ongForm.logo" required)
-                md-button.md-icon-button(ng-click="$ctrl.handleUploadImage()" aria-label="carrega imagem")
+                md-button.md-icon-button(ng-click="$ctrl.handleUploadImage('logo', $event)" aria-label="carrega imagem")
                     md-icon
                       i.fa.fa-cloud-upload 
               md-input-container.md-block(flex-gt-sm="30" flex="100")
