@@ -100,12 +100,21 @@ export class CadOngController {
         fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
     })
     .then(answer => {
-        if (caller === 'logo') {
-          this.ongForm.logo = `${this.s3Url}/${this.listImages[answer]}`;
-        } else if (caller === 'backgroundImage') {
-           this.ongForm.backgroundImage = `${this.s3Url}/${this.listImages[answer]}`;
-        } else if(caller === 'imagens') {
-          this.ongForm.imagens.push({imagem:`${this.s3Url}/${this.listImages[answer]}`});
+        switch(caller) {
+          case 'logo':
+            this.ongForm.logo = `${this.s3Url}/${this.listImages[answer]}`;
+            break;
+          case 'backgroundImage':
+            this.ongForm.backgroundImage = `${this.s3Url}/${this.listImages[answer]}`;
+            break;
+          case 'imagens':
+            this.ongForm.imagens.push({imagem:`${this.s3Url}/${this.listImages[answer]}`}); 
+            break;
+          case 'PDF':
+            this.ongForm.linkPdf = `${this.s3Url}/${this.listImages[answer]}`;
+            break;
+          default:
+            console.log('erro no handleUploadImage');
         }
     });
   }

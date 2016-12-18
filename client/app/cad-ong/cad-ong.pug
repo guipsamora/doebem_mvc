@@ -64,8 +64,8 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
                 label Estado
                 input(ng-model="$ctrl.ongForm.estado" ng-value="{{state.Sigla}}") 
             h2 Imagens     
-            div#Imagens(layout="column" layout-gt-sm="row"  flex="100")
-              div(flex-gt-sm="30" flex="100" layout="row" layout-align="center center")
+            div#Imagens(layout="column" flex="100")
+              div(flex="100" layout="row" layout-align="center center")
                 md-icon
                   i.fa.fa-picture-o
                 md-input-container.md-block(flex)
@@ -75,7 +75,7 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
                   md-icon
                     i.fa.fa-cloud-upload 
                 img.FormImage(ng-show="$ctrl.ongForm.logo" ng-src="{{$ctrl.ongForm.logo}}")
-              div(flex-gt-sm="35" flex="100" layout="row" layout-align="center center")        
+              div(flex="100" layout="row" layout-align="center center")        
                 md-input-container.md-block(flex)
                   label Imagem de Fundo
                   input(ng-model="$ctrl.ongForm.backgroundImage" required)
@@ -83,15 +83,15 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
                     md-icon
                       i.fa.fa-cloud-upload 
                 img.FormImage(ng-show="$ctrl.ongForm.backgroundImage" ng-src="{{$ctrl.ongForm.backgroundImage}}") 
-              div(flex-gt-sm="35" flex="100" layout="row" layout-align="center center")                                   
+              div(flex="100" layout="row" layout-align="center center")                                   
                 label Imagens da ONG
-                md-list
-                  md-list-item.md-1-line(ng-repeat="image in $ctrl.ongForm.imagens")
-                    input(ng-model="image.imagem" required disabled)
+                md-list(flex)
+                  md-list-item.md-1-line(flex ng-repeat="image in $ctrl.ongForm.imagens")
+                    input(flex ng-model="image.imagem" required disabled)
                     img.FormImage(ng-show="image.imagem" ng-src="{{image.imagem}}")  
-              md-button.md-icon-button(ng-click="$ctrl.handleUploadImage('imagens', $event)" aria-label="carrega imagem")
-                md-icon
-                  i.fa.fa-plus      
+                md-button.md-icon-button(ng-click="$ctrl.handleUploadImage('imagens', $event)" aria-label="carrega imagem")
+                  md-icon
+                    i.fa.fa-plus      
             h2 Infos      
             div#Infos(layout="column" layout-gt-sm="row"  flex="100")
               md-input-container.md-block(flex-gt-sm="20"  flex="100")
@@ -122,9 +122,13 @@ div.layout-padding#cadOng(layout="column" layout-align="center center")
                 md-input-container.md-block(flex-gt-sm)
                   label Impacto
                   textarea(ng-model="$ctrl.ongForm.analiseImpacto" columns="1")
-                md-input-container.md-block(flex-gt-sm)
-                  label PDF
-                  textarea(ng-model="$ctrl.ongForm.linkPdf" columns="1")
+                div(flex="100" layout="row" layout-align="center center")         
+                  md-input-container.md-block(flex)
+                    label PDF
+                    input(ng-model="$ctrl.ongForm.linkPdf" required)
+                  md-button.md-icon-button(ng-click="$ctrl.handleUploadImage('PDF', $event)" aria-label="carrega imagem")
+                      md-icon
+                        i.fa.fa-cloud-upload   
           div(flex="10")         
             md-button.md-raized.md-primary(type="submit") Cadastrar
 
