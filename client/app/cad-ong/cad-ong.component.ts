@@ -127,6 +127,7 @@ export class CadOngController {
         this.ongForm.logradouro = end.address.split('-')[0];
         this.ongForm.cidade = end.city;
         this.ongForm.estado = end.state;
+        // bobeira
      })
      .catch(err => console.log(err));
   }
