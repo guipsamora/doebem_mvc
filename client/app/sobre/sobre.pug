@@ -29,11 +29,11 @@ div.animated.fadeIn#sobre
             md-card-title-text(layout = "column" layout-align="center center")
               h3 {{pessoa.nome}}
           md-card-actions(layout = "row" layout-align="center center")
-            a(target='_blank' href='pessoa.twitter')
-              md-button.md-icon-button
+            a(target='_blank' href='{{pessoa.twitter}}')
+              md-button.md-icon-button(aria-label="twitter button")
                 i.fa.fa-twitter
-            a(target='_blank' href='pessoa.linkedin')
-              md-button.md-icon-button
+            a(target='_blank' href='{{pessoa.linkedin}}')
+              md-button.md-icon-button(aria-label="linkedin button")
                 i.fa.fa-linkedin
   md-content#Conselho(layout="column"  flex="100" layout-align="center center")
     h1 Conselho
@@ -45,10 +45,10 @@ div.animated.fadeIn#sobre
             md-card-title-text(layout = "column" layout-align="center center")
               h3 {{conselheiro.nome}}
           md-card-actions(layout = "row" layout-align="center center")
-            a(target='_blank' href='conselheiro.twitter')
-              md-button.md-icon-button
+            a(target='_blank' href='{{conselheiro.twitter}}')
+              md-button.md-icon-button(aria-label="twitter button")
                 i.fa.fa-twitter
-            a(target='_blank' href='conselheiro.linkedin')
-              md-button.md-icon-button
+            a(target='_blank' href='{{conselheiro.linkedin}}')
+              md-button.md-icon-button(aria-label="linkedin button")
                 i.fa.fa-linkedin                                   
 contact-form

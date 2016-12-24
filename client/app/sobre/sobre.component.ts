@@ -18,13 +18,13 @@ export class SobreController {
     this.listaPessoas = [
       {nome: 'Elisa Mansur',
        img: './assets/images/team/1.jpg',
-       twitter: '',
-       linkedin: ''
+       twitter: 'https://twitter.com/elisa_mansur',
+       linkedin: 'https://www.linkedin.com/in/elisa-de-rooij-mansur-30435854/en'
       },
        {nome: 'Guilherme Samora',
        img: './assets/images/team/2.jpg',
-       twitter: '',
-       linkedin: ''
+       twitter: 'https://twitter.com/guisamora',
+       linkedin: 'https://br.linkedin.com/in/guisamora'
       }
     ];
     this.listaConselheiros = [
