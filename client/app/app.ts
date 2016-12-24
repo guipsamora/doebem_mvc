@@ -24,6 +24,8 @@ import sobre from './sobre/sobre.component';
 import cadOng from './cad-ong/cad-ong.component';
 import pagOngs from './pag-ongs/pag-ongs.component';
 import metodologia from './metodologia/metodologia.component';
+import transparencia from './transparencia/transparencia.component';
+import duvidas from './duvidas/duvidas.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
@@ -51,6 +53,8 @@ angular.module('doebemOrgApp', [
   cadOng,
   pagOngs,
   metodologia,
+  transparencia,
+  duvidas,
   slugifier,
   constants,
   socket,
