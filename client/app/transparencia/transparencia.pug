@@ -1,0 +1,14 @@
+div.animated.fadeIn#transparencia
+  div#pageHeader(flex="100"  layout="column" layout-align="center center")
+    h2 Transparência
+  div#comoFunciona(flex = "100" layout="column" layout-align="center center")
+    p Inspirada no movimento Altruísmo Eficaz, a DoeBem também acredita que podemos alocar os nossos recursos de forma efetiva para garantirmos o maior impacto possível que podemos causar no mundo. Com base nesta crença, desenvolvemos critérios que nos permitem avaliar os projetos e organizações que promovem mudanças de forma efetiva. Confira abaixo!
+    md-list#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
+      md-list-item(ng-repeat="step in $ctrl.stepCriterios") 
+          div#escolha(flex layout = "column" layout-align="center center")
+            span.fa-stack.fa-5x
+              i.fa.fa-circle.fa-stack-2x.text-primary
+              i#icon.fa.fa-stack-1x(ng-class="step.icon")
+            h2 {{step.title}}
+            p {{step.desc}}
+contact-form
