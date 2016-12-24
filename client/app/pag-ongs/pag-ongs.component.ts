@@ -1,5 +1,6 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
+const ngSanitize = require('angular-sanitize');
 import routing from './pag-ongs.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
 
@@ -38,7 +39,7 @@ export class PagOngs {
 
 }
 
-export default angular.module('doebemOrgApp.pagOngs', [ngRoute, contactForm])
+export default angular.module('doebemOrgApp.pagOngs', [ngRoute, contactForm, ngSanitize])
   .config(routing)
   .component('pagOngs', {template: require('./pag-ongs.pug'), controller: PagOngs})
   .name;
