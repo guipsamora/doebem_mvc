@@ -13,16 +13,17 @@ div.animated.fadeIn#listOngs
             md-gutter="35px")
         md-grid-tile(ng-repeat="ong in $ctrl.listOngToDisplay")
           div(layout="column" layout-fill)
-            md-card
-              md-card-title
-                md-card-title-text(layout-align="center center" layout="column")
-                  h1 {{ong.nomeFantasia}}
-                  img(ng-src="{{ong.logo}}" style="width: 300px; height:300px")  
-              md-card-content(layout-align="center center" layout="column")
-                p {{ong.desc}}
-                md-list
-                  md-list-item(ng-repeat="loc in ong.localidadesDeAtuacao")
-                    h4 Atua em: {{loc.localidade}}  
+            a(ng-href="pagOngs/{{ong.slug}}")
+              md-card
+                md-card-title
+                  md-card-title-text(layout-align="center center" layout="column")
+                    h1 {{ong.nomeFantasia}}
+                    img(ng-src="{{ong.logo}}" style="width: 300px; height:300px")  
+                md-card-content(layout-align="center center" layout="column")
+                  p {{ong.desc}}
+                  md-list
+                    md-list-item(ng-repeat="loc in ong.localidadesDeAtuacao")
+                      h4 Atua em: {{loc.localidade}}
             div(layout="row" layout-align="center center")
               a(ng-href="pagOngs/{{ong.slug}}")
                 md-button.md-raised.md-primary Apoiar

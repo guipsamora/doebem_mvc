@@ -45,9 +45,11 @@ export class ListOngsController {
     this.$http.get(`api/ong/`)
         .then(res => {
           this.listOng = res.data;
+          console.log(this.$routeParams.filterCausa);
           this.listOngFilterToDisplay();
-          if (this.listOngToDisplay.length === 0) {
-            this.listOngToDisplay = this.listOng;
+          if (this.$routeParams.filterCausa == undefined && 
+              this.listOngToDisplay.length === 0){
+                this.listOngToDisplay = this.listOng;
           }
         });
    }
@@ -59,7 +61,6 @@ export class ListOngsController {
 
   setPageFilter() {
     switch (this.$routeParams.filterCausa) {
-
       case 'saude':
         this.pageTitle = 'Saúde';
         this.pageImage = './assets/images/saude/2.jpg';
