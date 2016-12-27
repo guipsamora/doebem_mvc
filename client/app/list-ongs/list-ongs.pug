@@ -5,12 +5,12 @@ div.animated.fadeIn#listOngs
     div#lista(flex = "100" layout="column")
       h3 Abaixo estão as ONGs que mais se destacaram em nossos critérios de avaliação.
       md-grid-list#listOngs(flex
-          md-cols-gt-xs="2" 
+          md-cols-gt-xs="2"
           md-cols-gt-md="3"
-          md-cols="1" 
+          md-cols="1"
           md-row-height="4:5"
-          md-gutter-gt-sd="25px" 
-            md-gutter="35px")
+          md-gutter-gt-sd="25px"
+          md-gutter="35px")
         md-grid-tile(ng-repeat="ong in $ctrl.listOngToDisplay")
           div(layout="column" layout-fill)
             a(ng-href="pagOngs/{{ong.slug}}")
