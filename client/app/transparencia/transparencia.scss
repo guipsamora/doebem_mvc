@@ -23,19 +23,27 @@ div#transparencia {
       display: block;
       padding-bottom: 70px;
       background-color: white;
-      md-list {
-        md-list-item {
-          div#escolha {
-            span {
-              i#icon {
-                color: white;
-              }
-            }
-          }
-        }
+     
+      // ajustes das tabelas
+      th {
+        padding-left: 10px;
       }
+      th:first-child {
+        padding-left: 0px;
+      }
+      td {
+        padding-left: 5px;
+      }
+      td:first-child {
+        padding-left: 0px;
+      }
+      
       p {
         padding-bottom: 30px;
+      }
+      
+      h2 {
+        text-align: left;
       }
   }
 }

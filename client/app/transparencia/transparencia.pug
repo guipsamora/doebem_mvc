@@ -2,13 +2,39 @@ div.animated.fadeIn#transparencia
   div#pageHeader(flex="100"  layout="column" layout-align="center center")
     h2 Transparência
   div#comoFunciona(flex = "100" layout="column" layout-align="center center")
-    p A extrema transparência é um de nossos principais valores, assim pretendemos compartilhar aqui todos os documentos e 
-    md-list#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
-      md-list-item(ng-repeat="step in $ctrl.stepCriterios") 
-          div#escolha(flex layout = "column" layout-align="center center")
-            span.fa-stack.fa-5x
-              i.fa.fa-circle.fa-stack-2x.text-primary
-              i#icon.fa.fa-stack-1x(ng-class="step.icon")
-            h2 {{step.title}}
-            p {{step.desc}}
+    p A extrema transparência é um de nossos principais valores, assim pretendemos compartilhar aqui todos os documentos, relatórios, planos, erros e reuniões de conselho.
+    h2 Finanças
+    br
+    table
+      tr
+        th Ano
+        th Demonstração de Resultado
+        th Balanço Patrimonial
+      tr(ng-repeat="year in $ctrl.years")
+        td {{ year.y }}
+        td 
+          a(href="{{ year.dre }}" target="_self") {{ year.dre }}
+        td 
+          a(href="{{ year.balanco }}" target="_blank") {{year.balanco}}
+    h2 Planos
+    br
+    table
+      tr
+        th Ano
+        th Metas
+        th Métricas
+      tr(ng-repeat="year in $ctrl.years")
+        td {{ year.y }}
+        td 
+          a(href="{{ year.dre }}" target="_blank") {{ year.dre }}
+        td 
+          a(href="{{ year.balanco }}" target="_blank") {{year.balanco}}
+    h2 Falha Nossa
+      p No link abaixo estão nossos erros e ações tomadas para 
+    h2 Documentos
+      
+
+
+
+    
 contact-form

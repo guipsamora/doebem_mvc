@@ -8,29 +8,26 @@ export class TransparenciaController {
   $scope;
   $routeParams;
   stepCriterios = [ ];
+  years = [ ];
 
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams) {
     this.$http = $http;
     this.$scope = $scope;
     this.$routeParams = $routeParams;
-    this.stepCriterios = [
+    this.years = [
       {
-        title: 'Gestão',
-        desc: 'Avaliamos a gestão e processos da organização.',
-        icon: 'fa-area-chart'
+        y: '2015',
+        dre: "www.uol.com.br",
+        balanco: "www.uol.com.br"
       },
       {
-        title: 'Transparência',
-        desc: 'Analisamos a transparência financeira e organizacional.',
-        icon: 'fa-file-o'
-      },
-      {
-        title: 'Impacto',
-        desc: 'Buscamos evidências claras dos resultados apresentados.',
-        icon: 'fa-globe'
-      },
-    ];
+        y: "2016",
+        dre: "www.uol.com.br",
+        balanco: "www.uol.com.br"
+      }      
+    ]
+
   }
 
   $onInit() {
