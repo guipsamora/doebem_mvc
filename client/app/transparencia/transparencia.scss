@@ -27,16 +27,41 @@ div#transparencia {
       // ajustes das tabelas
       th {
         padding-left: 10px;
+        padding-right: 10px;
+        font-size: 18px;
+        border-bottom: 2px solid black;
+        text-align: center;
+        
+        border-right: 1px solid black; 
+        border-left: 1px solid black;
       }
+      
       th:first-child {
         padding-left: 0px;
+        border-left: none;
       }
+
+      th:last-child {
+        border-right: none;
+      }
+      
       td {
-        padding-left: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-right: 1px solid black; 
+        border-left: 1px solid black;
       }
+
       td:first-child {
         padding-left: 0px;
+        padding-right: 10px;
+        border-left: none;
       }
+
+      td:last-child {
+        border-right: none;
+      }
+
       
       p {
         padding-bottom: 30px;
