@@ -28,7 +28,7 @@ div#transparencia {
       th {
         padding-left: 10px;
         padding-right: 10px;
-        font-size: 18px;
+        font-size: 20px;
         border-bottom: 2px solid black;
         text-align: center;
         
@@ -48,6 +48,7 @@ div#transparencia {
       td {
         padding-left: 10px;
         padding-right: 10px;
+        font-size: 16px;
         border-right: 1px solid black; 
         border-left: 1px solid black;
       }
@@ -69,6 +70,23 @@ div#transparencia {
       
       h2 {
         text-align: left;
+        margin-bottom: 0px;
+      }
+
+      a h4 {
+        text-align: left;
+        margin-top: 0px;
+      }
+
+      .md-button{
+        text-align: left;
+        display: inline-block;
+        font-size: 20px;
+        background-color: white;
+        font-weight: 500;
+        border: 1px solid rgb(63,81,181);
+        :hover {          
+        }
       }
   }
 }
