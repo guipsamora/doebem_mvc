@@ -12,12 +12,13 @@ div#listOngs {
         background-position: top center;
     }
 
-    md-content#mainListOngs {
-      padding-top: 2%;
-      md-content#lista{
-        h3 {
+    div#mainListOngs {
+      div#lista{
+        h3 {          
           text-align: center;
           font-size: 30px;
+          margin-top: 0px;
+          // padding-top: 2%;
         }
       }
     }
