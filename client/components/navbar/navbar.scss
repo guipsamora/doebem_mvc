@@ -16,6 +16,15 @@ div#menu {
   } 
 }
 
+button.navbar-toggle {
+    text-align: center;
+    margin: 0 0 0 0;    
+    padding-top: 3px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 6px;
+}
+
 div#menu.mainPageMenu {
     background-color: black;
      div.container div#navbar-main {

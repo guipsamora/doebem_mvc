@@ -1,4 +1,4 @@
-div#metodologia {
+div#duvidas {
   div#pageHeader {
     background-image: url('/assets/images/metodologia/metodologia.jpg');
     background-repeat: no-repeat;
@@ -15,27 +15,48 @@ div#metodologia {
 
   div#comoFunciona {
       text-align: center;
-      padding-right:5%;
+      padding-right: 5%;
       padding-left: 5%;
       padding-top: 5%;
+      margin-right: 10px;
       height: 100%;
       width: 100%;
       display: block;
       padding-bottom: 70px;
       background-color: white;
-      md-list {
-        md-list-item {
-          div#escolha {
-            span {
-              i#icon {
-                color: white;
-              }
-            }
-          }
-        }
-      }
+      
       p {
         padding-bottom: 30px;
+      }
+      
+      .faqHeader {
+        font-size: 27px;
+        margin: 20px;
+      }
+      
+      .panel-heading [data-toggle="collapse"]:after {
+        font-family: 'Glyphicons Halflings';
+        content: "e072"; /* "play" icon */
+        float: right;
+        color: #F58723;
+        font-size: 18px;
+        line-height: 22px;
+        /* rotate "play" icon from > (right arrow) to down arrow */
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+      }
+
+      .panel-heading [data-toggle="collapse"].collapsed:after {
+        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: #454444;
       }
   }
 }
