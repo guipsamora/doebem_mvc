@@ -41,14 +41,14 @@ export class TransparenciaController {
         date: '2015',
         goals_name: 'DRE 2015',
         goals_link: 'http://www.uol.com.br',
-        metrics_name: ',
+        metrics_name: '',
         metrics_link: 'http://www.uol.com.br',
       },
       {
         date: '2015',
-        goals_name: '' 2015',
+        goals_name: '2015',
         goals_link: 'http://www.uol.com.br',
-        metrics_name: ',
+        metrics_name: '',
         metrics_link: 'http://www.uol.com.br', 
       }
     ];
