@@ -46,8 +46,8 @@ export class ListOngsController {
         .then(res => {
           this.listOng = res.data;
           this.listOngFilterToDisplay();
-          if (this.$routeParams.filterCausa == undefined && 
-              this.listOngToDisplay.length === 0){
+          if (this.$routeParams.filterCausa === undefined &&
+              this.listOngToDisplay.length === 0) {
                 this.listOngToDisplay = this.listOng;
           }
         });

@@ -22,41 +22,40 @@ export class TransparenciaController {
     this.financials = [
       {
         date: '2015',
-        dre_name: "DRE 2015",
-        dre_link: "http://www.uol.com.br",
-        balanco_name: "Balançoa",
-        balanco_link: "http://www.uol.com.br",
+        dre_name: 'DRE 2015',
+        dre_link: 'http://www.uol.com.br',
+        balanco_name: 'Balançoa',
+        balanco_link: 'http://www.uol.com.br',
       },
       {
         date: '2016',
-        dre_name: "DRE 2016",
-        dre_link: "http://www.uol.com.br",
-        balanco_name: "Balançø patrimonial",
-        balanco_link: "http://www.uol.com.br",        
-      }      
+        dre_name: 'DRE 2016',
+        dre_link: 'http://www.uol.com.br',
+        balanco_name: 'Balançø patrimonial',
+        balanco_link: 'http://www.uol.com.br',   
+      }
     ];
 
     this.plans = [
       {
         date: '2015',
-        goals_name: "DRE 2015",
-        goals_link: "http://www.uol.com.br",
-        metrics_name: "",
-        metrics_link: "http://www.uol.com.br",
+        goals_name: 'DRE 2015',
+        goals_link: 'http://www.uol.com.br',
+        metrics_name: ',
+        metrics_link: 'http://www.uol.com.br',
       },
       {
         date: '2015',
-        goals_name: " 2015",
-        goals_link: "http://www.uol.com.br",
-        metrics_name: "",
-        metrics_link: "http://www.uol.com.br",        
-      }      
+        goals_name: '' 2015',
+        goals_link: 'http://www.uol.com.br',
+        metrics_name: ',
+        metrics_link: 'http://www.uol.com.br', 
+      }
     ];
 
   }
 
   $onInit() {
-    
   }
 }
 
