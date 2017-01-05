@@ -7,7 +7,7 @@ export class MetodologiaController {
   $http;
   $scope;
   $routeParams;
-  stepCriterios = [ ];
+  stepCriterios = [ ];  
 
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams) {
