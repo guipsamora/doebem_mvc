@@ -31,6 +31,7 @@ import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
 import slugifier from  './cad-ong/cad-ong.component';
 
+
 import 'angular-socket-io';
 import './app.scss';
 

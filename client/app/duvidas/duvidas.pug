@@ -2,81 +2,67 @@ div.animated.fadeIn#duvidas
   div#pageHeader(flex="100"  layout="column" layout-align="center center")
     h2 Dúvidas
   div#comoFunciona
-    .accordion.panel-group
-      h3.faqHeader General questions
+    #accordion.panel-group
+      //- h3.faqHeader Duvidas Gerais
       .panel.panel-default
         .panel-heading
           h4.panel-title
-            a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#collapseOne') Is account registration required?
+            a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#collapseOne') Quem são vocês?
         .panel-collapse.collapse.in
           .panel-body
-            | Não
+            | A doebem foi criada por Guilherme Samora e Elisa Mansur. 
+            | Os links para os perfis públicos profissionais de ambos são Guilherme Samora e Elisa Mansur. Somos ambos formados em Administração de Empresas e temos experiência em diversas empresas nacionais e multinacionais e trabalhos sociais.
       .panel.panel-default
         .panel-heading
           h4.panel-title
-            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', data-target='#collapseTen', href='') Can I submit my own Bootstrap templates or themes?
-        #collapseTen.panel-collapse.collapse
+            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', data-target='#collapseTen') Por que devo confiar em vocês?
+        div(id="collapseTen").panel-collapse.collapse
           .panel-body
-            | A lot of the content of the site has been submitted by the community. Whether it is a commercial element/template/theme
+            | Acreditamos transparência e eficiência acima de tudo. Todas as nossas análises possuem  embasamento acadêmico e avaliação sobre o desempenho da organização. Você pode conferir nossa metodologia de avaliação nesse link.
+            | No nosso blog você pode acompanhar nossa jornada e dar sua opinião.
+            | Além disso, realizamos avaliações externas e compartilhamos nossos planos, erros e acertos na seguinte página. 
             | or a free one, you are encouraged to contribute. All credits are published along with the resources.
       .panel.panel-default
         .panel-heading
           h4.panel-title
-            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseEleven') What is the currency used for all transactions?
-        #collapseEleven.panel-collapse.collapse
+            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', data-target='#collapseEleven') Por que doar para uma ONG recomendada por vocês?
+        div#collapseEleven.panel-collapse.collapse
           .panel-body
-            | All prices for themes, templates and other items, including each seller's or buyer's account balance are in 
-            strong USD
-      h3.faqHeader Sellers
+            | As ONGs recomendadas por nós possuem impacto positivo, mensurado com base em estudos acadêmicos, muito maior do que outras organizações. Assim a mesma doação que você faria para outra organização possui muito mais valor e impacto em uma das organizações recomendadas por nós. 
+            | Além disso, avaliamos o profissionalismo em termos de gestão, equipe e transparência financeira de cada uma das organizações sugeridas.
+      //- h3.faqHeader Sellers
       .panel.panel-default
         .panel-heading
           h4.panel-title
-            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo') Who cen sell items?
+            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo') Como vocês desenvolveram os critérios de análise das organizações?
         #collapseTwo.panel-collapse.collapse
           .panel-body
-            | Any registed user, who presents a work, which is genuine and appealing, can post it on 
-            strong PrepBootstrap
-            | .
+            | Estudamos diferentes modelos de análise de causa e de organizações, como a GiveWell, Giving What We Can, Charity Navigator, entre outros, e elaboramos um set de critérios - qualidade da gestão, transparência e impacto - que fizesse sentido no contexto brasileiro.
       .panel.panel-default
         .panel-heading
           h4.panel-title
-            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseThree') I want to sell my items - what are the steps?
+            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseThree') Como saber se vocês não tem nenhuma relação com a organização?
         #collapseThree.panel-collapse.collapse
           .panel-body
-            | The steps involved in this process are really simple. All you need to do is:
-            ul
-              li Register an account
-              li Activate your account
-              li
-                | Go to the 
-                strong Themes
-                |  section and upload your theme
-              li The next step is the approval step, which usually takes about 72 hours.
+            | Temos como política a avaliação imparcial, assim caso o avaliador tenha qualquer relacionamento prévio com a organização - como por exemplo, o voluntariado -, ele não poderá participar do processo de avaliação desta organização.
       .panel.panel-default
         .panel-heading
           h4.panel-title
-            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseFive') How much do I get from each sale?
+            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseFive') Qual a intenção de vocês ao criar essa organização?
         #collapseFive.panel-collapse.collapse
           .panel-body
-            | Here, at 
-            strong PrepBootstrap
-            | , we offer a great, 70% rate for each seller, regardless of any restrictions, such as volume, date of entry, etc.
-            br
+            | Queremos encontrar as melhores oportunidades de doação no Brasil.
+            | Nosso objetivo é fazer com que mais brasileiros se sintam confortáveis em doar, ao saber que suas doações serão utilizadas de maneira profissional e terão um impacto real na vida das pessoas ajudadas.
+            | Queremos assim ajudar a criar um país mais desenvolvido e com melhores condições de vida para as pessoas.
       .panel.panel-default
         .panel-heading
           h4.panel-title
-            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseSix') Why sell my items here?
+            a.accordion-toggle.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseSix') Vocês não estão prejudicando outras organizações?
         #collapseSix.panel-collapse.collapse
           .panel-body
-            | There are a number of reasons why you should join us:
-            ul
-              li A great 70% flat rate for your items.
-              li
-                | Fast response/approval times. Many sites take weeks to process a theme or template. And if it gets rejected, there is another iteration. We have aliminated this, and made the process very fast. It only takes up to 72 hours for a template/theme to get reviewed.
-              li
-                | We are not an exclusive marketplace. This means that you can sell your items on 
-                strong PrepBootstrap
-                | , as well as on any other marketplate, and thus increase your earning potential.
+            | Acreditamos que diferentes pessoas possuem diferentes motivações e preocupações ao fazer uma doação.
+            | De acordo com pesquisa realizada pelo IDIS - Instituto de Desenvolvimento do Investimento Social com dados de 2015, dentre os principais motivos que inibem as pessoas de doarem estão a desconfiança nas organizações e más experiências na doação, e são esses os problemas que queremos resolver.
+            | Assim acreditamos que com nosso trabalho mais pessoas estarão dispostas a doar e, consequentemente, estaremos ajudando a promover um maior impacto positivo.
       .panel.panel-default
         .panel-heading
           h4.panel-title
@@ -92,7 +78,7 @@ div.animated.fadeIn#duvidas
           .panel-body
             | Our standard payment plan provides for monthly payments. At the end of each month, all accumulated funds are transfered to your account.
             | The minimum amount of your balance should be at least 70 USD.
-      h3.faqHeader Buyers
+      //- h3.faqHeader Buyers
       .panel.panel-default
         .panel-heading
           h4.panel-title
