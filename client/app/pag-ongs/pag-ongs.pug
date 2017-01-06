@@ -2,10 +2,10 @@ div.animated.fadeIn#pagOng
   div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url(' + $ctrl.infoOng.backgroundImage + ')'}")
     h2 {{$ctrl.infoOng.nomeFantasia}}
   .container
-    div#infos(layout="row" flex="100")
+    div#infos(layout="row" flex="100" flexwrap)
       div(flex="80" layout-align="left")
         img#princ(ng-src="https://s3-sa-east-1.amazonaws.com/doebem/educacao-gauss.jpg")
-      div#smallInfo(flex layout-align="center center")
+      div#smallInfo(layout-align="center center")
         img(ng-src="{{$ctrl.infoOng.logo}}" layout-align="center center")
         h4 Causa: {{$ctrl.infoOng.causaFrontEnd}}
         h4 Ano de fundação: {{$ctrl.infoOng.anoFundacao}}
@@ -21,7 +21,7 @@ div.animated.fadeIn#pagOng
         h3 Transparência
         p(ng-bind-html='$ctrl.infoOng.analiseTransparencia')
         h3 Impacto
-        p(ng-bind-html='$ctrl.infoOng.analiseImpacto}}')
+        p(ng-bind-html='$ctrl.infoOng.analiseImpacto')
         a(ng-href="{{$ctrl.infoOng.linkPdf}}" target="_blank") 
          p Confira aqui o arquivo com nossa análise completa.
 contact-form
