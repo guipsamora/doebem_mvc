@@ -2,15 +2,15 @@ div.animated.fadeIn#pagOng
   div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url(' + $ctrl.infoOng.backgroundImage + ')'}")
     h2 {{$ctrl.infoOng.nomeFantasia}}
   .container
-    div#infos(layout="row" flex="100" flexwrap)
-      div(flex="80" layout-align="left")
+    div#infos(layout="row" layout-sm="column" layout-xs="column" flex="100" )
+      div(flex="80" layout-align="start")
         img#princ(ng-src="https://s3-sa-east-1.amazonaws.com/doebem/educacao-gauss.jpg")
-      div#smallInfo(layout-align="center center")
-        img(ng-src="{{$ctrl.infoOng.logo}}" layout-align="center center")
-        h4 Causa: {{$ctrl.infoOng.causaFrontEnd}}
-        h4 Ano de fundação: {{$ctrl.infoOng.anoFundacao}}
-        h4 Atua em: {{$ctrl.infoOng.localidadesDeAtuacao[0].localidade}}
-          md-button.md-primary(flex layout-align="center") Doar
+      div#smallInfo(layout="column" layout-align="center center")
+        img(ng-src="{{$ctrl.infoOng.logo}}" layout-align="center center" layout-align-sm = "start center" layout-align-xs = "start center")
+        h4(layout-align="start" layout-align-sm = "end center" layout-align-xs = "end center") Causa: {{$ctrl.infoOng.causaFrontEnd}}
+        h4(layout-align-sm = "end center" layout-align-xs = "end center") Ano de fundação: {{$ctrl.infoOng.anoFundacao}}
+        h4(layout-align-sm = "end center" layout-align-xs = "end center") Atua em: {{$ctrl.infoOng.localidadesDeAtuacao[0].localidade}}
+        md-button.md-primary(flex layout-align="center" layout-align-sm = "end center" layout-align-xs = "end center") Doar
     md-content(layout="column" flex="100")
       md-content#lista(flex = "100" layout="column" layout-align="left")
         h2 Sobre
