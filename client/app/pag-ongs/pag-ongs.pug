@@ -4,13 +4,13 @@ div.animated.fadeIn#pagOng
   .container
     div#infos(layout="row" layout-sm="column" layout-xs="column" flex="100" )
       div(flex="80" layout-align="start")
-        img#princ(ng-src="https://s3-sa-east-1.amazonaws.com/doebem/educacao-gauss.jpg")
-      div#smallInfo(layout="column" layout-align="center center")
-        img(ng-src="{{$ctrl.infoOng.logo}}" layout-align="center center" layout-align-sm = "start center" layout-align-xs = "start center")
-        h4(layout-align="start" layout-align-sm = "end center" layout-align-xs = "end center") Causa: {{$ctrl.infoOng.causaFrontEnd}}
-        h4(layout-align-sm = "end center" layout-align-xs = "end center") Ano de fundação: {{$ctrl.infoOng.anoFundacao}}
+        img#princ(ng-src="")
+      div#smallInfo(layout="column" layout-align="start start")
+        img(ng-src="{{$ctrl.infoOng.logo}}" layout-align="center center" layout-align-sm = "center start" layout-align-xs = "center start")
+        h4(layout-align-sm = "center end" layout-align-xs = "center end") Causa: {{$ctrl.infoOng.causaFrontEnd}}
+        h4(layout-align-sm = "center end" layout-align-xs = "center end") Ano de fundação: {{$ctrl.infoOng.anoFundacao}}
         h4(layout-align-sm = "end center" layout-align-xs = "end center") Atua em: {{$ctrl.infoOng.localidadesDeAtuacao[0].localidade}}
-        md-button.md-primary(flex layout-align="center" layout-align-sm = "end center" layout-align-xs = "end center") Doar
+        md-button.md-primary(flex layout-align="center center" layout-align-sm = "end center" layout-align-xs = "end center") Doar
     md-content(layout="column" flex="100")
       md-content#lista(flex = "100" layout="column" layout-align="left")
         h2 Sobre

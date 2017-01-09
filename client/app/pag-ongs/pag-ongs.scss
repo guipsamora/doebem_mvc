@@ -14,10 +14,10 @@ div#pagOng {
 
     div#infos {
 
-       div img#princ{
-          width: 600px;
-          height: 400px;
-       }
+      //  div img#princ{
+      //     width: 600px;
+      //     height: 400px;
+      //  }
     }
 
     .container {
@@ -30,8 +30,8 @@ div#pagOng {
     div#smallInfo {
       width: 250px;
       img {
-        width: 230px;
-        height: 200px;
+        // width: 230px;
+        // height: 200px;
 
         // @media (min)
       }
@@ -46,6 +46,7 @@ div#pagOng {
           font-size: 18px;
           font-weight: 700;
           margin-top: 15px;
+          margin-left: 20px;
       }
 
       button:hover {
