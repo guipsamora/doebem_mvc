@@ -2,8 +2,10 @@ div.animated.fadeIn#listOngs
   div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url({{$ctrl.pageImage}})'}")
     h2 {{$ctrl.pageTitle}}
   div#mainListOngs(layout="column" flex="100")
+    br
     div#lista(flex = "100" layout="column")
       h3 Abaixo estão as ONGs que mais se destacaram em nossos critérios de avaliação.
+      br
       md-grid-list#listOngs(flex
           md-cols-gt-xs="2"
           md-cols-gt-md="3"
