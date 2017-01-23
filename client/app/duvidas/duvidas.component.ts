@@ -18,7 +18,7 @@ export class DuvidasController {
     this.groups = [
       {
         title: 'Quem são vocês?',
-        desc: 'A doebem, uma organização sem fins lucrativos, criada por Guilherme Samora e Elisa Mansur. Somos ambos formados em Administração de Empresas e temos experiência em diversas empresas nacionais e multinacionais e trabalhos sociais.',
+        desc: 'A doebem, uma organização sem fins lucrativos, foi criada por Guilherme Samora e Elisa Mansur. Somos ambos formados em Administração de Empresas e temos experiência em diversas empresas nacionais e multinacionais e trabalhos sociais.',
       },
       {
         title: 'Qual a intenção de vocês ao criar essa organização?',
@@ -26,11 +26,11 @@ export class DuvidasController {
       },
       {
         title: 'Por que devo confiar em vocês?',
-        desc: 'Acreditamos na transparência e eficiência acima de tudo. Todas as nossas análises possuem  embasamento acadêmico e avaliação sobre o desempenho da organização. Você pode conferir nossa metodologia de avaliação nesse link. No nosso blog você pode acompanhar nossa jornada e dar sua opinião. Além disso, realizamos avaliações externas e compartilhamos nossos planos, erros e acertos na seguinte página.',
+        desc: 'Acreditamos na transparência e eficiência acima de tudo. Todas as nossas análises possuem  embasamento acadêmico e avaliação sobre o desempenho da organização. Você pode conferir nossa metodologia de avaliação na página metodologia. No nosso blog você pode acompanhar nossa jornada e dar sua opinião. Além disso, realizamos avaliações externas e compartilhamos nossos planos, erros e acertos na seguinte página.',
       },
       {
         title: 'Como vocês se sustentam?',
-        desc: 'Iniciamos a doebem com um capital de ambos os fundadores, o que nos permitiu criar a organização. No momento da doação para a instituição, o doador também pode optar por acrescentar 5% acima do valor doado, que será destinado para a doebem. Além disso, contamos com doações diretas de apoiadores que acreditam na proposta da doebem.',
+        desc: 'Iniciamos a doebem com um capital de ambos os fundadores, o que nos permitiu criar a organização. No momento da doação para a instituição, o doador também pode optar por acrescentar 10% acima do valor doado, que será destinado para a doebem. Além disso, contamos com doações diretas de apoiadores que acreditam na proposta da doebem.',
       },
       {
         title: 'Por que doar para uma ONG recomendada por vocês?',

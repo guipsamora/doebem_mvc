@@ -26,6 +26,7 @@ import pagOngs from './pag-ongs/pag-ongs.component';
 import metodologia from './metodologia/metodologia.component';
 import transparencia from './transparencia/transparencia.component';
 import duvidas from './duvidas/duvidas.component';
+import checkout from './checkout/checkout.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
@@ -56,6 +57,7 @@ angular.module('doebemOrgApp', [
   metodologia,
   transparencia,
   duvidas,
+  checkout,
   slugifier,
   constants,
   socket,

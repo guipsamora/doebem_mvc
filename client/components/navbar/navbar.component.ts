@@ -21,7 +21,7 @@ export class NavbarComponent {
     'link': 'duvidas'
   }, {
     'title': 'BLOG',
-    'link': 'blog'
+    'link': 'https://medium.com/@doebem'
   }
   ];
 
