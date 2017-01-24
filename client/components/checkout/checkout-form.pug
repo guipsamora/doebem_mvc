@@ -1,11 +1,21 @@
 div(layout="column")
   h2 Doe Aqui
     div(layout="column" flex="100")
+      //- criar a funcao que vai pegar o form e jogar no server
       md-form(name="checkoutForm" layout="column"  ng-submit="$ctrl.FUNCTION_TO_BE_BUILT(checkoutForm)")
         div(layout="column" layout-gt-sm="row" flex="100" )
-          div#values(layout="column" flex="100" display="block")
-              button
-          div#info(layout="column" flex="100" display="none")
+          div#values(layout="column" flex="30" display="block")
+              div(layout="row")
+                div
+                  input(type="radio" name="doacao" id="doacao_unica" value="1" checked="checked")
+                  label(for="doacao_unica") Doação Única
+                div
+                  input(type="radio" name="doacao" id="doacao_mensal" value="2")
+                  label(for="doacao_mensal") Doação Mensal
+              div
+                input(type="checkbox" id="doacao_doebem" value="" checked="checked")
+                label(for="doacao_doebem") Adicione 10% para a doebem
+          div#info(layout="column" flex="30" display="none")
             md-input-container.md-block(flex-gt-sm)
               label Nome
               input(ng-model="$ctrl.user.Name" required)
@@ -14,21 +24,16 @@ div(layout="column")
               input(type="email" ng-model="$ctrl.user.Email" required)  
             md-input-container.md-block
               label CPF
-              input(ng-model="$ctrl.user.CPF" required)
+              //- conseguir validação para o CPF
+              input(ng-model="$ctrl.user.CPF" required) 
             md-input-container.md-block
               label Cidade
               input(ng-model="$ctrl.user.Cidade" required)
           div#creditCard(layout="column" flex="100" display="none")
-              md-input-container.md-block(flex-gt-sm)
-              label Nome
-              input(ng-model="$ctrl.user.Name" required)
+
           div.controls
               button#btn-next.btn.btn-block.btn-step.btn-next(type="button") Continuar
               button#btn-next.btn.btn-block.btn-clear.btn-step.btn-prev(type="button" style="visibility: hidden") Voltar
-          
-          div#msg(layout="column" flex="100")
-            md-input-container.md-block(flex-gt-sm)
-              label Mensagem
-              textarea(ng-model="$ctrl.user.Mensagem" columns="1")   
+
       div(flex="10" layout="column" layout-align="center center")
-          md-button.md-raized.md-primary(type="submit" ) Enviar
+          md-button.md-raized.md-primary(type="submit") Enviar
