@@ -12,7 +12,13 @@ export class CadOngController {
   listOng:  Object[];
   listAreas = [];
   listAreasDeAtuacao: Object[];
-  ongForm = { logo:  null as string , imagens: [] };
+  ongForm = {logo:  null as string ,
+             backgroundImage:  null as string, 
+             linkPdf: null as string,
+             logradouro: null as string, 
+             cidade: null as string, 
+             estado: null as string,
+             imagens: []};
   ong = {};
   dialog;
   determinateValue;

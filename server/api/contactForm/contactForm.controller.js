@@ -34,7 +34,7 @@ function handleSendEmail(res) {
   },
     {
       to: res.email,
-      subject: 'Your contact with Jean', // REQUIRED.
+      subject: 'Sua mensagem para a doebem', // REQUIRED.
       message: res.message
     }, err => {
       if(err) {

@@ -21,16 +21,16 @@ div.animated.fadeIn#sobre
           h3 Missão.
         div#desc(flex)
           p O time da DoeBem possui uma missão: impactar de forma positiva a realidade na qual vivem, de forma eficiente e baseada em fatos e dados.
-  md-content#Time(layout="column"  flex="100" layout-align="center center")
+  div#Time(layout="column"  flex="100" layout-align="center center")
     h1 Time
-    md-list(flex layout-gt-sm="row" layout="column")
+    md-list(flex="100" layout="column" layout-gt-sm="row" layout-align="space-around center")
       md-list-item(ng-repeat="pessoa in $ctrl.listaPessoas")
-        md-card(layout="column")
-          img(ng-src="{{pessoa.img}}")
+        md-card(layout="column" flex-gt-sm="100")
+          img.md-card-image(ng-src="{{pessoa.img}}")
           md-card-title(layout="column")
-            md-card-title-text(layout = "column" layout-align="center center")
+            md-card-title-text(flex="100" layout="column" layout-align="center center")
               h3 {{pessoa.nome}}
-          md-card-actions(layout = "row" layout-align="center center")
+          md-card-actions(layout="row" layout-align="center center")
             a(target='_blank' href='{{pessoa.twitter}}')
               md-button.md-icon-button(aria-label="twitter button")
                 i.fa.fa-twitter
