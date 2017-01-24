@@ -13,10 +13,10 @@ export class CadOngController {
   listAreas = [];
   listAreasDeAtuacao: Object[];
   ongForm = {logo:  null as string ,
-             backgroundImage:  null as string, 
+             backgroundImage:  null as string,
              linkPdf: null as string,
-             logradouro: null as string, 
-             cidade: null as string, 
+             logradouro: null as string,
+             cidade: null as string,
              estado: null as string,
              imagens: []};
   ong = {};
@@ -62,7 +62,7 @@ export class CadOngController {
     };
     this.$http.post('api/imageGallery/signing', query)
       .success(result => {
-        console.log(result, 'aprovou')
+        console.log(result, 'aprovou');
         this.Upload.upload({
           url: result.url, //s3Url
           transformRequest: (data, headersGetter) => {
@@ -106,7 +106,7 @@ export class CadOngController {
         fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
     })
     .then(answer => {
-        switch(caller) {
+        switch (caller) {
           case 'logo':
             this.ongForm.logo = `${this.s3Url}/${this.listImages[answer]}`;
             break;
@@ -114,7 +114,7 @@ export class CadOngController {
             this.ongForm.backgroundImage = `${this.s3Url}/${this.listImages[answer]}`;
             break;
           case 'imagens':
-            this.ongForm.imagens.push({imagem:`${this.s3Url}/${this.listImages[answer]}`}); 
+            this.ongForm.imagens.push({imagem: `${this.s3Url}/${this.listImages[answer]}`});
             break;
           case 'PDF':
             this.ongForm.linkPdf = `${this.s3Url}/${this.listImages[answer]}`;
@@ -126,7 +126,7 @@ export class CadOngController {
   }
 
   buscaEnd(cep) {
-   console.log(cep)
+   console.log(cep);
    this.$http.get(`/api/BuscaCep/${cep}`)
      .then(res => {
        const end = JSON.parse(res.data.body);
@@ -161,7 +161,7 @@ export class CadOngController {
         this.ongForm = null;
         this.$scope.ongForm.$setPristine();
         this.$scope.ongForm.$setUntouched();
-      })
+      });
     })
     .catch(err => console.log(err));
   }
@@ -171,7 +171,7 @@ const DialogImagesController = ($scope, $mdDialog) => {
   $scope.hide = () => $mdDialog.hide();
   $scope.cancel = () => $mdDialog.cancel();
   $scope.answer = (answer) => $mdDialog.hide(answer);
-}
+};
 
 DialogImagesController.$inject = ['$scope', '$mdDialog'];
 

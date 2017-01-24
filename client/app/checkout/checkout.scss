@@ -1,0 +1,37 @@
+div#duvidas {
+  div#pageHeader {
+    background-image: url('/assets/images/duvidas/duvidas.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    min-height: 80vh;
+    background-position: top center;
+    h2 {
+      color: white;
+      font-size: 70px;
+    }
+  }
+
+  div#comoFunciona {
+      text-align: center;
+      padding-right: 5%;
+      padding-left: 5%;
+      padding-top: 5%;
+      margin-right: 10px;
+      height: 100%;
+      width: 100%;
+      display: block;
+      padding-bottom: 70px;
+      background-color: white;
+      
+      p {
+        padding-bottom: 30px;
+      }
+      
+      .faqHeader {
+        font-size: 27px;
+        margin: 20px;
+      }
+  }
+}
