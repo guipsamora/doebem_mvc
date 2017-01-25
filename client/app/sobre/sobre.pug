@@ -7,7 +7,7 @@ div.animated.fadeIn#sobre
         div#item(flex="30")
           h3 O que acreditamos.
         div#desc(flex)
-          p Existem muitas oportunidades para doarmos para ONGs que realizam trabalho voluntário,porém é muito difícil confiar que nosso dinheiro está sendo aplicado da maneira mais eficaz e que irá realmente produzir resultados.
+          p Existem muitas oportunidades para doarmos para ONGs que realizam trabalho voluntário, porém é muito difícil confiar que nosso dinheiro está sendo aplicado da maneira mais eficaz e que irá realmente produzir resultados.
           p É esse o problema que queremos resolver. Acreditamos em doar com o coração e a mente.
           br
       div.credo(layout="row" flex="100")
@@ -23,7 +23,7 @@ div.animated.fadeIn#sobre
           p O time da DoeBem possui uma missão: impactar de forma positiva a realidade na qual vivem, de forma eficiente e baseada em fatos e dados.
   div#Time(layout="column"  flex="100" layout-align="center center")
     h1 Time
-    md-list(flex="100" layout="column" layout-gt-sm="row" layout-align="space-around center")
+    md-list(flex="100" layout-wrap layout="column" layout-gt-sm="row" layout-align="space-around center")
       md-list-item(ng-repeat="pessoa in $ctrl.listaPessoas")
         md-card(layout="column" flex-gt-sm="100")
           img.md-card-image(ng-src="{{pessoa.img}}")

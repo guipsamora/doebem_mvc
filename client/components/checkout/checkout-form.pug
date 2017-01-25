@@ -3,7 +3,7 @@ div(layout="column")
     div(layout="column" flex="100")
       //- criar a funcao que vai pegar o form e jogar no server
       md-form(name="checkoutForm" layout="column"  ng-submit="$ctrl.FUNCTION_TO_BE_BUILT(checkoutForm)")
-        div(layout="column" layout-gt-sm="row" flex="100" )
+        
           div#values(layout="column" flex="30" display="block")
               div(layout="row")
                 div
@@ -30,7 +30,7 @@ div(layout="column")
               label Cidade
               input(ng-model="$ctrl.user.Cidade" required)
           div#creditCard(layout="column" flex="100" display="none")
-
+              //- colocar informações do cartão de crédito
           div.controls
               button#btn-next.btn.btn-block.btn-step.btn-next(type="button") Continuar
               button#btn-next.btn.btn-block.btn-clear.btn-step.btn-prev(type="button" style="visibility: hidden") Voltar
