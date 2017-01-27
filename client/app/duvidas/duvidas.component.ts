@@ -80,7 +80,7 @@ export class DuvidasController {
         desc: `A melhor maneira de nos ajudar é fazer uma doação para as organizações recomendadas por nós ou para a própria doebem. 
         Como segunda opção você pode nos indicar para familiares e amigos ou mesmo outros doadores por meio de suas redes sociais. 
         Como terceira opção você pode se candidatar para nossas vagas de emprego, sugerir ideias ou dar feedback.`
-      }                                
+      }
     ];
   }
 
