@@ -32,7 +32,7 @@ export class TransparenciaController {
         dre_name: 'DRE 2016',
         dre_link: 'http://www.uol.com.br',
         balanco_name: 'Balançø patrimonial',
-        balanco_link: 'http://www.uol.com.br',   
+        balanco_link: 'http://www.uol.com.br', 
       }
     ];
 
@@ -49,7 +49,7 @@ export class TransparenciaController {
         goals_name: '2015',
         goals_link: 'http://www.uol.com.br',
         metrics_name: '',
-        metrics_link: 'http://www.uol.com.br', 
+        metrics_link: 'http://www.uol.com.br',
       }
     ];
 

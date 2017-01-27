@@ -19,10 +19,10 @@ export class ListOngsController {
     this.$http = $http;
     this.$scope = $scope;
     this.$routeParams = $routeParams;
-    this.pageTitle;
-    this.pageImage;
-    this.listOngToDisplay;
-    this.listOng;
+    this.pageTitle = '';
+    this.pageImage = '';
+    this.listOngToDisplay = [];
+    this.listOng = [];
 
     this.listOngFilters = [
       {

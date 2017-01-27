@@ -3,6 +3,14 @@ const ngRoute = require('angular-route');
 import routing from './cad-ong.routes';
 const ngFileUpload = require('ng-file-upload');
 
+const DialogImagesController = ($scope, $mdDialog) => {
+  $scope.hide = () => $mdDialog.hide();
+  $scope.cancel = () => $mdDialog.cancel();
+  $scope.answer = (answer) => $mdDialog.hide(answer);
+};
+
+DialogImagesController.$inject = ['$scope', '$mdDialog'];
+
 export class CadOngController {
   $http;
   $scope;
@@ -102,8 +110,8 @@ export class CadOngController {
         templateUrl: 'selectImage.tmpl.pug',
         parent: angular.element(document.body),
         targetEvent: ev,
-        clickOutsideToClose: false,
-        fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
+        clickOutsideToClose: false
+        // fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
     })
     .then(answer => {
         switch (caller) {
@@ -148,32 +156,25 @@ export class CadOngController {
     this.$http.post('api/ong', form)
       .then(res => {
         this.dialog = this.$mdDialog.show({
-        scope: this.$scope,
-        preserveScope: true,
-        controller: DialogImagesController,
-        templateUrl: 'save.tmpl.pug',
-        parent: angular.element(document.body),
-        targetEvent: ev,
-        clickOutsideToClose: false,
-        fullscreen: this.customFullscreen // Only for -xs, -sm breakpoints.
-      })
-      .then( () => {
-        this.ongForm = null;
-        this.$scope.ongForm.$setPristine();
-        this.$scope.ongForm.$setUntouched();
-      });
+          scope: this.$scope,
+          preserveScope: true,
+          controller: DialogImagesController,
+          templateUrl: 'save.tmpl.pug',
+          parent: angular.element(document.body),
+          targetEvent: ev,
+          clickOutsideToClose: false,
+          // fullscreen: this.customFullscreen // Only for -xs, -sm breakpoints.
+        })
+        .then( () => {
+          this.ongForm = null;
+          this.$scope.ongForm.$setPristine();
+          this.$scope.ongForm.$setUntouched();
+        });
     })
     .catch(err => console.log(err));
   }
 }
 
-const DialogImagesController = ($scope, $mdDialog) => {
-  $scope.hide = () => $mdDialog.hide();
-  $scope.cancel = () => $mdDialog.cancel();
-  $scope.answer = (answer) => $mdDialog.hide(answer);
-};
-
-DialogImagesController.$inject = ['$scope', '$mdDialog'];
 
 export default angular.module('doebemOrgApp.cadOng', [ngRoute, ngFileUpload, require('angular-input-masks')])
   .config(routing)
