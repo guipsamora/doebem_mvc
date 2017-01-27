@@ -57,7 +57,7 @@ export class DuvidasController {
         que fizesse sentido no contexto brasileiro.`,
       },
       {
-        title:'Por que doar pela plataforma de vocês?',
+        title: 'Por que doar pela plataforma de vocês?',
         desc: `Ao doar pela doebem, conseguimos mensurar o impacto do nosso trabalho e medir a destinação das doações para cada causa. 
         Além disso o usuário, ao doar pela nossa plataforma, 
         terá acesso a um acompanhamento personalizado sobre o impacto das suas doações.`
@@ -80,7 +80,7 @@ export class DuvidasController {
         desc: `A melhor maneira de nos ajudar é fazer uma doação para as organizações recomendadas por nós ou para a própria doebem. 
         Como segunda opção você pode nos indicar para familiares e amigos ou mesmo outros doadores por meio de suas redes sociais. 
         Como terceira opção você pode se candidatar para nossas vagas de emprego, sugerir ideias ou dar feedback.`
-      }                                    
+      }                                
     ];
   }
 

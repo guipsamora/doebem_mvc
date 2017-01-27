@@ -19,9 +19,9 @@ export class PagOngs {
     this.$http = $http;
     this.$scope = $scope;
     this.$routeParams = $routeParams;
-    this.pageTitle;
-    this.pageImage;
-    this.infoOng;
+    this.pageTitle = '';
+    this.pageImage = '';
+    this.infoOng = '';
 
 }
 

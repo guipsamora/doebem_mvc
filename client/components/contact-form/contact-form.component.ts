@@ -38,7 +38,7 @@ export class ContactFormComponent {
 
 
 function DialogController($scope, $mdDialog, $inject) {
-  $inject;
+
   $scope.hide = function() {
     $mdDialog.hide();
   };

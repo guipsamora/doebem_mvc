@@ -2,7 +2,7 @@
 // @flow
 var _ = require('lodash');
 
-class _User {
+class User {
   _id: string = '';
   name: string = '';
   email: string = '';
@@ -13,7 +13,7 @@ class _User {
 export function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
   'ngInject';
   var safeCb = Util.safeCb;
-  var currentUser: _User = new _User();
+  var currentUser: User = new User();
   var userRoles = appConfig.userRoles || [];
   /**
    * Check if userRole is >= role
@@ -59,7 +59,7 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
      */
     logout() {
       $cookies.remove('token');
-      currentUser = new _User();
+      currentUser = new User();
     },
 
     /**

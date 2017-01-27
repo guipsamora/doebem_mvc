@@ -38,7 +38,7 @@ export class CheckoutComponent {
 
 
 function DialogController($scope, $mdDialog, $inject) {
-  $inject;
+
   $scope.hide = function() {
     $mdDialog.hide();
   };
