@@ -33,22 +33,22 @@ export class MainController {
 
     this.stepOptions = [{
       title: 'Escolha',
-      desc: 'A causa mais importante para você',
+      desc: 'A causa com a qual mais se identifica.',
       icon: 'fa-heart-o'
       },
       {
       title: 'Selecione',
-      desc: 'Uma ONG efetiva, avaliada por nós',
+      desc: 'Uma ONG eficiente, analisada pela doebem.',
       icon: 'fa-hand-pointer-o'
       },
       {
       title: 'Doe',
-      desc: 'A quantia e pelo período que desejar.',
+      desc: 'A quantia desejada e pelo período que quiser.',
       icon: 'fa-money'
       },
       {
       title: 'Acompanhe',
-      desc: 'As notícias sobre o impacto da sua doação.',
+      desc: 'Notícias e atualizações sobre o impacto da sua doação.',
       icon: 'fa-envelope-o'
       }
       ];
