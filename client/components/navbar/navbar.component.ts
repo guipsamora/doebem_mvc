@@ -17,7 +17,7 @@ export class NavbarComponent {
     'title': 'SOBRE',
     'link': 'sobre'
   }, {
-    'title': 'DUVIDAS',
+    'title': 'DÚVIDAS',
     'link': 'duvidas'
   }, {
     'title': 'BLOG',
