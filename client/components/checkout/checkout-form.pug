@@ -2,8 +2,8 @@ div(layout="column")
   h2 Doe Aqui
     div(layout="column" flex="100")
       //- criar a funcao que vai pegar o form e jogar no server
-      md-form(name="checkoutForm" layout="column"  ng-submit="$ctrl.FUNCTION_TO_BE_BUILT(checkoutForm)")        
-          div#values(layout="column" flex="30" display="block")
+      md-form#checkoutForm(name="checkoutForm" layout="column"  ng-submit="$ctrl.FUNCTION_TO_BE_BUILT(checkoutForm)")        
+          div#values.active.formStep.limitStep(layout="column" flex="30" display="block")
               div(layout="row")
                 div
                   input(type="radio" name="doacao" id="doacao_unica" value="1" checked="checked")
@@ -14,7 +14,9 @@ div(layout="column")
               div
                 input(type="checkbox" id="doacao_doebem" value="" checked="checked")
                 label(for="doacao_doebem") Adicione 10% para a doebem
-          div#info(layout="column" flex="30" display="none")
+                input(type="text", value="ID DA MINHA ONG")
+              //- renderizar o slug
+          div#info.hidden.formStep(layout="column" flex="30" display="none")
             md-input-container.md-block(flex-gt-sm)
               label Nome
               input(ng-model="$ctrl.user.Name" required)
@@ -28,11 +30,14 @@ div(layout="column")
             md-input-container.md-block
               label Cidade
               input(ng-model="$ctrl.user.Cidade" required)
-          div#creditCard(layout="column" flex="100" display="none")
+          div#creditCard.hidden.formStep.limitStep(layout="column" flex="100" display="none")
+              label Cartao
+              input(type="text")
+              input#checkoutCardTokenInput(type="text")
               //- colocar informações do cartão de crédito
           div.controls
-              button#btn-next.btn.btn-block.btn-step.btn-next(type="button") Continuar
-              button#btn-next.btn.btn-block.btn-clear.btn-step.btn-prev(type="button" style="visibility: hidden") Voltar
+              button.checkoutFormStepChange.checkoutFormStepChangeNext.btn.btn-block.btn-step.btn-next(type="button") Continuar
+              button.checkoutFormStepChange.hidden.btn.btn-block.btn-clear.btn-step.btn-prev(type="button") Voltar
 
       div(flex="10" layout="column" layout-align="center center")
-          md-button.md-raized.md-primary(type="submit") Enviar
+          md-button.md-raized.md-primary.hidden(type="submit", id="checkoutFormSubmit") Enviar
