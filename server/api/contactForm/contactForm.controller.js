@@ -11,31 +11,37 @@ import mailer from 'express-mailer';
 
 var app = express();
 
+// console.log("eu funcionei");
+
 mailer.extend(app, {
-  from: 'doebem <doebembr@gmail.com>',
+  from: 'doebembr@gmail.com',
   host: 'smtp.gmail.com', // hostname
   secureConnection: true, // use SSL
   port: 465, // port for secure SMTP
   transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts
   auth: {
-    user: process.env.GMAIL_ID,
-    pass: process.env.GMAIL_SECRET
+    user: process.env.GOOGLE_ID,
+    pass: process.env.GOOGLE_SECRET
   }
 });
 
 app.set('views', `${__dirname}/`);//path.resolve( __dirname, '/'));
 app.set('view engine', 'pug');
 
-function handleSendEmail(res) {
-  console.log('path', __dirname);
+function handleSendEmail(req, res) {
+  console.log('path', __dirname);  
+  console.log(req.body.Email);
+  console.log(req.body.Mensagem);
+  console.log(req.body.Name);
   app.mailer.send({
     template: 'email',
     bcc: 'doebembr@gmail.com'
   },
     {
-      to: res.email,
+      // to: req.body.Email,
+      to: req.body.Email,
       subject: 'Sua mensagem para a doebem', // REQUIRED.
-      message: res.message,
+      message: req.body.Mensagem
     }, err => {
       if(err) {
         // handle error
@@ -49,6 +55,8 @@ function handleSendEmail(res) {
 
 // Creates a new ContactForm in the DB
 export function create(req, res) {
+  // console.log(res);
   return ContactForm.create(req.body)
-    .then(handleSendEmail(res));
+    .then(handleSendEmail(req, res));
+    // .then(console.log(res.Email));
 }

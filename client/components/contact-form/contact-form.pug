@@ -13,7 +13,7 @@ div#contactForm(layout="column" layout-align="center center")
                   span Your email must be between 10 and 100 characters long and look like an e-mail address.
             md-input-container.md-block
               label Email
-              input(type="email" ng-model="contactForm.Email" requiredminlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/")
+              input(type="email" ng-model="contactForm.Email" requiredminlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" required)
               div(ng-messages="contactForm.clientEmail.$error" role="alert")
                 div(ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']")
                   span Your email must be between 10 and 100 characters long and look like an e-mail address.

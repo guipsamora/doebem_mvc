@@ -20,7 +20,7 @@ export class ContactFormComponent {
         this.showDialog();
         this.$scope.contactForm.$setPristine();
         this.$scope.contactForm.$setUntouched();
-        this.user = {};
+        form = {};
       });
   }
 
@@ -31,7 +31,7 @@ export class ContactFormComponent {
       controller: DialogController,
       templateUrl: 'dialogEmailSend.tmpl.pug',
       parent: angular.element(document.body),
-      clickOutsideToClose: false,
+      clickOutsideToClose: true,
       fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
     });
   }
