@@ -3,68 +3,58 @@
 import mongoose from 'mongoose';
 
 var checkoutFormSchema = new mongoose.Schema({
-  
-  //  "MerchantOrderId":"2014111703",
-   "Customer": {
-      "Name": {
+  //  MerchantOrderId:"2014111703",
+   Customer: {
+    Name: {
         type: 'String',
         required: true,
       },
-      "Email": {
+      Email: {
         type: 'String',
         required: true,
       },
-      "CPF": {
+      CPF: {
         type: 'String',
         required: true,
       },
-      "Cidade": {
+      Cidade: {
         type: 'String',
         required: true,
       }
    }
   //  ,
-  //  "Payment": {
-     
-  //    "Type": {
+  //  Payment: {
+  //    Type: {
   //       type: 'String',
   //       required: true
   //    },
-     
-  //    "Amount": {
+  //    Amount: {
+  //       type: 'Number',
+  //       required: true
+  //    },     
+  //    Installments: {
   //       type: 'Number',
   //       required: true
   //    },
-     
-  //    "Installments": {
-  //       type: 'Number',
-  //       required: true
-  //    },
-  
-  //    "CreditCard": {
-  //        "CardNumber": {
+  //    CreditCard: {
+  //        CardNumber: {
+  //           type: 'String',
+  //           required: true
+  //        },    
+  //        ExpirationDate: {
   //           type: 'String',
   //           required: true
   //        },
-         
-  //        "ExpirationDate": {
+  //        SecurityCode: {
   //           type: 'String',
   //           required: true
   //        },
-  //        "SecurityCode": {
-  //           type: 'String',
-  //           required: true
-  //        },
-  //        "Brand": {
+  //        Brand: {
   //       type: 'String',
   //       required: true
   //     }
   //    }
-  //  }  
-
-
-  
-  
+  //  }
   // fistName: String,
   // lastName: String,
   // email: String,

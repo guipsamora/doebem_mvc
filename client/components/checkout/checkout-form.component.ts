@@ -1,5 +1,5 @@
 const angular = require('angular');
-const ngRoute = require('angular-route');
+// const ngRoute = require('angular-route');
 // import routing from './cad-ong.routes';
 
 
@@ -28,8 +28,6 @@ export class CheckoutComponent {
   addTransaction(form, ev) {
     console.log(form);
   }
-
-
   // sendEmail() {
   //   this.$http.post('/api/contactForm', this.user)
   //     .then(res => {
@@ -52,7 +50,6 @@ export class CheckoutComponent {
   //   });
   // }
 }
-
 
 export default angular.module('directives.checkoutForm', [])
   .component('checkoutForm', {

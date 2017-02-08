@@ -1,6 +1,6 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
-const jkAngularCarousel = require('../../../node_modules/angular-jk-carousel/dist/jk-carousel.js');
+// const jkAngularCarousel = require('../../../node_modules/angular-jk-carousel/dist/jk-carousel.js');
 
 import routing from './main.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
@@ -60,7 +60,8 @@ export class MainController {
 }
 
 export default angular.module('doebemOrgApp.main',
- [ngRoute, 'jkAngularCarousel', contactForm])
+ [ngRoute, contactForm])
+//  [ngRoute, 'jkAngularCarousel', contactForm])
     .config(routing)
     .component('main', {
       template: require('./main.pug'),

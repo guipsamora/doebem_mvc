@@ -12,13 +12,13 @@ import mailer from 'express-mailer';
 var app = express();
 
 mailer.extend(app, {
-  from: 'Jean Philip de Rogatis <jrogatis@gmail.com>',
+  from: 'doebem <doebembr@gmail.com>',
   host: 'smtp.gmail.com', // hostname
   secureConnection: true, // use SSL
   port: 465, // port for secure SMTP
   transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts
   auth: {
-    user: process.env.GMAIL_USER,
+    user: process.env.GMAIL_ID,
     pass: process.env.GMAIL_SECRET
   }
 });
@@ -30,20 +30,20 @@ function handleSendEmail(res) {
   console.log('path', __dirname);
   app.mailer.send({
     template: 'email',
-    bcc: 'jrogatis@metaconexao.com.br'
+    bcc: 'doebembr@gmail.com'
   },
     {
       to: res.email,
       subject: 'Sua mensagem para a doebem', // REQUIRED.
-      message: res.message
+      message: res.message,
     }, err => {
       if(err) {
         // handle error
         console.log(err);
-        res.send('There was an error sending the email');
+        res.send('Ocorreu um erro ao enviar sua mensagem');
         return;
       }
-      res.send('Email Sent');
+      res.send('Email enviado');
     });
 }
 

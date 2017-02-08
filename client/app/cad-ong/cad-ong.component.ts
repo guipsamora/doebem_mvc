@@ -155,7 +155,7 @@ export class CadOngController {
   }
 
   addOng(form, ev) {
-    console.log("Estive no addOng")
+    console.log('Estive no addOng');
     this.$http.post('api/ong', form)
       .then(res => {
         this.dialog = this.$mdDialog.show({
