@@ -6,7 +6,7 @@ var contactFormSchema = new mongoose.Schema({
   Name: String,
   Telefone: String,
   Email: String,
-  Menssagem: String,
+  Mensagem: String,
   date: { type: Date, default: Date.now }
 });
 
