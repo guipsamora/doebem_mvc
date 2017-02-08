@@ -14,6 +14,7 @@ export class ContactFormComponent {
   }
 
   sendEmail() {
+    console.log("Teste");
     this.$http.post('/api/contactForm', this.user)
       .then(res => {
         this.showDialog();

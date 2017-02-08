@@ -1,8 +1,8 @@
 div(layout="column")
-  h2 Doe Aqui
+  h2(layout-align="center center") Doe Aqui
     div(layout="column" flex="100")
       //- criar a funcao que vai pegar o form e jogar no server
-      md-form#checkoutForm(name="checkoutForm" layout="column"  ng-submit="$ctrl.FUNCTION_TO_BE_BUILT(checkoutForm)")        
+      md-form#checkoutForm(name="checkoutForm" layout="column" ng-submit="$ctrl.addTransaction($ctrl.checkoutForm, $event)")
           div#values.active.formStep.limitStep(layout="column" flex="30" display="block")
               div(layout="row")
                 div
@@ -11,25 +11,27 @@ div(layout="column")
                 div
                   input(type="radio" name="doacao" id="doacao_mensal" value="2")
                   label(for="doacao_mensal") Doação Mensal
+              div                
+                input(type="text" placeholder="Valor doado" ng-pattern="/^[0-9]{7}$/" id="valor" value="")
               div
                 input(type="checkbox" id="doacao_doebem" value="" checked="checked")
                 label(for="doacao_doebem") Adicione 10% para a doebem
-                input(type="text", value="ID DA MINHA ONG")
-              //- renderizar o slug
+              //- input(type="text", value="ID DA MINHA ONG")
+              //- renderizar o slug para saber que é essa a ONG
           div#info.hidden.formStep(layout="column" flex="30" display="none")
             md-input-container.md-block(flex-gt-sm)
               label Nome
-              input(ng-model="$ctrl.user.Name" required)
+              input(ng-model="$ctrl.checkoutForm.Customer.Name" required)
             md-input-container.md-block
               label Email
-              input(type="email" ng-model="$ctrl.user.Email" required)  
+              input(type="email" ng-model="$ctrl.checkoutForm.Customer.Email" )  
             md-input-container.md-block
               label CPF
               //- conseguir validação para o CPF
-              input(ng-model="$ctrl.user.CPF" required) 
+              input(ng-model="$ctrl.checkoutForm.Customer.CPF" ) 
             md-input-container.md-block
               label Cidade
-              input(ng-model="$ctrl.user.Cidade" required)
+              input(ng-model="$ctrl.checkoutForm.Customer.Cidade" )
           div#creditCard.hidden.formStep.limitStep(layout="column" flex="100" display="none")
               label Cartao
               input(type="text")
@@ -38,6 +40,5 @@ div(layout="column")
           div.controls
               button.checkoutFormStepChange.checkoutFormStepChangeNext.btn.btn-block.btn-step.btn-next(type="button") Continuar
               button.checkoutFormStepChange.hidden.btn.btn-block.btn-clear.btn-step.btn-prev(type="button") Voltar
-
-      div(flex="10" layout="column" layout-align="center center")
-          md-button.md-raized.md-primary.hidden(type="submit", id="checkoutFormSubmit") Enviar
+          div(flex="10" layout="column" layout-align="center center")
+              md-button.md-raized.md-primary.hidden#checkoutFormSubmit(type="submit") Enviar

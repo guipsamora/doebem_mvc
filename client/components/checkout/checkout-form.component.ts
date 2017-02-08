@@ -1,4 +1,15 @@
 const angular = require('angular');
+const ngRoute = require('angular-route');
+// import routing from './cad-ong.routes';
+
+
+// const DialogImagesController = ($scope, $mdDialog) => {
+//   $scope.hide = () => $mdDialog.hide();
+//   $scope.cancel = () => $mdDialog.cancel();
+//   $scope.answer = (answer) => $mdDialog.hide(answer);
+// };
+
+// DialogImagesController.$inject = ['$scope', '$mdDialog'];
 
 export class CheckoutComponent {
   $mdDialog;
@@ -13,47 +24,35 @@ export class CheckoutComponent {
     this.$mdDialog = $mdDialog;
   }
 
-  sendEmail() {
-    this.$http.post('/api/contactForm', this.user)
-      .then(res => {
-        this.showDialog();
-        this.$scope.contactForm.$setPristine();
-        this.$scope.contactForm.$setUntouched();
-        this.user = {};
-      });
+
+  addTransaction(form, ev) {
+    console.log(form);
   }
 
-  showDialog() {
-    this.dialog = this.$mdDialog.show({
-      scope: this.$scope,
-      preserveScope: true,
-      controller: DialogController,
-      templateUrl: 'dialogEmailSend.tmpl.pug',
-      parent: angular.element(document.body),
-      clickOutsideToClose: false,
-      fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
-    });
-  }
+
+  // sendEmail() {
+  //   this.$http.post('/api/contactForm', this.user)
+  //     .then(res => {
+  //       this.showDialog();
+  //       this.$scope.contactForm.$setPristine();
+  //       this.$scope.contactForm.$setUntouched();
+  //       this.user = {};
+  //     });
+  // }
+
+  // showDialog() {
+  //   this.dialog = this.$mdDialog.show({
+  //     scope: this.$scope,
+  //     preserveScope: true,
+  //     controller: DialogController,
+  //     templateUrl: 'dialogEmailSend.tmpl.pug',
+  //     parent: angular.element(document.body),
+  //     clickOutsideToClose: false,
+  //     fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
+  //   });
+  // }
 }
 
-
-function DialogController($scope, $mdDialog, $inject) {
-
-  $scope.hide = function() {
-    $mdDialog.hide();
-  };
-
-  $scope.cancel = function() {
-    $mdDialog.cancel();
-  };
-
-  $scope.answer = function(answer) {
-    $mdDialog.hide(answer);
-  };
-}
-
-
-DialogController.$inject = ['$scope', '$mdDialog'];
 
 export default angular.module('directives.checkoutForm', [])
   .component('checkoutForm', {

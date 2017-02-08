@@ -3,10 +3,10 @@
 import mongoose from 'mongoose';
 
 var contactFormSchema = new mongoose.Schema({
-  fistName: String,
-  lastName: String,
-  email: String,
-  message: String,
+  Name: String,
+  Telefone: String,
+  Email: String,
+  Menssagem: String,
   date: { type: Date, default: Date.now }
 });
 

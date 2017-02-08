@@ -30,59 +30,59 @@
     <div ng-view=""></div>
     <footer></footer>
 
-<script type="text/javascript" src="/vendor.bundle.js"></script>
-<script type="text/javascript" src="/polyfills.bundle.js"></script>
-<script type="text/javascript" src="/app.bundle.js"></script>
-<script type="text/javascript" src="https://js.iugu.com/v2"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="/vendor.bundle.js"></script>
+    <script type="text/javascript" src="/polyfills.bundle.js"></script>
+    <script type="text/javascript" src="/app.bundle.js"></script>
+    <script type="text/javascript" src="https://js.iugu.com/v2"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-<script>
-  $(document).ready(function() {
-    $(".checkoutFormStepChange").click(function(e) {
-      e.preventDefault();
+    <script>
+      $(document).ready(function() {
+        $(".checkoutFormStepChange").click(function(e) {
+          e.preventDefault();
 
-      var current_step = $(".formStep.active");
+          var current_step = $(".formStep.active");
 
-      if ($(this).hasClass("checkoutFormStepChangeNext")) {
-        var other_step = current_step.next(".formStep");
-      }
-      else {
-        var other_step = current_step.prev(".formStep");
-      }
-      
-      current_step.removeClass("active").addClass("hidden");
+          if ($(this).hasClass("checkoutFormStepChangeNext")) {
+            var other_step = current_step.next(".formStep");
+          }
+          else {
+            var other_step = current_step.prev(".formStep");
+          }
+          
+          current_step.removeClass("active").addClass("hidden");
 
-      other_step.removeClass("hidden").addClass("active");
+          other_step.removeClass("hidden").addClass("active");
 
-      $(".checkoutFormStepChange").removeClass("hidden");
+          $(".checkoutFormStepChange").removeClass("hidden");
 
-      $("#checkoutFormSubmit").addClass("hidden");
+          $("#checkoutFormSubmit").addClass("hidden");
 
-      if (other_step.hasClass("limitStep")) {
-        $(this).addClass("hidden");
+          if (other_step.hasClass("limitStep")) {
+            $(this).addClass("hidden");
 
-        if ($(this).hasClass("checkoutFormStepChangeNext")) {
-          $("#checkoutFormSubmit").removeClass("hidden");
-        }
-      }
-    });
-    
-    $("#checkoutFormSubmit").click(function(e) {
-      e.preventDefault();
+            if ($(this).hasClass("checkoutFormStepChangeNext")) {
+              $("#checkoutFormSubmit").removeClass("hidden");
+            }
+          }
+        });
+        
+        $("#checkoutFormSubmit").click(function(e) {
+          e.preventDefault();
 
-      // CALL IUGU.js to get credit card token
-      var card_token = "ioaehioaehioaehehoie";
+          // CALL IUGU.js to get credit card token
+          var card_token = "ioaehioaehioaehehoie";
 
 
-      $("#checkoutCardTokenInput").val(card_token);
+          $("#checkoutCardTokenInput").val(card_token);
 
-      var form = $("#checkoutForm");
+          var form = $("#checkoutForm");
+          // console.log(form)
+          form.submit();
+        });
+      });
 
-      form.submit();
-    });
-  });
+    </script>
 
-</script>
-
-</body>
+<script type="text/javascript" src="/vendor.bundle.js"></script><script type="text/javascript" src="/polyfills.bundle.js"></script><script type="text/javascript" src="/app.bundle.js"></script></body>
 </html>

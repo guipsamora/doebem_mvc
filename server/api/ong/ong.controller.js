@@ -71,7 +71,7 @@ export function index(req, res) {
 }
 
 
-// Gets a single Omg from the DB from id or from slug...
+// Gets a single Ong from the DB from id or from slug...
 export function show(req, res) {
   return Ong.findById(req.params.id).exec()
     .then(handleEntityNotFound(res))
