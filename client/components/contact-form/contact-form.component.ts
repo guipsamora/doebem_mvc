@@ -1,20 +1,5 @@
 const angular = require('angular');
 
-function DialogController($scope, $mdDialog, $inject) {
-
-  $scope.hide = function() {
-    $mdDialog.hide();
-  };
-
-  $scope.cancel = function() {
-    $mdDialog.cancel();
-  };
-
-  $scope.answer = function(answer) {
-    $mdDialog.hide(answer);
-  };
-}
-
 export class ContactFormComponent {
   $mdDialog;
   dialog: Function;
@@ -28,20 +13,15 @@ export class ContactFormComponent {
     this.$mdDialog = $mdDialog;
   }
 
-  sendEmail() {
-    console.log('Teste');
-    console.log(this.user);
-    this.$http.post('/api/contactForm', this.user)
+  sendEmail(form, ev) {
+    console.log('form',form);
+    this.$http.post('/api/contactForm', form)
       .then(res => {
         this.showDialog();
         this.$scope.contactForm.$setPristine();
         this.$scope.contactForm.$setUntouched();
         this.user = {};
       });
-  }
-
-  teste() {
-    console.log('Funcionei');
   }
 
   showDialog() {
@@ -57,9 +37,25 @@ export class ContactFormComponent {
   }
 }
 
+
+function DialogController($scope, $mdDialog, $inject) {
+
+  $scope.hide = function() {
+    $mdDialog.hide();
+  };
+
+  $scope.cancel = function() {
+    $mdDialog.cancel();
+  };
+
+  $scope.answer = function(answer) {
+    $mdDialog.hide(answer);
+  };
+}
+
 DialogController.$inject = ['$scope', '$mdDialog'];
 
-export default angular.module('directives.contactForm', [])
+export default angular.module('directives.contactForm', [require('angular-input-masks')])
   .component('contactForm', {
     template: require('./contact-form.pug'),
     controller: ContactFormComponent
