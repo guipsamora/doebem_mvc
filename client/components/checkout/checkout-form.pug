@@ -2,7 +2,7 @@ div(layout="column")
   h2(layout-align="center center") Doe Aqui
     div(layout="column" flex="100")
       //- criar a funcao que vai pegar o form e jogar no server
-      md-form#checkoutForm(name="checkoutForm" layout="column" ng-submit="$ctrl.addTransaction($ctrl.checkoutForm, $event)")
+      form#checkoutForm(name="checkoutForm" layout="column" ng-submit="$ctrl.addTransaction($ctrl.checkoutForm, $event)")
           div#values.active.formStep.limitStep(layout="column" flex="30" display="block")
               div(layout="row")
                 div
@@ -12,33 +12,48 @@ div(layout="column")
                   input(type="radio" name="doacao" id="doacao_mensal" value="2")
                   label(for="doacao_mensal") Doação Mensal
               div                
-                input(type="text" placeholder="Valor doado" ng-pattern="/^[0-9]{7}$/" id="valor" value="")
+                input(type="number" ng-value="15" step="5.00" placeholder="Valor doado" ng-pattern="/^[0-9]{7}$/" id="valor")
               div
                 input(type="checkbox" id="doacao_doebem" value="" checked="checked")
                 label(for="doacao_doebem") Adicione 10% para a doebem
               //- input(type="text", value="ID DA MINHA ONG")
               //- renderizar o slug para saber que é essa a ONG
-          div#info.hidden.formStep(layout="column" flex="30" display="none")
+          //- div#info.hidden.formStep(layout="column" flex="30" display="none")
+          div#info.formStep(layout="column" flex="30" display="none")
             md-input-container.md-block(flex-gt-sm)
               label Nome
               input(ng-model="$ctrl.checkoutForm.Customer.Name" required)
             md-input-container.md-block
               label Email
+              //- colocar required
               input(type="email" ng-model="$ctrl.checkoutForm.Customer.Email" )  
             md-input-container.md-block
               label CPF
-              //- conseguir validação para o CPF
+              //- conseguir validação para o CPF e required
               input(ng-model="$ctrl.checkoutForm.Customer.CPF" ) 
             md-input-container.md-block
               label Cidade
-              input(ng-model="$ctrl.checkoutForm.Customer.Cidade" )
-          div#creditCard.hidden.formStep.limitStep(layout="column" flex="100" display="none")
-              label Cartao
-              input(type="text")
-              input#checkoutCardTokenInput(type="text")
+              //- colocar required ou é melhor saber a idadade da pessoa
+              input(ng-model="$ctrl.checkoutForm.Customer.Cidade")
+          //- div#creditCard.hidden.formStep.limitStep(layout="column" flex="100" display="none")
+          div#creditCard.formStep.limitStep(layout="column" flex="100" display="none")
+              label Número do Cartão
+              input(placeholder="Número do Cartão" type="text" ng-model="$ctrl.checkoutForm.Payment.CreditCard.CardNumber")
+              label Data de Expiração
+              input(type="text" ng-model="$ctrl.checkoutForm.Payment.CreditCard.ExpirationDate")
+              label Código de Segurança
+              //- colocar md-maxlength="4"
+              input(type="text" ng-model="$ctrl.checkoutForm.Payment.CreditCard.SecurityCode" ng-pattern="/^[0-9]{3}$/")
+              select(ng-model="$ctrl.checkoutForm.Payment.CreditCard.Brand")
+                option(disabled ng-selected) BANDEIRA
+                option(ng-value = "Mastercard") Master
+                option(ng-value = "Visa") Visa
+                option(ng-value = "Amex") Amex
               //- colocar informações do cartão de crédito
           div.controls
               button.checkoutFormStepChange.checkoutFormStepChangeNext.btn.btn-block.btn-step.btn-next(type="button") Continuar
-              button.checkoutFormStepChange.hidden.btn.btn-block.btn-clear.btn-step.btn-prev(type="button") Voltar
+              //- button.checkoutFormStepChange.hidden.btn.btn-block.btn-clear.btn-step.btn-prev(type="button") Voltar
+              button.checkoutFormStepChange.btn.btn-block.btn-clear.btn-step.btn-prev(type="button") Voltar
           div(flex="10" layout="column" layout-align="center center")
-              md-button.md-raized.md-primary.hidden#checkoutFormSubmit(type="submit") Enviar
+              //- md-button.md-raized.md-primary.hidden#checkoutFormSubmit(type="submit") Enviar
+              md-button.md-raized.md-primary#checkoutFormSubmit(type="submit") Enviar

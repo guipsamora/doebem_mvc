@@ -69,11 +69,10 @@ function handleError(res, statusCode) {
   };
 }
 
-
-
-
 // Creates a new transaction in the DB
 export function create(req, res) {
+  console.log(req);
+  console.log(res);
   return CheckoutForm.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(error => {
