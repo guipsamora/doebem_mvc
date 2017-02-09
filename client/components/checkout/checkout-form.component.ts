@@ -28,7 +28,7 @@ export class CheckoutComponent {
           templateUrl: 'save.tmpl.pug',
           parent: angular.element(document.body),
           targetEvent: ev,
-          clickOutsideToClose: false,
+          clickOutsideToClose: true,
           // fullscreen: this.customFullscreen // Only for -xs, -sm breakpoints.
         })
         .then( () => {

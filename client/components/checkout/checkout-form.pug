@@ -12,7 +12,7 @@ div(layout="column")
                   input(type="radio" name="doacao" id="doacao_mensal" value="2")
                   label(for="doacao_mensal") Doação Mensal
               div                
-                input(type="number" ng-value="15" step="5.00" placeholder="Valor doado" ng-pattern="/^[0-9]{7}$/" id="valor")
+                input(type="number" ng-value="15" step="5.00" placeholder="Valor doado" ng-pattern="/^[0-9]{7}$/" id="valor" ng-model="$ctrl.checkoutForm.Payment.Amount")
               div
                 input(type="checkbox" id="doacao_doebem" value="" checked="checked")
                 label(for="doacao_doebem") Adicione 10% para a doebem

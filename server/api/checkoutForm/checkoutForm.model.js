@@ -3,7 +3,21 @@
 import mongoose from 'mongoose';
 
 var checkoutFormSchema = new mongoose.Schema({
+  
+  MerchantId: {
+      type: 'String',
+      required: true,
+      default: process.env.MerchantId
+  },
+
+  MerchantKey: {
+      type: 'String',
+      required: true,
+      default: process.env.MerchantKey
+  },
+  
   //  MerchantOrderId:"2014111703",
+
    Customer: {
       Name: {
         type: 'String',
@@ -25,14 +39,19 @@ var checkoutFormSchema = new mongoose.Schema({
    ,
    Payment: {
      //  iremos aceitar apenas cartão de crédito
-    //  Type: "CreditCard",
-     Amount: {
-        type: 'Number',
-        required: true
+     Type: {
+        type: String,
+        default: "CreditCard",
+        required: true,
      },
+    //  Amount: {
+    //     type: 'Number',
+    //     required: true
+    //  },
      Installments: {
         type: 'Number',
-        required: true
+        required: true,
+        default: 1
      },
      CreditCard: {
          CardNumber: {
@@ -47,10 +66,10 @@ var checkoutFormSchema = new mongoose.Schema({
             type: 'String',
             required: true
          },
-         Brand: {
-          type: 'String',
-          required: true
-         }
+        //  Brand: {
+        //   type: 'String',
+        //   required: true
+        //  }
      }
    }
 });
