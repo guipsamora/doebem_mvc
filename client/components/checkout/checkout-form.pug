@@ -2,18 +2,18 @@ div(layout="column")
   h2(layout-align="center center") Doe Aqui
     div(layout="column" flex="100")
       //- criar a funcao que vai pegar o form e jogar no server
-      form#checkoutForm(name="checkoutForm" layout="column" ng-submit="$ctrl.addTransaction($ctrl.checkoutForm, $event)")
+      form#checkoutForm(name="checkoutForm" layout="column" ng-submit="$ctrl.addTransaction(checkoutForm, $event)")
           div#values.active.formStep.limitStep(layout="column" flex="30" display="block")
-              div(layout="row")
-                div
-                  input(type="radio" name="doacao" id="doacao_unica" value="1" checked="checked")
-                  label(for="doacao_unica") Doação Única
+              //- div(layout="row")
+              //-   div
+              //-     input(type="radio" name="doacao" id="doacao_unica" value="1" checked="checked")
+              //-     label(for="doacao_unica") Doação Única
                 //- div
                 //-   input(type="radio" name="doacao" id="doacao_mensal" value="2")
                 //-   label(for="doacao_mensal") Doação Mensal
               div
                 //- 
-                input(type="number" ng-model="$ctrl.checkoutForm.Payment.Amount" placeholder="Valor doado" id="valor")
+                input(type="number" ng-model= "checkoutForm.Payment.Amount" placeholder="Valor doado" id="valor" ui-money-mask)
               //-   input(type="checkbox" id="doacao_doebem" value="" checked="checked")
               //-   label(for="doacao_doebem") Adicione 10% para a doebem
               //- input(type="text", value="ID DA MINHA ONG")
@@ -21,33 +21,38 @@ div(layout="column")
           //- div#info.hidden.formStep(layout="column" flex="30" display="none")
           div#info.formStep(layout="column" flex="30" display="none")
             md-input-container.md-block(flex-gt-sm)
-              input(placeholder = "Nome" ng-model="$ctrl.checkoutForm.Customer.Name" required)
+              input(placeholder = "Nome" ng-model="checkoutForm.Customer.Name" required)
             md-input-container.md-block
               //- colocar required - email
-              input(placeholder = "Email" type="email" ng-model="$ctrl.checkoutForm.Customer.Email")  
+              input(placeholder = "Email" type="email" ng-model="checkoutForm.Customer.Email")  
             md-input-container.md-block
               //- conseguir validação para o CPF e required
-              input(placeholder = "CPF" ng-model="$ctrl.checkoutForm.Customer.CPF" ui-br-cpf-mask) 
+              input(placeholder = "CPF" ng-model="checkoutForm.Customer.CPF" ui-br-cpf-mask) 
             md-input-container.md-block
               //- colocar required ou é melhor saber a idade da pessoa?
-              input(placeholder = "Cidade" ng-model="$ctrl.checkoutForm.Customer.Cidade")
+              input(placeholder = "Cidade" ng-model="checkoutForm.Customer.Cidade")
           //- div#creditCard.hidden.formStep.limitStep(layout="column" flex="100" display="none")
           div#creditCard.formStep.limitStep(layout="column" flex="100" display="none")
             md-input-container.md-block(flex-gt-sm) 
-              input(placeholder="Número do Cartão" type="text" ng-model="$ctrl.checkoutForm.Payment.CreditCard.CardNumber" ng-pattern="/^[0-9]{16}$/" )
+              //- ng-pattern="/^[0-9]{16}$/" 
+              input(placeholder="Número do Cartão" type="text" ng-model="checkoutForm.Payment.CreditCard.CardNumber" 
+                name="number" payments-validate="card" payments-format="card" 
+                payments-type-model="checkoutForm.Payment.CreditCard.Brand"  
+                payments-length="card" ng-class="checkoutForm.Payment.CreditCard.Brand")
+              md-icon(ng-class="checkoutForm.Payment.CreditCard.Brand")
+              div(ng-messages="contactForm.Name.$error" role="alert")
+                div(ng-message-exp="['required']")
+                  span O cartão deve ter 16 números
               //- colocar md-maxlength="4" e aparecer em formato de data 
             md-input-container.md-block  
-              input(placeholder="Validade do Cartão" type="text" ng-model="$ctrl.checkoutForm.Payment.CreditCard.ExpirationDate")
-              //- input(placeholder="Validade do Cartão" type="text" ng-model="$ctrl.checkoutForm.Payment.CreditCard.ExpirationDate" ng-pattern="/^((0[1-9])|(1[0-2]))\/(\d{4})$/")
+              input(placeholder="Validade do Cartão" type="text" ng-model="checkoutForm.Payment.CreditCard.ExpirationDate")
+              div(ng-messages="contactForm.Name.$error" role="alert")
+                div(ng-message-exp="['required']")
+                  span O campo deve ser escrito 
+              //- input(placeholder="Validade do Cartão" type="text" ng-model="checkoutForm.Payment.CreditCard.ExpirationDate" ng-pattern="/^((0[1-9])|(1[0-2]))\/(\d{4})$/")
               //- colocar md-maxlength="4"
             md-input-container.md-block
-              input(placeholder="Código de Segurança" type="text" ng-model="$ctrl.checkoutForm.Payment.CreditCard.SecurityCode" ng-pattern="/^[0-9]{3,4}$/")
-              select(ng-model="$ctrl.checkoutForm.Payment.CreditCard.Brand")
-                option(selected disabled) BANDEIRA
-                option(ng-value = "Mastercard") Master
-                option(ng-value = "Visa") Visa
-                option(ng-value = "Amex") Amex
-              //- colocar informações do cartão de crédito
+              input(placeholder="Código de Segurança" type="text" ng-model="checkoutForm.Payment.CreditCard.SecurityCode" ng-pattern="/^[0-9]{3,4}$/")
           div.controls
               button.checkoutFormStepChange.checkoutFormStepChangeNext.btn.btn-block.btn-step.btn-next(type="button") Continuar
               //- button.checkoutFormStepChange.hidden.btn.btn-block.btn-clear.btn-step.btn-prev(type="button") Voltar
@@ -68,7 +73,7 @@ script(type="text/ng-template" id="dialogDonationMade.tmpl.pug")
               ng-md-icon.name(icon="close" style="fill: white")
       md-dialog-content
         div.md-dialog-content
-          h2 {{$ctrl.checkoutForm.Customer.Name}}, muito obrigado pela sua doação! :)
+          h2 {{$ctrl.name}}, muito obrigado pela sua doação! :)
       md-dialog-actions(layout="row")
         span(flex)
         md-button(ng-click="cancel()") Ok  

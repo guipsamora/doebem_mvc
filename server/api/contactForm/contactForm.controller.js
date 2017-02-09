@@ -32,13 +32,12 @@ function handleSendEmail(req, res) {
   console.log('path', __dirname);  
   console.log(req.body.Email);
   console.log(req.body.Mensagem);
-  console.log(req.body.Name);
+  console.log(req.body.Name)
   app.mailer.send({
     template: 'email',
     bcc: 'doebembr@gmail.com'
   },
     {
-      // to: req.body.Email,
       to: req.body.Email,
       subject: 'Sua mensagem para a doebem', // REQUIRED.
       message: req.body.Mensagem
@@ -46,6 +45,7 @@ function handleSendEmail(req, res) {
       if(err) {
         // handle error
         console.log(err);
+
         res.send('Ocorreu um erro ao enviar sua mensagem');
         return;
       }

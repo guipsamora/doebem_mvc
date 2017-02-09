@@ -1,4 +1,5 @@
 const angular = require('angular');
+const angularPayments = require('angular-payments');
 // const ngRoute = require('angular-route');
 // import routing from './cad-ong.routes';
 
@@ -8,6 +9,7 @@ export class CheckoutComponent {
   $http;
   $scope;
   checkoutForm: {};
+  name;
 
   constructor($http, $scope, $animate, $mdDialog) {
     this.$http = $http;
@@ -22,16 +24,21 @@ export class CheckoutComponent {
 
   addTransaction(form, ev) {    
     form.Payment.Amount = this.transformToCents(form.Payment.Amount);
+    this.name = form.Customer.Name;
     console.log(form);
     console.log(this.$scope.checkoutForm);
     this.$http.post('/api/checkoutForm', form)
         .then(res => {
           this.showDialog();
-          this.$scope.checkoutForm = {};
-          this.$scope.user = {};
-          this.$scope.checkoutForm.$setPristine();          
+          this.$scope.checkoutForm.$setPristine();
+          console.log("After setPristine ");
+          console.log(this.$scope.checkoutForm);
           this.$scope.checkoutForm.$setUntouched();
-        })
+          console.log("After setUntouched ");
+          console.log(this.$scope.checkoutForm);
+          this.$scope.checkoutForm = {};
+          console.log(this.$scope.checkoutForm);
+        })        
     .catch(err => console.log(err));
   }
 
@@ -65,7 +72,7 @@ export class CheckoutComponent {
 
   DialogController.$inject = ['$scope', '$mdDialog'];
 
-export default angular.module('directives.checkoutForm', [require('angular-input-masks')])
+export default angular.module('directives.checkoutForm', ['angularPayments', require('angular-input-masks')])
   .component('checkoutForm', {
     template: require('./checkout-form.pug'),
     controller: CheckoutComponent
