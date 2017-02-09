@@ -5,11 +5,12 @@
 'use strict';
 
 import {EventEmitter} from 'events';
-import ContactForm from './contactForm.model';
+import CheckoutForm from './checkoutForm.model';
+
 var CheckoutFormEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)
-ContactForm.setMaxListeners(0);
+CheckoutForm.setMaxListeners(0);
 
 // Model events
 var events = {
@@ -20,7 +21,7 @@ var events = {
 // Register the event emitter to the model events
 for(var e in events) {
   let event = events[e];
-  ContactForm.schema.post(e, emitEvent(event));
+  CheckoutForm.schema.post(e, emitEvent(event));
 }
 
 function emitEvent(event) {

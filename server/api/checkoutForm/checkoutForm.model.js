@@ -25,7 +25,7 @@ var checkoutFormSchema = new mongoose.Schema({
    ,
    Payment: {
      //  iremos aceitar apenas cartão de crédito
-     Type: "CreditCard",
+    //  Type: "CreditCard",
      Amount: {
         type: 'Number',
         required: true

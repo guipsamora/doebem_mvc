@@ -10,14 +10,8 @@
 
 'use strict';
 
-import CheckoutForm from './checkoutForm.model';
 import jsonpatch from 'fast-json-patch';
-import express from 'express';
-
-var app = express();
-
-app.set('views', `${__dirname}/`);//path.resolve( __dirname, '/'));
-app.set('view engine', 'pug');
+import CheckoutForm from './checkoutForm.model';
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -69,14 +63,64 @@ function handleError(res, statusCode) {
   };
 }
 
-// Creates a new transaction in the DB
+// Gets a list of Transaction
+export function index(req, res) {
+  return CheckoutForm.find().exec()
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
+
+// Gets a single Transaction from the DB from id or from slug...
+export function show(req, res) {
+  return CheckoutForm.findById(req.params.id).exec()
+    .then(handleEntityNotFound(res))
+    .then(respondWithResult(res))
+    .catch(err => {
+      CheckoutForm.findOne({slug: req.params.id}).exec()
+      .then(handleEntityNotFound(res))
+      .then(respondWithResult(res))
+      .catch(handleError(res));
+    });
+}
+
+// Creates a new Transaction in the DB
 export function create(req, res) {
-  console.log(req);
-  console.log(res);
   return CheckoutForm.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(error => {
-      console.log('create na API do checkoutForm', error);
+      console.log('create na API da Transaction', error);
       return handleError(res);
     });
+}
+
+// Upserts the given Thing in the DB at the specified ID
+export function upsert(req, res) {
+  if(req.body._id) {
+    delete req.body._id;
+  }
+  return CheckoutForm.findOneAndUpdate({_id: req.params.id}, req.body, {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
+
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
+// Updates an existing Transaction in the DB
+export function patch(req, res) {
+  if(req.body._id) {
+    delete req.body._id;
+  }
+  return CheckoutForm.findById(req.params.id).exec()
+    .then(handleEntityNotFound(res))
+    .then(patchUpdates(req.body))
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
+// Deletes a Transaction from the DB
+export function destroy(req, res) {
+  return CheckoutForm.findById(req.params.id).exec()
+    .then(handleEntityNotFound(res))
+    .then(removeEntity(res))
+    .catch(handleError(res));
 }

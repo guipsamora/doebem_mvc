@@ -6,6 +6,7 @@
 
 import {EventEmitter} from 'events';
 import Ong from './ong.model';
+
 var OngEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)

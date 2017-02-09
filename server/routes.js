@@ -12,6 +12,7 @@ export default function(app) {
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
   app.use('/api/contactForm', require('./api/contactForm'));
+  app.use('/api/checkoutForm', require('./api/checkoutForm'));
   app.use('/api/ong', require('./api/ong'));
   app.use('/api/buscaCep', require('./api/busca-cep'));
   app.use('/api/imageGallery', require('./api/imageGallery'));

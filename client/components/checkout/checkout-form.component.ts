@@ -19,7 +19,7 @@ export class CheckoutComponent {
 
   addTransaction(form, ev) {
     console.log(form);
-    this.$http.post('api/checkoutForm', form)
+    this.$http.post('/api/checkoutForm', form)
       .then(res => {
         this.dialog = this.$mdDialog.show({
           scope: this.$scope,
