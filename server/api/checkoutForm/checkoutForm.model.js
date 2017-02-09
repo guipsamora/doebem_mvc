@@ -35,22 +35,23 @@ var checkoutFormSchema = new mongoose.Schema({
         type: 'String',
         required: true,
       }
-   }
-   ,
+   },
    Payment: {
      //  iremos aceitar apenas cartão de crédito
      Type: {
-        type: String,
-        default: "CreditCard",
+        type: 'String',
+        // default cartão de crédito para todas as operações
+        default: 'CreditCard',
         required: true,
      },
-    //  Amount: {
-    //     type: 'Number',
-    //     required: true
-    //  },
+     Amount: {
+        type: 'Number',
+        required: true
+     },
      Installments: {
         type: 'Number',
         required: true,
+        // default número de parcelas ser apenas 1, não iremos parcelar doação né
         default: 1
      },
      CreditCard: {
@@ -66,10 +67,10 @@ var checkoutFormSchema = new mongoose.Schema({
             type: 'String',
             required: true
          },
-        //  Brand: {
-        //   type: 'String',
-        //   required: true
-        //  }
+         Brand: {
+          type: 'String',
+          required: true
+         }
      }
    }
 });

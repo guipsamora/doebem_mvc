@@ -15,56 +15,55 @@ export class CheckoutComponent {
     this.$mdDialog = $mdDialog;
   }
 
-
-
-  addTransaction(form, ev) {
-    console.log(form);
-    this.$http.post('/api/checkoutForm', form)
-      .then(res => {
-        this.dialog = this.$mdDialog.show({
-          scope: this.$scope,
-          preserveScope: true,
-          controller: DialogImagesController,
-          templateUrl: 'save.tmpl.pug',
-          parent: angular.element(document.body),
-          targetEvent: ev,
-          clickOutsideToClose: true,
-          // fullscreen: this.customFullscreen // Only for -xs, -sm breakpoints.
-        })
-        .then( () => {
-          this.checkoutForm = null;
-          this.$scope.checkoutForm.$setPristine();
-          this.$scope.checkoutForm.$setUntouched();
-        });
-    })
-    .catch(err => console.log(err));
-  }
-
-
   // transform value into cents, the API only accepts cents
   transformToCents(value) {
     return value * 100;
   }
 
-  // sendEmail() {
-  //   this.$http.post('/api/contactForm', this.user)
-  //     .then(res => {
-  //       this.showDialog();
-  //       this.$scope.contactForm.$setPristine();
-  //       this.$scope.contactForm.$setUntouched();
-  //       this.user = {};
-  //     });
-  // }
+  addTransaction(form, ev) {    
+    form.Payment.Amount = this.transformToCents(form.Payment.Amount);
+    console.log(form);
+    console.log(this.$scope.checkoutForm);
+    this.$http.post('/api/checkoutForm', form)
+        .then(res => {
+          this.showDialog();
+          this.$scope.checkoutForm = {};
+          this.$scope.user = {};
+          this.$scope.checkoutForm.$setPristine();          
+          this.$scope.checkoutForm.$setUntouched();
+        })
+    .catch(err => console.log(err));
+  }
 
-}
+    showDialog() {
+      this.dialog = this.$mdDialog.show({
+        scope: this.$scope,
+        preserveScope: true,
+        controller: DialogController,
+        templateUrl: 'dialogDonationMade.tmpl.pug',
+        parent: angular.element(document.body),
+        clickOutsideToClose: true,
+        fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
+      });
+    }
+  }
 
-const DialogImagesController = ($scope, $mdDialog) => {
-  $scope.hide = () => $mdDialog.hide();
-  $scope.cancel = () => $mdDialog.cancel();
-  $scope.answer = (answer) => $mdDialog.hide(answer);
-};
+  function DialogController($scope, $mdDialog, $inject) {
 
-DialogImagesController.$inject = ['$scope', '$mdDialog'];
+    $scope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
+  }
+
+  DialogController.$inject = ['$scope', '$mdDialog'];
 
 export default angular.module('directives.checkoutForm', [require('angular-input-masks')])
   .component('checkoutForm', {

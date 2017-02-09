@@ -10,13 +10,13 @@ div#contactForm(layout="column" layout-align="center center")
               input(ng-model="contactForm.Name" required)
               div(ng-messages="contactForm.Name.$error" role="alert")
                 div(ng-message-exp="['required']")
-                  span Your email must be between 10 and 100 characters long and look like an e-mail address.
+                  span Esse é um campo obrigatório, por favor escreva seu nome.
             md-input-container.md-block
               label Email
-              input(type="email" ng-model="contactForm.Email" requiredminlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" required)
+              input(type="email" ng-model="contactForm.Email" requiredminlength="5" maxlength="100" ng-pattern="/^.+@.+\..+$/" required)
               div(ng-messages="contactForm.clientEmail.$error" role="alert")
                 div(ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']")
-                  span Your email must be between 10 and 100 characters long and look like an e-mail address.
+                  span Esse é um campo obrigatório, por favor escreva seu email.
             md-input-container.md-block
               label Telefone
               input(ng-model="contactForm.Telefone")      
@@ -26,7 +26,7 @@ div#contactForm(layout="column" layout-align="center center")
               textarea(ng-model="contactForm.Mensagem" columns="1" required)   
               div(ng-messages="contactForm.Mensagem.$error" role="alert")
                 div(ng-message-exp="['required']")
-                  span Your email must be between 10 and 100 characters long and look like an e-mail address.
+                  span Esse é um campo obrigatório, por favor escreva sua mensagem.
         div(flex="10" layout="column" layout-align="center center")      
           md-button.md-raized.md-primary(type="submit") Enviar 
 
@@ -42,7 +42,7 @@ script(type="text/ng-template" id="dialogEmailSend.tmpl.pug")
               ng-md-icon.name(icon="close" style="fill: white")
       md-dialog-content
         div.md-dialog-content
-          h2 Obrigado pela sua mensagem! {{$ctrl.user.fistName}}
+          h2 {{contactForm.Name}}, obrigado pela sua mensagem! 
       md-dialog-actions(layout="row")
         span(flex)
         md-button(ng-click="cancel()") Ok         
