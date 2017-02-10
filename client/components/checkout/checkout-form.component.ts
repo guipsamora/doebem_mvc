@@ -1,5 +1,5 @@
 const angular = require('angular');
-// const angularPayments = require('angular-payments');
+const angularPayments = require('angular-payments');
 // const ngRoute = require('angular-route');
 // import routing from './cad-ong.routes';
 
