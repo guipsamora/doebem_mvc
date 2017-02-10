@@ -80,7 +80,7 @@ export function show(req, res) {
       CheckoutForm.findOne({slug: req.params.id}).exec()
       .then(handleEntityNotFound(res))
       .then(respondWithResult(res))
-      .catch(handleError(res));
+      .catch(handleError(err));
     });
 }
 

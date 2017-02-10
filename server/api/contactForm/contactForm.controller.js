@@ -29,10 +29,6 @@ app.set('views', `${__dirname}/`);//path.resolve( __dirname, '/'));
 app.set('view engine', 'pug');
 
 function handleSendEmail(req, res) {
-  console.log('path', __dirname);  
-  console.log(req.body.Email);
-  console.log(req.body.Mensagem);
-  console.log(req.body.Name)
   app.mailer.send({
     template: 'email',
     bcc: 'doebembr@gmail.com'
