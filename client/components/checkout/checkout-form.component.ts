@@ -1,5 +1,5 @@
 const angular = require('angular');
-const angularPayments = require('angular-payments');
+// const angularPayments = require('angular-payments');
 // const ngRoute = require('angular-route');
 // import routing from './cad-ong.routes';
 
@@ -22,23 +22,16 @@ export class CheckoutComponent {
     return value * 100;
   }
 
-  addTransaction(form, ev) {    
+  addTransaction(form, ev) {
     form.Payment.Amount = this.transformToCents(form.Payment.Amount);
     this.name = form.Customer.Name;
-    console.log(form);
-    console.log(this.$scope.checkoutForm);
     this.$http.post('/api/checkoutForm', form)
         .then(res => {
           this.showDialog();
           this.$scope.checkoutForm.$setPristine();
-          console.log("After setPristine ");
-          console.log(this.$scope.checkoutForm);
           this.$scope.checkoutForm.$setUntouched();
-          console.log("After setUntouched ");
-          console.log(this.$scope.checkoutForm);
           this.$scope.checkoutForm = {};
-          console.log(this.$scope.checkoutForm);
-        })        
+        })
     .catch(err => console.log(err));
   }
 

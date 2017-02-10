@@ -6,7 +6,7 @@ export class ContactFormComponent {
   $http;
   $scope;
   user: Object;
-  name; 
+  name;
 
   constructor($http, $scope, $animate, $mdDialog) {
     this.$http = $http;
@@ -15,7 +15,7 @@ export class ContactFormComponent {
   }
 
   sendEmail(form, ev) {
-    console.log('form',form);
+    console.log('form', form);
     this.name = form.Name;
     this.$http.post('/api/contactForm', form)
       .then(res => {
@@ -37,7 +37,7 @@ export class ContactFormComponent {
       parent: angular.element(document.body),
       clickOutsideToClose: true,
       fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
-    })
+    });
   }
 }
 
