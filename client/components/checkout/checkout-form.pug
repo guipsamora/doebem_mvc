@@ -13,7 +13,8 @@ div(layout="column")
                 //-   label(for="doacao_mensal") Doação Mensal
               div
                 //- 
-                input(type="number" ng-model= "checkoutForm.Payment.Amount" placeholder="Valor doado" id="valor")
+                input(type="text" ng-model= "checkoutForm.Payment.Amount" 
+                      placeholder="Valor doado" id="valor"  ui-money-mask)
               //-   input(type="checkbox" id="doacao_doebem" value="" checked="checked")
               //-   label(for="doacao_doebem") Adicione 10% para a doebem
               //- input(type="text", value="ID DA MINHA ONG")
@@ -42,17 +43,21 @@ div(layout="column")
               md-icon(ng-class="checkoutForm.Payment.CreditCard.Brand")
               div(ng-messages="contactForm.Name.$error" role="alert")
                 div(ng-message-exp="['required']")
-                  span O cartão deve ter 16 números
+                  span Cartão inválido, favor informar um cartão válido
               //- colocar md-maxlength="4" e aparecer em formato de data 
             md-input-container.md-block  
-              input(placeholder="Validade do Cartão" type="text" ng-model="checkoutForm.Payment.CreditCard.ExpirationDate")
+              input(placeholder="Validade do Cartão" type="text"
+                    ng-model="checkoutForm.Payment.CreditCard.ExpirationDate" 
+                    payments-validate="expiry" payments-format="expiry")
+                    //- ng-pattern="/^\d{2}\/\d{4}/")
               div(ng-messages="contactForm.Name.$error" role="alert")
                 div(ng-message-exp="['required']")
-                  span O campo deve ser escrito 
+                  span O campo deve ser escrito da seguinte maneira MM / AA
               //- input(placeholder="Validade do Cartão" type="text" ng-model="checkoutForm.Payment.CreditCard.ExpirationDate" ng-pattern="/^((0[1-9])|(1[0-2]))\/(\d{4})$/")
               //- colocar md-maxlength="4"
             md-input-container.md-block
-              input(placeholder="Código de Segurança" type="text" ng-model="checkoutForm.Payment.CreditCard.SecurityCode" ng-pattern="/^[0-9]{3,4}$/")
+              input(placeholder="Código de Segurança" type="text" ng-model="checkoutForm.Payment.CreditCard.SecurityCode" 
+                    ng-pattern="/^[0-9]{3,4}$/" payments-validate="cvc" payments-format="cvc")
           div.controls
               button.checkoutFormStepChange.checkoutFormStepChangeNext.btn.btn-block.btn-step.btn-next(type="button") Continuar
               //- button.checkoutFormStepChange.hidden.btn.btn-block.btn-clear.btn-step.btn-prev(type="button") Voltar

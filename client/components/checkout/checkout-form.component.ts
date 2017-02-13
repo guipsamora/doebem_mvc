@@ -17,14 +17,21 @@ export class CheckoutComponent {
     this.$mdDialog = $mdDialog;
   }
 
-  // transform value into cents, the API only accepts cents
+  // transform value  into cents, Cielo's API only accepts cents
   transformToCents(value) {
     return value * 100;
   }
 
+  // capitalize the first letter of the Credit Card brand
+  capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   addTransaction(form, ev) {
     form.Payment.Amount = this.transformToCents(form.Payment.Amount);
+    form.Payment.CreditCard.Brand = this.capitalizeFirstLetter(form.Payment.CreditCard.Brand);
     this.name = form.Customer.Name;
+    console.log(form);
     this.$http.post('/api/checkoutForm', form)
         .then(res => {
           this.showDialog();
