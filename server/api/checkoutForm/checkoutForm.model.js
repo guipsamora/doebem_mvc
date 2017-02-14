@@ -4,18 +4,6 @@ import mongoose from 'mongoose';
 
 var checkoutFormSchema = new mongoose.Schema({
 
-  MerchantId: {
-    type: 'String',
-    required: true,
-    default: process.env.MerchantId
-  },
-
-  MerchantKey: {
-    type: 'String',
-    required: true,
-    default: process.env.MerchantKey
-  },
-
    MerchantOrderId:{
      type: 'String',
      default: '2014111703'
