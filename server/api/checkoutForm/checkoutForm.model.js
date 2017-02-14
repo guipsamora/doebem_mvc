@@ -16,7 +16,10 @@ var checkoutFormSchema = new mongoose.Schema({
     default: process.env.MerchantKey
   },
 
-  //  MerchantOrderId:"2014111703",
+   MerchantOrderId:{
+     type: 'String',
+     default: '2014111703'
+   },
 
   Customer: {
     Name: {

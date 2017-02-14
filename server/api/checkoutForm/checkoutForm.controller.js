@@ -13,6 +13,8 @@
 import jsonpatch from 'fast-json-patch';
 import CheckoutForm from './checkoutForm.model';
 
+var cieloURL = 'https://apisandbox.cieloecommerce.cielo.com.br/1/sales/';
+
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
   return function(entity) {
@@ -84,10 +86,41 @@ export function show(req, res) {
     });
 }
 
+export function postCieloApi(req, res) {
+  var headers = {
+    MerchantId:'65762591-82a8-4194-b64c-0e506e7a0eaa',
+    MerchantKey: 'ZHGRIUQBYITBCCVQMTHIPHXPZEIEVGOJFZUAVVSJ',
+    'Content-Type': 'application/json'
+  }
+  
+  var options = {
+    url: 'https://apisandbox.cieloecommerce.cielo.com.br/1/sales/',
+    method:'POST',
+    header: headers
+ 
+  };
+  console.log(req.params);
+
+  requestify.post(CheckoutForm)
+    //.then(res => response.getBody)
+    .then(respondWithResult(res));
+}
+
+// Counts the length of the database and gives to the MerchantOrderId
+// export function countDatabase(req, res) {
+    
+//     console.log(CheckoutForm.
+// }
+
+
+
 // Creates a new Transaction in the DB
 export function create(req, res) {
+
+
   return CheckoutForm.create(req.body)
     .then(respondWithResult(res, 201))
+    .then(countDatabase(req,res))
     .catch(error => {
       console.log('create na API da Transaction', error);
       return handleError(res);
