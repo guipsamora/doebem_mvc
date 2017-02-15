@@ -14,10 +14,6 @@ import jsonpatch from 'fast-json-patch';
 import CheckoutForm from './checkoutForm.model';
 import requestify from 'requestify';
 
-
-
-
-
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
   return function(entity) {
@@ -91,10 +87,48 @@ export function show(req, res) {
 
 export function postCieloApi(req, res) {
 
-    requestify.request('https://apisandbox.cieloecommerce.cielo.com.br/1/sales/', {
+    console.log('postCieloApi Foi chamado');
+    
+    // CheckoutForm.create(req.body)
+    //   .then(respondWithResult(res, 201))
+    //   .catch(error => {
+    //     console.log('create na API da Transaction', error);
+    //     return handleError(res);
+    // });
+    
+    // console.log(formBody);
+    var formBody = req.body;
+    console.log(formBody);
+    
+    return requestify.request('https://apisandbox.cieloecommerce.cielo.com.br/1/sales/', {
         method: 'POST',
+        // body: {
+        //     "Payment" : {
+        //         "Amount" : 10000,
+        //         "CreditCard" : {
+        //             "Brand" : "Visa",
+        //             "CardNumber" : "4633120131480991",
+        //             "ExpirationDate" : "12/2020",
+        //             "SecurityCode" : "123"
+        //         },
+        //         "Installments" : 1,
+        //         "Type" : "CreditCard"
+        //     },
+        //     "Customer" : {
+        //         "Name" : "Guilherme Samora",
+        //         "Email" : "gui.psamora@gmail.com",
+        //         "Cidade" : "Los Angeles",
+        //         "CPF" : "22984904818"
+        //     },
+        //     "MerchantOrderId" : "2014111703",
+        // },
+
+
+        // USANDO O FORMULARIO
+
         body: {
-            CheckoutForm
+          formBody,
+          "MerchantOrderId" : "2014111703",
         },
         headers: {
             'Content-Type': 'application/json',
@@ -116,10 +150,31 @@ export function postCieloApi(req, res) {
         // get the code
         response.getCode();
 
-        // Get the response raw body
-        response.body;
+        // // Get the response raw body
+        var a = response.body;
+        console.log(a);
+        console.log('requestify deu certo')
+    }).catch(error => {
+      console.log('create na API da Transaction', error);
+      return handleError(res);
     });
+    ;
 }
+
+// export function getCieloApi(req, res) {
+
+//     console.log('getCieloApi Foi chamado');
+   
+//     return requestify.get('https://apiquerysandbox.cieloecommerce.cielo.com.br/1/sales/284a560e-543b-4cf1-bd0b-d7fed8c2c7c6')
+//       .then(function(response) {
+//         // Get the response body
+//         response.getBody();
+
+//         // Get the response raw body
+//         response.body;
+//             console.log(response.body);
+//       });
+// }
 
 // Counts the length of the database and gives to the MerchantOrderId
 // export function countDatabase(req, res) {

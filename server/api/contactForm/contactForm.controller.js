@@ -51,8 +51,6 @@ function handleSendEmail(req, res) {
 
 // Creates a new ContactForm in the DB
 export function create(req, res) {
-  // console.log(res);
   return ContactForm.create(req.body)
     .then(handleSendEmail(req, res));
-    // .then(console.log(res.Email));
 }
