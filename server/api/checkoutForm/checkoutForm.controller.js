@@ -24,6 +24,8 @@ function respondWithResult(res, statusCode) {
   };
 }
 
+
+
 function patchUpdates(patches) {
   return function(entity) {
     try {
@@ -85,9 +87,15 @@ export function show(req, res) {
     });
 }
 
+
+
 export function postCieloApi(req, res) {
 
     console.log('postCieloApi Foi chamado');
+
+    var form2 = CheckoutForm.create(req, res)();
+    console.log(form2);
+    
     
     // CheckoutForm.create(req.body)
     //   .then(respondWithResult(res, 201))
@@ -97,8 +105,13 @@ export function postCieloApi(req, res) {
     // });
     
     // console.log(formBody);
-    var formBody = req.body;
-    console.log(formBody);
+    // var formBody = req.body;
+    var customer = req.body.Customer;
+    var payment = req.body.Payment;
+    payment.Installments = 1;
+    payment.Type = "CreditCard";
+    // console.log(customer);
+    // console.log(payment);
     
     return requestify.request('https://apisandbox.cieloecommerce.cielo.com.br/1/sales/', {
         method: 'POST',
@@ -127,7 +140,8 @@ export function postCieloApi(req, res) {
         // USANDO O FORMULARIO
 
         body: {
-          formBody,
+          Customer: req.body.Customer,
+          Payment: payment,
           "MerchantOrderId" : "2014111703",
         },
         headers: {
@@ -156,6 +170,7 @@ export function postCieloApi(req, res) {
         console.log('requestify deu certo')
     }).catch(error => {
       console.log('create na API da Transaction', error);
+      // console.log(payment);
       return handleError(res);
     });
     ;

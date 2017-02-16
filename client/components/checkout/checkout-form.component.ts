@@ -39,6 +39,7 @@ export class CheckoutComponent {
           this.$scope.checkoutForm.$setUntouched();
           this.$scope.checkoutForm = {};
         })
+        // fazer outro post para o usuári
     .catch(err => console.log(err));
   }
 

@@ -7,7 +7,7 @@ module.exports = {
 
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/doebemorg-dev'
+    uri: 'mongodb://localhost:27017/doebemorg-dev'
   },
 
   // Seed database on startup
