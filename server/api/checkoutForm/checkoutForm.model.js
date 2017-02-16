@@ -3,7 +3,7 @@
 import mongoose from 'mongoose';
 
 var donationSchema = new mongoose.Schema({
-  
+  MerchantOrderId: { type: 'String', required: true },
   Payment: {
     // iremos aceitar apenas cartão de crédito
     // default cartão de crédito para todas as operações
@@ -15,7 +15,6 @@ var donationSchema = new mongoose.Schema({
 });
 
 var authorResponseSchema = new mongoose.Schema({
-
     MerchantOrderId: { type: 'String', required: true },
     Customer: {
         Name: { type: 'String', required: true }
@@ -44,47 +43,37 @@ var authorResponseSchema = new mongoose.Schema({
         Status: { type: 'Number', required: true },
         ReturnCode: { type: 'String', required: true },
         ReturnMessage: { type: 'String', required: true },
-        // Como fazer esse?
-        Links: [],
+        Links: [
+          { Method: 'String', Rel: 'String', Href: 'String' },
+          { Method: 'String', Rel: 'String', Href: 'String' },
+          { Method: 'String', Rel: 'String', Href: 'String' }
+        ],
     }
 })
 
-var captureResponseSchema = new mogoose.Schema({
-  
+var captureResponseSchema = new mongoose.Schema({ 
     "Status": { type: 'Number', required: true },
     "ReturnCode": { type: 'String', required: true },
     "ReturnMessage": { type: 'String', required: true },
-    "Links": []
-
+    "Links": [
+      { Method: 'String', Rel: 'String', Href: 'String' },
+      { Method: 'String', Rel: 'String', Href: 'String' },
+    ]
 })
 
 var userSchema = new mongoose.Schema({
-
   Customer: {
-    Name: {
-      type: 'String',
-      required: true,
-    },
-    Email: {
-      type: 'String',
-      required: true,
-    },
-    CPF: {
-      type: 'String',
-      required: true,
-    },
-    Cidade: {
-      type: 'String',
-      required: true,
-    }
+    Name: { type: 'String', required: true },
+    Email: { type: 'String', required: true },
+    CPF: { type: 'String', required: true },
+    Cidade: { type: 'String', required: true}
   },
   Transactions: [donationSchema],
   AuthorizationResponse: [authorResponseSchema],
   CaptureResponse: [captureResponseSchema],
-
 });
 
-
+// MerchantOrderId.index({ MerchantOrderId: 1 });
 
 
 
@@ -155,4 +144,4 @@ var userSchema = new mongoose.Schema({
 //   }
 // });
 
-export default mongoose.model('checkoutForm', checkoutFormSchema);
+export default mongoose.model('checkoutForm', userSchema);
