@@ -62,7 +62,8 @@
     "socketio-jwt": "^4.2.0",
     "sprint-js": "~0.1.0",
     "typings": "^0.8.1",
-    "wb-angular-slugify": "^1.2.0"
+    "wb-angular-slugify": "^1.2.0",
+    "winston": "^2.3.1"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.5",

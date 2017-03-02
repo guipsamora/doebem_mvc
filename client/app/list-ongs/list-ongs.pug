@@ -2,8 +2,7 @@ div.animated.fadeIn#listOngs
   div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url({{$ctrl.pageImage}})'}")
     h2 {{$ctrl.pageTitle}}
   div#mainListOngs(layout="column" flex="100")
-    br
-    div#lista(flex="100" layout="column")
+      br
       h3 Abaixo estão as ONGs que mais se destacaram em nossos critérios de avaliação.
       br
       md-grid-list#listOngs(flex
@@ -26,6 +25,7 @@ div.animated.fadeIn#listOngs
                   md-list
                     md-list-item(ng-repeat="loc in ong.localidadesDeAtuacao")
                       h4 Atua em: {{loc.localidade}}
+            br
             div(layout="row" layout-align="center center")
               a(ng-href="pagOngs/{{ong.slug}}")
                 md-button.md-raised.md-primary Apoiar

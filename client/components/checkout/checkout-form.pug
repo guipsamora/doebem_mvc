@@ -13,10 +13,11 @@ div(layout="column")
                 //-   label(for="doacao_mensal") Doação Mensal
               div
                 //- 
-                input(type="text" ng-model= "checkoutForm.Payment.Amount" 
-                         placeholder="Valor doado" id="valor"  ui-money-mask)
-              //-   input(type="checkbox" id="doacao_doebem" value="" checked="checked")
-              //-   label(for="doacao_doebem") Adicione 10% para a doebem
+                input(type="text" ng-model= "checkoutForm.Payment.Initial" 
+                      placeholder="Valor doado" id="valor"  ui-money-mask)
+                label(for="doacao_doebem") Adicione 10% para ajudar nas operações da doebem?
+                input(type="checkbox" id="doacao_doebem" value="" ng-model="checkoutForm.checked")
+                h2 Total: R$ {{checkoutForm.Payment.Initial + checkoutForm.Payment.Additional}}
               //- input(type="text", value="ID DA MINHA ONG")
               //- renderizar o slug para saber que é essa a ONG
           //- div#info.hidden.formStep(layout="column" flex="30" display="none")
@@ -24,14 +25,16 @@ div(layout="column")
             md-input-container.md-block(flex-gt-sm)
               input(placeholder = "Nome" ng-model="checkoutForm.Customer.Name" required)
             md-input-container.md-block
-              //- colocar required - email
               input(placeholder = "Email" type="email" ng-model="checkoutForm.Customer.Email" required)
             md-input-container.md-block
-              //- required
               input(placeholder = "CPF" ng-model="checkoutForm.Customer.CPF" ui-br-cpf-mask required) 
             md-input-container.md-block
-              //- colocar required ou é melhor saber a idade da pessoa?
-              input(placeholder = "Cidade" ng-model="checkoutForm.Customer.Cidade")
+              input(placeholder = "Cidade" ng-model="checkoutForm.Customer.Cidade" required)
+            md-input-container.md-block
+              md-select(ng-model="checkoutForm.Source" placeholder="Como você ouviu falar de nós?" required)
+                md-option(ng-value="opt" ng-repeat="opt in source") {{ opt }}
+
+            
           //- div#creditCard.hidden.formStep.limitStep(layout="column" flex="100" display="none")
           div#creditCard.formStep.limitStep(layout="column" flex="100" display="none")
             md-input-container.md-block(flex-gt-sm) 

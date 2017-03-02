@@ -73,15 +73,21 @@ export function index(req, res) {
 
 // Gets a single Ong from the DB from id or from slug...
 export function show(req, res) {
-  return Ong.findById(req.params.id).exec()
+  return Ong.findOne({slug: req.params.id}).exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
-    .catch(err => {
-      Ong.findOne({slug: req.params.id}).exec()
-      .then(handleEntityNotFound(res))
-      .then(respondWithResult(res))
-      .catch(handleError(err));
-    });
+    .catch(err =>{
+      handleError(err)
+    });  
+  // return Ong.findById(req.params.id).exec()
+  //   .then(handleEntityNotFound(res))
+  //   .then(respondWithResult(res))
+  //   .catch(err => {
+  //     Ong.findOne({slug: req.params.id}).exec()
+  //     .then(handleEntityNotFound(res))
+  //     .then(respondWithResult(res))
+  //     .catch(handleError(err));
+  //   });
 }
 
 // Creates a new Ong in the DB

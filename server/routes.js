@@ -13,6 +13,9 @@ export default function(app) {
   app.use('/api/users', require('./api/user'));
   app.use('/api/contactForm', require('./api/contactForm'));
   app.use('/api/checkoutForm', require('./api/checkoutForm'));
+  app.use('/api/donors', require('./api/donors'));
+  app.use('/api/paymentInterface', require('./api/paymentInterface'));
+  app.use('/api/paymentProcessor', require('./api/paymentProcessor'));
   app.use('/api/ong', require('./api/ong'));
   app.use('/api/buscaCep', require('./api/busca-cep'));
   app.use('/api/imageGallery', require('./api/imageGallery'));
