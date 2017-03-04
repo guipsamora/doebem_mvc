@@ -13,7 +13,7 @@
 import jsonpatch from 'fast-json-patch';
 import CheckoutForm from './checkoutForm.model';
 import requestify from 'requestify';
-const winston = require('winston');
+// const winston = require('winston');
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -24,8 +24,6 @@ function respondWithResult(res, statusCode) {
     return null;
   };
 }
-
-
 
 function patchUpdates(patches) {
   return function(entity) {
@@ -74,7 +72,6 @@ export function index(req, res) {
     .catch(handleError(res));
 }
 
-
 // Gets a single Transaction from the DB from id or from slug...
 export function show(req, res) {
   return CheckoutForm.findById(req.params.id).exec()
@@ -88,91 +85,86 @@ export function show(req, res) {
     });
 }
 
-
-
 export function postCieloApi(req, res) {
-
-    console.log('postCieloApi foi chamado');
-    const postPromise = new Promise(function (resolve, reject) {
-      requestify.request('https://apisandbox.cieloecommerce.cielo.com.br/1/sales/', {
-              method: 'POST',
-              body: {
-                Customer: req.Customer,
-                Payment: req.Payment,
-                MerchantOrderId : req.MerchantOrderId,
-              },
-              headers: {
-                  'Content-Type': 'application/json',
-                  MerchantId: process.env.MerchantId,
-                  MerchantKey: process.env.MerchantKey
-              },
-              dataType: 'json'        
-          })
-          .then(function(response) {
-
-              console.log('Requestify deu certo no postCieloApi')
-              // get the response body
-              response.getBody();
-
-              // get the response headers
-              response.getHeaders();
-
-              // get specific response header
-              response.getHeader('Accept');
-
-              // get the code
-              response.getCode();
-
-              resolve(response.body)
-          })
-          .catch(error => {
-            console.log('Requestify no postCieloApi apresentou o seguinte erro: ', error);
-            reject(error)
-            return handleError(res);
-          });    
+  console.log('postCieloApi foi chamado');
+  const postPromise = new Promise(function(resolve, reject) {
+    requestify.request('https://apisandbox.cieloecommerce.cielo.com.br/1/sales/', {
+      method: 'POST',
+      body: {
+        Customer: req.Customer,
+        Payment: req.Payment,
+        MerchantOrderId: req.MerchantOrderId,
+      },
+      headers: {
+          'Content-Type': 'application/json',
+          MerchantId: process.env.MerchantId,
+          MerchantKey: process.env.MerchantKey
+      },
+      dataType: 'json'
     })
-    return postPromise;
+    .then(function(response) {
+      console.log('Requestify deu certo no postCieloApi')
+      // get the response body
+      response.getBody();
+
+      // get the response headers
+      response.getHeaders();
+
+      // get specific response header
+      response.getHeader('Accept');
+
+      // get the code
+      response.getCode();
+
+      resolve(response.body)
+    })
+    .catch(error => {
+      console.log('Requestify no postCieloApi apresentou o seguinte erro: ', error);
+      reject(error)
+      return handleError(res);
+    });
+  })
+  return postPromise;
 }
 
 export function captureCieloApi(req, res) {
-    console.log('captureCieloApi foi chamado');
-    const putPromise = new Promise(function (resolve, reject) {
-      requestify.request(req.req.body.AuthorizationResponse.Payment.Links[1].Href, {
-              method: 'PUT',
-              body: {
-                PaymentId: req.req.body.AuthorizationResponse.Payment.PaymentId,
-              },
-              headers: {
-                  'Content-Type': 'application/json',
-                  MerchantId: process.env.MerchantId,
-                  MerchantKey: process.env.MerchantKey
-              },
-              dataType: 'json'        
-          })
-          .then(function(response) {
-
-              console.log('requestify deu certo no captureCieloApi')
-              // get the response body
-              response.getBody();
-
-              // get the response headers
-              response.getHeaders();
-
-              // get specific response header
-              response.getHeader('Accept');
-
-              // get the code
-              response.getCode();
-
-              resolve(response.body)
-          })
-          .catch(error => {
-            console.log('Requestify no captureCieloApi apresentou o seguinte erro: ', error);
-            reject(error)
-            return handleError(res);
-          });    
+  console.log('captureCieloApi foi chamado');
+  const putPromise = new Promise(function (resolve, reject) {
+    requestify.request(req.req.body.AuthorizationResponse.Payment.Links[1].Href, {
+      method: 'PUT',
+      body: {
+        PaymentId: req.req.body.AuthorizationResponse.Payment.PaymentId,
+      },
+      headers: {
+          'Content-Type': 'application/json',
+          MerchantId: process.env.MerchantId,
+          MerchantKey: process.env.MerchantKey
+      },
+      dataType: 'json'        
     })
-    return putPromise;
+    .then(function(response) {
+      console.log('requestify deu certo no captureCieloApi')
+      // get the response body
+      response.getBody();
+
+      // get the response headers
+      response.getHeaders();
+
+      // get specific response header
+      response.getHeader('Accept');
+
+      // get the code
+      response.getCode();
+
+      resolve(response.body)
+    })
+    .catch(error => {
+      console.log('Requestify no captureCieloApi apresentou o seguinte erro: ', error);
+      reject(error)
+      return handleError(res);
+    });    
+  });
+  return putPromise;
 }
 
 

@@ -19,36 +19,33 @@ export class CheckoutComponent {
     // olha se o botão de 10% é true ou false
     $scope.$watch('checkoutForm.checked', function(){
 
-      if ($scope.checkoutForm.checked){
+      if ($scope.checkoutForm.checked) {
         $scope.checkoutForm.Payment.Additional = $scope.checkoutForm.Payment.Initial * 0.10;
         $scope.checkoutForm.Payment.Amount = $scope.checkoutForm.Payment.Initial + $scope.checkoutForm.Payment.Additional;
-        return
-      }
-      else {
+        return;
+      } else {
         $scope.checkoutForm.Payment.Additional = 0;
         $scope.checkoutForm.Payment.Amount = $scope.checkoutForm.Payment.Initial;
-        return
+        return;
       }
-    }, true)
+    }, true);
 
     // olha se o valor inicial foi alterado
     $scope.$watch('checkoutForm.Payment.Initial', function(){
 
-      if ($scope.checkoutForm.checked){
+      if ($scope.checkoutForm.checked) {
         $scope.checkoutForm.Payment.Additional = $scope.checkoutForm.Payment.Initial * 0.10;
         $scope.checkoutForm.Payment.Amount = $scope.checkoutForm.Payment.Initial + $scope.checkoutForm.Payment.Additional;
-        return
-      }
-      else {
+        return;
+      } else {
         $scope.checkoutForm.Payment.Additional = 0;
         $scope.checkoutForm.Payment.Amount = $scope.checkoutForm.Payment.Initial;
-        return
+        return;
       }
     },  true);
 
-    $scope.source = ["Redes Sociais (Facebook, Twitter)", "Email", 
-                     "Mídia", "Busca no Google","Indicação de parentes / amigos"];
-
+    $scope.source = ['Redes Sociais (Facebook, Twitter)', 'Email',
+                     'Mídia', 'Busca no Google', 'Indicação de parentes / amigos'];
   }
 
   // transform value  into cents, Cielo's API only accepts cents
@@ -62,7 +59,6 @@ export class CheckoutComponent {
   }
 
   addTransaction(form, ev) {
-    form.Payment.Amount = 
     form.Payment.Amount = this.transformToCents(form.Payment.Amount);
     form.Payment.CreditCard.Brand = this.capitalizeFirstLetter(form.Payment.CreditCard.Brand);
     form.Payment.Installments = 1;
