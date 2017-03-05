@@ -21,36 +21,36 @@ export class TransparenciaController {
     this.$window = $window;
     this.financials = [
       {
-        date: '2015',
-        dre_name: 'DRE 2015',
-        dre_link: '',
-        balanco_name: 'Balanço patrimonial',
-        balanco_link: '',
-      },
-      {
-        date: '2016',
-        dre_name: 'DRE 2016',
+        date: '2017',
+        dre_name: 'DRE 2017',
         dre_link: '',
         balanco_name: 'Balanço patrimonial',
         balanco_link: '',
       }
+      // {
+      //   date: '2016',
+      //   dre_name: 'DRE 2016',
+      //   dre_link: '',
+      //   balanco_name: 'Balanço patrimonial',
+      //   balanco_link: '',
+      // }
     ];
 
     this.plans = [
       {
-        date: '2015',
-        goals_name: 'DRE 2015',
-        goals_link: '',
-        metrics_name: '',
-        metrics_link: '',
-      },
-      {
-        date: '2015',
-        goals_name: '2015',
+        date: '2017',
+        goals_name: 'Metas 2017',
         goals_link: '',
         metrics_name: '',
         metrics_link: '',
       }
+      // {
+      //   date: '2015',
+      //   goals_name: '2015',
+      //   goals_link: '',
+      //   metrics_name: '',
+      //   metrics_link: '',
+      // }
     ];
 
   }
