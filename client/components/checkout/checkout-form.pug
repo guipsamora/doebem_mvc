@@ -1,5 +1,5 @@
 div#form(layout="column")
-  h2(layout-align="center center") Doe Aqui
+  h2#doe(layout-align="center") Doe
   br
   div(layout="column" flex="100")
     //- criar a funcao que vai pegar o form e jogar no server
@@ -13,9 +13,8 @@ div#form(layout="column")
             //-   input(type="radio" name="doacao" id="doacao_mensal" value="2")
             //-   label(for="doacao_mensal") Doação Mensal
           div
-            //- 
             input(type="text" ng-model= "checkoutForm.Payment.Initial" 
-                  placeholder="Valor doado" id="valor"  ui-money-mask)
+                  placeholder="Valor doado" id="valor"  ui-money-mask required)
             label(for="doacao_doebem") Adicione 10% para ajudar nas operações da doebem?
             input(type="checkbox" id="doacao_doebem" value="" ng-model="checkoutForm.checked")
             h4 Total: R$ {{checkoutForm.Payment.Initial + checkoutForm.Payment.Additional}}
@@ -41,21 +40,21 @@ div#form(layout="column")
           input(placeholder="Número do Cartão" type="text" ng-model="checkoutForm.Payment.CreditCard.CardNumber" 
                 name="number" payments-validate="card" payments-format="card" 
                 payments-type-model="checkoutForm.Payment.CreditCard.Brand"  
-                payments-length="card" ng-class="checkoutForm.Payment.CreditCard.Brand")
+                payments-length="card" ng-class="checkoutForm.Payment.CreditCard.Brand" required)
           md-icon(ng-class="checkoutForm.Payment.CreditCard.Brand")
           div(ng-messages="contactForm.Name.$error" role="alert")
             div(ng-message-exp="['required']")
               span Cartão inválido, favor informar um cartão válido
-        md-input-container.md-block  
+        md-input-container.md-block
           input(placeholder="Validade do Cartão" type="text"
                 ng-model="checkoutForm.Payment.CreditCard.ExpirationDate" 
-                payments-validate="expiry" payments-format="expiry")
+                payments-validate="expiry" payments-format="expiry" required)
           div(ng-messages="contactForm.Name.$error" role="alert")
             div(ng-message-exp="['required']")
               span O campo deve ser escrito da seguinte maneira MM / AA
         md-input-container.md-block
           input(placeholder="Código de Segurança" type="text" ng-model="checkoutForm.Payment.CreditCard.SecurityCode" 
-                ng-pattern="/^[0-9]{3,4}$/" payments-validate="cvc" payments-format="cvc")
+                ng-pattern="/^[0-9]{3,4}$/" payments-validate="cvc" payments-format="cvc" required)
       div.controls
           button.checkoutFormStepChange.checkoutFormStepChangeNext.btn.btn-block.btn-step.btn-next(ng-show="showNext" ng-click="nextView()" type="button") Continuar
           //- button.checkoutFormStepChange.hidden.btn.btn-block.btn-clear.btn-step.btn-prev(type="button") Voltar
