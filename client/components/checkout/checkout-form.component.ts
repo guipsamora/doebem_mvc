@@ -16,6 +16,40 @@ export class CheckoutComponent {
     this.$scope = $scope;
     this.$mdDialog = $mdDialog;
 
+    $scope.type = 1;
+    $scope.showSend = false;
+    $scope.showNext = true;
+    $scope.showPrevious = false;
+
+    $scope.nextView = function() {
+      $scope.type++;
+      if ($scope.type > 1 && $scope.type < 4) {
+        $scope.showPrevious = true;
+      }
+      if ($scope.type === 4) {
+        $scope.type = 3;
+      };
+      if ($scope.type === 3) {
+        $scope.showSend = true;
+        $scope.showNext = false;
+      }
+      console.log($scope.type);
+    };
+
+    $scope.previousView = function() {
+      $scope.type--;
+      $scope.showSend = false;
+      if ($scope.type === 0) {
+        $scope.type = 1;
+      };
+      if ($scope.type > 0 && $scope.type < 3) {
+        $scope.showNext = true;
+      }
+      if ($scope.type === 1) {
+        $scope.showPrevious = false;
+      }      
+      console.log($scope.type);
+    };
     // olha se o botão de 10% é true ou false
     $scope.$watch('checkoutForm.checked', function(){
 

@@ -96,14 +96,14 @@ export function postCieloApi(req, res) {
         MerchantOrderId: req.MerchantOrderId,
       },
       headers: {
-          'Content-Type': 'application/json',
-          MerchantId: process.env.MerchantId,
-          MerchantKey: process.env.MerchantKey
+        'Content-Type': 'application/json',
+        MerchantId: process.env.MerchantId,
+        MerchantKey: process.env.MerchantKey
       },
       dataType: 'json'
     })
     .then(function(response) {
-      console.log('Requestify deu certo no postCieloApi')
+      console.log('Requestify deu certo no postCieloApi');
       // get the response body
       response.getBody();
 
@@ -116,14 +116,14 @@ export function postCieloApi(req, res) {
       // get the code
       response.getCode();
 
-      resolve(response.body)
+      resolve(response.body);
     })
     .catch(error => {
       console.log('Requestify no postCieloApi apresentou o seguinte erro: ', error);
-      reject(error)
+      reject(error);
       return handleError(res);
     });
-  })
+  });
   return postPromise;
 }
 
@@ -136,14 +136,14 @@ export function captureCieloApi(req, res) {
         PaymentId: req.req.body.AuthorizationResponse.Payment.PaymentId,
       },
       headers: {
-          'Content-Type': 'application/json',
-          MerchantId: process.env.MerchantId,
-          MerchantKey: process.env.MerchantKey
+        'Content-Type': 'application/json',
+        MerchantId: process.env.MerchantId,
+        MerchantKey: process.env.MerchantKey
       },
-      dataType: 'json'        
+      dataType: 'json'
     })
     .then(function(response) {
-      console.log('requestify deu certo no captureCieloApi')
+      console.log('requestify deu certo no captureCieloApi');
       // get the response body
       response.getBody();
 
@@ -156,20 +156,20 @@ export function captureCieloApi(req, res) {
       // get the code
       response.getCode();
 
-      resolve(response.body)
+      resolve(response.body);
     })
     .catch(error => {
       console.log('Requestify no captureCieloApi apresentou o seguinte erro: ', error);
-      reject(error)
+      reject(error);
       return handleError(res);
-    });    
+    });
   });
   return putPromise;
 }
 
 
 // Creates a new Transaction in the DB
-export function create(req, res) {  
+// export function create(req, res) {
   // console.trace(req.body);
   // var info = req.body;
   // var checkout = new CheckoutForm({MerchantOrderId: "TESTE"});
@@ -179,8 +179,7 @@ export function create(req, res) {
   // // checkout = postCieloApi(req, res).then(function(success) {
   // //   console.trace(success);
   // //   return success}
-  // // );
-  
+  // // );  
 
   // return postCieloApi(req, res)
   // .then(function(success) {
@@ -207,26 +206,25 @@ export function create(req, res) {
   //     console.log('create na API da Transaction', error);
   //     return handleError(res);
   //   });
-}
+// }
 
-export function handlePayment(req, res){
-
+export function handlePayment(req, res) {
   return postCieloApi(req.body)
-  .then(function(responsePost){    
+  .then(function(responsePost) {
     req.body.AuthorizationResponse = JSON.parse(responsePost);
     return req.body;
   })
-  .then(function(req){
-    return CheckoutForm.create(req)
+  .then(function(reqAuth) {
+    return CheckoutForm.create(reqAuth)
     .then(respondWithResult(res, 201))
     .catch(error => {
-        console.log('create na API da Transaction', error);
-        return handleError(res);
+      console.log('create na API da Transaction', error);
+      return handleError(res);
     });
   })
-  .then(function(responseCreate){
+  .then(function(responseCreate) {
     return captureCieloApi(responseCreate)
-    .then(function(responsePut){      
+    .then(function(responsePut) {
       req.body.CaptureResponse = JSON.parse(responsePut);
       return CheckoutForm.findOneAndUpdate({MerchantOrderId: req.body.MerchantOrderId }, {$set: req.body}, {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
       .catch(error => {
