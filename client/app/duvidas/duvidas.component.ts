@@ -9,12 +9,14 @@ export class DuvidasController {
   $scope;
   $routeParams;
   groups = [ ];
-
+  link;
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams) {
     this.$http = $http;
     this.$scope = $scope;
     this.$routeParams = $routeParams;
+    
+    
     this.groups = [
       {
         title: 'Quem são vocês?',
