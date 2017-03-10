@@ -32,7 +32,7 @@ div#form(layout="column")
           input(placeholder = "CPF" ng-model="checkoutForm.Customer.CPF" ui-br-cpf-mask required) 
         md-input-container.md-block.containerForm
           input(placeholder = "Cidade" ng-model="checkoutForm.Customer.Cidade" required)
-        md-input-container.md-block.containerForm
+        md-input-container.md-block.containerForm#whereListened
           md-select(ng-model="checkoutForm.Customer.Source" placeholder="Como você ouviu falar de nós?" required)
             md-option(ng-value="opt" ng-repeat="opt in source") {{ opt }}  
       //- div#creditCard.hidden.formStep.limitStep(layout="column" flex="100" display="none")

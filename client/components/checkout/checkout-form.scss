@@ -39,30 +39,44 @@ h2#doe {
     padding: 10px 10px 10px 10px;
     border-width: 4px;
     border-style: double;
-    border-color: black;
+    border-color: #234282;
     background-color: white;
 }
 
 .checkoutFormStepChange {
     background-color: white;
-    border-color: black;
+    border-color: #234282;
+    color: #234282;
     border-style: solid;
-}
-
-#checkoutFormStepChange {
+    margin-bottom: 3px;
     vertical-align: center;
+    :hover {
+        border-color: black;
+        color: black;
+    }
 }
 
 #formSubmit {
     vertical-align: center;
 }
 
+#checkoutFormSubmit {
+    background-color: #234282 !important;
+    :hover {
+        color: #234282 !important;
+        background-color: white !important;
+    }
+}
 
+#whereListened {
+    margin-bottom: 3px;
+}
 
 md-input-container.containerForm {
     margin-top: 0px;
     margin-bottom: 0px;
     padding-bottom: 0px;
+    height: 52px;
 }
 
 .chkbox {
