@@ -22,10 +22,10 @@ export class TransparenciaController {
     this.financials = [
       {
         date: '2017',
-        dre_name: 'DRE 2017',
-        dre_link: '',
-        balanco_name: 'Balanço patrimonial',
-        balanco_link: '',
+        dre_name: 'DRE 2017 (A partir de Maio/17)',
+        dre_link: '/',
+        balanco_name: 'Balanço patrimonial (A partir de Maio/17)',
+        balanco_link: '/',
       }
       // {
       //   date: '2016',

@@ -27,7 +27,7 @@ export class MetodologiaController {
       },
       {
         title: 'Impacto',
-        desc: 'Buscamos evidências claras dos resultados apresentados.',
+        desc: 'Buscamos evidências claras da efetividade do trabalho realizado.',
         icon: 'fa-globe'
       },
     ];

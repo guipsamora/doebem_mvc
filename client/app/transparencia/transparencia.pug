@@ -2,7 +2,7 @@ div.animated.fadeIn#transparencia
   div#pageHeader(flex="100"  layout="column" layout-align="center center")
     h2 Transparência
   div#comoFunciona(flex = "100" layout="column" layout-align="center center")
-    p A extrema transparência é um de nossos principais valores, assim pretendemos compartilhar aqui todos os nossos documentos, relatórios, planos e erros. Além disso você pode conferir nosso blog para mais informações. 
+    p A transparência é um de nossos principais valores. Assim, compartilharemos aqui os nossos documentos, relatórios, planos e erros.
     h2 Finanças
     br
     table
@@ -22,14 +22,14 @@ div.animated.fadeIn#transparencia
       tr
         th Ano
         th Metas
-        th Indicadores
+        //- th Indicadores
       tr(ng-repeat="plan in $ctrl.plans")
         td {{ plan.date }}
         td 
           a(href="{{ plan.goals_link }}" target="_blank") {{ plan.goals_name }}
-        td 
-          a(href="{{ plan.metrics_link }}" target="_blank") {{plan.metrics_name}}
-    h2 Falha Nossa
+        //- td 
+        //-   a(href="{{ plan.metrics_link }}" target="_blank") {{plan.metrics_name}}
+    h2 Erros e Aprendizados
     br
     a(href="")
       h4 Clique aqui para ver nossos erros e ações de correção.
@@ -37,4 +37,6 @@ div.animated.fadeIn#transparencia
     br
     a(href="https://s3-sa-east-1.amazonaws.com/doebem/Legal/AGC+%2B+estatuto+arquivados+RCPJ_site.pdf"  target="_blank")
       md-button.md-raized.md-primary Estatuto
+    a(href="https://drive.google.com/a/doebem.org.br/file/d/0B3sdXeGKoeXlZEtfWkQxZW8xam8/view?usp=sharing"  target="_blank")
+      md-button.md-raized.md-primary CNPJ      
 contact-form

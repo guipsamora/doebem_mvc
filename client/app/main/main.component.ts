@@ -26,9 +26,9 @@ export class MainController {
     ];
 
     this.causas = [
-      {title: 'Educação', image: '../../assets/images/portfolio/education.jpg', link: '/listOngs/educacao' },
       {title: 'Saúde', image: '../../assets/images/portfolio/healthcare.png', link: '/listOngs/saude' },
-      {title: 'Combate à Pobreza', image: '../../assets/images/portfolio/poverty.png', link: '/listOngs/combateAPobreza' }
+      {title: 'Educação', subtitle: '(Em breve)',image: '../../assets/images/portfolio/education.jpg', link: '/' }, 
+      {title: 'Combate à Pobreza', subtitle: '(Em breve)', image: '../../assets/images/portfolio/poverty.png', link: '/' }
     ];
 
     this.stepOptions = [{
@@ -38,17 +38,17 @@ export class MainController {
       },
       {
       title: 'Selecione',
-      desc: 'Uma ONG eficiente, analisada pela doebem.',
+      desc: 'Uma organização eficiente, recomendada pela doebem.',
       icon: 'fa-hand-pointer-o'
       },
       {
       title: 'Doe',
-      desc: 'A quantia desejada e pelo período que quiser.',
+      desc: 'O valor que quiser.',
       icon: 'fa-money'
       },
       {
       title: 'Acompanhe',
-      desc: 'Notícias e atualizações sobre o impacto da sua doação.',
+      desc: 'O impacto da sua doação.',
       icon: 'fa-envelope-o'
       }
       ];
