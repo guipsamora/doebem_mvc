@@ -14,7 +14,7 @@ var app = express();
 // console.log("eu funcionei");
 
 mailer.extend(app, {
-  from: 'doebembr@gmail.com',
+  from: 'contato@doebem.org.br',
   host: 'smtp.gmail.com', // hostname
   secureConnection: true, // use SSL
   port: 465, // port for secure SMTP

@@ -14,9 +14,7 @@ export class DuvidasController {
   constructor($http, $scope, socket, $routeParams) {
     this.$http = $http;
     this.$scope = $scope;
-    this.$routeParams = $routeParams;
-    
-    
+    this.$routeParams = $routeParams; 
     this.groups = [
       {
         title: 'Quem são vocês?',

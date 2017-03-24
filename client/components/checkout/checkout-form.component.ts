@@ -47,7 +47,7 @@ export class CheckoutComponent {
       }
       if ($scope.type === 1) {
         $scope.showPrevious = false;
-      }     
+      }
       console.log($scope.type);
     };
     // olha se o botão de 10% é true ou false
