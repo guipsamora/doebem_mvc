@@ -19,6 +19,7 @@ div.animated.fadeIn#listOngs
                 md-card-title
                   md-card-title-text(layout-align="center center" layout="column")
                     h1 {{ong.nomeFantasia}}
+                    br
                     img(ng-src="{{ong.logo}}" style="width: 200px; height:200px")  
                 md-card-content(layout-align="center center" layout="column")
                   p {{ong.desc}}
@@ -28,7 +29,9 @@ div.animated.fadeIn#listOngs
             br
             div(layout="row" layout-align="center center")
               a(ng-href="pagOngs/{{ong.slug}}")
-                md-button.md-raised.md-primary Apoiar
+                md-button.md-raised.md-primary Ajudar
+      br
+      br
       h4 Todas organizações são analisadas anualmente. 
       h4 Desta maneira, em análise futura, podemos deixar de recomendar uma organização e/ou recomendar novas.            
 contact-form
