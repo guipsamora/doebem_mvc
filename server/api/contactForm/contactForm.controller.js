@@ -31,7 +31,7 @@ app.set('view engine', 'pug');
 function handleSendEmail(req, res) {
   app.mailer.send({
     template: 'email',
-    bcc: 'doebembr@gmail.com'
+    bcc: 'contato@doebem.org.br'
   },
     {
       to: req.body.Email,
