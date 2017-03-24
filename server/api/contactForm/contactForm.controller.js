@@ -11,8 +11,6 @@ import mailer from 'express-mailer';
 
 var app = express();
 
-// console.log("eu funcionei");
-
 mailer.extend(app, {
   from: 'contato@doebem.org.br',
   host: 'smtp.gmail.com', // hostname
