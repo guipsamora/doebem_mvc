@@ -63,8 +63,11 @@ div#transparencia {
         border-right: none;
       }
 
-      
       p {
+        text-align: center;
+      }
+      
+      p#last {
         padding-bottom: 30px;
         text-align: center;
       }
@@ -82,15 +85,17 @@ div#transparencia {
       .md-button {
         float: none;
         position: absolute;
-        text-align: left;
+        text-align: center;
         align-items: left;
         display: inline-block;
         font-size: 20px;
         background-color: white;
         font-weight: 500;
-        border: 1px solid rgb(63,81,181);
-        :hover {          
-        }
+        border: 1px solid rgb(63,81,181);        
+      }
+      
+      button {
+          margin-left: 0px;
       }
   }
 }
