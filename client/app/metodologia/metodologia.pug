@@ -2,10 +2,12 @@ div.animated.fadeIn#metodologia
   div#pageHeader(flex="100"  layout="column" layout-align="center center")
     h2 Metodologia
   div#comoFunciona(flex = "100" layout="column" layout-align="center center")
-    p A doebem acredita que é possível alocar recursos de forma eficiente para promover o maior impacto possível. Com base nesta crença e em critérios específicos, avaliamos os projetos e organizações que promovem mudanças de forma eficiente. Confira abaixo!
+    p A doebem acredita que é possível alocar recursos de forma eficiente para promover o maior impacto possível. 
+    p Com base nesta crença e em critérios específicos, avaliamos os projetos e organizações que promovem mudanças de forma eficiente. 
+    p Confira abaixo!
     md-list#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
       md-list-item(ng-repeat="step in $ctrl.stepCriterios") 
-          div#escolha(flex layout = "column" layout-align="center center")
+          div#escolha(flex="30" layout = "column" layout-align="center center")
             span.fa-stack.fa-5x
               i.fa.fa-circle.fa-stack-2x.text-primary
               i#icon.fa.fa-stack-1x(ng-class="step.icon")
