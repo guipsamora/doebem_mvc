@@ -25,6 +25,20 @@ button.navbar-toggle {
     padding-left: 6px;
 }
 
+.md-button {
+    background-color: white;
+    border: black;
+    font-weight: normal !important;
+    
+}
+
+button:hover {
+        color: white !important;
+        border-style: solid;
+        border-color: white;
+        border-width: 2px;
+}
+
 div#menu.mainPageMenu {
     background-color: black;
      div.container div#navbar-main {

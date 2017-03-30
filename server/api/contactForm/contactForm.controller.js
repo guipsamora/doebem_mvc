@@ -12,14 +12,14 @@ import mailer from 'express-mailer';
 var app = express();
 
 mailer.extend(app, {
-  from: 'contato@doebem.org.br',
+  from: 'doebem <contato@doebem.org.br>',
   host: 'smtp.gmail.com', // hostname
   secureConnection: true, // use SSL
   port: 465, // port for secure SMTP
   transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts
   auth: {
-    user: process.env.GOOGLE_ID,
-    pass: process.env.GOOGLE_SECRET
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_SECRET
   }
 });
 
@@ -49,6 +49,7 @@ function handleSendEmail(req, res) {
 
 // Creates a new ContactForm in the DB
 export function create(req, res) {
+  console.log(req.body)
   return ContactForm.create(req.body)
     .then(handleSendEmail(req, res));
 }

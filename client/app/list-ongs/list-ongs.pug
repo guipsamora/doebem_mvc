@@ -14,7 +14,7 @@ div.animated.fadeIn#listOngs
           md-gutter="35px")
         md-grid-tile(ng-repeat="ong in $ctrl.listOngToDisplay")
           div(layout="column" layout-fill)
-            a(ng-href="pagOngs/{{ong.slug}}")
+            a#ong(ng-href="pagOngs/{{ong.slug}}")
               md-card
                 md-card-title
                   md-card-title-text(layout-align="center center" layout="column")
@@ -28,7 +28,9 @@ div.animated.fadeIn#listOngs
                       h4 Atua em: {{loc.localidade}}
             br
             div(layout="row" layout-align="center center")
-              a(ng-href="pagOngs/{{ong.slug}}")
+              a(target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KP2DX7FKJUWFL")
+                md-button.md-raised.md-primary Ajudar
+              //- a(ng-href="pagOngs/{{ong.slug}}")
                 md-button.md-raised.md-primary Ajudar
       br
       br

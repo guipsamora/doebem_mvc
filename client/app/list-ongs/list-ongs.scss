@@ -31,9 +31,14 @@ div#listOngs {
           padding-bottom: 3px;
           // padding-top: 3px;
         }
-
-      }
     }
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+    
 
     .container .md-button {
       font-size: 25px;

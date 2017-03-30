@@ -49,6 +49,8 @@ div#pagOng {
           margin-left: 20px;
       }
 
+
+
       button:hover {
             background-color: white;
             color: rgb(63,81,181);
@@ -71,5 +73,21 @@ div#pagOng {
       }
     }
 
+  button {
+      background-color:  rgb(63,81,181);
+      color: white;
+      border-color: rgb(63,81,181) !important;
+      border-style: solid;
+      border-width: 1px;
+  }
+
+  button:hover {
+      background-color: white !important;
+      color: rgb(63,81,181) !important;
+      border-color: rgb(63,81,181) !important;
+      border-style: solid;
+      border-width: 1px;
+  }
 }
+
 
