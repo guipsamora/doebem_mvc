@@ -13,8 +13,23 @@ div#menu {
       ul li a {
           background-color: transparent;
       }
-  } 
+  }
+
+
+  button:hover {
+    color: white !important;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+  }
 }
+
+.md-primary {
+    background-color: white;
+    border: black;
+    font-weight: normal !important;  
+}
+
 
 button.navbar-toggle {
     text-align: center;
@@ -25,19 +40,7 @@ button.navbar-toggle {
     padding-left: 6px;
 }
 
-.md-button {
-    background-color: white;
-    border: black;
-    font-weight: normal !important;
-    
-}
 
-button:hover {
-        color: white !important;
-        border-style: solid;
-        border-color: white;
-        border-width: 2px;
-}
 
 div#menu.mainPageMenu {
     background-color: black;
