@@ -2,6 +2,12 @@
 
 div#main {
   div#carousel {
+    
+    .jk-carousel .slides-container .slide .ng-scope img:first-child {
+      max-width: none;
+      max-height: none;
+      width: 100%;
+    }
 
     .radio-buttons-container {
       position: absolute;
@@ -72,6 +78,7 @@ div#main {
       width: 100%;
       padding-bottom: 30px;
       background-color: #eeeeee;
+      display: block;
     }
     
     div#metodologia {
