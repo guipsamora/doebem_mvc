@@ -15,6 +15,15 @@ div#menu {
       }
   }
 
+div#menuEntries {
+    // display: inline-block;
+    text-align: center;
+    margin: 0px auto;
+    // margin-right: 20px;
+
+
+
+}
 
   button:hover {
     color: white !important;
@@ -38,6 +47,8 @@ button.navbar-toggle {
     padding-bottom: 5px;
     padding-right: 5px;
     padding-left: 6px;
+    float: none;
+    // width: 100%;
 }
 
 
@@ -55,7 +66,7 @@ div#menu.mainPageMenu {
     float: left;
     padding: 5px;
     text-align: center;
-    width: 100%;
+    width: 320px;;
 }
 
 img.navbar-brand {
@@ -66,7 +77,25 @@ img.navbar-brand {
 }
 
 div#navbar-main.navbar-collapse.collapse {
-    height: 70px;
+    // height: 100%;
+    width: 100%;
+    max-height: none !important;
+
+
+}
+
+.navbar-collapse {
+    border-top: none;
+    z-index: 20;
+    height: 270px;
+    width: 320px;
+    background-color: black;
+    margin-right: -30px !important;
+    padding: 0 0 0 0;
+}
+
+.dropdown {
+    text-align: center !important;
 }
 
 .navbar .navbar-nav {
