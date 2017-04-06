@@ -1,4 +1,5 @@
 div#metodologia {
+
   div#pageHeader {
     background-image: url('/assets/images/metodologia/metodologia.jpg');
     background-repeat: no-repeat;
@@ -37,5 +38,14 @@ div#metodologia {
       p#last {
         padding-bottom: 30px;
       }
+  }
+
+  md-list-item {
+    width: 370px !important; 
+
+    p {
+      width: 370.61px !important;
+    }
+
   }
 }
