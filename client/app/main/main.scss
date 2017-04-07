@@ -1,6 +1,14 @@
 @import '../../../node_modules/angular-jk-carousel/src/assets/styles/jk-carousel.scss';
+
 div#main {
   div#carousel {
+    
+    .jk-carousel .slides-container .slide .ng-scope img:first-child {
+      max-width: none;
+      max-height: none;
+      width: 100%;
+    }
+
     .radio-buttons-container {
       position: absolute;
       bottom: 0;
@@ -70,6 +78,23 @@ div#main {
       width: 100%;
       padding-bottom: 30px;
       background-color: #eeeeee;
+      display: block;
+
+      md-card-title {
+        height: 130px;
+      }
+
+      h5.listItem {
+        margin-top: 0px !important;
+        margin-bottom: 4px !important;
+        font-weight: 400px !important;
+        
+      }
+
+      a {
+        height: 435.5px !important;
+      }
+
     }
     
     div#metodologia {

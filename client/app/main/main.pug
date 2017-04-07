@@ -4,15 +4,15 @@ div.animated.fadeIn#main
           flex="100"
           data="$ctrl.carouselImages"
           item-template-url="'img.tmpl.pug'"
-          max-width="2000" 
+          max-width="2140" 
           max-height="1000"
           auto-slide="true"
-          auto-slide-time="3000")             
+          auto-slide-time="4000")             
   div#mainPage(layout="column" flex="100")
     div#comoFunciona(flex = "100" layout="column" layout-align="center center")
       h2.sectionHeading Como Funciona
-      p#comoFunciona A doebem é uma plataforma online que conecta doadores com ONGs eficientes, aquelas que maximizam o impacto pelo valor doado.
-      p Através do incentivo à doações financeiras e destinação destes recursos para ONGs eficientes, potencializamos impacto positivo!
+      p#comoFunciona A doebem é uma plataforma online que potencializa impacto positivo ao conectar doadores com 
+      p organizações sociais eficientes, selecionadas a partir de critérios rigorosos.
       p Veja abaixo como funciona!
       md-list#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
         md-list-item(ng-repeat="step in $ctrl.stepOptions") 
@@ -33,6 +33,7 @@ div.animated.fadeIn#main
               md-card-title
                 md-card-title-text(layout-align="center center")
                   h1 {{causa.title}}
+                  h4.listItem {{causa.subtitle}}
 contact-form#contato
 script(type="text/ng-template" id="img.tmpl.pug")
     div

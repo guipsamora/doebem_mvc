@@ -1,4 +1,5 @@
 div#metodologia {
+
   div#pageHeader {
     background-image: url('/assets/images/metodologia/metodologia.jpg');
     background-repeat: no-repeat;
@@ -11,6 +12,14 @@ div#metodologia {
       color: white;
       font-size: 70px;
     }
+  }
+  
+  @media screen and (max-width: 726px) {
+      div#pageHeader {
+        h2 {
+          font-size: 60px;
+        }
+      }
   }
 
   div#comoFunciona {
@@ -34,8 +43,17 @@ div#metodologia {
           }
         }
       }
-      p {
+      p#last {
         padding-bottom: 30px;
       }
+  }
+
+  md-list-item {
+    width: 370px !important; 
+
+    p {
+      width: 370.61px !important;
+    }
+
   }
 }

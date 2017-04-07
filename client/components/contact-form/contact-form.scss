@@ -15,9 +15,20 @@ div#contactForm {
        padding-bottom: 3%;
        text-align: center;
      }
+     div.layout-column {
      
-     form div {
+       form {
+         display: block;
+        }
+     }
+
+     form>div {
+        @media (max-width:960px) {
+          display: block;
+        }
+       
        div {
+         
          padding-right: 2%;
          background-color: transparent;
          md-input-container {
@@ -35,10 +46,13 @@ div#contactForm {
               opacity: 1;
               color: black;
            }
+        
          }
        }
      }
-
+     div[layout-align^="center"] {
+        text-align: center;
+     }
      .md-button{
         font-size: 25px;
         background-color: white;
@@ -46,6 +60,6 @@ div#contactForm {
         :hover {          
         }
       }
-      
+     
     }
 }

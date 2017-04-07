@@ -2,11 +2,13 @@ footer.footer {
   text-align: center;
   padding: 30px 0;
   margin-top: 70px;
-
 }
 
 div#footer {
-  p{
+  @media (max-width: 960px) {
+    display: block;
+  }
+  p {
     font-size: 14px;
   }
   text-align: center;

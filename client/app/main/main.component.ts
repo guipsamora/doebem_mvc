@@ -1,6 +1,6 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
-// const jkAngularCarousel = require('../../../node_modules/angular-jk-carousel/dist/jk-carousel.js');
+const jkAngularCarousel = require('../../../node_modules/angular-jk-carousel/dist/jk-carousel.js');
 
 import routing from './main.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
@@ -26,9 +26,9 @@ export class MainController {
     ];
 
     this.causas = [
-      {title: 'Educação', image: '../../assets/images/portfolio/education.jpg', link: '/listOngs/educacao' },
-      {title: 'Saúde', image: '../../assets/images/portfolio/healthcare.png', link: '/listOngs/saude' },
-      {title: 'Combate à Pobreza', image: '../../assets/images/portfolio/poverty.png', link: '/listOngs/combateAPobreza' }
+      {title: 'Saúde', subtitle:'', image: '../../assets/images/portfolio/healthcare.png', link: '/listOngs/saude' },
+      {title: 'Educação', subtitle: '(em breve)',image: '../../assets/images/portfolio/education.jpg', link: '/' }, 
+      {title: 'Combate à Pobreza', subtitle: '(em breve)', image: '../../assets/images/portfolio/poverty.png', link: '/' }
     ];
 
     this.stepOptions = [{
@@ -38,17 +38,17 @@ export class MainController {
       },
       {
       title: 'Selecione',
-      desc: 'Uma ONG eficiente, analisada pela doebem.',
+      desc: 'Uma organização eficiente, recomendada pela doebem.',
       icon: 'fa-hand-pointer-o'
       },
       {
       title: 'Doe',
-      desc: 'A quantia desejada e pelo período que quiser.',
+      desc: 'O valor que quiser.',
       icon: 'fa-money'
       },
       {
       title: 'Acompanhe',
-      desc: 'Notícias e atualizações sobre o impacto da sua doação.',
+      desc: 'O impacto da sua doação.',
       icon: 'fa-envelope-o'
       }
       ];
@@ -60,8 +60,7 @@ export class MainController {
 }
 
 export default angular.module('doebemOrgApp.main',
- [ngRoute, contactForm])
-//  [ngRoute, 'jkAngularCarousel', contactForm])
+ [ngRoute, 'jkAngularCarousel', contactForm])
     .config(routing)
     .component('main', {
       template: require('./main.pug'),

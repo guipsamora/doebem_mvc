@@ -1,87 +1,51 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <base href="/">
     <title>doebem</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WW97D9');</script>
+    <!-- End Google Tag Manager -->    
+    <!-- Sumo Tag -->
+    <script src="//load.sumome.com/" data-sumo-site-id="4e35e8af5c613dc3d5975bee52d677753bbc1ebe0733bf507311f576dcea9537" async="async"></script>
+    <!-- End Sumo Tag -->
 </head>
 <body>
     <!--[if lt IE 9]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WW97D9"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->    
+    <!-- Google Analytics: change UA-96208569-1 to be your site's ID -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-XXXXX-X');
+      ga('create', 'UA-96208569-1', 'auto');
       ga('send', 'pageview');
     </script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
-
+    <!-- End Google Analytics -->
     <navbar></navbar>
     <div ng-view=""></div>
     <footer></footer>
-
-   
-    <!--<script type="text/javascript" src="https://js.iugu.com/v2"></script>-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
-
-    <!--<script>
-      $(document).ready(function() {
-        $(".checkoutFormStepChange").click(function(e) {
-          e.preventDefault();
-
-          var current_step = $(".formStep.active");
-
-          if ($(this).hasClass("checkoutFormStepChangeNext")) {
-            var other_step = current_step.next(".formStep");
-          }
-          else {
-            var other_step = current_step.prev(".formStep");
-          }
-          
-          current_step.removeClass("active").addClass("hidden");
-
-          other_step.removeClass("hidden").addClass("active");
-
-          $(".checkoutFormStepChange").removeClass("hidden");
-
-          $("#checkoutFormSubmit").addClass("hidden");
-
-          if (other_step.hasClass("limitStep")) {
-            $(this).addClass("hidden");
-
-            if ($(this).hasClass("checkoutFormStepChangeNext")) {
-              $("#checkoutFormSubmit").removeClass("hidden");
-            }
-          }
-        });
-        
-        $("#checkoutFormSubmit").click(function(e) {
-          e.preventDefault();
-
-          // CALL IUGU.js to get credit card token
-          var card_token = "ioaehioaehioaehehoie";
-
-
-          $("#checkoutCardTokenInput").val(card_token);
-
-          var form = $("#checkoutForm");
-          // console.log(form)
-          form.submit();
-        });
-        fdsfdsafdsaf
-      });-->
-
-    <!--</script>-->
-
+    
+    <!--clicky for doebem.org-->
+    <script src="//static.getclicky.com/js" type="text/javascript"></script>
+    <script type="text/javascript">try{ clicky.init(101033258); }catch(e){}</script>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101033258ns.gif" /></p></noscript>
 </body>
 </html>
