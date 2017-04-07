@@ -13,6 +13,14 @@ div#transparencia {
     }
   }
 
+  @media screen and (max-width: 726px) {
+    div#pageHeader {
+      h2 {
+        font-size: 58px;
+      }
+    }
+  }
+
   div#comoFunciona {
       // text-align: center;
       padding-right:5%;

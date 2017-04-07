@@ -13,6 +13,14 @@ div#metodologia {
       font-size: 70px;
     }
   }
+  
+  @media screen and (max-width: 726px) {
+      div#pageHeader {
+        h2 {
+          font-size: 60px;
+        }
+      }
+  }
 
   div#comoFunciona {
       text-align: center;

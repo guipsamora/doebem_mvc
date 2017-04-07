@@ -1,15 +1,15 @@
 div.animated.fadeIn#pagOng
   div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url(' + $ctrl.infoOng.backgroundImage + ')'}")
     h2 {{$ctrl.infoOng.nomeFantasia}}
-  .container
-    div#infos(layout="row" layout-sm="column" layout-xs="column" flex="100" )
+  div.container
+    div#infos(layout="row" layout-sm="column" layout-xs="column")
       //- div(flex="80" layout-align="start")
       //-   img#princ(ng-src="")      
       //- div#smallInfo(layout="column" layout-align="start start")
       //-   checkout-form
-    md-content(layout="column" flex="100")
+    div(layout="column")
 
-      md-content#lista(flex = "100" layout="column" layout-align="left")
+      div#lista( layout="column" layout-align="left")
         h2 Sobre
         p(ng-bind-html='$ctrl.infoOng.sobre')
         h2 Resumo - Análise doebem
