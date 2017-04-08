@@ -16,7 +16,7 @@ div.animated.fadeIn#main
       p Veja abaixo como funciona!
       md-list#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
         md-list-item(ng-repeat="step in $ctrl.stepOptions") 
-            div#escolha(flex layout = "column" layout-align="center center")
+            div#escolha(layout = "column" layout-align="center center")
               span.fa-stack.fa-5x
                 i.fa.fa-circle.fa-stack-2x.text-primary
                 i#icon.fa.fa-stack-1x(ng-class="step.icon")

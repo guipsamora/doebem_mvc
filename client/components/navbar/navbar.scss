@@ -19,6 +19,7 @@ div#menuEntries {
     // display: inline-block;
     text-align: center;
     margin: 0px auto;
+    // padding: 0 0 0 0;
     // margin-right: 20px;
 }
 
@@ -48,13 +49,32 @@ button.navbar-toggle {
 }
 
 @media screen and (max-width: 768px) {
+    div#menuEntries {
+        padding: 0 0 0 0;
+        margin-left: 0px;
+    }
+
+    a#Itens {
+        padding-left: 0px;
+        padding-right: 30px;
+    }
+
     button.navbar-toggle {
-        float: none;
+        float: none;        
+        margin-top: 3px;
     }
 
     .navbar-header {
         width: 320px;
-    }        
+    }
+
+    div.navbar-header {
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 18px;
+    }
 
     .navbar-collapse {
         border-top: none;
@@ -62,11 +82,10 @@ button.navbar-toggle {
         height: 270px;
         width: 320px;
         background-color: black;
-        margin-right: -30px !important;
+        // margin-right: -30px !important;
+        margin: 0 0 0 0 !important;
         padding: 0 0 0 0;
     }
-
-
 }
 
 div#menu.mainPageMenu {

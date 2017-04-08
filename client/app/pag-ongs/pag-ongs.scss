@@ -88,6 +88,25 @@ div#pagOng {
       border-style: solid;
       border-width: 1px;
   }
+
+  
+
+  @media screen and (max-width: 726px) {
+    div#pageHeader {
+      h2 {
+        font-size: 55px;
+      }
+    }
+
+    div p#anaCompl {
+      font-size: 18px;
+    }
+
+    div h2#resumo {
+      font-size: 28px;
+    }
+
+  }
 }
 
 

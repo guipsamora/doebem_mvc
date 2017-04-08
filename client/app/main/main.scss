@@ -61,6 +61,7 @@ div#main {
         
         md-list-item {
           div#escolha {
+            width: 250px;
             span {
               i#icon {
                 color: white;
@@ -84,11 +85,10 @@ div#main {
         height: 130px;
       }
 
-      h5.listItem {
+      h4.listItem {
         margin-top: 0px !important;
-        margin-bottom: 4px !important;
-        font-weight: 400px !important;
-        
+        margin-bottom: 15px !important;
+        font-weight: 400px !important;        
       }
 
       a {

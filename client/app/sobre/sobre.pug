@@ -1,33 +1,27 @@
 div.animated.fadeIn#sobre
   div#pageHeader(flex="100"  layout="column" layout-align="center center")
     h2 Sobre
-  md-content#mainSobre(layout="column" flex="100")
+  md-content#mainSobre(layout="column" layout-gt-sm="row" flex="100" )
     .container
-      div.credo(layout="row" flex="100")
-        div#item(flex="30")
-          h3 No que acreditamos.
-        div#desc(flex)
-          p Acreditamos que o processo de doação deve ser feito com o coração e com a mente.
+      div.credo(layout="column" layout-gt-sm="row" flex="100")
+        h3(flex="100" flex-gt-sm="30") No que acreditamos.
+        p(flex="100" flex-gt-sm="70") Acreditamos que o processo de doação deve ser feito com o coração e com a mente.
+        br
+      div.credo(layout="column" layout-gt-sm="row" flex="100")
+          h3(flex="100" flex-gt-sm="30") Como atuamos.
+          p(flex="100" flex-gt-sm="70") Selecionamos organizações sociais eficientes a partir de rigorosos critérios, baseados em qualidade de gestão, transparência e alto impacto.
           br
-      div.credo(layout="row" flex="100")
-        div#item(flex="30")
-          h3 Como atuamos.
-        div#desc(flex)
-          p Selecionamos organizações sociais eficientes a partir de rigorosos critérios, baseados em qualidade de gestão, transparência e alto impacto.
-          br
-      div.credo(layout="row" flex="100")
-        div#item(flex="30")
-          h3 Nosso objetivo.
-        div#desc(flex)
-          p Ajudar as pessoas a doarem de forma eficiente para organizações brasileiras.
+      div.credo(layout="column" layout-gt-sm="row" flex="100")
+          h3(flex="100" flex-gt-sm="30") Nosso objetivo.
+          p(flex="100" flex-gt-sm="70") Ajudar as pessoas a doarem de forma eficiente para organizações brasileiras.
   div#Time(layout="column"  flex="100" layout-align="center center")
     h1 Time
-    md-list(flex="100" layout-wrap layout="row" layout-gt-sm="row" layout-align="space-around center")
+    md-list(layout-wrap layout="row" layout-gt-sm="row" layout-align="space-around center")
       md-list-item(ng-repeat="pessoa in $ctrl.listaPessoas")
         md-card(layout="row" flex-gt-sm="100")
           //- img.md-card-image(ng-src="{{pessoa.img}}")
           md-card-title(layout="row")
-            md-card-title-text(flex="100" layout="row" layout-align="center center")
+            md-card-title-text(layout="row" layout-align="center center")
               h3 {{pessoa.nome}}
           md-card-actions(layout="row" layout-align="center center")
             a(target='_blank' href='{{pessoa.twitter}}')
