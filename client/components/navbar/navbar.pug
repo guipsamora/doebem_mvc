@@ -12,10 +12,10 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
           span.icon-bar
           span.icon-bar
           span.icon-bar    
-    div.navbar-collapse.collapse.navbar-center.dropdown(uib-collapse='$ctrl.isCollapsed' layout-align="center center")
+    div.navbar-collapse.collapsed.navbar-center.dropdown(uib-collapse='$ctrl.isCollapsed' layout-align="center center" data-toggle="collapse" data-target=".collapse")
       ul.nav.navbar-nav
         li.menuAnchor(ng-repeat='item in $ctrl.menu')
-          a#Itens(ng-href='{{item.link}}') {{item.title}}
+          a#Itens(ng-href='{{item.link}}' ng-click='$ctrl.isCollapsed = !$ctrl.isCollapsed') {{item.title}}
 
         a#Itens(target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVZNP9YUS79FY")
           md-button.md-raized.md-primary(type="submit") Ajudar

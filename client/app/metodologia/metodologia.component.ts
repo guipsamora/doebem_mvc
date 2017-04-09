@@ -17,7 +17,7 @@ export class MetodologiaController {
     this.stepCriterios = [
       {
         title: 'Gestão',
-        desc1: 'Avaliamos a gestão, a equipe',
+        desc1: 'Avaliamos a gestão, a equipe e',
         desc2: 'os processos da organização.',
         icon: 'fa-area-chart'
       },
