@@ -4,7 +4,7 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
       a(ng-href='/')
         img.navbar-brand(ng-src="/assets/images/logos/logo_menor_6_transparente.png")
   div.container#menuEntries
-    button.navbar-toggle(type='button', ng-click='$ctrl.isCollapsed = !$ctrl.isCollapsed' layout-align="center center")
+    button.navbar-toggle(type='button' ng-click='$ctrl.isCollapsed = !$ctrl.isCollapsed' layout-align="center center")
       div(layout="column")
         span MENU
         div(layout="column" layout-align="center center")
@@ -12,7 +12,7 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
           span.icon-bar
           span.icon-bar
           span.icon-bar    
-    div.navbar-collapse.collapsed.navbar-center.dropdown(uib-collapse='$ctrl.isCollapsed' layout-align="center center" data-toggle="collapse" data-target=".collapse")
+    div.navbar-collapse.collapsed.navbar-center.dropdown(uib-collapse='$ctrl.isCollapsed' ng-click='$ctrl.isCollapsed = !$ctrl.isCollapsed' layout-align="center center" data-toggle="collapse" data-target=".collapse")
       ul.nav.navbar-nav
         li.menuAnchor(ng-repeat='item in $ctrl.menu')
           a#Itens(ng-href='{{item.link}}') {{item.title}}
