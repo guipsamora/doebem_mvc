@@ -11,7 +11,8 @@ div.animated.fadeIn#listOngs
           md-cols="1"
           md-row-height="4:5"
           md-gutter-gt-sd="10px"
-          md-gutter="35px")
+          md-gutter="35px"
+          layout-align="center center")
         md-grid-tile(ng-repeat="ong in $ctrl.listOngToDisplay")
           div(layout="column" layout-fill)
             a#ong(ng-href="pagOngs/{{ong.slug}}")
