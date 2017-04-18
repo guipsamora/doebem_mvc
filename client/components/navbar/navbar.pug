@@ -18,7 +18,7 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
           a#Itens(ng-href='{{item.link}}') {{item.title}}
 
         a#Itens(target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVZNP9YUS79FY")
-          md-button.md-raized.md-primary(type="submit") Ajudar
+          md-button.md-raized.md-primary(type="submit") Doar
 
         li(ng-show='$ctrl.isAdmin()', ng-class='{active: $ctrl.isActive("/admin")}')
           a(href='/admin') Admin

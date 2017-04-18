@@ -23,9 +23,9 @@ div.animated.fadeIn#main
               h2 {{step.title}}
               p {{step.desc}}
     div#causas(flex = "100" layout="column" layout-align="center center")
-      H2.sectionHeading Causas
+      h2.sectionHeading Causas
       h3 Selecione uma causa abaixo para conhecer as organizações recomendadas.
-      md-list( layout-gt-sm="row" layput="column")
+      md-list(layout="column" layout-gt-sm="row")
         md-list-item(ng-repeat="causa in $ctrl.causas" layout="column" layout-align="center center")
           a(ng-href="{{$location.absUrl() + causa.link}}")
             md-card
@@ -34,6 +34,15 @@ div.animated.fadeIn#main
                 md-card-title-text(layout-align="center center")
                   h1 {{causa.title}}
                   h4.listItem {{causa.subtitle}}
+    div#nossoImpacto(flex = "100" layout="column" layout-align="center center")
+      h2.sectionHeading Nosso Impacto
+      div(flex = "100" layout="row" layout-align="center center")
+        div#doadores(flex = "100" layout = "column")
+          h3 2 
+          h5 doadores
+        div#reaisDoados(flex = "100" layout = "column")
+          h3 R$93,81 
+          h5 doados até hoje
 contact-form#contato
 script(type="text/ng-template" id="img.tmpl.pug")
     div

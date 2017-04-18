@@ -97,6 +97,52 @@ div#main {
       }
 
     }
+
+    div#nossoImpacto {
+
+      background-color: white;
+
+      h3 {
+        font-size: 55px;
+      }
+
+      h5 {
+        font-size: 20px;
+      }
+
+      padding-bottom: 50px;
+
+      div {
+        text-align: center;
+        margin: auto;
+        // display: block;
+      }
+
+      div div#doadores {
+        border-right-color:   lightgray;
+        // border-right-color:   black;
+        // border-right-width: 2px;
+        // border-right-style: solid;
+
+        // width: 400px;
+        width: 500px;
+        
+        text-align: center;
+        margin: 0 auto;
+        // height: 100%;
+        // width: 100%;
+      }
+
+      div div#reaisDoados {
+        // width: 400px;
+        width: 500px;
+        margin-left: 10px;
+        text-align: center;
+        margin: 0 auto;
+        // height: 100%;
+        // width: 100%;    
+      }      
+    }
     
     div#metodologia {
       height: 100%;
