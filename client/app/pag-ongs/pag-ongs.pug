@@ -8,11 +8,10 @@ div.animated.fadeIn#pagOng
       //- div#smallInfo(layout="column" layout-align="start start")
       //-   checkout-form
     div(layout="column")
-
       div#lista( layout="column" layout-align="left")
         h2 Sobre
         p(ng-bind-html='$ctrl.infoOng.sobre')
-        h2 Resumo - Análise doebem
+        h2#resumo Resumo - Análise doebem
         h3 Gestão
         p(ng-bind-html='$ctrl.infoOng.analiseGestao')
         h3 Transparência
@@ -20,9 +19,9 @@ div.animated.fadeIn#pagOng
         h3 Impacto
         p(ng-bind-html='$ctrl.infoOng.analiseImpacto')
         a(ng-href="{{$ctrl.infoOng.linkPdf}}" target="_blank")
-         p Confira aqui o arquivo com nossa análise completa.
+         p#anaCompl Confira aqui o arquivo com nossa análise completa.
       a(layout-align="center center" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KP2DX7FKJUWFL")
-        md-button.md-raized.md-primary(type="submit") Ajudar
+        md-button.md-raized.md-primary(type="submit") Doar
 contact-form
 
       //- div#smallInfo(layout="column" layout-align="start start")

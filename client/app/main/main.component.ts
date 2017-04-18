@@ -26,19 +26,19 @@ export class MainController {
     ];
 
     this.causas = [
+      {title: 'Educação', subtitle: '(em breve)',image: '../../assets/images/portfolio/education.jpg', link: '/' },
       {title: 'Saúde', subtitle:'', image: '../../assets/images/portfolio/healthcare.png', link: '/listOngs/saude' },
-      {title: 'Educação', subtitle: '(em breve)',image: '../../assets/images/portfolio/education.jpg', link: '/' }, 
       {title: 'Combate à Pobreza', subtitle: '(em breve)', image: '../../assets/images/portfolio/poverty.png', link: '/' }
     ];
 
     this.stepOptions = [{
       title: 'Escolha',
-      desc: 'A causa com a qual mais se identifica.',
+      desc: 'A causa que mais se identifica.',
       icon: 'fa-heart-o'
       },
       {
       title: 'Selecione',
-      desc: 'Uma organização eficiente, recomendada pela doebem.',
+      desc: 'Uma organização eficiente.',
       icon: 'fa-hand-pointer-o'
       },
       {

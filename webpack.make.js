@@ -9,6 +9,8 @@ var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 var fs = require('fs');
 var path = require('path');
 var ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+var OfflinePlugin = require('offline-plugin');
+var WebpackAssetsManifest = require('webpack-assets-manifest');
 
 module.exports = function makeWebpackConfig(options) {
     /**
@@ -296,7 +298,19 @@ module.exports = function makeWebpackConfig(options) {
                 'process.env': {
                     NODE_ENV: '"production"'
                 }
-            })
+            }),
+            new WebpackAssetsManifest({
+                done: function(manifest) {
+                    console.log(`The manifest has been written to ${manifest.getOutputPath()}`);
+                },
+                apply: function(manifest) {
+                    manifest.set('short_name', 'doebem');
+                    manifest.set('name', 'doebem.org.br');
+                    manifest.set('background_color', '#DADADA');
+                    manifest.set('theme_color', '#A7A6FB');
+                }
+            }),
+      new OfflinePlugin(),
         );
     }
 

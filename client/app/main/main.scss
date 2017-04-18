@@ -2,6 +2,7 @@
 
 div#main {
   div#carousel {
+    background-color: white;
     
     .jk-carousel .slides-container .slide .ng-scope img:first-child {
       max-width: none;
@@ -61,6 +62,7 @@ div#main {
         
         md-list-item {
           div#escolha {
+            width: 250px;
             span {
               i#icon {
                 color: white;
@@ -84,17 +86,62 @@ div#main {
         height: 130px;
       }
 
-      h5.listItem {
+      h4.listItem {
         margin-top: 0px !important;
-        margin-bottom: 4px !important;
-        font-weight: 400px !important;
-        
+        margin-bottom: 15px !important;
+        font-weight: 400px !important;        
       }
 
       a {
         height: 435.5px !important;
       }
 
+    }
+
+    div#nossoImpacto {
+
+      background-color: white;
+
+      h3 {
+        font-size: 55px;
+      }
+
+      h5 {
+        font-size: 20px;
+      }
+
+      padding-bottom: 50px;
+
+      div {
+        text-align: center;
+        margin: auto;
+        // display: block;
+      }
+
+      div div#doadores {
+        border-right-color:   lightgray;
+        // border-right-color:   black;
+        // border-right-width: 2px;
+        // border-right-style: solid;
+
+        // width: 400px;
+        width: 500px;
+        
+        text-align: center;
+        margin: 0 auto;
+        // height: 100%;
+        // width: 100%;
+      }
+
+      div div#reaisDoados {
+        // width: 400px;
+        width: 500px;
+        margin-left: 10px;
+        text-align: center;
+        margin: 0 auto;
+        // height: 100%;
+        // width: 100%;    
+      }      
     }
     
     div#metodologia {

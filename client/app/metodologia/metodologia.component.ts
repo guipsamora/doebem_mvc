@@ -17,17 +17,20 @@ export class MetodologiaController {
     this.stepCriterios = [
       {
         title: 'Gestão',
-        desc: 'Avaliamos a gestão, a equipe e os processos da organização',
+        desc1: 'Avaliamos a gestão, a equipe e',
+        desc2: 'os processos da organização.',
         icon: 'fa-area-chart'
       },
       {
         title: 'Transparência',
-        desc: 'Analisamos a transparência financeira e organizacional.',
+        desc1: 'Analisamos a transparência',
+        desc2: 'financeira e organizacional.',
         icon: 'fa-file-o'
       },
       {
         title: 'Impacto',
-        desc: 'Buscamos evidências claras da efetividade do trabalho realizado.',
+        desc1: 'Buscamos evidências claras da',
+        desc2: 'efetividade do trabalho realizado.',
         icon: 'fa-globe'
       },
     ];

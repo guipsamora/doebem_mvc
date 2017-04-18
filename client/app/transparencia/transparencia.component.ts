@@ -34,13 +34,13 @@ export class TransparenciaController {
       //   balanco_name: 'Balanço patrimonial',
       //   balanco_link: '',
       // }
-      {
-        date: '2017',
-        dre_name: 'DRE 2017 (A partir de Maio/17)',
-        dre_link: '/',
-        balanco_name: 'Balanço patrimonial (A partir de Maio/17)',
-        balanco_link: '/',
-      },
+      // {
+      //   date: '2017',
+      //   dre_name: 'DRE 2017 (A partir de Maio/17)',
+      //   dre_link: '/',
+      //   balanco_name: 'Balanço patrimonial (A partir de Maio/17)',
+      //   balanco_link: '/',
+      // },
       {
         date: '2017',
         dre_name: 'Custos de Lançamento',
@@ -55,7 +55,7 @@ export class TransparenciaController {
       {
         date: '2017',
         goals_name: 'Metas 2017',
-        goals_link: '',
+        goals_link: 'https://drive.google.com/file/d/0B92Dg4kwqibxSVd6YTY2T1FBWnc/view?usp=sharing',
         metrics_name: '',
         metrics_link: '',
       }

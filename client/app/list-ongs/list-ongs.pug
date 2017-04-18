@@ -11,7 +11,8 @@ div.animated.fadeIn#listOngs
           md-cols="1"
           md-row-height="4:5"
           md-gutter-gt-sd="10px"
-          md-gutter="35px")
+          md-gutter="35px"
+          layout-align="center center")
         md-grid-tile(ng-repeat="ong in $ctrl.listOngToDisplay")
           div(layout="column" layout-fill)
             a#ong(ng-href="pagOngs/{{ong.slug}}")
@@ -29,11 +30,13 @@ div.animated.fadeIn#listOngs
             br
             div(layout="row" layout-align="center center")
               a(target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KP2DX7FKJUWFL")
-                md-button.md-raised.md-primary Ajudar
+                md-button.md-raised.md-primary Doar
+            br
+            br
               //- a(ng-href="pagOngs/{{ong.slug}}")
                 md-button.md-raised.md-primary Ajudar
-      br
-      br
-      h4 Todas organizações são analisadas anualmente. 
-      h4 Desta maneira, em análise futura, podemos deixar de recomendar uma organização e/ou recomendar novas.            
+  //- div(layout="row" layout-align="center center")
+  //-   h4 Todas organizações são analisadas anualmente.
+  //- div(layout="row" layout-align="center center")   
+  //-   h4 Desta maneira, em análise futura, podemos deixar de recomendar uma organização e/ou recomendar novas.            
 contact-form
