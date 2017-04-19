@@ -11,9 +11,8 @@
 // 'use strict';
 
 import jsonpatch from 'fast-json-patch';
-import CheckoutForm from './checkoutForm.model';
+import Transaction from './checkoutForm.model';
 import requestify from 'requestify';
-// const winston = require('winston');
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -85,9 +84,44 @@ export function show(req, res) {
     });
 }
 
+// Upserts the given Thing in the DB at the specified ID
+export function upsert(req, res) {
+  if(req.body._id) {
+    delete req.body._id;
+  }
+  return CheckoutForm.findOneAndUpdate({_id: req.params.id}, req.body, {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
+
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
+// Updates an existing Transaction in the DB
+export function patch(req, res) {
+  if(req.body._id) {
+    delete req.body._id;
+  }
+  return CheckoutForm.findById(req.params.id).exec()
+    .then(handleEntityNotFound(res))
+    .then(patchUpdates(req.body))
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
+// Deletes a Transaction from the DB
+export function destroy(req, res) {
+  return CheckoutForm.findById(req.params.id).exec()
+    .then(handleEntityNotFound(res))
+    .then(removeEntity(res))
+    .catch(handleError(res));
+}
+
+
+
+
 export function postCieloApi(req, res) {
   console.log('postCieloApi foi chamado');
-  const postPromise = new Promise(function(resolve, reject) {
+  //console.log(req);
+  const postPromise = new Promise((resolve, reject) => {
     requestify.request('https://apisandbox.cieloecommerce.cielo.com.br/1/sales/', {
       method: 'POST',
       body: {
@@ -102,7 +136,7 @@ export function postCieloApi(req, res) {
       },
       dataType: 'json'
     })
-    .then(function(response) {
+    .then(response => {
       console.log('Requestify deu certo no postCieloApi');
       // get the response body
       response.getBody();
@@ -129,7 +163,7 @@ export function postCieloApi(req, res) {
 
 export function captureCieloApi(req, res) {
   console.log('captureCieloApi foi chamado');
-  const putPromise = new Promise(function (resolve, reject) {
+  const putPromise = new Promise( (resolve, reject) => {
     requestify.request(req.req.body.AuthorizationResponse.Payment.Links[1].Href, {
       method: 'PUT',
       body: {
@@ -142,7 +176,7 @@ export function captureCieloApi(req, res) {
       },
       dataType: 'json'
     })
-    .then(function(response) {
+    .then(response => {
       console.log('requestify deu certo no captureCieloApi');
       // get the response body
       response.getBody();
@@ -208,13 +242,72 @@ export function captureCieloApi(req, res) {
   //   });
 // }
 
+
+const authRequest = res => {
+  return entity => {
+    console.log('authRequest', entity);
+    const Customer = {};
+    const Payment = {};
+
+    Customer.Name = entity.donor.name;
+    Payment.Amount = entity.paymentInfo.amount;
+    Payment.Type = entity.paymentInfo.type;
+    Payment.Installments = entity.paymentInfo.type;
+
+    return requestify.post('https://apisandbox.cieloecommerce.cielo.com.br/1/sales/', {
+      body: {
+        Customer,
+        Payment,
+        MerchantOrderId: entity._id,
+      },
+      headers: {
+        'Content-Type': 'application/json',
+        MerchantId: process.env.MerchantId,
+        MerchantKey: process.env.MerchantKey
+      },
+      dataType: 'json'
+    })
+      .then(response => {
+        console.log('Requestify deu certo no postCieloApi');
+        return response.getBody();
+      })
+      .catch(error => {
+        console.log('Requestify no postCieloApi apresentou o seguinte erro: ', error);
+        return Promise.reject(error);
+      });
+  };
+};
+
+
+export const createTransaction = (req, res) => {
+  //criar a transação no Mongo
+  const transaction = {};
+  transaction.donor = {};
+  transaction.donor.name = req.body.Customer.Name;
+  transaction.donor.email = req.body.Customer.Email;
+  transaction.donor.cpf = req.body.Customer.CPF;
+  transaction.donor.source = req.body.Customer.Source;
+  transaction.donor.cidade = req.body.Customer.Cidade;
+  transaction.paymentInfo = {};
+  transaction.paymentInfo.type = req.body.Payment.Type;
+  transaction.paymentInfo.amount = req.body.Payment.Amount;
+  transaction.paymentInfo.installments = req.body.Payment.Installments;
+  // salvar no banco e pegar o ID
+  return Transaction.create(transaction)
+    .then(authRequest(res))
+    .catch(handleError(res));
+};
+
+
+
+
 export function handlePayment(req, res) {
   return postCieloApi(req.body)
-  .then(function(responsePost) {
+  .then(responsePost => {
     req.body.AuthorizationResponse = JSON.parse(responsePost);
     return req.body;
   })
-  .then(function(reqAuth) {
+  .then(reqAuth => {
     return CheckoutForm.create(reqAuth)
     .then(respondWithResult(res, 201))
     .catch(error => {
@@ -222,9 +315,9 @@ export function handlePayment(req, res) {
       return handleError(res);
     });
   })
-  .then(function(responseCreate) {
+  .then(responseCreate => {
     return captureCieloApi(responseCreate)
-    .then(function(responsePut) {
+    .then(responsePut => {
       req.body.CaptureResponse = JSON.parse(responsePut);
       return CheckoutForm.findOneAndUpdate({MerchantOrderId: req.body.MerchantOrderId }, {$set: req.body}, {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
       .catch(error => {
@@ -237,35 +330,4 @@ export function handlePayment(req, res) {
     console.log('create na API da Transaction', error);
     return handleError(res);
   });
-}
-
-// Upserts the given Thing in the DB at the specified ID
-export function upsert(req, res) {
-  if(req.body._id) {
-    delete req.body._id;
-  }
-  return CheckoutForm.findOneAndUpdate({_id: req.params.id}, req.body, {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
-
-    .then(respondWithResult(res))
-    .catch(handleError(res));
-}
-
-// Updates an existing Transaction in the DB
-export function patch(req, res) {
-  if(req.body._id) {
-    delete req.body._id;
-  }
-  return CheckoutForm.findById(req.params.id).exec()
-    .then(handleEntityNotFound(res))
-    .then(patchUpdates(req.body))
-    .then(respondWithResult(res))
-    .catch(handleError(res));
-}
-
-// Deletes a Transaction from the DB
-export function destroy(req, res) {
-  return CheckoutForm.findById(req.params.id).exec()
-    .then(handleEntityNotFound(res))
-    .then(removeEntity(res))
-    .catch(handleError(res));
 }

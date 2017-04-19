@@ -89,6 +89,7 @@ export class CheckoutComponent {
 
   // capitalize the first letter of the Credit Card brand
   capitalizeFirstLetter(string) {
+    string = ( string === 'mastercard' ) ? 'master' : string;
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
