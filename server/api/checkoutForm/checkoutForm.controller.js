@@ -299,8 +299,6 @@ export const createTransaction = (req, res) => {
 };
 
 
-
-
 export function handlePayment(req, res) {
   return postCieloApi(req.body)
   .then(responsePost => {

@@ -1,6 +1,6 @@
 {
   "name": "doebem-org",
-  "version": "0.0.0",
+  "version": "0.8.0",
   "main": "server/index.js",
   "dependencies": {
     "angular": "~1.5.5",
@@ -161,7 +161,7 @@
     "typings": "^0.8.1"
   },
   "engines": {
-    "node": "^6.2.2",
+    "node": "^6.10.2",
     "npm": "^3.9.5"
   },
   "scripts": {
