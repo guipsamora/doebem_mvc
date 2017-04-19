@@ -115,9 +115,6 @@ export function destroy(req, res) {
     .catch(handleError(res));
 }
 
-
-
-
 export function postCieloApi(req, res) {
   console.log('postCieloApi foi chamado');
   //console.log(req);
@@ -200,48 +197,6 @@ export function captureCieloApi(req, res) {
   });
   return putPromise;
 }
-
-
-// Creates a new Transaction in the DB
-// export function create(req, res) {
-  // console.trace(req.body);
-  // var info = req.body;
-  // var checkout = new CheckoutForm({MerchantOrderId: "TESTE"});
-
-  // console.trace(checkout);
-  // console.log(checkout);
-  // // checkout = postCieloApi(req, res).then(function(success) {
-  // //   console.trace(success);
-  // //   return success}
-  // // );  
-
-  // return postCieloApi(req, res)
-  // .then(function(success) {
-  //   CheckoutForm.Transactions.create(success);
-  //   console.trace(success);
-  //   return success}
-  // ).then(
-  //   CheckoutForm.save(req.body)
-  // ).then(respondWithResult(res, 201))
-  //  .catch(error => {
-  //     console.log('create na API da Transaction', error);
-  //     return handleError(res);
-  //  });
-
-
-  // chamar post Cielo e colocar no CheckoutForm
-  // return CheckoutForm.create(req.body)
-  //   .then(function() {
-  //     return postCieloApi(req, res)
-  //     .then(saveAuthor)
-  //   })
-  //   .then(respondWithResult(res, 201))
-  //   .catch(error => {
-  //     console.log('create na API da Transaction', error);
-  //     return handleError(res);
-  //   });
-// }
-
 
 const authRequest = res => {
   return entity => {
