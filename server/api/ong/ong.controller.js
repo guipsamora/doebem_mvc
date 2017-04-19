@@ -76,8 +76,8 @@ export function show(req, res) {
   return Ong.findOne({slug: req.params.id}).exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
-    .catch(err =>{
-      handleError(err)
+    .catch(err => {
+      handleError(err);
     });  
   // return Ong.findById(req.params.id).exec()
   //   .then(handleEntityNotFound(res))
