@@ -11,7 +11,7 @@
 // 'use strict';
 
 import jsonpatch from 'fast-json-patch';
-import Transaction from './paymentTransaction.model.model';
+import Transaction from './paymentTransaction.model';
 import requestify from 'requestify';
 
 const respondWithResult = (res, statusCode) => {
@@ -105,7 +105,7 @@ export const destroy = (req, res) => Transaction.findById(req.params.id).exec()
   .catch(handleError(res));
 
 // Creates a new Transaction in the DB
-export const create = (req, res) => createTransactionCielo.create(req.body, res)
+export const create = (req, res) => createTransactionCielo(req.body, res)
     .then(authRequestCielo(res))
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
@@ -135,7 +135,6 @@ const createTransactionCielo = (body, res) => {
 };
 
 const authRequestCielo = res => entity => {
-  console.log('authRequestCielo', entity);
   const Customer = {};
   const Payment = {};
 

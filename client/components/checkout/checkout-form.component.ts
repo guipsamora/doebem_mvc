@@ -51,7 +51,7 @@ export class CheckoutComponent {
       console.log($scope.type);
     };
     // olha se o botão de 10% é true ou false
-    $scope.$watch('checkoutForm.checked', function(){
+    $scope.$watch('checkoutForm.checked', () => {
 
       if ($scope.checkoutForm.checked) {
         $scope.checkoutForm.Payment.Additional = $scope.checkoutForm.Payment.Initial * 0.10;
@@ -65,7 +65,7 @@ export class CheckoutComponent {
     }, true);
 
     // olha se o valor inicial foi alterado
-    $scope.$watch('checkoutForm.Payment.Initial', function(){
+    $scope.$watch('checkoutForm.Payment.Initial', () => {
 
       if ($scope.checkoutForm.checked) {
         $scope.checkoutForm.Payment.Additional = $scope.checkoutForm.Payment.Initial * 0.10;
@@ -102,7 +102,7 @@ export class CheckoutComponent {
     this.name = form.Customer.Name;
     this.amount = form.Payment.Amount;
     console.log(form);
-    this.$http.post('/api/checkoutForm', form)
+    this.$http.post('/api/paymentTransaction', form)
         .then(res => {
           this.showDialog();
           this.$scope.checkoutForm.$setPristine();
