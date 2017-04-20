@@ -105,10 +105,14 @@ export const destroy = (req, res) => Transaction.findById(req.params.id).exec()
   .catch(handleError(res));
 
 // Creates a new Transaction in the DB
-export const create = (req, res) => createTransactionCielo(req.body, res)
-    .then(authRequestCielo(res))
+export const create = (req, res) => {
+  console.log('entao');
+  return createTransactionCielo(req.body, res)
+    .then(authRequestCielo(res, req.body))
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
+};
+
 /**
  * area de controle do processamento do cartão CIELO
 */
@@ -119,31 +123,36 @@ export const create = (req, res) => createTransactionCielo(req.body, res)
  */
 const createTransactionCielo = (body, res) => {
   const transaction = {};
-  transaction.donor = {};
-  transaction.donor.name = body.Customer.Name;
+  transaction.donor = body.donor;
+  /*transaction.donor.name = body.Customer.Name;
   transaction.donor.email = body.Customer.Email;
   transaction.donor.cpf = body.Customer.CPF;
   transaction.donor.source = body.Customer.Source;
-  transaction.donor.cidade = body.Customer.Cidade;
+  transaction.donor.cidade = body.Customer.Cidade;*/
   transaction.paymentInfo = {};
-  transaction.paymentInfo.type = body.Payment.Type;
-  transaction.paymentInfo.amount = body.Payment.Amount;
-  transaction.paymentInfo.installments = body.Payment.Installments;
+  transaction.paymentInfo.type = body.paymentInfo.type;
+  transaction.paymentInfo.amount = body.paymentInfo.amount;
+  transaction.paymentInfo.installments = body.paymentInfo.installments;
   // salvar no banco e pegar o ID
   return Transaction.create(transaction)
     .catch(handleError(res));
 };
 
-const authRequestCielo = res => entity => {
+const authRequestCielo = (res, body) => entity => {
   const Customer = {};
   const Payment = {};
-
+  //console.log('process.env.MerchantId', body.Payment);
   Customer.Name = entity.donor.name;
   Payment.Amount = entity.paymentInfo.amount;
   Payment.Type = entity.paymentInfo.type;
-  Payment.Installments = entity.paymentInfo.type;
-
-  return requestify.post('https://apisandbox.cieloecommerce.cielo.com.br/1/sales/', {
+  Payment.Installments = entity.paymentInfo.installments;
+  //Payment.Credicard = {};
+  const CC = body.Payment.Credicard;
+  console.log('CC', CC);
+  Payment.Credicard = CC;
+  console.log('payment', Payment);
+  return requestify.request('https://apisandbox.cieloecommerce.cielo.com.br/1/sales/', {
+    method: 'POST',
     body: {
       Customer,
       Payment,

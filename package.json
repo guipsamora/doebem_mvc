@@ -55,9 +55,9 @@
     "passport-google-oauth20": "^1.0.0",
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.3",
-    "pug": "2.0.0-beta4",
+    "pug": "^2.0.0-beta.12",
     "requestify": "^0.2.5",
-    "serve-favicon": "^2.3.0",
+    "serve-favicon": "^2.4.2",
     "shrink-ray": "^0.1.3",
     "socket.io": "^1.3.5",
     "socket.io-client": "^1.3.5",
@@ -65,7 +65,9 @@
     "sprint-js": "~0.1.0",
     "typings": "^0.8.1",
     "wb-angular-slugify": "^1.2.0",
+    "webpack": "^1.15.0",
     "webpack-assets-manifest": "^0.6.2",
+    "webpack-dev-middleware": "^1.10.1",
     "winston": "^2.3.1"
   },
   "devDependencies": {
