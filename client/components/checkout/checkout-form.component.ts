@@ -10,8 +10,28 @@ export class CheckoutComponent {
   name;
   amount;
   originalAmount;
+  source: Array<String>;
+
+   // transform value  into cents, Cielo's API only accepts cents
+  static transformToCents = (value: number) => {
+    return value * 100;
+  }
+
+  // capitalize the first letter of the Credit Card brand
+  static capitalizeFirstLetter = (string) => {
+    string = ( string === 'mastercard' ) ? 'master' : string;
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
   constructor($http, $scope, $animate, $mdDialog) {
+
+    this.source = [
+      'Redes Sociais (Facebook, Twitter)',
+      'Email',
+      'Mídia',
+      'Busca no Google',
+      'Indicação de parentes / amigos'
+    ];
     this.$http = $http;
     this.$scope = $scope;
     this.$mdDialog = $mdDialog;
@@ -21,7 +41,7 @@ export class CheckoutComponent {
     $scope.showNext = true;
     $scope.showPrevious = false;
 
-    $scope.nextView = function() {
+    $scope.nextView = () => {
       $scope.type++;
       if ($scope.type > 1 && $scope.type < 4) {
         $scope.showPrevious = true;
@@ -33,10 +53,9 @@ export class CheckoutComponent {
         $scope.showSend = true;
         $scope.showNext = false;
       }
-      console.log($scope.type);
     };
 
-    $scope.previousView = function() {
+    $scope.previousView = () => {
       $scope.type--;
       $scope.showSend = false;
       if ($scope.type === 0) {
@@ -48,60 +67,41 @@ export class CheckoutComponent {
       if ($scope.type === 1) {
         $scope.showPrevious = false;
       }
-      console.log($scope.type);
     };
     // olha se o botão de 10% é true ou false
-    $scope.$watch('checkoutForm.checked', function(){
-
+    $scope.$watch('checkoutForm.checked', () => {
       if ($scope.checkoutForm.checked) {
-        $scope.checkoutForm.Payment.Additional = $scope.checkoutForm.Payment.Initial * 0.10;
-        $scope.checkoutForm.Payment.Amount = $scope.checkoutForm.Payment.Initial + $scope.checkoutForm.Payment.Additional;
+        $scope.checkoutForm.paymentInfo.additional = $scope.checkoutForm.paymentInfo.initial * 0.10;
+        $scope.checkoutForm.paymentInfo.amount = $scope.checkoutForm.paymentInfo.initial * 1.10;
         return;
       } else {
-        $scope.checkoutForm.Payment.Additional = 0;
-        $scope.checkoutForm.Payment.Amount = $scope.checkoutForm.Payment.Initial;
+        $scope.checkoutForm.paymentInfo.additional = 0;
+        $scope.checkoutForm.paymentInfo.amount = $scope.checkoutForm.paymentInfo.initial;
         return;
       }
     }, true);
 
     // olha se o valor inicial foi alterado
-    $scope.$watch('checkoutForm.Payment.Initial', function(){
-
+    $scope.$watch('checkoutForm.paymentInfo.initial', () => {
       if ($scope.checkoutForm.checked) {
-        $scope.checkoutForm.Payment.Additional = $scope.checkoutForm.Payment.Initial * 0.10;
-        $scope.checkoutForm.Payment.Amount = $scope.checkoutForm.Payment.Initial + $scope.checkoutForm.Payment.Additional;
+        $scope.checkoutForm.paymentInfo.additional = $scope.checkoutForm.paymentInfo.initial * 0.10;
+        $scope.checkoutForm.paymentInfo.amount = $scope.checkoutForm.paymentInfo.initial + $scope.checkoutForm.paymentInfo.additional;
         return;
       } else {
-        $scope.checkoutForm.Payment.Additional = 0;
-        $scope.checkoutForm.Payment.Amount = $scope.checkoutForm.Payment.Initial;
+        $scope.checkoutForm.paymentInfo.additional = 0;
+        $scope.checkoutForm.paymentInfo.amount = $scope.checkoutForm.paymentInfo.initial;
         return;
       }
     },  true);
 
-    $scope.source = ['Redes Sociais (Facebook, Twitter)', 'Email',
-                     'Mídia', 'Busca no Google', 'Indicação de parentes / amigos'];
-  }
-
-  // transform value  into cents, Cielo's API only accepts cents
-  transformToCents(value) {
-    return value * 100;
-  }
-
-  // capitalize the first letter of the Credit Card brand
-  capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
   addTransaction(form, ev) {
-    form.Payment.Amount = this.transformToCents(form.Payment.Amount);
-    form.Payment.CreditCard.Brand = this.capitalizeFirstLetter(form.Payment.CreditCard.Brand);
-    form.Payment.Installments = 1;
-    form.Payment.Type = 'CreditCard';
-    form.MerchantOrderId = Date.now().toString();
-    this.name = form.Customer.Name;
-    this.amount = form.Payment.Amount;
-    console.log(form);
-    this.$http.post('/api/checkoutForm', form)
+    form.paymentInfo.type = 'Credicard';
+    form.paymentInfo.amount = CheckoutComponent.transformToCents(form.paymentInfo.amount);
+    form.paymentInfo.installments = 1;
+    console.log('form no checkout', form);
+    this.$http.post('/api/paymentTransaction', form)
         .then(res => {
           this.showDialog();
           this.$scope.checkoutForm.$setPristine();
@@ -125,15 +125,12 @@ export class CheckoutComponent {
 }
 
 function DialogController($scope, $mdDialog, $inject) {
-
   $scope.hide = function() {
     $mdDialog.hide();
   };
-
   $scope.cancel = function() {
     $mdDialog.cancel();
   };
-
   $scope.answer = function(answer) {
     $mdDialog.hide(answer);
   };

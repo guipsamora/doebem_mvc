@@ -11,7 +11,7 @@ router.get('/', controller.index);
 // Post para o banco de dados
 // --------------------------------//
 
-router.post('/', controller.handlePayment);
+router.post('/', controller.createTransaction);
 
 
 // --------------------------------//

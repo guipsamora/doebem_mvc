@@ -3,65 +3,60 @@ div#form(layout="column")
   br
   div(layout="column" flex="100")
     //- criar a funcao que vai pegar o form e jogar no server
-    form#checkoutForm(name="checkoutForm" layout="column" ng-submit="$ctrl.addTransaction(checkoutForm, $event)" ng-switch="type")
+    form#checkoutForm(name="checkoutForm" 
+      layout="column" ng-submit="$ctrl.addTransaction(checkoutForm, $event)" 
+      ng-switch="type"
+      )
       div#values.active.formStep.limitStep(layout="column" flex="30" display="block" ng-switch-when="1")
-          //- div(layout="row")
-          //-   div
-          //-     input(type="radio" name="doacao" id="doacao_unica" value="1" checked="checked")
-          //-     label(for="doacao_unica") Doação Única
-            //- div
-            //-   input(type="radio" name="doacao" id="doacao_mensal" value="2")
-            //-   label(for="doacao_mensal") Doação Mensal
-          div
-            input(type="text" ng-model= "checkoutForm.Payment.Initial" 
-                  placeholder="Valor doado" id="valor"  ui-money-mask required)
-            br
-            br
-            input(name="doacao_doebem" id="doacao_doebem" type="checkbox" value="" ng-model="checkoutForm.checked")
-            label(for="doacao_doebem").chkbox Adicione 10% para a doebem?
-            h4 Total: R$ {{checkoutForm.Payment.Initial + checkoutForm.Payment.Additional}}
-          //- input(type="text", value="ID DA MINHA ONG")
-          //- renderizar o slug para saber que é essa a ONG
-      //- div#info.hidden.formStep(layout="column" flex="30" display="none")
+        div
+          input(type="text" ng-model= "checkoutForm.paymentInfo.initial" 
+            placeholder="Valor doado" id="valor"  ui-money-mask required
+            )
+          br
+          br
+          input(name="doacao_doebem" 
+            d="doacao_doebem" type="checkbox" value="" ng-model="checkoutForm.checked"
+          )
+          label(for="doacao_doebem").chkbox Adicione 10% para a doebem?
+          h4 Total: R$ {{checkoutForm.paymentInfo.initial + checkoutForm.paymentInfo.additional}}
       div#info.formStep(layout="column" flex="30" display="none" ng-switch-when="2")
         md-input-container.md-block(flex-gt-sm).containerForm
-          input(placeholder = "Nome" ng-model="checkoutForm.Customer.Name" required)
+          input(placeholder = "Nome" ng-model="checkoutForm.donor.name" required)
         md-input-container.md-block.containerForm
-          input(placeholder = "Email" type="email" ng-model="checkoutForm.Customer.Email" required)
+          input(placeholder = "Email" type="email" ng-model="checkoutForm.donor.email" required)
         md-input-container.md-block.containerForm
-          input(placeholder = "CPF" ng-model="checkoutForm.Customer.CPF" ui-br-cpf-mask required) 
+          input(placeholder = "CPF" ng-model="checkoutForm.donor.cpf" ui-br-cpf-mask required) 
         md-input-container.md-block.containerForm
-          input(placeholder = "Cidade" ng-model="checkoutForm.Customer.Cidade" required)
+          input(placeholder = "Cidade" ng-model="checkoutForm.donor.cidade" required)
         md-input-container.md-block.containerForm#whereListened
-          md-select(ng-model="checkoutForm.Customer.Source" placeholder="Como você ouviu falar de nós?" required)
-            md-option(ng-value="opt" ng-repeat="opt in source") {{ opt }}  
-      //- div#creditCard.hidden.formStep.limitStep(layout="column" flex="100" display="none")
+          md-select(ng-model="checkoutForm.donor.source" placeholder="Como você ouviu falar de nós?" required)
+            md-option(ng-value="opt" ng-repeat="opt in $ctrl.source") {{ opt }}  
       div#creditCard.formStep.limitStep(layout="column" flex="100" display="none" ng-switch-when="3")
         md-input-container.md-block(flex-gt-sm).containerForm
-          input(placeholder="Número do Cartão" type="text" ng-model="checkoutForm.Payment.CreditCard.CardNumber" 
-                name="number" payments-validate="card" payments-format="card" 
-                payments-type-model="checkoutForm.Payment.CreditCard.Brand"  
-                payments-length="card" ng-class="checkoutForm.Payment.CreditCard.Brand" required)
-          md-icon(ng-class="checkoutForm.Payment.CreditCard.Brand")
-          div(ng-messages="contactForm.Name.$error" role="alert")
+          input(placeholder="Número do Cartão" 
+            type="text" ng-model="checkoutForm.paymentInfo.ccInfo.number" 
+            name="number" payments-validate="card" payments-format="card" 
+            payments-type-model="checkoutForm.paymentInfo.ccInfo.brand"  
+            payments-length="card" ng-class="checkoutForm.paymentInfo.ccInfo.brand" required
+            )
+          md-icon(ng-class="checkoutForm.paymentInfo.ccInfo.brand")
+          div(ng-messages="checkoutForm.paymentInfo.ccInfo.number.$error" role="alert")
             div(ng-message-exp="['required']")
               span Cartão inválido, favor informar um cartão válido
         md-input-container.md-block.containerForm
           input(placeholder="Validade do Cartão" type="text"
-                ng-model="checkoutForm.Payment.CreditCard.ExpirationDate" 
+                ng-model="checkoutForm.paymentInfo.ccInfo.ExpDate" 
                 payments-validate="expiry" payments-format="expiry" required)
-          div(ng-messages="contactForm.Name.$error" role="alert")
+          div(ng-messages="contactForm.paymentInfoccInfo.ExpDate.$error" role="alert")
             div(ng-message-exp="['required']")
               span O campo deve ser escrito da seguinte maneira MM / AA
         md-input-container.md-block.containerForm
-          input(placeholder="Código de Segurança" type="text" ng-model="checkoutForm.Payment.CreditCard.SecurityCode" 
+          input(placeholder="Código de Segurança" type="text" ng-model="checkoutForm.paymentInfo.ccInfo.securityCode" 
                 ng-pattern="/^[0-9]{3,4}$/" payments-validate="cvc" payments-format="cvc" required)
       div.controls
           button.checkoutFormStepChange.checkoutFormStepChangeNext.btn.btn-block.btn-step.btn-next(ng-show="showNext" ng-click="nextView()" type="button") Continuar
-          //- button.checkoutFormStepChange.hidden.btn.btn-block.btn-clear.btn-step.btn-prev(type="button") Voltar
           button.checkoutFormStepChange.btn.btn-block.btn-clear.btn-step.btn-prev(ng-show="showPrevious" ng-click="previousView()"  type="button") Voltar
       div(layout="column" layout-align="center center")#formSubmit
-          //- md-button.md-raized.md-primary.hidden#checkoutFormSubmit(type="submit") Enviar
           md-button.md-raized.md-primary.ng-hide#checkoutFormSubmit(ng-show="showSend" type="submit") Enviar
 
 script(type="text/ng-template" id="dialogDonationMade.tmpl.pug")
