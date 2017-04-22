@@ -210,33 +210,3 @@ const authRequestCielo = (res, body) => entity => {
       return Promise.reject(error);
     });
 };
-
-/*Payment:
-   { ServiceTaxAmount: 0,
-     Installments: 1,
-     Interest: 0,
-     Capture: false,
-     Authenticate: false,
-     Recurrent: false,
-     CreditCard:
-      { CardNumber: '544731******7010',
-        Holder: 'Guilherme Samora',
-        ExpirationDate: '12/2020',
-        SaveCard: false,
-        Brand: 'Master' },
-     Tid: '0422043417190',
-     ProofOfSale: '3417190',
-     AuthorizationCode: '987051',
-     SoftDescriptor: 'Doacao doebem',
-     Provider: 'Simulado',
-     PaymentId: 'f1f524d3-ca81-4159-91f8-27d841944183',
-     Type: 'CreditCard',
-     Amount: 1000,
-     ReceivedDate: '2017-04-22 16:34:16',
-     Currency: 'BRL',
-     Country: 'BRA',
-     ReturnCode: '4',
-     ReturnMessage: 'Operation Successful',
-     Status: 1,
-     Links: [ [Object], [Object], [Object] ] } }
-     */
