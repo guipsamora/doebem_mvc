@@ -3,17 +3,19 @@
   "version": "0.8.0",
   "main": "server/index.js",
   "dependencies": {
-    "angular": "~1.5.5",
-    "angular-animate": "~1.5.5",
-    "angular-aria": "~1.5.5",
-    "angular-cookies": "~1.5.5",
+    "angular": "~1.6.4",
+    "angular-animate": "~1.6.4",
+    "angular-aria": "~1.6.4",
+    "angular-cookies": "~1.6.4",
+    "angular-i18n": "^1.6.4",
     "angular-input-masks": "^2.5.0",
-    "angular-jk-carousel": "^0.1.6",
-    "angular-material": "^1.1.1",
+    "angular-jk-carousel": "^0.5.0",
+    "angular-material": "^1.1.4",
+    "angular-messages": "^1.6.4",
     "angular-payments": "^1.0.7",
-    "angular-resource": "~1.5.5",
-    "angular-route": "~1.5.5",
-    "angular-sanitize": "~1.5.5",
+    "angular-resource": "~1.6.4",
+    "angular-route": "~1.6.4",
+    "angular-sanitize": "~1.6.4",
     "angular-scroll": "^1.0.0",
     "angular-socket-io": "~0.7.0",
     "angular-touch": "^1.5.8",
@@ -46,7 +48,7 @@
     "method-override": "^2.3.5",
     "moment": "^2.17.1",
     "mongoose": "^4.1.2",
-    "morgan": "~1.7.0",
+    "morgan": "~1.8.1",
     "ng-file-upload": "^12.2.13",
     "node-sass": "^3.13.1",
     "offline-plugin": "^4.7.0",
@@ -71,7 +73,7 @@
     "winston": "^2.3.1"
   },
   "devDependencies": {
-    "angular-mocks": "~1.5.5",
+    "angular-mocks": "~1.6.4",
     "autoprefixer": "^6.0.0",
     "babel-core": "^6.6.5",
     "babel-eslint": "^6.0.4",
@@ -97,7 +99,7 @@
     "gulp-istanbul-enforcer": "^1.0.3",
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-mocha": "^2.1.3",
-    "gulp-node-inspector": "^0.1.0",
+    "gulp-node-inspector": "^0.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-protractor": "^3.0.0",
     "gulp-rev": "^7.0.0",
@@ -163,8 +165,8 @@
     "typings": "^0.8.1"
   },
   "engines": {
-    "node": "^6.10.2",
-    "npm": "^3.9.5"
+    "node": "^7.8",
+    "npm": "^4.10"
   },
   "scripts": {
     "test": "gulp test",
