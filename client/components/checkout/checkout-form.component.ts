@@ -1,5 +1,7 @@
 const angular = require('angular');
 const angularPayments = require('angular-payments');
+const ngMessages = require('angular-messages');
+const ngAnimate = require('angular-animate');
 
 export class CheckoutComponent {
   $mdDialog;
@@ -7,10 +9,34 @@ export class CheckoutComponent {
   $http;
   $scope;
   checkoutForm: {};
-  name;
-  amount;
-  originalAmount;
   source: Array<String>;
+  step: number;
+  showSend: boolean;
+  showNext: boolean;
+  showPrevious: boolean;
+  donationForm: {
+    checked: boolean,
+    initialValue: number,
+    additionalValue: number,
+    donor: {
+      name: string,
+      email: string,
+      cpf: string,
+      cidade: string,
+      source: string,
+    },
+    paymentInfo: {
+      type: string,
+      amount: number,
+      installments: number,
+      ccInfo: {
+        number: string,
+        brand: string,
+        expDate: string,
+        securityCode: string,
+      }
+    }
+  };
 
    // transform value  into cents, Cielo's API only accepts cents
   static transformToCents = (value: number) => {
@@ -18,9 +44,9 @@ export class CheckoutComponent {
   }
 
   // capitalize the first letter of the Credit Card brand
-  static capitalizeFirstLetter = (string) => {
-    string = ( string === 'mastercard' ) ? 'master' : string;
-    return string.charAt(0).toUpperCase() + string.slice(1);
+  static capitalizeFirstLetter = (str: string) => {
+    str = ( str === 'mastercard' ) ? 'master' : str;
+    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
   constructor($http, $scope, $animate, $mdDialog) {
@@ -32,83 +58,107 @@ export class CheckoutComponent {
       'Busca no Google',
       'Indicação de parentes / amigos'
     ];
+
+   this.donationForm = {
+    checked: false,
+    initialValue: 0,
+    additionalValue: 0,
+    donor: {
+      name: undefined,
+      email: undefined,
+      cpf: undefined,
+      cidade: undefined,
+      source: undefined,
+    },
+    paymentInfo: {
+      type: undefined,
+      amount: 0,
+      installments: 1,
+      ccInfo: {
+        number: undefined,
+        brand: undefined,
+        expDate: undefined,
+        securityCode: undefined,
+      }
+    }
+  };
     this.$http = $http;
     this.$scope = $scope;
     this.$mdDialog = $mdDialog;
 
-    $scope.type = 1;
-    $scope.showSend = false;
-    $scope.showNext = true;
-    $scope.showPrevious = false;
-
-    $scope.nextView = () => {
-      $scope.type++;
-      if ($scope.type > 1 && $scope.type < 4) {
-        $scope.showPrevious = true;
-      }
-      if ($scope.type === 4) {
-        $scope.type = 3;
-      };
-      if ($scope.type === 3) {
-        $scope.showSend = true;
-        $scope.showNext = false;
-      }
-    };
-
-    $scope.previousView = () => {
-      $scope.type--;
-      $scope.showSend = false;
-      if ($scope.type === 0) {
-        $scope.type = 1;
-      };
-      if ($scope.type > 0 && $scope.type < 3) {
-        $scope.showNext = true;
-      }
-      if ($scope.type === 1) {
-        $scope.showPrevious = false;
-      }
-    };
-    // olha se o botão de 10% é true ou false
-    $scope.$watch('checkoutForm.checked', () => {
-      if ($scope.checkoutForm.checked) {
-        $scope.checkoutForm.paymentInfo.additional = $scope.checkoutForm.paymentInfo.initial * 0.10;
-        $scope.checkoutForm.paymentInfo.amount = $scope.checkoutForm.paymentInfo.initial * 1.10;
-        return;
-      } else {
-        $scope.checkoutForm.paymentInfo.additional = 0;
-        $scope.checkoutForm.paymentInfo.amount = $scope.checkoutForm.paymentInfo.initial;
-        return;
-      }
-    }, true);
-
-    // olha se o valor inicial foi alterado
-    $scope.$watch('checkoutForm.paymentInfo.initial', () => {
-      if ($scope.checkoutForm.checked) {
-        $scope.checkoutForm.paymentInfo.additional = $scope.checkoutForm.paymentInfo.initial * 0.10;
-        $scope.checkoutForm.paymentInfo.amount = $scope.checkoutForm.paymentInfo.initial + $scope.checkoutForm.paymentInfo.additional;
-        return;
-      } else {
-        $scope.checkoutForm.paymentInfo.additional = 0;
-        $scope.checkoutForm.paymentInfo.amount = $scope.checkoutForm.paymentInfo.initial;
-        return;
-      }
-    },  true);
+    $scope.step = 1;
+    this.showSend = false;
+    this.showNext = true;
+    this.showPrevious = false;
 
   }
 
-  addTransaction(form, ev) {
-    form.paymentInfo.type = 'Credicard';
-    form.paymentInfo.amount = CheckoutComponent.transformToCents(form.paymentInfo.amount);
-    form.paymentInfo.installments = 1;
-    console.log('form no checkout', form);
-    this.$http.post('/api/paymentTransaction', form)
+  nextStep() {
+    console.log(this.donationForm.donor);
+    if(this.$scope.step === 1 && this.donationForm.paymentInfo.amount > 0) {
+       this.$scope.step++;
+    } else if (
+      this.$scope.step === 2
+      && this.donationForm.donor.name !== undefined
+      && this.donationForm.donor.email !== undefined
+      && this.donationForm.donor.cpf !== undefined
+      && this.donationForm.donor.cidade !== undefined
+      && this.donationForm.donor.source !== undefined
+    ) {
+      this.$scope.step++;
+    }
+    if (this.$scope.step > 1 && this.$scope.step < 4) {
+      this.showPrevious = true;
+    }
+    if (this.$scope.step === 3) {
+      this.showSend = true;
+      this.showNext = false;
+    }
+    if (this.$scope.step === 4) {
+      this.$scope.step--;;
+    };
+  };
+
+  previousStep() {
+    this.$scope.step--;
+    this.showSend = false;
+    if (this.$scope.step === 0) {
+      this.$scope.step = 1;
+    };
+    if (this.$scope.step > 0 &&this.$scope.step < 3) {
+      this.showNext = true;
+    }
+    if (this.$scope.step === 1) {
+      this.showPrevious = false;
+    }
+  };
+
+  changeInitialValue() {
+    if(this.donationForm.checked) {
+      if (this.donationForm.initialValue > 0) {
+        this.donationForm.paymentInfo.amount = Math.trunc(this.donationForm.initialValue * 110) / 100;
+      } else {
+         this.donationForm.paymentInfo.amount = 0;
+      }
+    } else {
+      this.donationForm.paymentInfo.amount = this.donationForm.initialValue;
+    }
+  }
+
+  addTransaction(ev) {
+    console.log('form no checkout', this.donationForm);
+    this.donationForm.paymentInfo.type = 'CreditCard';
+    this.donationForm.paymentInfo.amount = CheckoutComponent.transformToCents(this.donationForm.paymentInfo.amount);
+    this.donationForm.paymentInfo.installments = 1;
+    this.donationForm.paymentInfo.ccInfo.brand =  CheckoutComponent.capitalizeFirstLetter(this.donationForm.paymentInfo.ccInfo.brand);
+    this.$http.post('/api/paymentTransaction', this.donationForm)
         .then(res => {
           this.showDialog();
           this.$scope.checkoutForm.$setPristine();
           this.$scope.checkoutForm.$setUntouched();
           this.$scope.checkoutForm = {};
         })
-        .catch(err => console.log(err));
+        .catch(err => console.log('err at addTransaction', err));
   }
 
   showDialog() {
@@ -124,7 +174,7 @@ export class CheckoutComponent {
   }
 }
 
-function DialogController($scope, $mdDialog, $inject) {
+const DialogController = ($scope, $mdDialog, $inject) => {
   $scope.hide = function() {
     $mdDialog.hide();
   };
@@ -138,7 +188,13 @@ function DialogController($scope, $mdDialog, $inject) {
 
 DialogController.$inject = ['$scope', '$mdDialog'];
 
-export default angular.module('directives.checkoutForm', ['angularPayments', require('angular-input-masks'), 'ui.bootstrap'])
+export default angular.module('directives.checkoutForm', [
+  'angularPayments',
+  require('angular-input-masks'),
+  'ui.bootstrap',
+  ngMessages,
+  ngAnimate,
+])
   .component('checkoutForm', {
     template: require('./checkout-form.pug'),
     controller: CheckoutComponent

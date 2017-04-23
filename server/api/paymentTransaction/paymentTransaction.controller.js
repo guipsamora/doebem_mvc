@@ -105,13 +105,10 @@ export const destroy = (req, res) => Transaction.findById(req.params.id).exec()
   .catch(handleError(res));
 
 // Creates a new Transaction in the DB
-export const create = (req, res) => {
-  console.log('entao');
-  return createTransactionCielo(req.body, res)
-    .then(authRequestCielo(res, req.body))
-    .then(respondWithResult(res, 201))
-    .catch(handleError(res));
-};
+export const create = (req, res) => createTransactionCielo(req.body, res)
+  .then(authRequestCielo(res, req.body))
+  .then(respondWithResult(res, 201))
+  .catch(handleError(res));
 
 /**
  * area de controle do processamento do cartão CIELO
@@ -124,11 +121,6 @@ export const create = (req, res) => {
 const createTransactionCielo = (body, res) => {
   const transaction = {};
   transaction.donor = body.donor;
-  /*transaction.donor.name = body.Customer.Name;
-  transaction.donor.email = body.Customer.Email;
-  transaction.donor.cpf = body.Customer.CPF;
-  transaction.donor.source = body.Customer.Source;
-  transaction.donor.cidade = body.Customer.Cidade;*/
   transaction.paymentInfo = {};
   transaction.paymentInfo.type = body.paymentInfo.type;
   transaction.paymentInfo.amount = body.paymentInfo.amount;
@@ -139,25 +131,69 @@ const createTransactionCielo = (body, res) => {
 };
 
 const authRequestCielo = (res, body) => entity => {
-  const Customer = {};
-  const Payment = {};
-  //console.log('process.env.MerchantId', body.Payment);
-  Customer.Name = entity.donor.name;
-  Payment.Amount = entity.paymentInfo.amount;
-  Payment.Type = entity.paymentInfo.type;
-  Payment.Installments = entity.paymentInfo.installments;
-  //Payment.Credicard = {};
-  const CC = body.Payment.Credicard;
-  console.log('CC', CC);
-  Payment.Credicard = CC;
-  console.log('payment', Payment);
+  const order = {
+    MerchantOrderId: entity._id.toString(),
+    Customer: {
+      Name: entity.donor.name,
+    },
+    Payment: {
+      Type: entity.paymentInfo.type,
+      Amount: entity.paymentInfo.amount,
+      Installments: entity.paymentInfo.installments,
+      SoftDescriptor: 'Doacao doebem',
+      CreditCard: {
+        CardNumber: body.paymentInfo.ccInfo.number,
+        Holder: entity.donor.name,
+        ExpirationDate: body.paymentInfo.ccInfo.expDate,
+        SecurityCode: body.paymentInfo.ccInfo.securityCode,
+        Brand: body.paymentInfo.ccInfo.brand
+      }
+    }
+  };
+
+
+  const teste2 = {
+    MerchantOrderId: '58f985c628c61683ff675ab2',
+    Customer: {
+      Name: 'MARLI R GOLDENBERG'
+    },
+    Payment: {
+      Type: 'Credicard',
+      Amount: 10000000,
+      Installments: 1,
+      Credicard:
+      {
+        CardNumber: '5545630022015791',
+        ExpirationDate: '12/2020',
+        Brand: 'Master'
+      }
+    }
+  };
+
+  const teste = {
+    MerchantOrderId: '2014111703',
+    Customer: {
+      Name: 'Comprador crédito simples'
+    },
+    Payment: {
+      Type: 'CreditCard',
+      Amount: 15700,
+      Installments: 1,
+      SoftDescriptor: '123456789ABCD',
+      CreditCard: {
+        CardNumber: '1234123412341231',
+        Holder: 'Teste Holder',
+        ExpirationDate: '12/2030',
+        SecurityCode: '123',
+        Brand: 'Visa'
+      }
+    }
+  };
+
+  console.log('order: ', order, 'teste: ', teste);
   return requestify.request('https://apisandbox.cieloecommerce.cielo.com.br/1/sales/', {
     method: 'POST',
-    body: {
-      Customer,
-      Payment,
-      MerchantOrderId: entity._id,
-    },
+    body: order,
     headers: {
       'Content-Type': 'application/json',
       MerchantId: process.env.MerchantId,
@@ -166,7 +202,7 @@ const authRequestCielo = (res, body) => entity => {
     dataType: 'json'
   })
     .then(response => {
-      console.log('Requestify deu certo no authRequestCielo');
+      console.log('Requestify deu certo no authRequestCielo', response.getBody());
       return response.getBody();
     })
     .catch(error => {
@@ -174,4 +210,3 @@ const authRequestCielo = (res, body) => entity => {
       return Promise.reject(error);
     });
 };
-
