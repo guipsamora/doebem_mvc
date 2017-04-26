@@ -28,14 +28,21 @@
 
 div#checkoutComponent {
   position: fixed;
-  top: 30%;
+  top: 20%;
   right: 5%;
   padding: 10px 10px 10px 10px;
   border: 3px double black;
   background-color: white;
-  min-width: 250px;
-  max-width: 250px;
-   display: block;
+  min-width: 350px;
+  max-width: 350px;
+  display: block;
+  //special class for compress the inputbox
+  .containerForm {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    height: 52px;
+  }
   h2#doe {
     text-align: center;
   }
@@ -43,15 +50,11 @@ div#checkoutComponent {
     display: block;
     div#values {
       div#initial {
-        input#valor {
-          font-size: 2em;
+        div#initialValue{
+          input#valor {
+            font-size: 2em;
+          }
         }
-      }
-      md-input-container.containerForm {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        padding-bottom: 0px;
-        height: 52px;
       }
       md-icon {
         width: 49px;

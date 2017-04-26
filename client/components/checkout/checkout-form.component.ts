@@ -83,7 +83,7 @@ export class CheckoutComponent {
       }
     }
   };
-  
+
     this.$http = $http;
     this.$scope = $scope;
     this.$mdDialog = $mdDialog;
@@ -134,9 +134,8 @@ export class CheckoutComponent {
     }
   };
 
-  changeInitialValue(initialValue) {
+  changeInitialValue() {
     const donationForm  = this.donationForm;
-    this.donationForm.initialValue = initialValue;
     if (donationForm.checked) {
       if (donationForm.initialValue > 0) {
         donationForm.paymentInfo.amount = Math.trunc(donationForm.initialValue * 110) / 100;
@@ -145,7 +144,7 @@ export class CheckoutComponent {
       }
     } else {
       console.log( this.donationForm);
-      this.donationForm.paymentInfo.amount = initialValue;
+      this.donationForm.paymentInfo.amount = donationForm.initialValue;
     }
   }
 
