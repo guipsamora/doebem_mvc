@@ -1,39 +1,40 @@
-div#form(layout="column")
+div#checkoutComponent(layout="column")
   h2#doe(layout-align="center") Ajude aqui!
   br
   div(layout="column" flex="100")
     //- criar a funcao que vai pegar o form e jogar no server
     form#checkoutForm(
-      name="checkoutForm" 
-      layout="column" ng-submit="$ctrl.addTransaction($event)" 
+      name="$ctrl.donationForm" 
+      layout="column" 
+      ng-submit="$ctrl.addTransaction($event)" 
       ng-switch="step"
       )
-      div#values.formStep.active.formStep.limitStep(layout="column" flex="100" display="block" ng-switch-when="1")
+      div#values.formStep.active.formStep.limitStep(layout="column" flex="100" ng-switch-when="1")
         div#initial
-          md-input-container.md-block(
-            ng-class="{ 'md-input-invalid': $ctrl.donationForm.initialValue.$error }"
-          )
+          p Error: {{ $ctrl.donationForm.initialValue.$error }}
+          md-input-container
+            label Valor
             input#valor(
-              type="text" ng-model="$ctrl.donationForm.initialValue" 
-              placeholder="Valor" ui-money-mask=2
-              ng-change="$ctrl.changeInitialValue()"
+              name="initialValue"
+              ng-model="initialValue" 
+              type="text"
+              ui-money-mask=2
+              ng-change="$ctrl.changeInitialValue(initialValue)"
               ng-focus="$event.target.select()"
               min="0.01" required
-              )
-            div(
-              ng-messages="$ctrl.donationForm.initialValue.$error"
             )
-              div(ng-message="min") 
-                p Por favor insira um valor. 
+            div(ng-messages="$ctrl.donationForm.initialValue.$error")
+              div(ng-message="min") Por favor insira um valor. 
+              div(ng-message="required") Por favor insira um valor. 
           div#chkBox(layout="row" layout-align="start stretch")
             input(
               name="doacao_doebem" 
               id="doacao_doebem" 
-              type="checkbox" value="" ng-model="$ctrl.donationForm.checked" 
+              type="checkbox" value="" ng-model="donationForm.checked" 
               ng-change="$ctrl.changeInitialValue()"
             )
             label#labelChkbox(for="doacao_doebem") Adicione 10% para a doebem?
-          h2 Total: R$ {{$ctrl.donationForm.paymentInfo.amount}}
+          h2 Total: R$ {{ $ctrl.donationForm.amount}}
       div#info.formStep(layout="column" flex="30" display="none" ng-switch-when="2")
         md-input-container.md-block.containerForm(flex-gt-sm)
           input(placeholder = "Nome" ng-model="$ctrl.donationForm.donor.name" required)

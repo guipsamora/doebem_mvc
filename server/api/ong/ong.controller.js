@@ -78,16 +78,7 @@ export function show(req, res) {
     .then(respondWithResult(res))
     .catch(err => {
       handleError(err);
-    });  
-  // return Ong.findById(req.params.id).exec()
-  //   .then(handleEntityNotFound(res))
-  //   .then(respondWithResult(res))
-  //   .catch(err => {
-  //     Ong.findOne({slug: req.params.id}).exec()
-  //     .then(handleEntityNotFound(res))
-  //     .then(respondWithResult(res))
-  //     .catch(handleError(err));
-  //   });
+    });
 }
 
 // Creates a new Ong in the DB
