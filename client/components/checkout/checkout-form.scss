@@ -26,61 +26,68 @@
   background-position: 98% 50%;
 }
 
-#form {
+div#checkoutComponent {
+  position: fixed;
+  top: 20%;
+  right: 5%;
   padding: 10px 10px 10px 10px;
-  border-width: 4px;
-  border-style: double;
-  border-color: #234282;
+  border: 3px double black;
   background-color: white;
-  min-width: 250px;
-  h2#doe {
-    text-align: center;
-  }
-  div#initial {
-    input#valor {
-      font-size: 2em;
-    }
-  }
-  md-input-container.containerForm {
+  min-width: 350px;
+  max-width: 350px;
+  display: block;
+  //special class for compress the inputbox
+  .containerForm {
     margin-top: 0px;
     margin-bottom: 0px;
     padding-bottom: 0px;
     height: 52px;
   }
-  md-icon {
-    width: 49px;
+  h2#doe {
+    text-align: center;
   }
-  .ng-invalid {
-    border-color: #f00;
-  }
-  #chkBox {
-    #labelChkbox {
-      padding: 0 0 0 5px;
-      font-weight: bold;
-    }
-  }
-
-  #controls{
-    .checkoutFormStepChange {
-      background-color:#234282;
-      border-color: #234282;
-      color: white;
-      border-style: solid;
-      margin-bottom: 3px;
-      vertical-align: center;
-      &:hover {
-        border-color: black;
-        color: black;
+  form#checkoutForm {
+    display: block;
+    div#values {
+      div#initial {
+        div#initialValue{
+          input#valor {
+            font-size: 2em;
+          }
+        }
+      }
+      md-icon {
+        width: 49px;
+      }
+      #chkBox {
+        #labelChkbox {
+          padding: 0 0 0 5px;
+          font-weight: bold;
+        }
       }
     }
-  }
-  #formSubmit {
-    vertical-align: center;
-    #checkoutFormSubmit {
-      background-color: #234282 !important;
-       &:hover {
-        color: #234282 !important;
-        background-color: white !important;
+    #controls {
+      .checkoutFormStepChange {
+        background-color: #234282;
+        border-color: #234282;
+        color: white;
+        border-style: solid;
+        margin-bottom: 3px;
+        vertical-align: center;
+        &:hover {
+          border-color: black;
+          color: black;
+        }
+      }
+    }
+    #formSubmit {
+      vertical-align: center;
+      #checkoutFormSubmit {
+        background-color: #234282 !important;
+        &:hover {
+          color: #234282 !important;
+          background-color: white !important;
+        }
       }
     }
   }

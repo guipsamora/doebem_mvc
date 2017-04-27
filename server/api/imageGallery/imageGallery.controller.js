@@ -33,7 +33,7 @@ exports.signing = function(req, res) {
     .toDate(); //15 minutes
 
   var s3Policy = {
-    expiration: expiration,
+    expiration,
     conditions: [{
       bucket: 'doebem'
     },
@@ -64,7 +64,7 @@ exports.signing = function(req, res) {
       AWSAccessKeyId: process.env.AWS_ACCESS_KEY_ID,
       acl: readType,
       policy: base64Policy,
-      signature: signature,
+      signature,
       'Content-Type': request.type,
       success_action_status: 201
     }

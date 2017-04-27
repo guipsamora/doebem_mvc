@@ -37,8 +37,8 @@ export default function(socketio) {
 
   socketio.on('connection', function(socket) {
     socket.setMaxListeners(100);
-    socket.address = socket.handshake.address !== null ? `${socket.request.connection.remoteAddress}:${socket.request.connection.remotePort}`:
-    process.env.DOMAIN;
+    socket.address = socket.handshake.address !== null ? `${socket.request.connection.remoteAddress}:${socket.request.connection.remotePort}`
+    : process.env.DOMAIN;
 
     socket.connectedAt = new Date();
 

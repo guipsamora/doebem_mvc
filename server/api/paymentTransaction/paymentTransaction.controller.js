@@ -151,46 +151,6 @@ const authRequestCielo = (res, body) => entity => {
     }
   };
 
-
-  const teste2 = {
-    MerchantOrderId: '58f985c628c61683ff675ab2',
-    Customer: {
-      Name: 'MARLI R GOLDENBERG'
-    },
-    Payment: {
-      Type: 'Credicard',
-      Amount: 10000000,
-      Installments: 1,
-      Credicard:
-      {
-        CardNumber: '5545630022015791',
-        ExpirationDate: '12/2020',
-        Brand: 'Master'
-      }
-    }
-  };
-
-  const teste = {
-    MerchantOrderId: '2014111703',
-    Customer: {
-      Name: 'Comprador crédito simples'
-    },
-    Payment: {
-      Type: 'CreditCard',
-      Amount: 15700,
-      Installments: 1,
-      SoftDescriptor: '123456789ABCD',
-      CreditCard: {
-        CardNumber: '1234123412341231',
-        Holder: 'Teste Holder',
-        ExpirationDate: '12/2030',
-        SecurityCode: '123',
-        Brand: 'Visa'
-      }
-    }
-  };
-
-  console.log('order: ', order, 'teste: ', teste);
   return requestify.request('https://apisandbox.cieloecommerce.cielo.com.br/1/sales/', {
     method: 'POST',
     body: order,

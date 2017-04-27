@@ -22,24 +22,22 @@ export class PagOngs {
     this.pageTitle = '';
     this.pageImage = '';
     this.infoOng = '';
+  }
 
-}
-
- carregaLista() {
-   this.$http.get(`api/ong/${this.$routeParams.id}`)
+  carregaLista() {
+    this.$http.get(`api/ong/${this.$routeParams.id}`)
       .then(res => {
         this.infoOng = res.data;
-        console.log(this.infoOng);
       });
   }
 
   $onInit() {
-     this.carregaLista();
+    this.carregaLista();
   }
 
 }
 
 export default angular.module('doebemOrgApp.pagOngs', [ngRoute, contactForm, ngSanitize])
   .config(routing)
-  .component('pagOngs', {template: require('./pag-ongs.pug'), controller: PagOngs})
+  .component('pagOngs', { template: require('./pag-ongs.pug'), controller: PagOngs })
   .name;

@@ -9,7 +9,7 @@
     "angular-cookies": "~1.6.4",
     "angular-i18n": "^1.6.4",
     "angular-input-masks": "^2.5.0",
-    "angular-jk-carousel": "^0.5.0",
+    "angular-jk-carousel": "^0.1.9",
     "angular-material": "^1.1.4",
     "angular-messages": "^1.6.4",
     "angular-payments": "^1.0.7",

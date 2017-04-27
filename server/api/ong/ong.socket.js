@@ -15,7 +15,7 @@ export function register(socket) {
     var event = events[i];
     var listener = createListener(`ong:${event}`, socket);
 
-    ThingEvents.on(event, listener);
+    OngEvents.on(event, listener);
     socket.on('disconnect', removeListener(event, listener));
   }
 }

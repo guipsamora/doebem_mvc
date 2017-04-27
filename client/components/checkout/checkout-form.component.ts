@@ -2,6 +2,7 @@ const angular = require('angular');
 const angularPayments = require('angular-payments');
 const ngMessages = require('angular-messages');
 const ngAnimate = require('angular-animate');
+const ngMaterial = require('angular-material');
 
 export class CheckoutComponent {
   $mdDialog;
@@ -82,6 +83,7 @@ export class CheckoutComponent {
       }
     }
   };
+
     this.$http = $http;
     this.$scope = $scope;
     this.$mdDialog = $mdDialog;
@@ -90,12 +92,11 @@ export class CheckoutComponent {
     this.showSend = false;
     this.showNext = true;
     this.showPrevious = false;
-
   }
 
   nextStep() {
     console.log(this.donationForm.donor);
-    if(this.$scope.step === 1 && this.donationForm.paymentInfo.amount > 0) {
+    if (this.$scope.step === 1 && this.donationForm.paymentInfo.amount > 0) {
        this.$scope.step++;
     } else if (
       this.$scope.step === 2
@@ -115,7 +116,7 @@ export class CheckoutComponent {
       this.showNext = false;
     }
     if (this.$scope.step === 4) {
-      this.$scope.step--;;
+      this.$scope.step--;
     };
   };
 
@@ -125,7 +126,7 @@ export class CheckoutComponent {
     if (this.$scope.step === 0) {
       this.$scope.step = 1;
     };
-    if (this.$scope.step > 0 &&this.$scope.step < 3) {
+    if (this.$scope.step > 0 && this.$scope.step < 3) {
       this.showNext = true;
     }
     if (this.$scope.step === 1) {
@@ -134,14 +135,16 @@ export class CheckoutComponent {
   };
 
   changeInitialValue() {
-    if(this.donationForm.checked) {
-      if (this.donationForm.initialValue > 0) {
-        this.donationForm.paymentInfo.amount = Math.trunc(this.donationForm.initialValue * 110) / 100;
+    const donationForm  = this.donationForm;
+    if (donationForm.checked) {
+      if (donationForm.initialValue > 0) {
+        donationForm.paymentInfo.amount = Math.trunc(donationForm.initialValue * 110) / 100;
       } else {
-         this.donationForm.paymentInfo.amount = 0;
+         donationForm.paymentInfo.amount = 0;
       }
     } else {
-      this.donationForm.paymentInfo.amount = this.donationForm.initialValue;
+      console.log( this.donationForm);
+      this.donationForm.paymentInfo.amount = donationForm.initialValue;
     }
   }
 
@@ -184,7 +187,7 @@ const DialogController = ($scope, $mdDialog, $inject) => {
   $scope.answer = function(answer) {
     $mdDialog.hide(answer);
   };
-}
+};
 
 DialogController.$inject = ['$scope', '$mdDialog'];
 
@@ -194,6 +197,7 @@ export default angular.module('directives.checkoutForm', [
   'ui.bootstrap',
   ngMessages,
   ngAnimate,
+  ngMaterial
 ])
   .component('checkoutForm', {
     template: require('./checkout-form.pug'),
