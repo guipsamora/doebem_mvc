@@ -162,11 +162,11 @@ const authRequestCielo = (res, body) => entity => {
     dataType: 'json'
   })
     .then(response => {
-      console.log('Requestify deu certo no authRequestCielo', response.getBody());
+      console.log('Requestify deu certo no authRequestCielo: \n', response.getBody());
       return response.getBody();
     })
     .catch(error => {
-      console.log('Requestify no authRequestCielo apresentou o seguinte erro: ', error);
+      console.log('Requestify no authRequestCielo apresentou o seguinte erro: \n', error);
       return Promise.reject(error);
     });
 };

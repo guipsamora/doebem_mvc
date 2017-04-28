@@ -38,12 +38,12 @@ div#checkoutComponent(layout="column")
         md-input-container.md-block.containerForm(flex-gt-sm)
           input#donorName(
             name="name"
-            placeholder="name" 
+            placeholder="Nome" 
             ng-model="$ctrl.donationForm.donor.name" 
             required
           )
           div(ng-messages="donationForm.name.$error")
-            div(ng-message="required") Por favor insira um valor. 
+            div(ng-message="required") Por favor insira um nome válido.
         md-input-container.md-block.containerForm
           input#donorEmail(
             placeholder = "Email" 
@@ -53,7 +53,7 @@ div#checkoutComponent(layout="column")
             required
           )
           div(ng-messages="donationForm.email.$error")
-            div(ng-message="required") Por favor insira um valor. 
+            div(ng-message="required") Por favor insira um email válido. 
         md-input-container.md-block.containerForm
           input(
             name="cpf"
@@ -63,7 +63,7 @@ div#checkoutComponent(layout="column")
             required
           ) 
           div(ng-messages="donationForm.cpf.$error")
-            div(ng-message-exp="['required', 'cpf']") Por favor insira um cpf válido. 
+            div(ng-message-exp="['required', 'cpf']") Por favor insira um CPF válido. 
         md-input-container.md-block.containerForm
           input(
             placeholder = "Cidade" 
@@ -82,7 +82,7 @@ div#checkoutComponent(layout="column")
           )
             md-option(ng-value="opt" ng-repeat="opt in $ctrl.source") {{ opt }}
           div(ng-messages="donationForm.source.$error")
-            div(ng-message="required") Por favor selecione uma origem. 
+            div(ng-message="required") Por favor selecione uma opção.
       div#creditCard.formStep.limitStep(layout="column" flex="100" display="none" ng-switch-when="3")
         md-input-container.md-block.containerForm(flex-gt-sm)
           input(
@@ -147,7 +147,7 @@ script(type="text/ng-template" id="dialogDonationMade.tmpl.pug")
               ng-md-icon.name(icon="close" style="fill: white")
       md-dialog-content
         div.md-dialog-content
-          h2 {{$ctrl.name}}, muito obrigado pela sua doação! :)
+          h2 {{$ctrl.donationForm.donor.name}}, muito obrigado pela sua doação! :)
       md-dialog-actions(layout="row")
         span(flex)
         md-button(ng-click="cancel()") Ok
