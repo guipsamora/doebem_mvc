@@ -38,15 +38,15 @@ exports.signing = function(req, res) {
       bucket: 'doebem'
     },
       ['starts-with', '$key', path],
-      {
-        acl: readType
-      },
-      {
-        success_action_status: '201'
-      },
+    {
+      acl: readType
+    },
+    {
+      success_action_status: '201'
+    },
       ['starts-with', '$Content-Type', request.type],
       ['content-length-range', 2048, 10485760], //min and max
-      ]
+    ]
   };
 
   var stringPolicy = JSON.stringify(s3Policy);

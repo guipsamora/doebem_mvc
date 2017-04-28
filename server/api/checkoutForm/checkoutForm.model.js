@@ -2,8 +2,6 @@
 
 import mongoose from 'mongoose';
 
-
-
 const linksSchema = new mongoose.Schema({
   Method: String,
   Rel: String,
@@ -74,6 +72,5 @@ const transactionSchema = new mongoose.Schema({
   donor: donorSchema,
   paymentInfo: paymentInfoSchema,
 });
-
 
 export default mongoose.model('Transaction', transactionSchema);
