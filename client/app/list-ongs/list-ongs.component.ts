@@ -41,7 +41,7 @@ export class ListOngsController {
 
   }
 
-   carregaLista() {
+  carregaLista() {
     this.$http.get(`api/ong/`)
         .then(res => {
           this.listOng = res.data;
@@ -51,11 +51,11 @@ export class ListOngsController {
                 this.listOngToDisplay = this.listOng;
           }
         });
-   }
+  }
 
   $onInit() {
-     this.setPageFilter();
-     this.carregaLista();
+    this.setPageFilter();
+    this.carregaLista();
   }
 
   setPageFilter() {

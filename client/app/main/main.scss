@@ -61,17 +61,17 @@ div#main {
         padding-top: 60px;
         
         md-list-item {
-          div#escolha {
-            width: 250px;
-            span {
-              i#icon {
-                color: white;
-              }
+          width: 370px !important;
+          p {
+            width: 370.61px !important;
+          }
+          span {
+            i#icon {
+              color: white;
             }
           }
         }
       }
-
     }
     
     div#causas {
@@ -96,6 +96,20 @@ div#main {
         height: 435.5px !important;
       }
 
+    }
+
+    div#ongs {
+      md-card {
+        width: 350px;
+      }
+
+      img.md-card-image {
+        margin: 0 0 0 80px;
+      }
+
+      md-card-content {
+        padding: 0 16px 16px 16px;
+      }      
     }
 
     div#nossoImpacto {
