@@ -228,6 +228,7 @@ gulp.task('webpack:dist', () => {
   return gulp.src(webpackDistConfig.entry.app)
     .pipe(webpack(webpackDistConfig))
     .on('error', err => {
+      console.log('err no webpack Dist', err);
       this.emit('end'); // Recover from errors
     })
     .pipe(gulp.dest(`${paths.dist}/client`));
