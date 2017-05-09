@@ -7,7 +7,7 @@ const ngSanitize = require('angular-sanitize');
 const ngRoute = require('angular-route');
 const uiBootstrap = require('angular-ui-bootstrap');
 
-
+require('offline-plugin/runtime').install();
 // const ngMessages = require('angular-messages');
 // import ngValidationMatch from 'angular-validation-match';
 
