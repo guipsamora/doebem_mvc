@@ -67,7 +67,7 @@ export class MainController {
   this.$http.get(`api/ong/`)
       .then(res => {
         this.listOng = res.data;
-        console.log(this.listOng);
+        // console.log(this.listOng);
         // this.listOngFilterToDisplay();
         // if (this.$routeParams.filterCausa === undefined &&
         //     this.listOngToDisplay.length === 0) {
