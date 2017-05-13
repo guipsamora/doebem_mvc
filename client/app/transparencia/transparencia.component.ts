@@ -11,6 +11,7 @@ export class TransparenciaController {
   stepCriterios = [ ];
   financials = [ ];
   plans = [ ];
+  learnings = [ ];
 
 
   /*@ngInject*/
@@ -56,6 +57,23 @@ export class TransparenciaController {
         date: '2017',
         goals_name: 'Metas 2017',
         goals_link: 'https://drive.google.com/file/d/0B92Dg4kwqibxSVd6YTY2T1FBWnc/view?usp=sharing',
+        metrics_name: '',
+        metrics_link: '',
+      }
+      // {
+      //   date: '2015',
+      //   goals_name: '2015',
+      //   goals_link: '',
+      //   metrics_name: '',
+      //   metrics_link: '',
+      // }
+    ];
+
+    this.learnings = [
+      {
+        date: '2017',
+        name: '1º Trimestre - 2017',
+        link: 'https://docs.google.com/document/d/14TARkyPrQ8LeXoWGLcWTIrf9QkQ-3H6kQqVHCFRBoC0/edit?usp=sharing',
         metrics_name: '',
         metrics_link: '',
       }

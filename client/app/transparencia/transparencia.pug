@@ -30,10 +30,16 @@ div.animated.fadeIn#transparencia
           a(href="{{ plan.goals_link }}" target="_blank") {{ plan.goals_name }}
         //- td 
         //-   a(href="{{ plan.metrics_link }}" target="_blank") {{plan.metrics_name}}
-    //- h2 Erros e Aprendizados
-    //- br
-    //- a(href="")
-    //-   h4 Clique aqui para ver nossos erros e ações de correção.
+    h2 Erros e Aprendizados
+    br
+    table
+      tr
+        th Ano
+        th Erros e Aprendizados
+      tr(ng-repeat="learning in $ctrl.learnings")
+        td {{ learning.date }}
+        td 
+          a(href="{{ learning.link }}" target="_blank") {{ learning.name }}
     h2 Documentos
     br
     div(layout-gt-sm ="row" layout = "row")
