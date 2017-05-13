@@ -59,8 +59,6 @@ export class MainController {
         icon: 'fa-envelope-o'
       }
       ];
-   
-
   }
 
   carregaLista() {
