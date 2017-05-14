@@ -103,7 +103,11 @@ div#main {
       // md-list {
       //   display: block;
       // }
-
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      display: block;
+      
       @media (min-width: 960px) {
         md-card {
           width: 350px;
