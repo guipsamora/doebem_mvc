@@ -1,7 +1,7 @@
 div#menu {
   font-family: "Open Sans Condensed", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-    border: 0px;
+  border: 0px;
   background-color: black;
   height: 100px;
   font-size: 18px;
@@ -21,6 +21,11 @@ div#menu {
     // display: inline-block;
     // padding: 0 0 0 0;
     // margin-right: 20px;
+  }
+
+  div#menuEntries.container {
+    // width: 50px;
+    // float: right;
   }
 }
 
@@ -48,6 +53,20 @@ button.navbar-toggle {
         }
     }
 
+    div#menu {
+        height: 45px;
+    }
+
+    div.navbar-header {
+        float: left;
+        padding-left: 0px !important;
+    }
+
+    div#nav.container {
+        float: left;
+        width: 150px !important;
+    }
+
     .navbar-default .navbar-toggle .icon-bar {
         background-color: white;
         width: 30px;
@@ -62,13 +81,14 @@ button.navbar-toggle {
 
     button.navbar-toggle {
         float: right;        
-        margin-top: 3px;
+        margin-top: 12px;
+        margin-right: 15px;
         border: none;
     }
 
-    button.navbar-default .navbar-toggle .navbar-toggle:hover .navbar-toggle:focus {
-        background-color: none !important;
-        border-color: none !important;
+    .navbar-default .navbar-toggle {
+        border-color: transparent;
+        background-color: transparent !important;
     }
 
     .navbar-header {
