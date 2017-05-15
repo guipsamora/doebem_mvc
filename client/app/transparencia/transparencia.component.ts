@@ -73,7 +73,7 @@ export class TransparenciaController {
       {
         date: '2017',
         name: '1º Trimestre - 2017',
-        link: 'https://docs.google.com/document/d/14TARkyPrQ8LeXoWGLcWTIrf9QkQ-3H6kQqVHCFRBoC0/edit?usp=sharing',
+        link: 'https://drive.google.com/file/d/0B3sdXeGKoeXlUHFJQXhOVFg4bkE/view?usp=sharing',
         metrics_name: '',
         metrics_link: '',
       }
