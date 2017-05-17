@@ -140,6 +140,11 @@ div#main {
 
     div#nossoImpacto {
 
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      display: block;
+
       background-color: white;
 
       h3 {
@@ -158,6 +163,12 @@ div#main {
         // display: block;
       }
 
+      @media (min-width: 960px) {
+        div#numeros {
+          width: 600px;
+        }
+      }
+
       div div#doadores {
         border-right-color:   lightgray;
         // border-right-color:   black;
@@ -165,7 +176,7 @@ div#main {
         // border-right-style: solid;
 
         // width: 400px;
-        width: 500px;
+        // width: 400px;
         
         text-align: center;
         margin: 0 auto;
@@ -175,7 +186,7 @@ div#main {
 
       div div#reaisDoados {
         // width: 400px;
-        width: 500px;
+        // width: 400px;
         margin-left: 10px;
         text-align: center;
         margin: 0 auto;
