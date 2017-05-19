@@ -42,6 +42,8 @@ button.navbar-toggle {
     border: none;
 }
 
+
+
 @media screen and (max-width: 768px) {
     div#menuEntries {
         padding: 0 0 0 0;
@@ -108,7 +110,7 @@ button.navbar-toggle {
         border-top: none;
         z-index: 20;
         height: 270px;
-        width: 320px;
+        width: 100%;
         background-color: black;
         // margin-right: -30px !important;
         margin: 0 0 0 0 !important;
