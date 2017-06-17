@@ -4,7 +4,7 @@ div#menu {
   border: 0px;
   background-color: white;
   height: 60px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: black;
   margin-bottom: 0px;
@@ -23,11 +23,6 @@ div#menu {
     // padding: 0 0 0 0;
     // margin-right: 20px;
   }
-
-  div#menuEntries.container {
-    // width: 50px;
-    // float: right;
-  }
 }
 
 .md-primary#doar_button {
@@ -36,9 +31,8 @@ div#menu {
     border-style: solid;
     border-width: 2px;
     border-radius: 4px;
-    font-size:18px !important;
+    font-size:20px !important;
 }
-
 
 .md-primary#doar_button:hover{
     background-color: white !important;
@@ -90,7 +84,7 @@ div#navbar-main.navbar-collapse.collapse {
 }
 
 .dropdown {
-    text-align: center !important;
+    text-align: right !important;
 }
 
 .navbar .navbar-nav {
@@ -184,5 +178,9 @@ div#navbar-main.navbar-collapse.collapse {
         // margin-right: -30px !important;
         margin: 0 0 0 0 !important;
         padding: 0 0 0 0;
+    }
+
+    .dropdown {
+        text-align: center !important;
     }
 }
