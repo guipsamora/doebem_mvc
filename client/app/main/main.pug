@@ -1,13 +1,5 @@
-div.animated.fadeIn#main
-  div#carousel(flex="100")
-    jk-carousel(
-          flex="100"
-          data="$ctrl.carouselImages"
-          item-template-url="'img.tmpl.pug'"
-          max-width="2140" 
-          max-height="1000"
-          auto-slide="true"
-          auto-slide-time="4000")             
+div#main.animated.fadeIn
+  div#pageHeader(flex="100"  layout="column" layout-align="center center")
   div#mainPage(layout="column" flex="100")
     div#comoFunciona(flex = "100" layout="column" layout-align="center center")
       h2.sectionHeading Como Funciona
