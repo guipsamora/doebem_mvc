@@ -51,8 +51,68 @@ button.navbar-toggle {
     border: none;
 }
 
+div#menu.mainPageMenu {
+    // background-color: black;
+    background-color: white;
+     div.container div#navbar-main {
+          ul li a {
+            //   color: white;
+              color: black;
 
+          }
+     }
+}
 
+.navbar-header {
+    float: none;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+img.navbar-brand {
+    padding: 0 0 0 0;
+    width: 145px;
+    height: 35px;
+    text-align: left;
+    float: left;
+    margin-top: 5px;
+}
+
+.navbar-brand {
+    float: none;
+}
+
+div#navbar-main.navbar-collapse.collapse {
+    width: 100%;
+    max-height: none !important;
+    text-align: right !important;
+}
+
+.dropdown {
+    text-align: center !important;
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.navbar-default .navbar-nav>li>a {
+    // color:white;
+    color:black;
+}
+
+.menuAnchor:hover {
+    cursor:pointer;
+}
+
+// style for Tablets and Phones
 @media screen and (max-width: 768px) {
     div#menuEntries {
         padding: 0 0 0 0;
@@ -125,63 +185,4 @@ button.navbar-toggle {
         margin: 0 0 0 0 !important;
         padding: 0 0 0 0;
     }
-}
-
-div#menu.mainPageMenu {
-    // background-color: black;
-    background-color: white;
-     div.container div#navbar-main {
-          ul li a {
-            //   color: white;
-              color: black;
-
-          }
-     }
-}
-
-.navbar-header {
-    float: none;
-    padding: 5px;
-    text-align: center;
-    width: 100%;
-}
-
-img.navbar-brand {
-    padding: 0 0 0 0;
-    width: 145px;
-    height: 35px;
-    text-align: left;
-    float: left;
-}
-
-.navbar-brand {
-    float: none;
-}
-
-div#navbar-main.navbar-collapse.collapse {
-    width: 100%;
-    max-height: none !important;
-}
-
-.dropdown {
-    text-align: center !important;
-}
-
-.navbar .navbar-nav {
-  display: inline-block;
-  float: none;
-  vertical-align: top;
-}
-
-.navbar .navbar-collapse {
-  text-align: center;
-}
-
-.navbar-default .navbar-nav>li>a {
-    // color:white;
-    color:black;
-}
-
-.menuAnchor:hover {
-    cursor:pointer;
 }
