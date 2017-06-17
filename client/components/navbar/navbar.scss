@@ -2,12 +2,13 @@ div#menu {
   font-family: "Open Sans Condensed", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   border: 0px;
-  background-color: black;
-  height: 100px;
+  background-color: white;
+  height: 60px;
   font-size: 18px;
   font-weight: 600;
-  color: white;
+  color: black;
   margin-bottom: 0px;
+  padding-top: 5px;
   div.container div#navbar-main {
       background-color: transparent;
       ul li a {
@@ -29,10 +30,18 @@ div#menu {
   }
 }
 
-.md-primary {
+.md-primary#doar_button {
     background-color: white;
     border: black;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 4px;
     font-size:18px !important;
+}
+
+
+.md-primary#doar_button:hover{
+    background-color: white !important;
 }
 
 button.navbar-toggle {
@@ -70,7 +79,7 @@ button.navbar-toggle {
     }
 
     .navbar-default .navbar-toggle .icon-bar {
-        background-color: white;
+        background-color: black;
         width: 30px;
         height: 3px;
 
@@ -111,7 +120,7 @@ button.navbar-toggle {
         z-index: 20;
         height: 270px;
         width: 100%;
-        background-color: black;
+        background-color: white;
         // margin-right: -30px !important;
         margin: 0 0 0 0 !important;
         padding: 0 0 0 0;
@@ -119,10 +128,13 @@ button.navbar-toggle {
 }
 
 div#menu.mainPageMenu {
-    background-color: black;
+    // background-color: black;
+    background-color: white;
      div.container div#navbar-main {
           ul li a {
-              color: white;
+            //   color: white;
+              color: black;
+
           }
      }
 }
@@ -138,7 +150,8 @@ img.navbar-brand {
     padding: 0 0 0 0;
     width: 145px;
     height: 35px;
-    text-align: center;
+    text-align: left;
+    float: left;
 }
 
 .navbar-brand {
@@ -165,7 +178,8 @@ div#navbar-main.navbar-collapse.collapse {
 }
 
 .navbar-default .navbar-nav>li>a {
-    color:white;
+    // color:white;
+    color:black;
 }
 
 .menuAnchor:hover {
