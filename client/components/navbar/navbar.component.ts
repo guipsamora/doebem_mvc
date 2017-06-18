@@ -50,10 +50,6 @@ export class NavbarComponent {
     this.$document = $document;
   }
 
-  showSize(){
-    console.log(window.innerWidth);
-  }
-
   isActive(route) {
     return route === this.$location.path();
   }
