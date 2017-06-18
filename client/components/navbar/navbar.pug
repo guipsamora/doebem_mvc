@@ -9,8 +9,8 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
           span.icon-bar
           span.icon-bar
           span.icon-bar    
-    //- div.navbar-collapse.collapsed.navbar-center.dropdown(uib-collapse='$ctrl.isCollapsed' ng-click='$ctrl.isCollapsed = !$ctrl.isCollapsed' layout-align="right right" data-toggle="collapse" data-target=".collapse")
-    div.navbar-collapse.collapsed.dropdown(uib-collapse='$ctrl.isCollapsed' ng-click='$ctrl.isCollapsed = !$ctrl.isCollapsed' layout-align="right right" data-toggle="collapse" data-target=".collapse")
+    //- div.navbar-collapse.collapsed.dropdown(uib-collapse='$ctrl.isCollapsed' ng-click='$ctrl.isCollapsed = !$ctrl.isCollapsed' layout-align="right right" data-toggle="collapse" data-target=".collapse.in")
+    div.navbar-collapse.collapsed.dropdown(uib-collapse='$ctrl.isCollapsed' layout-align="right right" data-toggle="collapse" data-target=".collapse.in")
       ul.nav.navbar-nav
         li.menuAnchor(ng-repeat='item in $ctrl.menu')
           a#Itens(ng-href='{{item.link}}') {{item.title}}
@@ -37,56 +37,3 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
 
         li(ng-show='$ctrl.isLoggedIn()')
           a(href='/logout') Logout
-
-//- div#navBar(flex="100", layout-align="center center" ng-class="$ctrl.myCssVar")
-//-   .container
-//-     md-toolbar(flex="100", layout-align="center center")
-//-       div.md-toolbar-tools(flex="100", layout-align="center center")
-//-         div#menuLogo(layout-align="start center", flex="15",layout="row")
-//-           a(ng-href="/" ng-click="$ctrl.animate()") 
-//-             md-icon#logo.md-default-theme(md-svg-icon="/assets/images/personalLogo.svg")
-//-         div#menuButtons(hide-xs hide-sm layout="row" layout-align="center center", flex="65")
-//-           md-button(ng-href="/about" ng-click="$ctrl.animate()") about
-//-             div.selected(ng-show="$ctrl.isActive('/about')")
-//-           md-button(ng-href="/portfolio" ng-click="$ctrl.animate()") portfolio
-//-             div.selected(ng-show="$ctrl.isActive('/portfolio')")
-//-           md-button(ng-href="/blog" ng-click="$ctrl.animate()") blog
-//-             div.selected(ng-show="$ctrl.isActive('/blog')")
-//-           md-button(ng-href="/contact" ng-click="$ctrl.animate()") contact
-//-             div.selected(ng-show="$ctrl.isActive('/contact')")
-//-           md-menu#menuAdmin(ng-show='$ctrl.isLoggedIn()', layout="row", md-offset="0 52")
-//-             md-button(ng-click="$mdOpenMenu()", aria-label="manut-menu") admin
-//-             md-menu-content
-//-               md-menu-item
-//-                 md-button(ng-href='/logout') Logout
-//-               md-menu-item
-//-                 md-button(ng-href='/gallery') Gallery
-//-               md-menu-item
-//-                 md-button(ng-href='/editor') Editor
-//-               md-menu-item
-//-                 md-button(ng-href='/editorProject') Projects           
-//-         div#socialLinks(hide-xs  layout="row" layout-align="center center",  layout-align-gt-sm="end center", flex-gt-sm="20", flex="75")
-//-           md-button.md-icon-button(ng-href="https://br.linkedin.com/in/jrogatis",  target="_blank")
-//-             md-tooltip Linkedin
-//-             img(src="/assets/images/linkedin.svg" )
-//-           md-button.md-icon-button(ng-href="http://www.facebook.com/jrogatis",  target="_blank")
-//-             md-tooltip Facebook
-//-             img(src="/assets/images/facebook.svg" )
-//-           md-button.md-icon-button(ng-href="http://codepen.io/jrogatis/",  target="_blank")
-//-             md-tooltip CodePen
-//-             img(src="/assets/images/codepenio.svg" )
-//-           md-button.md-icon-button(ng-href="https://github.com/jrogatis/",  target="_blank")
-//-             md-tooltip git
-//-             img(src="/assets/images/git.svg" )
-//-         md-menu#breadMenu(hide-gt-sm, layout="row", flex, layout-align="end center")
-//-           md-button#menuAdmin.md-icon-button.md.md-primary(ng-click="$mdOpenMenu()", aria-label="Menu")
-//-             i.fa.fa-bars
-//-           md-menu-content
-//-             md-menu-item
-//-               md-button(ng-href="/about") about
-//-             md-menu-item
-//-               md-button(ng-href="/portfolio") portfolio
-//-             md-menu-item
-//-               md-button(ng-href="/blog") blog
-//-             md-menu-item
-//-               md-button(ng-href="/contact") contact

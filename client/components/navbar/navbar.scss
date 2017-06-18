@@ -4,11 +4,12 @@ div#menu {
   border: 0px;
   background-color: white;
   height: 60px;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 500;
   color: black;
   margin-bottom: 0px;
   padding-top: 5px;
+  
   div.container div#navbar-main {
       background-color: transparent;
       ul li a {
@@ -19,9 +20,6 @@ div#menu {
   div#menuEntries {
     text-align: center;
     margin: 0px auto;
-    // display: inline-block;
-    // padding: 0 0 0 0;
-    // margin-right: 20px;
   }
 }
 
@@ -31,7 +29,8 @@ div#menu {
     border-style: solid;
     border-width: 2px;
     border-radius: 4px;
-    font-size:20px !important;
+    font-size:18px !important;
+    font-weight: 500;
 }
 
 .md-primary#doar_button:hover{
@@ -46,13 +45,10 @@ button.navbar-toggle {
 }
 
 div#menu.mainPageMenu {
-    // background-color: black;
     background-color: white;
      div.container div#navbar-main {
           ul li a {
-            //   color: white;
               color: black;
-
           }
      }
 }
@@ -98,7 +94,6 @@ div#navbar-main.navbar-collapse.collapse {
 }
 
 .navbar-default .navbar-nav>li>a {
-    // color:white;
     color:black;
 }
 
@@ -136,7 +131,6 @@ div#navbar-main.navbar-collapse.collapse {
         background-color: black;
         width: 30px;
         height: 3px;
-
     }
 
     a#Itens {
@@ -175,7 +169,6 @@ div#navbar-main.navbar-collapse.collapse {
         height: 270px;
         width: 100%;
         background-color: white;
-        // margin-right: -30px !important;
         margin: 0 0 0 0 !important;
         padding: 0 0 0 0;
     }
