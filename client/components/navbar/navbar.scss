@@ -62,8 +62,8 @@ div#menu.mainPageMenu {
 
 img.navbar-brand {
     padding: 0 0 0 0;
-    width: 145px;
-    height: 35px;
+    width: 170px;
+    height: 40px;
     text-align: left;
     float: left;
     margin-top: 5px;
@@ -99,6 +99,13 @@ div#navbar-main.navbar-collapse.collapse {
 
 .menuAnchor:hover {
     cursor:pointer;
+}
+
+@media (min-width: 768px) {
+    .navbar-default .navbar-collapse {
+        margin-left: 145px;
+        transition: none !important;
+    }
 }
 
 // style for Tablets and Phones
