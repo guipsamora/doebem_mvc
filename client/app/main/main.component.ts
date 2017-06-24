@@ -44,18 +44,18 @@ export class MainController {
       //   icon: 'fa-heart-o'
       // },
       {
-        title: 'Selecione',
-        desc: 'Uma organização eficiente.',
-        icon: 'fa-hand-pointer-o'
+        title: 'CONFIANÇA',
+        desc: 'As organizações selecionadas para você pela doebem são rigorosamente analisadas e recomendadas com base em impacto, gestão e transparência.',
+        icon: 'fa-search'
       },
       {
-        title: 'Doe',
-        desc: 'O valor que quiser.',
-        icon: 'fa-money'
+        title: 'PRATICIDADE',
+        desc: 'Você não precisa gastar horas pensando como, quanto ou quem ajudar. A doebem te ajuda com isso. Basta clicar e começar a fazer a diferença no Brasil!',
+        icon: 'fa-check-square-o'
       },
       {
-        title: 'Acompanhe',
-        desc: 'O impacto da sua doação.',
+        title: 'ACOMPANHAMENTO',
+        desc: 'Transparência é muito importante para nós. Você poderá acompanhar o seu impacto positivo no Brasil e receber novidades sobre a organização que suporta.',
         icon: 'fa-envelope-o'
       }
       ];
