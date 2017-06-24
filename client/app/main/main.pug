@@ -14,21 +14,9 @@ div#main.animated.fadeIn
                 i#icon.fa.fa-stack-1x(ng-class="step.icon")
               h2 {{step.title}}
               p {{step.desc}}
-    //- div#causas(flex = "100" layout="column" layout-align="center center")
-    //-   h2.sectionHeading Causas
-    //-   h3 Selecione uma causa abaixo para conhecer as organizações recomendadas.
-    //-   md-list(layout="column" layout-gt-sm="row")
-    //-     md-list-item(ng-repeat="causa in $ctrl.causas" layout="column" layout-align="center center")
-    //-       a(ng-href="{{$location.absUrl() + causa.link}}")
-    //-         md-card
-    //-           img.md-card-image(ng-src="{{causa.image}}" )
-    //-           md-card-title
-    //-             md-card-title-text(layout-align="center center")
-    //-               h1 {{causa.title}}
-    //-               h4.listItem {{causa.subtitle}}
     div#ongs(flex = "100" layout="column" layout-align="center center")
       h2.sectionHeading Organizações
-      h3 Selecione uma das organizações recomendadas.
+      h3 Escolha uma organização recomendada para fazer uma doação e mudar o Brasil!
       md-list(flex
           md-cols-gt-xs="2"
           md-cols-gt-md="3"
@@ -40,12 +28,10 @@ div#main.animated.fadeIn
         md-list-item(ng-repeat="ong in $ctrl.listOng" layout="column" layout-align="center center")
           a(ng-href="{{$location.absUrl() + '/pagOngs/' + ong.slug}}")
             md-card
-              md-card-title-text(layout-align="center center" layout="column")
-                h1 {{ong.nomeFantasia}}
               img.md-card-image(ng-src="{{ong.logo}}" layout-align="center center"
-                                style="width: 200px; height:200px")
-              md-card-content(layout-align="center center" layout="column")
-                p {{ong.desc}}
+                                style="width: 300px; height:300px")
+              //- md-card-content(layout-align="center center" layout="column")
+              //-   p {{ong.desc}}
     div#nossoImpacto(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading Nossos Resultados
       div#numeros(flex="100" layout="row" layout-align="center center")

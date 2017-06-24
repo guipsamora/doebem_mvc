@@ -83,23 +83,24 @@ div#main {
 
     div#ongs {
 
-      // md-list {
-      //   display: block;
-      // }
       text-align: center;
       height: 100%;
       width: 100%;
       display: block;
-      
+
+      md-card-content {
+        padding: 0 16px 16px 16px;
+      }
+
       @media (min-width: 960px) {
         md-card {
-          width: 350px;
+          width: 300px;
         }
       }
 
       @media (max-width: 960px) {
         md-card {
-            width: 275px ;
+            width: 300px ;
             display: block;
         }
 
@@ -110,15 +111,7 @@ div#main {
         img.md-card-image {
           margin: 0 0 0 38px !important;
         }
-      } 
-
-      img.md-card-image {
-        margin: 0 0 0 80px;
       }
-
-      md-card-content {
-        padding: 0 16px 16px 16px;
-      }      
     }
 
     div#nossoImpacto {
