@@ -27,11 +27,11 @@ div#main.animated.fadeIn
           layout-align="center center")
         md-list-item(ng-repeat="ong in $ctrl.listOng" layout="column" layout-align="center center")
           a(ng-href="{{$location.absUrl() + '/pagOngs/' + ong.slug}}")
-            md-card
+            md-card.img__wrap
               img.md-card-image(ng-src="{{ong.logo}}" layout-align="center center"
                                 style="width: 300px; height:300px")
-              //- md-card-content(layout-align="center center" layout="column")
-              //-   p {{ong.desc}}
+              div.img__description_layer
+                p.img__description {{ong.desc}}
     div#nossoImpacto(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading Nossos Resultados
       div#numeros(flex="100" layout="row" layout-align="center center")
