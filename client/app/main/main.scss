@@ -23,7 +23,7 @@ div#main {
 
   div#mainPage {
     .sectionHeading {
-      font-size: 60px;
+      font-size: 56px;
       margin-bottom: 15px;
       padding-top: 20px;
     }
@@ -37,7 +37,12 @@ div#main {
       background-color: white;
 
       p#comoFunciona {
-        padding-top: 15px;
+        padding-top: 10px;
+        margin-bottom: 0px;
+      }
+
+      p {
+        margin-bottom: 0px;
       }
 
       md-list {

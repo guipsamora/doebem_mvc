@@ -24,7 +24,6 @@ export class MainController {
     this.listOng = [];
     this.listOngToDisplay = [];
 
-
     this.carouselImages = [
       {src: '../../assets/images/carousel/img_1.jpg'},
       {src: '../../assets/images/carousel/img_2.jpg'},
@@ -38,46 +37,36 @@ export class MainController {
     ];
 
     this.stepOptions = [
-      // {
-      //   title: 'Escolha',
-      //   desc: 'A causa que mais se identifica.',
-      //   icon: 'fa-heart-o'
-      // },
       {
         title: 'CONFIANÇA',
-        desc: 'As organizações selecionadas para você pela doebem são rigorosamente analisadas e recomendadas com base em impacto, gestão e transparência.',
+        desc: 'As organizações recomendadas são rigorosamente analisadas com base em impacto, gestão e transparência.',
         icon: 'fa-search'
       },
       {
         title: 'PRATICIDADE',
-        desc: 'Você não precisa gastar horas pensando como, quanto ou quem ajudar. A doebem te ajuda com isso. Basta clicar e começar a fazer a diferença no Brasil!',
+        desc: 'Você não precisa gastar horas pensando como, quanto ou quem ajudar. \
+               Te ajudamos com isso: basta clicar e começar a fazer a diferença!',
         icon: 'fa-check-square-o'
       },
       {
         title: 'ACOMPANHAMENTO',
-        desc: 'Transparência é muito importante para nós. Você poderá acompanhar o seu impacto positivo no Brasil e receber novidades sobre a organização que suporta.',
+        desc: 'Transparência é muito importante para nós! Você acompanha o seu impacto positivo no Brasil e \
+               recebe novidades sobre a organização que suporta.',
         icon: 'fa-envelope-o'
       }
-      ];
+    ];
   }
 
   carregaLista() {
   this.$http.get(`api/ong/`)
       .then(res => {
         this.listOng = res.data;
-        // console.log(this.listOng);
-        // this.listOngFilterToDisplay();
-        // if (this.$routeParams.filterCausa === undefined &&
-        //     this.listOngToDisplay.length === 0) {
-        //       this.listOngToDisplay = this.listOng;
-        // }
-      });
+      })
   }
 
   $onInit() {
     this.carregaLista();
   }
-
 }
 
 export default angular.module('doebemOrgApp.main',
