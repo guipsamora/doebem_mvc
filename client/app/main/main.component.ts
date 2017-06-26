@@ -61,7 +61,7 @@ export class MainController {
   this.$http.get(`api/ong/`)
       .then(res => {
         this.listOng = res.data;
-      })
+      });
   }
 
   $onInit() {
