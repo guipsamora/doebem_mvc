@@ -23,7 +23,8 @@ div#main {
 
   div#mainPage {
     .sectionHeading {
-      font-size: 56px;
+      font-size: 50px;
+      font-family: 'Oswald';
       margin-bottom: 15px;
       padding-top: 20px;
     }
@@ -35,6 +36,8 @@ div#main {
       display: block;
       padding-bottom: 30px;
       background-color: white;
+      // font-family: 'AileronRegular';
+      // font-size: 18px;
 
       p#comoFunciona {
         padding-top: 10px;
@@ -47,12 +50,14 @@ div#main {
 
       md-list {
         padding-top: 60px;
+        margin-right: 30px;
+        margin-left: 30px;
         
         md-list-item {
           width: 370px !important;
           
           p {
-            width: 370.61px !important;
+            width: 370px !important;
           }
 
           span {
