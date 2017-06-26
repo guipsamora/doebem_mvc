@@ -102,6 +102,10 @@ div#main {
       height: 100%;
       width: 100%;
       display: block;
+
+      h3 {
+        font-weight: 400;
+      }
       
       @media (min-width: 960px) {
         md-card {
