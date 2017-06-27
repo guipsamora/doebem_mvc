@@ -1,6 +1,5 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
-const jkAngularCarousel = require('../../../node_modules/angular-jk-carousel/dist/jk-carousel.js');
 
 import routing from './main.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
@@ -38,21 +37,24 @@ export class MainController {
 
     this.stepOptions = [
       {
-        title: 'CONFIANÇA',
+        title: 'Confiança',
         desc: 'As organizações recomendadas são rigorosamente analisadas com base em impacto, gestão e transparência.',
-        icon: 'fa-search'
+        // icon: 'fa-search'
+        icon: '../../assets/images/main/icone1.png'
       },
       {
-        title: 'PRATICIDADE',
+        title: 'Praticidade',
         desc: 'Você não precisa gastar horas pensando como, quanto ou quem ajudar. \
                Te ajudamos com isso: basta clicar e começar a fazer a diferença!',
-        icon: 'fa-check-square-o'
+        // icon: 'fa-check-square-o',
+        icon: '../../assets/images/main/icone2.png'
       },
       {
-        title: 'ACOMPANHAMENTO',
+        title: 'Acompanhamento',
         desc: 'Transparência é muito importante para nós! Você acompanha o seu impacto positivo no Brasil e \
                recebe novidades sobre a organização que suporta.',
-        icon: 'fa-envelope-o'
+        // icon: 'fa-envelope-o'
+        icon: '../../assets/images/main/icone3.png'
       }
     ];
   }
@@ -70,7 +72,7 @@ export class MainController {
 }
 
 export default angular.module('doebemOrgApp.main',
- [ngRoute, 'jkAngularCarousel', contactForm])
+ [ngRoute, contactForm])
     .config(routing)
     .component('main', {
       template: require('./main.pug'),

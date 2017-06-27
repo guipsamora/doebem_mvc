@@ -56,8 +56,13 @@ div#main {
         md-list-item {
           width: 370px !important;
           
+          h2 {
+            font-family: 'Oswald';
+          }
+
           p {
             width: 370px !important;
+            font-family: 'Open Sans Condensed';
           }
 
           span {
