@@ -20,7 +20,8 @@ div#main {
 
   div#mainPage {
     .sectionHeading {
-      font-size: 60px;
+      font-size: 50px;
+      font-family: 'Oswald';
       margin-bottom: 15px;
       padding-top: 20px;
     }
@@ -32,19 +33,35 @@ div#main {
       display: block;
       padding-bottom: 30px;
       background-color: white;
+      // font-family: 'AileronRegular';
+      // font-size: 18px;
 
       p#comoFunciona {
-        padding-top: 15px;
+        padding-top: 10px;
+        margin-bottom: 0px;
+      }
+
+      p {
+        margin-bottom: 0px;
       }
 
       md-list {
         padding-top: 60px;
+        margin-right: 30px;
+        margin-left: 30px;
         
         md-list-item {
           width: 370px !important;
-          p {
-            width: 370.61px !important;
+          
+          h2 {
+            font-family: 'Oswald';
           }
+
+          p {
+            width: 370px !important;
+            font-family: 'Open Sans Condensed';
+          }
+
           span {
             i#icon {
               color: white;
@@ -84,6 +101,7 @@ div#main {
       height: 100%;
       width: 100%;
       display: block;
+
 
       md-card-content {
         padding: 0 16px 16px 16px;
@@ -133,6 +151,13 @@ div#main {
       }
 
       @media screen and  (min-width: 768px) {
+
+      h3 {
+        font-weight: 400;
+      }
+      
+      @media (min-width: 960px) {
+
         md-card {
           width: 300px;
         }
@@ -247,4 +272,5 @@ div#main {
       }  
     }
   }
+}
 }

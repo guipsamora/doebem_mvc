@@ -10,19 +10,19 @@ export class NavbarComponent {
     {
       'title': 'METODOLOGIA',
       'link': 'metodologia'
-    }, 
+    },
     {
       'title': 'TRANSPARÊNCIA',
       'link': 'transparencia'
-    }, 
+    },
     {
       'title': 'SOBRE',
       'link': 'sobre'
-    }, 
+    },
     {
       'title': 'DÚVIDAS',
       'link': 'duvidas'
-    }, 
+    },
     {
       'title': 'BLOG',
       'link': 'https://medium.com/doebem'

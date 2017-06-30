@@ -2,16 +2,17 @@ div#main.animated.fadeIn
   div#pageHeader(flex="100"  layout="column" layout-align="center center")
   div#mainPage(layout="column" flex="100")
     div#comoFunciona(flex = "100" layout="column" layout-align="center center")
-      h2.sectionHeading Como Funciona
-      p#comoFunciona A doebem é uma plataforma online que potencializa impacto positivo ao conectar doadores com 
-      p organizações sociais eficientes, selecionadas a partir de critérios rigorosos.
-      p Veja abaixo como funciona!
+      h2.sectionHeading A sua doação faz a diferença
+      p#comoFunciona Fazemos a ponte entre doadores e organizações 
+      p eficientes que promovem impacto social
+      p embasado em estudos e evidência.
       md-list#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
-        md-list-item(ng-repeat="step in $ctrl.stepOptions") 
+        md-list-item(ng-repeat="step in $ctrl.stepOptions")
             div(layout = "column" layout-align="center center")
-              span.fa-stack.fa-5x
-                i.fa.fa-circle.fa-stack-2x.text-primary
-                i#icon.fa.fa-stack-1x(ng-class="step.icon")
+              //- span.fa-stack.fa-5x
+              //-   i.fa.fa-circle.fa-stack-2x.text-primary
+              //-   i#icon.fa.fa-stack-1x(ng-class="step.icon")
+              img(src="{{step.icon}}")
               h2 {{step.title}}
               p {{step.desc}}
     div#ongs(flex = "100" layout="column" layout-align="center center")

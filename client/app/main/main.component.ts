@@ -22,21 +22,27 @@ export class MainController {
     this.$location = $location;
     this.listOng = [];
     this.listOngToDisplay = [];
+
     this.stepOptions = [
       {
-        title: 'Selecione',
-        desc: 'Uma organização eficiente.',
-        icon: 'fa-hand-pointer-o'
+        title: 'Confiança',
+        desc: 'As organizações recomendadas são rigorosamente analisadas com base em impacto, gestão e transparência.',
+        // icon: 'fa-search'
+        icon: '../../assets/images/main/icone1.png'
       },
       {
-        title: 'Doe',
-        desc: 'O valor que quiser.',
-        icon: 'fa-money'
+        title: 'Praticidade',
+        desc: 'Você não precisa gastar horas pensando como, quanto ou quem ajudar. \
+               Te ajudamos com isso: basta clicar e começar a fazer a diferença!',
+        // icon: 'fa-check-square-o',
+        icon: '../../assets/images/main/icone2.png'
       },
       {
-        title: 'Acompanhe',
-        desc: 'O impacto da sua doação.',
-        icon: 'fa-envelope-o'
+        title: 'Acompanhamento',
+        desc: 'Transparência é muito importante para nós! Você acompanha o seu impacto positivo no Brasil e \
+               recebe novidades sobre a organização que suporta.',
+        // icon: 'fa-envelope-o'
+        icon: '../../assets/images/main/icone3.png'
       }
     ];
   }
@@ -51,7 +57,6 @@ export class MainController {
   $onInit() {
     this.carregaLista();
   }
-
 }
 
 export default angular.module('doebemOrgApp.main',
