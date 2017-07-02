@@ -9,9 +9,6 @@ div#main.animated.fadeIn
       md-list#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
         md-list-item(ng-repeat="step in $ctrl.stepOptions")
             div(layout = "column" layout-align="center center")
-              //- span.fa-stack.fa-5x
-              //-   i.fa.fa-circle.fa-stack-2x.text-primary
-              //-   i#icon.fa.fa-stack-1x(ng-class="step.icon")
               img(src="{{step.icon}}")
               h2 {{step.title}}
               p {{step.desc}}
@@ -33,6 +30,8 @@ div#main.animated.fadeIn
                                 style="width: 300px; height:300px")
               div.img__description_layer
                 p.img__description {{ong.desc}}
+          a(layout-align="center center" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KP2DX7FKJUWFL")      
+            md-button.md-raized.md-primary Doar
     div#nossoImpacto(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading Nossos Resultados
       div#numeros(flex="100" layout="row" layout-align="center center")
