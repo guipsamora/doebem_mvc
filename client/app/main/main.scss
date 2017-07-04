@@ -217,12 +217,12 @@ div#main {
 
       background-color: white;
 
-      h3 {
-        font-size: 55px;
+      h3#impact {
+        font-size: 55px !important;
       }
 
-      h5 {
-        font-size: 20px;
+      h5.impact {
+        font-size: 20px !important;
       }
 
       padding-bottom: 50px;
@@ -230,6 +230,7 @@ div#main {
       div {
         text-align: center;
         margin: auto;
+        // display: block;
       }
 
       @media (min-width: 960px) {
@@ -240,14 +241,27 @@ div#main {
 
       div div#doadores {
         border-right-color:   lightgray;
+        // border-right-color:   black;
+        // border-right-width: 2px;
+        // border-right-style: solid;
+
+        // width: 400px;
+        // width: 400px;
+        
         text-align: center;
         margin: 0 auto;
+        // height: 100%;
+        // width: 100%;
       }
 
       div div#reaisDoados {
+        // width: 400px;
+        // width: 400px;
         margin-left: 10px;
         text-align: center;
         margin: 0 auto;
+        // height: 100%;
+        // width: 100%;    
       }      
     }
     
