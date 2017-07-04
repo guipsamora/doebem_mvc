@@ -28,6 +28,16 @@ div#footer {
     a:hover {
       cursor: pointer;
     }
+    a#pol {
+      padding-left: 40px;
+    }
+
+    @media (max-width: 960px) {
+      display: block;
+      margin-top: 10px;
+    }
+
+
   }
 }
 
