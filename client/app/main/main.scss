@@ -239,7 +239,7 @@ div#main {
         }
       }
 
-      div div#doadores {
+      div > div#doadores {
         border-right-color:   lightgray;
         // border-right-color:   black;
         // border-right-width: 2px;
@@ -252,6 +252,13 @@ div#main {
         margin: 0 auto;
         // height: 100%;
         // width: 100%;
+        h3 {
+          font-size: 55px !important;
+        }
+
+        h5 {
+          font-size: 20px !important;
+        }
       }
 
       div div#reaisDoados {
@@ -261,7 +268,15 @@ div#main {
         text-align: center;
         margin: 0 auto;
         // height: 100%;
-        // width: 100%;    
+        // width: 100%;  
+
+        h3 {
+          font-size: 55px !important;
+        }
+
+        h5 {
+          font-size: 20px !important;
+        }
       }      
     }
     
