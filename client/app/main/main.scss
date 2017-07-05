@@ -33,8 +33,6 @@ div#main {
       display: block;
       padding-bottom: 30px;
       background-color: white;
-      // font-family: 'AileronRegular';
-      // font-size: 18px;
 
       p#comoFunciona {
         padding-top: 10px;
@@ -172,10 +170,11 @@ div#main {
 
       @media screen and  (min-width: 768px) {
 
-      h3 {
-        font-weight: 400;
+        h3 {
+          font-weight: 400;
+        }
       }
-      
+
       @media (min-width: 960px) {
 
         md-card {
@@ -249,5 +248,4 @@ div#main {
       }  
     }
   }
-}
 }
