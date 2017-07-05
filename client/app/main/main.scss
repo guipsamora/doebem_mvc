@@ -107,7 +107,8 @@ div#main {
 
       img.md-card-image {
         width: 300px; 
-        height: 300px;  
+        height: 300px;
+        padding: 7px 7px 7px 7px !important;
       }
 
       .img__wrap {
@@ -142,10 +143,12 @@ div#main {
       .img__description {
         transition: .2s;
         transform: translateY(1em);
+        width: 270px;
       }
 
       .img__wrap:hover .img__description {
         transform: translateY(0);
+        width: 270px;
       }
 
       button {
