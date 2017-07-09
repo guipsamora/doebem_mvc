@@ -106,6 +106,10 @@ const OngSchema = new mongoose.Schema({
   linkPdf: {
     type: 'String',
     required: true
+  },
+  linkPaypal: {
+    type: 'String',
+    required: true
   }
 });
 
