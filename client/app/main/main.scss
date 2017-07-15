@@ -17,15 +17,20 @@ div#main {
 
     @media screen and (max-width: 768px) {
       min-height: 27vh;
+      a {
+        .md-button {
+          visibility: hidden;
+        }
+      }
     }
 
     a {
       .md-button {
         position: absolute;
-        bottom: 55px;
+        bottom: 40px;
         right: 5px;
         left: 75px;
-        width: 200px;
+        width: 145px;
         height: 45px;
         background-color: rgb(63,81,181);
         color: white;
