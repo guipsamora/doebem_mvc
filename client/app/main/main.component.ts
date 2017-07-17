@@ -8,12 +8,9 @@ export class MainController {
   $http;
   $scope;
   $location;
-  carouselImages= [];
-  causas = [];
   stepOptions = [];
-  listOngFilters = [];
   listOng = [];
-  listOngToDisplay = [];
+  midia = [];
 
   /*@ngInject*/
   constructor($http, $scope, socket, $location) {
@@ -21,29 +18,39 @@ export class MainController {
     this.$scope = $scope;
     this.$location = $location;
     this.listOng = [];
-    this.listOngToDisplay = [];
+    this.midia = [];
 
     this.stepOptions = [
       {
         title: 'Confiança',
         desc: 'As organizações recomendadas são rigorosamente analisadas com base em impacto, gestão e transparência.',
-        // icon: 'fa-search'
         icon: '../../assets/images/main/icone1.png'
       },
       {
         title: 'Praticidade',
         desc: 'Você não precisa gastar horas pensando como, quanto ou quem ajudar. \
                Te ajudamos com isso: basta clicar e começar a fazer a diferença!',
-        // icon: 'fa-check-square-o',
         icon: '../../assets/images/main/icone2.png'
       },
       {
         title: 'Acompanhamento',
         desc: 'Transparência é muito importante para nós! Você acompanha o seu impacto positivo no Brasil e \
                recebe novidades sobre a organização que suporta.',
-        // icon: 'fa-envelope-o'
         icon: '../../assets/images/main/icone3.png'
       }
+    ];
+
+    this.midia = [
+      {
+        src: '../../assets/images/logos_midia/the_af2.png',
+        link: 'http://www.awesomefoundation.org/pt/projects/75390-doebem',
+        alt: 'The Awesome Foundation'
+      },
+      {
+        src: '../../assets/images/logos_midia/logo-nossacausa-portal.png',
+        link: '',
+        alt: ''
+      },
     ];
   }
 

@@ -250,5 +250,18 @@ div#main {
         }
       }  
     }
+
+    div#reconhecimentos {
+
+      background-color: white;
+
+      img#af {
+        margin-right: 20px;
+      }
+
+      h2#rec.sectionHeading {
+        text-align: left !important;
+      }
+    }
   }
 }

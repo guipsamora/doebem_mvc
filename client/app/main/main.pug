@@ -31,6 +31,24 @@ div#main.animated.fadeIn
                                 style="width: 300px; height:300px")
               div.img__description_layer
                 p.img__description {{ong.desc}}
+    div#reconhecimentos(flex="100" layout="column" layout-align="center center")
+      h2#rec.sectionHeading Mídia
+      h3 Confira abaixo o que andam falando sobre nós!
+      br
+      div(flex="100" layout="row" layout-align="center center")
+        h3 Mídia
+        div(ng-repeat="midia in $ctrl.midia")
+          a(ng-href="{{midia.link}}" target="_blank")
+            img#af(ng-src="{{midia.src}}" alt="{{midia.alt}}")
+      br
+      div(flex="100" layout="row" layout-align="center center")
+        h3 Parceiros
+        div
+          a#af(href="http://www.awesomefoundation.org/pt/projects/75390-doebem" target="_blank")
+            img#af(src="assets/images/logos_midia/the_af.png" alt="The Awesome Foundation")
+          a(href="http://nossacausa.com/doebem-uma-nova-experiencia-de-doacao/" target="_blank")
+            img(src="assets/images/logos_midia/logo-nossacausa-portal.png" alt="Nossa Causa")
+      br
 contact-form#contato
 script(type="text/ng-template" id="img.tmpl.pug")
     div
