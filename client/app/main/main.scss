@@ -8,6 +8,8 @@ div#main {
     height: 100%;
     min-height: 80vh;
     background-position: top center;
+    position: relative;
+
     h2 {
       color: white;
       font-size: 70px;
@@ -15,7 +17,40 @@ div#main {
 
     @media screen and (max-width: 768px) {
       min-height: 27vh;
+      a {
+        .md-button {
+          visibility: hidden;
+        }
+      }
     }
+
+    a {
+      .md-button {
+        position: absolute;
+        bottom: 40px;
+        right: 5px;
+        left: 75px;
+        width: 130px;
+        height: 45px;
+        background-color: rgb(63,81,181);
+        color: white;
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 15px;
+        margin-left: 20px;  
+        opacity: 0.8;    
+      }
+
+      button:hover {
+        background-color: white;
+        color: rgb(63,81,181);
+        border-color: rgb(63,81,181);
+        border-style: solid;
+        border-width: 1px;
+      }
+    }
+
+    
   }
 
   div#mainPage {
