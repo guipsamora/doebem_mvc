@@ -10,7 +10,9 @@ export class MainController {
   $location;
   stepOptions = [];
   listOng = [];
-  midia = [];
+  midias = [];
+  parceiros = [];
+
 
   /*@ngInject*/
   constructor($http, $scope, socket, $location) {
@@ -18,7 +20,8 @@ export class MainController {
     this.$scope = $scope;
     this.$location = $location;
     this.listOng = [];
-    this.midia = [];
+    this.midias = [];
+    this.parceiros = [];
 
     this.stepOptions = [
       {
@@ -40,18 +43,47 @@ export class MainController {
       }
     ];
 
-    this.midia = [
+    this.midias = [
       {
-        src: '../../assets/images/logos_midia/the_af2.png',
+        src: '../../assets/images/midias/awesomefoundation.png',
         link: 'http://www.awesomefoundation.org/pt/projects/75390-doebem',
         alt: 'The Awesome Foundation'
       },
       {
-        src: '../../assets/images/logos_midia/logo-nossacausa-portal.png',
-        link: '',
-        alt: ''
+        src: '../../assets/images/midias/blastingnews.png',
+        link: 'http://br.blastingnews.com/sociedade-opiniao/2017/06/doar-nunca-foi-tao-simples-e-transparente-001805969.html',
+        alt: 'Blasting News'
+      },
+      {
+        src: '../../assets/images/midias/ecommerce.png',
+        link: 'https://www.ecommercebrasil.com.br/noticias/plataforma-doebem-quer-promover-nova-experiencia-de-doacao/',
+        alt: 'Ecommerce'
       },
     ];
+
+    this.parceiros = [
+      {
+        src: '../../assets/images/parceiros/google.png',
+        link: 'https://www.google.com/nonprofits/',
+        alt: 'Google for Nonprofits'
+      },
+      {
+        src: '../../assets/images/parceiros/google2.png',
+        link: 'https://www.google.com/grants/',
+        alt: 'Google Ad Grants'
+      },
+      {
+        src: '../../assets/images/parceiros/odw_logo_big.png',
+        link: 'https://www.onedayswages.org/',
+        alt: 'One Days Wages'
+      },
+      {
+        src: '../../assets/images/parceiros/probono.png',
+        link: 'http://www.probono.org.br/',
+        alt: 'Instituto Pro Bono'
+      },
+      
+    ]
   }
 
   carregaLista() {
