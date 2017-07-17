@@ -11,8 +11,6 @@ export class MainController {
   stepOptions = [];
   listOng = [];
   midias = [];
-  parceiros = [];
-
 
   /*@ngInject*/
   constructor($http, $scope, socket, $location) {
@@ -21,7 +19,6 @@ export class MainController {
     this.$location = $location;
     this.listOng = [];
     this.midias = [];
-    this.parceiros = [];
 
     this.stepOptions = [
       {
@@ -65,40 +62,11 @@ export class MainController {
         alt: 'Sem Censura'
       },               
       {
-        src: '../../assets/images/midias/blastingnews.png',
-        link: 'http://br.blastingnews.com/sociedade-opiniao/2017/06/doar-nunca-foi-tao-simples-e-transparente-001805969.html',
-        alt: 'Blasting News'
-      },
-      {
-        src: '../../assets/images/midias/ecommerce.png',
-        link: 'https://www.ecommercebrasil.com.br/noticias/plataforma-doebem-quer-promover-nova-experiencia-de-doacao/',
-        alt: 'Ecommerce'
+        src: '../../assets/images/midias/projetodraft.png',
+        link: 'http://projetodraft.com/a-doebem-quer-conectar-gente-disposta-a-ajudar-com-organizacoes-sociais-confiaveis/',
+        alt: 'Projeto Draft'
       },
     ];
-
-    this.parceiros = [
-      {
-        src: '../../assets/images/parceiros/google.png',
-        link: 'https://www.google.com/nonprofits/',
-        alt: 'Google for Nonprofits'
-      },
-      {
-        src: '../../assets/images/parceiros/google2.png',
-        link: 'https://www.google.com/grants/',
-        alt: 'Google Ad Grants'
-      },
-      {
-        src: '../../assets/images/parceiros/odw_logo_big.png',
-        link: 'https://www.onedayswages.org/',
-        alt: 'One Days Wages'
-      },
-      {
-        src: '../../assets/images/parceiros/probono.png',
-        link: 'http://www.probono.org.br/',
-        alt: 'Instituto Pro Bono'
-      },
-      
-    ]
   }
 
   carregaLista() {

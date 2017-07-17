@@ -68,30 +68,6 @@ div#main {
         }
       }
     }
-    
-    div#causas {
-      text-align: center;
-      height: 100%;
-      width: 100%;
-      padding-bottom: 30px;
-      background-color: #eeeeee;
-      display: block;
-
-      md-card-title {
-        height: 130px;
-      }
-
-      h4.listItem {
-        margin-top: 0px !important;
-        margin-bottom: 15px !important;
-        font-weight: 400px !important;        
-      }
-
-      a {
-        height: 435.5px !important;
-      }
-
-    }
 
     div#ongs {
 
@@ -196,7 +172,7 @@ div#main {
             width: 300px ;
             display: block;
             text-align: center;
-            margin: 0 0 0 0;
+            margin: 0 0 10 0;
         }
 
         h3 {
@@ -209,51 +185,15 @@ div#main {
       }
     }
 
-    div#metodologia {
-      height: 100%;
-      width: 100%;
-      background-color: white;      
-
-      @include respond-to(screen-sm) {
-        padding: 40px;
-        text-align: center;
-      }
-
-      a {
-        color: black;
-      }
-
-      h3#metodologia {
-        margin-bottom: 50px;
-      }
-
-      div#subPage {
-        height: 100%;
-        width: 100%;
-        
-        div#sobre {
-          color: white;
-          background-image: url("/assets/images/sobre/sobre.jpg");
-          background-repeat: no-repeat;
-          background-size: cover;
-          width: 100%;
-          height: 100%; 
-        }
-
-        div a:hover {
-            color: white;
-        }
-
-        div#blog {
-          width: 100%;
-          height: 100%;
-        }
-      }  
-    }
-
     div#reconhecimentos {
 
       background-color: white;
+
+      @media screen and (max-width: 768px) {
+        h3 {
+          font-size: 16px;
+        }
+      }      
 
       img#af {
         margin-right: 20px;
@@ -261,6 +201,13 @@ div#main {
 
       h2#rec.sectionHeading {
         text-align: left !important;
+      }
+
+      img.mid {
+        
+        @media screen and (max-width: 768px) {
+          width: 40px;
+        }
       }
     }
   }
