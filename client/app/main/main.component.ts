@@ -50,6 +50,21 @@ export class MainController {
         alt: 'The Awesome Foundation'
       },
       {
+        src: '../../assets/images/midias/nossacausa.png',
+        link: 'http://nossacausa.com/doebem-uma-nova-experiencia-de-doacao/',
+        alt: 'Nossa Causa'
+      },
+      {
+        src: '../../assets/images/midias/razoes.png',
+        link: 'http://razoesparaacreditar.com/apoie/ongs-doacao/',
+        alt: 'Razoes Para Acreditar'
+      },
+      {
+        src: '../../assets/images/midias/semcensura.png',
+        link: 'https://youtu.be/cbHXbvCF1FY',
+        alt: 'Sem Censura'
+      },               
+      {
         src: '../../assets/images/midias/blastingnews.png',
         link: 'http://br.blastingnews.com/sociedade-opiniao/2017/06/doar-nunca-foi-tao-simples-e-transparente-001805969.html',
         alt: 'Blasting News'

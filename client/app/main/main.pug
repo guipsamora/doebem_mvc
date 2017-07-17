@@ -32,21 +32,21 @@ div#main.animated.fadeIn
               div.img__description_layer
                 p.img__description {{ong.desc}}
     div#reconhecimentos(flex="100" layout="column" layout-align="center center")
-      h2#rec.sectionHeading Mídia
+      //- h2#rec.sectionHeading Mídia
       h3 Confira abaixo o que andam falando sobre nós!
       br
-      h3 Mídia
+      //- h3 Mídia
       div(flex="100" layout="row" layout-align="center center")
         div(ng-repeat="midia in $ctrl.midias")
           a(ng-href="{{midia.link}}" target="_blank")
             img#af(ng-src="{{midia.src}}" alt="{{midia.alt}}")
       br
-      h3 Parceiros
-      div(flex="100" layout="row" layout-align="center center")
-        div(ng-repeat="parceiro in $ctrl.parceiros")
-          a(ng-href="{{parceiro.link}}" target="_blank")
-            img#af(ng-src="{{parceiro.src}}" alt="{{parceiro.alt}}")
-      br
+      //- h3 Parceiros
+      //- div(flex="100" layout="row" layout-align="center center")
+      //-   div(ng-repeat="parceiro in $ctrl.parceiros")
+      //-     a(ng-href="{{parceiro.link}}" target="_blank")
+      //-       img#af(ng-src="{{parceiro.src}}" alt="{{parceiro.alt}}")
+      //- br
 contact-form#contato
 script(type="text/ng-template" id="img.tmpl.pug")
     div
