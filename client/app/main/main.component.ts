@@ -8,12 +8,9 @@ export class MainController {
   $http;
   $scope;
   $location;
-  carouselImages= [];
-  causas = [];
   stepOptions = [];
-  listOngFilters = [];
   listOng = [];
-  listOngToDisplay = [];
+  midias = [];
 
   /*@ngInject*/
   constructor($http, $scope, socket, $location) {
@@ -21,29 +18,54 @@ export class MainController {
     this.$scope = $scope;
     this.$location = $location;
     this.listOng = [];
-    this.listOngToDisplay = [];
+    this.midias = [];
 
     this.stepOptions = [
       {
         title: 'Confiança',
         desc: 'As organizações recomendadas são rigorosamente analisadas com base em impacto, gestão e transparência.',
-        // icon: 'fa-search'
         icon: '../../assets/images/main/icone1.png'
       },
       {
         title: 'Praticidade',
         desc: 'Você não precisa gastar horas pensando como, quanto ou quem ajudar. \
                Te ajudamos com isso: basta clicar e começar a fazer a diferença!',
-        // icon: 'fa-check-square-o',
         icon: '../../assets/images/main/icone2.png'
       },
       {
         title: 'Acompanhamento',
         desc: 'Transparência é muito importante para nós! Você acompanha o seu impacto positivo no Brasil e \
                recebe novidades sobre a organização que suporta.',
-        // icon: 'fa-envelope-o'
         icon: '../../assets/images/main/icone3.png'
       }
+    ];
+
+    this.midias = [
+      {
+        src: '../../assets/images/midias/awesomefoundation.png',
+        link: 'http://www.awesomefoundation.org/pt/projects/75390-doebem',
+        alt: 'The Awesome Foundation'
+      },
+      {
+        src: '../../assets/images/midias/nossacausa.png',
+        link: 'http://nossacausa.com/doebem-uma-nova-experiencia-de-doacao/',
+        alt: 'Nossa Causa'
+      },
+      {
+        src: '../../assets/images/midias/razoes.png',
+        link: 'http://razoesparaacreditar.com/apoie/ongs-doacao/',
+        alt: 'Razoes Para Acreditar'
+      },
+      {
+        src: '../../assets/images/midias/semcensura.png',
+        link: 'https://youtu.be/cbHXbvCF1FY',
+        alt: 'Sem Censura'
+      },               
+      {
+        src: '../../assets/images/midias/projetodraft.png',
+        link: 'http://projetodraft.com/a-doebem-quer-conectar-gente-disposta-a-ajudar-com-organizacoes-sociais-confiaveis/',
+        alt: 'Projeto Draft'
+      },
     ];
   }
 
