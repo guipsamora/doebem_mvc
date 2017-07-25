@@ -12,6 +12,7 @@ export class TransparenciaController {
   financials = [ ];
   plans = [ ];
   learnings = [ ];
+  transf = [ ];
 
 
   /*@ngInject*/
@@ -52,10 +53,26 @@ export class TransparenciaController {
 
     ];
 
+    this.transf = [
+      {
+        date: '2017',
+        month: 'Junho',
+        org_name: 'Saúde Criança',
+        transf_link: 'https://drive.google.com/file/d/0B3sdXeGKoeXlNUN3dV9uRTJTb3M/view?usp=sharing'
+      }
+    ]
+
     this.plans = [
       {
         date: '2017',
-        goals_name: 'Metas 2017',
+        goals_name: 'Metas 2017 - 2º Trimestre',
+        goals_link: 'https://drive.google.com/file/d/0B3sdXeGKoeXlb2N6S1RlRXpMb2M/view?usp=sharing',
+        metrics_name: '',
+        metrics_link: '',
+      },
+      {
+        date: '2017',
+        goals_name: 'Metas 2017 - 1º Trimestre',
         goals_link: 'https://drive.google.com/file/d/0B92Dg4kwqibxSVd6YTY2T1FBWnc/view?usp=sharing',
         metrics_name: '',
         metrics_link: '',
@@ -70,6 +87,13 @@ export class TransparenciaController {
     ];
 
     this.learnings = [
+      {
+        date: '2017',
+        name: '2º Trimestre - 2017',
+        link: 'https://drive.google.com/file/d/0B3sdXeGKoeXleW5VNXpDNWdGdzg/view?usp=sharing',
+        metrics_name: '',
+        metrics_link: '',
+      },      
       {
         date: '2017',
         name: '1º Trimestre - 2017',

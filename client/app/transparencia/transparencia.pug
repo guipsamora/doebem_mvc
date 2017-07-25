@@ -17,6 +17,17 @@ div.animated.fadeIn#transparencia
           a(href="{{ year.dre_link }}" target="_blank") {{ year.dre_name }}
         td 
           a(href="{{ year.balanco_link }}" target="_blank") {{year.balanco_name}}
+    br
+    table
+      tr
+        th Ano
+        th Mês
+        th Organização
+      tr(ng-repeat="year in $ctrl.transf")
+        td {{ year.date }}
+        td {{ year.month }}
+        td 
+          a(href="{{ year.transf_link }}" target="_blank") {{year.org_name}}      
     h2 Planos
     br
     table
