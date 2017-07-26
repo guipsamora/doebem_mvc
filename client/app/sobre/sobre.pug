@@ -9,24 +9,21 @@ div.animated.fadeIn#sobre
         br
       div.credo(layout="column" layout-gt-sm="row" flex="100")
           h3(flex="100" flex-gt-sm="30") Como atuamos.
-          p(flex="100" flex-gt-sm="70") Selecionamos organizações sociais eficientes a partir de rigorosos critérios, baseados em qualidade de gestão, transparência e alto impacto.
+          p(flex="100" flex-gt-sm="70") Selecionamos organizações sociais efetivas a partir de rigorosos critérios, baseados em qualidade de gestão, transparência e alto impacto.
           br
       div.credo(layout="column" layout-gt-sm="row" flex="100")
           h3(flex="100" flex-gt-sm="30") Nosso objetivo.
-          p(flex="100" flex-gt-sm="70") Ajudar as pessoas a doarem de forma eficiente para organizações brasileiras.
+          p(flex="100" flex-gt-sm="70") Ajudar as pessoas a doarem de forma eficaz para organizações brasileiras.
   div#Time(layout="column"  flex="100" layout-align="center center")
     h1 Time
     md-list(layout-wrap layout="row" layout-gt-sm="row" layout-align="space-around center")
       md-list-item(ng-repeat="pessoa in $ctrl.listaPessoas")
-        md-card(layout="row" flex-gt-sm="100")
-          //- img.md-card-image(ng-src="{{pessoa.img}}")
+        md-card(layout="column" flex-gt-sm="100")
+          img.md-card-image(ng-src="{{pessoa.img}}")
           md-card-title(layout="row")
             md-card-title-text(layout="row" layout-align="center center")
               h3 {{pessoa.nome}}
           md-card-actions(layout="row" layout-align="center center")
-            a(target='_blank' href='{{pessoa.twitter}}')
-              md-button.md-icon-button(aria-label="twitter button")
-                i.fa.fa-twitter
             a(target='_blank' href='{{pessoa.linkedin}}')
               md-button.md-icon-button(aria-label="linkedin button")
                 i.fa.fa-linkedin

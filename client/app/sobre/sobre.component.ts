@@ -16,12 +16,14 @@ export class SobreController {
     this.$scope = $scope;
     this.$routeParams = $routeParams;
     this.listaPessoas = [
-      {nome: 'Elisa Mansur',
+      {
+       nome: 'Elisa',
        img: './assets/images/team/1.jpg',
        twitter: 'https://twitter.com/elisa_mansur',
        linkedin: 'https://www.linkedin.com/in/elisa-de-rooij-mansur-30435854/en'
       },
-       {nome: 'Guilherme Samora',
+      {
+       nome: 'Guilherme',
        img: './assets/images/team/2.jpg',
        twitter: 'https://twitter.com/guisamora',
        linkedin: 'https://br.linkedin.com/in/guisamora'
