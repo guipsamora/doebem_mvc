@@ -22,7 +22,6 @@ div#transparencia {
   }
 
   div#comoFunciona {
-      // text-align: center;
       padding-right:5%;
       padding-left: 5%;
       padding-top: 5%;
@@ -109,5 +108,16 @@ div#transparencia {
       div#CNPJ {
         margin-left: 100px;
       }
+  }
+
+  div#modelo {
+    h2#last {
+      margin-top: 0px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 2px;
+    }
   }
 }
