@@ -1,19 +1,24 @@
 div.animated.fadeIn#sobre
   div#pageHeader(flex="100"  layout="column" layout-align="center center")
     h2 Sobre
-  md-content#mainSobre(layout="column" layout-gt-sm="row" flex="100" )
-    .container
-      div.credo(layout="column" layout-gt-sm="row" flex="100")
-        h3(flex="100" flex-gt-sm="30") No que acreditamos.
-        p(flex="100" flex-gt-sm="70") Acreditamos que o processo de doação deve ser feito com o coração e com a mente.
-        br
-      div.credo(layout="column" layout-gt-sm="row" flex="100")
-          h3(flex="100" flex-gt-sm="30") Como atuamos.
-          p(flex="100" flex-gt-sm="70") Selecionamos organizações sociais efetivas a partir de rigorosos critérios, baseados em qualidade de gestão, transparência e alto impacto.
-          br
-      div.credo(layout="column" layout-gt-sm="row" flex="100")
-          h3(flex="100" flex-gt-sm="30") Nosso objetivo.
-          p(flex="100" flex-gt-sm="70") Ajudar as pessoas a doarem de forma eficaz para organizações brasileiras.
+  div#comoFunciona(flex = "100" layout="column" layout-align="center center")
+    h2.sectionHeading Conheça doebem
+    p#comoFunciona A doebem conecta doadores e organizações sem fins 
+    p lucrativos eficazes em uma plataforma online
+    p embasado em estudos e evidência.
+    br
+    p#comoFunciona A doebem recomenda organizações para doação unicamente 
+    p após uma análise rigorosa análise de sua qualidade de gestão, 
+    p nível de transparência e impacto promovido.
+    br
+    md-list#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
+      md-list-item(ng-repeat="step in $ctrl.stepOptions")
+          div(layout = "column" layout-align="center center")
+            img(src="{{step.icon}}")
+            h2 {{step.title}}
+            p {{step.desc}}
+  br 
+  br
   div#Time(layout="column"  flex="100" layout-align="center center")
     h1 Time
     md-list(layout-wrap layout="row" layout-gt-sm="row" layout-align="space-around center")
