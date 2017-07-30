@@ -10,14 +10,12 @@ export class SobreController {
   stepOptions = [ ];
   listaPessoas = [ ];
   listaConselheiros = [ ];
-  
 
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams) {
     this.$http = $http;
     this.$scope = $scope;
-    this.$routeParams = $routeParams;
-    
+    this.$routeParams = $routeParams;    
     this.stepOptions = [
       {
         title: 'CIÊNCIA & FILANTROPIA',
@@ -27,8 +25,7 @@ export class SobreController {
       },
       {
         title: 'CONFIANÇA',
-        desc: 'Acreditamos em uma forma mais efetiva de ajudar, aliando pensamento científico à \
-               filantropia para eliminar a extrema pobreza no Brasil',
+        desc: 'Plataforma de doações com análises de organizações sem fins lucrativos recomendadas',
         icon: '../../assets/images/sobre/icone2.png'
       },
       {
