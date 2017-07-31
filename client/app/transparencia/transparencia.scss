@@ -111,6 +111,21 @@ div#transparencia {
   }
 
   div#modelo {
+    
+    position: absolute;
+    top: 800px;
+    right: 0px;
+    left: 640px;
+    width: 550px;
+    height: 400px;
+    
+    @media screen and (max-width: 726px) {
+      position: relative;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+    }
+
     h2#last {
       margin-top: 0px;
       margin-bottom: 15px;
