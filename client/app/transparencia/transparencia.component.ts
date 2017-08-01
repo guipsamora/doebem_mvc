@@ -60,7 +60,7 @@ export class TransparenciaController {
         org_name: 'Saúde Criança',
         transf_link: 'https://drive.google.com/file/d/0B3sdXeGKoeXlNUN3dV9uRTJTb3M/view?usp=sharing'
       }
-    ]
+    ];
 
     this.plans = [
       {
@@ -93,7 +93,7 @@ export class TransparenciaController {
         link: 'https://drive.google.com/file/d/0B3sdXeGKoeXleW5VNXpDNWdGdzg/view?usp=sharing',
         metrics_name: '',
         metrics_link: '',
-      },      
+      },
       {
         date: '2017',
         name: '1º Trimestre - 2017',

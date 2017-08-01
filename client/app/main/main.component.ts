@@ -60,7 +60,7 @@ export class MainController {
         src: '../../assets/images/midias/semcensura.png',
         link: 'https://youtu.be/cbHXbvCF1FY',
         alt: 'Sem Censura'
-      },             
+      },
       {
         src: '../../assets/images/midias/projetodraft.png',
         link: 'http://projetodraft.com/a-doebem-quer-conectar-gente-disposta-a-ajudar-com-organizacoes-sociais-confiaveis/',
