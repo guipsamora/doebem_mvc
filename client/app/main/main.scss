@@ -102,6 +102,29 @@ div#main {
           }
         }
       }
+
+      button {
+        background-color:  rgb(63,81,181);
+        color: white;
+        border-color: rgb(63,81,181) !important;
+        border-style: solid;
+        border-width: 1px;
+        margin-left: 0px;
+        font-size: 20px;
+        font-family: 'Oswald';
+        width: 130px;
+        text-align: center;
+      }
+
+      button:hover {
+        background-color: white !important;
+        color: rgb(63,81,181) !important;
+        border-color: rgb(63,81,181) !important;
+        border-style: solid;
+        border-width: 1px;
+        font-size: 20px;
+      }
+
     }
 
     div#ongs {
