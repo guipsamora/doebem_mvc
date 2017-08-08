@@ -118,13 +118,6 @@ div#transparencia {
     left: 640px;
     width: 550px;
     height: 400px;
-    
-    @media screen and (max-width: 726px) {
-      position: relative;
-      top: 0px;
-      right: 0px;
-      left: 0px;
-    }
 
     h2#last {
       margin-top: 0px;
@@ -133,6 +126,23 @@ div#transparencia {
 
     p {
       margin-bottom: 2px;
+    }    
+    
+    @media screen and (max-width: 726px) {
+      position: relative;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      margin-top: 60px;
+
+      h2#last {
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+
+      p {
+        margin-bottom: 0px;
+      }
     }
   }
 }
