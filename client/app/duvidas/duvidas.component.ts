@@ -37,9 +37,7 @@ export class DuvidasController {
       },
       {
         title: 'Como vocês se sustentam?',
-        desc: `Iniciamos a doebem com recursos de ambos os fundadores. 
-        No momento da doação para a instituição, o doador também pode optar em acrescentar 10% acima do valor doado, 
-        que será destinado para manter as operações da doebem. 
+        desc: `Iniciamos a doebem com recursos de ambos os fundadores.
         Além disso, contamos com doações diretas de apoiadores que acreditam em nosso trabalho.`,
       },
       {
