@@ -22,7 +22,8 @@ div.animated.fadeIn#pagOng
         p(ng-bind-html='$ctrl.infoOng.analiseImpacto')
         a(ng-href="{{$ctrl.infoOng.linkPdf}}" target="_blank")
          p#anaCompl Confira aqui o arquivo com nossa análise completa.
-
+        a(layout-align="center center" target="_blank" ng-href="{{$ctrl.infoOng.linkPaypal}}")
+          md-button.md-raized.md-primary(type="submit") Doar 
 contact-form
 
       //- div#smallInfo(layout="column" layout-align="start start")
