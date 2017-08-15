@@ -22,27 +22,6 @@ export class TransparenciaController {
     this.$routeParams = $routeParams;
     this.$window = $window;
     this.financials = [
-      // {
-      //   date: '2016',
-      //   dre_name: 'DRE 2016',
-      //   dre_link: '',
-      //   balanco_name: 'Balanço patrimonial',
-      //   balanco_link: '',
-      // },
-      // {
-      //   date: '2016',
-      //   dre_name: 'DRE 2016',
-      //   dre_link: '',
-      //   balanco_name: 'Balanço patrimonial',
-      //   balanco_link: '',
-      // }
-      // {
-      //   date: '2017',
-      //   dre_name: 'DRE 2017 (A partir de Maio/17)',
-      //   dre_link: '/',
-      //   balanco_name: 'Balanço patrimonial (A partir de Maio/17)',
-      //   balanco_link: '/',
-      // },
       {
         date: '2017',
         dre_name: 'Custos de Lançamento',
@@ -50,7 +29,6 @@ export class TransparenciaController {
         // balanco_name: 'Balanço patrimonial',
         // balanco_link: '',
       }
-
     ];
 
     this.transf = [
@@ -77,13 +55,6 @@ export class TransparenciaController {
         metrics_name: '',
         metrics_link: '',
       }
-      // {
-      //   date: '2015',
-      //   goals_name: '2015',
-      //   goals_link: '',
-      //   metrics_name: '',
-      //   metrics_link: '',
-      // }
     ];
 
     this.learnings = [
@@ -101,13 +72,6 @@ export class TransparenciaController {
         metrics_name: '',
         metrics_link: '',
       }
-      // {
-      //   date: '2015',
-      //   goals_name: '2015',
-      //   goals_link: '',
-      //   metrics_name: '',
-      //   metrics_link: '',
-      // }
     ];
 
   }

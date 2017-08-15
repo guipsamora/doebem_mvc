@@ -22,7 +22,6 @@ div#transparencia {
   }
 
   div#comoFunciona {
-      // text-align: center;
       padding-right:5%;
       padding-left: 5%;
       padding-top: 5%;
@@ -109,5 +108,41 @@ div#transparencia {
       div#CNPJ {
         margin-left: 100px;
       }
+  }
+
+  div#modelo {
+    
+    position: absolute;
+    top: 800px;
+    right: 0px;
+    left: 640px;
+    width: 550px;
+    height: 400px;
+
+    h2#last {
+      margin-top: 0px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 2px;
+    }    
+    
+    @media screen and (max-width: 726px) {
+      position: relative;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      margin-top: 60px;
+
+      h2#last {
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+
+      p {
+        margin-bottom: 0px;
+      }
+    }
   }
 }
