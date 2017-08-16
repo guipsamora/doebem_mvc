@@ -127,13 +127,41 @@ div#main {
 
     }
 
+    div#reconhecimentos {
+
+      @media screen and (max-width: 768px) {
+        h3 {
+          font-size: 16px;
+        }
+      }      
+
+      img#af {
+        margin-right: 20px;
+      }
+
+      h2#rec.sectionHeading {
+        text-align: left !important;
+      }
+
+      img.mid {
+        
+        @media screen and (max-width: 768px) {
+          width: 40px;
+        }
+      }
+    }
+
+    div#modelo {
+      background-color: white;
+      padding: 0 0 30px 0;
+    }
+
     div#ongs {
 
       text-align: center;
       height: 100%;
       width: 100%;
       display: block;
-
 
       md-card-content {
         padding: 0 16px 16px 16px;
@@ -245,30 +273,12 @@ div#main {
       }
     }
 
-    div#reconhecimentos {
+    div#newsletter {
 
       background-color: white;
 
-      @media screen and (max-width: 768px) {
-        h3 {
-          font-size: 16px;
-        }
-      }      
-
-      img#af {
-        margin-right: 20px;
-      }
-
-      h2#rec.sectionHeading {
-        text-align: left !important;
-      }
-
-      img.mid {
-        
-        @media screen and (max-width: 768px) {
-          width: 40px;
-        }
-      }
     }
+
+
   }
 }

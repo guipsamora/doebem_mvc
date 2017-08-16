@@ -16,10 +16,24 @@ div#main.animated.fadeIn
               p {{step.desc}}
       br
       br
-      div
-        p Conheça como avaliamos as organizações sociais
-        a(href="./metodologia")
-          md-button(layout-align="center center") Metodologia
+    div#reconhecimentos(flex="100" layout="column" layout-align="center center")
+      h3 Confira o que andam falando sobre nós!
+      br
+      div(flex="100" layout="row"  layout-align="center center")
+        div(ng-repeat="midia in $ctrl.midias")
+          a(ng-href="{{midia.link}}" target="_blank")
+            img#af.mid(ng-src="{{midia.src}}" alt="{{midia.alt}}")
+    br
+    br
+    div#modelo(flex="100" layout="column" layout-align="center center")
+      h2.sectionHeading Modelo 100%
+      h2#last Doação e Taxas
+      p A doebem não cobra nenhuma taxa pela doação realizada para qualquer
+      p uma das organizações recomendadas, apenas as taxas das ferramentas
+      p de pagamento são cobradas.
+      img(src="/assets/images/transparencia/100.png")
+    br
+    br
     div#ongs(flex = "100" layout="column" layout-align="center center")
       h2.sectionHeading Organizações
       h3 Escolha uma organização recomendada para fazer uma doação e mudar o Brasil!
@@ -47,16 +61,17 @@ div#main.animated.fadeIn
     br
     br
     br
+    //- div#newsletter(flex="100" layout="column" layout-align="center center")
+    //-   h3 Ainda não está pronto para doar? Deixe aqui o seu email e fique por dentro das novidades!
+    //-   br
+    //-   div(flex="100" layout="row"  layout-align="center center")
+    //-     //- form(name="contactForm" layout="column"  ng-submit="$ctrl.sendEmail(contactForm, $event)")
+    //-     form(name="contactForm" layout="column")
+    //-       md-input-container(flex-gt-sm)
+    //-         label Email
+    //-         input(type="email" ng-model="contactForm.Email" requiredminlength="5" maxlength="100" ng-pattern="/^.+@.+\..+$/" required)
     div#crianca(flex="100" layout="column" layout-align="center center")
       img#crianca(src="../../assets/images/main/main2.png")
-    div#reconhecimentos(flex="100" layout="column" layout-align="center center")
-      h3 Confira abaixo o que andam falando sobre nós!
-      br
-      div(flex="100" layout="row"  layout-align="center center")
-        div(ng-repeat="midia in $ctrl.midias")
-          a(ng-href="{{midia.link}}" target="_blank")
-            img#af.mid(ng-src="{{midia.src}}" alt="{{midia.alt}}")
-      br
 contact-form#contato
 script(type="text/ng-template" id="img.tmpl.pug")
     div
