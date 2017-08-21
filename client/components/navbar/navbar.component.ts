@@ -22,10 +22,6 @@ export class NavbarComponent {
     {
       'title': 'DÚVIDAS',
       'link': 'duvidas'
-    },
-    {
-      'title': 'BLOG',
-      'link': 'https://medium.com/doebem'
     }
   ];
 
