@@ -23,6 +23,7 @@ div#menu {
   }
 }
 
+// Botão doar
 .md-primary#doar_button {
     background-color: white;
     border: black;
@@ -34,6 +35,27 @@ div#menu {
 }
 
 .md-primary#doar_button:hover{
+    background-color: white !important;
+}
+
+button.navbar-toggle {
+    text-align: center;
+    margin: 0 0 0 0;    
+    padding: 3px 5px 6px 5px;
+    border: none;
+}
+
+// Botão blog
+.md-primary#blog {
+    background-color: white;
+    color: black !important;
+    font-size:18px !important;
+    font-weight: 500;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.md-primary#blog:hover{
     background-color: white !important;
 }
 
@@ -142,7 +164,8 @@ div#navbar-main.navbar-collapse.collapse {
 
     a#Itens {
         padding-left: 0px;
-        padding-right: 30px;
+        padding-right: 0px;
+        width: 100%;
     }
 
     button.navbar-toggle {
@@ -150,6 +173,17 @@ div#navbar-main.navbar-collapse.collapse {
         margin-top: 12px;
         margin-right: 15px;
         border: none;
+    }
+
+    .md-primary#blog.navbar-toggle {
+        float: right;
+        margin-top: 12px;
+        margin-right: 100px;
+        border: none;
+    }
+
+    .md-primary#blog {
+        width: 100% !important;
     }
 
     .navbar-default .navbar-toggle {

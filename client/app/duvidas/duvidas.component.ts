@@ -33,7 +33,12 @@ export class DuvidasController {
         desc: `Nossas análises possuem embasamento acadêmico e avaliação sobre o desempenho da organização. 
         Em nossa página de Transparência, compartilhamos nossos indicadores financeiros, planos, erros e aprendizados. 
         Além disso, somos independentes em nossa avaliação e repassamos 100%* do valor doado para a organização. 
-        *Após desconto do cartão de crédito.`,
+        Após desconto do cartão de crédito.`,
+      },
+      {
+        title: 'Por que doar pela plataforma de vocês?',
+        desc: `Ao doar pela doebem, conseguimos mensurar o impacto do nosso trabalho e medir a destinação das doações para cada causa. 
+        Além disso, o usuário poderá acompanhar de forma periódica o impacto das suas doações.`
       },
       {
         title: 'Como vocês se sustentam?',
@@ -54,9 +59,9 @@ export class DuvidasController {
         - que fizesse sentido no contexto brasileiro.`,
       },
       {
-        title: 'Por que doar pela plataforma de vocês?',
-        desc: `Ao doar pela doebem, conseguimos mensurar o impacto do nosso trabalho e medir a destinação das doações para cada causa. 
-        Além disso, o usuário poderá acompanhar de forma periódica o impacto das suas doações.`
+        title: 'Quais fontes vocês utilizam para a busca das pesquisas e estudos?',
+        desc: `Para encontrar pesqusisas, estudos e avaliações de impacto de programas sociais, utilizamos principalmente
+        a GiveWell, o J-Pal, Cochrane e Campbell Collaboration`,
       },
       {
         title: 'Como saber se vocês não têm nenhuma relação com a organização?',
@@ -69,7 +74,7 @@ export class DuvidasController {
         title: 'Adorei o trabalho de vocês, como posso ajudar?',
         desc: `A melhor maneira de nos ajudar é fazendo uma doação para as organizações recomendadas por nós ou para a própria doebem. 
         Como segunda sugestão, você pode nos indicar para familiares e amigos ou mesmo outros doadores por meio de suas redes sociais. 
-        Como terceira sugestão, você pode se candidatar para nossas vagas de emprego, sugerir ideias ou dar sugestões.`
+        Como terceira sugestão, você pode se candidatar para nossas vagas de voluntariado, sugerir ideias ou dar sugestões.`
       }
     ];
   }

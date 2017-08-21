@@ -15,25 +15,7 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
           a#Itens(ng-href='{{item.link}}') {{item.title}}
         //- a#Itens(target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVZNP9YUS79FY")
         //- a#Itens(href="/#ongs")
+        a#Itens(target="_blank" href="https://medium.com/doebem")
+          md-button#blog.md-raized.md-primary Blog
         a#Itens(target="_blank" href="https://pag.ae/bjmsc2J")
-          md-button#doar_button.md-raized.md-primary(type="submit") Doar
-
-        li(ng-show='$ctrl.isAdmin()', ng-class='{active: $ctrl.isActive("/admin")}')
-          a(href='/admin') Admin
-
-      ul.nav.navbar-nav.navbar-right
-        //li(ng-hide='$ctrl.isLoggedIn()', ng-class='{active: $ctrl.isActive("/signup")}')
-          a(href='/signup') Sign up
-
-        //li(ng-hide='$ctrl.isLoggedIn()', ng-class='{active: $ctrl.isActive("/login")}')
-          a(href='/login') Login
-
-        li(ng-show='$ctrl.isLoggedIn()')
-          p.navbar-text Hello {{ $ctrl.getCurrentUser().name }}
-
-        li(ng-show='$ctrl.isLoggedIn()', ng-class='{active: $ctrl.isActive("/settings")}')
-          a(href='/settings')
-            span.glyphicon.glyphicon-cog
-
-        li(ng-show='$ctrl.isLoggedIn()')
-          a(href='/logout') Logout
+          md-button#doar_button.md-raized.md-primary Doar
