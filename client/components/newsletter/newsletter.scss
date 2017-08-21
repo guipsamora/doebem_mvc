@@ -1,0 +1,71 @@
+div#newsletter {
+
+  background-color: white;
+  margin-bottom: 10px;
+
+  .md-button#news {
+    border-style: solid;
+    border-width: 1px;
+    font-size: 16px;
+    margin-left: 0px;
+    margin-bottom: 8px;
+  }
+
+  .md-button:hover {
+    background-color:rgb(63,81,181);
+    color: white;
+  }
+
+  input {
+    width: 250px;
+    height: 38px;
+    border-width: 1px;
+    border-radius: 2px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-right: 0px;
+    border-color: rgb(63,81,181);
+    margin-top: 6px;
+    margin-bottom: 6px;
+    
+  }
+
+  // Adequação no placeholder
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgb(63,81,181);
+    font-size: 16px;
+    font-family: "Open Sans Condensed", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-left: 10px
+  }
+
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    rgb(63,81,181);
+    opacity:  1;
+    font-size: 16px;
+    font-family: "Open Sans Condensed", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-left: 10px
+  }
+
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    rgb(63,81,181);
+    opacity:  1;
+    font-size: 16px;
+    font-family: "Open Sans Condensed", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-left: 10px
+
+  }
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    rgb(63,81,181);
+    font-size: 16px;
+    font-family: "Open Sans Condensed", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-left: 10px
+  }
+
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color:    rgb(63,81,181);
+    font-size: 16px;
+    font-family: "Open Sans Condensed", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-left: 10px
+  }
+}

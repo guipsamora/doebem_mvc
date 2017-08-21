@@ -18,6 +18,7 @@ import admin from './admin';
 import navbar from '../components/navbar/navbar.component';
 import footer from '../components/footer/footer.component';
 import contactForm from '../components/contact-form/contact-form.component';
+import newsletter from '../components/newsletter/newsletter.component';
 // import checkoutForm from '../components/checkout/checkout-form.component';
 import main from './main/main.component';
 import listOngs from './list-ongs/list-ongs.component';
@@ -51,6 +52,7 @@ angular.module('doebemOrgApp', [
   main,
   listOngs,
   contactForm,
+  newsletter,
   // checkoutForm,
   sobre,
   cadOng,
