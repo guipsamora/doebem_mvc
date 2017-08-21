@@ -164,7 +164,8 @@ div#navbar-main.navbar-collapse.collapse {
 
     a#Itens {
         padding-left: 0px;
-        padding-right: 30px;
+        padding-right: 0px;
+        width: 100%;
     }
 
     button.navbar-toggle {
@@ -174,13 +175,15 @@ div#navbar-main.navbar-collapse.collapse {
         border: none;
     }
 
-    button#blog.navbar-toggle {
-        // float: right;
-
+    .md-primary#blog.navbar-toggle {
+        float: right;
         margin-top: 12px;
         margin-right: 100px;
-        width: 252px;
         border: none;
+    }
+
+    .md-primary#blog {
+        width: 100% !important;
     }
 
     .navbar-default .navbar-toggle {
