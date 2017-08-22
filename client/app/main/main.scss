@@ -24,29 +24,43 @@ div#main {
       }
     }
 
-    a {
-      .md-button {
-        position: absolute;
-        bottom: 40px;
-        right: 5px;
-        left: 75px;
-        width: 130px;
-        height: 45px;
-        background-color: rgb(63,81,181);
-        color: white;
-        font-size: 16px;
-        font-weight: 700;
-        margin-top: 15px;
-        margin-left: 20px;  
-        opacity: 0.8;    
-      }
+    div#button{
 
-      button:hover {
-        background-color: white;
-        color: rgb(63,81,181);
-        border-color: rgb(63,81,181);
-        border-style: solid;
-        border-width: 1px;
+      width: 200px;
+      text-align: center;
+
+      a#button {
+
+        // width: 200px;
+        // text-align: center;
+
+        .md-button {
+          position: absolute;
+          display: block;
+          // position: relative;
+          bottom: 40px;
+          // text-align: center;
+          // right: 5px;
+          // left: 75px;
+          // width: 100%;
+          width: 130px;
+          height: 45px;
+          background-color: rgb(63,81,181);
+          color: white;
+          font-size: 16px;
+          font-weight: 700;
+          // margin-top: 15px;
+          // margin-left: 20px;
+          opacity: 0.8;    
+        }
+  
+        button:hover {
+          background-color: white;
+          color: rgb(63,81,181);
+          border-color: rgb(63,81,181);
+          border-style: solid;
+          border-width: 1px;
+        }
       }
     }
 
