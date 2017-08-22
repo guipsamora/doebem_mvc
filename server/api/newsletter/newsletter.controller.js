@@ -50,7 +50,6 @@ function handleSendEmail(req, res) {
 
 // Creates a new Newsletter Email in the DB
 export function create(req, res) {
-  console.log("Eu estive aqui!");
   return newsletter.create(req.body)
-    .then(res);
+  .then(handleSendEmail(req, res));
 }
