@@ -6,7 +6,7 @@ div#newsletter(flex="100" layout="column" layout-align="center center")
         input(type="email" placeholder="Deixe seu email e fique por dentro das novidades!" ng-model="newsletter.Email" requiredminlength="5" maxlength="100" ng-pattern="/^.+@.+\..+$/" required)
         md-button#news.md-raized.md-primary(type="submit") Enviar
 
-script(type="text/ng-template" id="dialogEmailSend.tmpl.pug")
+script(type="text/ng-template" id="dialogEmailSendNewsletter.tmpl.pug")
   md-dialog(aria-label="emailSend")
     form(ng-cloak)
       md-toolbar

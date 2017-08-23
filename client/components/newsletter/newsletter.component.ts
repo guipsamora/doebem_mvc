@@ -33,7 +33,7 @@ export class NewsletterComponent {
       scope: this.$scope,
       preserveScope: true,
       controller: DialogController,
-      templateUrl: 'dialogEmailSend.tmpl.pug',
+      templateUrl: 'dialogEmailSendNewsletter.tmpl.pug',
       parent: angular.element(document.body),
       clickOutsideToClose: true,
       fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
