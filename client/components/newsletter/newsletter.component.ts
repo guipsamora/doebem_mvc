@@ -16,7 +16,6 @@ export class NewsletterComponent {
 
   sendEmail(form, ev) {
     console.log('form: ', form);
-    // this.$http.post('/api/contactForm', form)
     this.$http.post('/api/newsletter', form)
       .then(res => {
         console.log(res);
