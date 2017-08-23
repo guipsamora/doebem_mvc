@@ -34,7 +34,7 @@ function handleSendEmail(req, res) {
   },
     {
       to: 'contato@doebem.org.br',
-      subject: 'Novo inscrito', // REQUIRED.
+      subject: 'Newsletter: Novo inscrito', // REQUIRED.
       message: req.body.Email
     }, err => {
       if(err) {
