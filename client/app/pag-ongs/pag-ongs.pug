@@ -13,6 +13,7 @@ div.animated.fadeIn#pagOng
         p(ng-bind-html='$ctrl.infoOng.sobre')
         a(layout-align="center center" target="_blank" ng-href="{{$ctrl.infoOng.linkPaypal}}")
           md-button.md-raized.md-primary(type="submit") Doar
+          img(src="../assets/images/logos/pagseguro.png", alt="")
         h2#resumo Resumo - Análise doebem
         h3 Gestão
         p(ng-bind-html='$ctrl.infoOng.analiseGestao')
@@ -23,7 +24,8 @@ div.animated.fadeIn#pagOng
         a(ng-href="{{$ctrl.infoOng.linkPdf}}" target="_blank")
          p#anaCompl Confira aqui o arquivo com nossa análise completa.
         a(layout-align="center center" target="_blank" ng-href="{{$ctrl.infoOng.linkPaypal}}")
-          md-button.md-raized.md-primary(type="submit") Doar 
+          md-button.md-raized.md-primary(type="submit") Doar
+          img(src="../assets/images/logos/pagseguro.png", alt="")
 contact-form
 
       //- div#smallInfo(layout="column" layout-align="start start")
