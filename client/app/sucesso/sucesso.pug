@@ -1,0 +1,39 @@
+div.animated.fadeIn#sobre
+  div#pageHeader(flex="100"  layout="column" layout-align="center center")
+    h2 Sobre
+  div#comoFunciona(flex = "100" layout="column" layout-align="center center")
+    h2.sectionHeading Conheça a doebem
+    p#comoFunciona A doebem conecta doadores e organizações sem fins lucrativos efetivas.
+    p Recomendamos organizações para doação unicamente
+    p após uma análise rigorosa de sua qualidade de gestão,
+    p nível de transparência e impacto promovido.
+    br
+    md-list#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
+      md-list-item(ng-repeat="step in $ctrl.stepOptions")
+          div(layout = "column" layout-align="center center")
+            img(src="{{step.icon}}")
+            h2 {{step.title}}
+            p {{step.desc}}
+  br 
+  br
+  div#Time(layout="column"  flex="100" layout-align="center center")
+    h1 Time
+    md-list(layout-wrap layout="row" layout-gt-sm="row" layout-align="space-around center")
+      md-list-item(ng-repeat="pessoa in $ctrl.listaPessoas")
+        md-card(layout="column" flex-gt-sm="100")
+          img.md-card-image(ng-src="{{pessoa.img}}")
+          md-card-title(layout="row")
+            md-card-title-text(layout="row" layout-align="center center")
+              h3 {{pessoa.nome}}
+          md-card-actions(layout="row" layout-align="center center")
+            a(target='_blank' href='{{pessoa.linkedin}}')
+              md-button.md-icon-button(aria-label="linkedin button")
+                i.fa.fa-linkedin
+  div#trabalhe(layout="column" flex="100" layout-align="center center")
+    a(href="https://goo.gl/forms/fUOPM8eyfoHmmxYj2" layout="column" flex="100" 
+      layout-align="center center" target='_blank')
+      img(src="../../assets/images/sobre/trabalhe.png")
+  //- div(class="fb-page" data-href="https://www.facebook.com/plataformadoebem/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true")
+  //-   blockquote(cite="https://www.facebook.com/plataformadoebem/" class="fb-xfbml-parse-ignore")
+  //-     a(href="https://www.facebook.com/plataformadoebem/") doebem
+    
