@@ -48,7 +48,14 @@ export class SobreController {
        img: './assets/images/team/2.jpg',
        twitter: 'https://twitter.com/guisamora',
        linkedin: 'https://br.linkedin.com/in/guisamora'
+      },
+      {
+       nome: 'Rhayana',
+       img: './assets/images/team/3.jpg',
+       twitter: '',
+       linkedin: 'https://www.linkedin.com/in/rhayana-holz-a1916a5a/'
       }
+      
     ];
 
     this.listaConselheiros = [
