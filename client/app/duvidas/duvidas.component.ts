@@ -9,6 +9,7 @@ export class DuvidasController {
   $scope;
   $routeParams;
   groups = [ ];
+  org = [ ];
   link;
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams) {
@@ -26,7 +27,7 @@ export class DuvidasController {
         title: 'Qual a intenção de vocês ao criar essa organização?',
         desc: `Queremos encontrar as melhores oportunidades de doação no Brasil. 
         Nosso objetivo é fazer com que mais brasileiros se sintam confortáveis em doar, ao saber que suas doações serão utilizadas de 
-        maneira profissional e terão um impacto real na vida das pessoas ajudadas.`,
+        maneira profissional e terão uma mudança real na vida das pessoas ajudadas.`,
       },
       {
         title: 'Por que devo confiar em vocês?',
@@ -77,6 +78,16 @@ export class DuvidasController {
         Como terceira sugestão, você pode se candidatar para nossas vagas de voluntariado, sugerir ideias ou dar sugestões.`
       }
     ];
+
+    this.org = [
+      {
+        title: 'Como faço para inscrever minha organização?',
+        desc: `Por conta do nosso processo de estudo e análise, recomendamos apenas organizações com base em estudos de avaliação de impacto
+        e análise da organização. Assim não é possível o cadastramento pela organização em nossa plataforma.
+        Porém como compromisso de fortalecimento do setor encorajamos as organizações a entrarem em contato conosco e 
+        mantermos um relacionamento.`,
+      }
+    ];    
   }
 
   $onInit() {

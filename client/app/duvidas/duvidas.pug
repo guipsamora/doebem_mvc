@@ -2,7 +2,12 @@ div.animated.fadeIn#duvidas
   div#pageHeader(flex="100"  layout="column" layout-align="center center")
     h2 Dúvidas
   div#comoFunciona
+    h2 Sobre a doebem
     uib-accordion(close-others="oneAtATime")
       div(uib-accordion-group class="panel-default" ng-repeat="group in $ctrl.groups" is-open="status.open") {{group.desc}}
         uib-accordion-heading {{group.title}} #[i(class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}")]
+    h2 Organizações
+    uib-accordion(close-others="oneAtATime")
+      div(uib-accordion-group class="panel-default" ng-repeat="group in $ctrl.org" is-open="status.open") {{group.desc}}
+        uib-accordion-heading {{group.title}} #[i(class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}")]        
 contact-form
