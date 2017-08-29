@@ -22,6 +22,10 @@ export class NavbarComponent {
     {
       'title': 'DÚVIDAS',
       'link': 'duvidas'
+    },
+    {
+      'title': 'CONTATO',
+      'link': './#contato'
     }
   ];
 
