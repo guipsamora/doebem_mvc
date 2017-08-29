@@ -25,17 +25,22 @@ div#menu {
 
 // Botão doar
 .md-primary#doar_button {
-    background-color: white;
-    border: black;
+    // background-color: white;
+    background-color: rgb(63,81,181);
+    // border: black;
+    border: white;
+    color: white;
     border-style: solid;
     border-width: 2px;
     border-radius: 4px;
     font-size:18px !important;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .md-primary#doar_button:hover{
     background-color: white !important;
+    color:  rgb(63,81,181) !important;
+    border-color:  rgb(63,81,181) !important;
 }
 
 button.navbar-toggle {
