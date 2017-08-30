@@ -1,7 +1,7 @@
 div#main {
 
   div#pageHeader {
-    background-image: url('/assets/images/main/main.jpg');
+    background-image: url('/assets/images/main/main4.png');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -11,17 +11,37 @@ div#main {
     position: relative;
 
     h2 {
-      color: white;
+      color: black;
+      text-align: center;
+      position: absolute;
+      display: block;
       font-size: 70px;
+      font-weight: bold;
+      top: 200px;
     }
 
     @media screen and (max-width: 768px) {
       min-height: 27vh;
+      
       a {
         .md-button {
           visibility: hidden;
         }
       }
+
+      h2 {
+        color: black;
+        position: absolute;
+        display: block;
+        font-size: 30px;
+        font-weight: bold;
+        top: 20px;
+      }
+
+      div#button {
+        display: none;
+      }
+
     }
 
     div#button {
@@ -274,6 +294,12 @@ div#main {
         .img__wrap:hover .img__description_layer {
           visibility: hidden;
         }
+      }
+    }
+
+    div#crianca {
+      @media screen and (max-width: 768px) {
+        display: none;
       }
     }
   }

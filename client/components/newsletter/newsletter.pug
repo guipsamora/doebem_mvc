@@ -3,7 +3,7 @@ div#newsletter(flex="100" layout="column" layout-align="center center")
   div(flex="100" layout="row"  layout-align="center center")
     form(name="newsletter" layout="column" flex="100" layout-align="center center" ng-submit="$ctrl.sendEmail(newsletter, $event)")
       input-container(flex-gt-sm)
-        input(type="email" placeholder="Deixe seu email e fique por dentro das novidades!" ng-model="newsletter.Email" requiredminlength="5" maxlength="100" ng-pattern="/^.+@.+\..+$/" required)
+        input(type="email" placeholder="Deixe seu email e receba novidades!" ng-model="newsletter.Email" requiredminlength="5" maxlength="100" ng-pattern="/^.+@.+\..+$/" required)
         md-button#news.md-raized.md-primary(type="submit") Enviar
 
 script(type="text/ng-template" id="dialogEmailSendNewsletter.tmpl.pug")

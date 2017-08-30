@@ -72,4 +72,15 @@ div#newsletter {
     font-family: "Open Sans Condensed", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding-left: 5px
   }
+
+  @media screen and (max-width: 450px) {
+    h3 {
+      font-size: 17px;
+    }
+
+    input {
+      width: 200px;
+    }
+  }
+
 }
