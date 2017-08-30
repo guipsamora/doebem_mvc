@@ -5,57 +5,38 @@ div#main {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 90%;
     min-height: 80vh;
     background-position: top center;
     position: relative;
 
-    h2 {
-      color: black;
+    div#textButton {
+      display: inline-flex;
+      width: 600px;
+      height: 400px;
       text-align: center;
-      position: absolute;
-      display: block;
-      font-size: 70px;
-      font-weight: bold;
-      top: 200px;
-    }
 
-    @media screen and (max-width: 768px) {
-      min-height: 27vh;
       
-      a {
-        .md-button {
-          visibility: hidden;
-        }
-      }
-
       h2 {
         color: black;
-        position: absolute;
-        display: block;
-        font-size: 30px;
+        text-align: center;
+        font-size: 70px;
         font-weight: bold;
-        top: 20px;
       }
-
-      div#button {
-        display: none;
-      }
-
-    }
-
-    div#button {
-
-      width: 150px;
-      text-align: center;
-
+  
+      p {
+        color: black;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 45px;
+      }  
+      
       a#button {
 
         .md-button {
-          position: absolute;
-          display: block;
-          bottom: 75px;
-          width: 130px;
+          position: relative;
+          text-align: center;
+          width: 200px;
           height: 45px;
           background-color: rgb(63,81,181);
           color: white;
@@ -73,7 +54,29 @@ div#main {
           border-width: 1px;
         }
       }
+    }  
+
+    @media screen and (max-width: 768px) {
+      min-height: 27vh;
+      
+      a {
+        .md-button {
+          visibility: hidden;
+        }
+      }
+
+      h2 {
+        color: black;
+        display: block;
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      div#button {
+        display: none;
+      }
     }
+
   }
 
   div#mainPage {
@@ -81,7 +84,7 @@ div#main {
       font-size: 50px;
       font-family: 'Oswald';
       margin-bottom: 15px;
-      padding-top: 20px;
+      margin-top: 10px;
     }
 
     div#comoFunciona {
