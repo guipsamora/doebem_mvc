@@ -1,16 +1,5 @@
 div#transparencia {
 
-  div#test {
-    background-color: rgba(0,0,0,0.3);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    min-height: 80vh;
-    display: block;
-    position: relative;
-  }
-
   div#pageHeader {
     background-image: url('/assets/images/transparencia/transparencia.png');
     background-repeat: no-repeat;
@@ -23,6 +12,17 @@ div#transparencia {
     left: 0;
     background-position: top center;
     z-index: -99999;
+  }  
+
+  div#test {
+    background-color: rgba(0,0,0,0.3);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    min-height: 80vh;
+    display: block;
+    position: relative;
   }
 
   div#text {
