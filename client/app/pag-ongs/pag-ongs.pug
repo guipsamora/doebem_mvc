@@ -15,12 +15,12 @@ div.animated.fadeIn#pagOng
           md-button.md-raized.md-primary(type="submit") Doar
           img(src="../assets/images/logos/pagseguro.png", alt="")
         h2#resumo Resumo - Análise doebem
+        h3 Impacto
+        p(ng-bind-html='$ctrl.infoOng.analiseImpacto')
         h3 Gestão
         p(ng-bind-html='$ctrl.infoOng.analiseGestao')
         h3 Transparência
         p(ng-bind-html='$ctrl.infoOng.analiseTransparencia')
-        h3 Impacto
-        p(ng-bind-html='$ctrl.infoOng.analiseImpacto')
         a(ng-href="{{$ctrl.infoOng.linkPdf}}" target="_blank")
          p#anaCompl Confira aqui o arquivo com nossa análise completa.
         a(layout-align="center center" target="_blank" ng-href="{{$ctrl.infoOng.linkPaypal}}")
