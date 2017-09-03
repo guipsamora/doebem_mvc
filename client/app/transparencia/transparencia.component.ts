@@ -24,11 +24,60 @@ export class TransparenciaController {
     this.financials = [
       {
         date: '2017',
+        month: 'Julho',
+        dre_name: 'Balanço - Julho - 2017',
+        dre_link: 'https://drive.google.com/file/d/0B3sdXeGKoeXlMjhSaFh4U19KVXc/view?usp=sharing',
+        // balanco_name: 'Balanço patrimonial',
+        // balanco_link: '',
+      },
+      {
+        date: '2017',
+        month: 'Junho',
+        dre_name: 'Balanço - Junho - 2017',
+        dre_link: 'https://drive.google.com/file/d/0B3sdXeGKoeXlUGtUZGxJOEZmRzg/view?usp=sharing',
+        // balanco_name: 'Balanço patrimonial',
+        // balanco_link: '',
+      },
+      {
+        date: '2017',
+        month: 'Maio',
+        dre_name: 'Balanço - Maio - 2017',
+        dre_link: 'https://drive.google.com/file/d/0B3sdXeGKoeXleTlfZmd3b0hpNm8/view?usp=sharing',
+        // balanco_name: 'Balanço patrimonial',
+        // balanco_link: '',
+      },
+      {
+        date: '2017',
+        month: 'Abril',
+        dre_name: 'Balanço - Abril - 2017',
+        dre_link: 'https://drive.google.com/file/d/0B3sdXeGKoeXlRU9kamV1NHk5dGs/view?usp=sharing',
+        // balanco_name: 'Balanço patrimonial',
+        // balanco_link: '',
+      },
+      {
+        date: '2017',
+        month: 'Março',
+        dre_name: 'Balanço - Março - 2017',
+        dre_link: 'https://drive.google.com/file/d/0B3sdXeGKoeXldTlhbWhEMjNMYTQ/view?usp=sharing  ',
+        // balanco_name: 'Balanço patrimonial',
+        // balanco_link: '',
+      },      
+      {
+        date: '2017',
+        month: 'Fevereiro',
+        dre_name: 'Balanço - Fevereiro - 2017',
+        dre_link: 'https://drive.google.com/file/d/0B3sdXeGKoeXlSW0wWF96Z0FzQ2c/view?usp=sharing',
+        // balanco_name: 'Balanço patrimonial',
+        // balanco_link: '',
+      },
+      {
+        date: '2017',
+        month: 'Fevereiro',
         dre_name: 'Custos de Lançamento',
         dre_link: 'https://drive.google.com/file/d/0B92Dg4kwqibxbUNhcjN4a0ZlSWM/view?usp=sharing',
         // balanco_name: 'Balanço patrimonial',
         // balanco_link: '',
-      }
+      },              
     ];
 
     this.transf = [
