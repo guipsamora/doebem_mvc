@@ -29,13 +29,13 @@ export class DuvidasController {
         Nosso objetivo é fazer com que mais brasileiros se sintam confortáveis em doar, ao saber que suas doações serão utilizadas de 
         maneira profissional e terão uma mudança real na vida das pessoas ajudadas.`,
       },
-      {
-        title: 'Por que devo confiar em vocês?',
-        desc: `Nossas análises possuem embasamento acadêmico e avaliação sobre o desempenho da organização. 
-        Em nossa página de Transparência, compartilhamos nossos indicadores financeiros, planos, erros e aprendizados. 
-        Além disso, somos independentes em nossa avaliação e repassamos 100%* do valor doado para a organização. 
-        Após desconto do cartão de crédito.`,
-      },
+      // {
+      //   title: 'Por que devo confiar em vocês?',
+      //   desc: `Nossas análises possuem embasamento acadêmico e avaliação sobre o desempenho da organização. 
+      //   Em nossa página de Transparência, compartilhamos nossos indicadores financeiros, planos, erros e aprendizados. 
+      //   Além disso, somos independentes em nossa avaliação e repassamos 100%* do valor doado para a organização. 
+      //   Após desconto do cartão de crédito.`,
+      // },
       {
         title: 'Por que doar pela plataforma de vocês?',
         desc: `Ao doar pela doebem, conseguimos mensurar o impacto do nosso trabalho e medir a destinação das doações para cada causa. 
