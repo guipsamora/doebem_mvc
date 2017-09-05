@@ -7,6 +7,9 @@ const ngSanitize = require('angular-sanitize');
 const ngRoute = require('angular-route');
 const uiBootstrap = require('angular-ui-bootstrap');
 
+
+
+
 require('offline-plugin/runtime').install();
 // const ngMessages = require('angular-messages');
 // import ngValidationMatch from 'angular-validation-match';
@@ -33,6 +36,8 @@ import socket from '../components/socket/socket.service';
 import sucesso from './sucesso/sucesso.component';
 import transparencia from './transparencia/transparencia.component';
 import util from '../components/util/util.module';
+
+// import pg_ng_checkout from '../node_modules/ng';
 
 import 'angular-socket-io';
 import './app.scss';
@@ -64,7 +69,7 @@ angular.module('doebemOrgApp', [
   sucesso,
   constants,
   socket,
-  util
+  util,
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {

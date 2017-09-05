@@ -4,6 +4,11 @@ const ngSanitize = require('angular-sanitize');
 import routing from './pag-ongs.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
 
+import { Component } from '@angular/core';
+
+// declare const pg_ng_checkout;
+declare var pg_ng_checkout: any;
+
 export class PagOngs {
   $http;
   $scope;
@@ -13,6 +18,7 @@ export class PagOngs {
   pageTitle;
   pageImage;
   infoOng;
+  pg_ng_checkout;
 
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams) {
@@ -22,6 +28,13 @@ export class PagOngs {
     this.pageTitle = '';
     this.pageImage = '';
     this.infoOng = '';
+
+    $scope.f = function() {
+      
+      // console.log(pg_ng_checkout);
+      pg_ng_checkout.test()
+      // new pg_ng_checkout();
+    }
   }
 
   carregaLista() {
@@ -34,6 +47,8 @@ export class PagOngs {
   $onInit() {
     this.carregaLista();
   }
+
+
 
 }
 
