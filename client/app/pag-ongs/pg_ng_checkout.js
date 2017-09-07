@@ -104,7 +104,3 @@
 	}
 
 })(window, document);
-
-function test(){
-	console.log("test funcionou no pg_ng_checkout");
-}
