@@ -1,14 +1,9 @@
+const angular = require('angular');
 
-
-module.export = function(window){
+export function PgCheckout(){
 	'use strict';
 	
-	angular.module('pg-ng-checkout', [])
-	.provider('$pgCheckout', PgCheckout);
-
 	function PgCheckout(){
-
-		console.log("I was called")
 
 		var _encryptKey;
 
@@ -104,6 +99,7 @@ module.export = function(window){
 		}
 		
 	}
-}(window, document);
+};
 
-
+export default 	angular.module('pg-ng-checkout', [])
+                .provider('$pgCheckout', PgCheckout);

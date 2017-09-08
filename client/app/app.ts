@@ -6,12 +6,9 @@ const ngResource = require('angular-resource');
 const ngSanitize = require('angular-sanitize');
 const ngRoute = require('angular-route');
 const uiBootstrap = require('angular-ui-bootstrap');
-const pgCheckout = require('pg-checkout');
 
 
 require('offline-plugin/runtime').install();
-// const ngMessages = require('angular-messages');
-// import ngValidationMatch from 'angular-validation-match';
 
 import {routeConfig} from './app.config';
 import _Auth from '../components/auth/auth.module';
@@ -35,8 +32,6 @@ import socket from '../components/socket/socket.service';
 import sucesso from './sucesso/sucesso.component';
 import transparencia from './transparencia/transparencia.component';
 import util from '../components/util/util.module';
-
-// import pg_ng_checkout from './pag-ongs/pg_ng_checkout';
 
 import 'angular-socket-io';
 import './app.scss';
@@ -69,7 +64,6 @@ angular.module('doebemOrgApp', [
   constants,
   socket,
   util,
-  pgCheckout
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {

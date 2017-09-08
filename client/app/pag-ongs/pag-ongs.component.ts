@@ -4,15 +4,12 @@ const ngSanitize = require('angular-sanitize');
 import routing from './pag-ongs.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
 
-import { Component } from '@angular/core';
-
-// declare const pg_ng_checkout;
-declare var pg_ng_checkout: any;
-
 export class PagOngs {
   $http;
   $scope;
   $routeParams;
+  $mdDialog;
+  dialog: Function;
   stepOptions = [];
   listOng = [];
   pageTitle;
@@ -21,20 +18,14 @@ export class PagOngs {
   pg_ng_checkout;
 
   /*@ngInject*/
-  constructor($http, $scope, socket, $routeParams) {
+  constructor($http, $scope, socket, $routeParams, $mdDialog) {
     this.$http = $http;
     this.$scope = $scope;
     this.$routeParams = $routeParams;
+    this.$mdDialog = $mdDialog;
     this.pageTitle = '';
     this.pageImage = '';
     this.infoOng = '';
-
-    $scope.f = function() {
-      
-      // console.log(pg_ng_checkout);
-      pg_ng_checkout.test()
-      // new pg_ng_checkout();
-    }
   }
 
   carregaLista() {
@@ -48,9 +39,48 @@ export class PagOngs {
     this.carregaLista();
   }
 
+  click(){
+    this.showDialog();
+  }
+
+
+
+  showDialog() {
+
+
+    this.dialog = this.$mdDialog.show({
+      scope: this.$scope,
+      preserveScope: true,
+      controller: DialogController,
+      templateUrl: 'dialogPagarme.tmpl.pug',
+      parent: angular.element(document.body),
+      clickOutsideToClose: true,
+      fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
+    });
+  }
 
 
 }
+
+
+function DialogController($scope, $mdDialog, $inject) {
+  
+    $scope.hide = function() {
+      $mdDialog.hide();
+    };
+  
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+  
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
+  }
+
+
+
+DialogController.$inject = ['$scope', '$mdDialog'];
 
 export default angular.module('doebemOrgApp.pagOngs', [ngRoute, contactForm, ngSanitize])
   .config(routing)
