@@ -15,7 +15,6 @@ export class PagOngs {
   pageTitle;
   pageImage;
   infoOng;
-  pg_ng_checkout;
 
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams, $mdDialog) {
@@ -39,14 +38,13 @@ export class PagOngs {
     this.carregaLista();
   }
 
-  click(){
+  carregaPagarme(){
     this.showDialog();
   }
 
 
 
   showDialog() {
-
 
     this.dialog = this.$mdDialog.show({
       scope: this.$scope,
@@ -56,15 +54,20 @@ export class PagOngs {
       parent: angular.element(document.body),
       clickOutsideToClose: true,
       fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
-    });
+    })
+    // .then(this.$http.post('/api/pagarme'))
+    // .then(res => {
+    //   console.log(res);
+    // });
   }
-
-
 }
 
 
-function DialogController($scope, $mdDialog, $inject) {
-  
+function DialogController($scope, $mdDialog, $inject, form) {
+
+    $scope.payment = form;
+    console.log(form);
+
     $scope.hide = function() {
       $mdDialog.hide();
     };
@@ -76,6 +79,10 @@ function DialogController($scope, $mdDialog, $inject) {
     $scope.answer = function(answer) {
       $mdDialog.hide(answer);
     };
+
+    $scope.postForm = function(form) {
+      console.log('form: called', form);
+    }
   }
 
 

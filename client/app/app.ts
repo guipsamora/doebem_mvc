@@ -15,7 +15,6 @@ import _Auth from '../components/auth/auth.module';
 import account from './account';
 import admin from './admin';
 import cadOng from './cad-ong/cad-ong.component';
-// import checkoutForm from '../components/checkout/checkout-form.component';
 import contactForm from '../components/contact-form/contact-form.component';
 import constants from './app.constants';
 import duvidas from './duvidas/duvidas.component';

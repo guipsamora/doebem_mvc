@@ -5,12 +5,11 @@
 'use strict';
 
 import {EventEmitter} from 'events';
-import CheckoutForm from './checkoutForm.model';
-
-var CheckoutFormEvents = new EventEmitter();
+import Pagarme from './Pagarme.model';
+var PagarmeEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)
-CheckoutForm.setMaxListeners(0);
+Pagarme.setMaxListeners(0);
 
 // Model events
 var events = {
@@ -21,14 +20,14 @@ var events = {
 // Register the event emitter to the model events
 for(var e in events) {
   let event = events[e];
-  CheckoutForm.schema.post(e, emitEvent(event));
+  Pagarme.schema.post(e, emitEvent(event));
 }
 
 function emitEvent(event) {
   return function(doc) {
-    CheckoutFormEvents.emit(`${event}:${doc._id}`, doc);
-    CheckoutFormEvents.emit(event, doc);
+    PagarmeEvents.emit(`${event}:${doc._id}`, doc);
+    PagarmeEvents.emit(event, doc);
   };
 }
 
-export default CheckoutFormEvents;
+export default PagarmeEvents;

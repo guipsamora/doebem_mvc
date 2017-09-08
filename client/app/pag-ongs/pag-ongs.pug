@@ -14,7 +14,7 @@ div.animated.fadeIn#pagOng
         //- button.md-raized.md-primary(type="submit" ng-click="$ctrl.click()") Doar
         //- a(href="#")
           //- button.md-raized.md-primary(type="submit" data-toggle="modal" data-target="#dialogEmailSend" ng-click="$ctrl.click()") Doar
-        button.md-raized.md-primary(type="submit" data-toggle="modal" ng-click="$ctrl.click()") Doar
+        button.md-raized.md-primary(type="submit" ng-click="$ctrl.carregaPagarme()") Doar
         h2#resumo Resumo - Análise doebem
         h3 Impacto
         p(ng-bind-html='$ctrl.infoOng.analiseImpacto')
@@ -29,51 +29,38 @@ div.animated.fadeIn#pagOng
           img(src="../assets/images/logos/pagseguro.png", alt="")
 contact-form
 
-      //- div#smallInfo(layout="column" layout-align="start start")
-      //-   img(ng-src="{{$ctrl.infoOng.logo}}" layout-align="center center" layout-align-sm = "center start" layout-align-xs = "center start")
-      //-   h4(layout-align-sm = "center end" layout-align-xs = "center end") Causa: {{$ctrl.infoOng.causaFrontEnd}}
-      //-   h4(layout-align-sm = "center end" layout-align-xs = "center end") Ano de fundação: {{$ctrl.infoOng.anoFundacao}}
-      //-   h4(layout-align-sm = "end center" layout-align-xs = "end center") Atua em: {{$ctrl.infoOng.localidadesDeAtuacao[0].localidade}}
-      //-   md-button.md-primary(flex layout-align="center center" layout-align-sm = "end center" layout-align-xs = "end center") Doar
-
-//- form(method="POST" action="dialogEmailSend.tmpl.pug")
-//- div(id = "dialogEmailSend")
-form(method="POST" action="/comprar" id="dialogPagarme.tmpl.pug")
-  md-dialog(aria-label="emailSend")
-  //- form(ng-cloak )
-  //- form(ng-cloak )
-  md-toolbar
-    div.md-toolbar-tools
-      h2 Email Enviado!
+//- Script Pagarme
+script(type="text/ng-template" id="dialogPagarme.tmpl.pug")
+  md-dialog(aria-label="doação")
+    md-toolbar
+      div.md-toolbar-tools
+        h2 Escolha o valor da sua doação!
+        span(flex)
+        md-button.md-icon-button(aria-label="md-button ok", ng-click="cancel()")
+          md-icon
+            ng-md-icon.name(icon="close" style="fill: white")
+    md-dialog-content
+      div.md-dialog-content
+        h2 Show! Obrigado pela sua mensagem! 
+    md-dialog-actions(layout="row")
       span(flex)
-      md-button.md-icon-button(aria-label="md-button ok", ng-click="cancel()")
-        md-icon
-          ng-md-icon.name(icon="close" style="fill: white")
-  script(type = "text/javascript" src = "https://assets.pagar.me/checkout/checkout.js"
-          data-button-text="Pagar"
-          data-encryption-key="ek_live_3yykMegYY2XTPClgA1qjui2gSlvVzG"
-          data-amount="1000"
-          data-customer-data="true"
-          data-payment-methods="boleto,credit_card"
-          data-ui-color="#bababa"
-          data-postback-url="requestb.in/1234"
-          data-create-token="true"
-          data-interest-rate="12"
-          data-free-installments="3"
-          data-default-installment="5"
-          data-header-text="Título")
-      md-dialog(aria-label="emailSend")
-      //- form(ng-cloak )
-      //-   md-toolbar
-      //-     div.md-toolbar-tools
-      //-       h2 Email Enviado!
-      //-       span(flex)
-      //-       md-button.md-icon-button(aria-label="md-button ok", ng-click="cancel()")
-      //-         md-icon
-      //-           ng-md-icon.name(icon="close" style="fill: white")
-      //-   md-dialog-content
-      //-     div.md-dialog-content
-      //-       h2 {{$ctrl.name}}, obrigado pela sua mensagem! 
-      //-   md-dialog-actions(layout="row")
-      //-     span(flex)
-      //-     md-button(ng-click="") Ok
+      form(name="form" method="POST" action="/pagOngs/saudecrianca")
+        md-button(type="submit" ng-click="postForm(form)") Pagar
+        script(type = "text/javascript" src = "https://assets.pagar.me/checkout/checkout.js"
+              data-button-text="Pagar"
+              data-encryption-key="ek_live_3yykMegYY2XTPClgA1qjui2gSlvVzG"
+              data-amount="1000"
+              data-customer-data="true"
+              data-payment-methods="boleto,credit_card"
+              data-ui-color="#bababa"
+              data-postback-url="http://www.doebem.org.br/api/pagarme"
+              data-create-token="true"
+              data-interest-rate="0"
+              data-free-installments="0"
+              data-default-installment="0"
+              data-header-text="Título"
+              data-max-installments="1"
+              data-disable-zero-document-number="true"
+              )
+
+                                                        

@@ -4,7 +4,7 @@
 
 'use strict';
 
-import checkoutFormEvents from './checkoutForm.events';
+import PagarmeEvents from './pagarme.events';
 
 // Model events to emit
 var events = ['save', 'remove'];
@@ -13,9 +13,9 @@ export function register(socket) {
   // Bind model events to socket events
   for(var i = 0, eventsLength = events.length; i < eventsLength; i++) {
     var event = events[i];
-    var listener = createListener(`checkoutForm:${event}`, socket);
+    var listener = createListener(`pagarme:${event}`, socket);
 
-    checkoutFormEvents.on(event, listener);
+    PagarmeEvents.on(event, listener);
     socket.on('disconnect', removeListener(event, listener));
   }
 }
@@ -29,6 +29,6 @@ function createListener(event, socket) {
 
 function removeListener(event, listener) {
   return function() {
-    checkoutFormEvents.removeListener(event, listener);
+    PagarmeEvents.removeListener(event, listener);
   };
 }
