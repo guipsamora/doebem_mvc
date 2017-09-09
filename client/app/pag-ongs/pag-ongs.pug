@@ -45,22 +45,30 @@ script(type="text/ng-template" id="dialogPagarme.tmpl.pug")
     md-dialog-actions(layout="row")
       span(flex)
       form(name="form" method="POST" action="/pagOngs/saudecrianca")
-        md-button(type="submit" ng-click="postForm(form)") Pagar
-        script(type = "text/javascript" src = "https://assets.pagar.me/checkout/checkout.js"
+        //- md-button(type="submit" ng-click="postForm(form)") Pagar
+        md-button(type="submit") Pagar
+        script(type = "text/javascript" 
+              src = "https://assets.pagar.me/checkout/checkout.js"
               data-button-text="Pagar"
               data-encryption-key="ek_live_3yykMegYY2XTPClgA1qjui2gSlvVzG"
               data-amount="1000"
               data-customer-data="true"
               data-payment-methods="boleto,credit_card"
-              data-ui-color="#bababa"
-              data-postback-url="http://www.doebem.org.br/api/pagarme"
+              data-ui-color="#3f51b5"
+              data-postback-url="http://sandbox-doebem.herokuapp.com/api/pagarme"
               data-create-token="true"
               data-interest-rate="0"
               data-free-installments="0"
               data-default-installment="0"
-              data-header-text="Título"
+              data-header-text="Obrigado pela sua doação."
               data-max-installments="1"
               data-disable-zero-document-number="true"
-              )
-
-                                                        
+              data-boleto-helper-text="Podemos levar em média de 1 a 2 dias para que o pagamento seja aprovado." 
+              data-credit-card-helper-text="Podemos levar até um dia para que o pagamento seja aprovado."
+              data-customer-email="" 
+              data-customer-document-number="" 
+              data-customer-phone-ddd="" 
+              data-customer-phone-number="" 
+              data-customer-address-zipcode="" 
+              data-customer-address-street-number="" 
+              data-customer-address-complementary="")
