@@ -44,12 +44,11 @@ script(type="text/ng-template" id="dialogPagarme.tmpl.pug")
         h2 Show! Obrigado pela sua mensagem! 
     md-dialog-actions(layout="row")
       span(flex)
-      //- form(name="form" method="POST" action="{{ '/pagOngs/' + $ctrl.infoOng.slug}}")
-      form(name="form" action="{{ '/pagOngs/' + $ctrl.infoOng.slug}}")
+      form(name="form" method="POST" action="{{ '/pagOngs/' + $ctrl.infoOng.slug}}")
         //- md-button(type="submit" ng-click="postForm(form)") Pagar
-        //- md-button(type="submit") Pagar
+        md-button(type="submit") Pagar
         //- input(type="text") Valor
-        input(type="submit")
+        //- input(type="submit")
         script(type = "text/javascript" 
               src = "https://assets.pagar.me/checkout/checkout.js"
               data-button-text="Pagar"

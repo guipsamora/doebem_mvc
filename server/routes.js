@@ -39,16 +39,16 @@ export default app => {
   //   // });
   //   .post(res(200));
 
-  // app.post('/pagOngs/saudecrianca', function(req, res){
-  //   console.log(req.body);
-  //   // console.log(res);
-  //   res.send("post funcionou");
-  // })
+  app.post('/pagOngs/saudecrianca', function(req, res){
+    // var username = req.body;
+    app.use('/api/pagarme', require('./api/pagarme'))
+    // console.log("post received: %s", username);
+  })
 
-  app.post('/pagOngs/saudecrianca', function(req,res){
-    console.log("chamou post");
-    res.sendStatus(200);
-  });
+  // app.post('/pagOngs/saudecrianca', function(req,res){
+  //   console.log("chamou post");
+  //   res.sendStatus(200);
+  // });
 
 
 
