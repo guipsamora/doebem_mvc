@@ -21,9 +21,38 @@ export default app => {
 
   app.use('/auth', require('./auth').default);
 
-  // All undefined asset or api routes should return a 404
+
+
+  // All undefined asset or API routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')
     .get(errors[404]);
+
+  // app.route('/:url(api|auth|components|app|bower_components|assets)/*')
+  //   .get((req, res) => {
+  //     console.log("Não funcionei");
+  //   })
+  //   .get(error[404]);
+
+  // app.route('/pagOngs/saudecrianca')
+  //   // .post(function(req, res){
+  //   //   res.send("post funcionou");
+  //   // });
+  //   .post(res(200));
+
+  // app.post('/pagOngs/saudecrianca', function(req, res){
+  //   console.log(req.body);
+  //   // console.log(res);
+  //   res.send("post funcionou");
+  // })
+
+  app.post('/pagOngs/saudecrianca', function(req,res){
+    console.log("chamou post");
+    res.sendStatus(200);
+  });
+
+
+
+
 
   // All other routes should redirect to the index.html
   app.route('/*')

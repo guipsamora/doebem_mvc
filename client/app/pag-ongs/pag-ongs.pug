@@ -31,7 +31,7 @@ contact-form
 
 //- Script Pagarme
 script(type="text/ng-template" id="dialogPagarme.tmpl.pug")
-  md-dialog(aria-label="doação")
+  md-dialog(aria-label="doação" style="max-width: 100%")
     md-toolbar
       div.md-toolbar-tools
         h2 Escolha o valor da sua doação!
@@ -44,9 +44,12 @@ script(type="text/ng-template" id="dialogPagarme.tmpl.pug")
         h2 Show! Obrigado pela sua mensagem! 
     md-dialog-actions(layout="row")
       span(flex)
-      form(name="form" method="POST" action="/pagOngs/saudecrianca")
+      //- form(name="form" method="POST" action="{{ '/pagOngs/' + $ctrl.infoOng.slug}}")
+      form(name="form" action="{{ '/pagOngs/' + $ctrl.infoOng.slug}}")
         //- md-button(type="submit" ng-click="postForm(form)") Pagar
-        md-button(type="submit") Pagar
+        //- md-button(type="submit") Pagar
+        //- input(type="text") Valor
+        input(type="submit")
         script(type = "text/javascript" 
               src = "https://assets.pagar.me/checkout/checkout.js"
               data-button-text="Pagar"
@@ -59,8 +62,8 @@ script(type="text/ng-template" id="dialogPagarme.tmpl.pug")
               data-create-token="true"
               data-interest-rate="0"
               data-free-installments="0"
-              data-default-installment="0"
-              data-header-text="Obrigado pela sua doação."
+              data-default-installment="1"
+              data-header-text="Total a pagar {price_info}."
               data-max-installments="1"
               data-disable-zero-document-number="true"
               data-boleto-helper-text="Podemos levar em média de 1 a 2 dias para que o pagamento seja aprovado." 
