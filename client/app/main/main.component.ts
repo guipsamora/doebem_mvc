@@ -45,7 +45,7 @@ export class MainController {
         src: '../../assets/images/midias/projetodraft.png',
         link: 'http://projetodraft.com/a-doebem-quer-conectar-gente-disposta-a-ajudar-com-organizacoes-sociais-confiaveis/',
         alt: 'Projeto Draft'
-      },      
+      },
       {
         src: '../../assets/images/midias/awesomefoundation.png',
         link: 'http://www.awesomefoundation.org/pt/projects/75390-doebem',

@@ -87,7 +87,7 @@ export class DuvidasController {
         Porém como compromisso de fortalecimento do setor encorajamos as organizações a entrarem em contato conosco e 
         mantermos um relacionamento.`,
       }
-    ];    
+    ];
   }
 
   $onInit() {

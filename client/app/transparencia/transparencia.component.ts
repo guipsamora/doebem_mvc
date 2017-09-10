@@ -61,7 +61,7 @@ export class TransparenciaController {
         dre_link: 'https://drive.google.com/file/d/0B3sdXeGKoeXldTlhbWhEMjNMYTQ/view?usp=sharing  ',
         // balanco_name: 'Balanço patrimonial',
         // balanco_link: '',
-      },      
+      },
       {
         date: '2017',
         month: 'Fevereiro',
@@ -77,7 +77,7 @@ export class TransparenciaController {
         dre_link: 'https://drive.google.com/file/d/0B92Dg4kwqibxbUNhcjN4a0ZlSWM/view?usp=sharing',
         // balanco_name: 'Balanço patrimonial',
         // balanco_link: '',
-      },              
+      },
     ];
 
     this.transf = [
