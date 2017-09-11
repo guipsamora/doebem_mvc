@@ -95,6 +95,7 @@ div#main {
       padding-bottom: 30px;
       background-color: white;
 
+
       p#comoFunciona {
         padding-top: 10px;
         margin-bottom: 0px;
@@ -180,7 +181,7 @@ div#main {
     div#modelo {
       background-color: white;
       padding: 0 0 30px 0;
-      display: block;
+      display: inherit;
       height: 100%;
       width: 100%;      
     }

@@ -55,7 +55,6 @@ export class SobreController {
        twitter: '',
        linkedin: 'https://www.linkedin.com/in/rhayana-holz-a1916a5a/'
       }
-      
     ];
 
     this.listaConselheiros = [

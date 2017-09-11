@@ -13,12 +13,9 @@ export default app => {
   app.use('/api/users', require('./api/user'));
   app.use('/api/contactForm', require('./api/contactForm'));
   app.use('/api/newsletter', require('./api/newsletter'));
-  // app.use('/api/checkoutForm', require('./api/checkoutForm'));
   app.use('/api/ong', require('./api/ong'));
   app.use('/api/buscaCep', require('./api/busca-cep'));
   app.use('/api/imageGallery', require('./api/imageGallery'));
-  app.use('/api/paymentTransaction', require('./api/paymentTransaction'));
-
   app.use('/auth', require('./auth').default);
 
   // All undefined asset or api routes should return a 404
