@@ -94,6 +94,7 @@ div#main {
       display: block;
       padding-bottom: 30px;
       background-color: white;
+      padding-bottom: 40px;
 
 
       p#comoFunciona {
@@ -156,6 +157,12 @@ div#main {
 
     div#reconhecimentos {
 
+      padding-bottom: 40px;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      display: block;
+
       @media screen and (max-width: 768px) {
         h3 {
           font-size: 16px;
@@ -180,10 +187,11 @@ div#main {
 
     div#modelo {
       background-color: white;
-      padding: 0 0 30px 0;
-      display: inherit;
+      padding: 0 0 40px 0;
+      text-align: center;
       height: 100%;
-      width: 100%;      
+      width: 100%;
+      display: block;
     }
 
     div#ongs {
@@ -305,6 +313,12 @@ div#main {
     }
 
     div#crianca {
+
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      display: block;
+
       @media screen and (max-width: 768px) {
         display: none;
       }

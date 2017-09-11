@@ -17,8 +17,6 @@ div#main.animated.fadeIn
               img(src="{{step.icon}}")
               h2 {{step.title}}
               p {{step.desc}}
-      br
-      br
     div#reconhecimentos(flex="100" layout="column" layout-align="center center")
       h3 Confira o que andam falando sobre nós!
       br
@@ -26,28 +24,24 @@ div#main.animated.fadeIn
         div(ng-repeat="midia in $ctrl.midias")
           a(ng-href="{{midia.link}}" target="_blank")
             img#af.mid(ng-src="{{midia.src}}" alt="{{midia.alt}}")
-    br
-    br
     div#modelo(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading Modelo 100%
       p A doebem não cobra nenhuma taxa pela doação realizada para qualquer
       p uma das organizações recomendadas, apenas as taxas das ferramentas
       p de pagamento são cobradas.
       img(src="/assets/images/transparencia/100.png")
-    br
-    br
     div#ongs(flex = "100" layout="column" layout-align="center center")
       h2.sectionHeading Organizações
       h3 Conheça as organizações recomendadas e mude uma vida hoje.
       md-list(flex 
-          md-cols-gt-xs="2"
-          md-cols-gt-md="3"
-          md-cols="1"
-          md-row-height="4:5"
-          md-gutter-gt-sd="10px"
-          md-gutter="35px"
-          layout-align="center center"
-          layout="column")
+              md-cols-gt-xs="2"
+              md-cols-gt-md="3"
+              md-cols="1"
+              md-row-height="4:5"
+            md-gutter-gt-sd="10px"
+            md-gutter="35px"
+            layout-align="center center"
+            layout="column")
         md-list-item(layout="column" layout-gt-sm ="row" layout-align="center center")
           a(ng-repeat="ong in $ctrl.listOng" ng-href="{{$location.absUrl() + '/pagOngs/' + ong.slug}}")
             md-card.img__wrap
