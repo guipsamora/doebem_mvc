@@ -6,6 +6,7 @@
 
 import errors from './components/errors';
 import path from 'path';
+import pagarme from 'pagarme';
 
 export default app => {
   // Insert routes below
@@ -17,7 +18,6 @@ export default app => {
   app.use('/api/ong', require('./api/ong'));
   app.use('/api/buscaCep', require('./api/busca-cep'));
   app.use('/api/imageGallery', require('./api/imageGallery'));
-  app.use('/api/paymentTransaction', require('./api/paymentTransaction'));
 
   app.use('/auth', require('./auth').default);
 
@@ -40,19 +40,18 @@ export default app => {
   //   .post(res(200));
 
   app.post('/pagOngs/saudecrianca', function(req, res){
-    // var username = req.body;
-    app.use('/api/pagarme', require('./api/pagarme'))
-    // console.log("post received: %s", username);
+
+    console.log("Post chamado");
+
+    pagarme.client.connect({ api_key: 'ak_test_rnrtxW0T417zXA5Fq42gM2LBaqLrFq' })
+    .then(client => client.transactions.capture({ id: pagarme.token, amount: 1000 }))
+    .catch(function(err){
+      console.log(err);
+      console.log(err.response.errors);
+    }
+    );
+
   })
-
-  // app.post('/pagOngs/saudecrianca', function(req,res){
-  //   console.log("chamou post");
-  //   res.sendStatus(200);
-  // });
-
-
-
-
 
   // All other routes should redirect to the index.html
   app.route('/*')

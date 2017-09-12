@@ -34,6 +34,8 @@ export default function(app) {
 
   app.set('appPath', path.join(config.root, 'client'));
   app.use(express.static(app.get('appPath')));
+
+  app.use(express.static('../client/assets'));
   app.use(morgan('dev'));
 
   app.set('views', `${config.root}/server/views`);

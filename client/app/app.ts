@@ -7,7 +7,6 @@ const ngSanitize = require('angular-sanitize');
 const ngRoute = require('angular-route');
 const uiBootstrap = require('angular-ui-bootstrap');
 
-
 require('offline-plugin/runtime').install();
 
 import {routeConfig} from './app.config';
@@ -32,6 +31,7 @@ import sucesso from './sucesso/sucesso.component';
 import transparencia from './transparencia/transparencia.component';
 import util from '../components/util/util.module';
 
+
 import 'angular-socket-io';
 import './app.scss';
 
@@ -51,7 +51,6 @@ angular.module('doebemOrgApp', [
   listOngs,
   contactForm,
   newsletter,
-  // checkoutForm,
   sobre,
   cadOng,
   pagOngs,
@@ -62,7 +61,7 @@ angular.module('doebemOrgApp', [
   sucesso,
   constants,
   socket,
-  util,
+  util
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {

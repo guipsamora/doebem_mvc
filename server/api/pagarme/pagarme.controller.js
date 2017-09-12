@@ -8,6 +8,10 @@
 import Pagarme from './pagarme.model';
 import express from 'express';
 import mailer from 'express-mailer';
+const pagarme = require('pagarme');
+
+pagarme.client.connect({ api_key: 'ak_live_aV5woi9sWspHdyBmaq7n17V4vSZafP' })
+  .then(client => client.transactions.capture({ id: "TOKEN", amount: 1000 }));
 
 var app = express();
 
