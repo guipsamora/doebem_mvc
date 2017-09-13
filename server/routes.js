@@ -14,17 +14,11 @@ export default app => {
   app.use('/api/users', require('./api/user'));
   app.use('/api/contactForm', require('./api/contactForm'));
   app.use('/api/newsletter', require('./api/newsletter'));
-<<<<<<< HEAD
-  app.use('/api/ong', require('./api/ong'));
-  app.use('/api/buscaCep', require('./api/busca-cep'));
-  app.use('/api/imageGallery', require('./api/imageGallery'));
-=======
   app.use('/api/pagarme', require('./api/pagarme'));
   app.use('/api/ong', require('./api/ong'));
   app.use('/api/buscaCep', require('./api/busca-cep'));
   app.use('/api/imageGallery', require('./api/imageGallery'));
 
->>>>>>> pagarme
   app.use('/auth', require('./auth').default);
 
 
@@ -40,7 +34,7 @@ export default app => {
     var token = req.body.token;
     var amountTransaction = req.body.amount;
 
-    pagarme.client.connect({ api_key: 'ak_test_rnrtxW0T417zXA5Fq42gM2LBaqLrFq' })
+    pagarme.client.connect({ api_key: 'ak_live_aV5woi9sWspHdyBmaq7n17V4vSZafP' })
     .then(client => client.transactions.capture({ id: token, amount: amountTransaction }))
     .catch(err => {console.log(err.response.errors)});
   });
