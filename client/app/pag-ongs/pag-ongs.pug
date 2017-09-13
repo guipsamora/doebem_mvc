@@ -1,132 +1,44 @@
-html
-  body
-    div.animated.fadeIn#pagOng
-      script(type="text/javascript" src="../../assets/checkout.js")
-      div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url(' + $ctrl.infoOng.backgroundImage + ')'}")
-        h2 {{$ctrl.infoOng.nomeFantasia}}
-      div.container
-        div#infos(layout="row" layout-sm="column" layout-xs="column")
-          div(flex="80" layout-align="start")
-            img#princ(ng-src="")      
-          div#smallInfo(layout="column" layout-align="start start")
-            checkout-form
-        div(layout="column")
-          script(type='text/javascript').  
-            var myVar = ‘Hello Var’;
-            console.log(myVar);
-          div#lista(layout="column" layout-align="left")
-            h2 Sobre
-            p(ng-bind-html='$ctrl.infoOng.sobre')
-            button(ng-click="$ctrl.callPagarme()") Doar
-            //- form(method="POST" action="{{'/pagOngs/' + $ctrl.infoOng.slug}}")          
-            //-   script(type = "text/javascript", 
-            //-           src = "https://assets.pagar.me/checkout/checkout.js",
-            //-           data-button-text="Pagar",
-            //-           data-encryption-key="ek_test_QifcmAvy9wCtsgrUr04o884mXp1HiP",
-            //-           data-amount="1000",
-            //-           data-customer-data="true",
-            //-           data-payment-methods="boleto,credit_card",
-            //-           data-ui-color="#3f51b5",
-            //-           data-postback-url="http://sandbox-doebem.herokuapp.com/api/pagarme",
-            //-           data-create-token="true",
-            //-           data-interest-rate="0",
-            //-           data-free-installments="0",
-            //-           data-default-installment="1",
-            //-           data-header-text="Total a pagar {price_info}.",
-            //-           data-max-installments="1",
-            //-           data-disable-zero-document-number="true",
-            //-           data-boleto-helper-text="Podemos levar em média de 1 a 2 dias para que o pagamento seja aprovado.",
-            //-           data-credit-card-helper-text="Podemos levar até um dia para que o pagamento seja aprovado.",
-            //-           data-customer-email="",
-            //-           data-customer-document-number="",
-            //-           data-customer-phone-ddd="",
-            //-           data-customer-phone-number="",
-            //-           data-customer-address-zipcode="",
-            //-           data-customer-address-street-number="",
-            //-           data-customer-address-complementary="")
-            h2#resumo Resumo - Análise doebem
-            h3 Impacto
-            p(ng-bind-html='$ctrl.infoOng.analiseImpacto')
-            h3 Gestão
-            p(ng-bind-html='$ctrl.infoOng.analiseGestao')
-            h3 Transparência
-            p(ng-bind-html='$ctrl.infoOng.analiseTransparencia')
-            a(ng-href="{{$ctrl.infoOng.linkPdf}}" target="_blank")
-            p#anaCompl Confira aqui o arquivo com nossa análise completa.
-            a(layout-align="center center" target="_blank" ng-href="{{$ctrl.infoOng.linkPaypal}}")
-              md-button.md-raized.md-primary(type="submit") Doar
-              img(src="../assets/images/logos/pagseguro.png", alt="")
-    contact-form
-
-    //- Script Pagarme
-    //- script(type="text/ng-template" id="dialogPagarme.tmpl.pug")
-    //-   md-dialog(aria-label="doação" style="max-width: 100%")
-    //-     md-toolbar
-    //-       div.md-toolbar-tools
-    //-         h2 Escolha o valor da sua doação!
-    //-         span(flex)
-    //-         md-button.md-icon-button(aria-label="md-button ok", ng-click="cancel()")
-    //-           md-icon
-    //-             ng-md-icon.name(icon="close" style="fill: white")
-    //-     md-dialog-content
-    //-       div.md-dialog-content
-    //-         h2 Show! Obrigado pela sua mensagem! 
-    //-     md-dialog-actions(layout="row")
-    //-       span(flex)
-    //-       form(name="dialog.form" method="POST" action="{{'/pagOngs/' + $ctrl.infoOng.slug}}")
-    //-         button(type="button") Pagar
-    //-         script(type = "text/javascript" 
-    //-                src = "https://assets.pagar.me/checkout/checkout.js"
-    //-                data-button-text="Pagar"
-    //-                data-encryption-key="ek_live_3yykMegYY2XTPClgA1qjui2gSlvVzG"
-    //-                data-amount="1000"
-    //-                data-customer-data="true"
-    //-                data-payment-methods="boleto,credit_card"
-    //-                data-ui-color="#3f51b5"
-    //-                data-postback-url="http://sandbox-doebem.herokuapp.com/api/pagarme"
-    //-                data-create-token="true"
-    //-                data-interest-rate="0"
-    //-                data-free-installments="0"
-    //-                data-default-installment="1"
-    //-                data-header-text="Total a pagar {price_info}."
-    //-                data-max-installments="1"
-    //-                data-disable-zero-document-number="true"
-    //-                data-boleto-helper-text="Podemos levar em média de 1 a 2 dias para que o pagamento seja aprovado." 
-    //-                data-credit-card-helper-text="Podemos levar até um dia para que o pagamento seja aprovado."
-    //-                data-customer-email="" 
-    //-                data-customer-document-number="" 
-    //-                data-customer-phone-ddd="" 
-    //-                data-customer-phone-number="" 
-    //-                data-customer-address-zipcode="" 
-    //-                data-customer-address-street-number="" 
-    //-                data-customer-address-complementary="")
-
-    script(type="text/ng-template" id="dialogPagarme.tmpl.pug")
-      //- md-dialog(aria-label="doação" style="max-width: 100%")
-      form(name="dialog.form" method="POST" action="{{'/pagOngs/' + $ctrl.infoOng.slug}}")
-        button(type="submit") Pagar
-        script(type = "text/javascript" 
-                src = "https://assets.pagar.me/checkout/checkout.js"
-                data-button-text="Pagar"
-                data-encryption-key="ek_live_3yykMegYY2XTPClgA1qjui2gSlvVzG"
-                data-amount="1000"
-                data-customer-data="true"
-                data-payment-methods="boleto,credit_card"
-                data-ui-color="#3f51b5"
-                data-postback-url="http://sandbox-doebem.herokuapp.com/api/pagarme"
-                data-create-token="true"
-                data-interest-rate="0"
-                data-free-installments="0"
-                data-default-installment="1"
-                data-header-text="Total a pagar {price_info}."
-                data-max-installments="1"
-                data-disable-zero-document-number="true"
-                data-boleto-helper-text="Podemos levar em média de 1 a 2 dias para que o pagamento seja aprovado." 
-                data-credit-card-helper-text="Podemos levar até um dia para que o pagamento seja aprovado."
-                data-customer-email="" 
-                data-customer-document-number="" 
-                data-customer-phone-ddd="" 
-                data-customer-phone-number="" 
-                data-customer-address-zipcode="" 
-                data-customer-address-street-number="" 
-                data-customer-address-complementary="")
+div.animated.fadeIn#pagOng
+  div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url(' + $ctrl.infoOng.backgroundImage + ')'}")
+    h2 {{$ctrl.infoOng.nomeFantasia}}
+  div.container
+    div#infos(layout="row" layout-sm="column" layout-xs="column")
+      div(flex="80" layout-align="start")
+        img#princ(ng-src="")      
+      div#smallInfo(layout="column" layout-align="start start")
+        checkout-form
+    div(layout="column")
+      script(type='text/javascript').  
+        var myVar = ‘Hello Var’;
+        console.log(myVar);
+      div#lista(layout="column" layout-align="left")
+        h2 Sobre
+        p(ng-bind-html='$ctrl.infoOng.sobre')
+        form(name="contactForm")
+          select(ng-init="contactForm.amount = " ng-model="contactForm.amount" data-donation="{{$ctrl.infoOng.slug}}" id="{{$ctrl.infoOng.slug}}")
+            option(value="1000") R$10,00
+            option(value="2000") R$20,00
+            option(value="3000") R$30,00
+            option(value="5000") R$50,00
+            option(value="10000") R$100,00
+            option(value="30000") R$300,00
+          button(ng-click="$ctrl.callPagarme(contactForm)") Doar
+        h2#resumo Resumo - Análise doebem
+        h3 Impacto
+        p(ng-bind-html='$ctrl.infoOng.analiseImpacto')
+        h3 Gestão
+        p(ng-bind-html='$ctrl.infoOng.analiseGestao')
+        h3 Transparência
+        p(ng-bind-html='$ctrl.infoOng.analiseTransparencia')
+        a(ng-href="{{$ctrl.infoOng.linkPdf}}" target="_blank")
+        p#anaCompl Confira aqui o arquivo com nossa análise completa.
+        form(name="contactForm")
+          select(ng-model="contactForm.amount" data-donation="{{$ctrl.infoOng.slug}}" id="{{$ctrl.infoOng.slug}}")
+            option(value="1000") R$10,00
+            option(value="2000") R$20,00
+            option(value="3000") R$30,00
+            option(value="5000") R$50,00
+            option(value="10000") R$100,00
+            option(value="30000") R$300,00
+          button(ng-click="$ctrl.callPagarme(contactForm)") Doar
+contact-form

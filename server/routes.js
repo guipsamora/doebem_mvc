@@ -27,24 +27,16 @@ export default app => {
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')
     .get(errors[404]);
 
-  // app.route('/:url(api|auth|components|app|bower_components|assets)/*')
-  //   .get((req, res) => {
-  //     console.log("Não funcionei");
-  //   })
-  //   .get(error[404]);
-
-  // app.route('/pagOngs/saudecrianca')
-  //   // .post(function(req, res){
-  //   //   res.send("post funcionou");
-  //   // });
-  //   .post(res(200));
-
   app.post('/pagOngs/saudecrianca', function(req, res){
 
-    console.log("Post chamado");
+    console.log("Post chamado", req.body);
+
+    var data = req.body.token;
+
+    var amo = req.body.am;
 
     pagarme.client.connect({ api_key: 'ak_test_rnrtxW0T417zXA5Fq42gM2LBaqLrFq' })
-    .then(client => client.transactions.capture({ id: pagarme.token, amount: 1000 }))
+    .then(client => client.transactions.capture({ id: data, amount: amo }))
     .catch(function(err){
       console.log(err);
       console.log(err.response.errors);
