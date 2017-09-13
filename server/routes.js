@@ -34,9 +34,10 @@ export default app => {
     var token = req.body.token;
     var amountTransaction = req.body.amount;
 
-    pagarme.client.connect({ api_key: 'ak_live_aV5woi9sWspHdyBmaq7n17V4vSZafP' })
-    .then(client => client.transactions.capture({ id: token, amount: amountTransaction }))
-    .catch(err => {console.log(err.response.errors)});
+    pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
+      .then(client => client.transactions.capture({ id: token, amount: amountTransaction }))
+      .catch(err => {console.log(err.response.errors)});
+      
   });
 
   // All other routes should redirect to the index.html
