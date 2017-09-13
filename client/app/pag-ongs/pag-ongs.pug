@@ -8,12 +8,27 @@ div.animated.fadeIn#pagOng
       div#smallInfo(layout="column" layout-align="start start")
         checkout-form
     div(layout="column")
-      div#lista( layout="column" layout-align="left")
+      script(type='text/javascript').  
+        var myVar = ‘Hello Var’;
+        console.log(myVar);
+      div#lista(layout="column" layout-align="left")
         h2 Sobre
         p(ng-bind-html='$ctrl.infoOng.sobre')
-        a(layout-align="center center" target="_blank" ng-href="{{$ctrl.infoOng.linkPaypal}}")
-          md-button.md-raized.md-primary(type="submit") Doar
-          img(src="../assets/images/logos/pagseguro.png", alt="")
+        form#pagar(name="pagarmeForm" layout="column")
+          select#valor(ng-init="pagarmeForm.amount" 
+                       ng-model="pagarmeForm.amount" 
+                       data-donation="{{$ctrl.infoOng.slug}}"
+                       style="width: 130px; font-size: 23px"
+                       required)
+            option(value="" disabled selected) Valor
+            option(value="1000") R$10,00
+            option(value="2000") R$20,00
+            option(value="3000") R$30,00
+            option(value="5000") R$50,00
+            option(value="10000") R$100,00
+            option(value="30000") R$300,00
+          br
+          md-button.md-raized.md-primary(ng-click="$ctrl.callPagarme(pagarmeForm)") Doar
         h2#resumo Resumo - Análise doebem
         h3 Impacto
         p(ng-bind-html='$ctrl.infoOng.analiseImpacto')
@@ -22,15 +37,19 @@ div.animated.fadeIn#pagOng
         h3 Transparência
         p(ng-bind-html='$ctrl.infoOng.analiseTransparencia')
         a(ng-href="{{$ctrl.infoOng.linkPdf}}" target="_blank")
-         p#anaCompl Confira aqui o arquivo com nossa análise completa.
-        a(layout-align="center center" target="_blank" ng-href="{{$ctrl.infoOng.linkPaypal}}")
-          md-button.md-raized.md-primary(type="submit") Doar
-          img(src="../assets/images/logos/pagseguro.png", alt="")
+          p#anaCompl Confira aqui o arquivo com nossa análise completa.
+        form(name="pagarmeForm" layout="column")
+          select(ng-model="pagarmeForm.amount" 
+                 data-donation="{{$ctrl.infoOng.slug}}" 
+                 id="{{$ctrl.infoOng.slug}}"
+                 style="width: 130px; font-size: 23px")
+            option(value="" disabled selected) Valor
+            option(value="1000") R$10,00
+            option(value="2000") R$20,00
+            option(value="3000") R$30,00
+            option(value="5000") R$50,00
+            option(value="10000") R$100,00
+            option(value="30000") R$300,00
+          br
+          md-button.md-raized.md-primary(ng-click="$ctrl.callPagarme(pagarmeForm)") Doar
 contact-form
-
-      //- div#smallInfo(layout="column" layout-align="start start")
-      //-   img(ng-src="{{$ctrl.infoOng.logo}}" layout-align="center center" layout-align-sm = "center start" layout-align-xs = "center start")
-      //-   h4(layout-align-sm = "center end" layout-align-xs = "center end") Causa: {{$ctrl.infoOng.causaFrontEnd}}
-      //-   h4(layout-align-sm = "center end" layout-align-xs = "center end") Ano de fundação: {{$ctrl.infoOng.anoFundacao}}
-      //-   h4(layout-align-sm = "end center" layout-align-xs = "end center") Atua em: {{$ctrl.infoOng.localidadesDeAtuacao[0].localidade}}
-      //-   md-button.md-primary(flex layout-align="center center" layout-align-sm = "end center" layout-align-xs = "end center") Doar

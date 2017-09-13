@@ -8,8 +8,6 @@ const ngRoute = require('angular-route');
 const uiBootstrap = require('angular-ui-bootstrap');
 
 require('offline-plugin/runtime').install();
-// const ngMessages = require('angular-messages');
-// import ngValidationMatch from 'angular-validation-match';
 
 import {routeConfig} from './app.config';
 import _Auth from '../components/auth/auth.module';
@@ -32,6 +30,7 @@ import socket from '../components/socket/socket.service';
 import sucesso from './sucesso/sucesso.component';
 import transparencia from './transparencia/transparencia.component';
 import util from '../components/util/util.module';
+
 
 import 'angular-socket-io';
 import './app.scss';
