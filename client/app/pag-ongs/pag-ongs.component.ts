@@ -43,24 +43,21 @@ export class PagOngs {
     this.carregaLista();
   }
 
-  callPagarme(contactForm){
+  callPagarme(pagarmeForm){
 
-    var am = contactForm.amount;
+    var amountValue = pagarmeForm.amount;
     // INICIAR A INSTÂNCIA DO CHECKOUT
     // declarando um callback de sucesso
     var checkout = new PagarMeCheckout.Checkout({
       "encryption_key": "ek_test_QifcmAvy9wCtsgrUr04o884mXp1HiP", 
       success: (data) => {
+        
+        data.amount = amountValue;
+
         console.log(data);
-        console.log(am);
-        data.am = am;
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
-        // if(data){
-        this.$http.post('/pagOngs/saudecrianca', data)
-          .then(res => {
-            console.log(res);
-          })
-        // }
+        this.$http.post('/pagOngs/*', data)
+          .then(res => { console.log(res);})
       },  
       error: function(err) {
         console.log(err);
@@ -72,7 +69,7 @@ export class PagOngs {
     // e abrir o modal
     // É necessário passar os valores boolean em "var params" como string
     var params = {
-      "amount": am,
+      "amount": amountValue,
       "buttonText":"Pagar",
       "customerData":"true",
       "paymentMethods":"boleto,credit_card",

@@ -14,15 +14,15 @@ div.animated.fadeIn#pagOng
       div#lista(layout="column" layout-align="left")
         h2 Sobre
         p(ng-bind-html='$ctrl.infoOng.sobre')
-        form(name="contactForm")
-          select(ng-init="contactForm.amount = " ng-model="contactForm.amount" data-donation="{{$ctrl.infoOng.slug}}" id="{{$ctrl.infoOng.slug}}")
+        form(name="pagarmeForm" layout="column")
+          select(ng-init="pagarmeForm.amount = " ng-model="pagarmeForm.amount" data-donation="{{$ctrl.infoOng.slug}}" id="{{$ctrl.infoOng.slug}}")
             option(value="1000") R$10,00
             option(value="2000") R$20,00
             option(value="3000") R$30,00
             option(value="5000") R$50,00
             option(value="10000") R$100,00
             option(value="30000") R$300,00
-          button(ng-click="$ctrl.callPagarme(contactForm)") Doar
+          button(ng-click="$ctrl.callPagarme(pagarmeForm)") Doar
         h2#resumo Resumo - Análise doebem
         h3 Impacto
         p(ng-bind-html='$ctrl.infoOng.analiseImpacto')
@@ -32,13 +32,13 @@ div.animated.fadeIn#pagOng
         p(ng-bind-html='$ctrl.infoOng.analiseTransparencia')
         a(ng-href="{{$ctrl.infoOng.linkPdf}}" target="_blank")
         p#anaCompl Confira aqui o arquivo com nossa análise completa.
-        form(name="contactForm")
-          select(ng-model="contactForm.amount" data-donation="{{$ctrl.infoOng.slug}}" id="{{$ctrl.infoOng.slug}}")
+        form(name="pagarmeForm")
+          select(ng-model="pagarmeForm.amount" data-donation="{{$ctrl.infoOng.slug}}" id="{{$ctrl.infoOng.slug}}")
             option(value="1000") R$10,00
             option(value="2000") R$20,00
             option(value="3000") R$30,00
             option(value="5000") R$50,00
             option(value="10000") R$100,00
             option(value="30000") R$300,00
-          button(ng-click="$ctrl.callPagarme(contactForm)") Doar
+          button(ng-click="$ctrl.callPagarme(pagarmeForm)") Doar
 contact-form
