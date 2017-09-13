@@ -77,6 +77,15 @@ div#pagOng {
     div#lista{
       text-align: left;
 
+      form#pagar {
+        select#valor {
+          width: 130px !important;
+          font-size: 23px !important;
+        }
+
+      }
+
+
 
 
       div#pagarme {

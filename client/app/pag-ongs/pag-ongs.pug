@@ -14,14 +14,19 @@ div.animated.fadeIn#pagOng
       div#lista(layout="column" layout-align="left")
         h2 Sobre
         p(ng-bind-html='$ctrl.infoOng.sobre')
-        form(name="pagarmeForm" layout="column")
-          select(ng-init="pagarmeForm.amount = " ng-model="pagarmeForm.amount" data-donation="{{$ctrl.infoOng.slug}}" id="{{$ctrl.infoOng.slug}}")
+        form#pagar(name="pagarmeForm" layout="column")
+          select#valor(ng-init="pagarmeForm.amount" 
+                       ng-model="pagarmeForm.amount" 
+                       data-donation="{{$ctrl.infoOng.slug}}"
+                       style="width: 130px; font-size: 23px")
+            option(value="" disabled selected) Valor
             option(value="1000") R$10,00
             option(value="2000") R$20,00
             option(value="3000") R$30,00
             option(value="5000") R$50,00
             option(value="10000") R$100,00
             option(value="30000") R$300,00
+          br
           button(ng-click="$ctrl.callPagarme(pagarmeForm)") Doar
         h2#resumo Resumo - Análise doebem
         h3 Impacto
