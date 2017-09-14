@@ -17,5 +17,22 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
         //- a#Itens(href="/#ongs")
         a#Itens(target="_blank" href="https://medium.com/doebem")
           md-button#blog.md-raized.md-primary Blog
-        a#Itens(target="_blank" href="https://pag.ae/bjmsc2J")
-          md-button#doar_button.md-raized.md-primary Doar
+        a#Itens(target="_blank" href="")
+          md-button#doar_button.md-raized.md-primary(ng-click="$ctrl.showDialog()") Doar
+
+script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
+  md-dialog(aria-label="emailSend")
+    form(ng-cloak)
+      md-toolbar
+        div.md-toolbar-tools
+          h2 Email Enviado!
+          span(flex)
+          md-button.md-icon-button(aria-label="md-button ok", ng-click="cancel()")
+            md-icon
+              ng-md-icon.name(icon="close" style="fill: white")
+      md-dialog-content
+        div.md-dialog-content
+          h2 {{$ctrl.name}}, obrigado pela sua mensagem! 
+      md-dialog-actions(layout="row")
+        span(flex)
+        md-button(ng-click="cancel()") Ok
