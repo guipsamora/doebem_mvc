@@ -19,20 +19,32 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
           md-button#blog.md-raized.md-primary Blog
         a#Itens(target="_blank" href="")
           md-button#doar_button.md-raized.md-primary(ng-click="$ctrl.showDialog()") Doar
-
 script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
-  md-dialog(aria-label="emailSend")
-    form(ng-cloak)
-      md-toolbar
-        div.md-toolbar-tools
-          h2 Email Enviado!
-          span(flex)
-          md-button.md-icon-button(aria-label="md-button ok", ng-click="cancel()")
-            md-icon
-              ng-md-icon.name(icon="close" style="fill: white")
-      md-dialog-content
-        div.md-dialog-content
-          h2 {{$ctrl.name}}, obrigado pela sua mensagem! 
-      md-dialog-actions(layout="row")
+  md-dialog(aria-label="emailSend" ng-cloak)
+    md-toolbar
+      div.md-toolbar-tools
+        h2 Email Enviado!
         span(flex)
-        md-button(ng-click="cancel()") Ok
+        md-button.md-icon-button(aria-label="md-button ok", ng-click="cancel()")
+          md-icon
+            ng-md-icon.name(icon="close" style="fill: white")
+    md-dialog-content
+      div.md-dialog-content
+        form(role="form" name = "pagarmeForm")
+          md-input.md-block(layout="column")
+            label Organização
+            md-checkbox(type = "checkbox" ng-model="pagarmeForm.org" value = "Saúde Criança") Saúde Criança
+            md-checkbox(type = "checkbox" ng-model="pagarmeForm.org" value = "Renovatio") Renovatio
+          md-radio-group(layout="column" ng-model="pagarmeForm.amount")
+            label Valor
+            md-radio-button(ng-value="1000" aria-label="Label 1") R$ 10
+            md-radio-button(ng-value="2000" aria-label="Label 2") R$ 20
+            md-radio-button(ng-value="3000" aria-label="Label 2") R$ 30
+            md-radio-button(ng-value="5000" aria-label="Label 2") R$ 50
+            md-radio-button(ng-value="10000" aria-label="Label 2") R$ 100
+            md-radio-button(ng-value="20000" aria-label="Label 2") R$ 200
+          md-dialog-actions(layout="row")  
+            md-button.md-raized.md-primary(ng-click="$ctrl.showForm(pagarmeForm)" type="submit") Doar
+    md-dialog-actions(layout="row")
+      span(flex)
+      md-button(ng-click="cancel()" type="button") Ok

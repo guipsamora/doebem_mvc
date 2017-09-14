@@ -73,6 +73,9 @@ export class NavbarComponent {
     this.$document.scrollToElementAnimated(section, 70, this.duration);
   }
 
+  showForm(form) {
+    console.log(form);
+  }
 
   showDialog() {
     this.dialog = this.$mdDialog.show({
@@ -83,7 +86,7 @@ export class NavbarComponent {
       parent: angular.element(document.body),
       clickOutsideToClose: true,
       fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
-    });
+    })
   }
 
 
@@ -92,7 +95,7 @@ export class NavbarComponent {
 
 
 function DialogController($scope, $mdDialog, $inject) {
-  
+
     $scope.hide = function() {
       $mdDialog.hide();
     };
