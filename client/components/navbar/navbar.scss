@@ -223,3 +223,45 @@ div#navbar-main.navbar-collapse.collapse {
         text-align: center !important;
     }
 }
+
+md-dialog-content {
+    form {
+        width: 300px;
+    }
+}
+
+md-checkbox .md-label {
+    font-size: 20px;
+    padding-right: 20px;
+}
+
+md-radio-button {
+    font-size: 24px;
+    display: inline-block !important;
+}
+
+md-dialog-actions {
+    padding-left: 8px !important;
+
+    .md-raized#doarMe {
+      // background-color: white;
+      background-color: rgb(63,81,181) !important;
+      // border: black;
+      border: white;
+      color: white;
+      border-style: solid;
+      border-width: 2px;
+      border-radius: 4px;
+      font-size: 30px !important;
+      font-weight: 600;
+      width: 150px;
+      height: 50px;
+      margin-left: 0px;
+    }
+
+    .md-raized#doarMe:hover{
+      background-color: white !important;
+      color:  rgb(63,81,181) !important;
+      border-color:  rgb(63,81,181) !important;
+    }
+}

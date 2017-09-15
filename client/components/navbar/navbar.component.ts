@@ -4,6 +4,7 @@ const angular = require('angular');
 const ngMaterial = require('angular-material');
 const duScroll = require('angular-scroll');
 
+declare var PagarMeCheckout: any;
 
 export class NavbarComponent {
 
@@ -11,6 +12,7 @@ export class NavbarComponent {
   dialog: Function;
   $document;
   $location;
+  $http;
   $scope;
   duration: number;
   top: number;
@@ -19,7 +21,8 @@ export class NavbarComponent {
   isAdmin: Function;
   getCurrentUser: Function;
   isCollapsed = true;
-  
+  PagarMeCheckout: any;
+    
   menu = [
     {
       'title': 'METODOLOGIA',
@@ -43,9 +46,30 @@ export class NavbarComponent {
     }
   ];
 
-  constructor($location, Auth, $document, $mdDialog, $scope) {
+  org = ['Saúde Criança', 'Renovatio'];
+
+  selected = [];
+  
+  toggle (org, list) {
+    var idx = list.indexOf(org);
+    if (idx > -1) {
+      list.splice(idx, 1);
+    }
+    else {
+      list.push(org);
+    }
+
+    console.log('final list ist:', list);
+  };
+  
+  exists(org, list) {
+    return list.indexOf(org) > -1;
+  };
+
+  constructor($location, Auth, $document, $mdDialog, $scope,$http) {
     'ngInject';
     this.$location = $location;
+    this.$http = $http;
     this.isLoggedIn = Auth.isLoggedInSync;
     this.isAdmin = Auth.isAdminSync;
     this.getCurrentUser = Auth.getCurrentUserSync;
@@ -54,6 +78,7 @@ export class NavbarComponent {
     this.$document = $document;
     this.$mdDialog = $mdDialog;
     this.$scope = $scope;
+    this.PagarMeCheckout;
   }
 
   isActive(route) {
@@ -74,6 +99,7 @@ export class NavbarComponent {
   }
 
   showForm(form) {
+    form.org = this.selected;
     console.log(form);
   }
 
@@ -88,6 +114,64 @@ export class NavbarComponent {
       fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
     })
   }
+  callPagarme(pagarmeForm){
+    
+    var amountValue = pagarmeForm.amount;
+    // INICIAR A INSTÂNCIA DO CHECKOUT
+    // declarando um callback de sucesso
+    var checkout = new PagarMeCheckout.Checkout({
+      "encryption_key": 'ek_live_3yykMegYY2XTPClgA1qjui2gSlvVzG', 
+      success: (data) => {
+        
+        data.amount = amountValue;
+
+        console.log(data);
+        //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
+        this.$http.post('/pagOngs/*', data)
+          .then(res => { console.log(res);})
+      },  
+      error: function(err) {
+        console.log(err);
+        this.resultPagarme = false;
+      }
+    });
+
+    // DEFINIR AS OPÇÕES
+    // e abrir o modal
+    // É necessário passar os valores boolean em "var params" como string
+    var params = {
+      "amount": amountValue,
+      "buttonText":"Pagar",
+      "customerData":"true",
+      "paymentMethods":"boleto,credit_card",
+      "uiColor":"#3f51b5",
+      "postbackUrl":"http://sandbox-doebem.herokuapp.com/api/pagarme",
+      "createToken":"true",
+      "interestRate":0,
+      "freeInstallments":0,
+      "defaultInstallment":1,
+      "maxInstallments":1,
+      "headerText":"Total a pagar {price_info}.",
+      "disableZeroDocumentNumber":"true",
+      "customerName":"",
+      "customerDocumentNumber":"",
+      "customerEmail":"",
+      "customerAddressStreet":"",
+      "customerAddressStreetNumber":"",
+      "customerAddressComplementary":"",
+      "customerAddressNeighborhood":"",
+      "customerAddressCity":"",
+      "customerAddressState":"",
+      "customerAddressZipcode":"",
+      "customerPhoneDdd":"",
+      "customerPhoneNumber":"",
+      "boletoHelperText":"Podemos levar em média de 1 a 2 dias para que o pagamento seja aprovado.",
+      "creditCardHelperText":"Podemos levar até um dia para que o pagamento seja aprovado.",
+    };
+    
+    checkout.open(params);
+
+  }  
 
 
 
