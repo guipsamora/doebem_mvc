@@ -19,15 +19,16 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
           md-button#blog.md-raized.md-primary Blog
         a#Itens(target="_blank" href="")
           md-button#doar_button.md-raized.md-primary(ng-click="$ctrl.showDialog()") Doar
+
 script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
   md-dialog(aria-label="emailSend" ng-cloak)
     md-toolbar
       div.md-toolbar-tools
-        h2 Email Enviado!
+        h2 Faça sua doação!
         span(flex)
         md-button.md-icon-button(aria-label="md-button ok", ng-click="cancel()")
           md-icon
-            ng-md-icon.name(icon="close" style="fill: white")
+            ng-md-icon.name(icon="close" style="color: white")
     md-dialog-content
       div.md-dialog-content
         form(role="form" name = "pagarmeForm")
