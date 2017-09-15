@@ -21,23 +21,20 @@ export default app => {
 
   app.use('/auth', require('./auth').default);
 
-
-
   // All undefined asset or API routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')
     .get(errors[404]);
 
   app.post('/pagOngs/*', function(req, res){
 
-    console.log("Post 'pagOngs' chamado", req.body);
+    console.log('Post pagOngs chamado', req.body);
 
     var token = req.body.token;
     var amountTransaction = req.body.amount;
 
     pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
       .then(client => client.transactions.capture({ id: token, amount: amountTransaction }))
-      .catch(err => {console.log(err.response.errors)});
-      
+      .catch(err => { console.log(err.response.errors) });
   });
 
   // All other routes should redirect to the index.html

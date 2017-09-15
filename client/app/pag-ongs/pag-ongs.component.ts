@@ -28,7 +28,7 @@ export class PagOngs {
     this.pageTitle = '';
     this.pageImage = '';
     this.infoOng = '';
-    this.PagarMeCheckout;
+    this.PagarMeCheckout = Function;
   }
 
   carregaLista() {
@@ -38,27 +38,27 @@ export class PagOngs {
         // console.log(this.infoOng)
       });
   }
-  
+
   $onInit() {
     this.carregaLista();
   }
 
-  callPagarme(pagarmeForm){
+  callPagarme(pagarmeForm) {
 
     var amountValue = pagarmeForm.amount;
     // INICIAR A INSTÂNCIA DO CHECKOUT
     // declarando um callback de sucesso
     var checkout = new PagarMeCheckout.Checkout({
-      "encryption_key": 'ek_live_3yykMegYY2XTPClgA1qjui2gSlvVzG', 
+      'encryption_key': 'ek_live_3yykMegYY2XTPClgA1qjui2gSlvVzG',
       success: (data) => {
-        
+
         data.amount = amountValue;
 
         console.log(data);
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
         this.$http.post('/pagOngs/*', data)
-          .then(res => { console.log(res);})
-      },  
+          .then(res => { console.log(res); });
+      },
       error: function(err) {
         console.log(err);
         this.resultPagarme = false;
@@ -67,37 +67,37 @@ export class PagOngs {
 
     // DEFINIR AS OPÇÕES
     // e abrir o modal
-    // É necessário passar os valores boolean em "var params" como string
+    // É necessário passar os valores boolean em 'var params' como string
     var params = {
-      "amount": amountValue,
-      "buttonText":"Pagar",
-      "customerData":"true",
-      "paymentMethods":"boleto,credit_card",
-      "uiColor":"#3f51b5",
-      "postbackUrl":"http://sandbox-doebem.herokuapp.com/api/pagarme",
-      "createToken":"true",
-      "interestRate":0,
-      "freeInstallments":0,
-      "defaultInstallment":1,
-      "maxInstallments":1,
-      "headerText":"Total a pagar {price_info}.",
-      "disableZeroDocumentNumber":"true",
-      "customerName":"",
-      "customerDocumentNumber":"",
-      "customerEmail":"",
-      "customerAddressStreet":"",
-      "customerAddressStreetNumber":"",
-      "customerAddressComplementary":"",
-      "customerAddressNeighborhood":"",
-      "customerAddressCity":"",
-      "customerAddressState":"",
-      "customerAddressZipcode":"",
-      "customerPhoneDdd":"",
-      "customerPhoneNumber":"",
-      "boletoHelperText":"Podemos levar em média de 1 a 2 dias para que o pagamento seja aprovado.",
-      "creditCardHelperText":"Podemos levar até um dia para que o pagamento seja aprovado.",
+      'amount': amountValue,
+      'buttonText': 'Pagar',
+      'customerData': 'true',
+      'paymentMethods': 'boleto,credit_card',
+      'uiColor': '#3f51b5',
+      'postbackUrl': 'http://sandbox-doebem.herokuapp.com/api/pagarme',
+      'createToken': 'true',
+      'interestRate': 0,
+      'freeInstallments': 0,
+      'defaultInstallment': 1,
+      'maxInstallments': 1,
+      'headerText': 'Total a pagar {price_info}.',
+      'disableZeroDocumentNumber': 'true',
+      'customerName': '',
+      'customerDocumentNumber': '',
+      'customerEmail': '',
+      'customerAddressStreet': '',
+      'customerAddressStreetNumber': '',
+      'customerAddressComplementary': '',
+      'customerAddressNeighborhood': '',
+      'customerAddressCity': '',
+      'customerAddressState': '',
+      'customerAddressZipcode': '',
+      'customerPhoneDdd': '',
+      'customerPhoneNumber': '',
+      'boletoHelperText': 'Podemos levar em média de 1 a 2 dias para que o pagamento seja aprovado.',
+      'creditCardHelperText': 'Podemos levar até um dia para que o pagamento seja aprovado.',
     };
-    
+
     checkout.open(params);
 
   }
@@ -125,11 +125,11 @@ export class PagOngs {
 //     $scope.hide = function() {
 //       $mdDialog.hide();
 //     };
-  
+
 //     $scope.cancel = function() {
 //       $mdDialog.cancel();
 //     };
-  
+
 //     $scope.answer = function(answer) {
 //       $mdDialog.hide(answer);
 //     };
