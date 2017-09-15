@@ -17,5 +17,36 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
         //- a#Itens(href="/#ongs")
         a#Itens(target="_blank" href="https://medium.com/doebem")
           md-button#blog.md-raized.md-primary Blog
-        a#Itens(target="_blank" href="https://pag.ae/bjmsc2J")
-          md-button#doar_button.md-raized.md-primary Doar
+        a#Itens(target="_blank" href="")
+          md-button#doar_button.md-raized.md-primary(ng-click="$ctrl.showDialog()") Doar
+
+script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
+  md-dialog(aria-label="emailSend" ng-cloak)
+    md-toolbar
+      div.md-toolbar-tools
+        h2(layout-align="center") Faça sua doação!
+        span(flex)
+        md-button.md-icon-button(aria-label="md-button ok" ng-click="cancel()") X
+    md-dialog-content
+      div.md-dialog-content
+        form(role="form" name = "pagarmeForm")
+          h4 Escolha a organização:
+          md-input.md-block(layout="row")
+            div(ng-repeat = "org in $ctrl.org")
+              md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)" 
+                          ng-checked="$ctrl.exists(org, $ctrl.selected)") {{org}}
+          h4 Escolha o valor da sua doação:
+          md-radio-group(layout="row" ng-model="pagarmeForm.amount" layout-wrap flex)
+            //- label Valor
+            md-radio-button(ng-value="1000" aria-label="Label 1") R$ 10
+            md-radio-button(ng-value="2000" aria-label="Label 2") R$ 20
+            md-radio-button(ng-value="3000" aria-label="Label 2") R$ 30
+            md-radio-button(ng-value="5000" aria-label="Label 2") R$ 50
+            md-radio-button(ng-value="10000" aria-label="Label 2") R$ 100
+            md-radio-button(ng-value="20000" aria-label="Label 2") R$ 200
+          br
+          md-dialog-actions(layout="row" layout-align="center")
+            md-button.md-raized.md-primary#doarMe(ng-click="$ctrl.callPagarme(pagarmeForm)" type="submit") Doar
+    //- md-dialog-actions(layout="row")
+    //-   span(flex)
+    //-   md-button(ng-click="cancel()" type="button") Ok
