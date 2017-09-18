@@ -35,7 +35,6 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
                           ng-checked="$ctrl.exists(org, $ctrl.selected)") {{org}}
           h4 Escolha o valor da sua doação:
           md-radio-group(layout="row" ng-model="pagarmeForm.amount" layout-wrap flex)
-            //- label Valor
             md-radio-button(ng-value="1000" aria-label="Label 1") R$ 10
             md-radio-button(ng-value="2000" aria-label="Label 2") R$ 20
             md-radio-button(ng-value="3000" aria-label="Label 2") R$ 30
@@ -45,6 +44,4 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
           br
           md-dialog-actions(layout="row" layout-align="center")
             md-button.md-raized.md-primary#doarMe(ng-click="$ctrl.callPagarme(pagarmeForm)" type="submit") Doar
-    //- md-dialog-actions(layout="row")
-    //-   span(flex)
-    //-   md-button(ng-click="cancel()" type="button") Ok
+            

@@ -66,7 +66,7 @@ export class NavbarComponent {
     return list.indexOf(org) > -1;
   };
 
-  constructor($location, Auth, $document, $mdDialog, $scope,$http) {
+  constructor($location, Auth, $document, $mdDialog, $scope, $http) {
     'ngInject';
     this.$location = $location;
     this.$http = $http;
@@ -114,9 +114,15 @@ export class NavbarComponent {
       fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
     })
   }
+
+  closeDialog() {
+    this.dialog = this.$mdDialog.cancel();
+  }
+
   callPagarme(pagarmeForm){
     
     var amountValue = pagarmeForm.amount;
+
     // INICIAR A INSTÂNCIA DO CHECKOUT
     // declarando um callback de sucesso
     var checkout = new PagarMeCheckout.Checkout({
@@ -129,6 +135,9 @@ export class NavbarComponent {
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
         this.$http.post('/pagOngs/*', data)
           .then(res => { console.log(res);})
+          .then(this.$location.path('/sucesso'));
+
+        this.closeDialog();
       },  
       error: function(err) {
         console.log(err);
