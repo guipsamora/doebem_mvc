@@ -11,6 +11,7 @@ export class PagOngs {
   $scope;
   $routeParams;
   $mdDialog;
+  $location;
   dialog: Function;
   stepOptions = [];
   listOng = [];
@@ -20,11 +21,12 @@ export class PagOngs {
   PagarMeCheckout: any;
 
   /*@ngInject*/
-  constructor($http, $scope, socket, $routeParams, $mdDialog) {
+  constructor($http, $scope, socket, $routeParams, $mdDialog, $location) {
     this.$http = $http;
     this.$scope = $scope;
     this.$routeParams = $routeParams;
     this.$mdDialog = $mdDialog;
+    this.$location = $location;
     this.pageTitle = '';
     this.pageImage = '';
     this.infoOng = '';
@@ -57,7 +59,8 @@ export class PagOngs {
         console.log(data);
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
         this.$http.post('/pagOngs/*', data)
-          .then(res => { console.log(res); });
+          .then(res => { console.log(res); })
+          .then(this.$location.path('/sucesso'));
       },
       error: function(err) {
         console.log(err);
