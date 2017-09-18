@@ -162,6 +162,7 @@ div#main {
       height: 100%;
       width: 100%;
       display: block;
+      background-color: #f1f1f1;
 
       @media screen and (max-width: 768px) {
         h3 {
@@ -200,7 +201,8 @@ div#main {
       height: 100%;
       width: 100%;
       display: block;
-      margin-bottom: 70px;
+      padding-bottom: 70px;
+      background-color: #f1f1f1;
 
       md-card-content {
         padding: 0 16px 16px 16px;
