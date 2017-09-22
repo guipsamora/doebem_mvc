@@ -110,6 +110,10 @@ const OngSchema = new mongoose.Schema({
   linkPaypal: {
     type: 'String',
     required: true
+  },
+  videoYoutube: {
+    type: 'String',
+    required: true
   }
 });
 

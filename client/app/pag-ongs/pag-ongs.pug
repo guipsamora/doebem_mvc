@@ -1,6 +1,9 @@
 div.animated.fadeIn#pagOng
   div#pageHeader(flex="100"  layout="column" layout-align="center center" ng-style="{'background-image': 'url(' + $ctrl.infoOng.backgroundImage + ')'}")
     h2 {{$ctrl.infoOng.nomeFantasia}}
+    md-icon(md-svg-src="./assets/fonts/icons/ic_play_circle_outline_white_48px.svg" 
+            aria-label="play"
+            ng-click="$ctrl.showDialog()")
   div.container
     div#infos(layout="row" layout-sm="column" layout-xs="column")
       div(flex="80" layout-align="start")
@@ -50,3 +53,14 @@ div.animated.fadeIn#pagOng
           br
           md-button.md-raized.md-primary(ng-click="$ctrl.callPagarme(pagarmeForm)") Doar
 contact-form
+
+script(type="text/ng-template" id="dialogVideo.tmpl.pug")
+  md-dialog(aria-label="emailSend" ng-cloak)
+    iframe(allowfullscreen="true"
+          allowscriptaccess="always"
+          autoplay = "1"
+          frameborder="0"
+          height="400px"
+          width="500px"
+          scrolling="no"
+          src="{{$ctrl.infoOng.videoYoutube}}")

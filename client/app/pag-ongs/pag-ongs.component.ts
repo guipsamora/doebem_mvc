@@ -5,6 +5,7 @@ import routing from './pag-ongs.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
 
 declare var PagarMeCheckout: any;
+declare var YT: any;
 
 export class PagOngs {
   $http;
@@ -19,6 +20,7 @@ export class PagOngs {
   pageImage;
   infoOng;
   PagarMeCheckout: any;
+  YT: any;
 
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams, $mdDialog, $location) {
@@ -31,6 +33,7 @@ export class PagOngs {
     this.pageImage = '';
     this.infoOng = '';
     this.PagarMeCheckout = Function;
+    this.YT = Function;
   }
 
   carregaLista() {
@@ -104,45 +107,69 @@ export class PagOngs {
     checkout.open(params);
 
   }
+
+  showDialog(){
+
+    var onPlayerReady = function(event) {
+      event.target.playVideo();  
+    };
+
+
+    // The first argument of YT.Player is an HTML element ID. YouTube API will replace my <div id="player"> tag with an iframe containing the youtube video.
+    var player = new YT.Player('player', {
+        height: 320,
+        width: 400,
+        videoId : 'ZBq3zskQ0H0',
+        events : {
+            'onReady' : onPlayerReady
+        }
+    });
+
+
+
+    this.dialog = this.$mdDialog.show({
+      scope: this.$scope,
+      preserveScope: true,
+      controller: DialogController,
+      templateUrl: 'dialogVideo.tmpl.pug',
+      parent: angular.element(document.body),
+      clickOutsideToClose: true,
+      fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
+    }).then(
+      (player())
+    )
+  }
+  
+
 }
 
-//   showDialog(){
-//     this.dialog = this.$mdDialog.show({
-//       scope: this.$scope,
-//       preserveScope: true,
-//       controller: DialogController,
-//       templateUrl: 'dialogPagarme.tmpl.pug',
-//       parent: angular.element(document.body),
-//       clickOutsideToClose: true,
-//       fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
-//     })
-//   }
 
 
 
-// function DialogController($scope, $mdDialog, $inject ,$log,$http, user, form) {
 
-//     $scope.payment = form;
-//     console.log(form);
+function DialogController($scope, $mdDialog, $inject ,$log,$http, user, form) {
 
-//     $scope.hide = function() {
-//       $mdDialog.hide();
-//     };
+    $scope.payment = form;
+    console.log(form);
 
-//     $scope.cancel = function() {
-//       $mdDialog.cancel();
-//     };
+    $scope.hide = function() {
+      $mdDialog.hide();
+    };
 
-//     $scope.answer = function(answer) {
-//       $mdDialog.hide(answer);
-//     };
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
 
-//     $scope.postForm = function(form) {
-//       console.log('form: called', form);
-//     }
-// }
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
 
-// DialogController.$inject = ['$scope', '$mdDialog'];
+    $scope.postForm = function(form) {
+      console.log('form: called', form);
+    }
+}
+
+DialogController.$inject = ['$scope', '$mdDialog'];
 
 export default angular.module('doebemOrgApp.pagOngs', [ngRoute, contactForm, ngSanitize])
   .config(routing)

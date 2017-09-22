@@ -7,16 +7,27 @@ div#pagOng {
 
 
   div#pageHeader {
-      h2 {
-        color: white;
-        font-size: 70px;
-      }
-      background-repeat: no-repeat;
-      background-size: cover;
-      width:100%;
-      height: 100%;
-      min-height: 80vh;
-      background-position: top center;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100%;
+    height: 100%;
+    min-height: 80vh;
+    background-position: top center;
+
+    md-icon {
+      width: 125px;
+      height: 125px;
+      margin: 0 0 0 0;
+    }
+
+    h2 {
+      color: white;
+      // color: black;
+      font-size: 70px;
+    }
+
+
   }
 
   // para quando tiver a parte de informações da organização
@@ -120,7 +131,12 @@ div#pagOng {
       border-width: 1px;
   }
 
-  
+  .md-button#video {
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+
+  }
 
   @media screen and (max-width: 726px) {
     div#pageHeader {
