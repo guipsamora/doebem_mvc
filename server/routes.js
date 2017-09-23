@@ -25,6 +25,7 @@ export default app => {
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')
     .get(errors[404]);
 
+  // Pagar.me call
   app.post('/pagOngs/*', function(req, res){
 
     console.log('Post pagOngs chamado', req.body);
