@@ -55,12 +55,13 @@ div.animated.fadeIn#pagOng
 contact-form
 
 script(type="text/ng-template" id="dialogVideo.tmpl.pug")
+  console.log($scope)
   md-dialog(aria-label="emailSend" ng-cloak)
     iframe(allowfullscreen="true"
-          allowscriptaccess="always"
-          autoplay = "1"
-          frameborder="0"
-          height="400px"
-          width="500px"
-          scrolling="no"
-          src="{{$ctrl.infoOng.videoYoutube}}")
+           allowscriptaccess="always"
+           autoplay = "1"
+           frameborder="0"
+           height="400px"
+           width="500px"
+           scrolling="no"
+           ng-src="{{detailFrame}}")
