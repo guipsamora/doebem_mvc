@@ -27,8 +27,6 @@ export default app => {
 
   app.post('/pagOngs/*', function(req, res){
 
-    console.log('Post pagOngs chamado', req.body);
-
     var token = req.body.token;
     var amountTransaction = req.body.amount;
 
