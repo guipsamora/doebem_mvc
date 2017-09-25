@@ -20,7 +20,7 @@ export class SobreController {
       {
         title: 'CIÊNCIA & FILANTROPIA',
         desc: 'Acreditamos em uma forma mais efetiva de ajudar, aliando pensamento científico à \
-               filantropia para eliminar a extrema pobreza no Brasil',
+               filantropia',
         icon: '../../assets/images/sobre/icone1.png'
       },
       {
@@ -30,8 +30,7 @@ export class SobreController {
       },
       {
         title: 'RECOMENDAÇÃO',
-        desc: 'Recomendamos organizações sociais selecionadas a partir de uma análise rigorosa. \
-               Promovemos a transparência, segurança e confiança na doação',
+        desc: 'Promovemos a transparência, segurança e confiança na doação',
         icon: '../../assets/images/sobre/icone3.png'
       },
     ];
@@ -40,20 +39,20 @@ export class SobreController {
       {
        nome: 'Elisa',
        img: './assets/images/team/1.jpg',
-       twitter: 'https://twitter.com/elisa_mansur',
+       area: 'Marketing',
        linkedin: 'https://www.linkedin.com/in/elisa-de-rooij-mansur-30435854/en'
+      },
+      {
+        nome: 'Rhayana',
+        img: './assets/images/team/3.jpg',
+        area: 'Pesquisa',
+        linkedin: 'https://www.linkedin.com/in/rhayana-holz-a1916a5a/'
       },
       {
        nome: 'Guilherme',
        img: './assets/images/team/2.jpg',
-       twitter: 'https://twitter.com/guisamora',
+       area: 'Tecnologia',
        linkedin: 'https://br.linkedin.com/in/guisamora'
-      },
-      {
-       nome: 'Rhayana',
-       img: './assets/images/team/3.jpg',
-       twitter: '',
-       linkedin: 'https://www.linkedin.com/in/rhayana-holz-a1916a5a/'
       }
     ];
 

@@ -4,10 +4,15 @@ div.animated.fadeIn#sobre
   div#comoFunciona(flex = "100" layout="column" layout-align="center center")
     h2.sectionHeading Conheça a doebem
     p#comoFunciona A doebem conecta doadores e organizações sem fins lucrativos efetivas.
-    p Recomendamos organizações para doação unicamente
-    p após uma análise rigorosa de sua qualidade de gestão,
-    p nível de transparência e impacto promovido.
     br
+    //- p Recomendamos organizações somente após
+    //- p rigorosa análise de sua qualidade de gestão,
+    //- p nível de transparência e impacto promovido.
+    //- br 
+    p A ideia da doebem nasceu no meio de 2016 quando seus fundadores se conheceram em um curso de empreendedorismo na Califórnia. 
+    p Eles tinham pelo menos duas coisas em comum: a vontade de promover impacto positivo no Brasil e a noção de que 
+    p isso deveria ser feito de forma diferente. Inspirados no movimento Altruísmo Eficaz, decidiram trazer para o seu país o 
+    p conceito de que decisões de como ajudar devem ser embasadas em evidências claras de impacto e estudos científicos.
     md-list#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
       md-list-item(ng-repeat="step in $ctrl.stepOptions")
           div(layout = "column" layout-align="center center")
@@ -22,9 +27,11 @@ div.animated.fadeIn#sobre
       md-list-item(ng-repeat="pessoa in $ctrl.listaPessoas")
         md-card(layout="column" flex-gt-sm="100")
           img.md-card-image(ng-src="{{pessoa.img}}")
-          md-card-title(layout="row")
+          md-card-title(layout="column")
             md-card-title-text(layout="row" layout-align="center center")
               h3 {{pessoa.nome}}
+            md-card-title-text(layout="row" layout-align="center center")
+              h4 {{pessoa.area}}              
           md-card-actions(layout="row" layout-align="center center")
             a(target='_blank' href='{{pessoa.linkedin}}')
               md-button.md-icon-button(aria-label="linkedin button")
