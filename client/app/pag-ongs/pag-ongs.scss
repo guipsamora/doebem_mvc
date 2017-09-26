@@ -82,32 +82,37 @@ div#pagOng {
 
   }
 
-  div#mainListOngs {
-    padding-top: 2%;
+  div#lista{
+    text-align: left;
 
-    div#lista{
-      text-align: left;
+    form#pagar {
+      select#valor {
+        width: 130px !important;
+        font-size: 23px !important;
+      }
+    }
 
-      form#pagar {
-        select#valor {
-          width: 130px !important;
-          font-size: 23px !important;
+    div#site {
+      h4 {
+        margin-top: 0px;
+        margin-right: 5px;
+      }
+
+      a {
+        p#site {
+          font-size: 16px;
         }
-
       }
+    }
 
+    div#pagarme {
+      width: 100px;
+      height: 100px;
+    }
 
-
-
-      div#pagarme {
-        width: 100px;
-        height: 100px;
-      }
-
-      h3 {
-        text-align: left;
-        font-size: 30px;
-      }
+    h3 {
+      text-align: left;
+      font-size: 30px;
     }
   }
 

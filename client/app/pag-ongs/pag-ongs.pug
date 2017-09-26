@@ -4,6 +4,7 @@ div.animated.fadeIn#pagOng
     md-icon(md-svg-src="./assets/fonts/icons/ic_play_circle_outline_white_48px.svg" 
             aria-label="play"
             ng-click="$ctrl.showDialog()")
+    //- md-button.md-raized.md-primary(ng-click="$ctrl.callPagarme(pagarmeForm)") Doar        
   div.container
     div#infos(layout="row" layout-sm="column" layout-xs="column")
       div(flex="80" layout-align="start")
@@ -14,6 +15,10 @@ div.animated.fadeIn#pagOng
       div#lista(layout="column" layout-align="left")
         h2 Sobre
         p(ng-bind-html='$ctrl.infoOng.sobre')
+        div#site(layout="row")
+          h4 Site: 
+          a(ng-href="{{$ctrl.infoOng.urlSite}}" target="_blank")
+            p#site {{$ctrl.infoOng.urlSite}}
         form#pagar(name="pagarmeForm" layout="column")
           select#valor(ng-init="pagarmeForm.amount" 
                        ng-model="pagarmeForm.amount" 
@@ -29,7 +34,7 @@ div.animated.fadeIn#pagOng
             option(value="30000") R$300,00
           br
           md-button.md-raized.md-primary(ng-click="$ctrl.callPagarme(pagarmeForm)") Doar
-        h2#resumo Resumo - Análise doebem
+        h2#resumo Análise
         h3 Impacto
         p(ng-bind-html='$ctrl.infoOng.analiseImpacto')
         h3 Gestão
@@ -37,7 +42,7 @@ div.animated.fadeIn#pagOng
         h3 Transparência
         p(ng-bind-html='$ctrl.infoOng.analiseTransparencia')
         a(ng-href="{{$ctrl.infoOng.linkPdf}}" target="_blank")
-          p#anaCompl Confira aqui o arquivo com nossa análise completa.
+          p#anaCompl Confira aqui nossa análise completa.
         form(name="pagarmeForm" layout="column")
           select(ng-model="pagarmeForm.amount" 
                  data-donation="{{$ctrl.infoOng.slug}}" 
