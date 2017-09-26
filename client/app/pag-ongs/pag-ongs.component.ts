@@ -21,6 +21,25 @@ export class PagOngs {
   infoOng;
   PagarMeCheckout: any;
 
+  org = ['Saúde Criança', 'Renovatio'];
+  
+  selected = [];
+
+  toggle (org, list) {
+    var idx = list.indexOf(org);
+    if (idx > -1) {
+      list.splice(idx, 1);
+    } else {
+      list.push(org);
+    }
+
+    console.log('final list ist:', list);
+  };
+
+  exists(org, list) {
+    return list.indexOf(org) > -1;
+  };
+
   /*@ngInject*/
   constructor($http, $scope, $sce, socket, $routeParams, $mdDialog, $location) {
     this.$http = $http;
@@ -106,7 +125,7 @@ export class PagOngs {
 
   }
 
-  showDialog() {
+  showDialogVideo() {
 
     this.dialog = this.$mdDialog.show({
       scope: this.$scope,
@@ -118,6 +137,19 @@ export class PagOngs {
       fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
     });
   }
+
+  showDialogDonation() {
+    
+        this.dialog = this.$mdDialog.show({
+          scope: this.$scope,
+          preserveScope: true,
+          controller: DialogController,
+          templateUrl: 'dialogDonateNavbar.tmpl.pug',
+          parent: angular.element(document.body),
+          clickOutsideToClose: true,
+          fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
+        });
+      }
 }
 
 function DialogController($scope, $mdDialog, $inject, $log, $http, $sce, user) {

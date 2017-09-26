@@ -25,16 +25,16 @@ export class NavbarComponent {
 
   menu = [
     {
-      'title': 'METODOLOGIA',
-      'link': 'metodologia'
+      'title': 'SOBRE',
+      'link': 'sobre'
     },
     {
       'title': 'TRANSPARÊNCIA',
       'link': 'transparencia'
-    },
+    },    
     {
-      'title': 'SOBRE',
-      'link': 'sobre'
+      'title': 'METODOLOGIA',
+      'link': 'metodologia'
     },
     {
       'title': 'DÚVIDAS',
