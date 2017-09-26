@@ -33,7 +33,7 @@ export default app => {
     var token = req.body.token;
     var amountTransaction = req.body.amount;
 
-    pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
+    pagarme.client.connect({ api_key: 'ak_test_rnrtxW0T417zXA5Fq42gM2LBaqLrFq' })
       .then(client => client.transactions.capture({ id: token, amount: amountTransaction }))
       .catch(err => { console.log(err.response.errors) });
   });
