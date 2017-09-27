@@ -10,8 +10,11 @@ import express from 'express';
 import mailer from 'express-mailer';
 const pagarme = require('pagarme');
 
-pagarme.client.connect({ api_key: 'ak_live_aV5woi9sWspHdyBmaq7n17V4vSZafP' })
-  .then(client => client.transactions.capture({ id: "TOKEN", amount: 1000 }));
+// var token = req.body.token;
+// var amountTransaction = req.body.amount;
+
+// pagarme.client.connect({ api_key: 'ak_test_rnrtxW0T417zXA5Fq42gM2LBaqLrFq' })
+//   .then(client => client.transactions.capture({ id: "TOKEN", amount: 1000 }));
 
 var app = express();
 
@@ -53,5 +56,6 @@ function handleSendEmail(req, res) {
 
 // Creates a new Pagarme in the DB
 export function create(req, res) {
+  console.log(req);
   return Pagarme.create(req.body)
 }
