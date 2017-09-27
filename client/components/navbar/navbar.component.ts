@@ -130,11 +130,22 @@ export class NavbarComponent {
 
         data.amount = amountValue;
 
-        console.log(data);
+        // console.log(data);
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
         this.$http.post('/pagOngs/*', data)
-          .then(res => { console.log(res); })
-          .then(this.$location.path('/sucesso'));
+          // .success(function(response){console.log("I am the response", response)})
+          .then(res => {
+            console.log(res);
+          }, error => {
+            console.log(error);
+          })
+          // .then(console.log("ESSA EU CHAMO"))
+          
+          
+          // .then(this.$location.path('/sucesso'));
+
+          // .then(console.log("Eu vim aqui", data))
+          // .then(res => { console.log(res)})
 
         this.closeDialog();
       },

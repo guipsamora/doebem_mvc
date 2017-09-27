@@ -28,14 +28,16 @@ export default app => {
   // Pagar.me call
   app.post('/pagOngs/*', function(req, res){
 
-    console.log('Post pagOngs chamado', req.body);
+    // console.log('Post pagOngs chamado', req.body);
 
     var token = req.body.token;
     var amountTransaction = req.body.amount;
 
-    pagarme.client.connect({ api_key: 'ak_test_rnrtxW0T417zXA5Fq42gM2LBaqLrFq' })
+    
+   pagarme.client.connect({ api_key: 'ak_test_rnrtxW0T417zXA5Fq42gM2LBaqLrFq' })
       .then(client => client.transactions.capture({ id: token, amount: amountTransaction }))
-      .catch(err => { console.log(err.response.errors) });
+      .then(result => {console.log('\n*******\n', result,'\n*******\n'); if(result.payment_method == 'boleto'){console.log("É BOLETO")}})
+      .catch(err => { console.log(err.response.errors) })
   });
 
   // All other routes should redirect to the index.html
