@@ -96,7 +96,7 @@ export class PagOngs {
       'amount': amountValue,
       'buttonText': 'Pagar',
       'customerData': 'true',
-      'paymentMethods': 'credit_card',
+      'paymentMethods': 'boleto,credit_card',
       'uiColor': '#3f51b5',
       'postbackUrl': 'http://sandbox-doebem.herokuapp.com/api/pagarme',
       'createToken': 'true',
