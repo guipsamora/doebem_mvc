@@ -125,43 +125,26 @@ export class NavbarComponent {
     // INICIAR A INSTÂNCIA DO CHECKOUT
     // declarando um callback de sucesso
     var checkout = new PagarMeCheckout.Checkout({
-      'encryption_key': 'ek_test_QifcmAvy9wCtsgrUr04o884mXp1HiP',
+      'encryption_key': 'ek_live_3yykMegYY2XTPClgA1qjui2gSlvVzG',
       success: (data) => {
 
         data.amount = amountValue;
 
-       
+        console.log(data);
 
-
-        // console.log(data);
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
-        // this.$http.post('/pagOngs/*', data)
-        //   // .success(function(response){console.log("I am the response", response)})
-        //   .then(res => {
-        //     console.log(res);
-        //   }, error => {
-        //     console.log(error);
-        //   })
-          // .then(console.log("ESSA EU CHAMO"))
-          
-          
-          // .then(this.$location.path('/sucesso'));
-
-          // .then(console.log("Eu vim aqui", data))
-          // .then(res => { console.log(res)})
         this.$http.post('/api/pagarme', data)
-          .then(res => console.log(res), error => console.log(error));
+          .then(res => { console.log(res) }, error => { console.log(error)})
+          .then(this.$location.path('/sucesso'));
 
         this.closeDialog();
       },
-      error: function(err) {
-        console.log(err);
-        this.resultPagarme = false;
+      error: function(body) {
+        console.log(body);
       }
     });
 
-    // DEFINIR AS OPÇÕES
-    // e abrir o modal
+    // DEFINIR AS OPÇÕES e abrir o modal
     // É necessário passar os valores boolean em 'var params' como string
     var params = {
       'amount': amountValue,
@@ -196,9 +179,6 @@ export class NavbarComponent {
     checkout.open(params);
 
   }
-
-
-
 }
 
 

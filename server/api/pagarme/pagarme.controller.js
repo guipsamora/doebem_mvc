@@ -44,7 +44,7 @@ function handleSendEmail(result, res) {
         res.send('Ocorreu um erro ao enviar sua mensagem');
         return;
       }
-      res.send('Email enviado');
+      res.send(result);
     });
 }
 
@@ -68,30 +68,50 @@ function sendBoleto(result, res) {
     });
 }
 
+function sendErro(result, res) {
+  app.mailer.send({
+      template: 'erro',
+      bcc: 'contato@doebem.org.br'
+    },
+    {
+      to: result.customer.email,
+      subject: 'Boleto - doação doebem', // REQUIRED.
+      link: result.boleto_url,
+    }, err => {
+      if(err) {
+        // handle error
+        console.log(err);
+        res.send('Ocorreu um erro ao enviar sua mensagem');
+        return;
+      }
+      res.send(result);
+    });
+}
+
 // Creates a new Pagarme in the DB
 export function create(req, res) {
   console.log(req);
   return Pagarme.create(req.body)
 }
 
-export function postPagarme(req, res){
+export function postPagarme(req, res) {
   console.log("postPagarme was called");
 
   var token = req.body.token;
   var amountTransaction = req.body.amount;
     
-  pagarme.client.connect({ api_key: 'ak_test_rnrtxW0T417zXA5Fq42gM2LBaqLrFq' })
-    .then(client => client.transactions.capture({ id: token, amount: amountTransaction }))
+  pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
+    .then(client => client.transactions.capture({ id: token, amount: amountTransaction }), 
+          err => sendErro(err, res))
     .then(result => {
-        if(result.payment_method == 'boleto'){
+        if (result.payment_method == 'boleto'){
           console.log("É BOLETO")
           sendBoleto(result, res);        
+        } else {
+          handleSendEmail(result, res);
         }
-        Pagarme.create(result);
+        // Pagarme.create(result);
       }
     )
-    .catch(err => { console.log(err.response.errors) })
-
-  
+    .catch(err => { console.log(err.response.errors); })
 };
-
