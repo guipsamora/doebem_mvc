@@ -78,9 +78,10 @@ export class PagOngs {
 
         console.log(data);
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
-        this.$http.post('/pagOngs/*', data)
-          .then(res => { console.log(res); })
+        this.$http.post('/api/pagarme', data)
+          .then(res => { console.log(res) }, error => { console.log(error)})
           .then(this.$location.path('/sucesso'));
+
       },
       error: function(err) {
         console.log(err);

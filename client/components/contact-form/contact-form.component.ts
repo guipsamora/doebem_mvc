@@ -20,6 +20,7 @@ export class ContactFormComponent {
     this.$http.post('/api/contactForm', form)
       .then(res => {
         this.showDialog();
+        console.log(res);
       })
       .then( () => {
       this.$scope.contactForm.$setPristine();
