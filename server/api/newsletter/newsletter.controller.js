@@ -12,7 +12,7 @@ import mailer from 'express-mailer';
 var app = express();
 
 mailer.extend(app, {
-  from: 'doebem <contato@doebem.org.br>',
+  from: 'doebem 💙 <contato@doebem.org.br>',
   host: 'smtp.gmail.com', // hostname
   secureConnection: true, // use SSL
   port: 465, // port for secure SMTP
