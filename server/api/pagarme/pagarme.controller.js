@@ -35,7 +35,8 @@ function handleSendEmail(result, res) {
     {
       to: result.customer.email,
       subject: 'Obrigado por sua doação', // REQUIRED.
-      // message: req.body.Mensagem
+      amount: result.amount,
+      nome: result.customer.name,
     }, err => {
       if(err) {
         // handle error
