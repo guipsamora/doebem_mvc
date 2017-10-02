@@ -46,7 +46,7 @@ export class NavbarComponent {
     }
   ];
 
-  org = ['Saúde Criança', 'Renovatio'];
+  org = ['Saúde Criança', 'Renovatio', 'Caviver'];
 
   selected = [];
 
@@ -125,6 +125,7 @@ export class NavbarComponent {
     // INICIAR A INSTÂNCIA DO CHECKOUT
     // declarando um callback de sucesso
     var checkout = new PagarMeCheckout.Checkout({
+
       'encryption_key': 'ek_live_3yykMegYY2XTPClgA1qjui2gSlvVzG',
       success: (data) => {
 

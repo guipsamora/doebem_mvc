@@ -21,7 +21,7 @@ export class PagOngs {
   infoOng;
   PagarMeCheckout: any;
 
-  org = ['Saúde Criança', 'Renovatio'];
+  org = ['Saúde Criança', 'Renovatio', 'Caviver'];
   
   selected = [];
 
