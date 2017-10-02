@@ -35,7 +35,7 @@ function handleSendEmail(result, res) {
     {
       to: result.customer.email,
       subject: 'Obrigado por sua doação', // REQUIRED.
-      amount: result.amount,
+      amount: (result.amount) / 100,
       nome: result.customer.name,
     }, err => {
       if(err) {
@@ -100,7 +100,7 @@ export function postPagarme(req, res) {
 
   var token = req.body.token;
   var amountTransaction = req.body.amount;
-    
+  
   pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
     .then(client => client.transactions.capture({ id: token, amount: amountTransaction }), 
           err => sendErro(err, res))
