@@ -1,5 +1,6 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
+const ngSanitize = require('angular-sanitize');
 const uiBootstrap = require('angular-ui-bootstrap');
 import routing from './duvidas.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
@@ -94,7 +95,7 @@ export class DuvidasController {
   }
 }
 
-export default angular.module('doebemOrgApp.duvidas', [ngRoute, uiBootstrap, contactForm])
+export default angular.module('doebemOrgApp.duvidas', [ngRoute, uiBootstrap, ngSanitize, contactForm])
   .config(routing).component('duvidas', {template: require('./duvidas.pug'),
   controller: DuvidasController
 })

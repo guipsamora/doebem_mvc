@@ -49,12 +49,17 @@ div#duvidas {
       background-color: #fafafa;
       
       p {
-        padding-bottom: 30px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
       }
       
       .faqHeader {
         font-size: 27px;
         margin: 20px;
+      }
+
+      a:focus { 
+        text-decoration: none;
       }
   }
 }
