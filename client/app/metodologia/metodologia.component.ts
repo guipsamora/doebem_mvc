@@ -16,6 +16,12 @@ export class MetodologiaController {
     this.$routeParams = $routeParams;
     this.stepCriterios = [
       {
+        title: 'Impacto',
+        desc1: 'Buscamos evidências claras da',
+        desc2: 'efetividade do trabalho realizado.',
+        icon: 'fa-globe'
+      },
+      {
         title: 'Gestão',
         desc1: 'Avaliamos a gestão, a equipe e',
         desc2: 'os processos da organização.',
@@ -26,13 +32,7 @@ export class MetodologiaController {
         desc1: 'Analisamos a transparência',
         desc2: 'financeira e organizacional.',
         icon: 'fa-file-o'
-      },
-      {
-        title: 'Impacto',
-        desc1: 'Buscamos evidências claras da',
-        desc2: 'efetividade do trabalho realizado.',
-        icon: 'fa-globe'
-      },
+      }
     ];
   }
 

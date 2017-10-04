@@ -35,7 +35,7 @@ function handleSendEmail(result, res) {
     {
       to: result.customer.email,
       subject: 'Obrigado por sua doação', // REQUIRED.
-      amount: (result.amount) / 100,
+      amount: result.amount / 100,
       nome: result.customer.name,
     }, err => {
       if(err) {
@@ -51,9 +51,9 @@ function handleSendEmail(result, res) {
 
 function sendBoleto(result, res) {
   app.mailer.send({
-      template: 'boleto',
-      bcc: 'contato@doebem.org.br'
-    },
+    template: 'boleto',
+    bcc: 'contato@doebem.org.br'
+  },
     {
       to: result.customer.email,
       subject: 'Obrigado por sua doação - Segue boleto', // REQUIRED.
@@ -71,9 +71,9 @@ function sendBoleto(result, res) {
 
 function sendErro(result, res) {
   app.mailer.send({
-      template: 'erro',
-      bcc: 'contato@doebem.org.br'
-    },
+    template: 'erro',
+    bcc: 'contato@doebem.org.br'
+  },
     {
       to: result.customer.email,
       subject: 'Boleto - doação doebem', // REQUIRED.
@@ -90,29 +90,30 @@ function sendErro(result, res) {
 }
 
 // Creates a new Pagarme in the DB
-export function create(req, res) {
+export function create(req) {
   console.log(req);
-  return Pagarme.create(req.body)
+  return Pagarme.create(req.body);
 }
 
 export function postPagarme(req, res) {
-  console.log("postPagarme was called");
+  console.log('postPagarme was called');
 
   var token = req.body.token;
   var amountTransaction = req.body.amount;
-  
+
   pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
-    .then(client => client.transactions.capture({ id: token, amount: amountTransaction }), 
+    .then(client => client.transactions.capture({ id: token, amount: amountTransaction }),
           err => sendErro(err, res))
     .then(result => {
-        if (result.payment_method == 'boleto'){
-          console.log("É BOLETO")
-          sendBoleto(result, res);        
-        } else {
-          handleSendEmail(result, res);
-        }
-        // Pagarme.create(result);
+      if(result.payment_method == 'boleto') {
+        console.log('É BOLETO');
+        sendBoleto(result, res);
+      } else {
+        handleSendEmail(result, res);
       }
-    )
-    .catch(err => { console.log(err.response.errors); })
-};
+      // Pagarme.create(result);
+    })
+    .catch(err => {
+      console.log(err.response.errors);
+    });
+}

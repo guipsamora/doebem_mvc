@@ -42,95 +42,95 @@ var pagarmeSchema = new mongoose.Schema({
   phone: String,
   address: String,
   customer: {
-      object: String,
-      id: Number,
-      external_id: String,
-      type: String,
-      country: String,
-      document_number: String,
-      document_type: String,
-      name: String,
-      email: String,
-      phone_numbers: [
-          String,
-          String
-      ],
-      born_at: String,
-      birthday: String,
-      gender: String,
-      date_created: String,
-      documents: [
-          {
-              object: String,
-              id: String,
-              type: String,
-              number: String
-          }
-      ]
+    object: String,
+    id: Number,
+    external_id: String,
+    type: String,
+    country: String,
+    document_number: String,
+    document_type: String,
+    name: String,
+    email: String,
+    phone_numbers: [
+      String,
+      String
+    ],
+    born_at: String,
+    birthday: String,
+    gender: String,
+    date_created: String,
+    documents: [
+        {
+        object: String,
+        id: String,
+        type: String,
+        number: String
+        }
+    ]
   },
   billing: {
-      address: {
-          object: String,
-          street: String,
-          complementary: String,
-          street_number: String,
-          neighborhood: String,
-          city: String,
-          state: String,
-          zipcode: String,
-          country: String,
-          id: Number
-      },
+    address: {
       object: String,
-      id: Number,
-      name: String
+      street: String,
+      complementary: String,
+      street_number: String,
+      neighborhood: String,
+      city: String,
+      state: String,
+      zipcode: String,
+      country: String,
+      id: Number
+    },
+    object: String,
+    id: Number,
+    name: String
   },
   shipping: {
-      address: {
-          object: String,
-          street: String,
-          complementary: String,
-          street_number: String,
-          neighborhood: String,
-          city: String,
-          state: String,
-          zipcode: String,
-          country: String,
-          id: Number
-      },
+    address: {
       object: String,
-      id: Number,
-      name: String,
-      fee: Number,
-      delivery_date: String,
-      expedited: Boolean
+      street: String,
+      complementary: String,
+      street_number: String,
+      neighborhood: String,
+      city: String,
+      state: String,
+      zipcode: String,
+      country: String,
+      id: Number
+    },
+    object: String,
+    id: Number,
+    name: String,
+    fee: Number,
+    delivery_date: String,
+    expedited: Boolean
   },
   items: [
-      {
-          object: String,
-          id: String,
-          title: String,
-          unit_price: Number,
-          quantity: Number,
-          category: String,
-          tangible: Boolean,
-          venue: String,
-          date: String
-      },
+    {
+        object: String,
+        id: String,
+        title: String,
+        unit_price: Number,
+        quantity: Number,
+        category: String,
+        tangible: Boolean,
+        venue: String,
+        date: String
+    },
   ],
   card: {
-      object: String,
-      id: String,
-      date_created: String,
-      date_updated:  String,
-      brand:  String,
-      holder_name: String,
-      first_digits: String,
-      last_digits:  String,
-      country:String,
-      fingerprinring: String,
-      valid:  String,
-      expiration_date: String
+    object: String,
+    id: String,
+    date_created: String,
+    date_updated: String,
+    brand: String,
+    holder_name: String,
+    first_digits: String,
+    last_digits: String,
+    country:String,
+    fingerprinring: String,
+    valid:  String,
+    expiration_date: String
   },
   split_rules: String,
   metadata: {},

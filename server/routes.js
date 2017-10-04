@@ -6,7 +6,6 @@
 
 import errors from './components/errors';
 import path from 'path';
-import pagarme from 'pagarme';
 
 export default app => {
   // Insert routes below

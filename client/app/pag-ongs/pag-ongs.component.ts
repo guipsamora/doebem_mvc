@@ -22,7 +22,7 @@ export class PagOngs {
   PagarMeCheckout: any;
 
   org = ['Saúde Criança', 'Renovatio', 'Caviver'];
-  
+
   selected = [];
 
   toggle (org, list) {
@@ -79,7 +79,7 @@ export class PagOngs {
         console.log(data);
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
         this.$http.post('/api/pagarme', data)
-          .then(res => { console.log(res) }, error => { console.log(error)})
+          .then(res => { console.log(res); }, error => { console.log(error); })
           .then(this.$location.path('/sucesso'));
 
       },
@@ -140,7 +140,7 @@ export class PagOngs {
   }
 
   showDialogDonation() {
-    
+
         this.dialog = this.$mdDialog.show({
           scope: this.$scope,
           preserveScope: true,

@@ -31,7 +31,7 @@ export class NavbarComponent {
     {
       'title': 'TRANSPARÊNCIA',
       'link': 'transparencia'
-    },    
+    },
     {
       'title': 'METODOLOGIA',
       'link': 'metodologia'
@@ -135,7 +135,7 @@ export class NavbarComponent {
 
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
         this.$http.post('/api/pagarme', data)
-          .then(res => { console.log(res) }, error => { console.log(error)})
+          .then(res => { console.log(res); }, error => { console.log(error); })
           .then(this.$location.path('/sucesso'));
 
         this.closeDialog();

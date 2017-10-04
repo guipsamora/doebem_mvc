@@ -19,8 +19,8 @@ mailer.extend(app, {
   transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts
   auth: {
     user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_SECRET 
-  } 
+    pass: process.env.GMAIL_SECRET
+  }
 });
 
 app.set('views', `${__dirname}/`);//path.resolve( __dirname, '/'));

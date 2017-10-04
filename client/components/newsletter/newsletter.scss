@@ -37,6 +37,11 @@ div#newsletter {
     border-top-color: rgb(63,81,181);
     margin-top: 6px;
     margin-bottom: 6px;
+    text-indent: 10px;
+  }
+
+  input:focus {
+    outline: none;
   }
 
   // Adequação no placeholder
@@ -44,7 +49,6 @@ div#newsletter {
     color:    rgb(63,81,181);
     font-size: 16px;
     font-family: "Open Sans Condensed", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding-left: 5px
   }
 
   :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
@@ -52,7 +56,6 @@ div#newsletter {
     opacity:  1;
     font-size: 16px;
     font-family: "Open Sans Condensed", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding-left: 5px
   }
 
   ::-moz-placeholder { /* Mozilla Firefox 19+ */
@@ -60,22 +63,18 @@ div#newsletter {
     opacity:  1;
     font-size: 16px;
     font-family: "Open Sans Condensed", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding-left: 5px
-
   }
 
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color:    rgb(63,81,181);
     font-size: 16px;
     font-family: "Open Sans Condensed", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding-left: 5px
   }
 
   ::-ms-input-placeholder { /* Microsoft Edge */
     color:    rgb(63,81,181);
     font-size: 16px;
     font-family: "Open Sans Condensed", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding-left: 5px
   }
 
   @media screen and (max-width: 450px) {
