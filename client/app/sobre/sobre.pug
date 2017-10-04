@@ -22,12 +22,14 @@ div.animated.fadeIn#sobre
     md-list(flex="100" layout-wrap layout="column" layout-gt-sm="row" layout-align="space-around center")
       md-list-item(ng-repeat="pessoa in $ctrl.listaPessoas")
         md-card(layout="column" flex-gt-sm="100")
-          img(ng-src="{{pessoa.img}}")
+          img(flex="100" layout-align="center center" ng-src="{{pessoa.img}}")
           md-card-title(layout="column")
             md-card-title-text(flex="100" layout="row" layout-align="center center")
               h3 {{pessoa.nome}}
             md-card-title-text(flex="100" layout="row" layout-align="center center")
               h4 {{pessoa.area}}
+            md-card-title-text(layout="row" layout-align="center center")
+              p {{pessoa.bio}}              
           md-card-actions(layout="row" layout-align="center center")
             a(target='_blank' href='{{pessoa.linkedin}}')
               md-button.md-icon-button(aria-label="linkedin button")
