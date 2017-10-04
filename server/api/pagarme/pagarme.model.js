@@ -60,12 +60,12 @@ var pagarmeSchema = new mongoose.Schema({
     gender: String,
     date_created: String,
     documents: [
-        {
+      {
         object: String,
         id: String,
         type: String,
         number: String
-        }
+      }
     ]
   },
   billing: {
@@ -107,15 +107,15 @@ var pagarmeSchema = new mongoose.Schema({
   },
   items: [
     {
-        object: String,
-        id: String,
-        title: String,
-        unit_price: Number,
-        quantity: Number,
-        category: String,
-        tangible: Boolean,
-        venue: String,
-        date: String
+      object: String,
+      id: String,
+      title: String,
+      unit_price: Number,
+      quantity: Number,
+      category: String,
+      tangible: Boolean,
+      venue: String,
+      date: String
     },
   ],
   card: {
@@ -127,15 +127,15 @@ var pagarmeSchema = new mongoose.Schema({
     holder_name: String,
     first_digits: String,
     last_digits: String,
-    country:String,
+    country: String,
     fingerprinring: String,
-    valid:  String,
+    valid: String,
     expiration_date: String
   },
   split_rules: String,
   metadata: {},
   antifraud_metadata: {},
   reference_key: String
-})
+});
 
 export default mongoose.model('pagarmeSchema', pagarmeSchema);
