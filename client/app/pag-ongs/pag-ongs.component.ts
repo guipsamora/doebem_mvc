@@ -65,6 +65,18 @@ export class PagOngs {
     this.carregaLista();
   }
 
+  carregaVideo(){
+
+    this.$scope.detailFrame = this.$sce.trustAsResourceUrl(this.infoOng.videoYoutube);
+
+    bringToFront();
+
+    function bringToFront() {
+      document.getElementById("video").style.zIndex = "1";
+    }
+  }
+
+
   callPagarme(pagarmeForm) {
 
     var amountValue = pagarmeForm.amount;
@@ -126,19 +138,6 @@ export class PagOngs {
 
   }
 
-  showDialogVideo() {
-
-    this.dialog = this.$mdDialog.show({
-      scope: this.$scope,
-      preserveScope: true,
-      controller: DialogController,
-      templateUrl: 'dialogVideo.tmpl.pug',
-      parent: angular.element(document.body),
-      clickOutsideToClose: true,
-      fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
-    });
-  }
-
   showDialogDonation() {
 
         this.dialog = this.$mdDialog.show({
@@ -153,9 +152,7 @@ export class PagOngs {
       }
 }
 
-function DialogController($scope, $mdDialog, $inject, $log, $http, $sce, user) {
-
-    $scope.detailFrame = $inject.trustAsResourceUrl($scope.$ctrl.infoOng.videoYoutube);
+function DialogController($scope, $mdDialog, $inject, $log, $http, user) {
 
     $scope.hide = function() {
       $mdDialog.hide();
@@ -170,7 +167,7 @@ function DialogController($scope, $mdDialog, $inject, $log, $http, $sce, user) {
     };
 }
 
-DialogController.$inject = ['$scope', '$mdDialog', '$sce'];
+DialogController.$inject = ['$scope', '$mdDialog'];
 
 export default angular.module('doebemOrgApp.pagOngs', [ngRoute, contactForm, ngSanitize])
   .config(routing)

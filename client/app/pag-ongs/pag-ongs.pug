@@ -3,8 +3,15 @@ div.animated.fadeIn#pagOng
     h2 {{$ctrl.infoOng.nomeFantasia}}
     md-icon(md-svg-src="./assets/fonts/icons/ic_play_circle_outline_white_48px.svg" 
             aria-label="play"
-            ng-click="$ctrl.showDialogVideo()")
-    //- md-button.md-raized.md-primary(ng-click="$ctrl.callPagarme(pagarmeForm)") Doar        
+            ng-click="$ctrl.carregaVideo()")
+            //- ng-click="$ctrl.showDialogVideo()")
+    iframe#video(allowfullscreen
+                 allowscriptaccess="always"
+                 autoplay="1"
+                 frameborder="0"
+                 scrolling="no"
+                 ng-src="{{detailFrame}}")
+          //-  ng-src='{{$ctrl.detailFrame}}')
   div.container
     div#infos(layout="row" layout-sm="column" layout-xs="column")
       div(flex="80" layout-align="start")
@@ -32,18 +39,6 @@ div.animated.fadeIn#pagOng
         md-button.md-raized.md-primary(ng-click="$ctrl.showDialogDonation()") Doar
         h3#duvida Ficou com alguma dúvida sobre nossa análise? Por favor nos escreva pelo formulário abaixo.
 contact-form
-
-script(type="text/ng-template" id="dialogVideo.tmpl.pug")
-  console.log($scope)
-  md-dialog(aria-label="emailSend" ng-cloak)
-    iframe(allowfullscreen="true"
-           allowscriptaccess="always"
-           autoplay = "1"
-           frameborder="0"
-           height="400px"
-           width="500px"
-           scrolling="no"
-           ng-src="{{detailFrame}}")
 
 script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
   md-dialog(aria-label="emailSend" ng-cloak)

@@ -4,8 +4,6 @@ body {
 
 div#pagOng {
 
-
-
   div#pageHeader {
     
     background-repeat: no-repeat;
@@ -14,6 +12,7 @@ div#pagOng {
     height: 100%;
     min-height: 80vh;
     background-position: top center;
+    position: relative;
 
     md-icon {
       width: 125px;
@@ -23,22 +22,33 @@ div#pagOng {
 
     h2 {
       color: white;
-      // color: black;
       font-size: 70px;
+    }
+
+    iframe {
+      z-index: -999999;
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
     }
 
 
   }
 
-  // para quando tiver a parte de informações da organização
-  // não excluir
-  div#infos {
+  // não excluir para quando tiver a parte de informações da organização
+  // 
+  // div#infos {
 
     //  div img#princ{
     //     width: 600px;
     //     height: 400px;
     //  }
-  }
+  // }
 
   .container {
     padding-top: 20px;
