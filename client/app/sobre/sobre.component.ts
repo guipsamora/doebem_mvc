@@ -51,10 +51,9 @@ export class SobreController {
         img: './assets/images/team/3.jpg',
         area: 'Pesquisa',
         linkedin: 'https://www.linkedin.com/in/rhayana-holz-a1916a5a/',
-        bio: 'Formada em Administração pela PUC-Rio e mestranda em negócios no MIT, \
-        Elisa construiu sua carreira empresarial na indústria de infraestrutura, mas \
-        sempre esteve envolvida com projetos sociais desde a adolescência. \
-        É Yunus&Youth Fellow, Global Shaper e Embaixadora da Draper University no Brasil.'
+        bio: 'Formada em Economia pela Universidade Federal de Ouro Preto e mestre em Economia pela Universidade \
+         Federal de Viçosa. Ao longo dos cinco anos tem se dedicado na área de pesquisa que envolve \
+         métodos quantitativos associados a Avaliação de Impacto Social.'
       },
       {
        nome: 'Guilherme',
