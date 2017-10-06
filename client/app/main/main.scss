@@ -327,6 +327,11 @@ div#main {
             margin: 0 0 10 0;
         }
 
+        md-button {
+          visibility: hidden;
+          display: none;
+        }
+
         h3 {
           font-size: 16px;
         }
