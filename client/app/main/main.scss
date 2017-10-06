@@ -72,9 +72,32 @@ div#main {
         font-weight: bold;
       }
 
-      div#button {
-        display: none;
+      div#textButton {
+        display: inline-flex;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+  
+        
+        h2 {
+          color: black;
+          text-align: center;
+          font-size: 26px;
+          font-weight: bold;
+        }
+    
+        p {
+          color: black;
+          font-size: 14px;
+          font-weight: bold;
+          margin: 0;
+        }
       }
+
+        div#button {
+          display: none;
+          visibility: hidden;
+        }
     }
 
   }

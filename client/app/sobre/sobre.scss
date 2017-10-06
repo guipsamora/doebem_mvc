@@ -88,15 +88,22 @@ div#sobre {
   div#Time {
     padding-top: 3%;
     padding-bottom: 3%;
+    display: block;
+
     h1 {
       font-size: 70px;
       padding-bottom: 5%;
+      text-align: center;
+      display: block;
     }
+
     md-card {
       background-color: transparent;
       border: none;
       box-shadow: none;
       border-style: none;
+      display: block;
+
       img {
         border-radius: 50% 50%;
         width: 250px;
@@ -104,19 +111,41 @@ div#sobre {
         display: block;
         margin: 0 auto;
       }
+
       md-card-title-text{
+
+        display: block;
+
         p {
           width: 250px;
           text-align: justify;
           text-justify: inter-word;
+          display: block;
         }
+
+        h3 {
+          display: block;
+          text-align: center;
+        }
+
+        h4 {
+          display: block;
+          text-align: center;
+        }
+
       }
+
       md-card-actions {
+        
+        // display: block;
+
         a button {
           font-size: 20px;
           background-color: black;
           color: white;
+          display: block;
         }
+
       }
     }
   }

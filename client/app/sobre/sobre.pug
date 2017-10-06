@@ -1,7 +1,7 @@
 div.animated.fadeIn#sobre
   div#pageHeader(flex="100"  layout="column" layout-align="center center")
     h2 Sobre
-  div#comoFunciona(flex = "100" layout="column" layout-align="center center")
+  div#comoFunciona(flex="100" layout="column" layout-align="center center")
     h2.sectionHeading Conheça a doebem
     p#comoFunciona A doebem conecta doadores e organizações sem fins lucrativos efetivas.
     br
@@ -9,7 +9,7 @@ div.animated.fadeIn#sobre
     p Eles tinham pelo menos duas coisas em comum: a vontade de promover impacto positivo no Brasil e a noção de que 
     p isso deveria ser feito de forma diferente. Inspirados no movimento <a href="https://altruismoeficaz.com.br/" target="_blank"> <span> Altruísmo Eficaz</span></a>, decidiram trazer para o seu país o 
     p conceito de que decisões de como ajudar devem ser embasadas em evidências claras de impacto e estudos científicos.
-    md-list#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
+    md-list#actions(flex="100" layout-gt-sm ="row" layout="column" layout-align="center center")
       md-list-item(ng-repeat="step in $ctrl.stepOptions")
           div(layout = "column" layout-align="center center")
             img(src="{{step.icon}}")
@@ -17,7 +17,7 @@ div.animated.fadeIn#sobre
             p {{step.desc}}
   br 
   br
-  div#Time(layout="column"  flex="100" layout-align="center center")
+  div#Time(layout="column" flex="100" layout-align="center center")
     h1 Time
     md-list(flex="100" layout-wrap layout="column" layout-gt-sm="row" layout-align="space-around center")
       md-list-item(ng-repeat="pessoa in $ctrl.listaPessoas")
@@ -31,8 +31,8 @@ div.animated.fadeIn#sobre
             md-card-title-text(layout="row" layout-align="center center")
               p {{pessoa.bio}}              
           md-card-actions(layout="row" layout-align="center center")
-            a(target='_blank' href='{{pessoa.linkedin}}')
-              md-button.md-icon-button(aria-label="linkedin button")
+            a(target='_blank' href='{{pessoa.linkedin}}'  layout-align="center center")
+              md-button.md-icon-button(aria-label="linkedin button" layout-align="center center")
                 i.fa.fa-linkedin
   div#trabalhe(layout="column" flex="100" layout-align="center center")
     a(href="https://goo.gl/forms/fUOPM8eyfoHmmxYj2" layout="column" flex="100" 
