@@ -148,7 +148,21 @@ div#navbar-main.navbar-collapse.collapse {
     }
 
     div#menu {
-        height: 45px;
+      height: 45px;
+    }
+
+    div.navbar-default {
+        position: fixed;
+        z-index: 1030; //this value is from variables.less -> @zindex-navbar-fixed
+        right: 0;
+        left: 0;   
+        border-radius: 0;
+        top: 0;
+        border-width: 0 0 1px;
+    }    
+
+    body {
+        padding-top: 50px;
     }
 
     div.navbar-header {
