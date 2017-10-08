@@ -11,15 +11,19 @@ div#contactForm {
 
      h2 {
        font-size: 50px;
-       padding-top: 3%;
-       padding-bottom: 3%;
+       padding-top: 1%;
+       padding-bottom: 1%;
        text-align: center;
      }
+
+     p {
+      text-align: center;
+     }
+
      div.layout-column {
-     
        form {
          display: block;
-        }
+       }
      }
 
      form>div {
