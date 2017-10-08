@@ -80,6 +80,11 @@ export class PagOngs {
   callPagarme(pagarmeForm) {
 
     var amountValue = pagarmeForm.amount;
+
+    if (pagarmeForm.doebem){
+      amountValue = Math.round(pagarmeForm.amount * 1.10);
+    };
+    
     // INICIAR A INSTÂNCIA DO CHECKOUT
     // declarando um callback de sucesso
     var checkout = new PagarMeCheckout.Checkout({

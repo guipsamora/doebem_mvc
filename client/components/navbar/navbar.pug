@@ -42,6 +42,8 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
             md-radio-button(ng-value="10000" aria-label="Label 2") R$ 100
             md-radio-button(ng-value="20000" aria-label="Label 2") R$ 200
           br
+          md-input.md-block(layout="row")
+            md-checkbox(ng-model="pagarmeForm.doebem" ng-watch) Acrescentar +10% para a doebem?          
           md-dialog-actions(layout="row" layout-align="center")
             md-button.md-raized.md-primary#doarMe(ng-click="$ctrl.callPagarme(pagarmeForm)" type="submit") Doar
             
