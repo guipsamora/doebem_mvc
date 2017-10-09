@@ -65,14 +65,14 @@ export class PagOngs {
     this.carregaLista();
   }
 
-  carregaVideo(){
+  carregaVideo() {
 
     this.$scope.detailFrame = this.$sce.trustAsResourceUrl(this.infoOng.videoYoutube);
 
     bringToFront();
 
     function bringToFront() {
-      document.getElementById("video").style.zIndex = "1";
+      document.getElementById('video').style.zIndex = '1';
     }
   }
 
@@ -81,10 +81,10 @@ export class PagOngs {
 
     var amountValue = pagarmeForm.amount;
 
-    if (pagarmeForm.doebem){
+    if (pagarmeForm.doebem) {
       amountValue = Math.round(pagarmeForm.amount * 1.10);
     };
-    
+
     // INICIAR A INSTÂNCIA DO CHECKOUT
     // declarando um callback de sucesso
     var checkout = new PagarMeCheckout.Checkout({

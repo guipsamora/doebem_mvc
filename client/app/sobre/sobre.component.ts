@@ -66,7 +66,7 @@ export class SobreController {
         email: 'guilherme.samora@doebem.org.br',
          bio: 'Formado em Administração pelo Mackenzie, participou do curso de Avaliação \
                Econômica de Projetos Sociais pela Fundação Itau Social. Guilherme construiu \
-               sua carreira sua carreira em empresas de tecnologia e participou da primeira turma \
+               sua carreira em empresas de tecnologia e participou da primeira turma \
                de incubação da Yunus Brasil em 2014.'
       }
     ];

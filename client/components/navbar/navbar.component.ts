@@ -121,8 +121,8 @@ export class NavbarComponent {
   callPagarme(pagarmeForm) {
 
     var amountValue = pagarmeForm.amount;
-    
-    if (pagarmeForm.doebem){
+
+    if (pagarmeForm.doebem) {
       amountValue = Math.round(pagarmeForm.amount * 1.10);
     };
 
