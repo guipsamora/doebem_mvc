@@ -114,13 +114,16 @@ div#sobre {
 
       md-card-title-text{
 
-        display: block;
+        // display: block;
 
         p {
           width: 250px;
           text-align: justify;
           text-justify: inter-word;
-          display: block;
+          justify-content: center;
+          margin: 0;
+          display: flex;
+          align-items: center;
         }
 
         h3 {

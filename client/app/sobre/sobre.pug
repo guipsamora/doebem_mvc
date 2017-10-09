@@ -27,9 +27,11 @@ div.animated.fadeIn#sobre
             md-card-title-text(flex="100" layout="row" layout-align="center center")
               h3 {{pessoa.nome}}
             md-card-title-text(flex="100" layout="row" layout-align="center center")
+              h4 {{pessoa.email}}
+            md-card-title-text(flex="100" layout="row" layout-align="center center")
               h4 {{pessoa.area}}
-            md-card-title-text(layout="row" layout-align="center center")
-              p {{pessoa.bio}}              
+            md-card-title-text(flex="100" layout="row" layout-align="center center")
+              p(layout-align="center center") {{pessoa.bio}}
           md-card-actions(layout="row" layout-align="center center")
             a(target='_blank' href='{{pessoa.linkedin}}'  layout-align="center center")
               md-button.md-icon-button(aria-label="linkedin button" layout-align="center center")
