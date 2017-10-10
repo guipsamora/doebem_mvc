@@ -46,7 +46,7 @@ export class NavbarComponent {
     }
   ];
 
-  org = ['Saúde Criança', 'Renovatio', 'Caviver'];
+  org = ['Saúde Criança', 'Renovatio', 'Caviver', 'A critério da doebem'];
 
   selected = [];
 
@@ -58,12 +58,31 @@ export class NavbarComponent {
       list.push(org);
     }
 
-    console.log('final list ist:', list);
+    console.log('final list is:', list);
   };
 
   exists(org, list) {
     return list.indexOf(org) > -1;
   };
+
+  Custom = '';
+
+  options = [
+    {
+      value: 1000,
+      label: 'R$10',
+    },
+    {
+      value: 2000,
+      label: 'R$20',
+      checked: "checked"
+    },
+    {
+      label: '' + this.Custom,
+      value: this.Custom,
+      input: true,
+    },
+  ]
 
   constructor($location, Auth, $document, $mdDialog, $scope, $http) {
     'ngInject';
