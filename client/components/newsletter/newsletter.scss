@@ -18,6 +18,11 @@ div#newsletter {
     border-bottom-left-radius: 0px;
   }
 
+  .md-button:focus {
+    background-color: rgb(63,81,181);
+    border-color:rgb(63,81,181);
+    color: white;
+  }
   .md-button:hover {
     background-color:rgb(63,81,181);
     border-color:rgb(63,81,181);

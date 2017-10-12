@@ -68,20 +68,12 @@ export class NavbarComponent {
   Custom = '';
 
   options = [
-    {
-      value: 1000,
-      label: 'R$10',
-    },
-    {
-      value: 2000,
-      label: 'R$20',
-      checked: "checked"
-    },
-    {
-      label: '' + this.Custom,
-      value: this.Custom,
-      input: true,
-    },
+    {value: 1000, label: 'R$10'},
+    {value: 2000, label: 'R$20'},
+    {value: 4000, label: 'R$40'},
+    {value: 5000, label: 'R$50'},
+    {value: 10000, label: 'R$100'},
+    {value: this.Custom, label: '' + this.Custom, input: true, isChecked: false},
   ]
 
   constructor($location, Auth, $document, $mdDialog, $scope, $http) {
@@ -141,8 +133,14 @@ export class NavbarComponent {
 
     var amountValue = pagarmeForm.amount;
 
-    if (pagarmeForm.doebem) {
+    if(!amountValue) {
+      amountValue = pagarmeForm.input * 100;
+    }
+    
+    if (pagarmeForm.doebem && pagarmeForm.amount) {
       amountValue = Math.round(pagarmeForm.amount * 1.10);
+    } else if (pagarmeForm.doebem && pagarmeForm.input) {
+      amountValue = Math.round(amountValue * 1.10);
     };
 
     // INICIAR A INSTÂNCIA DO CHECKOUT
@@ -207,6 +205,10 @@ export class NavbarComponent {
 
 
 function DialogController($scope, $mdDialog, $inject) {
+
+    $scope.pagarmeForm = {
+      amount: 2000
+    }
 
     $scope.hide = function() {
       $mdDialog.hide();

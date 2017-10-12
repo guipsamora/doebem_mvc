@@ -249,17 +249,34 @@ md-checkbox .md-label {
     padding-right: 20px;
 }
 
+md-radio-group {
+    width: 270px;
+}
+
+md-radio-group.layout-row md-radio-button:last-of-type,
+md-radio-group.layout-xs-row md-radio-button:last-of-type,
+md-radio-group.layout-gt-xs-row md-radio-button:last-of-type,
+md-radio-group.layout-sm-row md-radio-button:last-of-type,
+md-radio-group.layout-gt-sm-row md-radio-button:last-of-type,
+md-radio-group.layout-md-row md-radio-button:last-of-type,
+md-radio-group.layout-gt-md-row md-radio-button:last-of-type,
+md-radio-group.layout-lg-row md-radio-button:last-of-type,
+md-radio-group.layout-gt-lg-row md-radio-button:last-of-type,
+md-radio-group.layout-xl-row md-radio-button:last-of-type {
+    margin-left: 6px;
+}
+
 md-radio-button {
     font-size: 24px;
-    // display: inline-block !important;
-    display: block !important;
-    float: left;
-    // line-height: 30px;
-    // vertical-align: bottom;
     width: 83.11px;
-    // vertical-align: middle;
-    text-align: left;
+}
 
+input#nav {
+    font-family: "Open Sans Condensed";
+    border-radius: 6px;
+    width: 80px;
+    border-color: black;
+    text-align: center;
 }
 
 .md-radio-interactive input {

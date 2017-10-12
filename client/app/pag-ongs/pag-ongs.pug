@@ -4,14 +4,12 @@ div.animated.fadeIn#pagOng
     md-icon(md-svg-src="./assets/fonts/icons/ic_play_circle_outline_white_48px.svg" 
             aria-label="play"
             ng-click="$ctrl.carregaVideo()")
-            //- ng-click="$ctrl.showDialogVideo()")
     iframe#video(allowfullscreen
                  allowscriptaccess="always"
                  autoplay="1"
                  frameborder="0"
                  scrolling="no"
                  ng-src="{{detailFrame}}")
-          //-  ng-src='{{$ctrl.detailFrame}}')
   div.container
     div#infos(layout="row" layout-sm="column" layout-xs="column")
       div(flex="80" layout-align="start")
@@ -49,22 +47,24 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
         md-button.md-icon-button(aria-label="md-button ok" ng-click="cancel()") X
     md-dialog-content
       div.md-dialog-content
-        form(role="form" name = "pagarmeForm")
+        form(role="form")
           h4 Escolha a organização:
-          md-input.md-block(layout="row")
+          md-input.md-block(layout="row" layout-wrap flex)
             div(ng-repeat = "org in $ctrl.org")
-              md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)" 
-                          ng-checked="$ctrl.exists(org, $ctrl.selected)") {{org}}
+              md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)")  {{org}}                           
           h4 Escolha o valor da sua doação:
-          md-radio-group(layout="row" ng-model="pagarmeForm.amount" layout-wrap flex)
-            md-radio-button(ng-value="1000" aria-label="Label 1") R$ 10
-            md-radio-button(ng-value="2000" aria-label="Label 2") R$ 20
-            md-radio-button(ng-value="3000" aria-label="Label 2") R$ 30
-            md-radio-button(ng-value="5000" aria-label="Label 2") R$ 50
-            md-radio-button(ng-value="10000" aria-label="Label 2") R$ 100
-            md-radio-button(ng-value="20000" aria-label="Label 2") R$ 200
+          md-radio-group(layout="row" layout-wrap flex ng-model="pagarmeForm.amount")
+            div(ng-repeat="option in $ctrl.options")
+              md-radio-button(ng-value="option.value" aria-label="option.value" 
+                              ng-if="!option.input" ng-checked="option.checked") {{option.label}}
+              md-radio-button.md-radio-interactive(ng-value="{{$ctrl.Custom}}" 
+                                                   aria-label="option.value" 
+                                                   ng-if="option.input") 
+                input(ng-model="pagarmeForm.input" type="text" 
+                      ui-money-mask currency-symbol="R$" placeholder="Outro"
+                      class="ng-pristine ng-untouched ng-valid ng-empty")
           br
           md-input.md-block(layout="row")
-            md-checkbox(ng-model="pagarmeForm.doebem" ng-watch) Acrescentar +10% para a doebem?
+            md-checkbox(ng-model="pagarmeForm.doebem" ng-watch ng-checked="true") Acrescentar +10% para a doebem?
           md-dialog-actions(layout="row" layout-align="center")
             md-button.md-raized.md-primary#doarMe(ng-click="$ctrl.callPagarme(pagarmeForm)" type="submit") Doar

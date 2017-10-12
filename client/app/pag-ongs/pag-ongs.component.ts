@@ -21,25 +21,6 @@ export class PagOngs {
   infoOng;
   PagarMeCheckout: any;
 
-  org = ['Saúde Criança', 'Renovatio', 'Caviver'];
-
-  selected = [];
-
-  toggle (org, list) {
-    var idx = list.indexOf(org);
-    if (idx > -1) {
-      list.splice(idx, 1);
-    } else {
-      list.push(org);
-    }
-
-    console.log('final list ist:', list);
-  };
-
-  exists(org, list) {
-    return list.indexOf(org) > -1;
-  };
-
   /*@ngInject*/
   constructor($http, $scope, $sce, socket, $routeParams, $mdDialog, $location) {
     this.$http = $http;
@@ -61,6 +42,37 @@ export class PagOngs {
       });
   }
 
+  // Handles the payment popup
+  org = ['Saúde Criança', 'Renovatio', 'Caviver', 'A critério da doebem'];
+  
+  selected = [];
+
+  toggle (org, list) {
+    var idx = list.indexOf(org);
+    if (idx > -1) {
+      list.splice(idx, 1);
+    } else {
+      list.push(org);
+    }
+
+    console.log('final list ist:', list);
+  };
+
+  exists(org, list) {
+    return list.indexOf(org) > -1;
+  };
+
+  Custom = '';
+  
+  options = [
+    {value: 1000, label: 'R$10'},
+    {value: 2000, label: 'R$20'},
+    {value: 4000, label: 'R$40'},
+    {value: 5000, label: 'R$50'},
+    {value: 10000, label: 'R$100'},
+    {value: this.Custom, label: '' + this.Custom, input: true, isChecked: false},
+  ]
+
   $onInit() {
     this.carregaLista();
   }
@@ -80,9 +92,15 @@ export class PagOngs {
   callPagarme(pagarmeForm) {
 
     var amountValue = pagarmeForm.amount;
-
-    if (pagarmeForm.doebem) {
+    
+    if(!amountValue) {
+      amountValue = pagarmeForm.input * 100;
+    }
+    
+    if (pagarmeForm.doebem && pagarmeForm.amount) {
       amountValue = Math.round(pagarmeForm.amount * 1.10);
+    } else if (pagarmeForm.doebem && pagarmeForm.input) {
+      amountValue = Math.round(amountValue * 1.10);
     };
 
     // INICIAR A INSTÂNCIA DO CHECKOUT
@@ -144,32 +162,35 @@ export class PagOngs {
   }
 
   showDialogDonation() {
-
-        this.dialog = this.$mdDialog.show({
-          scope: this.$scope,
-          preserveScope: true,
-          controller: DialogController,
-          templateUrl: 'dialogDonateNavbar.tmpl.pug',
-          parent: angular.element(document.body),
-          clickOutsideToClose: true,
-          fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
-        });
-      }
+    this.dialog = this.$mdDialog.show({
+      scope: this.$scope,
+      preserveScope: true,
+      controller: DialogController,
+      templateUrl: 'dialogDonateNavbar.tmpl.pug',
+      parent: angular.element(document.body),
+      clickOutsideToClose: true,
+      fullscreen: this.$scope.customFullscreen // Only for -xs, -sm breakpoints.
+    });
+  }
 }
 
 function DialogController($scope, $mdDialog, $inject, $log, $http, user) {
 
-    $scope.hide = function() {
-      $mdDialog.hide();
-    };
+  $scope.pagarmeForm = {
+    amount: 2000
+  }
 
-    $scope.cancel = function() {
-      $mdDialog.cancel();
-    };
+  $scope.hide = function() {
+    $mdDialog.hide();
+  };
 
-    $scope.answer = function(answer) {
-      $mdDialog.hide(answer);
-    };
+  $scope.cancel = function() {
+    $mdDialog.cancel();
+  };
+
+  $scope.answer = function(answer) {
+    $mdDialog.hide(answer);
+  };
 }
 
 DialogController.$inject = ['$scope', '$mdDialog'];
