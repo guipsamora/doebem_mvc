@@ -42,27 +42,27 @@ export class MainController {
 
     this.midias = [
       {
-        src: '../../assets/images/midias/projetodraft.png',
+        src: '../../assets/images/midias/projetodraft2.png',
         link: 'http://projetodraft.com/a-doebem-quer-conectar-gente-disposta-a-ajudar-com-organizacoes-sociais-confiaveis/',
         alt: 'Projeto Draft'
       },
       {
-        src: '../../assets/images/midias/awesomefoundation.png',
+        src: '../../assets/images/midias/awesomefoundation2.png',
         link: 'http://www.awesomefoundation.org/pt/projects/75390-doebem',
         alt: 'The Awesome Foundation'
       },
       {
-        src: '../../assets/images/midias/nossacausa.png',
+        src: '../../assets/images/midias/nossacausa4.png',
         link: 'http://nossacausa.com/doebem-uma-nova-experiencia-de-doacao/',
         alt: 'Nossa Causa'
       },
       {
-        src: '../../assets/images/midias/razoes.png',
+        src: '../../assets/images/midias/razoes2.png',
         link: 'http://razoesparaacreditar.com/apoie/ongs-doacao/',
         alt: 'Razoes Para Acreditar'
       },
       {
-        src: '../../assets/images/midias/semcensura.png',
+        src: '../../assets/images/midias/semcensura2.png',
         link: 'https://youtu.be/cbHXbvCF1FY',
         alt: 'Sem Censura'
       }

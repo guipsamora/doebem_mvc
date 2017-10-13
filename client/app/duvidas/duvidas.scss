@@ -27,14 +27,14 @@ div#duvidas {
   }
 
 
-
   .panel-title {
-    font-size: 22px;
     font-weight: 500;
+    color: black;
   }
 
   .panel-body {
-    font-size: 18px;
+    font-size: 20px;
+    color: black;
   }
 
   div#comoFunciona {
@@ -52,6 +52,8 @@ div#duvidas {
       p {
         padding-bottom: 0px;
         margin-bottom: 0px;
+        color: black;
+        font-size: 23px;
       }
       
       .faqHeader {
