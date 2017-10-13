@@ -24,6 +24,14 @@ export class TransparenciaController {
     this.financials = [
       {
         date: '2017',
+        month: 'Agosto',
+        dre_name: 'Balanço - Agosto - 2017',
+        dre_link: 'https://drive.google.com/file/d/0B3sdXeGKoeXlaHpSejI1UjIyQTg/view?usp=sharing',
+        // balanco_name: 'Balanço patrimonial',
+        // balanco_link: '',
+      },
+      {
+        date: '2017',
         month: 'Julho',
         dre_name: 'Balanço - Julho - 2017',
         dre_link: 'https://drive.google.com/file/d/0B3sdXeGKoeXlMjhSaFh4U19KVXc/view?usp=sharing',
@@ -81,6 +89,18 @@ export class TransparenciaController {
     ];
 
     this.transf = [
+      {
+        date: '2017',
+        month: 'Outubro',
+        org_name: 'Renovatio',
+        transf_link: 'https://drive.google.com/file/d/0B3sdXeGKoeXldTNXRGY0MEtRMW8/view?usp=sharing'
+      },
+      {
+        date: '2017',
+        month: 'Outubro',
+        org_name: 'Saúde Criança',
+        transf_link: 'https://drive.google.com/file/d/0B3sdXeGKoeXlZmEwcm5EYWlZQTg/view?usp=sharing'
+      },
       {
         date: '2017',
         month: 'Junho',
