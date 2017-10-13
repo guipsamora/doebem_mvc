@@ -261,6 +261,11 @@ div#main {
         transition: opacity .2s, visibility .2s;
       }
 
+      p {
+        color: white;
+        font-weight: 700;
+      }
+
       .img__wrap:hover .img__description_layer {
         visibility: visible;
         opacity: 1;
