@@ -131,8 +131,15 @@ div#pagOng {
     }
 
     div#sources {
+
+      height: 20px;
+
       p {
         font-size: 14px;
+        margin: 0;
+      }
+
+      ul {
         margin: 0;
       }
     }

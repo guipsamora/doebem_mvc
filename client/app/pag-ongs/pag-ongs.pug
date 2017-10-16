@@ -37,8 +37,10 @@ div.animated.fadeIn#pagOng
         md-button.md-raized.md-primary(ng-click="$ctrl.showDialogDonation()") Doar
         h4 Fontes
         div#sources(ng-repeat="paper in $ctrl.infoOng.papers")
-          a(ng-href="{{paper.link}}" target="_blank")
-            p(ng-bind-html='paper.name')
+          ul
+            li
+              a(ng-href="{{paper.link}}" target="_blank")
+                p(ng-bind-html='paper.name')
         h3#duvida Ficou com alguma dúvida sobre nossa análise? Por favor nos escreva pelo formulário abaixo.
 contact-form
 
