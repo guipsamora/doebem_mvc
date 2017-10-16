@@ -30,13 +30,14 @@ app.set('view engine', 'pug');
 function handleSendEmail(result, res) {
   app.mailer.send({
     template: 'email',
-    bcc: 'contato@doebem.org.br'
+    bcc: 'contato@doebem.org.br',
   },
     {
       to: result.customer.email,
       subject: 'Obrigado por sua doação', // REQUIRED.
       amount: result.amount / 100,
-      nome: result.customer.name,
+      nome: result.customer.name.split(' ')[0],
+      from: 'doebem 💙 <contato@doebem.org.br>',
     }, err => {
       if(err) {
         // handle error
@@ -58,6 +59,8 @@ function sendBoleto(result, res) {
       to: result.customer.email,
       subject: 'Obrigado por sua doação - Segue boleto', // REQUIRED.
       link: result.boleto_url,
+      from: 'doebem 💙 <contato@doebem.org.br>',
+      nome: result.customer.name.split(' ')[0],
     }, err => {
       if(err) {
         // handle error
@@ -76,8 +79,9 @@ function sendErro(result, res) {
   },
     {
       to: result.customer.email,
-      subject: 'Boleto - doação doebem', // REQUIRED.
+      subject: 'Erro em sua doação pela doebem :(', // REQUIRED.
       link: result.boleto_url,
+      from: 'doebem 💙 <contato@doebem.org.br>',
     }, err => {
       if(err) {
         // handle error
