@@ -114,7 +114,17 @@ const OngSchema = new mongoose.Schema({
   videoYoutube: {
     type: 'String',
     required: true
-  }
+  },
+  papers: [{
+    name: {
+      type: 'String',
+      required: true
+    },
+    link: {
+      type: 'String',
+      required: true
+    }    
+  }]
 });
 
 
