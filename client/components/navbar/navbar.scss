@@ -13,7 +13,7 @@ div#menu {
   div.container div#navbar-main {
       background-color: transparent;
       ul li a {
-          background-color: transparent;
+          background-color: transparent !important;
       }
   }
 
@@ -21,6 +21,10 @@ div#menu {
     text-align: center;
     margin: 0px auto;
   }
+}
+
+.navbar-nav>.open>a:focus {
+    background-color: transparent !important;    
 }
 
 // Botão doar
@@ -185,6 +189,7 @@ div#navbar-main.navbar-collapse.collapse {
         padding-left: 0px;
         padding-right: 0px;
         width: 100%;
+        background-color: transparent !important;
     }
 
     button.navbar-toggle {
@@ -235,6 +240,11 @@ div#navbar-main.navbar-collapse.collapse {
 
     .dropdown {
         text-align: center !important;
+    }
+
+    li#org {
+        visibility: hidden;
+        display: none;   
     }
 }
 

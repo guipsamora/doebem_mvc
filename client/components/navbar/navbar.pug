@@ -11,12 +11,25 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
           span.icon-bar    
     div.navbar-collapse.collapsed.dropdown(uib-collapse='$ctrl.isCollapsed' ng-click='$ctrl.isCollapsed = !$ctrl.isCollapsed' layout-align="right right" data-toggle="collapse" data-target=".collapse.in")
       ul.nav.navbar-nav
+        li
+          a#Itens(href='./sobre') SOBRE
+        li#org(uib-dropdown on-toggle="toggled(open)")
+            a#Itens(href uib-dropdown-toggle) Organizações <span class="caret"></span>
+            ul(class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown")
+                li 
+                  a(href="./pagOngs/saudecrianca") Saúde Criança
+                li 
+                  a(href="./pagOngs/renovatio") Renovatio
+                li 
+                  a(href="./pagOngs/caviver") Caviver
         li.menuAnchor(ng-repeat='item in $ctrl.menu')
           a#Itens(ng-href='{{item.link}}') {{item.title}}
         a#Itens(target="_blank" href="https://medium.com/doebem")
           md-button#blog.md-raized.md-primary Blog
         a#Itens(target="_blank" href="")
           md-button#doar_button.md-raized.md-primary(ng-click="$ctrl.showDialog()") Doar
+
+
 
 script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
   md-dialog(aria-label="emailSend" ng-cloak)

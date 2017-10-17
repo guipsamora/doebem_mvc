@@ -25,10 +25,6 @@ export class NavbarComponent {
 
   menu = [
     {
-      'title': 'SOBRE',
-      'link': 'sobre'
-    },
-    {
       'title': 'TRANSPARÊNCIA',
       'link': 'transparencia'
     },
