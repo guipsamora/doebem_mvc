@@ -95,27 +95,29 @@ function sendErro(result, res) {
 
 // Creates a new Pagarme in the DB
 export function create(req) {
-  console.log(req);
-  return Pagarme.create(req.body);
+  return Pagarme.create(req);
 }
 
 export function postPagarme(req, res) {
-  console.log('postPagarme was called');
 
   var token = req.body.token;
   var amountTransaction = req.body.amount;
+  var donatedTo = req.body.org;
 
   pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
     .then(client => client.transactions.capture({ id: token, amount: amountTransaction }),
           err => sendErro(err, res))
     .then(result => {
+      
+      result.donated_to = donatedTo;
+
       if(result.payment_method == 'boleto') {
-        console.log('É BOLETO');
         sendBoleto(result, res);
       } else {
         handleSendEmail(result, res);
       }
-      // Pagarme.create(result);
+
+      Pagarme.create(result);
     })
     .catch(err => {
       console.log(err.response.errors);

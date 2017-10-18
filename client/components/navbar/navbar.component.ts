@@ -148,6 +148,8 @@ export class NavbarComponent {
 
         data.amount = amountValue;
 
+        data.org = this.selected;
+
         console.log(data);
 
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
@@ -157,8 +159,8 @@ export class NavbarComponent {
 
         this.closeDialog();
       },
-      error: function(body) {
-        console.log(body);
+      error: (err) => {
+        console.log(err);
       }
     });
 
