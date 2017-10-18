@@ -4,12 +4,20 @@ div.animated.fadeIn#duvidas
   div#comoFunciona
     h2 Sobre a doebem
     uib-accordion(close-others="true")
-      div(uib-accordion-group class="panel-default" ng-repeat="group in $ctrl.groups" is-open="status.open") {{group.desc}}
-        uib-accordion-heading 
-          p {{group.title}} #[i(class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}")]
+      div(uib-accordion-group 
+          class="panel-default" 
+          ng-repeat="group in $ctrl.groups"
+          is-open="status.open")
+        uib-accordion-heading
+          p {{group.title}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': this.open, 'glyphicon-chevron-down': !this.open}"></i>
+        div(ng-bind-html="group.desc | to_trusted")
     h2 Organizações
     uib-accordion(close-others="true")
-      div(uib-accordion-group class="panel-default" ng-repeat="group in $ctrl.org" is-open="status.open") {{group.desc}}
-        uib-accordion-heading 
-          p {{group.title}} #[i(class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}")]
+      div(uib-accordion-group 
+          class="panel-default" 
+          ng-repeat="group in $ctrl.org"
+          is-open="status.open")
+        uib-accordion-heading
+          p {{group.title}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': this.open, 'glyphicon-chevron-down': !this.open}"></i>
+        div(ng-bind-html="group.desc | to_trusted")
 contact-form

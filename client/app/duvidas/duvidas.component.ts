@@ -9,14 +9,17 @@ export class DuvidasController {
   $http;
   $scope;
   $routeParams;
+  $sce;
   groups = [ ];
   org = [ ];
+  teste = [ ];
   link;
   /*@ngInject*/
-  constructor($http, $scope, socket, $routeParams) {
+  constructor($http, $scope, socket, $routeParams, $sce) {
     this.$http = $http;
     this.$scope = $scope;
     this.$routeParams = $routeParams;
+    this.$sce = $sce;
     this.groups = [
       {
         title: 'Quem são vocês?',
@@ -56,14 +59,16 @@ export class DuvidasController {
       },
       {
         title: 'Como vocês desenvolveram os critérios de análise das organizações?',
-        desc: `Estudamos diferentes modelos de análise de causa e de organizações, como a GiveWell, Giving What We Can,
-        Charity Navigator, entre outros, e elaboramos um conjunto de critérios - qualidade da gestão, transparência e impacto 
+        desc: `Estudamos diferentes modelos de análise de causa e de organizações, como a <a href=\"https://www.givewell.org\" target=\"_blank\">GiveWell</a>,
+        <a href=\"https://www.givingwhatwecan.org/\" target=\"_blank\"> Giving What We Can</a>,
+        <a href=\"https://www.charitynavigator.org/\" target=\"_blank\"> Charity Navigator</a>, entre outros, e elaboramos um conjunto de critérios - qualidade da gestão, transparência e impacto 
         - que fizesse sentido no contexto brasileiro.`,
       },
       {
         title: 'Quais fontes vocês utilizam para a busca das pesquisas e estudos?',
         desc: `Para encontrar pesqusisas, estudos e avaliações de impacto de programas sociais, utilizamos principalmente
-        a GiveWell, o J-Pal, Cochrane e Campbell Collaboration`,
+        a <a href=\"https://www.givewell.org\" target=\"_blank\"> GiveWell, o <a href=\"https://www.povertyactionlab.org/\" target=\"_blank\"> J-Pal</a>,
+        <a href=\"http://www.cochrane.org/\" target=\"_blank\"> Cochrane </a> e <a href=\"https://www.campbellcollaboration.org\" target=\"_blank\"> Campbell Collaboration</a>`,
       },
       {
         title: 'Como saber se vocês não têm nenhuma relação com a organização?',
@@ -92,10 +97,15 @@ export class DuvidasController {
   }
 
   $onInit() {
-  }
+  };
 }
 
 export default angular.module('doebemOrgApp.duvidas', [ngRoute, uiBootstrap, ngSanitize, contactForm])
+  .filter('to_trusted', ['$sce', function($sce){
+    return function(text) {
+        return $sce.trustAsHtml(text);
+    };
+  }])
   .config(routing).component('duvidas', {template: require('./duvidas.pug'),
   controller: DuvidasController
 })
