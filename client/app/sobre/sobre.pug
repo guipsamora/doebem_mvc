@@ -36,6 +36,15 @@ div.animated.fadeIn#sobre
             a(target='_blank' href='{{pessoa.linkedin}}'  layout-align="center center")
               md-button.md-icon-button(aria-label="linkedin button" layout-align="center center")
                 i.fa.fa-linkedin
+  div#Voluntarios(layout="column" flex="100" layout-align="center center")                
+    h1 Voluntários
+    md-list(flex="50" layout-wrap layout="column" layout-gt-sm="row" layout-align="space-around center")
+      md-list-item(ng-repeat="pessoa in $ctrl.listaVoluntarios")
+        md-card(layout="column" flex-gt-sm="100")
+          img(flex="100" layout-align="center center" ng-src="{{pessoa.img}}")
+          md-card-title(layout="column")
+            md-card-title-text(flex="100" layout="row" layout-align="center center")
+              h3 {{pessoa.nome}}        
   div#trabalhe(layout="column" flex="100" layout-align="center center")
     a(href="https://goo.gl/forms/fUOPM8eyfoHmmxYj2" layout="column" flex="100" 
       layout-align="center center" target='_blank')

@@ -9,7 +9,7 @@ export class SobreController {
   $routeParams;
   stepOptions = [ ];
   listaPessoas = [ ];
-  listaConselheiros = [ ];
+  listaVoluntarios = [ ];
 
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams) {
@@ -71,12 +71,25 @@ export class SobreController {
       }
     ];
 
-    this.listaConselheiros = [
-        {nome: 'Jean P de Rogatis',
-         img: './assets/images/team/2.jpg',
+    this.listaVoluntarios = [
+        {
+         nome: 'Jean',
+         img: './assets/images/team/jean.png',
          twitter: '',
          linkedin: ''
-        }
+        },
+        {
+          nome: 'Lucas',
+          img: './assets/images/team/lucas.png',
+          twitter: '',
+          linkedin: ''
+        },
+        // {
+        //   nome: 'Jean P de Rogatis',
+        //   img: './assets/images/team/2.jpg',
+        //   twitter: '',
+        //   linkedin: ''
+        // },              
     ];
   }
 
