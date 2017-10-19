@@ -59,16 +59,17 @@ export class DuvidasController {
       },
       {
         title: 'Como vocês desenvolveram os critérios de análise das organizações?',
-        desc: `Estudamos diferentes modelos de análise de causa e de organizações, como a <a href=\"https://www.givewell.org\" target=\"_blank\">GiveWell</a>,
-        <a href=\"https://www.givingwhatwecan.org/\" target=\"_blank\"> Giving What We Can</a>,
-        <a href=\"https://www.charitynavigator.org/\" target=\"_blank\"> Charity Navigator</a>, entre outros, e elaboramos um conjunto de critérios - qualidade da gestão, transparência e impacto 
-        - que fizesse sentido no contexto brasileiro.`,
+        desc: `Estudamos diferentes modelos de análise de causa e de organizações, como a <a href=\"https://www.givewell.org\"
+        target=\"_blank\">GiveWell</a>,<a href=\"https://www.givingwhatwecan.org/\" target=\"_blank\"> Giving What We Can</a>,
+        <a href=\"https://www.charitynavigator.org/\" target=\"_blank\"> Charity Navigator</a>, entre outros, e elaboramos um
+         conjunto de critérios - qualidade da gestão, transparência e impacto - que fizesse sentido no contexto brasileiro.`,
       },
       {
         title: 'Quais fontes vocês utilizam para a busca das pesquisas e estudos?',
         desc: `Para encontrar pesqusisas, estudos e avaliações de impacto de programas sociais, utilizamos principalmente
-        a <a href=\"https://www.givewell.org\" target=\"_blank\"> GiveWell, o <a href=\"https://www.povertyactionlab.org/\" target=\"_blank\"> J-Pal</a>,
-        <a href=\"http://www.cochrane.org/\" target=\"_blank\"> Cochrane </a> e <a href=\"https://www.campbellcollaboration.org\" target=\"_blank\"> Campbell Collaboration</a>`,
+        a <a href=\"https://www.givewell.org\" target=\"_blank\"> GiveWell, o <a href=\"https://www.povertyactionlab.org/\"
+        target=\"_blank\"> J-Pal</a>,<a href=\"http://www.cochrane.org/\" target=\"_blank\"> Cochrane </a> e 
+        <a href=\"https://www.campbellcollaboration.org\" target=\"_blank\"> Campbell Collaboration</a>`,
       },
       {
         title: 'Como saber se vocês não têm nenhuma relação com a organização?',
@@ -88,10 +89,10 @@ export class DuvidasController {
     this.org = [
       {
         title: 'Como faço para inscrever minha organização?',
-        desc: `Por conta do nosso processo de estudo e análise, recomendamos apenas organizações com base em estudos de avaliação de impacto
-        e análise da organização. Assim não é possível o cadastramento pela organização em nossa plataforma.
-        Porém como compromisso de fortalecimento do setor encorajamos as organizações a entrarem em contato conosco e 
-        mantermos um relacionamento.`,
+        desc: `Por conta do nosso processo de estudo e análise, recomendamos apenas organizações 
+        com base em estudos de avaliação de impacto e análise da organização. Assim não é possível o cadastramento 
+        pela organização em nossa plataforma. Porém como compromisso de fortalecimento do setor encorajamos as organizações 
+        a entrarem em contato conosco e mantermos um relacionamento.`,
       }
     ];
   }

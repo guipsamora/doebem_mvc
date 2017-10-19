@@ -44,7 +44,7 @@ export class PagOngs {
 
   // Handles the payment popup
   org = ['Saúde Criança', 'Renovatio', 'Caviver', 'A critério da doebem'];
-  
+
   selected = [];
 
   toggle (org, list) {
@@ -63,7 +63,7 @@ export class PagOngs {
   };
 
   Custom = '';
-  
+
   options = [
     {value: 1000, label: 'R$10'},
     {value: 2000, label: 'R$20'},
@@ -71,7 +71,7 @@ export class PagOngs {
     {value: 5000, label: 'R$50'},
     {value: 10000, label: 'R$100'},
     {value: this.Custom, label: '' + this.Custom, input: true, isChecked: false},
-  ]
+  ];
 
   $onInit() {
     this.carregaLista();
@@ -92,11 +92,11 @@ export class PagOngs {
   callPagarme(pagarmeForm) {
 
     var amountValue = pagarmeForm.amount;
-    
-    if(!amountValue) {
+
+    if (!amountValue) {
       amountValue = pagarmeForm.input * 100;
     }
-    
+
     if (pagarmeForm.doebem && pagarmeForm.amount) {
       amountValue = Math.round(pagarmeForm.amount * 1.10);
     } else if (pagarmeForm.doebem && pagarmeForm.input) {
@@ -178,7 +178,7 @@ function DialogController($scope, $mdDialog, $inject, $log, $http, user) {
 
   $scope.pagarmeForm = {
     amount: 2000
-  }
+  };
 
   $scope.hide = function() {
     $mdDialog.hide();
