@@ -1,12 +1,25 @@
 div.animated.fadeIn#sobre
   div#pageHeader(flex="100"  layout="column" layout-align="center center")
-    h2 Muito obrigado!!
+    h2 Muito obrigado!
   div#comoFunciona(flex = "100" layout="column" layout-align="center center")
     h2.sectionHeading Sua doação fará a diferença!
     p#comoFunciona Muito obrigado pela sua doação.
     p Sua ajuda com certeza trará uma mudança na vida dos que mais precisam.
     p Estamos comprometidos em fazer com que mais pessoas doem mais e melhor!
     br
+    div(class="fb-share-button"
+        data-href="https://www.doebem.org.br" 
+        data-size="large" 
+        data-mobile-iframe="true"
+        layout-align="center center"
+        layout="row")
+      a#fb(class="fb-xfbml-parse-ignore" 
+        target="_blank" 
+        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.doebem.org.br%2F&amp;src=sdkpreparse"
+        layout-align="center center"
+        layout="row")
+          p COMPARTILHAR  
+          img(src="../../assets/images/logos/fcb.svg")
 contact-form
 
     
