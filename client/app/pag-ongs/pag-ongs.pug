@@ -55,9 +55,9 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
       div.md-dialog-content
         form(role="form")
           h4 Escolha a organização:
-          md-input.md-block(layout="row" layout-wrap flex)
+          md-input.md-block(layout="row" layout-wrap flex ng-model="pagarmeForm.donated_to")
             div(ng-repeat = "org in $ctrl.org")
-              md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)")  {{org}}                           
+              md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}
           h4 Escolha o valor da sua doação:
           md-radio-group(layout="row" layout-wrap flex ng-model="pagarmeForm.amount")
             div(ng-repeat="option in $ctrl.options")
@@ -68,7 +68,8 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
                                                    ng-if="option.input") 
                 input#nav(ng-model="pagarmeForm.input" type="text" 
                           ui-money-mask currency-symbol="R$" placeholder="Outro"
-                          class="ng-pristine ng-untouched ng-valid ng-empty")
+                          class="ng-pristine ng-untouched ng-valid ng-empty"
+                          maxlength="8")
           br
           md-input.md-block(layout="row")
             md-checkbox(ng-model="pagarmeForm.doebem" ng-watch ng-checked="true") Acrescentar +10% para a doebem?
