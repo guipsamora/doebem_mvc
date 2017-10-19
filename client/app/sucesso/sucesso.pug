@@ -1,6 +1,6 @@
 div.animated.fadeIn#sobre
   div#pageHeader(flex="100"  layout="column" layout-align="center center")
-    h2 Muito obrigado!!
+    h2 Muito obrigado!
   div#comoFunciona(flex = "100" layout="column" layout-align="center center")
     h2.sectionHeading Sua doação fará a diferença!
     p#comoFunciona Muito obrigado pela sua doação.
@@ -9,15 +9,17 @@ div.animated.fadeIn#sobre
     br
     div(class="fb-share-button"
         data-href="https://www.doebem.org.br" 
-        data-layout="button" 
         data-size="large" 
         data-mobile-iframe="true"
         layout-align="center center"
         layout="row")
-      a(class="fb-xfbml-parse-ignore" 
+      a#fb(class="fb-xfbml-parse-ignore" 
         target="_blank" 
-        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.doebem.org.br%2F&amp;src=sdkpreparse")
-       md-button(layout-align="center center") Compartilhe
+        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.doebem.org.br%2F&amp;src=sdkpreparse"
+        layout-align="center center"
+        layout="row")
+          p COMPARTILHAR  
+          img(src="../../assets/images/logos/fcb.svg")
 contact-form
 
     
