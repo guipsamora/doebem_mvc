@@ -124,7 +124,11 @@ const OngSchema = new mongoose.Schema({
       type: 'String',
       required: true
     }    
-  }]
+  }],
+  ajuda: {
+    type: 'String',
+    required: true
+  },
 });
 
 
