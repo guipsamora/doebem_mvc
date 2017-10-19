@@ -84,12 +84,12 @@ export class SobreController {
           twitter: '',
           linkedin: ''
         },
-        // {
-        //   nome: 'Jean P de Rogatis',
-        //   img: './assets/images/team/2.jpg',
-        //   twitter: '',
-        //   linkedin: ''
-        // },              
+        {
+          nome: 'Bárbara',
+          img: './assets/images/team/barbara.jpg',
+          twitter: '',
+          linkedin: ''
+        },
     ];
   }
 
