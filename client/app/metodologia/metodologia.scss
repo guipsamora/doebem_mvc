@@ -36,6 +36,7 @@ div#metodologia {
       display: block;
       padding-bottom: 70px;
       background-color: #fafafa;
+
       md-list {
         md-list-item {
           div#escolha {
@@ -47,8 +48,13 @@ div#metodologia {
           }
         }
       }
+
       p#last {
         padding-bottom: 30px;
+      }
+
+      .text-primary {
+        color: #3f51b5;
       }
   }
 
@@ -58,4 +64,36 @@ div#metodologia {
       width: 370.61px !important;
     }
   }
+
+  div#processo {
+    background-color: white;
+    
+
+
+    div#campo {
+      width: 80%;
+      height: 250px;
+      // margin-left: 60px;
+      // margin-right: 60px;
+      p {
+        text-align: justify;
+      }
+    }
+  }
+
+  .icon-circle {
+    border: 2px solid rgb(63,81,181);
+    display: inline-block;
+    padding-top: 8px;
+    padding-bottom: 4px;
+    width: 44px;
+    text-align: center;
+    border-radius: 50%;
+    color: rgb(63,81,181);
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 28px;
+  }
+
 }
