@@ -79,8 +79,8 @@ export class SobreController {
          linkedin: ''
         },
         {
-          nome: 'Lucas',
-          img: './assets/images/team/lucas.png',
+          nome: 'Leandro',
+          img: './assets/images/team/leandro.png',
           twitter: '',
           linkedin: ''
         },
