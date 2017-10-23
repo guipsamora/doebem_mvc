@@ -67,16 +67,16 @@ export class DuvidasController {
       {
         title: 'Quais fontes vocês utilizam para a busca das pesquisas e estudos?',
         desc: `Para encontrar pesqusisas, estudos e avaliações de impacto de programas sociais, utilizamos principalmente
-        a <a href=\"https://www.givewell.org\" target=\"_blank\"> GiveWell, o <a href=\"https://www.povertyactionlab.org/\"
+        a <a href=\"https://www.givewell.org\" target=\"_blank\"> GiveWell</a>, o <a href=\"https://www.povertyactionlab.org/\"
         target=\"_blank\"> J-Pal</a>,<a href=\"http://www.cochrane.org/\" target=\"_blank\"> Cochrane </a> e 
-        <a href=\"https://www.campbellcollaboration.org\" target=\"_blank\"> Campbell Collaboration</a>`,
+        <a href=\"https://www.campbellcollaboration.org\" target=\"_blank\"> Campbell Collaboration</a>.`,
       },
       {
         title: 'Como saber se vocês não têm nenhuma relação com a organização?',
         desc: `Temos como política a avaliação imparcial, assim caso o colaborador tenha qualquer relacionamento prévio com a organização
          - como por exemplo, o voluntariado -, ele não poderá participar do processo de avaliação desta organização. 
         Além disso, será mencionado na avaliação caso qualquer membro da equipe da organização tenha qualquer relacionamento 
-        com a organização avaliada `,
+        com a organização avaliada.`,
       },
       {
         title: 'Adorei o trabalho de vocês, como posso ajudar?',

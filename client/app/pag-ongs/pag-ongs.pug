@@ -20,6 +20,8 @@ div.animated.fadeIn#pagOng
       div#lista(layout="column" layout-align="left")
         h2 Sobre
         p(ng-bind-html='$ctrl.infoOng.sobre')
+        h2 Onde a organização atua?
+        p(ng-bind-html='$ctrl.infoOng.atuacao')
         div#site(layout="row")
           h4 Site: 
           a(ng-href="{{$ctrl.infoOng.urlSite}}" target="_blank")
