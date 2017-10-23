@@ -1,11 +1,11 @@
 div.animated.fadeIn#metodologia
   div#pageHeader(flex="100" layout="column" layout-align="center center")
     h2 Metodologia
-  div#comoFunciona(flex = "100" layout="column" layout-align="center center")
+  div#comoFunciona(flex="100" layout="column" layout-align="center center")
     p A doebem acredita que é possível alocar recursos de forma eficiente para promover o maior impacto possível. 
     p Com base nesta crença e em critérios específicos, avaliamos os projetos e organizações que promovem mudanças de forma eficiente. 
     p#last Confira abaixo!
-    md-list#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
+    md-list#actions(flex="100" layout-gt-sm="row" layout="column" layout-align="center center")
       md-list-item(ng-repeat="step in $ctrl.stepCriterios") 
           div#escolha(layout = "column" layout-align="center center")
             span.fa-stack.fa-5x
@@ -14,30 +14,36 @@ div.animated.fadeIn#metodologia
             h2 {{step.title}}
             p {{step.desc1}}
             p {{step.desc2}}
-  div#processo(flex = "100" layout="column" layout-align="center center")
-    h1(layout-align="center center") Nosso Processo de Análise
+  div#processo(flex="100" layout="column" layout-align="center center")
+    h1(layout-align="center center") Processo de Análise
     div#campo(layout="row" layout-align="center center")
       div(layout="column" layout-align="center center")
         span(class="icon-circle" layout-align="center center") 1
-        p(layout-align="center center") Estudamos <a href="http:www.uol.com.br"> intervenções </a> da hora
+        p(layout-align="center center" ng-bind-html="$ctrl.steps.step1 | to_trusted")
       div()
-        img(src="../../assets/images/logos/teste.png")
+        img.process1(layout-align="center center" src="../../assets/images/metodologia/academic.jpg")
     div#campo(layout="row" layout-align="center center")
       div()
-        img(src="../../assets/images/logos/teste.png")
+        img.process2(layout-align="center center" src="../../assets/images/metodologia/br2.png")
       div(layout="column" layout-align="center center")
         span(class="icon-circle" layout-align="center center") 2
-        p(layout-align="center center") Com base nesta crença e em critérios específicos, avaliamos os projetos e organizações que promovem mudanças de forma eficiente. 
+        p(layout-align="center center" ng-bind-html="$ctrl.steps.step2 | to_trusted")
     div#campo(layout="row" layout-align="center center")
       div(layout="column" layout-align="center center")
         span(class="icon-circle" layout-align="center center") 3
-        p(layout-align="center center") Com base nesta crença e em critérios específicos, avaliamos os projetos e organizações que promovem mudanças de forma eficiente.
+        p(layout-align="center center" ng-bind-html="$ctrl.steps.step3 | to_trusted")
       div()
-        img(src="../../assets/images/logos/teste.png")
+        img.process1(layout-align="center center" src="../../assets/images/metodologia/terceiro.jpg")
     div#campo(layout="row" layout-align="center center")
       div()
-        img(src="../../assets/images/logos/teste.png")
+        img.process2(layout-align="center center" src="../../assets/images/metodologia/avaliar2.png")
       div(layout="column" layout-align="center center")
         span(class="icon-circle" layout-align="center center") 4
-        p(layout-align="center center") Com base nesta crença e em critérios específicos, avaliamos os projetos e organizações que promovem mudanças de forma eficiente. 
+        p(layout-align="center center" ng-bind-html="$ctrl.steps.step4 | to_trusted")
+    div#campo(layout="row" layout-align="center center")
+      div(layout="column" layout-align="center center")
+        span(class="icon-circle" layout-align="center center") 5
+        p(layout-align="center center" ng-bind-html="$ctrl.steps.step5 | to_trusted")
+      div()
+        img.process1(layout-align="center center" src="../../assets/images/metodologia/teste.png")        
 contact-form
