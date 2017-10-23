@@ -71,29 +71,32 @@ div#metodologia {
 
   div#processo {
     background-color: white;
+    padding-bottom: 30px;
 
     div#campo {
       width: 80%;
       height: 250px;
       margin-top: 40px;
-      // margin-left: 60px;
-      // margin-right: 60px;
+
       p {
         text-align: justify;
-        width: 300px;
+        width: 425px;
       }
       .process1 {
         border-radius: 15px;
-        // padding: 10px 10px 10px 10px;
         margin-left: 30px;
       }
 
       .process2 {
         border-radius: 15px;
-        // padding: 10px 10px 10px 10px;
         margin-right: 30px;
       }
 
+    }
+
+    @media screen and (max-width: 726px) {
+      visibility: hidden;
+      display: none;
     }
   }
 
