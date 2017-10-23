@@ -123,7 +123,7 @@ const OngSchema = new mongoose.Schema({
     link: {
       type: 'String',
       required: true
-    }    
+    }
   }]
 });
 

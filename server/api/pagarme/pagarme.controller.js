@@ -99,7 +99,6 @@ export function create(req) {
 }
 
 export function postPagarme(req, res) {
-
   var token = req.body.token;
   var amountTransaction = req.body.amount;
   var donatedTo = req.body.org;
@@ -107,8 +106,7 @@ export function postPagarme(req, res) {
   pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
     .then(client => client.transactions.capture({ id: token, amount: amountTransaction }),
           err => sendErro(err, res))
-    .then(result => {
-      
+    .then(result => { 
       result.donated_to = donatedTo;
 
       if(result.payment_method == 'boleto') {
