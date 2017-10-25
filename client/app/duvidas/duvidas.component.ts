@@ -23,7 +23,8 @@ export class DuvidasController {
     this.groups = [
       {
         title: 'Quem são vocês?',
-        desc: `A doebem, uma organização sem fins lucrativos, foi criada por Guilherme Samora e Elisa Mansur. 
+        desc: `A doebem, uma organização sem fins lucrativos, foi criada por <a href=\"https://br.linkedin.com/in/guisamora\"
+        target=\"_blank\">Guilherme Samora</a> e <a href=\"https://www.linkedin.com/in/elisa-de-rooij-mansur-30435854/en\"target=\"_blank\">Elisa Mansur</a>.
         Somos ambos formados em Administração de Empresas e temos experiência 
         em diversas empresas nacionais e multinacionais e trabalhos sociais.`,
       },
@@ -37,8 +38,8 @@ export class DuvidasController {
         title: 'Por que devo confiar em vocês?',
         desc: `Nossas análises possuem embasamento acadêmico e avaliação sobre o desempenho da organização. 
         Em nossa página de Transparência, compartilhamos nossos indicadores financeiros, planos, erros e aprendizados. 
-        Além disso, somos independentes em nossa avaliação e repassamos 100%* do valor doado para a organização. 
-        Após desconto do cartão de crédito.`,
+        Além disso, somos independentes em nossa avaliação e repassamos 100%<strong>*</strong> do valor doado para a organização. 
+        </br></br><strong>*</strong>Após desconto do cartão de crédito.`,
       },
       {
         title: 'Por que doar pela plataforma de vocês?',
@@ -48,7 +49,9 @@ export class DuvidasController {
       {
         title: 'Como vocês se sustentam?',
         desc: `Iniciamos a doebem com recursos de ambos os fundadores.
-        Além disso, contamos com doações diretas de apoiadores que acreditam em nosso trabalho.`,
+        Além disso, contamos com doações diretas de apoiadores que acreditam em nosso trabalho.
+        Caso você queira colaborar conosco no momento da sua doação você pode acrescentar mais 10% 
+        que irão para nossos custos operacionais.`,
       },
       {
         title: 'Por que doar para uma organização social recomendada por vocês?',
@@ -67,9 +70,9 @@ export class DuvidasController {
       {
         title: 'Quais fontes vocês utilizam para a busca das pesquisas e estudos?',
         desc: `Para encontrar pesqusisas, estudos e avaliações de impacto de programas sociais, utilizamos principalmente
-        a <a href=\"https://www.givewell.org\" target=\"_blank\"> GiveWell, o <a href=\"https://www.povertyactionlab.org/\"
+        a <a href=\"https://www.givewell.org\" target=\"_blank\"> GiveWell</a>, o <a href=\"https://www.povertyactionlab.org/\"
         target=\"_blank\"> J-Pal</a>,<a href=\"http://www.cochrane.org/\" target=\"_blank\"> Cochrane </a> e 
-        <a href=\"https://www.campbellcollaboration.org\" target=\"_blank\"> Campbell Collaboration</a>`,
+        <a href=\"https://www.campbellcollaboration.org\" target=\"_blank\"> Campbell Collaboration</a>.`,
       },
       {
         title: 'Como saber se vocês não têm nenhuma relação com a organização?',
