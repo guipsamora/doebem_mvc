@@ -42,6 +42,15 @@ export class DuvidasController {
         </br></br><strong>*</strong>Após desconto do cartão de crédito.`,
       },
       {
+        title: 'Quais modos de pagamento vocês aceitam?',
+        desc: `Aceitamos pagamentos por cartão de crédito e boleto pelo site. Caso você deseja realizar uma transferência nossos
+        dados bancários são: </br><strong>Razão Social:</strong> doebem - Doações Efetivas</br>
+        <strong>CNPJ:</strong> 27.129.904/0001-78</br>
+        <strong>Banco:</strong> 341 - Itaú</br>
+        <strong>Agência:</strong> 0062</br>
+        <strong>Conta Corrente:</strong> 11281-8`
+      },
+      {
         title: 'Por que doar pela plataforma de vocês?',
         desc: `Ao doar pela doebem, conseguimos mensurar o impacto do nosso trabalho e medir a destinação das doações para cada causa. 
         Além disso, o usuário poderá acompanhar de forma periódica o impacto das suas doações.`
