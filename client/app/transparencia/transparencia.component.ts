@@ -120,6 +120,13 @@ export class TransparenciaController {
     this.plans = [
       {
         date: '2017',
+        goals_name: 'Metas 2017 - 3º Trimestre',
+        goals_link: 'https://drive.google.com/file/d/0B3sdXeGKoeXlUG1JZ2lPVU4yS00/view?usp=sharing',
+        metrics_name: '',
+        metrics_link: '',
+      },
+      {
+        date: '2017',
         goals_name: 'Metas 2017 - 2º Trimestre',
         goals_link: 'https://drive.google.com/file/d/0B3sdXeGKoeXlb2N6S1RlRXpMb2M/view?usp=sharing',
         metrics_name: '',
@@ -135,6 +142,13 @@ export class TransparenciaController {
     ];
 
     this.learnings = [
+      {
+        date: '2017',
+        name: '3º Trimestre - 2017',
+        link: 'https://drive.google.com/file/d/0B3sdXeGKoeXlRzBGV1h5S0xSdXM/view?usp=sharing',
+        metrics_name: '',
+        metrics_link: '',
+      },
       {
         date: '2017',
         name: '2º Trimestre - 2017',
