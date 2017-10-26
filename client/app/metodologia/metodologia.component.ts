@@ -8,6 +8,7 @@ export class MetodologiaController {
   $scope;
   $routeParams;
   stepCriterios = [ ];
+  steps = {};
 
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams) {
@@ -34,13 +35,27 @@ export class MetodologiaController {
         icon: 'fa-file-o'
       }
     ];
+
+    this.steps = {
+      // step1: "<a href=\"https://www.givewell.org\" target=\"_blank\">GiveWell</a>",
+      step1: "Pesquisamos as intervenções que possuem o maior impacto.",
+      step2: "Estudamos a situação do problema no Brasil.",
+      step3: "Buscamos organizações sociais que trabalhem com esses problemas.",
+      step4: "Avaliamos as organizações com base no Impacto, Transparência e Gestão.",
+      step5: "Caso aprovada, recomendamos a organização em nosso site para recebimento de doações.",
+    };
   }
 
   $onInit() {
-  }
+  };
 }
 
 export default angular.module('doebemOrgApp.metodologia', [ngRoute, contactForm])
+  .filter('to_trusted', ['$sce', function($sce){
+    return function(text) {
+        return $sce.trustAsHtml(text);
+    };
+  }])
   .config(routing).component('metodologia', {template: require('./metodologia.pug'),
   controller: MetodologiaController
 })
