@@ -128,15 +128,19 @@ export class NavbarComponent {
   callPagarme(pagarmeForm) {
 
     var amountValue = pagarmeForm.amount;
+    var headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});    
 
     if (!amountValue) {
       amountValue = pagarmeForm.input * 100;
+      headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
     }
 
     if (pagarmeForm.doebem && pagarmeForm.amount) {
       amountValue = Math.round(pagarmeForm.amount * 1.10);
+      headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
     } else if (pagarmeForm.doebem && pagarmeForm.input) {
       amountValue = Math.round(amountValue * 1.10);
+      headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
     };
 
     // INICIAR A INSTÂNCIA DO CHECKOUT
@@ -178,7 +182,7 @@ export class NavbarComponent {
       'freeInstallments': 0,
       'defaultInstallment': 1,
       'maxInstallments': 1,
-      'headerText': 'Total a pagar {price_info}.',
+      'headerText': 'Total da doação R$ ' + headText + ' 🙏',
       'disableZeroDocumentNumber': 'true',
       'customerName': '',
       'customerDocumentNumber': '',

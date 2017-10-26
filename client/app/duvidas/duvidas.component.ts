@@ -43,7 +43,7 @@ export class DuvidasController {
       },
       {
         title: 'Quais modos de pagamento vocês aceitam?',
-        desc: `Aceitamos pagamentos por cartão de crédito e boleto pelo site. Caso você deseja realizar uma transferência nossos
+        desc: `Pelo site aceitamos pagamentos por cartão de crédito e boleto. Caso você deseje realizar uma transferência nossos
         dados bancários são: </br><strong>Razão Social:</strong> doebem - Doações Efetivas</br>
         <strong>CNPJ:</strong> 27.129.904/0001-78</br>
         <strong>Banco:</strong> 341 - Itaú</br>

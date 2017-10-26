@@ -92,7 +92,7 @@ export class PagOngs {
   callPagarme(pagarmeForm) {
 
     var amountValue = pagarmeForm.amount;
-    var headText;
+    var headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
 
     if (!amountValue) {
       amountValue = pagarmeForm.input * 100;
@@ -101,8 +101,7 @@ export class PagOngs {
 
     if (pagarmeForm.doebem && pagarmeForm.amount) {
       amountValue = Math.round(pagarmeForm.amount * 1.10);
-      headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
-      
+      headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2}); 
     } else if (pagarmeForm.doebem && pagarmeForm.input) {
       amountValue = Math.round(amountValue * 1.10);
       headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
@@ -129,10 +128,6 @@ export class PagOngs {
       }
     });
 
-    
-
-    // .toFixed(2).toString();
-
     // DEFINIR AS OPÇÕES
     // e abrir o modal
     // É necessário passar os valores boolean em 'var params' como string
@@ -148,9 +143,7 @@ export class PagOngs {
       'freeInstallments': 0,
       'defaultInstallment': 1,
       'maxInstallments': 1,
-      // 'headerText': 'Total a pagar {price_info}.',.toLocaleString('pt-BR')
-      // 'headerText': 'Total a pagar R$' + (amountValue / 100).toLocaleString('pt-BR'),
-      'headerText': 'Total a pagar R$' + headText,
+      'headerText': 'Total da doação R$ ' + headText + ' 🙏',
       'disableZeroDocumentNumber': 'true',
       'customerName': '',
       'customerDocumentNumber': '',
