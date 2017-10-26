@@ -92,15 +92,20 @@ export class PagOngs {
   callPagarme(pagarmeForm) {
 
     var amountValue = pagarmeForm.amount;
+    var headText;
 
     if (!amountValue) {
       amountValue = pagarmeForm.input * 100;
+      headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
     }
 
     if (pagarmeForm.doebem && pagarmeForm.amount) {
       amountValue = Math.round(pagarmeForm.amount * 1.10);
+      headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
+      
     } else if (pagarmeForm.doebem && pagarmeForm.input) {
       amountValue = Math.round(amountValue * 1.10);
+      headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
     };
 
     // INICIAR A INSTÂNCIA DO CHECKOUT
@@ -124,6 +129,10 @@ export class PagOngs {
       }
     });
 
+    
+
+    // .toFixed(2).toString();
+
     // DEFINIR AS OPÇÕES
     // e abrir o modal
     // É necessário passar os valores boolean em 'var params' como string
@@ -139,7 +148,9 @@ export class PagOngs {
       'freeInstallments': 0,
       'defaultInstallment': 1,
       'maxInstallments': 1,
-      'headerText': 'Total a pagar {price_info}.',
+      // 'headerText': 'Total a pagar {price_info}.',.toLocaleString('pt-BR')
+      // 'headerText': 'Total a pagar R$' + (amountValue / 100).toLocaleString('pt-BR'),
+      'headerText': 'Total a pagar R$' + headText,
       'disableZeroDocumentNumber': 'true',
       'customerName': '',
       'customerDocumentNumber': '',
