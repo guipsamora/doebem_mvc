@@ -35,9 +35,10 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
   md-dialog(aria-label="emailSend" ng-cloak)
     md-toolbar
       div.md-toolbar-tools
-        h2(layout-align="center") Faça sua doação!
+        h2#donation(layout-align="center") Faça sua doação!
         span(flex)
-        md-button.md-icon-button(aria-label="md-button ok" ng-click="cancel()") X
+        md-button(class="md-icon-button" ng-click="cancel()")
+            md-icon(aria-label="Close dialog") close
     md-dialog-content
       div.md-dialog-content
         form(role="form")
