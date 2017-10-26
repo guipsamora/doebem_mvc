@@ -109,9 +109,17 @@ div#pagOng {
         font-size: 20px;
       }
 
+      h2 {
+        margin: 0 0 0 0;
+        margin-right: 5px;
+      }
+
       a {
         p#site {
-          font-size: 18px;
+          // font-size: 18px;
+          margin: 0 0 0 0;
+          height: 33px;
+          padding-top: 5px;
         }
       }
     }
