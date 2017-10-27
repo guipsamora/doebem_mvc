@@ -17,7 +17,8 @@ div#sobre {
       font-size: 70px;
     }
   }
-  
+
+  /* mobile view for div#pageHeader */
   @media screen and (max-width: 726px) {
     div#pageHeader {
       h2 {
@@ -65,14 +66,12 @@ div#sobre {
       margin-left: 30px;
       
       md-list-item {
-        // width: 370px !important;
         
         h2 {
           font-family: 'Oswald';
         }
 
         p {
-          // width: 370px !important;
           font-family: 'Open Sans Condensed';
         }
 
@@ -114,8 +113,6 @@ div#sobre {
 
       md-card-title-text{
 
-        // display: block;
-
         p {
           width: 250px;
           text-align: justify;
@@ -139,8 +136,6 @@ div#sobre {
       }
 
       md-card-actions {
-        
-        // display: block;
 
         a button {
           font-size: 20px;
@@ -166,8 +161,6 @@ div#sobre {
     }
 
     md-list-item, md-list-item .md-list-item-inner {
-      // min-height: 20px;
-      // height: 25px;
       min-width: 200px;
       width: 250px;
     }
@@ -188,8 +181,6 @@ div#sobre {
       }
 
       md-card-title-text{
-
-        // display: block;
 
         p {
           width: 250px;
@@ -214,8 +205,6 @@ div#sobre {
       }
 
       md-card-actions {
-        
-        // display: block;
 
         a button {
           font-size: 20px;

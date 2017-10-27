@@ -347,17 +347,5 @@ div#main {
         }
       }
     }
-
-    div#crianca {
-
-      text-align: center;
-      height: 100%;
-      width: 100%;
-      display: block;
-
-      @media screen and (max-width: 768px) {
-        display: none;
-      }
-    }
   }
 }
