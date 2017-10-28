@@ -229,3 +229,15 @@ div.md-toolbar-tools {
 h4 {
   font-size: 20px;
 }
+
+/* mobile view for the md-dialog */
+@media screen and (max-width: 726px) {
+  
+  md-dialog-content form {
+    width: 200px !important;
+  }
+
+  p#secu {
+    font-size: 14px;
+  }
+}
