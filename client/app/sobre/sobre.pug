@@ -44,7 +44,11 @@ div.animated.fadeIn#sobre
           img(flex="100" layout-align="center center" ng-src="{{pessoa.img}}")
           md-card-title(layout="column")
             md-card-title-text(flex="100" layout="row" layout-align="center center")
-              h3 {{pessoa.nome}}        
+              h3 {{pessoa.nome}}
+          md-card-actions(layout="row" layout-align="center center")
+              a(target='_blank' href='{{pessoa.linkedin}}'  layout-align="center center")
+                md-button.md-icon-button(aria-label="linkedin button" layout-align="center center")
+                  i.fa.fa-linkedin           
   div#trabalhe(layout="column" flex="100" layout-align="center center")
     a(href="https://goo.gl/forms/fUOPM8eyfoHmmxYj2" layout="column" flex="100" 
       layout-align="center center" target='_blank')

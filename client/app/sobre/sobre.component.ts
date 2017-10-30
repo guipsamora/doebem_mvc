@@ -76,19 +76,19 @@ export class SobreController {
          nome: 'Jean',
          img: './assets/images/team/jean.png',
          twitter: '',
-         linkedin: ''
+         linkedin: 'https://www.linkedin.com/in/jrogatis/'
         },
         {
           nome: 'Leandro',
           img: './assets/images/team/leandro.png',
           twitter: '',
-          linkedin: ''
+          linkedin: 'https://www.linkedin.com/in/leandro-souza-ambrosio-/'
         },
         {
-          nome: 'Bárbara',
+          nome: 'Barbara',
           img: './assets/images/team/barbara.jpg',
           twitter: '',
-          linkedin: ''
+          linkedin: 'https://www.linkedin.com/in/barbaravilas/'
         },
     ];
   }
