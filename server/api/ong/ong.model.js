@@ -129,6 +129,14 @@ const OngSchema = new mongoose.Schema({
     type: 'String',
     required: true
   },
+  givewell: {
+    type: 'String',
+    required: true
+  },
+  disclaimer: {
+    type: 'String',
+    required: true
+  },
 });
 
 
