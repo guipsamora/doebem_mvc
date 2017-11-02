@@ -130,12 +130,26 @@ const OngSchema = new mongoose.Schema({
     required: true
   },
   givewell: {
-    type: 'String',
+    type: 'Boolean',
     required: true
   },
   disclaimer: {
     type: 'String',
-    required: true
+  },
+  faz: {
+    type: 'String',
+  },
+  funciona: {
+    type: 'String',
+  },
+  dolar: {
+    type: 'String',
+  },
+  funding: {
+    type: 'String',
+  },
+  recommended: {
+    type: 'String',
   },
 });
 

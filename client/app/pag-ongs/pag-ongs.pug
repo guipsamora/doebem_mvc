@@ -18,16 +18,16 @@ div.animated.fadeIn#pagOng
         checkout-form
     div(layout="column")
       div#lista(layout="column" layout-align="left")
-        p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.disclaimer')
+        p#disclaimer(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.disclaimer' layout-align="center center")
         h2(ng-if='$ctrl.infoOng.givewell') O que a organização faz? 
         p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.sobre')
         h2(ng-if='$ctrl.infoOng.givewell') Isso funciona?
         p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.sobre')
         h2(ng-if='$ctrl.infoOng.givewell') What do you get for your dollar?
         p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.sobre')
-        h2(ng-if='$ctrl.infoOng.givewell') Is there room for more funding?
+        h2(ng-if='$ctrl.infoOng.givewell') Existe espaço para receber mais doações?
         p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.sobre')
-        h2(ng-if='$ctrl.infoOng.givewell') {{$ctrl.infoOng.nomeFantasia}} is recommended because of its:
+        h2(ng-if='$ctrl.infoOng.givewell') {{$ctrl.infoOng.nomeFantasia}} é recomendada por causa da sua:
         p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.sobre')
         h2(ng-if='!$ctrl.infoOng.givewell') Sobre
         p(ng-if='!$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.sobre')

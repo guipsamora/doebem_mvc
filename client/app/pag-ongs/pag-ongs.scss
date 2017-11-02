@@ -99,6 +99,10 @@ div#pagOng {
   div#lista{
     text-align: left;
 
+    p#disclaimer {
+      text-align: center;
+    }
+
     form#pagar {
       select#valor {
         width: 130px !important;
