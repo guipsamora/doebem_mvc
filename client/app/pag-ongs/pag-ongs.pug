@@ -20,15 +20,15 @@ div.animated.fadeIn#pagOng
       div#lista(layout="column" layout-align="left")
         p#disclaimer(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.disclaimer' layout-align="center center")
         h2(ng-if='$ctrl.infoOng.givewell') O que a organização faz? 
-        p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.sobre')
+        p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.faz')
         h2(ng-if='$ctrl.infoOng.givewell') Isso funciona?
-        p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.sobre')
-        h2(ng-if='$ctrl.infoOng.givewell') What do you get for your dollar?
-        p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.sobre')
-        h2(ng-if='$ctrl.infoOng.givewell') Existe espaço para receber mais doações?
-        p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.sobre')
-        h2(ng-if='$ctrl.infoOng.givewell') {{$ctrl.infoOng.nomeFantasia}} é recomendada por causa da sua:
-        p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.sobre')
+        p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.funciona')
+        h2(ng-if='$ctrl.infoOng.givewell') O que é feito com 1 dólar?
+        p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.dolar')
+        h2(ng-if='$ctrl.infoOng.givewell') Existe capacidade para receber mais doações?
+        p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.funding')
+        h2(ng-if='$ctrl.infoOng.givewell') {{$ctrl.infoOng.nomeFantasia}} é recomendada por:
+        p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.recommended')
         h2(ng-if='!$ctrl.infoOng.givewell') Sobre
         p(ng-if='!$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.sobre')
         h2(ng-if='!$ctrl.infoOng.givewell') Onde a organização atua?
