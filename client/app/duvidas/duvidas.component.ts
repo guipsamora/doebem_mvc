@@ -86,7 +86,7 @@ export class DuvidasController {
       {
         title: 'Como saber se vocês não têm nenhuma relação com a organização?',
         desc: `Temos como política a avaliação imparcial, assim caso o colaborador tenha qualquer relacionamento prévio com a organização
-         - como por exemplo, o voluntariado -, ele não poderá participar do processo de avaliação desta organização. 
+         - por exemplo, o voluntariado - ele não poderá participar do processo de avaliação desta organização. 
         Além disso, será mencionado na avaliação caso qualquer membro da equipe da organização tenha qualquer relacionamento 
         com a organização avaliada.`,
       },
