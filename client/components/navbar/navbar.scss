@@ -1,20 +1,23 @@
 div#menu {
   font-family: "Open Sans Condensed", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
   text-transform: uppercase;
   border: 0px;
   background-color: white;
   height: 60px;
-  font-size: 18px;
-  font-weight: 500;
   color: black;
   margin-bottom: 0px;
   padding-top: 5px;
+//   position: fixed;
+//   z-index: 9999;
   
   div.container div#navbar-main {
-      background-color: transparent;
-      ul li a {
-          background-color: transparent !important;
-      }
+    background-color: transparent;
+    
+    ul li a {
+        background-color: transparent !important;
+    }
   }
 
   .dropdown-menu>li>a {
@@ -57,11 +60,9 @@ div#menu {
 
 // Botão doar
 .md-primary#doar_button {
-    // background-color: white;
     background-color: rgb(63,81,181);
-    // border: black;
-    border: white;
     color: white;
+    border: white;
     border-style: solid;
     border-width: 2px;
     border-radius: 4px;
@@ -105,11 +106,12 @@ button.navbar-toggle {
 
 div#menu.mainPageMenu {
     background-color: white;
-     div.container div#navbar-main {
-          ul li a {
-              color: black;
-          }
-     }
+
+    div.container div#navbar-main {
+        ul li a {
+            color: black;
+        }
+    }
 }
 
 .navbar-header {
@@ -143,13 +145,13 @@ div#navbar-main.navbar-collapse.collapse {
 }
 
 .navbar .navbar-nav {
-  display: inline-block;
-  float: none;
-  vertical-align: top;
+    display: inline-block;
+    float: none;
+    vertical-align: top;
 }
 
 .navbar .navbar-collapse {
-  text-align: center;
+    text-align: center;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -325,25 +327,23 @@ md-dialog-actions {
     padding-left: 8px !important;
 
     .md-raized#doarMe {
-      // background-color: white;
-      background-color: rgb(63,81,181) !important;
-      // border: black;
-      border: white;
-      color: white;
-      border-style: solid;
-      border-width: 2px;
-      border-radius: 4px;
-      font-size: 30px !important;
-      font-weight: 600;
-      width: 150px;
-      height: 50px;
-      margin-left: 0px;
+        background-color: rgb(63,81,181) !important;
+        color: white;
+        border: white;
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 4px;
+        font-size: 30px !important;
+        font-weight: 600;
+        width: 150px;
+        height: 50px;
+        margin-left: 0px;
     }
 
     .md-raized#doarMe:hover{
-      background-color: white !important;
-      color:  rgb(63,81,181) !important;
-      border-color:  rgb(63,81,181) !important;
+        background-color: white !important;
+        color:  rgb(63,81,181) !important;
+        border-color:  rgb(63,81,181) !important;
     }
 }
 
@@ -361,11 +361,11 @@ h2#donation {
 }
 
 div.md-toolbar-tools {
-text-align: center;
+    text-align: center;
 }
 
 h4 {
-font-size: 20px;
+    font-size: 20px;
 }
 
 /* mobile view for the md-dialog */

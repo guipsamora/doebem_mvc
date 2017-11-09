@@ -6,12 +6,12 @@ div#main.animated.fadeIn
       a#button(href="/#ongs" style="text-align: center")
         md-button CONHEÇA AS ORGANIZAÇÕES
   div#mainPage(layout="column" flex="100")
-    div#comoFunciona(flex = "100" layout="column" layout-align="center center")
+    div#comoFunciona(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading A sua doação faz a diferença!
       p#comoFunciona Fazemos a ponte entre doadores e organizações 
       p eficientes que promovem impacto social
       p embasado em estudos e evidência.
-      md-list#actions(flex = "100" layout-gt-sm ="row" layout="column" layout-align="center center")
+      md-list#actions(flex="100" layout-gt-sm="row" layout="column" layout-align="center center")
         md-list-item(ng-repeat="step in $ctrl.stepOptions")
             div(layout = "column" layout-align="center center")
               img(src="{{step.icon}}")
@@ -25,12 +25,11 @@ div#main.animated.fadeIn
           a(ng-href="{{midia.link}}" target="_blank")
             img#af.mid(ng-src="{{midia.src}}" alt="{{midia.alt}}")
     div#modelo(flex="100" layout="column" layout-align="center center")
-      h2.sectionHeading Modelo 100%
-      p A doebem não cobra nenhuma taxa pela doação realizada para qualquer
-      p uma das organizações recomendadas, apenas as taxas das ferramentas
-      p de pagamento são cobradas.
+      h2.sectionHeading Não cobramos taxa!
+      p Nenhuma taxa pela doação para as organições é cobrada, 
+      p apenas os custos da ferramenta de pagamento são descontados.
       img(src="/assets/images/transparencia/100.png")
-    div#ongs(flex = "100" layout="column" layout-align="center center")
+    div#ongs(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading Organizações
       h3 Conheça as organizações recomendadas e mude uma vida hoje.
       md-list(flex 
@@ -38,11 +37,11 @@ div#main.animated.fadeIn
               md-cols-gt-md="3"
               md-cols="1"
               md-row-height="4:5"
-            md-gutter-gt-sd="10px"
-            md-gutter="35px"
-            layout-align="center center"
-            layout="column")
-        md-list-item(layout="column" layout-gt-sm ="row" layout-align="center center")
+              md-gutter-gt-sd="10px"
+              md-gutter="35px"
+              layout-align="center center"
+              layout="column")
+        md-list-item(layout="column" layout-gt-sm="row" layout-align="center center")
           a(ng-repeat="ong in $ctrl.listOng" ng-href="{{$location.absUrl() + '/pagOngs/' + ong.slug}}")
             md-card.img__wrap
               img.md-card-image(ng-src="{{ong.logo}}" layout-align="center center"

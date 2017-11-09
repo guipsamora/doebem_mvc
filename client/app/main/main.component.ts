@@ -70,7 +70,7 @@ export class MainController {
   }
 
   carregaLista() {
-  this.$http.get(`api/ong/`)
+    this.$http.get(`api/ong/`)
       .then(res => {
         this.listOng = res.data;
       });
@@ -81,11 +81,10 @@ export class MainController {
   }
 }
 
-export default angular.module('doebemOrgApp.main',
- [ngRoute, contactForm])
-    .config(routing)
-    .component('main', {
-      template: require('./main.pug'),
-      controller: MainController
-    })
-    .name;
+export default angular.module('doebemOrgApp.main',[ngRoute, contactForm])
+  .config(routing)
+  .component('main', {
+    template: require('./main.pug'),
+    controller: MainController
+  })
+  .name;
