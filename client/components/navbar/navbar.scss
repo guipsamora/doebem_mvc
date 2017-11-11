@@ -9,8 +9,10 @@ div#menu {
   color: black;
   margin-bottom: 0px;
   padding-top: 5px;
-//   position: fixed;
-//   z-index: 9999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
   
   div.container div#navbar-main {
     background-color: transparent;
