@@ -53,8 +53,8 @@ div#pagOng {
      div img#princ{
         width: 600px;
         height: 400px;
-     }
-  } 
+    //  }
+  // } 
 */
 
   .container {
@@ -98,6 +98,12 @@ div#pagOng {
 
   div#lista{
     text-align: left;
+
+    img#gw {
+      max-width: 152px;
+      // max-height: 
+      padding-bottom: 10px;
+    }
 
     p#disclaimer {
       text-align: center;
@@ -216,7 +222,7 @@ p#secu {
 }
 
 div#pagOng div#lista div#sources p {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 h2#donation {
