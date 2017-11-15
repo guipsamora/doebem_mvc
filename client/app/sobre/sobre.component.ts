@@ -74,7 +74,7 @@ export class SobreController {
     this.listaVoluntarios = [
         {
          nome: 'Fernando',
-         img: './assets/images/team/fernando.jpg',
+         img: './assets/images/team/fernando_3.jpg',
          twitter: '',
          linkedin: 'https://www.linkedin.com/in/folivimoreno/'
         },
