@@ -135,5 +135,4 @@ const OngSchema = new mongoose.Schema({
   },
 });
 
-
 export default mongoose.model('ong', OngSchema);
