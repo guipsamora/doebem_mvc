@@ -101,7 +101,7 @@ export class PagOngs {
 
     if (pagarmeForm.doebem && pagarmeForm.amount) {
       amountValue = Math.round(pagarmeForm.amount * 1.10);
-      headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2}); 
+      headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
     } else if (pagarmeForm.doebem && pagarmeForm.input) {
       amountValue = Math.round(amountValue * 1.10);
       headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});

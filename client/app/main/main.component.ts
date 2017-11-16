@@ -81,7 +81,7 @@ export class MainController {
   }
 }
 
-export default angular.module('doebemOrgApp.main',[ngRoute, contactForm])
+export default angular.module('doebemOrgApp.main', [ngRoute, contactForm])
   .config(routing)
   .component('main', {
     template: require('./main.pug'),

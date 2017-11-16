@@ -128,7 +128,7 @@ export class NavbarComponent {
   callPagarme(pagarmeForm) {
 
     var amountValue = pagarmeForm.amount;
-    var headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});    
+    var headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
 
     if (!amountValue) {
       amountValue = pagarmeForm.input * 100;
