@@ -4,16 +4,22 @@ footer.footer {
   margin-top: 70px;
 }
 
+footer {
+  background-color: white;
+}
+
 div#footer {
-  @media (max-width: 960px) {
-    display: block;
-  }
-  p {
-    font-size: 14px;
-  }
+
+  background-color: white;
   text-align: center;
   padding: 20px 0;
   margin-top: 0px;
+
+  
+  p {
+    font-size: 14px;
+  }
+  
   div#center {
     button {
       text-align: center;
@@ -24,20 +30,25 @@ div#footer {
       }
     }
   }
-  div#Right {
+  
+  div#right {
     a:hover {
       cursor: pointer;
     }
+    
     a#pol {
       padding-left: 40px;
     }
-
+    
     @media (max-width: 960px) {
       display: block;
       margin-top: 10px;
     }
-
-
   }
+  
+  @media (max-width: 960px) {
+    display: block;
+  }
+
 }
 

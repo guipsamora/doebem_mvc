@@ -30,7 +30,6 @@ div.animated.fadeIn#pagOng
             p#site {{$ctrl.infoOng.urlSite}}
         br
         md-button.md-raized.md-primary(ng-click="$ctrl.showDialogDonation()") Doar
-        h2#resumo Análise
         h3 Impacto
         p(ng-bind-html='$ctrl.infoOng.analiseImpacto')
         h3 Gestão
@@ -46,8 +45,6 @@ div.animated.fadeIn#pagOng
             li
               a(ng-href="{{paper.link}}" target="_blank")
                 p(ng-bind-html='paper.name')
-        h3#duvida Ficou com alguma dúvida sobre nossa análise? Por favor nos escreva pelo formulário abaixo.
-contact-form
 
 script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
   md-dialog(aria-label="emailSend" ng-cloak)
