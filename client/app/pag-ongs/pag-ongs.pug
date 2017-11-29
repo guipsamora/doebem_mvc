@@ -18,23 +18,22 @@ div.animated.fadeIn#pagOng
         checkout-form
     div(layout="column")
       div#lista(layout="column" layout-align="left")
-        h2 Sobre
+        h2 <i class="fa fa-info-circle"></i> Sobre
         p(ng-bind-html='$ctrl.infoOng.sobre')
-        h2 Onde a organização atua?
+        h2 <i class="fa fa-map-marker"></i> Onde a organização atua?
         p(ng-bind-html='$ctrl.infoOng.atuacao')
-        h2 Como sua doação vai ajudar?
+        h2 <i class="fa fa-dollar"></i> Como sua doação vai ajudar?
         p(ng-bind-html='$ctrl.infoOng.ajuda')
         div#site(layout="row")
-          h2 Site: 
+          h2 <i class="fa fa-wifi"></i> Site: 
           a(ng-href="{{$ctrl.infoOng.urlSite}}" target="_blank")
             p#site {{$ctrl.infoOng.urlSite}}
-        br
-        md-button.md-raized.md-primary(ng-click="$ctrl.showDialogDonation()") Doar
-        h3 Impacto
+        //- md-button.md-raized.md-primary(ng-click="$ctrl.showDialogDonation()") Doar
+        h2 <i class="fa fa-heart"></i> Impacto
         p(ng-bind-html='$ctrl.infoOng.analiseImpacto')
-        h3 Gestão
+        h2 <i class="fa fa-pie-chart"></i> Gestão
         p(ng-bind-html='$ctrl.infoOng.analiseGestao')
-        h3 Transparência
+        h2 <i class="fa fa-envelope-open"></i> Transparência
         p(ng-bind-html='$ctrl.infoOng.analiseTransparencia')
         a(ng-href="{{$ctrl.infoOng.linkPdf}}" target="_blank")
           p#anaCompl Confira aqui nossa análise completa.
