@@ -3,8 +3,8 @@ div.animated.fadeIn#metodologia
     h2 GiveWell
   div#mainPage(layout="column" flex="100")
     div#comoFunciona(flex="100" layout="column" layout-align="center center")
-      p A doebem acredita que é possível alocar recursos de forma eficiente para promover o maior impacto possível. 
-      p Com base nesta crença e em critérios específicos, avaliamos os projetos e organizações que promovem mudanças de forma eficiente. 
+      p Text explaining more about GiveWell's work
+      p Text explaining more about GiveWell's work
       p#last Confira abaixo!
     div#ongs(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading Organizações
@@ -19,7 +19,7 @@ div.animated.fadeIn#metodologia
               layout-align="center center"
               layout="column")
         md-list-item(layout="column" layout-gt-sm="row" layout-align="center center")
-          a(ng-repeat="ong in $ctrl.listOng" ng-href="{{$location.absUrl() + '/pagOngs/' + ong.slug}}")
+          a(ng-repeat="ong in $ctrl.listOng | filter: { givewell: true}" ng-href="{{$location.absUrl() + '/pagOngs/' + ong.slug}}")
             md-card.img__wrap
               img.md-card-image(ng-src="{{ong.logo}}" layout-align="center center"
                                 style="width: 300px; height:300px")

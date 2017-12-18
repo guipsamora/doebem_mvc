@@ -43,7 +43,7 @@ div#main.animated.fadeIn
               layout-align="center center"
               layout="column")
         md-list-item(layout="column" layout-gt-sm ="row" layout-align="center center")
-          a(ng-repeat="ong in $ctrl.listOng" ng-href="{{$location.absUrl() + '/pagOngs/' + ong.slug}}")
+          a(ng-repeat="ong in $ctrl.listOng | filter: { givewell: false}" ng-href="{{$location.absUrl() + '/pagOngs/' + ong.slug}}")
             md-card.img__wrap
               img.md-card-image(ng-src="{{ong.logo}}" layout-align="center center"
                                 style="width: 300px; height:300px")

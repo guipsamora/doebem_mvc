@@ -48,9 +48,9 @@ export class GivewellController {
 
   carregaLista() {
     this.$http.get(`api/ong/`)
-        .then(res => {
-          this.listOng = res.data;
-        });
+      .then(res => {
+        this.listOng = res.data;
+      });
   }
 
   $onInit() {
