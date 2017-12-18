@@ -13,7 +13,7 @@ div.animated.fadeIn#pagOng
   div.container
     div(layout="column")
       div#lista(layout="column" layout-align="left")
-        p#disclaimer <strong>Disclaimer: </strong> Essa pesquisa foi realizada pela <a href="https://www.givewell.org" target="_blank"><img id="gw" src="./../assets/images/logos/logo_gw.png"></img></a> e traduzida pela doebem. <a href="https://www.givewell.org" target="_blank">GiveWell</a> não verificou a tradução dessa página.
+        p#disclaimer(ng-if='$ctrl.infoOng.givewell') <strong>Disclaimer: </strong> Essa pesquisa foi realizada pela <a href="https://www.givewell.org" target="_blank"><img id="gw" src="./../assets/images/logos/logo_gw.png"></img></a> e traduzida pela doebem. <a href="https://www.givewell.org" target="_blank">GiveWell</a> não verificou a tradução dessa página.
         h2(ng-if='$ctrl.infoOng.givewell') O que a organização faz? 
         p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.faz')
         h2(ng-if='$ctrl.infoOng.givewell') Isso funciona?

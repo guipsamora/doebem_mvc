@@ -21,6 +21,7 @@ import footer from '../components/footer/footer.component';
 import listOngs from './list-ongs/list-ongs.component';
 import main from './main/main.component';
 import metodologia from './metodologia/metodologia.component';
+import givewell from './givewell/givewell.component';
 import navbar from '../components/navbar/navbar.component';
 import newsletter from '../components/newsletter/newsletter.component';
 import pagOngs from './pag-ongs/pag-ongs.component';
@@ -55,6 +56,7 @@ angular.module('doebemOrgApp', [
   cadOng,
   pagOngs,
   metodologia,
+  givewell,
   transparencia,
   duvidas,
   slugifier,

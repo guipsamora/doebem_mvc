@@ -6,7 +6,7 @@ div#main.animated.fadeIn
       a#button(href="/#ongs" style="text-align: center")
         md-button CONHEÇA AS ORGANIZAÇÕES
   div#mainPage(layout="column" flex="100")
-    div#comoFunciona(flex = "100" layout="column" layout-align="center center")
+    div#comoFunciona(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading A sua doação faz a diferença!
       p#comoFunciona Fazemos a ponte entre doadores e organizações 
       p eficientes que promovem impacto social
@@ -30,7 +30,7 @@ div#main.animated.fadeIn
       p uma das organizações recomendadas, apenas as taxas das ferramentas
       p de pagamento são cobradas.
       img(src="/assets/images/transparencia/100.png")
-    div#ongs(flex = "100" layout="column" layout-align="center center")
+    div#ongs(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading Organizações
       h3 Conheça as organizações recomendadas e mude uma vida hoje.
       md-list(flex 
@@ -38,10 +38,10 @@ div#main.animated.fadeIn
               md-cols-gt-md="3"
               md-cols="1"
               md-row-height="4:5"
-            md-gutter-gt-sd="10px"
-            md-gutter="35px"
-            layout-align="center center"
-            layout="column")
+              md-gutter-gt-sd="10px"
+              md-gutter="35px"
+              layout-align="center center"
+              layout="column")
         md-list-item(layout="column" layout-gt-sm ="row" layout-align="center center")
           a(ng-repeat="ong in $ctrl.listOng" ng-href="{{$location.absUrl() + '/pagOngs/' + ong.slug}}")
             md-card.img__wrap
@@ -54,6 +54,3 @@ div#main.animated.fadeIn
                 md-button(layout-align="center center") Conheça
     newsletter
 contact-form#contato
-script(type="text/ng-template" id="img.tmpl.pug")
-    div
-      img(ng-src="{{slideItem.src}}")
