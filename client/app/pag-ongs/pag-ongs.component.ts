@@ -115,6 +115,8 @@ export class PagOngs {
 
         data.amount = amountValue;
 
+        data.org = this.selected;
+
         console.log(data);
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
         this.$http.post('/api/pagarme', data)
