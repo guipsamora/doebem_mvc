@@ -47,7 +47,7 @@ export class DiegoController {
   ];  
 
   /*@ngInject*/
-  constructor($http, $scope, socket, $location, $mdDialog;) {
+  constructor($http, $scope, socket, $location, $mdDialog) {
     this.$http = $http;
     this.$scope = $scope;
     this.$location = $location;
