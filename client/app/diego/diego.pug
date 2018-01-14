@@ -1,0 +1,60 @@
+div#main.animated.fadeIn
+  div#pageHeader(flex="100"  layout="column" layout-align="center center")
+    div#textButton.container(flex="100" layout="column" layout-align="center center")
+      h2 com uma doação, você faz a diferença
+      p No meu aniversário, ajude uma organização de forma efetiva e potencialize impacto positivo.
+      a#button(href="/#ongs" style="text-align: center")
+        md-button CONHEÇA AS ORGANIZAÇÕES
+  div#mainPage(layout="column" flex="100")
+    div#comoFunciona(flex="100" layout="column" layout-align="center center")
+      h2.sectionHeading A sua doação faz a diferença!
+      p#comoFunciona Estudamos e avaliamos as oportunidades de doação com maior impacto.
+      p Todas as organizações recomendadas são rigorosamente analisadas
+      p com base em uma série de critérios para garantimos 
+      p que a sua doação ajude o maior número de pessoas 
+      p da melhor forma possível!
+      md-list#actions(flex="100" layout-gt-sm="row" layout="column" layout-align="center center")
+        md-list-item(ng-repeat="step in $ctrl.stepOptions")
+            div(layout = "column" layout-align="center center")
+              img(src="{{step.icon}}")
+              h2 {{step.title}}
+              p {{step.desc}}
+    div#reconhecimentos(flex="100" layout="column" layout-align="center center")
+      h3 Confira o que andam falando sobre nós!
+      br
+      div(flex="100" layout="row"  layout-align="center center")
+        div(ng-repeat="midia in $ctrl.midias")
+          a(ng-href="{{midia.link}}" target="_blank")
+            img#af.mid(ng-src="{{midia.src}}" alt="{{midia.alt}}")
+    div#modelo(flex="100" layout="column" layout-align="center center")
+      h2.sectionHeading Não cobramos taxa!
+      p Nenhuma taxa pela doação para as organições é cobrada, 
+      p apenas os custos da ferramenta de pagamento são descontados.
+      img(src="/assets/images/transparencia/100.png")
+    div#ongs(flex="100" layout="column" layout-align="center center")
+      h2.sectionHeading Organizações
+      h3 Conheça as organizações recomendadas e mude uma vida hoje.
+      md-list(flex 
+              md-cols-gt-xs="2"
+              md-cols-gt-md="3"
+              md-cols="1"
+              md-row-height="4:5"
+              md-gutter-gt-sd="10px"
+              md-gutter="35px"
+              layout-align="center center"
+              layout="column")
+        md-list-item(layout="column" layout-gt-sm="row" layout-align="center center")
+          a(ng-repeat="ong in $ctrl.listOng" ng-href="{{$location.absUrl() + '/pagOngs/' + ong.slug}}")
+            md-card.img__wrap
+              img.md-card-image(ng-src="{{ong.logo}}" layout-align="center center"
+                                style="width: 300px; height:300px")
+              div.img__description_layer
+                p.img__description {{ong.desc}}
+              br
+              div
+                md-button(layout-align="center center") Conheça
+    newsletter
+contact-form#contato
+script(type="text/ng-template" id="img.tmpl.pug")
+    div
+      img(ng-src="{{slideItem.src}}")
