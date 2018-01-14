@@ -3,36 +3,18 @@ div#main.animated.fadeIn
     div#textButton.container(flex="100" layout="column" layout-align="center center")
       h2 com uma doação, você faz a diferença
       p No meu aniversário, ajude uma organização de forma efetiva e potencialize impacto positivo.
-      a#button(href="/#ongs" style="text-align: center")
+      a#button(href="/aniversariodiego#ongs" style="text-align: center")
         md-button CONHEÇA AS ORGANIZAÇÕES
   div#mainPage(layout="column" flex="100")
     div#comoFunciona(flex="100" layout="column" layout-align="center center")
-      h2.sectionHeading A sua doação faz a diferença!
+      h2.sectionHeading Passo 1 - Conheça a doebem
       p#comoFunciona Estudamos e avaliamos as oportunidades de doação com maior impacto.
       p Todas as organizações recomendadas são rigorosamente analisadas
       p com base em uma série de critérios para garantimos 
       p que a sua doação ajude o maior número de pessoas 
       p da melhor forma possível!
-      md-list#actions(flex="100" layout-gt-sm="row" layout="column" layout-align="center center")
-        md-list-item(ng-repeat="step in $ctrl.stepOptions")
-            div(layout = "column" layout-align="center center")
-              img(src="{{step.icon}}")
-              h2 {{step.title}}
-              p {{step.desc}}
-    div#reconhecimentos(flex="100" layout="column" layout-align="center center")
-      h3 Confira o que andam falando sobre nós!
-      br
-      div(flex="100" layout="row"  layout-align="center center")
-        div(ng-repeat="midia in $ctrl.midias")
-          a(ng-href="{{midia.link}}" target="_blank")
-            img#af.mid(ng-src="{{midia.src}}" alt="{{midia.alt}}")
-    div#modelo(flex="100" layout="column" layout-align="center center")
-      h2.sectionHeading Não cobramos taxa!
-      p Nenhuma taxa pela doação para as organições é cobrada, 
-      p apenas os custos da ferramenta de pagamento são descontados.
-      img(src="/assets/images/transparencia/100.png")
     div#ongs(flex="100" layout="column" layout-align="center center")
-      h2.sectionHeading Organizações
+      h2.sectionHeading Passo 2 - Escolha uma Organização
       h3 Conheça as organizações recomendadas e mude uma vida hoje.
       md-list(flex 
               md-cols-gt-xs="2"
@@ -49,12 +31,48 @@ div#main.animated.fadeIn
               img.md-card-image(ng-src="{{ong.logo}}" layout-align="center center"
                                 style="width: 300px; height:300px")
               div.img__description_layer
-                p.img__description {{ong.desc}}
-              br
-              div
-                md-button(layout-align="center center") Conheça
-    newsletter
-contact-form#contato
-script(type="text/ng-template" id="img.tmpl.pug")
-    div
-      img(ng-src="{{slideItem.src}}")
+                p.img__description {{ong.desc}} 
+    div#comoFunciona(flex="100" layout="column" layout-align="center center")
+      h2.sectionHeading Passo 3 - Faça uma doação
+      br
+      md-button.md-raized.md-primary(ng-click="$ctrl.showDialog()") Doar
+
+script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
+  md-dialog(aria-label="emailSend" ng-cloak)
+    md-toolbar
+      div.md-toolbar-tools(layout-align="center center")
+        h2#donation(layout-align="center center") Faça sua doação!
+        span(flex)
+        md-button(class="md-icon-button" ng-click="cancel()")
+            md-icon(aria-label="Close dialog") close
+    md-dialog-content
+      div.md-dialog-content
+        form(role="form")
+          h4 Escolha a organização:
+          md-input.md-block(layout="row" 
+                            layout-sm="column" 
+                            layout-xs="column" layout-wrap flex ng-model="pagarmeForm.donated_to")
+            div(ng-repeat = "org in $ctrl.org")
+              md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}
+          h4 Escolha o valor da sua doação:
+          md-radio-group(layout="row" 
+                         layout-sm="column" 
+                         layout-xs="column" layout-wrap flex ng-model="pagarmeForm.amount")
+            div(ng-repeat="option in $ctrl.options")
+              md-radio-button(ng-value="option.value" aria-label="option.value" 
+                              ng-if="!option.input" ng-checked="option.checked") {{option.label}}
+              md-radio-button.md-radio-interactive(ng-value="{{$ctrl.Custom}}" 
+                                                   aria-label="option.value" 
+                                                   ng-if="option.input") 
+                input#nav(ng-model="pagarmeForm.input" type="text" 
+                          ui-money-mask currency-symbol="R$" placeholder="Outro"
+                          class="ng-pristine ng-untouched ng-valid ng-empty"
+                          maxlength="8")
+          br
+          md-input.md-block(layout="row")
+            md-checkbox(ng-model="pagarmeForm.doebem" ng-watch ng-checked="true") Acrescentar +10% para a doebem?
+          md-dialog-actions(layout="row" layout-align="center")
+            md-button.md-raized.md-primary#doarMe(ng-click="$ctrl.callPagarme(pagarmeForm)" type="submit") Doar
+          div(layout="row" layout-align="center center")
+            i(class="fa fa-lock fa-2x"  aria-hidden="true")
+            p#secu Você será direcionado(a) para um ambiente seguro.
