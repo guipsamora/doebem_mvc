@@ -2,19 +2,15 @@ div#main.animated.fadeIn
   div#pageHeader(flex="100"  layout="column" layout-align="center center")
     div#textButton.container(flex="100" layout="column" layout-align="center center")
       h2 com uma doação, você faz a diferença
-      p No meu aniversário, ajude uma organização de forma efetiva e potencialize impacto positivo.
-      a#button(href="/aniversariodiego#ongs" style="text-align: center")
-        md-button CONHEÇA AS ORGANIZAÇÕES
+      p Ajude uma organização de forma efetiva e potencialize impacto positivo.
   div#mainPage(layout="column" flex="100")
     div#comoFunciona(flex="100" layout="column" layout-align="center center")
-      h2.sectionHeading Passo 1 - Conheça a doebem
-      p#comoFunciona Estudamos e avaliamos as oportunidades de doação com maior impacto.
-      p Todas as organizações recomendadas são rigorosamente analisadas
-      p com base em uma série de critérios para garantimos 
-      p que a sua doação ajude o maior número de pessoas 
-      p da melhor forma possível!
+      h2.sectionHeading Passo 1
+      h2.sectionHeading Conheça a doebem
+      p#comoFunciona Estudamos e avaliamos as oportunidades de doação com maior impacto. Todas as organizações recomendadas são rigorosamente analisadas com base em uma série de critérios para garantimos  que a sua doação ajude o maior número de pessoas  da melhor forma possível!
     div#ongs(flex="100" layout="column" layout-align="center center")
-      h2.sectionHeading Passo 2 - Escolha uma Organização
+      h2.sectionHeading Passo 2
+      h2.sectionHeading Escolha uma Organização
       h3 Conheça as organizações recomendadas e mude uma vida hoje.
       md-list(flex 
               md-cols-gt-xs="2"
@@ -33,7 +29,8 @@ div#main.animated.fadeIn
               div.img__description_layer
                 p.img__description {{ong.desc}} 
     div#comoFunciona(flex="100" layout="column" layout-align="center center")
-      h2.sectionHeading Passo 3 - Faça uma doação
+      h2.sectionHeading Passo 3
+      h2.sectionHeading Faça uma doação
       br
       md-button.md-raized.md-primary(ng-click="$ctrl.showDialog()") Doar
 
