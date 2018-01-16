@@ -22,6 +22,8 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
                   a(href="./pagOngs/renovatio") Renovatio
                 li 
                   a(href="./pagOngs/caviver") Caviver
+        li
+          a#Itens(href='./givewell') GIVEWELL                  
         li.menuAnchor(ng-repeat='item in $ctrl.menu')
           a#Itens(ng-href='{{item.link}}') {{item.title}}
         a#Itens(target="_blank" href="https://medium.com/doebem")
