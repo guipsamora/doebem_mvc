@@ -11,40 +11,46 @@ div.animated.fadeIn#pagOng
                  scrolling="no"
                  ng-src="{{detailFrame}}")
   div.container
-    div#infos(layout="row" layout-sm="column" layout-xs="column")
-      div(flex="80" layout-align="start")
-        img#princ(ng-src="")      
-      div#smallInfo(layout="column" layout-align="start start")
-        checkout-form
     div(layout="column")
       div#lista(layout="column" layout-align="left")
-        h2 <i class="fa fa-info-circle"></i> Sobre
-        p(ng-bind-html='$ctrl.infoOng.sobre')
-        h2 <i class="fa fa-map-marker"></i> Onde a organização atua?
-        p(ng-bind-html='$ctrl.infoOng.atuacao')
-        h2 <i class="fa fa-dollar"></i> Como sua doação vai ajudar?
-        p(ng-bind-html='$ctrl.infoOng.ajuda')
+        p#disclaimer(ng-if='$ctrl.infoOng.givewell') <strong>Disclaimer: </strong> Essa pesquisa foi realizada pela <a href="https://www.givewell.org" target="_blank"><img id="gw" src="./../assets/images/logos/logo_gw.png"></img></a> e traduzida pela doebem. <a href="https://www.givewell.org" target="_blank">GiveWell</a> não verificou a tradução dessa página.
+        h2(ng-if='$ctrl.infoOng.givewell') O que a organização faz? 
+        p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.faz')
+        h2(ng-if='$ctrl.infoOng.givewell') Isso funciona?
+        p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.funciona')
+        h2(ng-if='$ctrl.infoOng.givewell') O que é feito com 1 dólar?
+        p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.dolar')
+        h2(ng-if='$ctrl.infoOng.givewell') Existe capacidade para receber mais doações?
+        p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.funding')
+        h2(ng-if='$ctrl.infoOng.givewell') {{$ctrl.infoOng.nomeFantasia}} é recomendada porque:
+        p(ng-if='$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.recommended')
+        h2(ng-if='!$ctrl.infoOng.givewell') Sobre
+        p(ng-if='!$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.sobre')
+        h2(ng-if='!$ctrl.infoOng.givewell') Onde a organização atua?
+        p(ng-if='!$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.atuacao')
         div#site(layout="row")
-          h2 <i class="fa fa-wifi"></i> Site: 
+          h2(ng-if='$ctrl.infoOng.givewell') Site: 
           a(ng-href="{{$ctrl.infoOng.urlSite}}" target="_blank")
             p#site {{$ctrl.infoOng.urlSite}}
-        //- md-button.md-raized.md-primary(ng-click="$ctrl.showDialogDonation()") Doar
-        h2 <i class="fa fa-heart"></i> Impacto
-        p(ng-bind-html='$ctrl.infoOng.analiseImpacto')
-        h2 <i class="fa fa-pie-chart"></i> Gestão
-        p(ng-bind-html='$ctrl.infoOng.analiseGestao')
-        h2 <i class="fa fa-envelope-open"></i> Transparência
-        p(ng-bind-html='$ctrl.infoOng.analiseTransparencia')
-        a(ng-href="{{$ctrl.infoOng.linkPdf}}" target="_blank")
+        br
+        md-button.md-raized.md-primary(ng-if='!$ctrl.infoOng.givewell' ng-click="$ctrl.showDialogDonation()") Doar
+        h2(ng-if='!$ctrl.infoOng.givewell')#resumo Análise
+        h3(ng-if='!$ctrl.infoOng.givewell') Impacto
+        p(ng-if='!$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.analiseImpacto')
+        h3(ng-if='!$ctrl.infoOng.givewell') Gestão
+        p(ng-if='!$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.analiseGestao')
+        h3(ng-if='!$ctrl.infoOng.givewell') Transparência
+        p(ng-if='!$ctrl.infoOng.givewell' ng-bind-html='$ctrl.infoOng.analiseTransparencia')
+        a(ng-if='!$ctrl.infoOng.givewell' ng-href="{{$ctrl.infoOng.linkPdf}}" target="_blank")
           p#anaCompl Confira aqui nossa análise completa.
         md-button.md-raized.md-primary(ng-click="$ctrl.showDialogDonation()") Doar
-        h4 Fontes
-        div#sources(ng-repeat="paper in $ctrl.infoOng.papers")
-          ul
-            li
-              a(ng-href="{{paper.link}}" target="_blank")
-                p(ng-bind-html='paper.name')
-
+        p(ng-if='$ctrl.infoOng.givewell') <strong>Observação: </strong> Ao doar para essa organização, seus dados serão compartilhados com a GiveWell. Isso permite que a GiveWell <a href="https://www.givewell.org/about/impact"> mensure seu impacto</a>.
+        h4(ng-if='!$ctrl.infoOng.givewell') Fontes
+        div#sources(ng-if='!$ctrl.infoOng.givewell' ng-repeat="paper in $ctrl.infoOng.papers")
+          ul(ng-if='!$ctrl.infoOng.givewell')
+            li(ng-if='!$ctrl.infoOng.givewell')
+              a(ng-if='!$ctrl.infoOng.givewell' ng-href="{{paper.link}}" target="_blank")
+                p(ng-bind-html='paper.name' ng-if='!$ctrl.infoOng.givewell')
 script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
   md-dialog(aria-label="emailSend" ng-cloak)
     md-toolbar
@@ -56,11 +62,17 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
     md-dialog-content
       div.md-dialog-content
         form(role="form")
-          h4 Escolha a organização:
+          h4 Organizações Brasileiras:
           md-input.md-block(layout="row" 
                             layout-sm="column" 
                             layout-xs="column" layout-wrap flex ng-model="pagarmeForm.donated_to")
             div(ng-repeat = "org in $ctrl.org")
+              md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}
+          h4 Organizações Internacionais:
+          md-input.md-block(layout="row" 
+                            layout-sm="column" 
+                            layout-xs="column" layout-wrap flex ng-model="pagarmeForm.donated_to")
+            div(ng-repeat = "org in $ctrl.orgInt")
               md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}
           h4 Escolha o valor da sua doação:
           md-radio-group(layout="row" 

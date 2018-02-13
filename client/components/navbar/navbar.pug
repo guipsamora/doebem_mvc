@@ -22,6 +22,8 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
                   a(href="./pagOngs/renovatio") Renovatio
                 li 
                   a(href="./pagOngs/caviver") Caviver
+        li
+          a#Itens(href='./givewell') GIVEWELL                  
         li.menuAnchor(ng-repeat='item in $ctrl.menu')
           a#Itens(ng-href='{{item.link}}') {{item.title}}
         a#Itens(target="_blank" href="https://medium.com/doebem")
@@ -42,11 +44,17 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
     md-dialog-content
       div.md-dialog-content
         form(role="form")
-          h4 Escolha a organização:
+          h4 Organizações Brasileiras:
           md-input.md-block(layout="row" 
                             layout-sm="column" 
-                            layout-xs="column" layout-wrap flex)
+                            layout-xs="column" layout-wrap flex ng-model="pagarmeForm.donated_to")
             div(ng-repeat = "org in $ctrl.org")
+              md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}
+          h4 Organizações Internacionais:
+          md-input.md-block(layout="row" 
+                            layout-sm="column" 
+                            layout-xs="column" layout-wrap flex ng-model="pagarmeForm.donated_to")
+            div(ng-repeat = "org in $ctrl.orgInt")
               md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}
           h4 Escolha o valor da sua doação:
           md-radio-group(layout="row"

@@ -1,0 +1,254 @@
+div#givewell {
+
+  p {
+    font-size: 25px;
+  }
+
+  div#pageHeader {
+    background-image: url('/assets/images/givewell/givewell.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    min-height: 65vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-position: top center;
+
+    h2 {
+      color: white;
+      font-size: 70px;
+    }
+  }
+  
+  /* mobile view for div#pageHeader */
+  @media screen and (max-width: 726px) {
+    div#pageHeader {
+      h2 {
+        font-size: 60px;
+      }
+    }
+  }
+
+  div#comoFunciona {
+    text-align: center;
+    padding-right:5%;
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    height: 100%;
+    width: 100%;
+    display: block;
+
+    background-color: #fafafa;
+
+    md-list {
+      md-list-item {
+        div#escolha {
+          span {
+            i#icon {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    p#last {
+      padding-bottom: 30px;
+    }
+
+    .text-primary {
+      color: #3f51b5;
+    }
+  }
+
+  md-list-item {
+    width: 370px !important; 
+    p {
+      width: 370.61px !important;
+    }
+  }
+
+  div#processo {
+    background-color: white;
+    padding-bottom: 30px;
+
+    div#campo {
+      width: 80%;
+      height: 250px;
+      margin-top: 40px;
+
+      p {
+        text-align: justify;
+        width: 425px;
+      }
+      
+      .process1 {
+        border-radius: 15px;
+        margin-left: 30px;
+      }
+
+      .process2 {
+        border-radius: 15px;
+        margin-right: 30px;
+      }
+    }
+  }
+
+  /* mobile view for div#processo */
+  @media screen and (max-width: 726px) {
+    div#processo {
+      visibility: hidden;
+      display: none;
+    }
+  }
+
+  .icon-circle {
+    border: 2px solid rgb(63,81,181);
+    display: inline-block;
+    padding-top: 8px;
+    padding-bottom: 4px;
+    width: 44px;
+    text-align: center;
+    border-radius: 50%;
+    color: rgb(63,81,181);
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 28px;
+  }
+
+  div#mainPage {
+    div#ongs {
+      
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      display: block;
+      padding-bottom: 70px;
+      background-color: #f1f1f1;
+
+      md-card-content {
+        padding: 0 16px 16px 16px;
+      }
+
+      img.md-card-image {
+        width: 300px; 
+        height: 300px;
+        padding: 7px 7px 7px 7px !important;
+      }
+
+      .img__wrap {
+        position: relative;
+        height: 300px;
+        width: 300px;
+      }
+
+      .img__description_layer {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: gray;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        /* transition effect. not necessary */
+        transition: opacity .2s, visibility .2s;
+      }
+
+      p {
+        color: white;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .img__wrap:hover .img__description_layer {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .img__description {
+        transition: .2s;
+        transform: translateY(1em);
+        width: 270px;
+      }
+
+      .img__wrap:hover .img__description {
+        transform: translateY(0);
+        width: 270px;
+      }
+
+      button {
+        background-color:  rgb(63,81,181);
+        color: white;
+        border-color: rgb(63,81,181) !important;
+        border-style: solid;
+        border-width: 1px;
+        margin-left: 0px;
+        font-size: 20px;
+        font-family: 'Oswald';
+        width: 50px;
+        text-align: center;
+      }
+
+      button:hover {
+        background-color: white !important;
+        color: rgb(63,81,181) !important;
+        border-color: rgb(63,81,181) !important;
+        border-style: solid;
+        border-width: 1px;
+        font-size: 20px;
+      }
+
+      @media screen and  (min-width: 768px) {
+
+        h3 {
+          font-weight: 400;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        md-card {
+          width: 300px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+
+        md-list-item {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+
+        md-card {
+            width: 300px ;
+            display: block;
+            text-align: center;
+            margin: 0 0 10 0;
+        }
+
+        .md-button {
+          visibility: hidden;
+          display: none;
+        }
+
+        h3 {
+          font-size: 16px;
+        }
+
+        .img__wrap:hover .img__description_layer {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}
