@@ -107,6 +107,18 @@ export class TransparenciaController {
 
     this.transf = [
       {
+        date: '2018',
+        month: 'Março',
+        org_name: 'Renovatio',
+        transf_link: 'https://drive.google.com/file/d/1Tq83xgk9JH9BWZGGKTis7f4fZq65EdVX/view?usp=sharing'
+      },
+      {
+        date: '2018',
+        month: 'Maço',
+        org_name: 'Saúde Criança',
+        transf_link: 'https://drive.google.com/file/d/1TZafM3eEyJ94KpGUHLE3adZbQWxpCfRM/view?usp=sharing'
+      },      
+      {
         date: '2017',
         month: 'Outubro',
         org_name: 'Renovatio',
