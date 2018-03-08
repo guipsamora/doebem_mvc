@@ -130,7 +130,7 @@ export class TransparenciaController {
       },
       {
         date: '2018',
-        month: 'Maço',
+        month: 'Março',
         org_name: 'Saúde Criança',
         transf_link: 'https://drive.google.com/file/d/1TZafM3eEyJ94KpGUHLE3adZbQWxpCfRM/view?usp=sharing'
       },      
