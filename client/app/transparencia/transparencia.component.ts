@@ -25,6 +25,22 @@ export class TransparenciaController {
     this.financials = [
       {
         date: '2017',
+        month: 'Dezembro',
+        dre_name: 'Balanço - Dezembro - 2017',
+        dre_link: 'https://drive.google.com/file/d/14sTdapEsxfRCKNHDME77Lfe5XZ9U4Xb4/view?usp=sharing',
+        // balanco_name: 'Balanço patrimonial',
+        // balanco_link: '',
+      },
+      {
+        date: '2017',
+        month: 'Novembro',
+        dre_name: 'Balanço - Novembro - 2017',
+        dre_link: 'https://drive.google.com/file/d/16IzuSIqDc9rj3jW1_sQ7kgfDprIxu5Fy/view?usp=sharing',
+        // balanco_name: 'Balanço patrimonial',
+        // balanco_link: '',
+      },
+      {
+        date: '2017',
         month: 'Outubro',
         dre_name: 'Balanço - Outubro - 2017',
         dre_link: 'https://drive.google.com/file/d/1QhU7z1D9dtxCwjbCWZ5cBWwId6ytujda/view?usp=sharing',
