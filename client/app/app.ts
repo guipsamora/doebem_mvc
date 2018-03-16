@@ -22,6 +22,7 @@ import listOngs from './list-ongs/list-ongs.component';
 import main from './main/main.component';
 import metodologia from './metodologia/metodologia.component';
 import givewell from './givewell/givewell.component';
+import renata from './renata/renata.component';
 import navbar from '../components/navbar/navbar.component';
 import newsletter from '../components/newsletter/newsletter.component';
 import pagOngs from './pag-ongs/pag-ongs.component';
@@ -57,6 +58,7 @@ angular.module('doebemOrgApp', [
   pagOngs,
   metodologia,
   givewell,
+  renata,
   transparencia,
   duvidas,
   slugifier,
