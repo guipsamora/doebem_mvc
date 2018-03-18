@@ -32,7 +32,6 @@ import sucesso from './sucesso/sucesso.component';
 import transparencia from './transparencia/transparencia.component';
 import util from '../components/util/util.module';
 
-
 import 'angular-socket-io';
 import './app.scss';
 

@@ -13,9 +13,7 @@ export class TransparenciaController {
   plans = [ ];
   learnings = [ ];
   transf = [ ];
-
-  
-
+      
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams, $window) {
     this.$http = $http;

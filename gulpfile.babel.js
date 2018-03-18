@@ -533,7 +533,8 @@ gulp.task('revReplaceWebpack', () => gulp.src('dist/client/app.*.js')
 gulp.task('copy:extras', () => gulp.src([
   `${clientPath}/favicon.ico`,
   `${clientPath}/robots.txt`,
-  `${clientPath}/.htaccess`
+  `${clientPath}/.htaccess`,
+  `${clientPath}/sitemap.xml`
 ], {
   dot: true
 })

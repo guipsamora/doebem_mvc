@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-<url>
-  <loc>http://www.doebem.org.br/</loc>
-  <lastmod>2017-04-07T10:21:09+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>http://www.doebem.org.br</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/./sobre</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/href</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/./pagOngs/saudecrianca</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/./pagOngs/renovatio</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/./pagOngs/caviver</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/./givewell</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/transparencia</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/metodologia</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/duvidas</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/./#contato</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/#ongs</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/pagOngs/renovatio</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/pagOngs/saudecrianca</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/pagOngs/caviver</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/Temporariamente</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/pagOngs/amf</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/pagOngs/givedirectly</loc><priority>0.5</priority></url>
+<url><loc>http://www.doebem.org.br/pagOngs/schistosomiasis</loc><priority>0.5</priority></url>
 </urlset>
