@@ -63,24 +63,26 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
         md-button(class="md-icon-button" ng-click="cancel()")
             md-icon(aria-label="Close dialog") close
     md-dialog-content
-      div.md-dialog-content
-        form(role="form")
+      div.md-dialog-content        
+        //- form(role="form" novalidate name="pagarmeForm")
+        form(role="form" novalidate)
           h4 Organizações Brasileiras:
           md-input.md-block(layout="row" 
                             layout-sm="column" 
                             layout-xs="column" layout-wrap flex ng-model="pagarmeForm.donated_to")
-            div(ng-repeat = "org in $ctrl.org")
+            div(ng-repeat="org in $ctrl.org")
               md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}
           h4 Organizações Internacionais:
           md-input.md-block(layout="row" 
                             layout-sm="column" 
                             layout-xs="column" layout-wrap flex ng-model="pagarmeForm.donated_to")
-            div(ng-repeat = "org in $ctrl.orgInt")
+            div(ng-repeat="org in $ctrl.orgInt")
               md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}
           h4 Escolha o valor da sua doação:
           md-radio-group(layout="row" 
                          layout-sm="column" 
-                         layout-xs="column" layout-wrap flex ng-model="pagarmeForm.amount")
+                         layout-xs="column" layout-wrap flex ng-model="pagarmeForm.amount"
+                         required)
             div(ng-repeat="option in $ctrl.options")
               md-radio-button(ng-value="option.value" aria-label="option.value" 
                               ng-if="!option.input" ng-checked="option.checked") {{option.label}}
@@ -90,11 +92,15 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
                 input#nav(ng-model="pagarmeForm.input" type="text" 
                           ui-money-mask currency-symbol="R$" placeholder="Outro"
                           class="ng-pristine ng-untouched ng-valid ng-empty"
-                          maxlength="8")
+                          maxlength="8"
+                          min="9"
+                          name="inputValue"
+                          required)
           br
           md-input.md-block(layout="row")
             md-checkbox(ng-model="pagarmeForm.doebem" ng-watch ng-checked="true") Acrescentar +10% para a doebem?
           md-dialog-actions(layout="row" layout-align="center")
+            //- md-button.md-raized.md-primary#doarMe(ng-click="$ctrl.callPagarme(pagarmeForm)" type="submit" ng-disabled="pagarmeForm.$invalid") Doar
             md-button.md-raized.md-primary#doarMe(ng-click="$ctrl.callPagarme(pagarmeForm)" type="submit") Doar
           div(layout="row" layout-align="center center")
             i(class="fa fa-lock fa-2x"  aria-hidden="true")

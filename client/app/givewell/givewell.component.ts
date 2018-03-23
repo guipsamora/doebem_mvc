@@ -38,11 +38,11 @@ export class GivewellController {
     ];
 
     this.steps = {
-      step1: "Pesquisamos as intervenções que possuem o maior impacto.",
-      step2: "Estudamos a relevância do problema no Brasil.",
-      step3: "Buscamos organizações sociais que trabalhem com esses problemas.",
-      step4: "Avaliamos as organizações com base no Impacto, Transparência e Gestão.",
-      step5: "Caso aprovada, recomendamos a organização em nosso site para recebimento de doações.",
+      step1: 'Pesquisamos as intervenções que possuem o maior impacto.',
+      step2: 'Estudamos a relevância do problema no Brasil.',
+      step3: 'Buscamos organizações sociais que trabalhem com esses problemas.',
+      step4: 'Avaliamos as organizações com base no Impacto, Transparência e Gestão.',
+      step5: 'Caso aprovada, recomendamos a organização em nosso site para recebimento de doações.',
     };
   }
 

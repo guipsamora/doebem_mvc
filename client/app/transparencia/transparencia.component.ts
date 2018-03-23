@@ -13,7 +13,7 @@ export class TransparenciaController {
   plans = [ ];
   learnings = [ ];
   transf = [ ];
-      
+
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams, $window) {
     this.$http = $http;
@@ -131,7 +131,7 @@ export class TransparenciaController {
         month: 'Março',
         org_name: 'Saúde Criança',
         transf_link: 'https://drive.google.com/file/d/1TZafM3eEyJ94KpGUHLE3adZbQWxpCfRM/view?usp=sharing'
-      },      
+      },
       {
         date: '2017',
         month: 'Outubro',
@@ -159,7 +159,7 @@ export class TransparenciaController {
         goals_link: 'https://drive.google.com/file/d/1o7ZXCsfR1RtpO8c5Fsz5nBRMaHbsS0sb/view?usp=sharing',
         metrics_name: '',
         metrics_link: '',
-      },      
+      },
       {
         date: '2017',
         goals_name: 'Metas 2017 - 3º Trimestre',
@@ -190,7 +190,7 @@ export class TransparenciaController {
         link: 'https://drive.google.com/file/d/1McKl1tmia21sasdlWL9Sr-p8Q0LmyaHf/view?usp=sharing',
         metrics_name: '',
         metrics_link: '',
-      },      
+      },
       {
         date: '2017',
         name: '3º Trimestre - 2017',
