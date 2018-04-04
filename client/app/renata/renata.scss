@@ -1,4 +1,35 @@
+@import '../../../node_modules/angular-jk-carousel/src/assets/styles/jk-carousel.scss';
+
 div#main {
+
+  div#carousel {
+    .radio-buttons-container {
+      position: absolute;
+      bottom: 0;
+      margin-bottom: 20px;
+      width: 100%;
+      md-radio-button {
+        margin: 0px 0px 0px;
+        outline: none;
+        .md-on {
+          background-color: white;
+          width: 19px;
+          height: 19px;
+          top: -2px;
+          left: -2px;
+          right: 2.55px;
+          position: absolute;
+
+        }
+        .md-off {
+          border-color: #ffffff;
+          width: 15px;
+          height: 15px;
+          border-size: 1px;
+        }
+      }
+    }
+  }  
 
   div#pageHeader {
     background-image: url('/assets/images/main/main4.png');

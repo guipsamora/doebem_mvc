@@ -1,5 +1,6 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
+const jkAngularCarousel = require('../../../node_modules/angular-jk-carousel/dist/jk-carousel.js');
 
 import routing from './renata.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
@@ -9,6 +10,7 @@ export class RenataController {
   $scope;
   $location;
   stepOptions = [];
+  carouselImages = [];
   listOng = [];
   midias = [];
 
@@ -17,6 +19,7 @@ export class RenataController {
     this.$http = $http;
     this.$scope = $scope;
     this.$location = $location;
+    // this.carouselImages = [];
     this.listOng = [];
     this.midias = [];
 
@@ -38,6 +41,13 @@ export class RenataController {
                recebe novidades sobre a organização que suporta.',
         icon: '../../assets/images/main/icone3.png'
       }
+    ];
+
+    this.carouselImages = [
+      { src: '../../assets/images/renata/renata1.jpeg' },
+      { src: '../../assets/images/renata/renata2.jpeg' },
+      { src: '../../assets/images/renata/renata3.jpeg' },
+      { src: '../../assets/images/renata/renata4.jpeg' },
     ];
 
     this.midias = [
@@ -81,7 +91,9 @@ export class RenataController {
   }
 }
 
-export default angular.module('doebemOrgApp.renata', [ngRoute, contactForm])
+
+// export default angular.module('doebemOrgApp.renata', [ngRoute, contactForm])
+export default angular.module('doebemOrgApp.renata', [ngRoute, 'jkAngularCarousel', contactForm])
   .config(routing)
   .component('renata', { template: require('./renata.pug'), controller: RenataController })
   .name;
