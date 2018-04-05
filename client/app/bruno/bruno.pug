@@ -6,8 +6,7 @@ div#main.animated.fadeIn
   div#mainPage(layout="column" flex="100")
     div#comoFunciona(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading Passo 1
-      //- h2.sectionHeading Veja o vídeo da campanha
-      h2.sectionHeading Assista o vídeo que preparei
+      h2.sectionSubHeading Assista ao vídeo que preparei
       br
       iframe#video(allowfullscreen
               allowscriptaccess="always"
@@ -18,7 +17,7 @@ div#main.animated.fadeIn
               height="360")
     div#ongs(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading Passo 2
-      h2.sectionHeading Conheça a Organização Escolhida
+      h2.sectionSubHeading Conheça a organização escolhida
       h3 Saiba mais sobre o Saúde Criança e mude uma vida hoje.
       md-list(flex 
               md-cols-gt-xs="2"
@@ -38,9 +37,9 @@ div#main.animated.fadeIn
                 p.img__description {{ong.desc}}                
     div#comoFunciona(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading Passo 3
-      h2.sectionHeading Faça uma doação
+      h2.sectionSubHeading Faça uma doação
       br
-      md-button.md-raized.md-primary(ng-click="$ctrl.showDialog()") Doar
+      md-button.md-raized.md-primary(ng-click="$ctrl.showDialogDonation()") Doar
 
 script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
   md-dialog(aria-label="emailSend" ng-cloak)

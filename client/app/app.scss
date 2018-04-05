@@ -3457,6 +3457,7 @@ span {
 // Component styles are injected through gulp
 /* inject:scss */
 @import 'admin/admin';
+@import 'bruno/bruno';
 @import 'cad-ong/cad-ong';
 @import 'duvidas/duvidas';
 @import 'givewell/givewell';
@@ -3464,7 +3465,6 @@ span {
 @import 'main/main';
 @import 'metodologia/metodologia';
 @import 'pag-ongs/pag-ongs';
-@import 'renata/renata';
 @import 'sobre/sobre';
 @import 'sucesso/sucesso';
 @import 'transparencia/transparencia';
