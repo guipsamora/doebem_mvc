@@ -1,13 +1,4 @@
 div#main.animated.fadeIn
-  div#carousel(flex="100")
-    jk-carousel(
-          flex="100"
-          data="$ctrl.carouselImages"
-          item-template-url="'img.tmpl.pug'"
-          max-width="2000" 
-          max-height="1300")
-          //-           auto-slide="true"
-          //- auto-slide-time="3000")
   div#pageHeader(flex="100"  layout="column" layout-align="center center")
     div#textButton.container(flex="100" layout="column" layout-align="center center")
       h2 com uma doação, você faz a diferença
@@ -54,7 +45,7 @@ div#main.animated.fadeIn
       h2.sectionHeading Passo 3
       h2.sectionHeading Faça uma doação
       br
-      md-button.md-raized.md-primary(ng-click="$ctrl.showDialog()") Doar
+      md-button.md-raized.md-primary(ng-click="$ctrl.showDialogDonation()") Doar
 
 script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
   md-dialog(aria-label="emailSend" ng-cloak)
@@ -68,10 +59,12 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
       div.md-dialog-content
         form(role="form")
           h4 Escolha a organização:
-          md-input.md-block(layout="row" 
+          md-input.md-block(layout="column" 
                             layout-sm="column" 
                             layout-xs="column" layout-wrap flex ng-model="pagarmeForm.donated_to")
             div(ng-repeat = "org in $ctrl.org")
+              md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}
+            div(ng-repeat = "org in $ctrl.orgInt")
               md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}
           h4 Escolha o valor da sua doação:
           md-radio-group(layout="row" 
