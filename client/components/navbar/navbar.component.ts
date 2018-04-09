@@ -131,6 +131,7 @@ export class NavbarComponent {
 
   callPagarme(pagarmeForm) {
 
+    var mensagem = pagarmeForm.mensagem;
     var amountValue = pagarmeForm.amount;
     var headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
 
@@ -155,8 +156,8 @@ export class NavbarComponent {
       success: (data) => {
 
         data.amount = amountValue;
-
         data.org = this.selected;
+        data.message = mensagem;
 
         console.log(data);
 

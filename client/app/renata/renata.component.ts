@@ -131,6 +131,7 @@ export class RenataController {
   ];
   callPagarme(pagarmeForm) {
 
+    var mensagem = pagarmeForm.mensagem;    
     var amountValue = pagarmeForm.amount;
     var headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
 
@@ -154,8 +155,8 @@ export class RenataController {
       success: (data) => {
 
         data.amount = amountValue;
-
         data.org = this.selected;
+        data.message = mensagem;
 
         console.log(data);
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação

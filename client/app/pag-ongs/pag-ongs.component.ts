@@ -118,9 +118,7 @@ export class PagOngs {
       success: (data) => {
 
         data.amount = amountValue;
-
         data.org = this.selected;
-        
         data.message = mensagem;
 
         console.log(data);
