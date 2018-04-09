@@ -143,6 +143,7 @@ var pagarmeSchema = new mongoose.Schema({
   antifraud_metadata: {},
   reference_key: String,
   donated_to: [],
+  mensagem: String,
 });
 
 export default mongoose.model('pagarme', pagarmeSchema);

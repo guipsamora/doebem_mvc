@@ -100,6 +100,7 @@ var pagarmeSchema = new mongoose.Schema({
   reference_key: String,
   donated_to: [],
   doebem: Boolean,
+  mensagem: String,
 });
 
 export default mongoose.model('pagarme', pagarmeSchema);
