@@ -53,6 +53,7 @@ function handleSendEmail(result, res) {
 function handleSendEmailDoebem(result, res) {
   app.mailer.send({
     template: 'emaildoebem',
+    bcc: 'g9m1y7l6p2r0k6d2@doebem.slack.com'
   },
     {
       to: 'g9m1y7l6p2r0k6d2@doebem.slack.com',
