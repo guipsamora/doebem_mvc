@@ -50,6 +50,30 @@ function handleSendEmail(result, res) {
     });
 }
 
+function handleSendEmailDoebem(result, res) {
+  app.mailer.send({
+    template: 'emaildoebem',
+  },
+    {
+      to: 'g9m1y7l6p2r0k6d2@doebem.slack.com',
+      subject: 'Obrigado por sua doação', // REQUIRED.
+      amount: result.amount / 100,
+      nome: result.customer.name.split(' ')[0],
+      from: 'doebem 💙 <contato@doebem.org.br>',
+      org: result.donated_to,
+      message: result.menssagem,
+    }, err => {
+      if(err) {
+        // handle error
+        console.log(err);
+
+        res.send('Ocorreu um erro ao enviar sua mensagem');
+        return;
+      }
+      res.send(result);
+    });
+}
+
 function sendBoleto(result, res) {
   app.mailer.send({
     template: 'boleto',
@@ -115,6 +139,7 @@ export function postPagarme(req, res) {
         sendBoleto(result, res);
       } else {
         handleSendEmail(result, res);
+        handleSendEmailDoebem(result, res);
       }
 
       Pagarme.create(result);
