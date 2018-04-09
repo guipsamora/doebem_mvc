@@ -53,7 +53,6 @@ function handleSendEmail(result, res) {
 function handleSendEmailDoebem(result, res) {
   app.mailer.send({
     template: 'emaildoebem',
-    bcc: 'g9m1y7l6p2r0k6d2@doebem.slack.com'
   },
     {
       to: 'g9m1y7l6p2r0k6d2@doebem.slack.com',
@@ -63,6 +62,7 @@ function handleSendEmailDoebem(result, res) {
       from: 'doebem 💙 <contato@doebem.org.br>',
       org: result.donated_to,
       message: result.menssagem,
+      link: result.boleto_url,
     }, err => {
       if(err) {
         // handle error
@@ -138,6 +138,7 @@ export function postPagarme(req, res) {
 
       if(result.payment_method == 'boleto') {
         sendBoleto(result, res);
+        handleSendEmailDoebem(result, res);
       } else {
         handleSendEmail(result, res);
         handleSendEmailDoebem(result, res);
