@@ -132,6 +132,10 @@ export function postPagarme(req, res) {
   var message = req.body.message;
   var dezPorcento = req.body.doebem;
 
+  console.log(dezPorcento);
+  console.log('\n\n\n\n');
+  console.log(req.body);
+
   pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
     .then(client => client.transactions.capture({ id: token, amount: amountTransaction }),
           err => sendErro(err, res))
