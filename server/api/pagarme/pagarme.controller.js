@@ -56,13 +56,15 @@ function handleSendEmailDoebem(result, res) {
   },
     {
       to: 'g9m1y7l6p2r0k6d2@doebem.slack.com',
-      subject: 'Obrigado por sua doação', // REQUIRED.
+      subject: 'Dados doação concluída', // REQUIRED.
       amount: result.amount / 100,
-      nome: result.customer.name.split(' ')[0],
+      nome: result.customer.name,
       from: 'doebem 💙 <contato@doebem.org.br>',
       org: result.donated_to,
-      message: result.menssagem,
+      message: result.mensagem,
       link: result.boleto_url,
+      email: result.customer.email,
+      dezPorcento: result.doebem
     }, err => {
       if(err) {
         // handle error
@@ -128,6 +130,7 @@ export function postPagarme(req, res) {
   var amountTransaction = req.body.amount;
   var donatedTo = req.body.org;
   var message = req.body.message;
+  var dezPorcento = req.body.doebem;
 
   pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
     .then(client => client.transactions.capture({ id: token, amount: amountTransaction }),
@@ -135,6 +138,7 @@ export function postPagarme(req, res) {
     .then(result => { 
       result.donated_to = donatedTo;
       result.mensagem = message;
+      result.doebem = dezPorcento;
 
       if(result.payment_method == 'boleto') {
         sendBoleto(result, res);
