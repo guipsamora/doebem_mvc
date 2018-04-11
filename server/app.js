@@ -25,7 +25,10 @@ if(config.seedDB) {
 
 // Setup server
 var app = express();
+
 app.use(compress());
+app.use(require('prerender-node').set('prerenderToken', 'iPohBRFx4DLYiMAKixyK'));
+
 var server = http.createServer(app);
 var socketio = require('socket.io')(server, {
   serveClient: config.env !== 'production',

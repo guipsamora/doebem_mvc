@@ -35,9 +35,6 @@ export default app => {
     });
 
   // Sitemap route
-  // app.state('sitemap.xml', {url: '/sitemap.xml'});
-
-  // Sitemap route II
   app.route('/sitemap.xml')
     .get((req, res) => {
       res.sendFile(path.resolve(`${app.get(clientPath)}/sitemap.xml`));
