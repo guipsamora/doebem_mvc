@@ -9,16 +9,11 @@ div.animated.fadeIn#transparencia
     table
       tr
         th Ano
-        th Mês
-        //- th Demonstração de Resultado
         th Balanço Patrimonial
       tr(ng-repeat="year in $ctrl.financials")
         td {{ year.date }}
-        td {{ year.month }}
         td 
           a(href="{{ year.dre_link }}" target="_blank") {{ year.dre_name }}
-        //- td 
-        //-   a(href="{{ year.balanco_link }}" target="_blank") {{year.balanco_name}}
     br
     h2 Transferência de Doações
     br
@@ -55,17 +50,17 @@ div.animated.fadeIn#transparencia
     h2 Documentos
     br
     div(layout-gt-sm="row" layout="row")
-      a(href="https://s3-sa-east-1.amazonaws.com/doebem/Legal/AGC+%2B+estatuto+arquivados+RCPJ_site.pdf"  target="_blank")
+      a(href="../assets/transparencia/documentos/estatuto_doebem.pdf"  target="_blank")
         md-button.md-raized.md-primary Estatuto
-      a(href="https://drive.google.com/a/doebem.org.br/file/d/0B3sdXeGKoeXlZEtfWkQxZW8xam8/view?usp=sharing"  target="_blank")
+      a(href="../assets/transparencia/documentos/CNPJ.pdf"  target="_blank")
         md-button.md-raized.md-primary CNPJ
     h2 Contratos de Parceira
     br
     div(layout-gt-sm="row" layout="column")
-      a(href="https://drive.google.com/file/d/0B3sdXeGKoeXlT3Z5M1JhUGthbjQ/view?usp=sharing"  target="_blank")
+      a(href="../assets/transparencia/contratos/Termo_Saude_Criança_doebem.pdf"  target="_blank")
         md-button.md-raized.md-primary Saúde Criança
-      a(href="https://drive.google.com/file/d/0B3sdXeGKoeXld05TVWVaWmJFcjQ/view?usp=sharing"  target="_blank")
+      a(href="../assets/transparencia/contratos/Termo_Renovatio_doebem.pdf"  target="_blank")
         md-button.md-raized.md-primary Renovatio
-      a(href="https://drive.google.com/file/d/0B3sdXeGKoeXlRmQ3X09qYjk5MVk/view?usp=sharing"  target="_blank")
+      a(href="../assets/transparencia/contratos/Termo_Caviver_doebem.pdf"  target="_blank")
         md-button.md-raized.md-primary Caviver          
 contact-form
