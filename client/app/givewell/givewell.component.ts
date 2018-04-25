@@ -55,7 +55,7 @@ export class GivewellController {
 
   $onInit() {
     this.carregaLista();
-  }  
+  }
 }
 
 export default angular.module('doebemOrgApp.givewell', [ngRoute, contactForm])

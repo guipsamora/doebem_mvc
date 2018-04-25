@@ -1,6 +1,5 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
-const jkAngularCarousel = require('../../../node_modules/angular-jk-carousel/dist/jk-carousel.js');
 
 import routing from './renata.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
@@ -131,7 +130,7 @@ export class RenataController {
   ];
   callPagarme(pagarmeForm) {
 
-    var mensagem = pagarmeForm.mensagem;    
+    var mensagem = pagarmeForm.mensagem;
     var amountValue = pagarmeForm.amount;
     var headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
     var dezPorcento = pagarmeForm.doebem;
@@ -158,7 +157,7 @@ export class RenataController {
         data.amount = amountValue;
         data.org = this.selected;
         data.message = mensagem;
-        data.doebem = dezPorcento;        
+        data.doebem = dezPorcento;
 
         console.log(data);
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
@@ -209,7 +208,7 @@ export class RenataController {
     checkout.open(params);
 
   }
-    
+
 
   showDialogDonation() {
     this.dialog = this.$mdDialog.show({
@@ -245,8 +244,7 @@ function DialogController($scope, $mdDialog, $inject, $log, $http, user) {
 
 DialogController.$inject = ['$scope', '$mdDialog'];
 
-// export default angular.module('doebemOrgApp.renata', [ngRoute, contactForm])
-export default angular.module('doebemOrgApp.renata', [ngRoute, 'jkAngularCarousel', contactForm])
+export default angular.module('doebemOrgApp.renata', [ngRoute, contactForm])
   .config(routing)
   .component('renata', { template: require('./renata.pug'), controller: RenataController })
   .name;

@@ -88,7 +88,6 @@ export class NavbarComponent {
     this.$document = $document;
     this.$mdDialog = $mdDialog;
     this.$scope = $scope;
-    this.PagarMeCheckout;
   }
 
   isActive(route) {
@@ -159,7 +158,7 @@ export class NavbarComponent {
         data.amount = amountValue;
         data.org = this.selected;
         data.message = mensagem;
-        data.doebem = dezPorcento;        
+        data.doebem = dezPorcento;
 
         console.log(data);
 

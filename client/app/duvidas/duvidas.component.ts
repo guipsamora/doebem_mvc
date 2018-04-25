@@ -24,8 +24,8 @@ export class DuvidasController {
       {
         title: 'Quem são vocês?',
         desc: `A doebem, uma organização sem fins lucrativos, foi criada por <a href=\"https://br.linkedin.com/in/guisamora\"
-        target=\"_blank\">Guilherme Samora</a> e <a href=\"https://www.linkedin.com/in/elisa-de-rooij-mansur-30435854/en\"target=\"_blank\">Elisa Mansur</a>.
-        Somos ambos formados em Administração de Empresas e temos experiência 
+        target=\"_blank\">Guilherme Samora</a> e <a href=\"https://www.linkedin.com/in/elisa-de-rooij-mansur-30435854/en\"
+        target=\"_blank\">Elisa Mansur</a>. Somos ambos formados em Administração de Empresas e temos experiência 
         em diversas empresas nacionais e multinacionais e trabalhos sociais.`,
       },
       {
