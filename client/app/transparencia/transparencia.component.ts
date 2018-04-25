@@ -42,6 +42,12 @@ export class TransparenciaController {
     this.transf = [
       {
         date: '2018',
+        month: 'Abril',
+        org_name: 'Caviver',
+        transf_link: '../assets/transparencia/comprovantes/Transf_Caviver_Abr_18.pdf',
+      },
+      {
+        date: '2018',
         month: 'Março',
         org_name: 'Renovatio',
         transf_link: '../assets/transparencia/comprovantes/Transf_Renovatio_Mar_18.pdf',
@@ -50,18 +56,12 @@ export class TransparenciaController {
         date: '2018',
         month: 'Março',
         org_name: 'Saúde Criança',
-        transf_link: '../assets/transparencia/comprovantes/Transf_Saúde_Criança_Mar_18.pdf',
+        transf_link: '../assets/transparencia/comprovantes/Transf_Saude_Criança_Mar_18.pdf',
       },
       {
         date: '2017',
         month: 'Outubro',
         org_name: 'Renovatio',
-        transf_link: '../assets/transparencia/comprovantes/Transf_Saúde_Criança_Out_17.pdf',
-      },
-      {
-        date: '2017',
-        month: 'Outubro',
-        org_name: 'Saúde Criança',
         transf_link: '../assets/transparencia/comprovantes/Transf_Renovatio_Out_17.pdf',
       },
       {
