@@ -56,7 +56,7 @@ export class TransparenciaController {
         date: '2018',
         month: 'Março',
         org_name: 'Saúde Criança',
-        transf_link: '../assets/transparencia/comprovantes/Transf_Saude_Criança_Mar_18.pdf',
+        transf_link: '../assets/transparencia/comprovantes/Transf_Saude_Crianca_Mar_18.pdf',
       },
       {
         date: '2017',

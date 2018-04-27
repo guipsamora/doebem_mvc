@@ -24,6 +24,7 @@ import metodologia from './metodologia/metodologia.component';
 import givewell from './givewell/givewell.component';
 import renata from './renata/renata.component';
 import bruno from './bruno/bruno.component';
+import ramiro from './ramiro/ramiro.component';
 import navbar from '../components/navbar/navbar.component';
 import newsletter from '../components/newsletter/newsletter.component';
 import pagOngs from './pag-ongs/pag-ongs.component';
@@ -60,6 +61,7 @@ angular.module('doebemOrgApp', [
   givewell,
   renata,
   bruno,
+  ramiro,
   transparencia,
   duvidas,
   slugifier,
