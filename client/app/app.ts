@@ -63,6 +63,7 @@ angular.module('doebemOrgApp', [
   renata,
   bruno,
   ramiro,
+  // niver_template,
   transparencia,
   duvidas,
   slugifier,
