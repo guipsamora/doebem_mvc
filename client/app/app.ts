@@ -20,6 +20,7 @@ import duvidas from './duvidas/duvidas.component';
 import footer from '../components/footer/footer.component';
 import listOngs from './list-ongs/list-ongs.component';
 import main from './main/main.component';
+import doar from './doar/doar.component';
 import metodologia from './metodologia/metodologia.component';
 import givewell from './givewell/givewell.component';
 import renata from './renata/renata.component';
@@ -52,6 +53,7 @@ angular.module('doebemOrgApp', [
   navbar,
   footer,
   main,
+  doar,
   listOngs,
   contactForm,
   newsletter,
