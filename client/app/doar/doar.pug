@@ -1,12 +1,8 @@
 div.animated.fadeIn#metodologia
   div#pageHeader(flex="100" layout="column" layout-align="center center")
-    h2 Doar
+    h2 Faça sua doação!
   div#comoFunciona(flex="100" layout="column" layout-align="center center")
     div(aria-label="emailSend" ng-cloak)
-      div
-        div.md-toolbar-tools(layout-align="center center")
-          h2#donation(layout-align="center center") Faça sua doação!
-          span(flex)
       div
         div.md-dialog-content
           form(role="form")
@@ -37,7 +33,7 @@ div.animated.fadeIn#metodologia
                               class="ng-pristine ng-untouched ng-valid ng-empty"
                               maxlength="8")
             br
-            h4 Qual a periodicidade da sua doação?
+            h4 Periodicidade da sua doação:
             div.md-bock(layout-align="center center")
               md-radio-group(layout="row" 
                              layout-sm="column" 
@@ -48,6 +44,7 @@ div.animated.fadeIn#metodologia
                              ng-model="pagarmeForm.periodicidade")
                 div(ng-repeat="period in $ctrl.periods")
                   md-radio-button(ng-value="period.value" aria-label="period.value") {{period.label}}
+            br
             md-input.md-block(layout="row" layout-align="center center")
               md-checkbox(ng-model="pagarmeForm.doebem" ng-watch ng-checked="true") Acrescentar +10% para a doebem?
             md-dialog-actions(layout="row" layout-align="center")
@@ -56,5 +53,5 @@ div.animated.fadeIn#metodologia
             //-   md-button.md-raized.md-primary#doarMe(ng-click type="submit") Doar
             div(layout="row" layout-align="center center")
               i(class="fa fa-lock fa-2x"  aria-hidden="true")
-              p#secu Você será direcionado(a) para um ambiente seguro.            
+              p#secu Você será direcionado(a) para um ambiente seguro.
 contact-form
