@@ -10,7 +10,7 @@ export class DoarController {
   $scope;
   $routeParams;
   $location;
-  PagarMeCheckout: any;  
+  PagarMeCheckout: any;
 
   /*@ngInject*/
   constructor($http, $scope, socket, $routeParams, $location) {
@@ -23,11 +23,15 @@ export class DoarController {
 
   // Handles the payment popup
   org = ['Saúde Criança', 'Renovatio', 'Caviver', 'A critério da doebem'];
-  
+
+  // Handles the payment popup
+  orgInt = ['GiveDirectly', 'Schistosomiasis Control Initiative', 'Against Malaria Foundation'];
+
   selected = [];
 
   toggle(org, list) {
     var idx = list.indexOf(org);
+
     if (idx > -1) {
       list.splice(idx, 1);
     } else {
@@ -42,7 +46,7 @@ export class DoarController {
   };
 
   Custom = '';
-    
+
   options = [
     {value: 1000, label: 'R$10', input: false},
     {value: 2000, label: 'R$20', input: false},
@@ -59,16 +63,18 @@ export class DoarController {
 
   $onInit() {
     this.$scope.pagarmeForm = {
-      amount: 2000
+      amount: 2000,
+      periodicidade: 'Mensal'
     };
   };
 
   callPagarme(pagarmeForm) {
-    
+
+    var mensagem = pagarmeForm.mensagem;
     var amountValue = pagarmeForm.amount;
     var periodicidade = pagarmeForm.periodicidade;
-    console.log(periodicidade);
     var headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
+    var dezPorcento = pagarmeForm.doebem;
 
     if (!amountValue) {
       amountValue = pagarmeForm.input * 100;
@@ -83,8 +89,6 @@ export class DoarController {
       headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
     };
 
-    console.log(amountValue);
-
     // INICIAR A INSTÂNCIA DO CHECKOUT
     // declarando um callback de sucesso
     var checkout = new PagarMeCheckout.Checkout({
@@ -92,11 +96,13 @@ export class DoarController {
       success: (data) => {
 
         data.amount = amountValue;
-
         data.org = this.selected;
+        data.periodo = periodicidade;
+        data.doebem = dezPorcento;
+        data.message = mensagem;
 
         console.log(data);
-        
+
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
         this.$http.post('/api/pagarme', data)
           .then(res => { console.log(res); }, error => { console.log(error); })
@@ -143,7 +149,7 @@ export class DoarController {
     };
 
     checkout.open(params);
-  }  
+  }
 }
 
 export default angular.module('doebemOrgApp.doar', [ngRoute, contactForm])
