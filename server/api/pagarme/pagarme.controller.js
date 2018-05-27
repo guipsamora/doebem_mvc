@@ -134,21 +134,34 @@ export function postPagarme(req, res) {
   var dezPorcento = req.body.doebem;
   var periodo = req.body.periodo;
 
-  console.log(req.body.payment_method);
+  console.log(req.body);
 
-  if (req.body.payment_method == 'boleto') {
+  if (req.body.payment_method == 'boleto' && req.body.periodo == 'Avulsa') {
     pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
       .then(client => client.transactions.create({
-        amount: 1000,
-        payment_method: 'boleto',
+        amount: req.body.amount,
+        payment_method: req.body.payment_method,
         postback_url: 'http://requestb.in/pkt7pgpk',
+        document_number: req.body.customer.document_number,
         customer: {
-            name: 'Aardvark Silva',
-            document_number: '18152564000105',
+            name: req.body.customer.name,
+            document_number: req.body.customer.document_number,
+            email: req.body.customer.email,
+            address: {
+              zipcode: req.body.customer.address.zipcode,
+              street: req.body.customer.address.street,
+              street_number: req.body.customer.address.street_number,
+              complementary: req.body.customer.address.complementary,
+              neighborhood: req.body.customer.address.neighborhood,
+              city: req.body.customer.address.street.city,
+              state: req.body.customer.address.street.state}
         },
+        org: req.body.org,
+        periodo: req.body.periodo,
+        doebem: req.body.doebem,
+        message: req.body.message
       }),
-      console.log('Teste TEste'),
-      console.log()
+        console.log('Teste Teste'),
       )
       // .then(result =>{ 
       //   result.donated_to = donatedTo;
@@ -162,8 +175,36 @@ export function postPagarme(req, res) {
       //   sendBoleto(result, res);
       //   handleSendEmailDoebem(result, res);
       // })
-  }
-
+  } else if (req.body.payment_method == 'credit_card' && req.body.periodo == 'Avulsa') {
+    pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
+      .then(client => client.transactions.create({
+        amount: req.body.amount,
+        payment_method: req.body.payment_method,
+        postback_url: 'http://requestb.in/pkt7pgpk',
+        document_number: req.body.customer.document_number,
+        customer: {
+            name: req.body.customer.name,
+            document_number: req.body.customer.document_number,
+            email: req.body.customer.email,
+            address: {
+              zipcode: req.body.customer.address.zipcode,
+              street: req.body.customer.address.street,
+              street_number: req.body.customer.address.street_number,
+              complementary: req.body.customer.address.complementary,
+              neighborhood: req.body.customer.address.neighborhood,
+              city: req.body.customer.address.street.city,
+              state: req.body.customer.address.street.state}
+        },
+        org: req.body.org,
+        periodo: req.body.periodo,
+        doebem: req.body.doebem,
+        message: req.body.message
+      })
+      
+      .then(result => { 
+        console.log(result);
+      })
+    
   // pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
   //   // .then(
   //   //       // result => console.log(result),
