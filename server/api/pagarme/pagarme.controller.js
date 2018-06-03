@@ -2,6 +2,13 @@
  * Using Rails-like standard naming convention for endpoints.
 
  * POST    /api/Pagarme              ->  create
+ * 
+ * Documentation pagar.me
+ * https://docs.pagar.me/reference
+ * https://docs.pagar.me/v2017-07-17/docs/overview-checkout
+ * https://docs.pagar.me/v2017-07-17/docs/criando-uma-assinatura
+ * 
+
 
  */
 'use strict';
@@ -32,50 +39,50 @@ function handleSendEmail(result, res) {
     template: 'email',
     bcc: 'contato@doebem.org.br',
   },
-    {
-      to: result.customer.email,
-      subject: 'Obrigado por sua doação', // REQUIRED.
-      amount: result.amount / 100,
-      nome: result.customer.name.split(' ')[0],
-      from: 'doebem 💙 <contato@doebem.org.br>',
-    }, err => {
-      if(err) {
-        // handle error
-        console.log(err);
-
-        res.send('Ocorreu um erro ao enviar sua mensagem');
-        return;
-      }
-      res.send(result);
-    });
+  {
+    to: result.customer.email,
+    subject: 'Obrigado por sua doação', // REQUIRED.
+    amount: result.amount / 100,
+    nome: result.customer.name.split(' ')[0],
+    from: 'doebem 💙 <contato@doebem.org.br>',
+  }, 
+  err => {
+    if(err) {
+      // handle error
+      console.log(err);
+      res.send('Ocorreu um erro ao enviar sua mensagem');
+      return;
+    }
+    res.send(result);
+  });
 }
 
 function handleSendEmailDoebem(result, res) {
   app.mailer.send({
     template: 'emaildoebem',
   },
-    {
-      to: 'g9m1y7l6p2r0k6d2@doebem.slack.com',
-      subject: 'Dados doação concluída', // REQUIRED.
-      amount: result.dados.amount / 100,
-      nome: result.dados.customer.name,
-      from: 'doebem 💙 <contato@doebem.org.br>',
-      org: result.dados.donated_to,
-      message: result.dados.mensagem,
-      link: result.dados.boleto_url,
-      email: result.dados.customer.email,
-      dezPorcento: result.dados.doebem,
-      periodo: result.dados.periodo,
-    }, err => {
-      if(err) {
-        // handle error
-        console.log(err);
-
-        res.send('Ocorreu um erro ao enviar sua mensagem');
-        return;
-      }
-      res.send(result);
-    });
+  {
+    to: 'g9m1y7l6p2r0k6d2@doebem.slack.com',
+    subject: 'Dados doação concluída', // REQUIRED.
+    amount: result.dados.amount / 100,
+    nome: result.dados.customer.name,
+    from: 'doebem 💙 <contato@doebem.org.br>',
+    org: result.dados.donated_to,
+    message: result.dados.mensagem,
+    link: result.dados.boleto_url,
+    email: result.dados.customer.email,
+    dezPorcento: result.dados.doebem,
+    periodo: result.dados.periodo,
+  }, 
+  err => {
+    if(err) {
+      // handle error
+      console.log(err);
+      res.send('Ocorreu um erro ao enviar sua mensagem');
+      return;
+    }
+    res.send(result);
+  });
 }
 
 function sendBoleto(result, res) {
@@ -83,21 +90,22 @@ function sendBoleto(result, res) {
     template: 'boleto',
     bcc: 'contato@doebem.org.br'
   },
-    {
-      to: result.customer.email,
-      subject: 'Obrigado por sua doação - Segue boleto', // REQUIRED.
-      link: result.boleto_url,
-      from: 'doebem 💙 <contato@doebem.org.br>',
-      nome: result.customer.name.split(' ')[0],
-    }, err => {
-      if(err) {
-        // handle error
-        console.log(err);
-        res.send('Ocorreu um erro ao enviar sua mensagem');
-        return;
-      }
-      res.send(result);
-    });
+  {
+    to: result.customer.email,
+    subject: 'Obrigado por sua doação - Segue boleto', // REQUIRED.
+    link: result.boleto_url,
+    from: 'doebem 💙 <contato@doebem.org.br>',
+    nome: result.customer.name.split(' ')[0],
+  }, 
+  err => {
+    if(err) {
+      // handle error
+      console.log(err);
+      res.send('Ocorreu um erro ao enviar sua mensagem');
+      return;
+    }
+    res.send(result);
+  });
 }
 
 function sendErro(result, res) {
@@ -105,20 +113,21 @@ function sendErro(result, res) {
     template: 'erro',
     bcc: 'contato@doebem.org.br'
   },
-    {
-      to: result.customer.email,
-      subject: 'Erro em sua doação pela doebem :(', // REQUIRED.
-      link: result.boleto_url,
-      from: 'doebem 💙 <contato@doebem.org.br>',
-    }, err => {
-      if(err) {
-        // handle error
-        console.log(err);
-        res.send('Ocorreu um erro ao enviar sua mensagem');
-        return;
-      }
-      res.send(result);
-    });
+  {
+    to: result.customer.email,
+    subject: 'Erro em sua doação pela doebem :(', // REQUIRED.
+    link: result.boleto_url,
+    from: 'doebem 💙 <contato@doebem.org.br>',
+  }, 
+  err => {
+    if(err) {
+      // handle error
+      console.log(err);
+      res.send('Ocorreu um erro ao enviar sua mensagem');
+      return;
+    }
+    res.send(result);
+  });
 }
 
 // Creates a new Pagarme in the DB
@@ -160,24 +169,20 @@ export function postPagarme(req, res) {
         periodo: req.body.periodo,
         doebem: req.body.doebem,
         message: req.body.message
-      }),
-        console.log('Teste Teste'),
-      )
-      // .then(result =>{ 
-      //   result.donated_to = donatedTo;
-      //   result.mensagem = message;
-      //   result.doebem = dezPorcento;
-      //   result.periodo = periodo
-      //   result.dados = req.body;
-
-
-
-      //   sendBoleto(result, res);
-      //   handleSendEmailDoebem(result, res);
-      // })
+      })
+      .then(result =>{ 
+          result.donated_to = donatedTo;
+          result.mensagem = message;
+          result.doebem = dezPorcento;
+          result.periodo = periodo
+          result.dados = req.body;
+          sendBoleto(result, res);
+          handleSendEmailDoebem(result, res);
+      }))
   } else if (req.body.payment_method == 'credit_card' && req.body.periodo == 'Avulsa') {
     pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
       .then(client => client.transactions.create({
+        // capture: false,
         amount: req.body.amount,
         payment_method: req.body.payment_method,
         postback_url: 'http://requestb.in/pkt7pgpk',
@@ -199,12 +204,27 @@ export function postPagarme(req, res) {
         periodo: req.body.periodo,
         doebem: req.body.doebem,
         message: req.body.message
-      })
-      
+      }))
+      .then(client => console.log(client.transactions))
       .then(result => { 
-        console.log(result);
+          result.donated_to = donatedTo;
+          result.mensagem = message;
+          result.doebem = dezPorcento;
+          result.periodo = periodo
+          result.dados = req.body;
+          // client.transactions.capture;
+          handleSendEmail(result, res);
+          handleSendEmailDoebem(result, res);
+          
       })
-    
+      .catch(err => {
+        console.log("VEIO PRO CARTÃO \n \n \n")
+        console.log('Deu ruim\n');
+        console.log(err.response.errors);
+      });
+
+  // end of the if clause
+  }
   // pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
   //   // .then(
   //   //       // result => console.log(result),
@@ -257,4 +277,6 @@ export function postPagarme(req, res) {
   //     console.log('Deu ruim\n');
   //     console.log(err.response.errors);
   //   });
+
+  // end of the funcition
 }
