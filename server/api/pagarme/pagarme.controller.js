@@ -148,27 +148,27 @@ export function postPagarme(req, res) {
   if (req.body.payment_method == 'boleto' && req.body.periodo == 'Avulsa') {
     pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
       .then(client => client.transactions.create({
-        amount: req.body.amount,
-        payment_method: req.body.payment_method,
-        postback_url: 'http://requestb.in/pkt7pgpk',
-        document_number: req.body.customer.document_number,
-        customer: {
-            name: req.body.customer.name,
-            document_number: req.body.customer.document_number,
-            email: req.body.customer.email,
-            address: {
-              zipcode: req.body.customer.address.zipcode,
-              street: req.body.customer.address.street,
-              street_number: req.body.customer.address.street_number,
-              complementary: req.body.customer.address.complementary,
-              neighborhood: req.body.customer.address.neighborhood,
-              city: req.body.customer.address.street.city,
-              state: req.body.customer.address.street.state}
+        'amount': req.body.amount,
+        'payment_method': req.body.payment_method,
+        'postback_url': 'http://requestb.in/pkt7pgpk',
+        'document_number': req.body.customer.document_number,
+        'customer': {
+            'name': req.body.customer.name,
+            'document_number': req.body.customer.document_number,
+            'email': req.body.customer.email,
+            'address': {
+              'zipcode': req.body.customer.address.zipcode,
+              'street': req.body.customer.address.street,
+              'street_number': req.body.customer.address.street_number,
+              'complementary': req.body.customer.address.complementary,
+              'neighborhood': req.body.customer.address.neighborhood,
+              'city': req.body.customer.address.street.city,
+              'state': req.body.customer.address.street.state}
         },
-        org: req.body.org,
-        periodo: req.body.periodo,
-        doebem: req.body.doebem,
-        message: req.body.message
+        'org': req.body.org,
+        'periodo': req.body.periodo,
+        'doebem': req.body.doebem,
+        'message': req.body.message
       })
       .then(result =>{ 
           result.donated_to = donatedTo;
@@ -182,36 +182,37 @@ export function postPagarme(req, res) {
   } else if (req.body.payment_method == 'credit_card' && req.body.periodo == 'Avulsa') {
     pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
       .then(client => client.transactions.create({
-        // capture: false,
-        amount: req.body.amount,
-        payment_method: req.body.payment_method,
-        postback_url: 'http://requestb.in/pkt7pgpk',
-        document_number: req.body.customer.document_number,
-        customer: {
-            name: req.body.customer.name,
-            document_number: req.body.customer.document_number,
-            email: req.body.customer.email,
-            address: {
-              zipcode: req.body.customer.address.zipcode,
-              street: req.body.customer.address.street,
-              street_number: req.body.customer.address.street_number,
-              complementary: req.body.customer.address.complementary,
-              neighborhood: req.body.customer.address.neighborhood,
-              city: req.body.customer.address.street.city,
-              state: req.body.customer.address.street.state}
+        'card_hash': req.body.card_hash,
+        'amount': req.body.amount,
+        'payment_method': req.body.payment_method,
+        'postback_url': 'http://requestb.in/pkt7pgpk',
+        'document_number': req.body.customer.document_number,
+        'customer': {
+            'name': req.body.customer.name,
+            'document_number': req.body.customer.document_number,
+            'email': req.body.customer.email,
+            'address': {
+              'zipcode': req.body.customer.address.zipcode,
+              'street': req.body.customer.address.street,
+              'street_number': req.body.customer.address.street_number,
+              'complementary': req.body.customer.address.complementary,
+              'neighborhood': req.body.customer.address.neighborhood,
+              'city': req.body.customer.address.street.city,
+              'state': req.body.customer.address.street.state}
         },
-        org: req.body.org,
-        periodo: req.body.periodo,
-        doebem: req.body.doebem,
-        message: req.body.message
+        'org': req.body.org,
+        'periodo': req.body.periodo,
+        'doebem': req.body.doebem,
+        'message': req.body.message
       }))
-      .then(client => console.log(client.transactions))
+      .then(transaction => console.log(transaction))
       .then(result => { 
           result.donated_to = donatedTo;
           result.mensagem = message;
           result.doebem = dezPorcento;
           result.periodo = periodo
           result.dados = req.body;
+          console.log(result);
           // client.transactions.capture;
           handleSendEmail(result, res);
           handleSendEmailDoebem(result, res);

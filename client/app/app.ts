@@ -26,7 +26,6 @@ import givewell from './givewell/givewell.component';
 import renata from './renata/renata.component';
 import bruno from './bruno/bruno.component';
 import ramiro from './ramiro/ramiro.component';
-// import niver_template from './niver_template/niver_template.component';
 import navbar from '../components/navbar/navbar.component';
 import newsletter from '../components/newsletter/newsletter.component';
 import pagOngs from './pag-ongs/pag-ongs.component';
@@ -65,7 +64,6 @@ angular.module('doebemOrgApp', [
   renata,
   bruno,
   ramiro,
-  // niver_template,
   transparencia,
   duvidas,
   slugifier,
