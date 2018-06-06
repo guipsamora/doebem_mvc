@@ -14,6 +14,7 @@
     "angular-material": "^1.1.4",
     "angular-messages": "^1.6.4",
     "angular-payments": "^1.0.7",
+    "angular-recaptcha": "^4.1.5",
     "angular-resource": "~1.6.4",
     "angular-route": "~1.6.4",
     "angular-sanitize": "~1.6.4",
