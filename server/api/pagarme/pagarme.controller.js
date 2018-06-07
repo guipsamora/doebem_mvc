@@ -143,89 +143,178 @@ export function postPagarme(req, res) {
   var dezPorcento = req.body.doebem;
   var periodo = req.body.periodo;
 
-  console.log(req.body);
+  console.log(req.body.customer);
 
-  if (req.body.payment_method == 'boleto' && req.body.periodo == 'Avulsa') {
-    pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
+  if (req.body.payment_method == 'boleto' ) {
+    pagarme.client.connect({ api_key: 'ak_test_rnrtxW0T417zXA5Fq42gM2LBaqLrFq' })
       .then(client => client.transactions.create({
-        'amount': req.body.amount,
-        'payment_method': req.body.payment_method,
-        'postback_url': 'http://requestb.in/pkt7pgpk',
-        'document_number': req.body.customer.document_number,
-        'customer': {
-            'name': req.body.customer.name,
-            'document_number': req.body.customer.document_number,
-            'email': req.body.customer.email,
-            'address': {
-              'zipcode': req.body.customer.address.zipcode,
-              'street': req.body.customer.address.street,
-              'street_number': req.body.customer.address.street_number,
-              'complementary': req.body.customer.address.complementary,
-              'neighborhood': req.body.customer.address.neighborhood,
-              'city': req.body.customer.address.street.city,
-              'state': req.body.customer.address.street.state}
+        amount: req.body.amount,
+        payment_method: req.body.payment_method,
+        postback_url: 'http://requestb.in/pkt7pgpk',
+        document_number: req.body.customer.document_number,
+        customer: {
+            name: req.body.customer.name,
+            document_number: req.body.customer.document_number,
+            email: req.body.customer.email,
+            address: {
+              zipcode: req.body.customer.address.zipcode,
+              street: req.body.customer.address.street,
+              street_number: req.body.customer.address.street_number,
+              complementary: req.body.customer.address.complementary,
+              neighborhood: req.body.customer.address.neighborhood,
+              city: req.body.customer.address.street.city,
+              state: req.body.customer.address.street.state
+            }
         },
-        'org': req.body.org,
-        'periodo': req.body.periodo,
-        'doebem': req.body.doebem,
-        'message': req.body.message
+        metadata:{
+            org: "Teste",
+            periodo: "Junho",
+            doebem: "True",
+            message: "Teste"
+        }
       })
-      .then(result =>{ 
-          result.donated_to = donatedTo;
-          result.mensagem = message;
-          result.doebem = dezPorcento;
-          result.periodo = periodo
-          result.dados = req.body;
-          sendBoleto(result, res);
-          handleSendEmailDoebem(result, res);
+      .then(transaction => { 
+          console.log(transaction);
+          res.send("OK");
       }))
-  } else if (req.body.payment_method == 'credit_card' && req.body.periodo == 'Avulsa') {
-    pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
+  } else if (req.body.payment_method == 'credit_card') {
+    pagarme.client.connect({ api_key: 'ak_test_rnrtxW0T417zXA5Fq42gM2LBaqLrFq' })
       .then(client => client.transactions.create({
-        'card_hash': req.body.card_hash,
-        'amount': req.body.amount,
-        'payment_method': req.body.payment_method,
-        'postback_url': 'http://requestb.in/pkt7pgpk',
-        'document_number': req.body.customer.document_number,
-        'customer': {
-            'name': req.body.customer.name,
-            'document_number': req.body.customer.document_number,
-            'email': req.body.customer.email,
-            'address': {
-              'zipcode': req.body.customer.address.zipcode,
-              'street': req.body.customer.address.street,
-              'street_number': req.body.customer.address.street_number,
-              'complementary': req.body.customer.address.complementary,
-              'neighborhood': req.body.customer.address.neighborhood,
-              'city': req.body.customer.address.street.city,
-              'state': req.body.customer.address.street.state}
+        card_hash: req.body.card_hash,
+        amount: req.body.amount,
+        payment_method: req.body.payment_method,
+        postback_url: 'http://requestb.in/pkt7pgpk',
+        document_number: req.body['customer']['document_number'],
+        customer: {
+            name: req.body.customer.name,
+            document_number: req.body.customer.document_number,
+            email: req.body.customer.email,
+            address: {
+              zipcode: req.body.customer.address.zipcode,
+              street: req.body.customer.address.street,
+              street_number: req.body.customer.address.street_number,
+              complementary: req.body.customer.address.complementary,
+              neighborhood: req.body.customer.address.neighborhood,
+              city: req.body.customer.address.street.city,
+              state: req.body.customer.address.street.state
+            }
         },
-        'org': req.body.org,
-        'periodo': req.body.periodo,
-        'doebem': req.body.doebem,
-        'message': req.body.message
+        metadata:{
+                org: "Teste",
+                periodo: "Junho",
+                doebem: "True",
+                message: "Teste"
+        }
       }))
-      .then(transaction => console.log(transaction))
-      .then(result => { 
-          result.donated_to = donatedTo;
-          result.mensagem = message;
-          result.doebem = dezPorcento;
-          result.periodo = periodo
-          result.dados = req.body;
-          console.log(result);
+      .then(transaction => {
+        console.log(transaction)
+        res.send("OK");
           // client.transactions.capture;
-          handleSendEmail(result, res);
-          handleSendEmailDoebem(result, res);
-          
       })
       .catch(err => {
         console.log("VEIO PRO CARTÃO \n \n \n")
         console.log('Deu ruim\n');
-        console.log(err.response.errors);
+        console.log(err);
       });
+  }
+}
+
+
+  // if (req.body.payment_method == 'boleto' && req.body.periodo == 'Avulsa') {
+  //   pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
+  //     .then(client => client.transactions.create({
+  //       amount: req.body.amount,
+  //       payment_method: req.body.payment_method,
+  //       postback_url: 'http://requestb.in/pkt7pgpk',
+  //       document_number: req.body.customer.document_number,
+  //       customer: {
+  //           name: req.body.customer.name,
+  //           document_number: req.body.customer.document_number,
+  //           email: req.body.customer.email,
+  //           address: {
+  //             zipcode: req.body.customer.address.zipcode,
+  //             street: req.body.customer.address.street,
+  //             street_number: req.body.customer.address.street_number,
+  //             complementary: req.body.customer.address.complementary,
+  //             neighborhood: req.body.customer.address.neighborhood,
+  //             city: req.body.customer.address.street.city,
+  //             state: req.body.customer.address.street.state}
+  //       },
+  //       org: req.body.org,
+  //       periodo: req.body.periodo,
+  //       doebem: req.body.doebem,
+  //       message: req.body.message
+  //     })
+  //     .then(transaction => { 
+  //       console.log(transaction);
+  //       res.send("OK");
+  //     })
+  //     .then(result => { 
+  //         result.donated_to = donatedTo;
+  //         result.mensagem = message;
+  //         result.doebem = dezPorcento;
+  //         result.periodo = periodo
+  //         result.dados = req.body;
+  //         // sendBoleto(result, res);
+  //         // handleSendEmailDoebem(result, res);
+  //     }))
+  // } else if (req.body.payment_method == 'credit_card' && req.body.periodo == 'Avulsa') {
+
+  //   console.log("It came to cartão parte");
+
+  //   console.log(req.body.card_hash);
+  //   console.log(req.body.customer);
+
+  //   pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
+  //     .then(client => client.transactions.create({
+  //       card_hash: req.body.card_hash,
+  //       amount: req.body.amount,
+  //       payment_method: req.body.payment_method,
+  //       postback_url: 'http://requestb.in/pkt7pgpk',
+  //       document_number: req.body['customer']['document_number'],
+  //       customer: {
+  //           name: req.body.customer.name,
+  //           document_number: req.body.customer.document_number,
+  //           email: req.body.customer.email,
+  //           address: {
+  //             zipcode: req.body.customer.address.zipcode,
+  //             street: req.body.customer.address.street,
+  //             street_number: req.body.customer.address.street_number,
+  //             complementary: req.body.customer.address.complementary,
+  //             neighborhood: req.body.customer.address.neighborhood,
+  //             city: req.body.customer.address.street.city,
+  //             state: req.body.customer.address.street.state
+  //           }
+  //       },
+  //       metadata:{
+  //         org: req.body.org,
+  //         periodo: req.body.periodo,
+  //         doebem: req.body.doebem,
+  //         message: req.body.message
+  //       }
+  //     }))
+  //     .then(transaction => {
+  //       console.log(transaction);
+  //       res.send("OK");
+  //     })
+      // .then(result => { 
+      //     result.donated_to = donatedTo;
+      //     result.mensagem = message;
+      //     result.doebem = dezPorcento;
+      //     result.periodo = periodo
+      //     result.dados = req.body;
+      //     console.log(result);
+      //     // client.transactions.capture;
+      //     handleSendEmail(result, res);
+      //     handleSendEmailDoebem(result, res);
+          
+      // })
+      // .catch(err => {
+      //   console.log(err.response.errors);
+      // });
 
   // end of the if clause
-  }
+  // }
   // pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
   //   // .then(
   //   //       // result => console.log(result),
@@ -280,4 +369,4 @@ export function postPagarme(req, res) {
   //   });
 
   // end of the funcition
-}
+// }
