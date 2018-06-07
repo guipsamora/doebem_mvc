@@ -1,7 +1,7 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
 
-import routing from './niver_template.routes';
+import routing from './nivertemplate.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
 
 declare var PagarMeCheckout: any;
