@@ -3,6 +3,7 @@
 const angular = require('angular');
 const ngMaterial = require('angular-material');
 const duScroll = require('angular-scroll');
+const vcRecaptcha = require('angular-recaptcha');
 
 declare var PagarMeCheckout: any;
 
@@ -129,7 +130,10 @@ export class NavbarComponent {
   }
 
   callPagarme(pagarmeForm) {
-
+    console.log('recaptcha value:', pagarmeForm.myRecaptchaResponse);
+    if (pagarmeForm.myRecaptchaResponse !== undefined) {
+      return;
+    }
     var mensagem = pagarmeForm.mensagem;
     var amountValue = pagarmeForm.amount;
     var headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
@@ -233,7 +237,7 @@ function DialogController($scope, $mdDialog, $inject) {
 
 DialogController.$inject = ['$scope', '$mdDialog'];
 
-export default angular.module('directives.navbar', [ngMaterial, duScroll])
+export default angular.module('directives.navbar', [ngMaterial, duScroll, vcRecaptcha])
   .component('navbar', {
     template: require('./navbar.pug'),
     controller: NavbarComponent
