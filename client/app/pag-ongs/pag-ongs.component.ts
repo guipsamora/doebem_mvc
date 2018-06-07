@@ -1,6 +1,7 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
 const ngSanitize = require('angular-sanitize');
+const vcRecaptcha = require('angular-recaptcha');
 import routing from './pag-ongs.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
 
@@ -93,6 +94,11 @@ export class PagOngs {
 
 
   callPagarme(pagarmeForm) {
+
+    console.log('recaptcha value:', pagarmeForm.myRecaptchaResponse);
+    if (pagarmeForm.myRecaptchaResponse !== undefined) {
+      return;
+    }
 
     var mensagem = pagarmeForm.mensagem;
     var amountValue = pagarmeForm.amount;
@@ -207,7 +213,7 @@ function DialogController($scope, $mdDialog, $inject, $log, $http, user) {
 
 DialogController.$inject = ['$scope', '$mdDialog'];
 
-export default angular.module('doebemOrgApp.pagOngs', [ngRoute, contactForm, ngSanitize])
+export default angular.module('doebemOrgApp.pagOngs', [ngRoute, contactForm, ngSanitize, vcRecaptcha])
   .config(routing)
   .component('pagOngs', { template: require('./pag-ongs.pug'), controller: PagOngs })
   .name;
