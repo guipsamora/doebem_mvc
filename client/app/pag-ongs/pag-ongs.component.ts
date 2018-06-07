@@ -96,7 +96,7 @@ export class PagOngs {
   callPagarme(pagarmeForm) {
 
     console.log('recaptcha value:', pagarmeForm.myRecaptchaResponse);
-    if (pagarmeForm.myRecaptchaResponse !== undefined) {
+    if (pagarmeForm.myRecaptchaResponse == undefined) {
       return;
     }
 
