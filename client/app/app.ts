@@ -20,12 +20,12 @@ import duvidas from './duvidas/duvidas.component';
 import footer from '../components/footer/footer.component';
 import listOngs from './list-ongs/list-ongs.component';
 import main from './main/main.component';
+import doar from './doar/doar.component';
 import metodologia from './metodologia/metodologia.component';
 import givewell from './givewell/givewell.component';
 import renata from './renata/renata.component';
 import bruno from './bruno/bruno.component';
 import ramiro from './ramiro/ramiro.component';
-// import niver_template from './niver_template/niver_template.component';
 import navbar from '../components/navbar/navbar.component';
 import newsletter from '../components/newsletter/newsletter.component';
 import pagOngs from './pag-ongs/pag-ongs.component';
@@ -52,6 +52,7 @@ angular.module('doebemOrgApp', [
   navbar,
   footer,
   main,
+  doar,
   listOngs,
   contactForm,
   newsletter,
@@ -63,7 +64,6 @@ angular.module('doebemOrgApp', [
   renata,
   bruno,
   ramiro,
-  // niver_template,
   transparencia,
   duvidas,
   slugifier,
