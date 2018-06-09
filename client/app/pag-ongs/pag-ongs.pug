@@ -102,7 +102,7 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
           md-input-container.md-block(layout="row")
             label Mensagem
             textarea(ng-model="pagarmeForm.mensagem")
-          div(vc-recaptcha ng-model="pagarmeForm.myRecaptchaResponse" key="'6LcPN10UAAAAABQMlTtCQlsq6f0lMqUChzupC39t'")  
+          div(vc-recaptcha ng-model="pagarmeForm.myRecaptchaResponse" key="'6LcPN10UAAAAABQMlTtCQlsq6f0lMqUChzupC39t'")
           md-dialog-actions(layout="row" layout-align="center")
             //- md-button.md-raized.md-primary#doarMe(ng-click="$ctrl.callPagarme(pagarmeForm)" type="submit" ng-disabled="pagarmeForm.$invalid") Doar
             md-button.md-raized.md-primary#doarMe(ng-click="$ctrl.callPagarme(pagarmeForm)" type="submit") Doar

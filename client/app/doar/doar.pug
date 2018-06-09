@@ -59,11 +59,10 @@ div.animated.fadeIn#metodologia
               md-checkbox(ng-model="pagarmeForm.doebem" ng-watch ng-checked="true") Acrescentar +10% para a doebem?
             md-input-container.md-block(layout="row")
               label Deixe aqui sua mensagem
-              textarea(ng-model="pagarmeForm.mensagem")            
+              textarea(ng-model="pagarmeForm.mensagem")
+            div(vc-recaptcha ng-model="pagarmeForm.myRecaptchaResponse" key="'6LcPN10UAAAAABQMlTtCQlsq6f0lMqUChzupC39t'")
             md-dialog-actions(layout="row" layout-align="center")
               md-button.md-raized.md-primary#doarMe(ng-click="$ctrl.callPagarme(pagarmeForm)" type="submit") Doar
-            //- md-dialog-actions(layout="row" layout-align="center")
-            //-   md-button.md-raized.md-primary#doarMe(ng-click type="submit") Doar
             div(layout="row" layout-align="center center")
               i(class="fa fa-lock fa-2x"  aria-hidden="true")
               p#secu Você será direcionado(a) para um ambiente seguro.

@@ -1,7 +1,9 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
+const vcRecaptcha = require('angular-recaptcha');
 import routing from './doar.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
+
 
 declare var PagarMeCheckout: any;
 
@@ -153,7 +155,7 @@ export class DoarController {
   }
 }
 
-export default angular.module('doebemOrgApp.doar', [ngRoute, contactForm])
+export default angular.module('doebemOrgApp.doar', [ngRoute, contactForm, vcRecaptcha])
   .filter('to_trusted', ['$sce', function($sce){
     return function(text) {
         return $sce.trustAsHtml(text);
