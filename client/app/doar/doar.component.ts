@@ -93,6 +93,7 @@ export class DoarController {
     // declarando um callback de sucesso
     var checkout = new PagarMeCheckout.Checkout({
       'encryption_key': 'ek_test_QifcmAvy9wCtsgrUr04o884mXp1HiP',
+      // 'encryption_key': 'ek_live_3yykMegYY2XTPClgA1qjui2gSlvVzG',
       success: (data) => {
 
         data.amount = amountValue;

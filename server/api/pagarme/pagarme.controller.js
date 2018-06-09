@@ -52,8 +52,8 @@ function handleSendEmail(result, res) {
       console.log(err);
       res.send('Ocorreu um erro ao enviar sua mensagem');
       return;
-    }
-    res.send("OK");
+    };
+    // res.send("OK");
   });
 }
 
@@ -101,7 +101,7 @@ function sendBoleto(result, res) {
     if(err) {
       // handle error
       console.log(err);
-      res.send('Ocorreu um erro ao enviar sua mensagem');
+      res.send('Ocorreu um erro ao enviar o email com boleto');
       return;
     }
     res.send("OK");
@@ -137,94 +137,9 @@ export function create(req) {
 
 export function postPagarme(req, res) {
 
-  var amountTransaction = req.body.amount;
-  var donatedTo = req.body.org;
-  var message = req.body.message;
-  var dezPorcento = req.body.doebem;
-  var periodo = req.body.periodo;
-
-  // console.log(req.body.customer);
-
-  console.log(req.body);
-
-  // if (req.body.payment_method == 'boleto' ) {
-  //   pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
-  //     .then(client => client.transactions.create({
-  //       amount: req.body.amount,
-  //       payment_method: req.body.payment_method,
-  //       postback_url: 'http://requestb.in/pkt7pgpk',
-  //       document_number: req.body.customer.document_number,
-  //       customer: {
-  //           name: req.body.customer.name,
-  //           document_number: req.body.customer.document_number,
-  //           email: req.body.customer.email,
-  //           address: {
-  //             zipcode: req.body.customer.address.zipcode,
-  //             street: req.body.customer.address.street,
-  //             street_number: req.body.customer.address.street_number,
-  //             complementary: req.body.customer.address.complementary,
-  //             neighborhood: req.body.customer.address.neighborhood,
-  //             city: req.body.customer.address.street.city,
-  //             state: req.body.customer.address.street.state
-  //           }
-  //       },
-  //       metadata:{
-  //           org: "Teste",
-  //           periodo: "Junho",
-  //           doebem: "True",
-  //           message: "Teste"
-  //       }
-  //     })
-  //     .then(transaction => { 
-  //         console.log(transaction);
-  //         res.send("OK");
-  //     }))
-  // } else if (req.body.payment_method == 'credit_card') {
-  //   pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
-  //     .then(client => client.transactions.create({
-  //       card_hash: req.body.card_hash,
-  //       amount: req.body.amount,
-  //       payment_method: req.body.payment_method,
-  //       postback_url: 'http://requestb.in/pkt7pgpk',
-  //       document_number: req.body['customer']['document_number'],
-  //       customer: {
-  //           name: req.body.customer.name,
-  //           document_number: req.body.customer.document_number,
-  //           email: req.body.customer.email,
-  //           address: {
-  //             zipcode: req.body.customer.address.zipcode,
-  //             street: req.body.customer.address.street,
-  //             street_number: req.body.customer.address.street_number,
-  //             complementary: req.body.customer.address.complementary,
-  //             neighborhood: req.body.customer.address.neighborhood,
-  //             city: req.body.customer.address.street.city,
-  //             state: req.body.customer.address.street.state
-  //           }
-  //       },
-  //       metadata:{
-  //               org: "Teste",
-  //               periodo: "Junho",
-  //               doebem: "True",
-  //               message: "Teste"
-  //       }
-  //     }))
-  //     .then(transaction => {
-  //       console.log(transaction)
-  //       res.send("OK");
-  //         // client.transactions.capture;
-  //     })
-  //     .catch(err => {
-  //       console.log("VEIO PRO CARTÃO \n \n \n")
-  //       console.log('Deu ruim\n');
-  //       console.log(JSON.stringify(err));
-  //     });
-  // }
-  // 
-
-
   if (req.body.payment_method == 'boleto' && req.body.periodo == 'Avulsa') {
-    // pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
-    pagarme.client.connect({ api_key: 'ak_test_rnrtxW0T417zXA5Fq42gM2LBaqLrFq' })
+    pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
+    // pagarme.client.connect({ api_key: 'ak_test_rnrtxW0T417zXA5Fq42gM2LBaqLrFq' })
       .then(client => client.transactions.create({
         amount: req.body.amount,
         payment_method: req.body.payment_method,
@@ -243,33 +158,71 @@ export function postPagarme(req, res) {
               city: req.body.customer.address.street.city,
               state: req.body.customer.address.street.state}
         },
-        org: req.body.org,
-        periodo: req.body.periodo,
-        doebem: req.body.doebem,
-        message: req.body.message
+        metadata: {
+          org: req.body.org,
+          periodo: req.body.periodo,
+          doebem: req.body.doebem,
+          message: req.body.message
+        }
       })
-      .then(transaction => { 
-        console.log(transaction);
-        res.send("OK");
+      .then(result => { 
+        // console.log("This is the res: ", res);
+        console.log(result);
+        sendBoleto(result, res);
+        handleSendEmailDoebem(result, res);
+        // res.send("OK");
       }))
-  //     .then(result => { 
-  //         result.donated_to = donatedTo;
-  //         result.mensagem = message;
-  //         result.doebem = dezPorcento;
-  //         result.periodo = periodo
-  //         result.dados = req.body;
-  //         // sendBoleto(result, res);
-  //         // handleSendEmailDoebem(result, res);
-  //     }))
+  } else if (req.body.payment_method == 'boleto' && req.body.periodo == 'Mensal') {
+    pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
+      .then(client => client.subscriptions.create({
+          payment_method: req.body.payment_method,
+          customer: {
+            name: req.body.customer.name,
+            document_number: req.body.customer.document_number,
+            email: req.body.customer.email,
+            address: {
+              zipcode: req.body.customer.address.zipcode,
+              street: req.body.customer.address.street,
+              street_number: req.body.customer.address.street_number,
+              complementary: req.body.customer.address.complementary,
+              neighborhood: req.body.customer.address.neighborhood,
+              city: req.body.customer.address.street.city,
+              state: req.body.customer.address.street.state}
+          },
+          // change plan to be created on the fly
+          pĺan_id: 322919,
+          metadata: {
+            org: req.body.org,
+            periodo: req.body.periodo,
+            doebem: req.body.doebem,
+            message: req.body.message
+          }
+      }))
+      .then(subscription => {
+          console.log("Subscription created");
+          console.log(subscription);
+          // data = {
+          //     statusCode: 200,
+          //     msg: 'Sua assinatura foi criada com sucesso',
+          //     payment_method: subscription.payment_method
+          // }
+          // console.log(data);
+          // resolve(data);
+          // COMO MANDAR O BOLETO MENSALMENTE??
+      })
+      .catch(error => {
+          // console.log(JSON.stringify(error))
+
+          console.log(error)
+          // data = {
+          //     statusCode: 400,
+          //     msg: error.response.errors
+          // }
+          // resolve(data);
+      });
   } else if (req.body.payment_method == 'credit_card' && req.body.periodo == 'Avulsa') {
-
-    console.log("It came to cartão parte");
-
-    console.log(req.body.card_hash);
-    console.log(req.body.customer);
-
-    // pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
-    pagarme.client.connect({ api_key: 'ak_test_rnrtxW0T417zXA5Fq42gM2LBaqLrFq' })
+    pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
+    // pagarme.client.connect({ api_key: 'ak_test_rnrtxW0T417zXA5Fq42gM2LBaqLrFq' })
       .then(client => client.transactions.create({
         card_hash: req.body.card_hash,
         amount: req.body.amount,
@@ -290,7 +243,7 @@ export function postPagarme(req, res) {
               state: req.body.customer.address.street.state
             }
         },
-        metadata:{
+        metadata: {
           org: req.body.org,
           periodo: req.body.periodo,
           doebem: req.body.doebem,
@@ -298,83 +251,65 @@ export function postPagarme(req, res) {
         }
       }))
       .then(result => {
-        console.log(result);
-        // client.transactions.capture;
+        // console.log(result);
+        console.log("This is the res: ", res);
+        client.result.capture;
         handleSendEmail(result, res);
         handleSendEmailDoebem(result, res);
-        res.send("OK");
+        // res.send("OK");
       })
-      // .then(result => { 
-      //     result.donated_to = donatedTo;
-      //     result.mensagem = message;
-      //     result.doebem = dezPorcento;
-      //     result.periodo = periodo
-      //     result.dados = req.body;
-      //     console.log(result);
-      //     // client.transactions.capture;
-      //     handleSendEmail(result, res);
-      //     handleSendEmailDoebem(result, res);
-          
-      // })
       .catch(err => {
         console.log(err.response.errors);
       });
+    } else if (req.body.payment_method == 'credit_card' && req.body.periodo == 'Mensal') {
+      pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
+        .then(client => client.subscriptions.create({
+            payment_method: req.body.payment_method,
+            card_hash: req.body.card_hash,
+            customer: {
+              name: req.body.customer.name,
+              document_number: req.body.customer.document_number,
+              email: req.body.customer.email,
+              address: {
+                zipcode: req.body.customer.address.zipcode,
+                street: req.body.customer.address.street,
+                street_number: req.body.customer.address.street_number,
+                complementary: req.body.customer.address.complementary,
+                neighborhood: req.body.customer.address.neighborhood,
+                city: req.body.customer.address.street.city,
+                state: req.body.customer.address.street.state}
+            },
+            // change plan to be created on the fly
+            pĺan_id: 322919,
+            metadata: {
+              org: req.body.org,
+              periodo: req.body.periodo,
+              doebem: req.body.doebem,
+              message: req.body.message
+            }
+        }))
+        .then(subscription => {
+            console.log("Subscription created");
+            console.log(subscription);
+            // data = {
+            //     statusCode: 200,
+            //     msg: 'Sua assinatura foi criada com sucesso',
+            //     payment_method: subscription.payment_method
+            // }
+            // console.log(data);
+            // resolve(data);
+            // COMO MANDAR O BOLETO MENSALMENTE??
+        })
+        .catch(error => {
+            // console.log(JSON.stringify(error))
+
+            console.log(error)
+            // data = {
+            //     statusCode: 400,
+            //     msg: error.response.errors
+            // }
+            // resolve(data);
+        });
     }
-  }
-  // end of the if clause
-  // }
-  // pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
-  //   // .then(
-  //   //       // result => console.log(result),
-  //   //       // client => client.transactions.capture({ id: token, amount: amountTransaction }),
-  //   //       // client => console.log(client.transactions),
-  //   //       err => sendErro(err, res))
-  //   .then(result => { 
-  //     result.donated_to = donatedTo;
-  //     result.mensagem = message;
-  //     result.doebem = dezPorcento;
-  //     result.periodo = periodo
-  //     result.dados = req.body;
+}
 
-  //     console.log('result é');
-  //     console.log(result);
-
-  //     if(result.dados.payment_method == 'boleto') {
-  //       console.log('Funções sendBoleto e handleSendEmailDoebem foram chamadas');
-  //       client.transactions.create({
-  //         amount: result.dados.amount,
-  //         payment_method: 'boleto',
-  //         postback_url: 'http://requestb.in/pkt7pgpk',
-  //         customer: {
-  //             name: result.dados.customer.name,
-  //             document_number: result.dados.customer.name,
-  //         },
-  //       })
-  //       sendBoleto(result, res);
-  //       handleSendEmailDoebem(result, res);
-  //     } else {
-  //       handleSendEmail(result, res);
-  //       handleSendEmailDoebem(result, res);
-  //     }
-
-  //     // create transaction in our DB
-  //     Pagarme.create(result);
-  //   })
-  //   .then(
-  //     client => client.transactions.create({
-  //       amount: 1000,
-  //       payment_method: 'boleto',
-  //       postback_url: 'http://requestb.in/pkt7pgpk',
-  //       customer: {
-  //           name: 'Aardvark Silva',
-  //           document_number: '18152564000105',
-  //       },
-  //     }))
-  //   )
-  //   .catch(err => {
-  //     console.log('Deu ruim\n');
-  //     console.log(err.response.errors);
-  //   });
-
-  // end of the funcition
-  // }
