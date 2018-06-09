@@ -72,6 +72,11 @@ export class DoarController {
 
   callPagarme(pagarmeForm) {
 
+    console.log('recaptcha value:', pagarmeForm.myRecaptchaResponse);
+    if (pagarmeForm.myRecaptchaResponse == undefined) {
+      return;
+    }
+
     var mensagem = pagarmeForm.mensagem;
     var amountValue = pagarmeForm.amount;
     var periodicidade = pagarmeForm.periodicidade;
