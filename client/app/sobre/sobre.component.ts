@@ -48,10 +48,10 @@ export class SobreController {
               É Yunus&Youth Fellow e faz parte da rede Global Shapers.'
       },
       {
-        nome: 'Rhayana',
+        nome: 'Dominic',
         img: './assets/images/team/3.jpg',
         area: 'Pesquisa',
-        linkedin: 'https://www.linkedin.com/in/rhayana-holz-a1916a5a/',
+        linkedin: 'https://www.linkedin.com/in/dominic-doula-ribeiro-27303064/',
         email: 'rhayana.holz@doebem.org.br',
         bio: 'Formada em Economia pela Universidade Federal de Ouro Preto e mestre em \
               Economia pela Universidade Federal de Viçosa. Ao longo dos últimos cinco \
@@ -96,6 +96,12 @@ export class SobreController {
           twitter: '',
           linkedin: 'https://www.linkedin.com/in/barbaravilas/'
         },
+        {
+          nome: 'Adriana',
+          img: './assets/images/team/adriana.jpg',
+          twitter: '',
+          linkedin: 'https://www.linkedin.com/in/barbaravilas/'
+        }
     ];
   }
 
