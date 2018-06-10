@@ -52,7 +52,7 @@ export class SobreController {
         img: './assets/images/team/3.jpg',
         area: 'Pesquisa',
         linkedin: 'https://www.linkedin.com/in/dominic-doula-ribeiro-27303064/',
-        email: 'rhayana.holz@doebem.org.br',
+        email: 'dominic.ribeiro@doebem.org.br',
         bio: 'Formada em Economia pela Universidade Federal de Ouro Preto e mestre em \
               Economia pela Universidade Federal de Viçosa. Ao longo dos últimos cinco \
               anos tem se dedicado na área de pesquisa que envolve \
