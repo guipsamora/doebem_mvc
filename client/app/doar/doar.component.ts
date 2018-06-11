@@ -59,7 +59,7 @@ export class DoarController {
   ];
 
   periods = [
-    {value: 'Avulsa', label: 'Avulsa'},
+    {value: 'Única', label: 'Unica'},
     {value: 'Mensal', label: 'Mensal'},
   ];
 

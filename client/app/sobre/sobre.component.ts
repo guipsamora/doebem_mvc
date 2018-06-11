@@ -53,10 +53,9 @@ export class SobreController {
         area: 'Pesquisa',
         linkedin: 'https://www.linkedin.com/in/dominic-doula-ribeiro-27303064/',
         email: 'dominic.ribeiro@doebem.org.br',
-        bio: 'Formada em Economia pela Universidade Federal de Ouro Preto e mestre em \
-              Economia pela Universidade Federal de Viçosa. Ao longo dos últimos cinco \
-              anos tem se dedicado na área de pesquisa que envolve \
-              métodos quantitativos associados a Avaliação de Impacto Social.'
+        bio: 'Bacharel e Mestre em Economia pela Universidade Federal de Viçosa. \
+              Ao longo dos últimos cinco anos tem se dedicado a pesquisas em Economia e \
+              métodos quantitativos associados à Avaliação de Impacto.'
       },
       {
         nome: 'Guilherme',
@@ -100,7 +99,7 @@ export class SobreController {
           nome: 'Adriana',
           img: './assets/images/team/adriana.jpg',
           twitter: '',
-          linkedin: 'https://www.linkedin.com/in/barbaravilas/'
+          linkedin: 'https://www.linkedin.com/'
         }
     ];
   }

@@ -68,6 +68,7 @@ function handleSendEmailDoebem(result, res) {
     nome: result.customer.name,
     from: 'doebem 💙 <contato@doebem.org.br>',
     org: result.metadata.donated_to,
+    periodicidade: result.metadata.periodo,
     message: result.metadata.mensagem,
     link: result.boleto_url,
     email: result.customer.email,
@@ -138,7 +139,7 @@ export function create(req) {
 export function postPagarme(req, res) {
 
   // TRANSACTIONS BY BOLETO
-  if (req.body.payment_method == 'boleto' && req.body.periodo == 'Avulsa') {
+  if (req.body.payment_method == 'boleto' && req.body.periodo == 'Unica') {
     pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
       .then(client => client.transactions.create({
         amount: req.body.amount,
@@ -146,17 +147,18 @@ export function postPagarme(req, res) {
         postback_url: 'http://requestb.in/pkt7pgpk',
         document_number: req.body.customer.document_number,
         customer: {
-            name: req.body.customer.name,
-            document_number: req.body.customer.document_number,
-            email: req.body.customer.email,
-            address: {
-              zipcode: req.body.customer.address.zipcode,
-              street: req.body.customer.address.street,
-              street_number: req.body.customer.address.street_number,
-              complementary: req.body.customer.address.complementary,
-              neighborhood: req.body.customer.address.neighborhood,
-              city: req.body.customer.address.street.city,
-              state: req.body.customer.address.street.state}
+          name: req.body.customer.name,
+          document_number: req.body.customer.document_number,
+          email: req.body.customer.email,
+          address: {
+            zipcode: req.body.customer.address.zipcode,
+            street: req.body.customer.address.street,
+            street_number: req.body.customer.address.street_number,
+            complementary: req.body.customer.address.complementary,
+            neighborhood: req.body.customer.address.neighborhood,
+            city: req.body.customer.address.street.city,
+            state: req.body.customer.address.street.state
+          }
         },
         metadata: {
           org: req.body.org,
@@ -193,7 +195,8 @@ export function postPagarme(req, res) {
                 complementary: req.body.customer.address.complementary,
                 neighborhood: req.body.customer.address.neighborhood,
                 city: req.body.customer.address.street.city,
-                state: req.body.customer.address.street.state}
+                state: req.body.customer.address.street.state
+              }
             },
             pĺan_id: plan.id,
             charges: null,
@@ -208,6 +211,7 @@ export function postPagarme(req, res) {
             console.log("Subscription created successfully");
             console.log(result);
             handleSendEmailDoebem(result, res);
+            sendBoleto(result, res);
             // COMO MANDAR O BOLETO MENSALMENTE??
             // MANDAR EMAILS DE SUCESSO
         })
@@ -217,15 +221,15 @@ export function postPagarme(req, res) {
         });
     })
   // TRANSACTIONS BY CREDIT CARD
-  } else if (req.body.payment_method == 'credit_card' && req.body.periodo == 'Avulsa') {
-    pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
-      .then(client => client.transactions.create({
-        card_hash: req.body.card_hash,
-        amount: req.body.amount,
-        payment_method: req.body.payment_method,
-        postback_url: 'http://requestb.in/pkt7pgpk',
-        document_number: req.body['customer']['document_number'],
-        customer: {
+  } else if (req.body.payment_method == 'credit_card' && req.body.periodo == 'Unica') {
+      pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
+        .then(client => client.transactions.create({
+          card_hash: req.body.card_hash,
+          amount: req.body.amount,
+          payment_method: req.body.payment_method,
+          postback_url: 'http://requestb.in/pkt7pgpk',
+          document_number: req.body['customer']['document_number'],
+          customer: {
             name: req.body.customer.name,
             document_number: req.body.customer.document_number,
             email: req.body.customer.email,
@@ -238,23 +242,23 @@ export function postPagarme(req, res) {
               city: req.body.customer.address.street.city,
               state: req.body.customer.address.street.state
             }
-        },
-        metadata: {
-          org: req.body.org,
-          periodo: req.body.periodo,
-          doebem: req.body.doebem,
-          message: req.body.message
-        }
-      }))
-      .then(result => {
-        client.result.capture;
-        handleSendEmail(result, res);
-        handleSendEmailDoebem(result, res);
-      })
-      .catch(err => {
-        console.log(err.response.errors);
-      });
-    } else if (req.body.payment_method == 'credit_card' && req.body.periodo == 'Mensal') {
+          },
+          metadata: {
+            org: req.body.org,
+            periodo: req.body.periodo,
+            doebem: req.body.doebem,
+            message: req.body.message
+          }
+        }))
+        .then(result => {
+          client.result.capture;
+          handleSendEmail(result, res);
+          handleSendEmailDoebem(result, res);
+        })
+        .catch(err => {
+          console.log(err.response.errors);
+        });
+  } else if (req.body.payment_method == 'credit_card' && req.body.periodo == 'Mensal') {
       pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
         .then(client => client.plans.create({
           amount: req.body.amount,
@@ -279,7 +283,8 @@ export function postPagarme(req, res) {
                     complementary: req.body.customer.address.complementary,
                     neighborhood: req.body.customer.address.neighborhood,
                     city: req.body.customer.address.street.city,
-                    state: req.body.customer.address.street.state}
+                    state: req.body.customer.address.street.state
+                  }
                 },
                 pĺan_id: plan.plan.id,
                 charges: null,
@@ -292,17 +297,19 @@ export function postPagarme(req, res) {
                 }
             }))
             .then(result => {
-                console.log("Subscription created");
+                client.result.capture;
+                console.log("Subscription created");                
                 console.log(result);
+                handleSendEmailDoebem(result, res);
                 handleSendEmailDoebem(result, res);
                 // COMO MANDAR O BOLETO MENSALMENTE??
                 // FAZER MENSAGEM DE DOAÇÃO MENSAL??
             })
             .catch(error => {
-                console.log(error)
+                console.log(error);
             });
-        })
-    }
+      })
+  }
 }
 
 
