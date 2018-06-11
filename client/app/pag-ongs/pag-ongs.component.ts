@@ -77,6 +77,11 @@ export class PagOngs {
     {value: this.Custom, label: '' + this.Custom, input: true, isChecked: false},
   ];
 
+  periods = [
+    {value: 'Unica', label: 'Única'},
+    {value: 'Mensal', label: 'Mensal'},
+  ];
+
   $onInit() {
     this.carregaLista();
   }
@@ -102,6 +107,7 @@ export class PagOngs {
 
     var mensagem = pagarmeForm.mensagem;
     var amountValue = pagarmeForm.amount;
+    var periodicidade = pagarmeForm.periodicidade;
     var headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
     var dezPorcento = pagarmeForm.doebem;
 
@@ -126,15 +132,21 @@ export class PagOngs {
 
         data.amount = amountValue;
         data.org = this.selected;
+        data.periodo = periodicidade;
         data.message = mensagem;
         data.doebem = dezPorcento;
 
         console.log(data);
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
         this.$http.post('/api/pagarme', data)
-          .then(res => { console.log(res); }, error => { console.log(error); })
+          .then(res => { 
+                  console.log(res); 
+                }, 
+                error => { 
+                  console.log(error); 
+                  return;
+                })
           .then(this.$location.path('/sucesso'));
-
       },
       error: function(err) {
         console.log(err);
@@ -152,7 +164,7 @@ export class PagOngs {
       'paymentMethods': 'boleto,credit_card',
       'uiColor': '#3f51b5',
       'postbackUrl': 'http://sandbox-doebem.herokuapp.com/api/pagarme',
-      'createToken': 'true',
+      'createToken': 'false',
       'interestRate': 0,
       'freeInstallments': 0,
       'defaultInstallment': 1,

@@ -77,6 +77,11 @@ export class NavbarComponent {
     {value: this.Custom, label: '' + this.Custom, input: true, isChecked: false},
   ];
 
+  periods = [
+    {value: 'Unica', label: 'Única'},
+    {value: 'Mensal', label: 'Mensal'},
+  ];
+
   constructor($location, Auth, $document, $mdDialog, $scope, $http) {
     'ngInject';
     this.$location = $location;
@@ -136,6 +141,7 @@ export class NavbarComponent {
     }
     var mensagem = pagarmeForm.mensagem;
     var amountValue = pagarmeForm.amount;
+    var periodicidade = pagarmeForm.periodicidade;    
     var headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
     var dezPorcento = pagarmeForm.doebem;
 
@@ -161,6 +167,7 @@ export class NavbarComponent {
 
         data.amount = amountValue;
         data.org = this.selected;
+        data.periodo = periodicidade;        
         data.message = mensagem;
         data.doebem = dezPorcento;
 
@@ -187,7 +194,7 @@ export class NavbarComponent {
       'paymentMethods': 'boleto,credit_card',
       'uiColor': '#3f51b5',
       'postbackUrl': 'http://sandbox-doebem.herokuapp.com/api/pagarme',
-      'createToken': 'true',
+      'createToken': 'false',
       'interestRate': 0,
       'freeInstallments': 0,
       'defaultInstallment': 1,
