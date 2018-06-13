@@ -136,12 +136,12 @@ export class NavbarComponent {
 
   callPagarme(pagarmeForm) {
     console.log('recaptcha value:', pagarmeForm.myRecaptchaResponse);
-    if (pagarmeForm.myRecaptchaResponse == undefined) {
+    if (pagarmeForm.myRecaptchaResponse === undefined) {
       return;
     }
     var mensagem = pagarmeForm.mensagem;
     var amountValue = pagarmeForm.amount;
-    var periodicidade = pagarmeForm.periodicidade;    
+    var periodicidade = pagarmeForm.periodicidade;
     var headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
     var dezPorcento = pagarmeForm.doebem;
 
@@ -167,7 +167,7 @@ export class NavbarComponent {
 
         data.amount = amountValue;
         data.org = this.selected;
-        data.periodo = periodicidade;        
+        data.periodo = periodicidade;
         data.message = mensagem;
         data.doebem = dezPorcento;
 
@@ -226,7 +226,8 @@ export class NavbarComponent {
 function DialogController($scope, $mdDialog, $inject) {
 
     $scope.pagarmeForm = {
-      amount: 2000
+      amount: 2000,
+      periodicidade: 'Mensal'
     };
 
     $scope.hide = function() {

@@ -83,7 +83,7 @@ export class PagOngs {
   ];
 
   $onInit() {
-    this.carregaLista();
+    this.carregaLista()
   }
 
   carregaVideo() {
@@ -207,7 +207,8 @@ export class PagOngs {
 function DialogController($scope, $mdDialog, $inject, $log, $http, user) {
 
   $scope.pagarmeForm = {
-    amount: 2000
+    amount: 2000,
+    periodicidade: 'Mensal'
   };
 
   $scope.hide = function() {
