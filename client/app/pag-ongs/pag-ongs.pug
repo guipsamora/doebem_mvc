@@ -106,17 +106,17 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
                           name="inputValue"
                           required)
           br
-          h4 Periodicidade da sua doação:
-          div.md-bock(layout-align="center center")
-            md-radio-group(layout="row" 
-                           layout-sm="column" 
-                           layout-xs="column" 
-                           layout-wrap 
-                           flex 
-                           ng-model="pagarmeForm.periodicidade")
-              div(ng-repeat="period in $ctrl.periods")
-                md-radio-button(ng-value="period.value" aria-label="period.value") {{period.label}}
-          br          
+          //- h4 Periodicidade da sua doação:
+          //- div.md-bock(layout-align="center center")
+          //-   md-radio-group(layout="row" 
+          //-                  layout-sm="column" 
+          //-                  layout-xs="column" 
+          //-                  layout-wrap 
+          //-                  flex 
+          //-                  ng-model="pagarmeForm.periodicidade")
+          //-     div(ng-repeat="period in $ctrl.periods")
+          //-       md-radio-button(ng-value="period.value" aria-label="period.value") {{period.label}}
+          //- br          
           md-input.md-block(layout="row")
             md-checkbox(ng-model="pagarmeForm.doebem" ng-watch ng-checked="true") Acrescentar +10% para a doebem?
           md-input-container.md-block(layout="row")
