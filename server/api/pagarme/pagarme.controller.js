@@ -66,6 +66,7 @@ function handleSendEmailDoebemUnica(result, res) {
     to: 'g9m1y7l6p2r0k6d2@doebem.slack.com',
     subject: 'Dados doação concluída', // REQUIRED.
     amount: result.amount / 100,
+    payment: result.payment_method,
     nome: result.customer.name,
     from: 'doebem 💙 <contato@doebem.org.br>',
     org: result.org,
@@ -83,7 +84,7 @@ function handleSendEmailDoebemUnica(result, res) {
       res.send('Ocorreu um erro ao enviar sua mensagem');
       return;
     }
-    res.send("OK");
+    // res.send("OK");
   });
 }
 
@@ -96,12 +97,13 @@ function handleSendEmailDoebemMensal(result, res) {
     to: 'g9m1y7l6p2r0k6d2@doebem.slack.com',
     subject: 'Dados doação concluída', // REQUIRED.
     amount: result.metadata.amount / 100,
+    payment: result.payment_method,
     nome: result.customer.name,
     from: 'doebem 💙 <contato@doebem.org.br>',
     org: result.metadata.org,
     periodicidade: result.metadata.periodo,
     message: result.metadata.message,
-    link: result.boleto_url,
+    link: result.current_transaction.boleto_url,
     email: result.customer.email,
     dezPorcento: result.metadata.doebem,
     periodo: result.metadata.periodo,
@@ -113,7 +115,7 @@ function handleSendEmailDoebemMensal(result, res) {
       res.send('Ocorreu um erro ao enviar sua mensagem');
       return;
     }
-    res.send("OK");
+    // res.send("OK");
   });
 }
 
@@ -136,7 +138,7 @@ function sendBoleto(result, res) {
       res.send('Ocorreu um erro ao enviar o email com boleto');
       return;
     }
-    res.send("OK");
+    // res.send("OK");
   });
 }
 
@@ -195,17 +197,16 @@ export function postPagarme(req, res) {
           org: req.body.org,
           periodo: req.body.periodo,
           doebem: req.body.doebem,
-          message: req.body.message
+          message: req.body.message,
+          amount: req.body.amount
         }
       })
-      .then(result => {
-        client.result.capture;
-        // client.transactions.capture;
-        // client.transaction.capture;
-        console.log(result);
-        sendBoleto(result, res);
-        handleSendEmailDoebemUnica(result, res);
-        Pagarme.create(result);
+      .then(transaction => {
+        client.transactions.capture({id: transaction.id});
+        console.log(transaction);
+        sendBoleto(transaction, res);
+        handleSendEmailDoebemUnica(transaction, res);
+        Pagarme.create(transaction);
       }))
   } else if (req.body.payment_method == 'boleto' && req.body.periodo == 'Mensal') {
     pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
@@ -233,13 +234,14 @@ export function postPagarme(req, res) {
                 state: req.body.customer.address.street.state
               }
             },
-            pĺan_id: plan.id,
+            plan_id: plan.id,
             charges: null,
             metadata: {
               org: req.body.org,
               periodo: req.body.periodo,
               doebem: req.body.doebem,
-              message: req.body.message
+              message: req.body.message,
+              amount: req.body.amount
             }
         }))
         .then(result => {
@@ -252,7 +254,7 @@ export function postPagarme(req, res) {
             // MANDAR EMAILS DE SUCESSO
         })
         .catch(error => {
-            console.log(error);
+            console.log(JSON.stringify(error));
             // MANDAR MENSAGENS DE FRACASSO
         });
     })
@@ -278,26 +280,30 @@ export function postPagarme(req, res) {
               neighborhood: req.body.customer.address.neighborhood,
               city: req.body.customer.address.street.city,
               state: req.body.customer.address.street.state
-            }
+            },
+            phone: {
+              ddd: req.body.customer.phone.ddd,
+              number: req.body.customer.phone.number
+            }            
           },
           metadata: {
             org: req.body.org,
             periodo: req.body.periodo,
             doebem: req.body.doebem,
             message: req.body.message,
-            amount: plan.amount
+            amount: req.body.amount
           }
         }))
         .then(transaction => {
           console.log(transaction);
+          client.transactions.capture({id: transaction.id});
           handleSendEmail(transaction, res);
           handleSendEmailDoebemUnica(transaction, res);
-          client.transaction.capture;
           Pagarme.create(transaction);
         })
-        .catch(err => {
-          console.log(err.response.errors);
-        });
+        .catch(error => {
+          console.log(JSON.stringify(error));
+        })
   } else if (req.body.payment_method === 'credit_card' && req.body.periodo === 'Mensal') {
     console.log("Entrei em 'credit_card' && 'Mensal' ")
       pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
@@ -335,7 +341,7 @@ export function postPagarme(req, res) {
                     number: req.body.customer.phone.number
                   }
                 },
-                pĺan_id: plan.id,
+                plan_id: plan.id, 
                 charges: null,
                 metadata: {
                   org: req.body.org,
@@ -347,7 +353,6 @@ export function postPagarme(req, res) {
                 }
             }))
             .then(result => {
-              // client.subscriptions.capture;
               console.log("Subscription created");                
               console.log(result);
               handleSendEmail(result, res);
