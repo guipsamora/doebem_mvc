@@ -96,7 +96,7 @@ export class SobreController {
           linkedin: 'https://www.linkedin.com/in/barbaravilas/'
         },
         {
-          nome: 'Adriana',
+          nome: 'Adrianna',
           img: './assets/images/team/adriana.jpg',
           twitter: '',
           linkedin: 'https://www.linkedin.com/'
