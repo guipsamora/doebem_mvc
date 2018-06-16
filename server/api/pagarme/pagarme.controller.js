@@ -34,6 +34,7 @@ mailer.extend(app, {
 app.set('views', `${__dirname}/`);//path.resolve( __dirname, '/'));
 app.set('view engine', 'pug');
 
+// EMAILS P/ DOADOR TRANSAÇÕES
 function handleSendEmail(result, res) {
   app.mailer.send({
     template: 'email',
@@ -42,7 +43,7 @@ function handleSendEmail(result, res) {
   {
     to: result.customer.email,
     subject: 'Obrigado por sua doação', // REQUIRED.
-    amount: result.amount / 100,
+    amount: result.metadata.amount / 100,
     nome: result.customer.name.split(' ')[0],
     from: 'doebem 💙 <contato@doebem.org.br>',
   }, 
@@ -57,8 +58,12 @@ function handleSendEmail(result, res) {
   });
 }
 
-// TRANSACAO UNICA
-function handleSendEmailDoebemUnica(result, res) {
+// EMAILS P/ SLACK DOEBEM 
+function handleSendEmailDoebemTransacao(result, res) {
+
+  console.log("Estou em unica");
+  console.log(result);
+
   app.mailer.send({
     template: 'emaildoebem',
   },
@@ -69,7 +74,7 @@ function handleSendEmailDoebemUnica(result, res) {
     payment: result.payment_method,
     nome: result.customer.name,
     from: 'doebem 💙 <contato@doebem.org.br>',
-    org: result.org,
+    org: result.metadata.org,
     periodicidade: result.metadata.periodo,
     message: result.metadata.message,
     link: result.boleto_url,
@@ -84,12 +89,12 @@ function handleSendEmailDoebemUnica(result, res) {
       res.send('Ocorreu um erro ao enviar sua mensagem');
       return;
     }
-    // res.send("OK");
+    res.send("OK");
   });
 }
 
-// TRANSACAO MENSAL - RECORRENCIA
-function handleSendEmailDoebemMensal(result, res) {
+function handleSendEmailDoebemAssinatura(result, res) {
+
   app.mailer.send({
     template: 'emaildoebem',
   },
@@ -115,11 +120,12 @@ function handleSendEmailDoebemMensal(result, res) {
       res.send('Ocorreu um erro ao enviar sua mensagem');
       return;
     }
-    // res.send("OK");
+    res.send("OK");
   });
 }
 
-function sendBoleto(result, res) {
+// EMAILS P/ DOADOR BOLETOS
+function sendBoletoTransacao(result, res) {
   app.mailer.send({
     template: 'boleto',
     bcc: 'contato@doebem.org.br'
@@ -138,7 +144,30 @@ function sendBoleto(result, res) {
       res.send('Ocorreu um erro ao enviar o email com boleto');
       return;
     }
-    // res.send("OK");
+    res.send("OK");
+  });
+}
+
+function sendBoletoAssinatura(result, res) {
+  app.mailer.send({
+    template: 'boleto',
+    bcc: 'contato@doebem.org.br'
+  },
+  {
+    to: result.customer.email,
+    subject: 'Obrigado por sua doação - Segue boleto', // REQUIRED.
+    link: result.current_transaction.boleto_url,
+    from: 'doebem 💙 <contato@doebem.org.br>',
+    nome: result.customer.name.split(' ')[0],
+  }, 
+  err => {
+    if(err) {
+      // handle error
+      console.log(err);
+      res.send('Ocorreu um erro ao enviar o email com boleto');
+      return;
+    }
+    res.send("OK");
   });
 }
 
@@ -172,7 +201,7 @@ export function create(req) {
 export function postPagarme(req, res) {
 
   // TRANSACTIONS BY BOLETO
-  if (req.body.payment_method == 'boleto' && req.body.periodo == 'Unica') {
+  if (req.body.payment_method === 'boleto' && req.body.periodo === 'Unica') {
     pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
       .then(client => client.transactions.create({
         amount: req.body.amount,
@@ -191,8 +220,13 @@ export function postPagarme(req, res) {
             neighborhood: req.body.customer.address.neighborhood,
             city: req.body.customer.address.street.city,
             state: req.body.customer.address.street.state
+          },
+          phone: {
+            ddd: req.body.customer.phone.ddd,
+            number: req.body.customer.phone.number
           }
         },
+        async: "false",
         metadata: {
           org: req.body.org,
           periodo: req.body.periodo,
@@ -200,15 +234,17 @@ export function postPagarme(req, res) {
           message: req.body.message,
           amount: req.body.amount
         }
-      })
-      .then(transaction => {
-        client.transactions.capture({id: transaction.id});
-        console.log(transaction);
-        sendBoleto(transaction, res);
-        handleSendEmailDoebemUnica(transaction, res);
-        Pagarme.create(transaction);
       }))
-  } else if (req.body.payment_method == 'boleto' && req.body.periodo == 'Mensal') {
+      .then(response => {
+        console.log(response);
+        sendBoletoTransacao(response, res);
+        handleSendEmailDoebemTransacao(response, res);
+      })
+      .catch(error => {
+        console.log((error));
+        // MANDAR MENSAGENS DE FRACASSO
+      })
+  } else if (req.body.payment_method === 'boleto' && req.body.periodo === 'Mensal') {
     pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
     .then(client => client.plans.create({
       amount: req.body.amount,
@@ -247,10 +283,9 @@ export function postPagarme(req, res) {
         .then(result => {
             console.log("Subscription created successfully");
             console.log(result);
-            handleSendEmailDoebemMensal(result, res);
-            sendBoleto(result, res);
+            handleSendEmailDoebemAssinatura(result, res);
+            sendBoletoAssinatura(result, res);
             Pagarme.create(result);
-            // COMO MANDAR O BOLETO MENSALMENTE??
             // MANDAR EMAILS DE SUCESSO
         })
         .catch(error => {
@@ -286,6 +321,7 @@ export function postPagarme(req, res) {
               number: req.body.customer.phone.number
             }            
           },
+          // async: "false",
           metadata: {
             org: req.body.org,
             periodo: req.body.periodo,
@@ -296,13 +332,15 @@ export function postPagarme(req, res) {
         }))
         .then(transaction => {
           console.log(transaction);
-          client.transactions.capture({id: transaction.id});
+          // CHECAR ISSO AQUI COM CALMA
+          // client.transactions.capture({id: transaction.id});
           handleSendEmail(transaction, res);
-          handleSendEmailDoebemUnica(transaction, res);
+          handleSendEmailDoebemTransacao(transaction, res);
           Pagarme.create(transaction);
         })
         .catch(error => {
-          console.log(JSON.stringify(error));
+          // console.log(JSON.stringify(error));
+          console.log(error);
         })
   } else if (req.body.payment_method === 'credit_card' && req.body.periodo === 'Mensal') {
     console.log("Entrei em 'credit_card' && 'Mensal' ")
@@ -356,13 +394,14 @@ export function postPagarme(req, res) {
               console.log("Subscription created");                
               console.log(result);
               handleSendEmail(result, res);
-              handleSendEmailDoebemMensal(result, res);
+              handleSendEmailDoebemAssinatura(result, res);
               Pagarme.create(result);
               // COMO MANDAR O BOLETO MENSALMENTE??
               // FAZER MENSAGEM DE DOAÇÃO MENSAL??
             })
             .catch(error => {
                 console.log("deu erro");
+                console.log(error);
                 console.log(JSON.stringify(error));
             });
       })
