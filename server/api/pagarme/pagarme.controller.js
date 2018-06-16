@@ -31,51 +31,6 @@ function handleSendEmail(result, res) {
     template: 'email',
     bcc: 'contato@doebem.org.br',
   },
-<<<<<<< HEAD
-    {
-      to: result.customer.email,
-      subject: 'Obrigado por sua doação', // REQUIRED.
-      amount: result.amount / 100,
-      nome: result.customer.name.split(' ')[0],
-      from: 'doebem 💙 <contato@doebem.org.br>',
-    }, err => {
-      if(err) {
-        // handle error
-        console.log(err);
-
-        res.send('Ocorreu um erro ao enviar sua mensagem');
-        return;
-      }
-      res.send(result);
-    });
-}
-
-function handleSendEmailDoebem(result, res) {
-  app.mailer.send({
-    template: 'emaildoebem',
-  },
-    {
-      to: 'g9m1y7l6p2r0k6d2@doebem.slack.com',
-      subject: 'Dados doação concluída', // REQUIRED.
-      amount: result.amount / 100,
-      nome: result.customer.name,
-      from: 'doebem 💙 <contato@doebem.org.br>',
-      org: result.donated_to,
-      message: result.mensagem,
-      link: result.boleto_url,
-      email: result.customer.email,
-      dezPorcento: result.doebem
-    }, err => {
-      if(err) {
-        // handle error
-        console.log(err);
-
-        res.send('Ocorreu um erro ao enviar sua mensagem');
-        return;
-      }
-      res.send(result);
-    });
-=======
   {
     to: result.customer.email,
     subject: 'Obrigado por sua doação', // REQUIRED.
@@ -158,7 +113,6 @@ function handleSendEmailDoebemAssinatura(result, res) {
     }
     res.send("OK");
   });
->>>>>>> recorrencia
 }
 
 // EMAILS P/ DOADOR BOLETOS
@@ -234,33 +188,6 @@ export function create(req) {
 }
 
 export function postPagarme(req, res) {
-<<<<<<< HEAD
-  var token = req.body.token;
-  var amountTransaction = req.body.amount;
-  var donatedTo = req.body.org;
-  var message = req.body.message;
-  var dezPorcento = req.body.doebem;
-
-  console.log(dezPorcento);
-  console.log('\n\n\n\n');
-  console.log(req.body);
-
-  pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
-    .then(client => client.transactions.capture({ id: token, amount: amountTransaction }),
-          err => sendErro(err, res))
-    .then(result => { 
-      result.donated_to = donatedTo;
-      result.mensagem = message;
-      result.doebem = dezPorcento;
-
-      if(result.payment_method == 'boleto') {
-        sendBoleto(result, res);
-        handleSendEmailDoebem(result, res);
-      } else {
-        handleSendEmail(result, res);
-        handleSendEmailDoebem(result, res);
-      }
-=======
 
   // TRANSACTIONS BY BOLETO
   if (req.body.payment_method === 'boleto' && req.body.periodo === 'Unica') {
@@ -468,13 +395,4 @@ export function postPagarme(req, res) {
             });
       })
   }
-}
-
->>>>>>> recorrencia
-
-      Pagarme.create(result);
-    })
-    .catch(err => {
-      console.log(err.response.errors);
-    });
 }
