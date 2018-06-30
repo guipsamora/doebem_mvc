@@ -98,13 +98,17 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
               md-radio-button.md-radio-interactive(ng-value="{{$ctrl.Custom}}" 
                                                    aria-label="option.value" 
                                                    ng-if="option.input") 
-                input#nav(ng-model="pagarmeForm.input" type="text" 
+                input#nav(ng-model="pagarmeForm.input" 
+                          type="text"
                           ui-money-mask currency-symbol="R$" placeholder="Outro"
                           class="ng-pristine ng-untouched ng-valid ng-empty"
                           maxlength="8"
-                          min="9"
                           name="inputValue"
-                          required)
+                          required
+                          min="10")
+                          //- https://assisrafael.github.io/angular-input-masks/
+                          //- type="number"
+                          //- https://stackoverflow.com/questions/8761852/maximum-and-minimum-values-in-a-textbox
           br
           //- h4 Periodicidade da sua doação:
           //- div.md-bock(layout-align="center center")
