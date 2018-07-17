@@ -118,6 +118,12 @@ export class NavbarComponent {
     console.log(form);
   }
 
+  blured(pagarmeForm) {
+    if (pagarmeForm.input < 10) {
+      pagarmeForm.input = 10;
+    }
+  }
+
   showDialog() {
     this.dialog = this.$mdDialog.show({
       scope: this.$scope,
@@ -161,8 +167,8 @@ export class NavbarComponent {
     // INICIAR A INSTÂNCIA DO CHECKOUT
     // declarando um callback de sucesso
     var checkout = new PagarMeCheckout.Checkout({
-
-      'encryption_key': 'ek_live_3yykMegYY2XTPClgA1qjui2gSlvVzG',
+      'encryption_key': 'ek_test_QifcmAvy9wCtsgrUr04o884mXp1HiP',
+      // 'encryption_key': 'ek_live_3yykMegYY2XTPClgA1qjui2gSlvVzG',
       success: (data) => {
 
         data.amount = amountValue;
@@ -194,8 +200,8 @@ export class NavbarComponent {
       'paymentMethods': 'boleto,credit_card',
       'uiColor': '#3f51b5',
       'postbackUrl': 'http://sandbox-doebem.herokuapp.com/api/pagarme',
-      // 'createToken': 'false',
-      'createToken': 'true',
+      'createToken': 'false',
+      // 'createToken': 'true',
       'interestRate': 0,
       'freeInstallments': 0,
       'defaultInstallment': 1,

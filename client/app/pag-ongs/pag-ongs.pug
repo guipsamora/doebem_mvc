@@ -100,27 +100,25 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
                                                    ng-if="option.input") 
                 input#nav(ng-model="pagarmeForm.input" 
                           type="text"
-                          ui-money-mask currency-symbol="R$" placeholder="Outro"
+                          ui-money-mask currency-symbol="R$" placeholder="*Outro"
                           class="ng-pristine ng-untouched ng-valid ng-empty"
                           maxlength="8"
                           name="inputValue"
                           required
-                          min="10")
-                          //- https://assisrafael.github.io/angular-input-masks/
-                          //- type="number"
-                          //- https://stackoverflow.com/questions/8761852/maximum-and-minimum-values-in-a-textbox
+                          ng-blur="$ctrl.blured(pagarmeForm)")
+          h6 * Valor mínimo de R$10,00
           br
-          //- h4 Periodicidade da sua doação:
-          //- div.md-bock(layout-align="center center")
-          //-   md-radio-group(layout="row" 
-          //-                  layout-sm="column" 
-          //-                  layout-xs="column" 
-          //-                  layout-wrap 
-          //-                  flex 
-          //-                  ng-model="pagarmeForm.periodicidade")
-          //-     div(ng-repeat="period in $ctrl.periods")
-          //-       md-radio-button(ng-value="period.value" aria-label="period.value") {{period.label}}
-          //- br          
+          h4 Periodicidade da sua doação:
+          div.md-bock(layout-align="center center")
+            md-radio-group(layout="row" 
+                           layout-sm="column" 
+                           layout-xs="column" 
+                           layout-wrap 
+                           flex 
+                           ng-model="pagarmeForm.periodicidade")
+              div(ng-repeat="period in $ctrl.periods")
+                md-radio-button(ng-value="period.value" aria-label="period.value") {{period.label}}
+          br          
           md-input.md-block(layout="row")
             md-checkbox(ng-model="pagarmeForm.doebem" ng-watch ng-checked="true") Acrescentar +10% para a doebem?
           md-input-container.md-block(layout="row")
