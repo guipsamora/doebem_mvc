@@ -41,6 +41,7 @@ div.animated.fadeIn#metodologia
                     input#nav(ng-model="pagarmeForm.input" type="text" 
                               ui-money-mask currency-symbol="R$" placeholder="Outro"
                               class="ng-pristine ng-untouched ng-valid ng-empty"
+                              ng-blur="$ctrl.blured(pagarmeForm)"
                               maxlength="8")
             br
             h4 Periodicidade da sua doação:

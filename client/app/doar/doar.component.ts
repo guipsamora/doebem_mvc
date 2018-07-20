@@ -63,6 +63,12 @@ export class DoarController {
     {value: 'Mensal', label: 'Mensal'},
   ];
 
+  blured(pagarmeForm) {
+    if (pagarmeForm.input < 10) {
+      pagarmeForm.input = 10;
+    }
+  }
+
   $onInit() {
     this.$scope.pagarmeForm = {
       amount: 2000,
