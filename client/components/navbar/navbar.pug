@@ -26,10 +26,8 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
           a#Itens(href='./givewell') GIVEWELL                  
         li.menuAnchor(ng-repeat='item in $ctrl.menu')
           a#Itens(ng-href='{{item.link}}') {{item.title}}
-        //- a#Itens(target="_blank" href="https://medium.com/doebem")
-        //-   md-button#blog.md-raized.md-primary Blog
-        a#Itens(target="_blank" href="https://goo.gl/forms/ropSybLvwigSp2te2")
-          md-button#blog.md-raized.md-primary(value="Carriage&#13;&#10;return&#13;&#10;separators") &nbsp; Doe sua festa! &nbsp;
+        a#Itens(target="_blank" href="https://medium.com/doebem")
+          md-button#blog.md-raized.md-primary Blog
         a#Itens(target="_blank" href="")
           md-button#doar_button.md-raized.md-primary(ng-click="$ctrl.showDialog()") Doar
 
