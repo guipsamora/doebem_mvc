@@ -89,7 +89,7 @@ export class PagOngs {
   }
 
   $onInit() {
-    this.carregaLista()
+    this.carregaLista();
   }
 
   carregaVideo() {
@@ -107,7 +107,7 @@ export class PagOngs {
   callPagarme(pagarmeForm) {
 
     console.log('recaptcha value:', pagarmeForm.myRecaptchaResponse);
-    if (pagarmeForm.myRecaptchaResponse == undefined) {
+    if (pagarmeForm.myRecaptchaResponse === undefined) {
       return;
     }
 
@@ -145,11 +145,11 @@ export class PagOngs {
         console.log(data);
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
         this.$http.post('/api/pagarme', data)
-          .then(res => { 
-                  console.log(res); 
-                }, 
-                error => { 
-                  console.log(error); 
+          .then(res => {
+                  console.log(res);
+                },
+                error => {
+                  console.log(error);
                   return;
                 })
           .then(this.$location.path('/sucesso'));
@@ -170,8 +170,7 @@ export class PagOngs {
       'paymentMethods': 'boleto,credit_card',
       'uiColor': '#3f51b5',
       'postbackUrl': 'http://sandbox-doebem.herokuapp.com/api/pagarme',
-      // 'createToken': 'false',
-      'createToken': 'true',
+      'createToken': 'false',
       'interestRate': 0,
       'freeInstallments': 0,
       'defaultInstallment': 1,
