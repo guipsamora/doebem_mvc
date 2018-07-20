@@ -226,6 +226,7 @@ export function postPagarme(req, res) {
       }))
       .then(response => {
         console.log(response);
+        Pagarme.create(result);
         sendBoletoTransacao(response, res);
         handleSendEmailDoebemTransacao(response, res);
       })
@@ -235,11 +236,11 @@ export function postPagarme(req, res) {
       })
   } else if (req.body.payment_method === 'boleto' && req.body.periodo === 'Mensal') {
     pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
-    .then(client => client.plans.create({
-      amount: req.body.amount,
-      days: 30,
-      name: 'Plano - ' + req.body.customer.name,
-      payments_methods: ['boleto', 'credit_card']
+      .then(client => client.plans.create({
+        amount: req.body.amount,
+        days: 30,
+        name: 'Plano - ' + req.body.customer.name,
+        payments_methods: ['boleto', 'credit_card']
     }))
     .then(plan => {
       pagarme.client.connect({ api_key: process.env.PagarmeApiKey })

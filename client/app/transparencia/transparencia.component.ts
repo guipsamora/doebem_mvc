@@ -49,14 +49,20 @@ export class TransparenciaController {
       {
         date: '2018',
         month: 'Março',
-        org_name: 'Renovatio',
-        transf_link: '../assets/transparencia/comprovantes/Transf_Renovatio_Mar_18.pdf',
+        org_name: 'Saúde Criança',
+        transf_link: '../assets/transparencia/comprovantes/Transf_Saude_Crianca_Mar_18.pdf',
       },
       {
         date: '2018',
         month: 'Março',
+        org_name: 'Renovatio',
+        transf_link: '../assets/transparencia/comprovantes/Transf_Renovatio_Mar_18.pdf',
+      },
+      {
+        date: '2017',
+        month: 'Outubro',
         org_name: 'Saúde Criança',
-        transf_link: '../assets/transparencia/comprovantes/Transf_Saude_Crianca_Mar_18.pdf',
+        transf_link: '../assets/transparencia/comprovantes/Transf_Saude_Crianca_Out_17.pdf',
       },
       {
         date: '2017',
@@ -66,7 +72,7 @@ export class TransparenciaController {
       },
       {
         date: '2017',
-        month: 'Junho',
+        month: 'Julho',
         org_name: 'Saúde Criança',
         transf_link: '../assets/transparencia/comprovantes/Transf_Saude_Crianca_Jun_17.pdf',
       }
