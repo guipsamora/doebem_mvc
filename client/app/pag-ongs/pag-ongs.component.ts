@@ -199,6 +199,7 @@ export class PagOngs {
 
   showDialogDonation() {
     this.dialog = this.$mdDialog.show({
+      focusOnOpen: false,
       scope: this.$scope,
       preserveScope: true,
       controller: DialogController,
