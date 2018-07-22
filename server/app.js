@@ -28,7 +28,13 @@ var app = express();
 
 app.use(compress());
 
-app.use(require('prerender-node').set('prerenderToken', 'iPohBRFx4DLYiMAKixyK'));
+var prerender = require('prerender-node').set('prerenderToken', 'iPohBRFx4DLYiMAKixyK');
+prerender.crawlerUserAgents.push('googlebot');
+prerender.crawlerUserAgents.push('bingbot');
+prerender.crawlerUserAgents.push('yandex');
+app.use(prerender);
+
+
 
 var server = http.createServer(app);
 var socketio = require('socket.io')(server, {
