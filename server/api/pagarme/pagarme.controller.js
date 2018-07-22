@@ -223,7 +223,7 @@ export function postPagarme(req, res) {
           message: req.body.message,
           amount: req.body.amount
         }
-      }))
+      }), err => sendErro(err, res))
       .then(response => {
         console.log(response);
         Pagarme.create(result);
@@ -241,7 +241,7 @@ export function postPagarme(req, res) {
         days: 30,
         name: 'Plano - ' + req.body.customer.name,
         payments_methods: ['boleto', 'credit_card']
-    }))
+    }), err => sendErro(err, res))
     .then(plan => {
       pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
         .then(client => client.subscriptions.create({
@@ -319,17 +319,16 @@ export function postPagarme(req, res) {
             message: req.body.message,
             amount: req.body.amount
           }
-        }))
+        }), err => sendErro(err, res))
         .then(transaction => {
           console.log(transaction);
           // CHECAR ISSO AQUI COM CALMA
-          // client.transactions.capture({id: transaction.id});
           handleSendEmail(transaction, res);
           handleSendEmailDoebemTransacao(transaction, res);
           Pagarme.create(transaction);
         })
         .catch(error => {
-          // console.log(JSON.stringify(error));
+          console.log(JSON.stringify(error));
           console.log(error);
         })
   } else if (req.body.payment_method === 'credit_card' && req.body.periodo === 'Mensal') {
@@ -342,11 +341,6 @@ export function postPagarme(req, res) {
           payments_methods: ['boleto', 'credit_card']
         }))
         .then(plan => {
-          console.log(plan);
-          console.log('\n\n');
-          console.log("Esse é o req body");
-          console.log(req.body)
-          console.log('\n\n');
           pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
             .then(client => client.subscriptions.create({
                 payment_method: req.body.payment_method,
@@ -379,7 +373,7 @@ export function postPagarme(req, res) {
                   name_plan: plan.name,
                   amount: plan.amount
                 }
-            }))
+            }), err => sendErro(err, res))
             .then(result => {
               console.log("Subscription created");                
               console.log(result);

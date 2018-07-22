@@ -55,7 +55,8 @@ export class SobreController {
         email: 'dominic.ribeiro@doebem.org.br',
         bio: 'Bacharel e Mestre em Economia pela Universidade Federal de Viçosa. \
               Ao longo dos últimos cinco anos tem se dedicado a pesquisas em Economia e \
-              métodos quantitativos associados à Avaliação de Impacto.'
+              métodos quantitativos associados à Avaliação de Impacto. Dominic é responsável \
+              pela área de pesquisa na doebem.'        
       },
       {
         nome: 'Guilherme',
@@ -63,10 +64,10 @@ export class SobreController {
         area: 'Tecnologia',
         linkedin: 'https://br.linkedin.com/in/guisamora',
         email: 'guilherme.samora@doebem.org.br',
-         bio: 'Formado em Administração pelo Mackenzie, participou do curso de Avaliação \
-               Econômica de Projetos Sociais pela Fundação Itau Social. Guilherme construiu \
-               sua carreira em empresas de tecnologia e participou da primeira turma \
-               de incubação da Yunus Brasil em 2014.'
+        bio: 'Formado em Administração pelo Mackenzie, participou do curso de Avaliação \
+              Econômica de Projetos Sociais pela Fundação Itau Social. Guilherme construiu \
+              sua carreira em empresas de tecnologia e participou da primeira turma \
+              de incubação da Yunus Brasil em 2014.'
       }
     ];
 

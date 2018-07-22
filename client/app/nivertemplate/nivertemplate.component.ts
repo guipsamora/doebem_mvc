@@ -6,7 +6,7 @@ import contactForm from '../../components/contact-form/contact-form.component';
 
 declare var PagarMeCheckout: any;
 
-export class niver_templateController {
+export class NiverTemplateController {
   $http;
   $scope;
   $location;
@@ -200,5 +200,5 @@ DialogController.$inject = ['$scope', '$mdDialog'];
 
 export default angular.module('doebemOrgApp.niver_template', [ngRoute, contactForm])
   .config(routing)
-  .component('niver_template', { template: require('./niver_template.pug'), controller: niver_templateController })
+  .component('niver_template', { template: require('./niver_template.pug'), controller: NiverTemplateController })
   .name;
