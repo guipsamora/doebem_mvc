@@ -18,18 +18,18 @@ export class SobreController {
     this.$routeParams = $routeParams;
     this.stepOptions = [
       {
-        title: 'CIÊNCIA & FILANTROPIA',
+        title: 'Ciência & Filantropia',
         desc: 'Acreditamos em uma forma mais efetiva de ajudar, aliando pensamento científico à \
                filantropia',
         icon: '../../assets/images/sobre/icone1.png'
       },
       {
-        title: 'CONFIANÇA',
+        title: 'Confiança',
         desc: 'Plataforma de doações com análises de organizações sem fins lucrativos recomendadas',
         icon: '../../assets/images/sobre/icone2.png'
       },
       {
-        title: 'RECOMENDAÇÃO',
+        title: 'Recomendação',
         desc: 'Promovemos a transparência, segurança e confiança na doação',
         icon: '../../assets/images/sobre/icone3.png'
       },
