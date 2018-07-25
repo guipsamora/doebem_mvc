@@ -1,12 +1,12 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
 
-import routing from './bruno.routes';
+import routing from './elisa.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
 
 declare var PagarMeCheckout: any;
 
-export class BrunoController {
+export class ElisaController {
   $http;
   $scope;
   $location;
@@ -198,7 +198,7 @@ function DialogController($scope, $mdDialog, $inject, $log, $http, user) {
 
 DialogController.$inject = ['$scope', '$mdDialog'];
 
-export default angular.module('doebemOrgApp.bruno', [ngRoute, contactForm])
+export default angular.module('doebemOrgApp.elisa', [ngRoute, contactForm])
   .config(routing)
-  .component('bruno', { template: require('./bruno.pug'), controller: BrunoController })
+  .component('elisa', { template: require('./elisa.pug'), controller: ElisaController })
   .name;

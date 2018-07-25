@@ -12,13 +12,23 @@ div#main.animated.fadeIn
               allowscriptaccess="always"
               frameborder="0"
               scrolling="no"
-              src="https:www.youtube.com/embed/f8xkPUdNECI?rel=0&autoplay=0"
+              src="https:www.youtube.com/embed/Diuv3XZQXyc?rel=0&autoplay=0&cc_load_policy=1&hl=pt-br&yt:cc=on"
               width="640" 
               height="360")
+    //- div#comoFunciona(flex="100" layout="column" layout-align="center center")
+    //-   h2.sectionHeading Passo 1
+    //-   h2.sectionHeading Conheça a doebem
+    //-   p#comoFunciona Amigxs lindxs, Meu niver tá chegando e CLARO que vamos comemorar o mês todo! Até porque é muito difícil conseguir juntar tanta gente amada <3 em um só dia, agradar todo mundo e também temos que aproveitar os vips, não é mesmo?!rs
+    //-   p#comoFunciona Além da presença de vocês em <b>PELO MENOS UMA</b> das comemorações, tenho um pedido diferente pra fazer esse ano!
+    //-   p#comoFunciona Queria que vocês escolhessem uma das organizações recomendadas pela doebem e fizessem uma doação da quantia que puderem! 
+    //-   p#comoFunciona Pra quem não sabe, a doebem é a organização que meu irmão fundou e que estuda e avalia as oportunidades de doação com maior impacto. É a mesma lógica de quando queremos ter o maior rendimento de um investimento, só que aplicada para doação e impacto. Tem até nome pra isso: altruísmo eficaz.
+    //-   p#comoFunciona Todas as organizações recomendadas são rigorosamente analisadas com base em uma série de critérios para garantir que a sua doação ajude o maior número de pessoas da melhor forma possível!
+    //-   p#comoFunciona <b>Agora é só escolher uma causa e fazer sua doação!</b>
+    //-   p#comoFunciona Depois conto pra vocês o resultado dessa ação!              
     div#ongs(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading Passo 2
-      h2.sectionSubHeading Conheça a organização escolhida
-      h3 Saiba mais sobre o Saúde Criança e mude uma vida hoje.
+      h2.sectionSubHeading Conheça as organizações que quero apoiar
+      //- h3 Saiba mais sobre o Saúde Criança e mude uma vida hoje.
       md-list(flex 
               md-cols-gt-xs="2"
               md-cols-gt-md="3"
@@ -58,6 +68,8 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
                             layout-xs="column" layout-wrap flex ng-model="pagarmeForm.donated_to")
             div(ng-repeat = "org in $ctrl.org")
               md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}
+            //- div(ng-repeat = "org in $ctrl.orgInt")
+            //-   md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}                
           h4 Escolha o valor da sua doação:
           md-radio-group(layout="row" 
                          layout-sm="column" 

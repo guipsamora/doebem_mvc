@@ -80,7 +80,7 @@ function handleSendEmailDoebemTransacao(result, res) {
       res.send('Ocorreu um erro ao enviar sua mensagem');
       return;
     }
-    res.send("OK");
+    // res.send("OK");
   });
 }
 
@@ -111,7 +111,7 @@ function handleSendEmailDoebemAssinatura(result, res) {
       res.send('Ocorreu um erro ao enviar sua mensagem');
       return;
     }
-    res.send("OK");
+    // res.send("OK");
   });
 }
 
@@ -157,7 +157,7 @@ function sendBoletoAssinatura(result, res) {
       res.send('Ocorreu um erro ao enviar o email com boleto');
       return;
     }
-    res.send("OK");
+    // res.send("OK");
   });
 }
 
@@ -178,7 +178,7 @@ function sendErro(result, res) {
         res.send('Ocorreu um erro ao enviar sua mensagem');
         return;
       }
-      res.send(result);
+      // res.send(result);
     });
 }
 
@@ -226,7 +226,7 @@ export function postPagarme(req, res) {
       }), err => sendErro(err, res))
       .then(response => {
         console.log(response);
-        Pagarme.create(result);
+        Pagarme.create(response);
         sendBoletoTransacao(response, res);
         handleSendEmailDoebemTransacao(response, res);
       })
@@ -241,7 +241,7 @@ export function postPagarme(req, res) {
         days: 30,
         name: 'Plano - ' + req.body.customer.name,
         payments_methods: ['boleto', 'credit_card']
-    }), err => sendErro(err, res))
+    }))
     .then(plan => {
       pagarme.client.connect({ api_key: process.env.PagarmeApiKey })
         .then(client => client.subscriptions.create({
@@ -269,7 +269,7 @@ export function postPagarme(req, res) {
               message: req.body.message,
               amount: req.body.amount
             }
-        }))
+        }), err => sendErro(err, res))
         .then(result => {
             console.log("Subscription created successfully");
             console.log(result);
