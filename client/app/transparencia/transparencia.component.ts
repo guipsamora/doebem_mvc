@@ -44,37 +44,91 @@ export class TransparenciaController {
         date: '2018',
         month: 'Abril',
         org_name: 'Caviver',
-        transf_link: '../assets/transparencia/comprovantes/Transf_Caviver_Abr_18.pdf',
+        transf_link: [{
+                      link: '../assets/transparencia/comprovantes/Transf_Caviver_Abr_18.pdf', 
+                      number: "1"
+                      },
+                      {
+                        link: '', 
+                        number: ""
+                      }],
+        total: 'R$ 67,20'
       },
       {
         date: '2018',
         month: 'Março',
         org_name: 'Saúde Criança',
-        transf_link: '../assets/transparencia/comprovantes/Transf_Saude_Crianca_Mar_18.pdf',
+        transf_link: [{
+          link: '../assets/transparencia/comprovantes/Transf_Saude_Crianca_Jun_17.pdf', 
+          number: "1, "
+          },
+          {
+            link: '../assets/transparencia/comprovantes/Transf_Saude_Crianca_Out_17.pdf', 
+            number: "2, "
+          },
+          {
+            link: '../assets/transparencia/comprovantes/Transf_Saude_Crianca_Mar_18.pdf', 
+            number: "3"
+          },
+        
+        ],
+        total: 'R$ 1.189,29'
       },
       {
         date: '2018',
         month: 'Março',
         org_name: 'Renovatio',
-        transf_link: '../assets/transparencia/comprovantes/Transf_Renovatio_Mar_18.pdf',
+        transf_link: [{
+          link: '../assets/transparencia/comprovantes/Transf_Renovatio_Out_17.pdf', 
+          number: "1, "
+          },
+          {
+            link: '../assets/transparencia/comprovantes/Transf_Renovatio_Mar_18.pdf', 
+            number: "2"
+          }],
+        total: 'R$ 3.087,22'
       },
       {
         date: '2017',
         month: 'Outubro',
-        org_name: 'Saúde Criança',
-        transf_link: '../assets/transparencia/comprovantes/Transf_Saude_Crianca_Out_17.pdf',
+        org_name: 'GiveDirectly',
+        transf_link: [{
+          link: "",
+          number: ""
+          },
+          {
+            link: '', 
+            number: ""
+          }],
+        total: 'R$ 0'
       },
       {
         date: '2017',
         month: 'Outubro',
-        org_name: 'Renovatio',
-        transf_link: '../assets/transparencia/comprovantes/Transf_Renovatio_Out_17.pdf',
+        org_name: 'Against Malaria Foundation',
+        transf_link: [{
+          link: "",
+          number: ""
+          },
+          {
+            link: '', 
+            number: ""
+          }],
+        total: 'R$ 0'
       },
       {
         date: '2017',
         month: 'Julho',
-        org_name: 'Saúde Criança',
-        transf_link: '../assets/transparencia/comprovantes/Transf_Saude_Crianca_Jun_17.pdf',
+        org_name: 'Schistosomiasis Control Initiative',
+        transf_link: [{
+          link: "",
+          number: ""
+          },
+          {
+            link: '', 
+            number: ""
+          }],
+        total: 'R$ 0'
       }
     ];
 
