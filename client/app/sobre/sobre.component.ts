@@ -56,7 +56,7 @@ export class SobreController {
         bio: 'Bacharel e Mestre em Economia pela Universidade Federal de Viçosa. \
               Ao longo dos últimos cinco anos tem se dedicado a pesquisas em Economia e \
               métodos quantitativos associados à Avaliação de Impacto. Dominic é responsável \
-              pela área de pesquisa na doebem.'        
+              pela área de pesquisa na doebem.'
       },
       {
         nome: 'Guilherme',

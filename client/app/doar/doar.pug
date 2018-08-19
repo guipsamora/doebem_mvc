@@ -61,7 +61,7 @@ div.animated.fadeIn#metodologia
             md-input-container.md-block(layout="row")
               label Deixe aqui sua mensagem
               textarea(ng-model="pagarmeForm.mensagem")
-            div(vc-recaptcha ng-model="pagarmeForm.myRecaptchaResponse" key="'6LcPN10UAAAAABQMlTtCQlsq6f0lMqUChzupC39t'" layout="row" layout-align="center center")
+            div(vc-recaptcha ng-model="pagarmeForm.myRecaptchaResponse" key="'6LcPN10UAAAAABQMlTtCQlsq6f0lMqUChzupC39t'" layout="row" layout-align="center center" lang="pt-BR")
             md-dialog-actions(layout="row" layout-align="center")
               md-button.md-raized.md-primary#doarMe(ng-click="$ctrl.callPagarme(pagarmeForm)" type="submit") Doar
             div(layout="row" layout-align="center center")

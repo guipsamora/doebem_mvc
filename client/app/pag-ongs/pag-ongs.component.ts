@@ -108,6 +108,7 @@ export class PagOngs {
 
     console.log('recaptcha value:', pagarmeForm.myRecaptchaResponse);
     if (pagarmeForm.myRecaptchaResponse === undefined) {
+      alert('Por favor, comprove que você não é um robô!');
       return;
     }
 
