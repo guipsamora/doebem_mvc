@@ -44,90 +44,48 @@ export class TransparenciaController {
         date: '2018',
         month: 'Abril',
         org_name: 'Caviver',
-        transf_link: [{
-                      link: '../assets/transparencia/comprovantes/Transf_Caviver_Abr_18.pdf', 
-                      number: "1"
-                      },
-                      {
-                        link: '', 
-                        number: ""
-                      }],
-        total: 'R$ 67,20'
+        total: 'R$ 67,20',
+        transf_link: "../assets/transparencia/comprovantes/Transferências_Caviver.pdf",
+        transf_nome: "Transferências - Caviver",
       },
       {
         date: '2018',
         month: 'Março',
         org_name: 'Saúde Criança',
-        transf_link: [{
-          link: '../assets/transparencia/comprovantes/Transf_Saude_Crianca_Jun_17.pdf', 
-          number: "1, "
-          },
-          {
-            link: '../assets/transparencia/comprovantes/Transf_Saude_Crianca_Out_17.pdf', 
-            number: "2, "
-          },
-          {
-            link: '../assets/transparencia/comprovantes/Transf_Saude_Crianca_Mar_18.pdf', 
-            number: "3"
-          },
-        
-        ],
+        transf_link: "../assets/transparencia/comprovantes/Transferências_Saúde_Criança.pdf",
+        transf_nome: "Transferências - Saúde Criança",
         total: 'R$ 1.189,29'
       },
       {
         date: '2018',
         month: 'Março',
         org_name: 'Renovatio',
-        transf_link: [{
-          link: '../assets/transparencia/comprovantes/Transf_Renovatio_Out_17.pdf', 
-          number: "1, "
-          },
-          {
-            link: '../assets/transparencia/comprovantes/Transf_Renovatio_Mar_18.pdf', 
-            number: "2"
-          }],
+        transf_link: "../assets/transparencia/comprovantes/Transferências_Renovatio.pdf",
+        transf_nome: "Transferências - Renovatio",
         total: 'R$ 3.087,22'
       },
       {
         date: '2017',
         month: 'Outubro',
         org_name: 'GiveDirectly',
-        transf_link: [{
-          link: "",
-          number: ""
-          },
-          {
-            link: '', 
-            number: ""
-          }],
+        transf_link: "",
+        transf_nome: "",
         total: 'R$ 0'
       },
       {
         date: '2017',
         month: 'Outubro',
         org_name: 'Against Malaria Foundation',
-        transf_link: [{
-          link: "",
-          number: ""
-          },
-          {
-            link: '', 
-            number: ""
-          }],
+        transf_link:"",
+        transf_nome: "",
         total: 'R$ 0'
       },
       {
         date: '2017',
         month: 'Julho',
         org_name: 'Schistosomiasis Control Initiative',
-        transf_link: [{
-          link: "",
-          number: ""
-          },
-          {
-            link: '', 
-            number: ""
-          }],
+        transf_link: "",
+        transf_nome: "",
         total: 'R$ 0'
       }
     ];
