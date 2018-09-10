@@ -3,40 +3,31 @@ div.animated.fadeIn#transparencia
     h2 Transparência
   div#comoFunciona(flex="100" layout="column" layout-align="center center")
     p A transparência é um de nossos principais valores. 
-    p#last Assim, compartilharemos aqui os nossos documentos, relatórios, planos e erros.
-    h2 Finanças
+    //- p#last Assim, compartilharemos aqui os nossos documentos, relatórios, planos e erros.
+    p#last Assim, compartilharemos aqui os nossos documentos, relatórios, erros e aprendizados.
+    br
+    h2  Doações para Organizações
+    //- h2  Doações para Organizações / Transferência de Doações
     br
     table
       tr
-        th Ano
-        th Balanço Patrimonial
-      tr(ng-repeat="year in $ctrl.financials")
-        td {{ year.date }}
-        td 
-          a(href="{{ year.dre_link }}" target="_blank") {{ year.dre_name }}
-    br
-    h2 Transferência de Doações
-    br
-    table
-      tr
-        th Ano
-        th Mês
         th Organização
-      tr(ng-repeat="transf in $ctrl.transf")
-        td {{ transf.date }}
-        td {{ transf.month }}
+        th Total transferido
+        th Comprovantes Transferências
+      tr#orgs(ng-repeat="transf in $ctrl.transf")
+        td {{ transf.org_name }}
+        td {{ transf.total }}
+        td
+          a(href="{{ transf.transf_link }}" target="_blank") {{transf.transf_nome}}
+      tr#last
+        td#total Total
+        td R$ 16.639,86
         td 
-          a(href="{{ transf.transf_link }}" target="_blank") {{transf.org_name}}      
-    h2 Planos
     br
-    table
-      tr
-        th Ano
-        th Metas
-      tr(ng-repeat="plan in $ctrl.plans")
-        td {{ plan.date }}
-        td 
-          a(href="{{ plan.goals_link }}" target="_blank") {{ plan.goals_name }}
+    //- h2 Finanças da doebem
+    //- br
+    //- iframe(src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTGTAex1dhHB022XnmxSGzoH0Kpdw8tuWaCxQf4c0D0DP7niLQ7OTCLT2uoI7Z_PPMMlJUM-bnM15zR/pubhtml?gid=679384296&amp;single=true&amp;widget=true&amp;headers=true" width="1060px" height="530px")
+    //- br
     h2 Erros e Aprendizados
     br
     table
@@ -47,7 +38,7 @@ div.animated.fadeIn#transparencia
         td {{ learning.date }}
         td 
           a(href="{{ learning.link }}" target="_blank") {{ learning.name }}
-    h2 Documentos
+    h2 Documentos da doebem
     br
     div(layout-gt-sm="row" layout="row")
       a(href="../assets/transparencia/documentos/estatuto_doebem.pdf" target="_blank")
