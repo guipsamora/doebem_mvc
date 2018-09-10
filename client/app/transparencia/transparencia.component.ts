@@ -44,7 +44,7 @@ export class TransparenciaController {
         date: '2018',
         month: 'Abril',
         org_name: 'Caviver',
-        total: 'R$ 67,20',
+        total: 'R$ 7.395,79',
         transf_link: "../assets/transparencia/comprovantes/Transferências_Caviver.pdf",
         transf_nome: "Transferências - Caviver",
       },
@@ -54,7 +54,7 @@ export class TransparenciaController {
         org_name: 'Saúde Criança',
         transf_link: "../assets/transparencia/comprovantes/Transferências_Saúde_Criança.pdf",
         transf_nome: "Transferências - Saúde Criança",
-        total: 'R$ 1.189,29'
+        total: 'R$ 5.069,65'
       },
       {
         date: '2018',
@@ -62,7 +62,7 @@ export class TransparenciaController {
         org_name: 'Renovatio',
         transf_link: "../assets/transparencia/comprovantes/Transferências_Renovatio.pdf",
         transf_nome: "Transferências - Renovatio",
-        total: 'R$ 3.087,22'
+        total: 'R$ 4.174,42' 
       },
       {
         date: '2017',
