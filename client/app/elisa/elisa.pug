@@ -4,31 +4,24 @@ div#main.animated.fadeIn
       h2 com uma doação, você faz a diferença
       p Ajude uma organização de forma efetiva e potencialize impacto positivo.
   div#mainPage(layout="column" flex="100")
-    div#comoFunciona(flex="100" layout="column" layout-align="center center")
-      h2.sectionHeading Passo 1
-      h2.sectionSubHeading Assista ao vídeo que preparei
-      br
-      iframe#video(allowfullscreen
-              allowscriptaccess="always"
-              frameborder="0"
-              scrolling="no"
-              src="https:www.youtube.com/embed/Diuv3XZQXyc?rel=0&autoplay=0&cc_load_policy=1&hl=pt-br&yt:cc=on"
-              width="640" 
-              height="360")
     //- div#comoFunciona(flex="100" layout="column" layout-align="center center")
     //-   h2.sectionHeading Passo 1
-    //-   h2.sectionHeading Conheça a doebem
-    //-   p#comoFunciona Amigxs lindxs, Meu niver tá chegando e CLARO que vamos comemorar o mês todo! Até porque é muito difícil conseguir juntar tanta gente amada <3 em um só dia, agradar todo mundo e também temos que aproveitar os vips, não é mesmo?!rs
-    //-   p#comoFunciona Além da presença de vocês em <b>PELO MENOS UMA</b> das comemorações, tenho um pedido diferente pra fazer esse ano!
-    //-   p#comoFunciona Queria que vocês escolhessem uma das organizações recomendadas pela doebem e fizessem uma doação da quantia que puderem! 
-    //-   p#comoFunciona Pra quem não sabe, a doebem é a organização que meu irmão fundou e que estuda e avalia as oportunidades de doação com maior impacto. É a mesma lógica de quando queremos ter o maior rendimento de um investimento, só que aplicada para doação e impacto. Tem até nome pra isso: altruísmo eficaz.
-    //-   p#comoFunciona Todas as organizações recomendadas são rigorosamente analisadas com base em uma série de critérios para garantir que a sua doação ajude o maior número de pessoas da melhor forma possível!
-    //-   p#comoFunciona <b>Agora é só escolher uma causa e fazer sua doação!</b>
-    //-   p#comoFunciona Depois conto pra vocês o resultado dessa ação!              
+    //-   h2.sectionSubHeading Assista ao vídeo que preparei
+    //-   br
+    //-   iframe#video(allowfullscreen
+    //-           allowscriptaccess="always"
+    //-           frameborder="0"
+    //-           scrolling="no"
+    //-           src="https:www.youtube.com/embed/Diuv3XZQXyc?rel=0&autoplay=0&cc_load_policy=1&hl=pt-br&yt:cc=on"
+    //-           width="640" 
+    //-           height="360")
+    div#comoFunciona(flex="100" layout="column" layout-align="center center")
+      h2.sectionHeading Fundraise para a doebem
+      p#comoFunciona No último ano me envolvi com o movimento de altruísmo eficaz na tentativa de responder uma pergunta simples : Como fazer o máximo de bem possível? Acredito que doar dinheiro para causas relevantes e para organizações competentes é uma, das muitas, respostas.
+      p#comoFunciona Hoje é meu aniversário e se você lembrou de mim, espero que esteja com o coração aberto. Se estiver com o coração aberto, espero que pense em ajudar alguém que esteja precisando.  Mas o mais importante: se for para ajudar, que seja da forma mais eficaz.
+      p#comoFunciona A doebem já fez o trabalho de selecionar ONGs no Brasil que tem impacto comprovado, agora é só doar.
     div#ongs(flex="100" layout="column" layout-align="center center")
-      h2.sectionHeading Passo 2
       h2.sectionSubHeading Conheça as organizações que quero apoiar
-      //- h3 Saiba mais sobre o Saúde Criança e mude uma vida hoje.
       md-list(flex 
               md-cols-gt-xs="2"
               md-cols-gt-md="3"
@@ -39,14 +32,20 @@ div#main.animated.fadeIn
               layout-align="center center"
               layout="column")
         md-list-item(layout="column" layout-gt-sm="row" layout-align="center center")
-          a(ng-repeat="ong in $ctrl.listOng" ng-if="ong.cep == 22270070" ng-href="{{$location.absUrl() + '/pagOngs/' + ong.slug}}")
+          a(ng-repeat="ong in $ctrl.listOng | filter: {givewell: false}" ng-href="{{$location.absUrl() + '/pagOngs/' + ong.slug}}")
             md-card.img__wrap
               img.md-card-image(ng-src="{{ong.logo}}" layout-align="center center"
                                 style="width: 300px; height:300px")
               div.img__description_layer
-                p.img__description {{ong.desc}}                
+                p.img__description {{ong.desc}}
+        md-list-item(layout="column" layout-gt-sm="row" layout-align="center center")
+          a(ng-repeat="ong in $ctrl.listOng | filter: {givewell: true}" ng-href="{{$location.absUrl() + '/pagOngs/' + ong.slug}}")
+            md-card.img__wrap
+              img.md-card-image(ng-src="{{ong.logo}}" layout-align="center center"
+                                style="width: 300px; height:300px")
+              div.img__description_layer
+                p.img__description {{ong.desc}}                                
     div#comoFunciona(flex="100" layout="column" layout-align="center center")
-      h2.sectionHeading Passo 3
       h2.sectionSubHeading Faça uma doação
       br
       md-button.md-raized.md-primary(ng-click="$ctrl.showDialogDonation()") Doar
@@ -62,28 +61,59 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
     md-dialog-content
       div.md-dialog-content
         form(role="form")
-          h4 Escolha a organização:
+          h4 Organizações Brasileiras:
           md-input.md-block(layout="row" 
                             layout-sm="column" 
-                            layout-xs="column" layout-wrap flex ng-model="pagarmeForm.donated_to")
-            div(ng-repeat = "org in $ctrl.org")
+                            layout-xs="column" 
+                            layout-wrap 
+                            flex 
+                            ng-model="pagarmeForm.donated_to"
+                            md-autofocus)
+            div(ng-repeat="org in $ctrl.org")
               md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}
-            //- div(ng-repeat = "org in $ctrl.orgInt")
-            //-   md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}                
+          h4 Organizações Internacionais:
+          md-input.md-block(layout="row" 
+                            layout-sm="column"
+                            layout-xs="column"
+                            layout-wrap
+                            flex
+                            ng-model="pagarmeForm.donated_to")
+            div(ng-repeat="org in $ctrl.orgInt")
+              md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}               
           h4 Escolha o valor da sua doação:
-          md-radio-group(layout="row" 
-                         layout-sm="column" 
-                         layout-xs="column" layout-wrap flex ng-model="pagarmeForm.amount")
+          md-radio-group(layout="row"
+                         layout-sm="column"
+                         layout-xs="column"
+                         layout-wrap
+                         flex
+                         ng-model="pagarmeForm.amount"
+                         required)
             div(ng-repeat="option in $ctrl.options")
               md-radio-button(ng-value="option.value" aria-label="option.value" 
                               ng-if="!option.input" ng-checked="option.checked") {{option.label}}
               md-radio-button.md-radio-interactive(ng-value="{{$ctrl.Custom}}" 
                                                    aria-label="option.value" 
                                                    ng-if="option.input") 
-                input#nav(ng-model="pagarmeForm.input" type="text" 
-                          ui-money-mask currency-symbol="R$" placeholder="Outro"
+                input#nav(ng-model="pagarmeForm.input" 
+                          type="text"
+                          ui-money-mask currency-symbol="R$" placeholder="*Outro"
                           class="ng-pristine ng-untouched ng-valid ng-empty"
-                          maxlength="8")
+                          maxlength="8"
+                          name="inputValue"
+                          required
+                          ng-blur="$ctrl.blured(pagarmeForm)")
+          h6 * Valor mínimo de R$10,00
+          br
+          h4 Periodicidade da sua doação:
+          div.md-bock(layout-align="center center")
+            md-radio-group(layout="row" 
+                           layout-sm="column" 
+                           layout-xs="column" 
+                           layout-wrap 
+                           flex 
+                           ng-model="pagarmeForm.periodicidade")
+              div(ng-repeat="period in $ctrl.periods")
+                md-radio-button(ng-value="period.value" aria-label="period.value") {{period.label}}
           br
           md-input.md-block(layout="row")
             md-checkbox(ng-model="pagarmeForm.doebem" ng-watch ng-checked="true") Acrescentar +10% para a doebem?

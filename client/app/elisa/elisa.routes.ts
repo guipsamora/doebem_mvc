@@ -3,7 +3,7 @@
 export default function routes($routeProvider) {
   'ngInject';
   $routeProvider
-    .when('/niverelisa', {
+    .when('/niverdabel', {
       template: '<elisa></elisa>'
     });
 };

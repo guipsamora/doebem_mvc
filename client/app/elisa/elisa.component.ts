@@ -51,7 +51,7 @@ export class ElisaController {
   }
 
     // Handles the payment popup
-    org = ['Saúde Criança'];
+    org = ['Saúde Criança','Renovatio','Caviver'];
 
     // Handles the payment popup
     orgInt = ['GiveDirectly', 'Schistosomiasis Control Initiative', 'Against Malaria Foundation'];
@@ -83,10 +83,17 @@ export class ElisaController {
       {value: 10000, label: 'R$100'},
       {value: this.Custom, label: '' + this.Custom, input: true, isChecked: false},
     ];
+
+    periods = [
+      {value: 'Unica', label: 'Única'},
+      {value: 'Mensal', label: 'Mensal'},
+    ];    
+
     callPagarme(pagarmeForm) {
 
       var mensagem = pagarmeForm.mensagem;
       var amountValue = pagarmeForm.amount;
+      var periodicidade = pagarmeForm.periodicidade;
       var headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
       var dezPorcento = pagarmeForm.doebem;
 
@@ -111,6 +118,7 @@ export class ElisaController {
 
           data.amount = amountValue;
           data.org = this.selected;
+          data.periodo = periodicidade;          
           data.message = mensagem;
           data.doebem = dezPorcento;
 
