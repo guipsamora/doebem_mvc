@@ -1,5 +1,7 @@
 const angular = require('angular');
 const ngRoute = require('angular-route');
+const ngSanitize = require('angular-sanitize');
+const vcRecaptcha = require('angular-recaptcha');
 
 import routing from './elisa.routes';
 import contactForm from '../../components/contact-form/contact-form.component';
@@ -87,7 +89,13 @@ export class ElisaController {
     periods = [
       {value: 'Unica', label: 'Única'},
       {value: 'Mensal', label: 'Mensal'},
-    ];    
+    ];
+
+    blured(pagarmeForm) {
+      if (pagarmeForm.input < 10) {
+        pagarmeForm.input = 10;
+      }
+    }
 
     callPagarme(pagarmeForm) {
 
@@ -199,7 +207,8 @@ export class ElisaController {
 function DialogController($scope, $mdDialog, $inject, $log, $http, user) {
 
   $scope.pagarmeForm = {
-    amount: 2000
+    amount: 2000,
+    periodicidade: 'Mensal'
   };
 
   $scope.hide = function() {
@@ -217,7 +226,7 @@ function DialogController($scope, $mdDialog, $inject, $log, $http, user) {
 
 DialogController.$inject = ['$scope', '$mdDialog'];
 
-export default angular.module('doebemOrgApp.elisa', [ngRoute, contactForm])
+export default angular.module('doebemOrgApp.elisa', [ngRoute, contactForm, ngSanitize, vcRecaptcha])
   .config(routing)
   .component('elisa', { template: require('./elisa.pug'), controller: ElisaController })
   .name;
