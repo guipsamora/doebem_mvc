@@ -91,6 +91,12 @@ export class ElisaController {
 
     callPagarme(pagarmeForm) {
 
+      console.log('recaptcha value:', pagarmeForm.myRecaptchaResponse);
+      if (pagarmeForm.myRecaptchaResponse === undefined) {
+        alert('Por favor, comprove que você não é um robô!');
+        return;
+      }      
+
       var mensagem = pagarmeForm.mensagem;
       var amountValue = pagarmeForm.amount;
       var periodicidade = pagarmeForm.periodicidade;
@@ -125,10 +131,15 @@ export class ElisaController {
           console.log(data);
           //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação
           this.$http.post('/api/pagarme', data)
-            .then(res => { console.log(res); }, error => { console.log(error); })
-            .then(this.$location.path('/sucesso'));
-
-        },
+          .then(res => {
+                  console.log(res);
+                },
+                error => {
+                  console.log(error);
+                  return;
+                })
+          .then(this.$location.path('/sucesso'));
+      },
         error: function(err) {
           console.log(err);
           this.resultPagarme = false;
