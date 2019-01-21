@@ -17,6 +17,9 @@ div#main.animated.fadeIn
               img(src="{{step.icon}}")
               h2 {{step.title}}
               p {{step.desc}}
+    div#doacoes(flex="100" layout="column" layout-align="center center")
+      h2.sectionHeading#doados R$ 37.450,35
+      p arrecadados pela plataforma!
     div#reconhecimentos(flex="100" layout="column" layout-align="center center")
       h3 Confira o que andam falando sobre nós!
       br
@@ -64,3 +67,47 @@ div#main.animated.fadeIn
               //-   md-button(layout-align="center center") Conheça                
     newsletter
 contact-form#contato
+
+
+
+//- script(type="text/javascript" id="total_arrecadado")
+//-     var contador = new CountUp("total_arrecadado", 0, 37450.21 , 2, 3);
+
+//-     //
+//-     flag_stats = 0;
+//-     function isInView(elem){
+//-         return screen.availHeight+$(window).scrollTop()-60-$(elem).offset().top>0 ;
+//-     }
+//-     $(window).scroll(function(){
+//-         if(!flag_stats){
+//-             if (isInView($('#total_arrecadado'))){
+//-                 contador.start();
+//-             }
+//-         }
+//-     });
+
+//- script(type="text/javascript").
+//-     var contador = new CountUp("total_arrecadado", 0, 37450.21 , 2, 3);
+
+//-     //
+//-     flag_stats = 0;
+//-     function isInView(elem){
+//-         return screen.availHeight+$(window).scrollTop()-60-$(elem).offset().top>0 ;
+//-     }
+//-     $(window).scroll(function(){
+//-         if(!flag_stats){
+//-             if (isInView($('#total_arrecadado'))){
+//-                 contador.start();
+//-             }
+//-         }
+//-     });
+
+//- script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
+//-   md-dialog(aria-label="emailSend" ng-cloak)
+//-     md-toolbar
+//-       div.md-toolbar-tools
+//-         h2#donation(layout-align="center") Faça sua doação!
+//-         span(flex)
+//-         md-button(class="md-icon-button" ng-click="cancel()")
+//-             md-icon(aria-label="Close dialog") close
+//-     md-dialog-content

@@ -203,7 +203,6 @@ export class NavbarComponent {
       'uiColor': '#3f51b5',
       'postbackUrl': 'http://sandbox-doebem.herokuapp.com/api/pagarme',
       'createToken': 'false',
-      // 'createToken': 'true',
       'interestRate': 0,
       'freeInstallments': 0,
       'defaultInstallment': 1,
