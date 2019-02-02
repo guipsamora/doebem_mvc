@@ -185,6 +185,12 @@ div#main {
       h2.sectionHeading#doados {
         font-size: 78px;
       }
+
+      @media screen and (max-width: 768px) {
+        h2.sectionHeading#doados {
+          font-size: 50px;
+        }
+      }       
     }
 
     div#reconhecimentos {
