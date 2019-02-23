@@ -89,18 +89,6 @@ export class SobreController {
           img: './assets/images/team/leandro.png',
           twitter: '',
           linkedin: 'https://www.linkedin.com/in/leandro-souza-ambrosio-/'
-        },
-        {
-          nome: 'Barbara',
-          img: './assets/images/team/barbara.jpg',
-          twitter: '',
-          linkedin: 'https://www.linkedin.com/in/barbaravilas/'
-        },
-        {
-          nome: 'Adrianna',
-          img: './assets/images/team/adriana.jpg',
-          twitter: '',
-          linkedin: 'https://www.linkedin.com/'
         }
     ];
   }
