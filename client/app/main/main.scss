@@ -186,6 +186,11 @@ div#main {
         font-size: 78px;
       }
 
+      a#transp{
+        text-decoration: underline; 
+        font-size: 24px;
+      }
+
       @media screen and (max-width: 768px) {
         h2.sectionHeading#doados {
           font-size: 50px;

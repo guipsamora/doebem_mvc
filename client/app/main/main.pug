@@ -19,7 +19,8 @@ div#main.animated.fadeIn
               p {{step.desc}}
     div#doacoes(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading#doados R$ 21.169,26
-      p arrecadados pela plataforma!
+      p 
+        a#transp(href="./transparencia") transferidos pela plataforma!
     div#reconhecimentos(flex="100" layout="column" layout-align="center center")
       h3 Confira o que andam falando sobre nós!
       br
@@ -29,7 +30,7 @@ div#main.animated.fadeIn
             img#af.mid(ng-src="{{midia.src}}" alt="{{midia.alt}}")
     div#modelo(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading Não cobramos taxa!
-      p Nenhuma taxa pela doação para as organições é cobrada, 
+      p Nenhuma taxa sobre a doação para as organizações é cobrada, 
       p apenas os custos da ferramenta de pagamento são descontados.
       img(src="/assets/images/transparencia/100.png")
     div#ongs(flex="100" layout="column" layout-align="center center")
