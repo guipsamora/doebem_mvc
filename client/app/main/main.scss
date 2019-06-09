@@ -116,7 +116,6 @@ div#main {
       height: 100%;
       width: 100%;
       display: block;
-      padding-bottom: 30px;
       background-color: white;
       padding-bottom: 40px;
 
@@ -131,12 +130,13 @@ div#main {
       }
 
       md-list {
-        padding-top: 60px;
+        padding-top: 30px !important;
         margin-right: 30px;
         margin-left: 30px;
         
         md-list-item {
-          width: 370px !important;
+          // width: 370px !important;
+          display: inline-block;
           
           h2 {
             font-family: 'Oswald';
@@ -176,7 +176,6 @@ div#main {
         border-width: 1px;
         font-size: 20px;
       }
-
     }
 
     div#doacoes {
