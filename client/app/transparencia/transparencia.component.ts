@@ -54,7 +54,7 @@ export class TransparenciaController {
         org_name: 'Saúde Criança',
         transf_link: "../assets/transparencia/comprovantes/Transferências_Saúde_Criança.pdf",
         transf_nome: "Transferências - Saúde Criança",
-        total: 'R$ 6.001,81'
+        total: 'R$ 7.507,41'
       },
       {
         date: '2018',
