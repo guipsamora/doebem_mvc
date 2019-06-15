@@ -65,7 +65,8 @@ div#metodologia {
   }
 
   md-list-item {
-    width: 370px !important; 
+    // width: 370px !important; 
+    display: inline-block;
     p {
       width: 370.61px !important;
     }
