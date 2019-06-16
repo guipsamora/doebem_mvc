@@ -104,76 +104,7 @@ div#sobre {
       border: none;
       box-shadow: none;
       border-style: none;
-      display: block;
-
-      img {
-        border-radius: 50% 50%;
-        width: 250px;
-        padding: 10px;
-        display: block;
-        margin: 0 auto;
-      }
-
-      md-card-title-text{
-
-        p {
-          width: 250px;
-          text-align: justify;
-          text-justify: inter-word;
-          justify-content: center;
-          margin: 0;
-          display: flex;
-          align-items: center;
-        }
-
-        h3 {
-          display: block;
-          text-align: center;
-        }
-
-        h4 {
-          display: block;
-          text-align: center;
-        }
-
-      }
-
-      md-card-actions {
-
-        a button {
-          font-size: 20px;
-          background-color: black;
-          color: white;
-          display: block;
-        }
-
-      }
-    }
-  }
-  div#Voluntarios {
-    padding-top: 3%;
-    padding-bottom: 3%;
-    display: block;
-    background-color: white;
-
-    h1 {
-      font-size: 70px;
-      padding-bottom: 5%;
-      text-align: center;
-      display: block;
-    }
-
-    md-list-item, md-list-item .md-list-item-inner {
-      min-width: 200px;
-      width: 250px;
-    }
-
-    md-card {
-      background-color: transparent;
-      border: none;
-      box-shadow: none;
-      border-style: none;
-      display: block;
+      display: inline-block;
 
       img {
         border-radius: 50% 50%;
