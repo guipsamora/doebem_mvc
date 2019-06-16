@@ -34,8 +34,6 @@ prerender.crawlerUserAgents.push('bingbot');
 prerender.crawlerUserAgents.push('yandex');
 app.use(prerender);
 
-
-
 var server = http.createServer(app);
 var socketio = require('socket.io')(server, {
   serveClient: config.env !== 'production',

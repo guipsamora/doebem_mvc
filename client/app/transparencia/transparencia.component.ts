@@ -45,47 +45,47 @@ export class TransparenciaController {
         month: 'Abril',
         org_name: 'Caviver',
         total: 'R$ 11.149,65',
-        transf_link: "../assets/transparencia/comprovantes/Transferências_Caviver.pdf",
-        transf_nome: "Transferências - Caviver",
+        transf_link: '../assets/transparencia/comprovantes/Transferências_Caviver.pdf',
+        transf_nome: 'Transferências - Caviver',
       },
       {
         date: '2018',
         month: 'Março',
         org_name: 'Saúde Criança',
-        transf_link: "../assets/transparencia/comprovantes/Transferências_Saúde_Criança.pdf",
-        transf_nome: "Transferências - Saúde Criança",
+        transf_link: '../assets/transparencia/comprovantes/Transferências_Saúde_Criança.pdf',
+        transf_nome: 'Transferências - Saúde Criança',
         total: 'R$ 7.507,41'
       },
       {
         date: '2018',
         month: 'Março',
         org_name: 'Renovatio',
-        transf_link: "../assets/transparencia/comprovantes/Transferências_Renovatio.pdf",
-        transf_nome: "Transferências - Renovatio",
-        total: 'R$ 7.792,40' 
+        transf_link: '../assets/transparencia/comprovantes/Transferências_Renovatio.pdf',
+        transf_nome: 'Transferências - Renovatio',
+        total: 'R$ 7.792,40'
       },
       {
         date: '2017',
         month: 'Outubro',
         org_name: 'GiveDirectly',
-        transf_link: "",
-        transf_nome: "",
+        transf_link: '',
+        transf_nome: '',
         total: 'R$ 0'
       },
       {
         date: '2017',
         month: 'Outubro',
         org_name: 'Against Malaria Foundation',
-        transf_link:"",
-        transf_nome: "",
+        transf_link: '',
+        transf_nome: '',
         total: 'R$ 0'
       },
       {
         date: '2017',
         month: 'Julho',
         org_name: 'Schistosomiasis Control Initiative',
-        transf_link: "",
-        transf_nome: "",
+        transf_link: '',
+        transf_nome: '',
         total: 'R$ 0'
       }
     ];

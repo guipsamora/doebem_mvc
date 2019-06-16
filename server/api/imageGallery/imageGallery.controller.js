@@ -86,6 +86,7 @@ export function index(req, res) {
       let images = [];
       data.Contents.map(image => {
         images.push(image.Key);
+        return;
       });
       return res.status(200).json(images);
     })

@@ -99,7 +99,7 @@ export class DuvidasController {
       {
         title: 'O que significa fazer uma doação para "a critério da doebem"?',
         desc: `"A critério da doebem" significa que iremos fazer a escolha da organização para qual a doação será destinada com base em nossos critérios e conversas com as organizações. Essa é uma opção para facilitar sua experiência de doação, caso você não tenha nenhuma organização preferencial.`
-      }      
+      }
     ];
 
     this.org = [

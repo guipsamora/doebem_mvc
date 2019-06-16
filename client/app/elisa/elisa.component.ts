@@ -53,7 +53,7 @@ export class ElisaController {
   }
 
     // Handles the payment popup
-    org = ['Saúde Criança','Renovatio','Caviver'];
+    org = ['Saúde Criança', 'Renovatio', 'Caviver'];
 
     // Handles the payment popup
     orgInt = ['GiveDirectly', 'Schistosomiasis Control Initiative', 'Against Malaria Foundation'];
@@ -103,7 +103,7 @@ export class ElisaController {
       if (pagarmeForm.myRecaptchaResponse === undefined) {
         alert('Por favor, comprove que você não é um robô!');
         return;
-      }      
+      }
 
       var mensagem = pagarmeForm.mensagem;
       var amountValue = pagarmeForm.amount;
@@ -132,7 +132,7 @@ export class ElisaController {
 
           data.amount = amountValue;
           data.org = this.selected;
-          data.periodo = periodicidade;          
+          data.periodo = periodicidade;
           data.message = mensagem;
           data.doebem = dezPorcento;
 
