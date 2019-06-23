@@ -53,9 +53,6 @@ div#main.animated.fadeIn
               div.img__description_layer
                 p.img__description {{ong.desc}}
               br
-        //-       div
-        //-         md-button(layout-align="center center") Conheça
-        //- br
         md-list-item(layout="column" layout-gt-sm ="row" layout-align="center center")
           a(ng-repeat="ong in $ctrl.listOng | filter: {givewell: true}" ng-href="{{$location.absUrl() + '/pagOngs/' + ong.slug}}")
             md-card.img__wrap
@@ -63,13 +60,88 @@ div#main.animated.fadeIn
                                 style="width: 300px; height:300px")
               div.img__description_layer
                 p.img__description {{ong.desc}}
-              //- br
-              //- div
-              //-   md-button(layout-align="center center") Conheça                
+        br
+        md-button.md-raized.md-primary(ng-click="$ctrl.showDialogDonation()") Doar
+        br
     newsletter
 contact-form#contato
-
-
+script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
+  md-dialog(aria-label="emailSend" ng-cloak)
+    md-toolbar
+      div.md-toolbar-tools(layout-align="center center")
+        h2#donation(layout-align="center center") Faça sua doação!
+        span(flex)
+        md-button(class="md-icon-button" ng-click="cancel()")
+            md-icon(aria-label="Close dialog") close
+    md-dialog-content
+      div.md-dialog-content        
+        form(role="form" novalidate )
+          h4 Organizações Brasileiras:
+          md-input.md-block(layout="row" 
+                            layout-sm="column" 
+                            layout-xs="column" 
+                            layout-wrap 
+                            flex 
+                            ng-model="pagarmeForm.donated_to"
+                            md-autofocus)
+            div(ng-repeat="org in $ctrl.org")
+              md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}
+          h4 Organizações Internacionais:
+          md-input.md-block(layout="row" 
+                            layout-sm="column"
+                            layout-xs="column"
+                            layout-wrap
+                            flex
+                            ng-model="pagarmeForm.donated_to")
+            div(ng-repeat="org in $ctrl.orgInt")
+              md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}
+          h4 Escolha o valor da sua doação:
+          md-radio-group(layout="row"
+                         layout-sm="column"
+                         layout-xs="column"
+                         layout-wrap
+                         flex
+                         ng-model="pagarmeForm.amount"
+                         required)
+            div(ng-repeat="option in $ctrl.options")
+              md-radio-button(ng-value="option.value" aria-label="option.value" 
+                              ng-if="!option.input" ng-checked="option.checked") {{option.label}}
+              md-radio-button.md-radio-interactive(ng-value="{{$ctrl.Custom}}" 
+                                                   aria-label="option.value" 
+                                                   ng-if="option.input") 
+                input#nav(ng-model="pagarmeForm.input" 
+                          type="text"
+                          ui-money-mask currency-symbol="R$" placeholder="*Outro"
+                          class="ng-pristine ng-untouched ng-valid ng-empty"
+                          maxlength="8"
+                          name="inputValue"
+                          required
+                          ng-blur="$ctrl.blured(pagarmeForm)")
+          h6 * Valor mínimo de R$10,00
+          br
+          h4 Periodicidade da sua doação:
+          div.md-bock(layout-align="center center")
+            md-radio-group(layout="row" 
+                           layout-sm="column" 
+                           layout-xs="column" 
+                           layout-wrap 
+                           flex 
+                           ng-model="pagarmeForm.periodicidade")
+              div(ng-repeat="period in $ctrl.periods")
+                md-radio-button(ng-value="period.value" aria-label="period.value") {{period.label}}
+          br       
+          md-input.md-block(layout="row")
+            md-checkbox(ng-model="pagarmeForm.doebem" ng-watch ng-checked="true") Acrescentar +10% para a doebem?
+          md-input-container.md-block(layout="row")
+            label Mensagem
+            textarea(ng-model="pagarmeForm.mensagem")
+          div(vc-recaptcha ng-model="pagarmeForm.myRecaptchaResponse" key="'6LcPN10UAAAAABQMlTtCQlsq6f0lMqUChzupC39t'"  layout="row" layout-align="center center" lang="pt-BR")
+          md-dialog-actions(layout="row" layout-align="center")
+            md-button.md-raized.md-primary#doarMe(ng-click="$ctrl.callPagarme(pagarmeForm)" 
+                                                  type="submit") Doar
+          div(layout="row" layout-align="center center")
+            i(class="fa fa-lock fa-2x"  aria-hidden="true")
+            p#secu Você será direcionado(a) para um ambiente seguro.
 //- TESTE PARA COLOCAR COUNTER - NÃO DELETAR
 //- script(type="text/javascript" id="total_arrecadado")
 //-     var contador = new CountUp("total_arrecadado", 0, 37450.21 , 2, 3);

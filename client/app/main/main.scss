@@ -135,7 +135,6 @@ div#main {
         margin-left: 30px;
         
         md-list-item {
-          // width: 370px !important;
           display: inline-block;
           
           h2 {
@@ -244,8 +243,33 @@ div#main {
       height: 100%;
       width: 100%;
       display: block;
-      padding-bottom: 70px;
+      padding-bottom: 0px !important;
       background-color: #f1f1f1;
+
+      button {
+        background-color:  rgb(63,81,181);
+        color: white;
+        border-color: rgb(63,81,181) !important;
+        border-style: solid;
+        border-width: 1px;
+        margin-left: 0px;
+        font-size: 30px !important;
+        font-family: 'Oswald';
+        width: 130px !important;
+        height: 50px !important;
+        text-align: center;
+      }
+
+      button:hover {
+        background-color: white !important;
+        color: rgb(63,81,181) !important;
+        border-color: rgb(63,81,181) !important;
+        border-style: solid;
+        border-width: 1px;
+        width: 130px !important;
+        height: 50px !important;
+        font-size: 30px;
+      }
 
       md-card-content {
         padding: 0 16px 16px 16px;
@@ -276,7 +300,6 @@ div#main {
         display: flex;
         align-items: center;
         justify-content: center;
-
         /* transition effect. not necessary */
         transition: opacity .2s, visibility .2s;
       }
@@ -303,37 +326,13 @@ div#main {
         width: 270px;
       }
 
-      button {
-        background-color:  rgb(63,81,181);
-        color: white;
-        border-color: rgb(63,81,181) !important;
-        border-style: solid;
-        border-width: 1px;
-        margin-left: 0px;
-        font-size: 20px;
-        font-family: 'Oswald';
-        width: 50px;
-        text-align: center;
-      }
-
-      button:hover {
-        background-color: white !important;
-        color: rgb(63,81,181) !important;
-        border-color: rgb(63,81,181) !important;
-        border-style: solid;
-        border-width: 1px;
-        font-size: 20px;
-      }
-
       @media screen and  (min-width: 768px) {
-
         h3 {
           font-weight: 400;
         }
       }
 
       @media (min-width: 960px) {
-
         md-card {
           width: 300px;
         }

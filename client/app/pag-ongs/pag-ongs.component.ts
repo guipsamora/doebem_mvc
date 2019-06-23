@@ -46,7 +46,6 @@ export class PagOngs {
   // Handles the payment popup
   org = ['Saúde Criança', 'Renovatio', 'Caviver', 'A critério da doebem'];
 
-  // Handles the payment popup
   orgInt = ['GiveDirectly', 'Schistosomiasis Control Initiative', 'Against Malaria Foundation'];
 
   selected = [];
