@@ -68,25 +68,25 @@ export class TransparenciaController {
         date: '2017',
         month: 'Outubro',
         org_name: 'GiveDirectly',
-        transf_link: '',
-        transf_nome: '',
-        total: 'R$ 0'
+        transf_link: '../assets/transparencia/comprovantes/Transferências_GiveDirectly.pdf',
+        transf_nome: 'Transferências - GiveDirectly.pdf',
+        total: 'R$ 2.300,29'
       },
       {
         date: '2017',
         month: 'Outubro',
         org_name: 'Against Malaria Foundation',
-        transf_link: '',
-        transf_nome: '',
-        total: 'R$ 0'
+        transf_link: '../assets/transparencia/comprovantes/Transferências_Against_Malaria_Foundation.pdf',
+        transf_nome: 'Transferências - Against Malaria Foundation',
+        total: 'R$ 1.449,99'
       },
       {
         date: '2017',
         month: 'Julho',
         org_name: 'Schistosomiasis Control Initiative',
-        transf_link: '',
-        transf_nome: '',
-        total: 'R$ 0'
+        transf_link: '../assets/transparencia/comprovantes/Transferências_Schistosomiasis_Control_Initiative.pdf',
+        transf_nome: 'Transferências - Schistosomiasis Control Initiative',
+        total: 'R$ 1.456,20'
       }
     ];
 
