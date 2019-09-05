@@ -68,7 +68,7 @@ export class TransparenciaController {
         date: '2017',
         month: 'Outubro',
         org_name: 'GiveDirectly',
-        transf_link: '../assets/transparencia/comprovantes/Transferências_GiveDirectly.pdf',
+        transf_link: '../assets/transparencia/comprovantes/Transferências_GiveDirectly2.pdf',
         transf_nome: 'Transferências - GiveDirectly.pdf',
         total: 'R$ 2.300,29'
       },
@@ -76,7 +76,7 @@ export class TransparenciaController {
         date: '2017',
         month: 'Outubro',
         org_name: 'Against Malaria Foundation',
-        transf_link: '../assets/transparencia/comprovantes/Transferências_Against_Malaria_Foundation.pdf',
+        transf_link: '../assets/transparencia/comprovantes/Against_Malaria_Foundation_06.2019.pdf',
         transf_nome: 'Transferências - Against Malaria Foundation',
         total: 'R$ 1.449,99'
       },
