@@ -76,7 +76,7 @@ export class TransparenciaController {
         date: '2017',
         month: 'Outubro',
         org_name: 'Against Malaria Foundation',
-        transf_link: '../assets/transparencia/comprovantes/Transferências_Against_Malaria_Foundation.pdf',
+        transf_link: '../assets/transparencia/comprovantes/Transferências_Against_Malaria_Foundation',
         transf_nome: 'Transferências - Against Malaria Foundation',
         total: 'R$ 1.449,99'
       },
