@@ -76,7 +76,7 @@ export class TransparenciaController {
         date: '2017',
         month: 'Outubro',
         org_name: 'Against Malaria Foundation',
-        transf_link: '../assets/transparencia/comprovantes/Transferências_Against_Malaria_Foundation',
+        transf_link: '../assets/transparencia/comprovantes/Transferências_Against_Malaria_Foundation.pdf',
         transf_nome: 'Transferências - Against Malaria Foundation',
         total: 'R$ 1.449,99'
       },
@@ -84,7 +84,8 @@ export class TransparenciaController {
         date: '2017',
         month: 'Julho',
         org_name: 'Schistosomiasis Control Initiative',
-        transf_link: '../assets/transparencia/comprovantes/Transferências_Schistosomiasis_Control_Initiative.pdf',
+        // transf_link: '../assets/transparencia/comprovantes/Transferências_Schistosomiasis_Control_Initiative.pdf',
+        transf_link: '../assets/transparencia/comprovantes/Schistosomiasis_Control_Initiative_06.2019.pdf',
         transf_nome: 'Transferências - Schistosomiasis Control Initiative',
         total: 'R$ 1.456,20'
       }
