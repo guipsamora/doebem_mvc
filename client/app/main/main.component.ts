@@ -15,6 +15,8 @@ export class MainController {
   $mdDialog;
   dialog: Function;
   stepOptions = [];
+  resultsBR = [];
+  resultsGW = [];
   listOng = [];
   midias = [];
   PagarMeCheckout: any;
@@ -47,6 +49,38 @@ export class MainController {
         icon: '../../assets/images/main/icone3.png'
       }
     ];
+
+    this.resultsBR = [
+      {
+        value: '250',
+        desc: 'crianças recebendo leite por um mês.'
+      },
+      {
+        value: '190',
+        desc: 'óculos de baixo-custo \
+              fabricados',
+      },
+      {
+        value: '5',
+        desc: 'cirurgias de catarata \
+               em crianças.',
+      }
+    ];
+    
+    this.resultsGW = [
+      {
+        value: '85',
+        desc: 'redes tratadas com inseticida distribuídas',
+      },
+      {
+        value: 'R$ 1.886',
+        desc: 'recebidos por beneficiários de programas de transferência de renda',
+      },
+      {
+        value: '320',
+        desc: 'crianças tratadas para desparasitação',
+      }
+    ];    
 
     this.midias = [
       {
