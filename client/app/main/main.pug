@@ -11,7 +11,7 @@ div#main.animated.fadeIn
       p#comoFunciona Fazemos a ponte entre doadores e organizações 
       p eficientes que promovem impacto social
       p embasado em estudos e evidência.
-      md-list#actions(flex="100" layout-gt-sm="row" layout="column" layout-align="center center")
+      md-list(flex="100" layout-gt-sm="row" layout="column" layout-align="center center")
         md-list-item(ng-repeat="step in $ctrl.stepOptions")
             div(layout = "column" layout-align="center center")
               img(src="{{step.icon}}")
@@ -20,24 +20,25 @@ div#main.animated.fadeIn
     div#resultados(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading#doados Nossos Resultados
       p Até hoje, a doebem já arrecadou doações para fornecer o equivalente a*:
-      h3 Brasil
-      md-list#actions(flex="100" layout-gt-sm="row" layout="column" layout-align="center center")
+      h3.resultados Brasil 🇧🇷
+      md-list(flex="100" layout-gt-sm="row" layout="column" layout-align="center center")
         md-list-item(ng-repeat="step in $ctrl.resultsBR")
             div(layout = "column" layout-align="center center")
               h2 {{step.value}}
               p {{step.desc}}
-      h3 Continente Africano              
-      md-list#actions(flex="100" layout-gt-sm="row" layout="column" layout-align="center center")
+      h3.resultados Continente Africano 🌍       
+      md-list(flex="100" layout-gt-sm="row" layout="column" layout-align="center center")
         md-list-item(ng-repeat="step in $ctrl.resultsGW")
             div(layout = "column" layout-align="center center")
               h2 {{step.value}}
               p {{step.desc}}              
       p Confira os valores transferidos #[a#transp(href="./transparencia") aqui]!
-      p *Os resultados alcançados são apenas uma equivalência do alcance e abrangência #[br] dos fundos arrecadados pela doebem. As organizações apoiadas têm liberdade para alocação dos fundos da forma mais conveniente para suas iniciativas.
-    div#doacoes(flex="100" layout="column" layout-align="center center")
-      h2.sectionHeading#doados R$ 31.855,94
-      p 
-        a#transp(href="./transparencia") transferidos pela plataforma!        
+      br
+      p#ast *Os resultados alcançados são apenas uma equivalência do alcance e abrangência dos fundos arrecadados pela doebem. #[br]As organizações apoiadas têm liberdade para alocação dos fundos da forma mais conveniente para suas iniciativas.
+    //- div#doacoes(flex="100" layout="column" layout-align="center center")
+    //-   h2.sectionHeading#doados R$ 31.855,94
+    //-   p 
+    //-     a#transp(href="./transparencia") transferidos pela plataforma!        
     div#reconhecimentos(flex="100" layout="column" layout-align="center center")
       h3 Confira o que andam falando sobre nós!
       br
