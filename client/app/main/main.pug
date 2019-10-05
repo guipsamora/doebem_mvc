@@ -118,7 +118,7 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
                             ng-model="pagarmeForm.donated_to")
             div(ng-repeat="org in $ctrl.orgInt")
               md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}
-          h4 Escolha o valor da sua doação:
+          h4.dialogform Escolha o valor da sua doação:
           md-radio-group(layout="row"
                          layout-sm="column"
                          layout-xs="column"
@@ -140,9 +140,9 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
                           name="inputValue"
                           required
                           ng-blur="$ctrl.blured(pagarmeForm)")
-          h6 * Valor mínimo de R$10,00
+          h6.dialogform * Valor mínimo de R$10,00
           br
-          h4 Periodicidade da sua doação:
+          h4.dialogform Periodicidade da sua doação:
           div.md-bock(layout-align="center center")
             md-radio-group(layout="row" 
                            layout-sm="column" 

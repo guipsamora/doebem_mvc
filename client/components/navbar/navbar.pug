@@ -30,9 +30,6 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
           md-button#blog.md-raized.md-primary Blog
         a#Itens(target="_blank" href="")
           md-button#doar_button.md-raized.md-primary(ng-click="$ctrl.showDialog()") Doar
-
-
-
 script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
   md-dialog(aria-label="emailSend" ng-cloak)
     md-toolbar
@@ -56,7 +53,7 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
                             layout-xs="column" layout-wrap flex ng-model="pagarmeForm.donated_to")
             div(ng-repeat = "org in $ctrl.orgInt")
               md-checkbox(ng-click="$ctrl.toggle(org, $ctrl.selected)") {{org}}
-          h4 Escolha o valor da sua doação:
+          h4.dialogform Escolha o valor da sua doação:
           md-radio-group(layout="row"
                          layout-sm="column"
                          layout-xs="column" ng-model="pagarmeForm.amount" layout-wrap flex)
@@ -71,9 +68,9 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
                           class="ng-pristine ng-untouched ng-valid ng-empty"
                           ng-blur="$ctrl.blured(pagarmeForm)"
                           maxlength="8")
-          h6 * Valor mínimo de R$10,00
+          h6.dialogform * Valor mínimo de R$10,00
           br
-          h4 Periodicidade da sua doação:
+          h4.dialogform Periodicidade da sua doação:
           div.md-bock(layout-align="center center")
             md-radio-group(layout="row" 
                            layout-sm="column" 

@@ -43,11 +43,11 @@ export class NavbarComponent {
     }
   ];
 
-  org = ['Saúde Criança', 'Renovatio', 'Caviver', 'A critério da doebem'];
-
+  
   // Handles the payment popup
-  orgInt = ['GiveDirectly', 'Schistosomiasis Control Initiative', 'Against Malaria Foundation'];
 
+  org = ['Saúde Criança', 'Renovatio', 'Caviver', 'A critério da doebem'];
+  orgInt = ['GiveDirectly', 'Schistosomiasis Control Initiative', 'Against Malaria Foundation'];
 
   selected = [];
 
@@ -69,9 +69,7 @@ export class NavbarComponent {
   Custom = '';
 
   options = [
-    {value: 1000, label: 'R$10'},
     {value: 2000, label: 'R$20'},
-    {value: 4000, label: 'R$40'},
     {value: 5000, label: 'R$50'},
     {value: 10000, label: 'R$100'},
     {value: this.Custom, label: '' + this.Custom, input: true, isChecked: false},

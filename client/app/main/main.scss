@@ -59,6 +59,10 @@ div#main {
 
     @media screen and (max-width: 768px) {
       min-height: 27vh;
+
+      body {
+        padding-top: 0px !important;
+      }
       
       a {
         .md-button {

@@ -196,7 +196,7 @@ div#navbar-main.navbar-collapse.collapse {
     }
 
     div#menu {
-      height: 45px;
+    //   height: 60px;
     }
 
     div.navbar-default {
@@ -208,10 +208,6 @@ div#navbar-main.navbar-collapse.collapse {
         top: 0;
         border-width: 0 0 1px;
     }    
-
-    body {
-        padding-top: 50px;
-    }
 
     div.navbar-header {
         float: left;
@@ -251,7 +247,7 @@ div#navbar-main.navbar-collapse.collapse {
     }
 
     .md-primary#blog {
-        width: 100% !important;
+        width: 46% !important;
     }
 
     .navbar-default .navbar-toggle {
@@ -275,7 +271,7 @@ div#navbar-main.navbar-collapse.collapse {
     .navbar-collapse {
         border-top: none;
         z-index: 20;
-        height: 296px;
+        height: 345px;
         width: 100%;
         background-color: white;
         margin: 0 0 0 0 !important;
@@ -294,7 +290,15 @@ div#navbar-main.navbar-collapse.collapse {
 
 md-dialog-content {
     form {
-        width: 352px;
+        width: 625px;
+
+        h4 {
+            margin-top: 0px;
+        }
+
+        md-input-container {
+            margin: 0px 0px;
+        }
     }
 }
 
@@ -304,7 +308,7 @@ md-checkbox .md-label {
 }
 
 md-radio-group {
-    width: 270px;
+    width: 400px;
 }
 
 md-radio-group.layout-row md-radio-button:last-of-type,
@@ -378,15 +382,13 @@ div.md-toolbar-tools {
     text-align: center;
 }
 
-h4 {
-    font-size: 20px;
-}
-
 /* mobile view for the md-dialog */
 @media screen and (max-width: 726px) {
 
-    md-dialog-content form {
-        width: 200px !important;
+    md-dialog-content {
+        form {
+            width: 200px !important;
+        }
     }
 
     p#secu {
