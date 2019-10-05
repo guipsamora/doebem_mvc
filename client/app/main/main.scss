@@ -190,7 +190,7 @@ div#main {
       }
 
       p#ast {
-        font-size: 14px;
+        font-size: 16px;
       }
 
       h3.resultados {
@@ -198,10 +198,15 @@ div#main {
       }
 
       md-list {
+
+        padding-right: 100px;
+        padding-left: 100px;
+        max-height: 70px;
+        
+
         md-list-item {
           display: inline-block;
           text-align: center;
-          height: 100%;
           
           h2 {
             font-family: 'Oswald';

@@ -21,18 +21,22 @@ div#main.animated.fadeIn
       h2.sectionHeading#doados Nossos Resultados
       p Até hoje, a doebem já arrecadou doações para fornecer o equivalente a*:
       h3.resultados Brasil 🇧🇷
-      md-list(flex="100" layout-gt-sm="row" layout="column" layout-align="center center")
-        md-list-item(ng-repeat="step in $ctrl.resultsBR")
+      md-list(flex="100" layout-gt-sm="row" layout="column" layout-align="space-around center")
+        md-list-item(ng-repeat="step in $ctrl.resultsBR" layout-align="center center")
             div(layout = "column" layout-align="center center")
               h2 {{step.value}}
               p {{step.desc}}
+      br
+      br
       h3.resultados Continente Africano 🌍       
       md-list(flex="100" layout-gt-sm="row" layout="column" layout-align="center center")
         md-list-item(ng-repeat="step in $ctrl.resultsGW")
             div(layout = "column" layout-align="center center")
               h2 {{step.value}}
               p {{step.desc}}
-      br        
+      br
+      br
+      br
       p Confira os valores transferidos #[a#transp(href="./transparencia") aqui]!
       br
       p#ast *Os resultados alcançados são apenas uma equivalência do alcance e abrangência dos fundos arrecadados pela doebem. #[br]As organizações apoiadas têm liberdade para alocação dos fundos da forma mais conveniente para suas iniciativas.

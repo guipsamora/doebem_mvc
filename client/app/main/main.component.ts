@@ -74,7 +74,7 @@ export class MainController {
       },
       {
         value: 'R$ 1.886',
-        desc: 'recebidos por beneficiários de programas de transferência de renda',
+        desc: 'para programas de transferência de renda',
       },
       {
         value: '320',
