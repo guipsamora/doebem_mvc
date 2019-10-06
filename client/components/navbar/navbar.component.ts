@@ -43,7 +43,6 @@ export class NavbarComponent {
     }
   ];
 
-  
   // Handles the payment popup
 
   org = ['Saúde Criança', 'Renovatio', 'Caviver', 'A critério da doebem'];

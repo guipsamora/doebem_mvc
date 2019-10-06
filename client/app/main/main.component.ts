@@ -66,7 +66,7 @@ export class MainController {
                em crianças.',
       }
     ];
-    
+
     this.resultsGW = [
       {
         value: '85',
@@ -80,7 +80,7 @@ export class MainController {
         value: '320',
         desc: 'crianças tratadas para desparasitação',
       }
-    ];    
+    ];
 
     this.midias = [
       {
