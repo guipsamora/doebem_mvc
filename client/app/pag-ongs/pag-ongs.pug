@@ -46,6 +46,10 @@ div.animated.fadeIn#pagOng
         a(ng-if='!$ctrl.infoOng.givewell' ng-href="{{$ctrl.infoOng.linkPdf}}" target="_blank")
           p#anaCompl Confira aqui nossa análise completa.
         md-button.md-raized.md-primary(ng-click="$ctrl.showDialogDonation()") Doar
+        h3 Objetivos de Desenvolvimento Sustentável
+        //- div(ng-if='!$ctrl.infoOng.givewell' ng-repeat="sdg in $ctrl.infoOng.sdgs")
+          img(ng-if='!$ctrl.infoOng.givewell' src="{{sdg.image}}", alt="")
+        //- img(ng-if='!$ctrl.infoOng.givewell' src="{{$ctrl.infoOng.sdgs[0].image}}", alt="")
         p(ng-if='$ctrl.infoOng.givewell') <strong>Observação: </strong> Ao doar para essa organização, seus dados serão compartilhados com a GiveWell. Isso permite que a GiveWell <a href="https://www.givewell.org/about/impact"> mensure seu impacto</a>.
         h4(ng-if='!$ctrl.infoOng.givewell') Fontes
         div#sources(ng-if='!$ctrl.infoOng.givewell' ng-repeat="paper in $ctrl.infoOng.papers")
