@@ -70,7 +70,7 @@ export class TransparenciaController {
         org_name: 'GiveDirectly',
         transf_link: '../assets/transparencia/comprovantes/1_4976513726099226786.pdf',
         transf_nome: 'Transferências - GiveDirectly.pdf',
-        total: 'R$ 2.300,29'
+        total: 'R$ 3.228,29'
       },
       {
         date: '2017',
@@ -87,7 +87,7 @@ export class TransparenciaController {
         // transf_link: '../assets/transparencia/comprovantes/Transferências_Schistosomiasis_Control_Initiative.pdf',
         transf_link: '../assets/transparencia/comprovantes/Schistosomiasis_Control_Initiative_06.2019.pdf',
         transf_nome: 'Transferências - Schistosomiasis Control Initiative',
-        total: 'R$ 1.456,20'
+        total: 'R$ 2.704,19'
       }
     ];
 
