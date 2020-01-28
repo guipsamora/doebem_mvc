@@ -62,7 +62,7 @@ export class TransparenciaController {
         org_name: 'Renovatio',
         transf_link: '../assets/transparencia/comprovantes/Transferências_Renovatio.pdf',
         transf_nome: 'Transferências - Renovatio',
-        total: 'R$ 7.792,40'
+        total: 'R$ 8.576,60'
       },
       {
         date: '2017',
