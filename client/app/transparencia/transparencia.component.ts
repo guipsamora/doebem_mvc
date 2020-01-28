@@ -44,7 +44,7 @@ export class TransparenciaController {
         date: '2018',
         month: 'Abril',
         org_name: 'Caviver',
-        total: 'R$ 11.149,65',
+        total: 'R$ 20.332,17',
         transf_link: '../assets/transparencia/comprovantes/Transferências_Caviver.pdf',
         transf_nome: 'Transferências - Caviver',
       },
@@ -54,7 +54,7 @@ export class TransparenciaController {
         org_name: 'Saúde Criança',
         transf_link: '../assets/transparencia/comprovantes/Transferências_Saúde_Criança.pdf',
         transf_nome: 'Transferências - Saúde Criança',
-        total: 'R$ 7.507,41'
+        total: 'R$ 11.598,01'
       },
       {
         date: '2018',
@@ -70,7 +70,7 @@ export class TransparenciaController {
         org_name: 'GiveDirectly',
         transf_link: '../assets/transparencia/comprovantes/1_4976513726099226786.pdf',
         transf_nome: 'Transferências - GiveDirectly.pdf',
-        total: 'R$ 3.228,29'
+        total: 'R$ 4.473,69'
       },
       {
         date: '2017',
@@ -78,7 +78,7 @@ export class TransparenciaController {
         org_name: 'Against Malaria Foundation',
         transf_link: '../assets/transparencia/comprovantes/Against_Malaria_Foundation_06.2019.pdf',
         transf_nome: 'Transferências - Against Malaria Foundation',
-        total: 'R$ 1.449,99'
+        total: 'R$ 10.116,79'
       },
       {
         date: '2017',
