@@ -44,9 +44,9 @@ export class TransparenciaController {
         date: '2018',
         month: 'Abril',
         org_name: 'Caviver',
-        total: 'R$ 20.332,17',
         transf_link: '../assets/transparencia/comprovantes/Transferências_Caviver.pdf',
         transf_nome: 'Transferências - Caviver',
+        total: 'R$ 20.332,17',
       },
       {
         date: '2018',
