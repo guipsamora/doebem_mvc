@@ -52,11 +52,11 @@ export class MainController {
 
     this.resultsBR = [
       {
-        value: '385',
+        value: '387',
         desc: 'crianças recebendo leite por um mês.'
       },
       {
-        value: '210',
+        value: '214',
         desc: 'óculos de baixo-custo \
               fabricados',
       },
@@ -69,7 +69,7 @@ export class MainController {
 
     this.resultsGW = [
       {
-        value: '565',
+        value: '601',
         desc: 'redes tratadas com inseticida distribuídas',
       },
       {
@@ -77,7 +77,7 @@ export class MainController {
         desc: 'para programas de transferência de renda',
       },
       {
-        value: '560',
+        value: '1.535',
         desc: 'crianças tratadas para desparasitação',
       }
     ];
