@@ -27,10 +27,11 @@ app.set('view engine', 'pug');
 
 // EMAILS P/ DOADOR TRANSAÇÕES
 function handleSendEmail(result, res) {
-  app.mailer.send({
+  app.mailer.send(
+    {
     template: 'email',
     bcc: 'contato@doebem.org.br',
-  },
+    },
     {
       to: result.customer.email,
       subject: 'Obrigado por sua doação', // REQUIRED.
@@ -54,9 +55,10 @@ function handleSendEmailDoebemTransacao(result, res) {
   console.log('Estou em unica');
   console.log(result);
 
-  app.mailer.send({
+  app.mailer.send(
+    {
     template: 'emaildoebem',
-  },
+    },
     {
       to: 'g9m1y7l6p2r0k6d2@doebem.slack.com',
       subject: 'Dados doação concluída', // REQUIRED.
@@ -84,9 +86,10 @@ function handleSendEmailDoebemTransacao(result, res) {
 }
 
 function handleSendEmailDoebemAssinatura(result, res) {
-  app.mailer.send({
+  app.mailer.send(
+    {
     template: 'emaildoebem',
-  },
+    },
     {
       to: 'g9m1y7l6p2r0k6d2@doebem.slack.com',
       subject: 'Dados doação concluída', // REQUIRED.
@@ -102,30 +105,33 @@ function handleSendEmailDoebemAssinatura(result, res) {
       dezPorcento: result.metadata.doebem,
       periodo: result.metadata.periodo,
     },
-  err => {
-    if(err) {
-      // handle error
-      console.log(err);
-      res.send('Ocorreu um erro ao enviar sua mensagem');
-      return;
+    err => {
+      if(err) {
+        // handle error
+        console.log(err);
+        res.send('Ocorreu um erro ao enviar sua mensagem');
+        return;
+      }
+      // res.send("OK");
     }
-    // res.send("OK");
-  });
+  );
 }
 
 // EMAILS P/ DOADOR BOLETOS
 function sendBoletoTransacao(result, res) {
-  app.mailer.send({
+  app.mailer.send(
+    {
     template: 'boleto',
     bcc: 'contato@doebem.org.br'
-  },
+    },
     {
       to: result.customer.email,
       subject: 'Obrigado por sua doação - Segue boleto', // REQUIRED.
       link: result.boleto_url,
       from: 'doebem 💙 <contato@doebem.org.br>',
       nome: result.customer.name.split(' ')[0],
-    }, err => {
+    },
+    err => {
       if(err) {
       // handle error
         console.log(err);
@@ -133,14 +139,16 @@ function sendBoletoTransacao(result, res) {
         return;
       }
       res.send(result);
-    });
+    }
+  );
 }
 
 function sendBoletoAssinatura(result, res) {
-  app.mailer.send({
+  app.mailer.send(
+    {
     template: 'boleto',
     bcc: 'contato@doebem.org.br'
-  },
+    },
     {
       to: result.customer.email,
       subject: 'Obrigado por sua doação - Segue boleto', // REQUIRED.
@@ -148,36 +156,40 @@ function sendBoletoAssinatura(result, res) {
       from: 'doebem 💙 <contato@doebem.org.br>',
       nome: result.customer.name.split(' ')[0],
     },
-  err => {
-    if(err) {
-      // handle error
-      console.log(err);
-      res.send('Ocorreu um erro ao enviar o email com boleto');
-      return;
+    err => {
+      if(err) {
+        // handle error
+        console.log(err);
+        res.send('Ocorreu um erro ao enviar o email com boleto');
+        return;
+      }
+      // res.send("OK");
     }
-    // res.send("OK");
-  });
+  );
 }
 
 function sendErro(result, res) {
-  app.mailer.send({
+  app.mailer.send(
+    {
     template: 'erro',
     bcc: 'contato@doebem.org.br'
-  },
+    },
     {
       to: result.customer.email,
       subject: 'Erro em sua doação pela doebem :(', // REQUIRED.
       link: result.boleto_url,
       from: 'doebem 💙 <contato@doebem.org.br>',
-    }, err => {
-      if(err) {
+    },
+    err => {
+     if(err) {
         // handle error
         console.log(err);
         res.send('Ocorreu um erro ao enviar sua mensagem');
         return;
       }
     // res.send(result);
-    });
+    }
+  );
 }
 
 // Creates a new Pagarme in the DB

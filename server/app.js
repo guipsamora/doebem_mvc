@@ -9,6 +9,7 @@ import mongoose from 'mongoose';
 mongoose.Promise = require('bluebird');
 import config from './config/environment';
 import http from 'http';
+var sslRedirect = require('heroku-ssl-redirect');
 import compress from 'compression';
 
 // Connect to MongoDB
@@ -26,6 +27,7 @@ if(config.seedDB) {
 // Setup server
 var app = express();
 
+app.use(sslRedirect());
 app.use(compress());
 
 var prerender = require('prerender-node').set('prerenderToken', 'iPohBRFx4DLYiMAKixyK');
