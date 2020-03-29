@@ -23,7 +23,6 @@ import main from './main/main.component';
 import doar from './doar/doar.component';
 import metodologia from './metodologia/metodologia.component';
 import givewell from './givewell/givewell.component';
-import elisa from './elisa/elisa.component';
 import navbar from '../components/navbar/navbar.component';
 import newsletter from '../components/newsletter/newsletter.component';
 import pagOngs from './pag-ongs/pag-ongs.component';
@@ -59,7 +58,6 @@ angular.module('doebemOrgApp', [
   pagOngs,
   metodologia,
   givewell,
-  elisa,
   transparencia,
   duvidas,
   slugifier,
