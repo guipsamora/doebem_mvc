@@ -120,9 +120,16 @@ script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
                            ng-model="pagarmeForm.periodicidade")
               div(ng-repeat="period in $ctrl.periods")
                 md-radio-button(ng-value="period.value" aria-label="period.value") {{period.label}}
-          br       
+          br      
           md-input.md-block(layout="row")
             md-checkbox(ng-model="pagarmeForm.doebem" ng-watch ng-checked="true") Acrescentar +10% para a doebem?
+          md-input-container.md-block(layout="row")
+            h4.dialogform Como você conheceu a doebem?*
+            md-select(ng-model="pagarmeForm.origem" required)
+              md-option(value="Amigo") Indicação de amigos
+              md-option(value="Google") Google
+              md-option(value="Outros") Outros (Escreva abaixo)
+          br
           md-input-container.md-block(layout="row")
             label Mensagem
             textarea(ng-model="pagarmeForm.mensagem")

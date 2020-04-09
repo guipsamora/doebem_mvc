@@ -149,6 +149,7 @@ export class NavbarComponent {
     var periodicidade = pagarmeForm.periodicidade;
     var headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
     var dezPorcento = pagarmeForm.doebem;
+    var origem = pagarmeForm.origem;
 
     if (!amountValue) {
       amountValue = pagarmeForm.input * 100;
@@ -175,6 +176,7 @@ export class NavbarComponent {
         data.periodo = periodicidade;
         data.message = mensagem;
         data.doebem = dezPorcento;
+        data.origem = origem;
 
         console.log(data);
 

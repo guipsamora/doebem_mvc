@@ -177,6 +177,7 @@ export class MainController {
     var periodicidade = pagarmeForm.periodicidade;
     var headText = (amountValue / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
     var dezPorcento = pagarmeForm.doebem;
+    var origem = pagarmeForm.origem;
 
     if (!amountValue) {
       amountValue = pagarmeForm.input * 100;
