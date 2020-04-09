@@ -203,6 +203,7 @@ export class MainController {
         data.periodo = periodicidade;
         data.message = mensagem;
         data.doebem = dezPorcento;
+        data.origen = origem;
 
         console.log(data);
         //Tratar aqui as ações de callback do checkout, como exibição de mensagem ou envio de token para captura da transação

@@ -73,6 +73,7 @@ function handleSendEmailDoebemTransacao(result, res) {
       email: result.customer.email,
       dezPorcento: result.metadata.doebem,
       periodo: result.metadata.periodo,
+      origem: result.metadata.origem
     },
   err => {
     if(err) {
