@@ -341,7 +341,7 @@ div#main {
       height: 100%;
       width: 100%;
       display: block;
-      background-color: white;
+      background-color: #f1f1f1;
 
       @media screen and (max-width: 768px) {
         h3 {
@@ -366,7 +366,7 @@ div#main {
     }
 
     div#modelo {
-      background-color: #f1f1f1;
+      background-color: white;
       padding: 0 0 40px 0;
       text-align: center;
       height: 100%;
@@ -381,7 +381,7 @@ div#main {
       width: 100%;
       display: block;
       padding-bottom: 0px !important;
-      background-color: white;
+      background-color: #f1f1f1;
 
       button {
         background-color:  rgb(63,81,181);
