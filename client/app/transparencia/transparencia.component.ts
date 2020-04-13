@@ -69,7 +69,7 @@ export class TransparenciaController {
         month: 'Outubro',
         org_name: 'GiveDirectly',
         transf_link: '../assets/transparencia/comprovantes/1_4976513726099226786.pdf',
-        transf_nome: 'Transferências - GiveDirectly.pdf',
+        transf_nome: 'Transferências - GiveDirectly',
         total: 'R$ 7.239,68'
       },
       {
