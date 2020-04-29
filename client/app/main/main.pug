@@ -17,41 +17,6 @@ div#main.animated.fadeIn
               img(src="{{step.icon}}")
               h2 {{step.title}}
               p {{step.desc}}
-    div#resultados(flex="100" layout="column" layout-align="center center")
-      h2.sectionHeading#doados Nossos Resultados
-      p Até hoje, a doebem já arrecadou doações para fornecer o equivalente a*:
-      h3.resultados Brasil 🇧🇷
-      md-list(flex="100" layout-gt-sm="row" layout="column" layout-align="space-around center")
-        md-list-item(ng-repeat="step in $ctrl.resultsBR" layout-align="center center")
-            div(layout = "column" layout-align="center center")
-              h2 {{step.value}}
-              p {{step.desc}}
-      br
-      br
-      h3.resultados Continente Africano 🌍       
-      md-list(flex="100" layout-gt-sm="row" layout="column" layout-align="center center")
-        md-list-item(ng-repeat="step in $ctrl.resultsGW")
-            div(layout = "column" layout-align="center center")
-              h2 {{step.value}}
-              p {{step.desc}}
-      br
-      br
-      br
-      p#transp Confira os valores transferidos #[a#transp(href="./transparencia") aqui]!
-      br
-      p#ast *Os resultados alcançados são apenas uma equivalência do alcance e abrangência dos fundos arrecadados pela doebem. #[br]As organizações apoiadas têm liberdade para alocação dos fundos da forma mais conveniente para suas iniciativas.
-    div#reconhecimentos(flex="100" layout="column" layout-align="center center")
-      h3 Confira o que andam falando sobre nós!
-      br
-      div(flex="100" layout="row"  layout-align="center center")
-        div(ng-repeat="midia in $ctrl.midias")
-          a(ng-href="{{midia.link}}" target="_blank")
-            img#af.mid(ng-src="{{midia.src}}" alt="{{midia.alt}}")
-    div#modelo(flex="100" layout="column" layout-align="center center")
-      h2.sectionHeading Não cobramos taxa!
-      p Nenhuma taxa sobre a doação para as organizações é cobrada, 
-      p apenas os custos da ferramenta de pagamento são descontados.
-      img(src="/assets/images/transparencia/100.png")
     div#ongs(flex="100" layout="column" layout-align="center center")
       h2.sectionHeading Organizações
       h3 Conheça as organizações recomendadas e mude uma vida hoje.
@@ -82,6 +47,41 @@ div#main.animated.fadeIn
         br
         md-button.md-raized.md-primary(ng-click="$ctrl.showDialogDonation()") Doar
         br
+    div#modelo(flex="100" layout="column" layout-align="center center")
+      h2.sectionHeading Não cobramos taxa!
+      p Nenhuma taxa sobre a doação para as organizações é cobrada, 
+      p apenas os custos da ferramenta de pagamento são descontados.
+      img(src="/assets/images/transparencia/100.png")
+    div#resultados(flex="100" layout="column" layout-align="center center")
+      h2.sectionHeading#doados Nossos Resultados
+      p Até hoje, a doebem já arrecadou doações para fornecer o equivalente a*:
+      h3.resultados Brasil 🇧🇷
+      md-list(flex="100" layout-gt-sm="row" layout="column" layout-align="space-around center")
+        md-list-item(ng-repeat="step in $ctrl.resultsBR" layout-align="center center")
+            div(layout = "column" layout-align="center center")
+              h2 {{step.value}}
+              p {{step.desc}}
+      br
+      br
+      h3.resultados Continente Africano 🌍       
+      md-list(flex="100" layout-gt-sm="row" layout="column" layout-align="center center")
+        md-list-item(ng-repeat="step in $ctrl.resultsGW")
+            div(layout = "column" layout-align="center center")
+              h2 {{step.value}}
+              p {{step.desc}}
+      br
+      br
+      br
+      p#transp Confira os valores transferidos #[a#transp(href="./transparencia") aqui]!
+      br
+      p#ast *Os resultados alcançados são apenas uma equivalência do alcance e abrangência dos fundos arrecadados pela doebem. #[br]As organizações apoiadas têm liberdade para alocação dos fundos da forma mais conveniente para suas iniciativas.
+    div#reconhecimentos(flex="100" layout="column" layout-align="center center")
+      h3 Confira o que andam falando sobre nós!
+      br
+      div(flex="100" layout="row"  layout-align="center center")
+        div(ng-repeat="midia in $ctrl.midias")
+          a(ng-href="{{midia.link}}" target="_blank")
+            img#af.mid(ng-src="{{midia.src}}" alt="{{midia.alt}}")
     newsletter
 contact-form#contato
 script(type="text/ng-template" id="dialogDonateNavbar.tmpl.pug")
