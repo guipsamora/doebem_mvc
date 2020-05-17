@@ -13,8 +13,8 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
       ul.nav.navbar-nav
         li
           a#Itens(href='./sobre') SOBRE
-        li#org(uib-dropdown on-toggle="toggled(open)")
-            a#Itens(href uib-dropdown-toggle) Organizações <span class="caret"></span>
+        li#org(uib-dropdown on-toggle="toggled(open)" ng-mouseover="status.isopen = true" ng-mouseleave="status.isopen = false" is-open="status.isopen")
+            a#Itens(href uib-dropdown-toggle) Organizações <span class="caret btn-group"></span>
             ul(class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown")
                 li 
                   a(href="./pagOngs/saudecrianca") Saúde Criança
@@ -22,8 +22,14 @@ div#menu.navbar.navbar-default(ng-class="{mainPageMenu: $ctrl.$location.url()===
                   a(href="./pagOngs/renovatio") Renovatio
                 li 
                   a(href="./pagOngs/caviver") Caviver
-        li
-          a#Itens(href='./givewell') GIVEWELL                  
+                li 
+                  p GiveWell
+                li 
+                  a(href="/pagOngs/amf") Against Malaria Foundation
+                li 
+                  a(href="./pagOngs/givedirectly") GiveDirectly
+                li 
+                  a(href="./pagOngs/schistosomiasis") Schistosomiasis Control Initiative              
         li.menuAnchor(ng-repeat='item in $ctrl.menu')
           a#Itens(ng-href='{{item.link}}') {{item.title}}
         a#Itens(target="_blank" href="https://medium.com/doebem")

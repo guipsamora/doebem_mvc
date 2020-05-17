@@ -26,6 +26,15 @@ div#menu {
     font-size: 18px;
   }
 
+  .dropdown-menu>li>p {
+    font-size: 18px;
+    color: #333;
+    font-weight: 700;
+    padding-left: 20px;
+    text-decoration: underline;
+    margin-bottom: 0px;
+  }
+
   .navbar-default .navbar-nav>.open>a {
     background-color: transparent !important;
   } 
@@ -374,7 +383,7 @@ p#secu {
 h2#donation {
     text-align: center;
     font-size: 26px;
-    font-weight: 700;
+    font-weight: 600;
     color: white;
 }
 
