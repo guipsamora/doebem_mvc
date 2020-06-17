@@ -233,7 +233,7 @@ export class NavbarComponent {
 function DialogController($scope, $mdDialog, $inject) {
 
     $scope.pagarmeForm = {
-      amount: 2000,
+      amount: 5000,
       periodicidade: 'Mensal'
     };
 

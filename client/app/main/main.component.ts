@@ -274,7 +274,7 @@ export class MainController {
 function DialogController($scope, $mdDialog, $inject, $log, $http, user) {
 
   $scope.pagarmeForm = {
-    amount: 2000,
+    amount: 5000,
     periodicidade: 'Mensal'
   };
 
