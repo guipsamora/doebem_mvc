@@ -54,7 +54,14 @@ export class SobreController {
         twitter: '',
         linkedin: 'https://www.linkedin.com/in/folivimoreno/',
         email: 'fernando.moreno@doebem.org.br',
-       }
+       },
+       {
+        nome: 'Carolina',
+        img: './assets/images/team/carol_4.jpg',
+        twitter: '',
+        linkedin: 'https://www.linkedin.com/in/carolinaollive/',
+        email: 'carolina.oliveira@doebem.org.br',
+       }       
     ];
   }
 
