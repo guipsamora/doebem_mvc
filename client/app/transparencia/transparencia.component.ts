@@ -46,7 +46,7 @@ export class TransparenciaController {
         org_name: 'Caviver',
         transf_link: '../assets/transparencia/comprovantes/Transferências_Caviver.pdf',
         transf_nome: 'Transferências - Caviver',
-        total: 'R$ 20.620,80',
+        total: 'R$ 32.897,80',
       },
       {
         date: '2018',
@@ -54,7 +54,7 @@ export class TransparenciaController {
         org_name: 'Saúde Criança',
         transf_link: '../assets/transparencia/comprovantes/Transferências_Saúde_Criança.pdf',
         transf_nome: 'Transferências - Saúde Criança',
-        total: 'R$ 23.659,30'
+        total: 'R$ 28.663,53'
       },
       {
         date: '2018',
@@ -62,7 +62,7 @@ export class TransparenciaController {
         org_name: 'Renovatio',
         transf_link: '../assets/transparencia/comprovantes/Transferências_Renovatio.pdf',
         transf_nome: 'Transferências - Renovatio',
-        total: 'R$ 8.576,60'
+        total: 'R$ 8.672,81'
       },
       {
         date: '2017',
@@ -70,7 +70,7 @@ export class TransparenciaController {
         org_name: 'GiveDirectly',
         transf_link: '../assets/transparencia/comprovantes/1_4976513726099226786.pdf',
         transf_nome: 'Transferências - GiveDirectly',
-        total: 'R$ 7.239,68'
+        total: 'R$ 9.708,00'
       },
       {
         date: '2017',
@@ -78,7 +78,7 @@ export class TransparenciaController {
         org_name: 'Against Malaria Foundation',
         transf_link: '../assets/transparencia/comprovantes/Against_Malaria_Foundation_06.2019.pdf',
         transf_nome: 'Transferências - Against Malaria Foundation',
-        total: 'R$ 10.836,56'
+        total: 'R$ 14.104,21'
       },
       {
         date: '2017',
@@ -87,7 +87,7 @@ export class TransparenciaController {
         // transf_link: '../assets/transparencia/comprovantes/Transferências_Schistosomiasis_Control_Initiative.pdf',
         transf_link: '../assets/transparencia/comprovantes/Schistosomiasis_Control_Initiative_06.2019.pdf',
         transf_nome: 'Transferências - Schistosomiasis Control Initiative',
-        total: 'R$ 2.704,19'
+        total: 'R$ 2.894,76'
       }
     ];
 

@@ -52,16 +52,16 @@ export class MainController {
 
     this.resultsBR = [
       {
-        value: '789',
+        value: '956',
         desc: 'crianças recebendo leite por um mês.'
       },
       {
-        value: '219',
+        value: '221',
         desc: 'óculos de baixo-custo \
               fabricados',
       },
       {
-        value: '10',
+        value: '15',
         desc: 'cirurgias de catarata \
                em crianças.',
       }
@@ -69,7 +69,7 @@ export class MainController {
 
     this.resultsGW = [
       {
-        value: '635',
+        value: '1.270',
         desc: 'redes tratadas com inseticida distribuídas',
       },
       {
