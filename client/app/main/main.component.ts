@@ -69,15 +69,15 @@ export class MainController {
 
     this.resultsGW = [
       {
-        value: '1.270',
-        desc: 'redes tratadas com inseticida distribuídas',
+        value: '1.558',
+        desc: 'pessoas protegidas por rede',
       },
       {
-        value: 'R$ 7.239,68',
+        value: 'R$ 9.754,56',
         desc: 'para programas de transferência de renda',
       },
       {
-        value: '1.536',
+        value: '1.613',
         desc: 'crianças tratadas para desparasitação',
       }
     ];
