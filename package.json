@@ -51,7 +51,7 @@
     "method-override": "^2.3.5",
     "moment": "^2.29.1",
     "mongoose": "^4.13.21",
-    "morgan": "~1.8.1",
+    "morgan": "~1.9.1",
     "natives": "^1.1.6",
     "ng-file-upload": "^12.2.13",
     "node-sass": "^3.13.1",
