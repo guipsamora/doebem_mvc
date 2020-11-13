@@ -150,7 +150,7 @@
     "ng-annotate-loader": "~0.1.0",
     "nodemon": "^1.19.4",
     "null-loader": "^0.1.1",
-    "open": "~0.0.4",
+    "open": "~6.0.0",
     "optipng-bin": "^6.0.0",
     "phantomjs-prebuilt": "^2.1.4",
     "postcss-loader": "^0.11.1",
