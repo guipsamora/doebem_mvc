@@ -15,7 +15,8 @@ import compress from 'compression';
 // Connect to MongoDB
 mongoose.connect(config.mongo.uri, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  dbName: 'heroku_01j1ss8r'
 });
 
 mongoose.connection.on('error', function(err) {
