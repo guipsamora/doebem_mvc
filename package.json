@@ -111,7 +111,6 @@
     "gulp-istanbul-enforcer": "^1.0.3",
     "gulp-load-plugins": "^1.6.0",
     "gulp-mocha": "^4.3.0",
-    "gulp-node-inspector": "^0.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-protractor": "^4.1.1",
     "gulp-rev": "^7.0.0",
