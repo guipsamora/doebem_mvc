@@ -62,7 +62,7 @@ export class TransparenciaController {
         org_name: 'Renovatio',
         transf_link: '../assets/transparencia/comprovantes/Transferências_Renovatio.pdf',
         transf_nome: 'Transferências - Renovatio',
-        total: 'R$ 9.974,92'
+        total: 'R$ 10.174.92'
       },
       {
         date: '2017',
@@ -87,7 +87,7 @@ export class TransparenciaController {
         // transf_link: '../assets/transparencia/comprovantes/Transferências_Schistosomiasis_Control_Initiative.pdf',
         transf_link: '../assets/transparencia/comprovantes/Schistosomiasis_Control_Initiative_06.2019.pdf',
         transf_nome: 'Transferências - Schistosomiasis Control Initiative',
-        total: 'R$ 4.650,63'
+        total: 'R$ 4.460,06'
       }
     ];
 
