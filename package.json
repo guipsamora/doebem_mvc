@@ -23,7 +23,7 @@
     "angular-touch": "^1.8.2",
     "angular-ui-bootstrap": "^2.0.1",
     "angular-validation-match": "^1.9.0",
-    "aws-sdk": "^2.791.0",
+    "aws-sdk": "^2.814.0",
     "babel-polyfill": "^6.7.2",
     "babel-runtime": "^6.6.1",
     "bluebird": "^3.7.2",
