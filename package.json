@@ -45,7 +45,7 @@
     "fast-json-patch": "^1.0.0",
     "font-awesome": ">=4.1.0",
     "heroku-ssl-redirect": "0.0.4",
-    "jsonwebtoken": "^7.0.0",
+    "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.20",
     "lusca": "^1.6.1",
     "method-override": "^2.3.5",
